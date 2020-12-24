@@ -81,7 +81,7 @@ label {
 }
 
 a.pure-button-primary {
-        font-size: 120%;
+    font-size: 120%;
     background-color: #C83E4D;
 }
 
@@ -338,10 +338,6 @@ a.pure-button-primary {
   background: white;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
   transition: 0.3s;
-}
-.modal-button:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.8);
 }
 .modal-right {
   flex: 2;
