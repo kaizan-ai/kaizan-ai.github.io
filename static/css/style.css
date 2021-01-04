@@ -237,14 +237,14 @@ a {
     border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  color: #274060;
+  color: #7CB483;
   border-bottom: dotted 1px;
   text-decoration: none;
 }
 
 a:hover {
-  border-bottom-color: #274060;
-  color: #274060 !important;
+  border-bottom-color: #97C39D;
+  color: #97C39D !important;
 }
 
 strong,
@@ -989,6 +989,7 @@ input[type="button"].icon,
 button.icon,
 .button.icon {
   padding-left: 1.35em;
+  padding-right: 1.35em;
 }
 
 input[type="submit"].icon:before,
@@ -1046,7 +1047,7 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-  background-color: #97C39D;
+  background-color: #̥;
 }
 
 input[type="submit"].primary:active,
