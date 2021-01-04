@@ -1,222 +1,115 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
-    <title>Kaizan - Building the future of work</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300&display=swap">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A layout example that shows off a responsive product landing page.">
+  <title>Kaizan - Building the future of work</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300&display=swap">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#FEF9EF">
 </head>
+
 <body>
-
-<div class="header">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-        <a class="pure-menu-heading" href="https://kaizan.ai">Kaizan</a>
-        
-
-        <ul class="pure-menu-list">
-            <!--
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">About us</a></li>
-            -->
-            <li class="pure-menu-item"><a href="https://kaizan.freshteam.com/jobs" class="pure-menu-link">Join the team</a></li>
-        </ul>
-    </div>
-</div>
-
-<div class="splash-container">
-    <div class="splash">
-        <div class="pure-g">
-            
-            <div class="pure-u-1-2">
-                <p class="splash-subhead" style="text-align: left;">
-                    AI that guides you and your team on what to do
-                </p>
-                <p>
-                    <a href="#" class="pure-button pure-button-primary modal-button">Register for early access</a>
-                </p>
-            </div>
-            <div class="pure-u-1-2">
-                <h1 class="splash-head">Video</h1>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal">
-  <div class="modal-container">
-    <div class="modal-left">
-      <h1 class="modal-title">Welcome!</h1>
-      <p class="modal-desc">Enter your email address below to register for early access.</p>
-      <div class="input-block">
-        <label for="email" class="input-label">Email</label>
-        <input type="email" name="email" id="email" placeholder="Email">
-      </div>
-      <div class="modal-buttons">
-        <button class="input-button">Sign up</button>
-      </div>
-      <p class="sign-up">You are #1234 on the waitlist!</p>
-    </div>
-    <div class="modal-right">
-      <img src="https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dfd2ec5a01006fd8c4d7592a381d3776&auto=format&fit=crop&w=1000&q=80" alt="">
-    </div>
-    <button class="icon-button close-button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-    <path d="M 25 3 C 12.86158 3 3 12.86158 3 25 C 3 37.13842 12.86158 47 25 47 C 37.13842 47 47 37.13842 47 25 C 47 12.86158 37.13842 3 25 3 z M 25 5 C 36.05754 5 45 13.94246 45 25 C 45 36.05754 36.05754 45 25 45 C 13.94246 45 5 36.05754 5 25 C 5 13.94246 13.94246 5 25 5 z M 16.990234 15.990234 A 1.0001 1.0001 0 0 0 16.292969 17.707031 L 23.585938 25 L 16.292969 32.292969 A 1.0001 1.0001 0 1 0 17.707031 33.707031 L 25 26.414062 L 32.292969 33.707031 A 1.0001 1.0001 0 1 0 33.707031 32.292969 L 26.414062 25 L 33.707031 17.707031 A 1.0001 1.0001 0 0 0 32.980469 15.990234 A 1.0001 1.0001 0 0 0 32.292969 16.292969 L 25 23.585938 L 17.707031 16.292969 A 1.0001 1.0001 0 0 0 16.990234 15.990234 z"></path>
-</svg>
-      </button>
+  <!--
+  <div class="ribbon-container">
+    <div class="ribbon"><a href="https://kaizan.freshteam.com/jobs"><span>Join us</span></a></div>
   </div>
-
-</div>
-<script type="text/javascript">
-const body = document.querySelector("body");
-const modal = document.querySelector(".modal");
-const modalButton = document.querySelector(".modal-button");
-const closeButton = document.querySelector(".close-button");
-const scrollDown = document.querySelector(".scroll-down");
-let isOpened = false;
-
-const openModal = () => {
-  modal.classList.add("is-open");
-  body.style.overflow = "hidden";
-};
-
-const closeModal = () => {
-  modal.classList.remove("is-open");
-  body.style.overflow = "initial";
-};
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > window.innerHeight / 3 && !isOpened) {
-    isOpened = true;
-    scrollDown.style.display = "none";
-    openModal();
-  }
-});
-
-modalButton.addEventListener("click", openModal);
-closeButton.addEventListener("click", closeModal);
-
-document.onkeydown = evt => {
-  evt = evt || window.event;
-  evt.keyCode === 27 ? closeModal() : false;
-};
-</script>
-
-<!--
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
-
-        <div class="pure-g">
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-                    <i class="fa fa-rocket"></i>
-                    Get Started Quickly
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                </p>
-            </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-mobile"></i>
-                    Responsive Layouts
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                </p>
-            </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-th-large"></i>
-                    Modular
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                </p>
-            </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-check-square-o"></i>
-                    Plays Nice
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                </p>
-            </div>
+  -->
+  <div id="page-wrapper">
+    <section id="banner">
+      <div class="inner">
+        <div class="content">
+          <ul>
+            <li class="visible top">
+              GIF
+            </li>
+          </ul>
         </div>
-    </div>
-
-    <div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="300" alt="File Icons" class="pure-img-responsive" src="/img/common/file-icons.png">
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-
-            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor.
-            </p>
-        </div>
-    </div>
-
-    <div class="content">
-        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
-
-        <div class="pure-g">
-            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked">
-                    <fieldset>
-
-                        <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
-
-
-                        <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
-
-                        <label for="password">Your Password</label>
-                        <input id="password" type="password" placeholder="Your Password">
-
-                        <button type="submit" class="pure-button">Sign Up</button>
-                    </fieldset>
-                </form>
-            </div>
-
-            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                </p>
-
-                <h4>More Information</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
+      </div>
+    </section>
+    <section id="wrapper">
+      <div class="inner">
+        <div id="logo">
+          <svg version="1.1" id="kaizan_logo" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="300 300 1400 1400" xml:space="preserve">
+            <g>
+              <g>
+                <path d="M377.29,1476.35v83.05v5.54h-11.07v-5.54v-83.05v-11.07v-83.05v-5.54h11.07v5.54v83.05h0.29l89.69-86.92l1.66-1.66h15.78
+			l-9.69,9.41l-87.2,84.71l87.2,84.71l9.69,9.41h-15.78l-1.66-1.66l-89.69-86.92H377.29z" />
+                <path d="M585.47,1564.93h-12.18l3.6-7.75l77.51-177.17l1.38-3.32h7.2l1.38,3.32l77.51,177.17l3.6,7.75h-12.18l-1.38-3.32
+			l-72.53-165.54l-72.53,165.54L585.47,1564.93z" />
+                <path d="M860.35,1376.69h11.07v5.54v177.17v5.54h-11.07v-5.54v-177.17V1376.69z" />
+                <path d="M991.01,1387.76v-11.07h5.54h111.84h5.54h4.71l-5.54,8.58l-111.28,168.59h111.56h5.54v11.07h-5.54h-121.8h-5.54h-4.71
+			l5.54-8.58l111.28-168.58H996.54H991.01z" />
+                <path d="M1222.15,1564.93h-12.18l3.6-7.75l77.51-177.17l1.38-3.32h7.2l1.39,3.32l77.51,177.17l3.6,7.75h-12.18l-1.38-3.32
+			l-72.53-165.54l-72.53,165.54L1222.15,1564.93z" />
+                <path d="M1506.45,1564.93h-11.07v-5.54v-177.17v-5.54h8.3l1.66,2.21l117.1,163.33l0.28-160v-5.54h11.07v5.54l-0.28,177.17v5.54
+			h-8.3l-1.66-2.21l-117.1-163.33v160V1564.93z" />
+              </g>
+              <g>
+                <g>
+                  <polygon fill="#823329"
+                    points="1000,1120.58 1002.91,1117.67 665.98,780.74 1000,446.72 1334.02,780.74 997.09,1117.67 1000,1120.58 
+				1002.91,1117.67 1000,1120.58 1002.91,1123.5 1345.67,780.74 1000,435.07 654.33,780.74 1000,1126.41 1002.91,1123.5" />
+                  <polygon fill="#276056"
+                    points="1000,1183.59 1002.91,1180.68 665.98,843.75 1000,509.73 1334.02,843.75 997.09,1180.68 1000,1183.59 
+				1002.91,1180.68 1000,1183.59 1002.91,1186.51 1345.67,843.75 1000,498.08 654.33,843.75 1000,1189.42 1002.91,1186.51" />
+                  <polygon fill="#392760" points="1000,566.92 997.09,564 654.33,906.76 1000,1252.43 1345.67,906.76 1000,561.09 997.09,564 1000,566.92 
+				997.09,569.83 1334.02,906.76 1000,1240.78 665.98,906.76 1002.91,569.83 1000,566.92 997.09,569.83" />
+                </g>
+                <g>
+                  <polygon fill="#273460" points="1055.67,758.1 1045.35,758.1 951.46,930.14 961.75,930.14 999.45,860.83 1037.34,929.79 1047.64,929.79 
+				1004.81,851.2 1010.43,840.44 1059.28,929.79 1069.59,929.79 1015.8,831.22" />
+                  <polygon fill="#443444" points="1023.48,758.1 958.74,877.18 958.76,758.1 949.68,758.1 949.68,893.65 939.52,911.76 939.51,889.69 
+				939.51,758.1 930.41,758.1 930.41,930.14 940.08,930.14 1033.97,758.1" />
+                </g>
+              </g>
+            </g>
+          </svg>
         </div>
 
-    </div>
--->
-    <div class="footer l-box is-center">
-        Kaizan Ltd. Registered in England &amp; Wales with company number 13082820.
-    </div>
-
-</div>
-
+        <h1 class="hidden">Kaizan</h1>
+        <h2>
+          AI that guides you and your team on what to do next.
+        </h2>
+        <p></p>
+        <ul class="actions">
+          <li><a class="button primary icon solid fa-paper-plane" style="cursor: pointer;">Sign up for early
+              access</a></li>
+        </ul>
+      </div>
+      <footer>
+        <ul class="icons">
+          <li>
+            <a href="https://twitter.com/kaizan_ai" class="icon brands fa-twitter" style="cursor: pointer;"><span
+                class="label">Twitter</span></a>
+          </li>
+          <li>
+            <a href="" class="icon brands fa-linkedin" style="cursor: pointer;"><span class="label">LinkedIn</span></a>
+          </li>
+          <li>
+            <a href="https://github.com/kaizan-ai" class="icon brands fa-github" style="cursor: pointer;"><span
+                class="label">GitHub</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/Kaizan_ai/" class="icon brands fa-instagram"
+              style="cursor: pointer;"><span class="label">Instagram</span></a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+  </div>
+  </div>
+  <!-- Kaizan Ltd. Registered in England & Wales with company number 13082820. -->
 </body>
+
 </html>
