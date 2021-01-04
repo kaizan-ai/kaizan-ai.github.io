@@ -1132,6 +1132,7 @@ body.is-ie #page-wrapper {
   -ms-justify-content: space-between;
   justify-content: space-between;
   width: 50vw;
+  text-align: center;
 }
 
 #wrapper:before {
@@ -1486,19 +1487,33 @@ body.is-preload #banner .inner ul:after {
 
 /* Ribbon */
 .ribbon-container {
-  position: relative; /* 1 */
-  xoverflow: hidden; /* 2 */
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 2em;
+  text-align: center;
+  transform:
+    translateY(-100%)
+    rotate(90deg)
+    translateX(70.71067811865476%)
+    rotate(-45deg);
+  transform-origin: bottom right;
+  font-size: 18px;
+  background-color: #823329;
+  color: #FEF9EF;
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 1);  
 }
 
-.ribbon {
-  position: absolute; /* 1 */
-  top: 0; /* 1 */
-  left: 0; /* 1 */
-  padding: 0 2em; /* 2 */
-  text-align: center; /* 3 */
-  transform:    
-    rotate(-45deg)
-    ; /* 4 */
-  width: 100%;
-  background-color: #d3f5f6;
+.ribbon a {
+  color:#FEF9EF;
+  border: 0;
+}
+
+.ribbon a:hover {
+  color: #FEF9EF;
 }
