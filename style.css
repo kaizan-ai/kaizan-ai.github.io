@@ -1490,6 +1490,8 @@ body.is-preload #banner .inner ul:after {
   position: absolute;
   top:0;
   right: 0;
+  width: 139px;
+  height: 139px;
 }
 .ribbon {
   position: absolute;
