@@ -1475,6 +1475,14 @@ body.is-preload #banner .inner ul:after {
 .hidden {
   display: none;
 }
+/* Blink */
+.blink {
+  animation: blinkingText 1.5s infinite;
+}
+@keyframes blinkingText {
+  0% {color: #444}
+  50% {color: transparent}
+}
 
 /* Ribbon */
 .ribbon-container {
