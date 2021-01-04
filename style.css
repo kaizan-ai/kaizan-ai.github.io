@@ -1518,5 +1518,5 @@ body.is-preload #banner .inner ul:after {
 }
 
 .ribbon a:hover {
-  color: #FEF9EF;
+  color: #FEF9EF !important
 }
