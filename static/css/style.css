@@ -1348,10 +1348,10 @@ body.is-preload #wrapper > * {
 }
 
 #banner ul:after {
-  -moz-transition: opacity 1s ease-in;
-  -webkit-transition: opacity 1s ease-in;
-  -ms-transition: opacity 1s ease-in;
-  transition: opacity 1s ease-in;
+  /* -moz-transition: opacity 0.5s ease-in;
+  -webkit-transition: opacity 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in; */
   content: "";
   display: block;
   background: #444;
@@ -1365,10 +1365,10 @@ body.is-preload #wrapper > * {
 }
 
 #banner ul li {
-  -moz-transition: opacity 1.25s ease-in-out;
-  -webkit-transition: opacity 1.25s ease-in-out;
-  -ms-transition: opacity 1.25s ease-in-out;
-  transition: opacity 1.25s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   display: block;
   left: 0;
   list-style: none;
@@ -1382,7 +1382,7 @@ body.is-preload #wrapper > * {
 #banner ul li img {
   display: block;
   width: 11.25em;
-  height: 20em;
+  height: auto;
 }
 
 #banner ul li.visible {
