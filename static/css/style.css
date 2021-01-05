@@ -1510,7 +1510,7 @@ body.is-preload #banner .inner ul:after {
   font-size: 18px;
   background-color: #823329;
   color: #FEF9EF;
-  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 1);  
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 1);
 }
 
 .ribbon a {
@@ -1520,4 +1520,52 @@ body.is-preload #banner .inner ul:after {
 
 .ribbon a:hover {
   color: #FEF9EF !important
+}
+
+/* Modal */
+.modal-window {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-window > div {
+  width: 600px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2em;
+  background: #ffffff;
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 1);
+}
+
+
+.modal-close {
+  background-color: #444;
+  color: #FEF9EF;
+  line-height: 50px;
+  font-size: 80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 70px;
+  text-decoration: none;
+}
+.modal-close:hover {
+  color: black;
 }

@@ -49,7 +49,7 @@
           AI that guides you and your team on what to do next <span class="blink">_</span>
         </h2>
         <p>We are currently in closed alpha. Please sign up to get on the waitlist.</p>
-        <p><a class="button primary icon solid fa-paper-plane" style="cursor: pointer;">Sign up!</a></p>
+        <p><a href="#open-modal" class="button primary icon solid fa-paper-plane" style="cursor: pointer;">Sign up!</a></p>
       </div>
       <footer>
         <ul class="icons">
@@ -73,8 +73,23 @@
     </section>
   </div>
   </div>
+  <div id="open-modal" class="modal-window">
+    <div>
+      <a href="#" title="Close" class="modal-close">x</a>
+      <h1>Enter your details</h1>
+      <div>
+        <form action="https://formspree.io/f/mleoadod" method="POST" id="signup-form">
+          <input type="text" name="name" placeholder="Your name"><br>
+          <input type="email" name="email" placeholder="Your email"><br>
+          <input type="submit" value="Send" class="button primary" id="signup-form-submit-button">
+        </form>
+        <div id="signup-form-status"></div>
+      </div>
+      </div>
+  </div>
   <!-- Kaizan Ltd. Registered in England & Wales with company number 13082820. -->
   <script>
+    /* Carousel animation */
     (function () {
       "use strict";
       var $body = document.querySelector('body');
@@ -87,7 +102,7 @@
       if (navigator.userAgent.match(/(MSIE|rv:11\.0)/)) $body.classList.add('is-ie');
       (function () {
         var settings = {
-          delay: 2000
+          delay: 3000
         };
         var $banner = document.querySelector('#banner'),
           $images = document.querySelectorAll('#banner li'),
@@ -107,6 +122,54 @@
         }, settings.delay);
       })();
     })();
+  </script>
+  <script>
+    /* Sign up form */
+    window.addEventListener("DOMContentLoaded", function() {
+  
+      // get the form elements defined in your form HTML above
+      
+      var form = document.getElementById("signup-form");
+      var button = document.getElementById("signup-form-submit-button");
+      var status = document.getElementById("signup-form-status");
+  
+      // Success and Error functions for after the form is submitted
+      
+      function success() {
+        form.reset();
+        button.style = "display: none ";
+        status.innerHTML = "Thanks!";
+      }
+  
+      function error() {
+        status.innerHTML = "Oops! There was a problem.";
+      }
+  
+      // handle the form submission event
+  
+      form.addEventListener("submit", function(ev) {
+        ev.preventDefault();
+        var data = new FormData(form);
+        ajax(form.method, form.action, data, success, error);
+      });
+    });
+    
+    // helper function for sending an AJAX request
+  
+    function ajax(method, url, data, success, error) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          success(xhr.response, xhr.responseType);
+        } else {
+          error(xhr.status, xhr.response, xhr.responseType);
+        }
+      };
+      xhr.send(data);
+    }
   </script>
 </body>
 
