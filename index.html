@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AI that guides you and your team on what to do next">
-  <title>Kaizan - Building the future of work</title>
+  <meta name="description" content="AI that augments human intelligence">
+  <title>Kaizan</title>
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
@@ -23,17 +23,10 @@
     <section id="banner">
       <div class="inner">
         <div class="content">
-          <ul>
-            <li class="visible top">
-              <img src="/static/img/demo/1.png" alt="Sign into Kaizan">
-            </li>
-            <li>
-              <img src="/static/img/demo/2.png" alt="Syncing data">
-            </li>
-            <li>
-              <img src="/static/img/demo/3.png" alt="Generate updates - select topics">
-            </li>
-          </ul>
+          <video width="100%" controls>
+            <source src="/static/img/demo/demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video> 
         </div>
       </div>
     </section>
@@ -46,7 +39,7 @@
 
         <h1 class="hidden">Kaizan</h1>
         <h2>
-          AI that guides you and your team on what to do next <span class="blink">_</span>
+          AI that augments the intelligence of you and your team <span class="blink">_</span>
         </h2>
         <p>We are currently in a closed alpha. Please sign up to get on the waitlist.</p>
         <p><a href="#open-modal" class="button primary icon solid fa-paper-plane" style="cursor: pointer;">Sign up!</a></p>
@@ -58,7 +51,7 @@
                 class="label">Twitter</span></a>
           </li>
           <li>
-            <a href="" class="icon brands fa-linkedin" style="cursor: pointer;"><span class="label">LinkedIn</span></a>
+            <a href="https://www.linkedin.com/company/kaizan/" class="icon brands fa-linkedin" style="cursor: pointer;"><span class="label">LinkedIn</span></a>
           </li>
           <li>
             <a href="https://github.com/kaizan-ai" class="icon brands fa-github" style="cursor: pointer;"><span
@@ -75,7 +68,7 @@
   </div>
   <div id="open-modal" class="modal-window">
     <div>
-      <a href="#" title="Close" class="modal-close">x</a>
+      <a href="#" title="Close" class="modal-close" onclick="document.getElementById('open-modal').style.display = hidden;">x</a>
       <h1>Enter your details</h1>
       <div>
         <form action="https://formspree.io/f/mleoadod" method="POST" id="signup-form">
@@ -88,41 +81,6 @@
       </div>
   </div>
   <!-- Kaizan Ltd. Registered in England & Wales with company number 13082820. -->
-  <script>
-    /* Carousel animation */
-    (function () {
-      "use strict";
-      var $body = document.querySelector('body');
-      if ('addEventListener' in window) {
-        $body.classList.add('is-preload');
-        window.addEventListener('load', function () {
-          $body.classList.remove('is-preload');
-        });
-      }
-      if (navigator.userAgent.match(/(MSIE|rv:11\.0)/)) $body.classList.add('is-ie');
-      (function () {
-        var settings = {
-          delay: 3000
-        };
-        var $banner = document.querySelector('#banner'),
-          $images = document.querySelectorAll('#banner li'),
-          pos = 0,
-          lastPos = 0;
-        $images[pos].classList.add('visible');
-        $images[pos].classList.add('top');
-        if ($images.length == 1) return;
-        window.setInterval(function () {
-          lastPos = pos;
-          pos++;
-          if (pos >= $images.length) pos = 0;
-          $images[lastPos].classList.remove('top');
-          $images[lastPos].classList.remove('visible');
-          $images[pos].classList.add('visible');
-          $images[pos].classList.add('top');
-        }, settings.delay);
-      })();
-    })();
-  </script>
   <script>
     /* Sign up form */
     window.addEventListener("DOMContentLoaded", function() {
@@ -138,7 +96,7 @@
       function success() {
         form.reset();
         button.style = "display: none ";
-        status.innerHTML = "Thanks!";
+        status.innerHTML = "Thank you! We will email you when we open up access.";
       }
   
       function error() {
