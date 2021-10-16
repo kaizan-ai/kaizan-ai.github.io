@@ -6,137 +6,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="AI that augments human intelligence">
   <title>Kaizan</title>
+  <link rel="stylesheet" href="/static/css/pure.css">
+  <link rel="stylesheet" href="/static/css/font.css">
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileImage" content="/static/img/favicon-270x270.png">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#FEF9EF">
-  <script>
-    // Segment
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="40XvwUv5IwS0oXtNfhvxjpeXqAOQFqDu";analytics.SNIPPET_VERSION="4.13.2";
-    analytics.load("40XvwUv5IwS0oXtNfhvxjpeXqAOQFqDu");
-    analytics.page();
-    }}();
-  </script>
 <body>
-  <div id="page-wrapper">
-    <div class="ribbon-container">
-      <div class="ribbon"><a href="https://kaizan.freshteam.com/jobs">We&nbsp;are&nbsp;hiring!</a></div>
-    </div>
-    <section id="banner">
-      <div class="inner">
-        <div class="content">
-          <video width="100%" controls>
-            <source src="/static/img/demo/demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video> 
-        </div>
-      </div>
-    </section>
-    <section id="wrapper">
-
-      <div class="inner">
-        <div id="logo">
-          <img src="/static/img/kaizan-logo.svg" alt="Kaizan Logo">
-        </div>
-
-        <h1 class="hidden">Kaizan</h1>
-        <h2>
-          AI that augments the intelligence of you and your team <span class="blink">_</span>
-        </h2>
-        <p>We are currently in a closed alpha. Please sign up to get on the waitlist.</p>
-        <p><a href="#open-modal" class="button primary icon solid fa-paper-plane" style="cursor: pointer;">Sign up!</a></p>
-
-        <a href="/privacy-policy.html">Privacy Policy</a>
-      </div>
-      <footer>
-
-        <ul class="icons">
-          <li>
-            <a href="https://twitter.com/kaizan_ai" class="icon brands fa-twitter" style="cursor: pointer;"><span
-                class="label">Twitter</span></a>
+  <div id="wrapper">
+    <div id="header">
+      <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="https://kaizan.ai">
+          <img src="/static/img/kaizan-logo.svg" alt="KAIZAN logo">
+        </a>
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item">
+            <a href="https://blog.kaizan.ai/" class="pure-menu-link">Blog</a>
           </li>
-          <li>
-            <a href="https://www.linkedin.com/company/kaizan/" class="icon brands fa-linkedin" style="cursor: pointer;"><span class="label">LinkedIn</span></a>
+          <li class="pure-menu-item">
+            <a href="https://kaizan.notion.site/Privacy-FAQ-c8784013c5df436e93aa2a79ea54098c" class="pure-menu-link">Privacy</a>
           </li>
-          <li>
-            <a href="https://github.com/kaizan-ai" class="icon brands fa-github" style="cursor: pointer;"><span
-                class="label">GitHub</span></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/kaizan_ai/" class="icon brands fa-instagram"
-              style="cursor: pointer;"><span class="label">Instagram</span></a>
+          <li class="pure-menu-item">
+            <a href="https://kaizan.notion.site/Job-Specs-We-are-hiring-573ce58ef97c46bbbb0b4f16c0165dd0" class="pure-menu-link">Join Us</a>
           </li>
         </ul>
-      </footer>
-    </section>
-  </div>
-  </div>
-  <div id="open-modal" class="modal-window">
-    <div>
-      <a href="#" title="Close" class="modal-close" onclick="document.getElementById('open-modal').style.display = hidden;">x</a>
-      <h1>Enter your details</h1>
-      <div>
-        <form action="https://formspree.io/f/mleoadod" method="POST" id="signup-form">
-          <input type="text" name="name" placeholder="Your name"><br>
-          <input type="email" name="email" placeholder="Your email"><br>
-          <input type="submit" value="Send" class="button primary" id="signup-form-submit-button">
-        </form>
-        <div id="signup-form-status"></div>
       </div>
+    </div>
+    <div id="content">
+      <h1>
+        Get an AI to write your notes<br>
+        and share them with who<br>
+        needs to know
+      </h1>
+      <p>Kaizan is your team’s second brain. Kaizan understands what’s important from each team interaction so it can write and share it with those that need to know, giving you more time for the work that matters.</p>
+      <p><a href="https://8liayr44809.typeform.com/to/GZHQicXi?utm_source=kaizanweb" class="pure-button">Get Early Access</a></p>
+    </div>
+
+    <div id="footer">
+      <div class="col1">&copy; 2021 Kaizan. All rights reserved. Made with &hearts; in London.</div>
+      <div class="col2">
+        <a href=""><img src="/static/img/linkedin.svg" alt="Kaizan LinkedIn"></a>
+        <a href=""><img src="/static/img/twitter.svg" alt="Kaizan Twitter"></a>
+        <a href=""><img src="/static/img/facebook.svg" alt="Kaizan Facebook"></a>
+        <a href=""><img src="/static/img/instagram.svg" alt="Kaizan Instagram"></a>
       </div>
+    </div>
   </div>
-  <!-- Kaizan Ltd. Registered in England & Wales with company number 13082820. -->
-  <script>
-    /* Sign up form */
-    window.addEventListener("DOMContentLoaded", function() {
-  
-      // get the form elements defined in your form HTML above
-      
-      var form = document.getElementById("signup-form");
-      var button = document.getElementById("signup-form-submit-button");
-      var status = document.getElementById("signup-form-status");
-  
-      // Success and Error functions for after the form is submitted
-      
-      function success() {
-        form.reset();
-        button.style = "display: none ";
-        status.innerHTML = "Thank you! We will email you when we open up access.";
-      }
-  
-      function error() {
-        status.innerHTML = "Oops! There was a problem.";
-      }
-  
-      // handle the form submission event
-  
-      form.addEventListener("submit", function(ev) {
-        ev.preventDefault();
-        var data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-      });
-    });
-    
-    // helper function for sending an AJAX request
-  
-    function ajax(method, url, data, success, error) {
-      var xhr = new XMLHttpRequest();
-      xhr.open(method, url);
-      xhr.setRequestHeader("Accept", "application/json");
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
-          success(xhr.response, xhr.responseType);
-        } else {
-          error(xhr.status, xhr.response, xhr.responseType);
-        }
-      };
-      xhr.send(data);
-    }
-  </script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-9K8HRNX5T6"></script>
   <script>
