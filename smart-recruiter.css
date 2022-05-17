@@ -1,0 +1,479 @@
+.smartWidget *,
+.smartWidget *:focus,
+.smartWidget *:active {
+    outline: none;
+    outline: 0;
+    outline-offset: -2px;
+    -o-transform: rotate(0);
+}
+
+.smartWidget *::-moz-focus-inner {
+    border: none;
+}
+
+.srJobList {
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: auto;
+    height: auto;
+    background: #ffffff none;
+    border-collapse: separate;
+    border-spacing: 0px;
+    border-collapse: collapse\9;
+}
+
+.srJobList .srJobListTitles * {
+    margin: 0;
+    padding: 8px 10px;
+    border: none;
+    /*background: #969696 url(./widget_list_bg.png) repeat-x top left;*/
+    background: #969696 none;
+    color: #292929;
+    text-align: left;
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+th {
+    white-space: nowrap;
+    text-wrap: none;
+}
+
+nobr {
+    padding: 0 !important;
+    background: transparent none !important;
+}
+
+.srJobList .srJobListJobEven * {
+    margin: 0;
+    padding: 6px 10px;
+    border: none;
+    background-color: #e0e0e0;
+    /*background-image: url(./widget_list_bg.png);*/
+    background-repeat: repeat-x;
+    background-position: left top;
+    color: #3d3d3d;
+    text-align: left;
+    font-family: verdana;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.srJobList .srJobListJobEven:hover * {
+    border: none;
+    background-color: #99ccff;
+    /*background-image: url(./widget_list_bg.png);*/
+    background-repeat: repeat-x;
+    background-position: left top;
+}
+
+tr.srJobListJobEven {
+    cursor: pointer;
+}
+
+.srJobList .srJobListJobOdd * {
+    margin: 0;
+    padding: 6px 10px;
+    border: none;
+    background-color: #f7f7f7;
+    /*background-image: url(./widget_list_bg.png);*/
+    background-repeat: repeat-x;
+    background-position: left top;
+    color: #3d3d3d;
+    text-align: left;
+    font-family: Larsseit, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.srJobList .srJobListJobOdd:hover * {
+    border: none;
+    background-color: #99ccff;
+    /*background-image: url(./widget_list_bg.png);*/
+    background-repeat: repeat-x;
+    background-position: left top;
+}
+
+tr.srJobListJobOdd {
+    cursor: pointer;
+}
+
+.srJobListJobTitle {
+    width: auto;
+    min-width: 94px;
+}
+
+.srJobListTypeOfEmployment {
+    width: auto;
+    min-width: 120px;
+}
+
+.srJobListDepartment {
+    width: auto;
+    min-width: 74px;
+}
+
+.srJobListLocation {
+    width: auto;
+    min-width: 64px;
+}
+
+.srJobListOccupationalArea {
+    width: auto;
+    min-width: 110px;
+}
+
+.srJobListPublishedSince {
+    width: auto;
+    min-width: 114px;
+}
+
+.srSearch,
+.srPages {
+    margin: 0 0 8px 0;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    width: auto;
+    min-height: 25px;
+    background: #eeeeee none;
+}
+
+.srSearch {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.srPages {
+    float: right;
+    margin: 8px 0 0 0;
+    padding: 8px;
+}
+
+.srSearchForm {
+    margin: 0;
+    padding-right: 10px;
+    height: 35px;
+    overflow: hidden;
+
+    border-right: 1px solid #cccccc;
+    margin-right: -1px;
+
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.srSearchInput {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 2px 0 5px;
+    border: 1px solid #cccccc;
+    border-radius: 2px 0 0 2px;
+    min-width: 150px;
+    width: auto;
+    height: 23px;
+    background: #ffffff none;
+    color: #666666;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 23px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-box-shadow: inset 0 1px 1px 0 #eeeeee;
+    box-shadow: inset 0 1px 1px 0 #eeeeee;
+}
+
+.srSearchInput:focus {
+    border: 1px solid #aaaaaa;
+    -webkit-box-shadow: inset 0 0 0 0 #eeeeee;
+    box-shadow: inset 0 0 0 0 #eeeeee;
+}
+
+.srSearchButton {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 5px;
+    border: 1px solid #cccccc;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+    width: auto;
+    height: 23px;
+    background: #f1f1f1 none;
+    color: #272525;
+    text-align: center;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 23px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.srSearchButton:hover {
+    border: 1px solid #aaaaaa;
+    border-left: none;
+}
+
+.srSearchOption {
+    position: relative;
+    margin: 0;
+    height: 35px;
+}
+
+.srSearchOption,
+.srSearchForm {
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: -1px;
+    flex-shrink: 1;
+}
+
+.srSearchOption:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    margin: 0 -1px 0 0;
+    padding: 0;
+    border-right: 1px solid #cccccc;
+    width: 0;
+    height: 35px;
+}
+
+.srSearchOptionText,
+.srPagesText,
+.srFilterRemote {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 5px 34px 5px 10px;
+    border: none;
+    width: auto;
+    height: auto;
+    color: #272525;
+    text-align: center;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.srSearchOptionText,
+.srFilterRemote {
+    min-width: 82px;
+    width: auto;
+    text-align: left;
+    line-height: 35px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.srSearchOptionText:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    margin: 0 0 0 0;
+    padding: 0;
+    border-left: 1px solid #cccccc;
+    width: 0;
+    height: 35px;
+}
+
+.srSearchOptionText:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    display: block;
+    margin: 0 0 0 0;
+    padding: 0;
+    border-top: 5px solid #676767;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.srSearchOptionList {
+    position: absolute;
+    top: 31px;
+    left: 0;
+    display: none;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #cccccc;
+    border-top: none;
+
+    width: 125px;
+    min-height: 16px;
+    max-height: 240px;
+    background: #fdfdfd none;
+    z-index: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.srSearchOptionListElement,
+.srSearchOptionListElementChecked {
+    display: table;
+    float: left;
+    margin: 0;
+    padding: 4px 0;
+    width: 125px;
+    min-height: 18px;
+    vertical-align: middle;
+}
+
+.srSearchOptionListElement:hover {
+    background: #f8f8f8 none;
+}
+
+.srSearchOptionListElementChecked {
+    background: #f8f8f8 none;
+}
+
+.srSearchOptionListElementText {
+    display: table-cell;
+    margin: 0 0 0 8px;
+    padding: 5px 17px 5px 5px;
+    width: 96px;
+    font-family: arial;
+    font-size: 11px;
+    font-weight: 400;
+    color: #444444;
+    text-align: left;
+    line-height: 10px;
+    vertical-align: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+.srSearchOptionListElementChecked>.srSearchOptionListElementText {
+    color: #055baa;
+}
+
+.srPagesText {
+    padding: 3px 8px;
+    cursor: default;
+}
+
+.srPagesTextCenter:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    margin: -8px 0 0 0;
+    padding: 0;
+    border-left: 1px solid #cccccc;
+    width: 0;
+    height: 35px;
+}
+
+.srPagesTextCenter:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    margin: -8px 0 0 0;
+    padding: 0;
+    border-right: 1px solid #cccccc;
+    width: 0;
+    height: 35px;
+}
+
+.srPagesTextPrevious,
+.srPagesTextNext {
+    cursor: pointer;
+}
+
+.srPagesTextPrevious:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: block;
+    margin: 5px 0 0 0;
+    padding: 0;
+    border-top: 5px solid transparent;
+    border-right: 5px solid #666666;
+    border-bottom: 5px solid transparent;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.srPagesTextNext:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    display: block;
+    margin: 5px 0 0 0;
+    padding: 0;
+    border-top: 5px solid transparent;
+    border-left: 5px solid #666666;
+    border-bottom: 5px solid transparent;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+}
+
+.none {
+    height: 0;
+    border: none;
+}
+
+.srFilterRemote {
+    padding-left: 10px;
+}
+
+.srFilterRemoteElement {
+    vertical-align: middle;
+}
+
+.srFilterRemoteElementText {
+    position: relative;
+    top: 1px;
+    padding-left: 3px;
+}
+
+.srFilterRemoteElementText:after {
+    position: relative;
+    top: 2px;
+}
+
+.srRemoteLocation:after,
+.srFilterRemoteElementText:after {
+    margin-left: 5px;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='15' height='15' viewBox='0 0 22 22'%3E%3Cpath d='M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13C15,12.45 14.55,12 14,12H8V10H10C10.55,10 11,9.55 11,9V7H13C14.1,7 15,6.1 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.05,19.44 4,16.08 4,12C4,11.38 4.08,10.78 4.21,10.21L9,15V16C9,17.1 9.9,18 11,18M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2Z'/%3E%3C/svg%3E");
+}
+
+.display--none {
+    display: none;
+}
