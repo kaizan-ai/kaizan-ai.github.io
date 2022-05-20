@@ -41,6 +41,14 @@ th {
     text-wrap: none;
 }
 
+th, td {
+    padding: 10px;
+}
+
+td {
+    cursor: pointer;
+}
+
 nobr {
     padding: 0 !important;
     background: transparent none !important;
