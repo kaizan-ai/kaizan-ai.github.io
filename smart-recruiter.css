@@ -69,10 +69,6 @@ nobr {
     background-position: left top;
 }
 
-tr.srJobListJobEven {
-    cursor: pointer;
-}
-
 .srJobList .srJobListJobOdd * {
     margin: 0;
     padding: 6px 10px;
@@ -94,10 +90,6 @@ tr.srJobListJobEven {
     /*background-image: url(./widget_list_bg.png);*/
     background-repeat: repeat-x;
     background-position: left top;
-}
-
-tr.srJobListJobOdd {
-    cursor: pointer;
 }
 
 .srJobListJobTitle {
