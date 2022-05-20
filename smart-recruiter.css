@@ -13,7 +13,7 @@
 
 .srJobList {
     margin: 0;
-    padding: 0;
+    padding: 10px;
     border: none;
     width: auto;
     height: auto;
@@ -39,14 +39,6 @@
 th {
     white-space: nowrap;
     text-wrap: none;
-}
-
-th, td {
-    padding: 10px;
-}
-
-td {
-    cursor: pointer;
 }
 
 nobr {
@@ -75,6 +67,7 @@ nobr {
     /*background-image: url(./widget_list_bg.png);*/
     background-repeat: repeat-x;
     background-position: left top;
+    cursor: pointer;
 }
 
 .srJobList .srJobListJobOdd * {
@@ -98,6 +91,7 @@ nobr {
     /*background-image: url(./widget_list_bg.png);*/
     background-repeat: repeat-x;
     background-position: left top;
+    cursor: pointer;
 }
 
 .srJobListJobTitle {
