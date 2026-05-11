@@ -1213,12 +1213,12 @@ def render_home() -> str:
                loop playsinline preload="metadata"></video>
         <button class="overlay" type="button" data-hero-overlay aria-label="Play video">
           <div class="head">
-            <span>▶ KAIZAN · 90 SEC OVERVIEW</span>
-            <span>00:00 / 01:30</span>
+            <span>▶ KAIZAN · 2 MIN OVERVIEW</span>
+            <span>00:00 / 02:07</span>
           </div>
           <div class="play-row">
             <div class="play">▶</div>
-            <div class="play-title">See Kaizan in 90 seconds</div>
+            <div class="play-title">See Kaizan in action</div>
           </div>
         </button>
       </div>
