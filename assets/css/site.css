@@ -1344,7 +1344,7 @@ button { font-family: inherit; }
 
   .kz-personas-grid, .kz-trust-cards, .kz-case-grid, .kz-insights-cards, .kz-investors-logos,
   .kz-care-grid, .kz-objections, .kz-persona-ribbon-grid, .kz-composite,
-  .kz-helpers-tabs {
+  .kz-helpers-tabs, .kz-pricing-tiers, .kz-pricing-included {
     grid-template-columns: 1fr 1fr;
   }
   .kz-composite { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -1396,9 +1396,15 @@ button { font-family: inherit; }
   .kz-pillars, .kz-care, .kz-pipeline, .kz-stat-row,
   .kz-personas-grid, .kz-trust-cards, .kz-case-grid, .kz-insights-cards,
   .kz-care-grid, .kz-objections, .kz-persona-ribbon-grid,
-  .kz-helpers-tabs, .kz-composite .grid, .kz-investors-logos {
+  .kz-helpers-tabs, .kz-composite .grid, .kz-investors-logos,
+  .kz-pricing-tiers, .kz-pricing-included {
     grid-template-columns: 1fr;
   }
+  .kz-included-row {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+  .kz-included-row .tag { padding-top: 0; }
 
   .kz-tour-tabs { gap: 6px; }
   .kz-product-body { grid-template-columns: 1fr; }
@@ -1543,138 +1549,149 @@ button { font-family: inherit; }
 }
 
 /* ── Pricing page ─────────────────────────────────────────────── */
-.kz-pricing {
-  margin: 24px var(--kz-gutter);
-  border: 1px solid rgba(0,0,0,.18);
-  background: var(--kz-cream);
+/* ── Pricing page ────────────────────────────────────────────────
+   Light-touch redesign aligned to the rest of the site:
+   - section padding via kz-section (not bespoke margins)
+   - tier cards: airy, soft shadow, no internal rules
+   - "Growth" tier highlighted by yellow tint, no pill
+   - 4-up horizontal "included in every tier" pills (1 line each)
+*/
+/* "Included in every tier" — vertical stack of full-width rows.
+   Deliberately a different SHAPE from the tier cards above (which are
+   vertical cards in a horizontal row) so the eye doesn't read this as a
+   second feature-comparison grid. */
+.kz-included-list {
+  margin-top: 28px;
+  border-top: 1px solid var(--kz-line);
 }
-.kz-pricing-hero {
-  background: var(--kz-yellow);
-  padding: 28px 36px 26px;
+.kz-included-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 280px;
+  column-gap: 32px;
+  align-items: flex-start;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--kz-line);
 }
-.kz-pricing-hero .head {
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding-bottom: 14px; border-bottom: 1.5px solid #000;
+.kz-included-row .tag {
+  font-family: var(--kz-mono); font-size: 10px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--kz-mute);
+  padding-top: 6px;
 }
-.kz-pricing-hero .brand { font-size: 22px; font-weight: 800; letter-spacing: -0.025em; }
-.kz-pricing-hero h1 {
-  font-size: 30px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.04;
-  margin: 18px 0 0;
+.kz-included-row .body .name {
+  font-size: 22px; font-weight: 600; letter-spacing: -0.02em;
+  line-height: 1.15;
 }
-.kz-pricing-hero .muted { font-weight: 300; color: rgba(0,0,0,.65); }
-.kz-pricing-hero p {
-  margin: 14px 0 0; max-width: 1080px;
-  font-size: 13.5px; font-weight: 500; line-height: 1.5;
+.kz-included-row .body .sub {
+  font-size: 14px; color: var(--kz-mute); line-height: 1.55;
+  margin-top: 8px; max-width: 620px;
 }
-
-.kz-pricing-section-head { padding: 18px 36px 0; border-bottom: 1.5px solid #000; padding-bottom: 8px; margin-bottom: 0; }
+.kz-included-row .features {
+  display: flex; flex-direction: column; gap: 6px;
+  padding-top: 6px;
+}
+.kz-included-row .features span {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  font-size: 13px; color: rgba(0,0,0,.78);
+}
+.kz-included-row .features span::before {
+  content: '→'; color: var(--kz-yellow); font-weight: 700;
+  font-size: 12px; flex-shrink: 0;
+}
 
 .kz-pricing-tiers {
-  padding: 22px 36px 6px;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
 }
 .kz-tier {
   position: relative;
-  background: var(--kz-cream); border: 1.25px solid #000; border-radius: 5px;
-  padding: 18px 16px 16px;
-  display: flex; flex-direction: column; gap: 10px;
+  background: var(--kz-cream);
+  border: 1px solid var(--kz-line);
+  border-radius: 14px;
+  padding: 28px 26px 26px;
+  display: flex; flex-direction: column; gap: 16px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 16px 40px -22px rgba(40,30,15,.18);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.kz-tier .sweet {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-  background: #000; color: var(--kz-yellow); font-weight: 800;
-  font-size: 9px; letter-spacing: .22em; text-transform: uppercase;
-  padding: 4px 10px; border-radius: 2px;
+.kz-tier:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 2px rgba(40,30,15,.06), 0 24px 48px -20px rgba(40,30,15,.28);
 }
-.kz-tier .name { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-.kz-tier .clients { font-size: 13px; font-weight: 500; color: rgba(0,0,0,.6); line-height: 1.1; }
+.kz-tier.is-sweet {
+  background: var(--kz-yellow-soft);
+  border-color: rgba(0,0,0,.18);
+}
+.kz-tier .ribbon {
+  position: absolute; top: 14px; right: -6px;
+  background: var(--kz-ink); color: var(--kz-yellow);
+  font-family: var(--kz-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px 0 0 4px;
+  box-shadow: 0 6px 16px -8px rgba(0,0,0,.4);
+}
+.kz-tier .ribbon::after {
+  content: ''; position: absolute; right: 0; bottom: -6px;
+  border-top: 6px solid #4a3300;
+  border-right: 6px solid transparent;
+}
+.kz-tier .name {
+  font-size: 26px; font-weight: 700; letter-spacing: -0.025em; line-height: 1;
+}
+.kz-tier .clients {
+  font-size: 14px; font-weight: 500; color: var(--kz-mute); line-height: 1.3;
+}
 .kz-tier .clients .bold {
-  font-size: 24px; font-weight: 800; color: var(--kz-ink);
-  letter-spacing: -0.025em; margin-top: 2px; line-height: 1.05;
+  font-family: var(--kz-display); font-weight: 400; font-size: 28px;
+  color: var(--kz-ink); letter-spacing: -0.025em; line-height: 1.05;
+  margin-top: 4px;
 }
-.kz-tier .clients .trail { font-size: 13px; font-weight: 500; color: rgba(0,0,0,.6); }
-.kz-tier .rule { border-top: 1px solid rgba(0,0,0,.18); height: 0; }
+.kz-tier .clients .trail {
+  font-family: var(--kz-sans); font-size: 14px; font-weight: 500;
+  color: var(--kz-mute); letter-spacing: 0;
+}
+.kz-tier .rule { border-top: 1px solid rgba(0,0,0,.10); height: 0; }
+.kz-tier.is-sweet .rule { border-color: rgba(0,0,0,.18); }
+.kz-tier .price {
+  display: flex; flex-direction: column; gap: 6px;
+}
 .kz-tier .price .line {
-  font-size: 34px; font-weight: 800; letter-spacing: -0.035em; line-height: 1;
+  font-family: var(--kz-display); font-weight: 400;
+  font-size: 44px; letter-spacing: -0.035em; line-height: 1;
+  color: var(--kz-ink);
 }
-.kz-tier .price .label { font-size: 11px; font-weight: 600; color: rgba(0,0,0,.6); margin-top: 4px; }
+.kz-tier .price .label {
+  font-size: 12px; font-weight: 600; color: var(--kz-mute);
+  letter-spacing: 0;
+}
 .kz-tier .price .per {
-  display: inline-block; margin-top: 8px;
+  display: inline-flex; align-self: flex-start;
   background: var(--kz-yellow); color: var(--kz-ink);
-  font-size: 10.5px; font-weight: 700;
-  padding: 4px 9px; border-radius: 2px; letter-spacing: -0.005em;
+  font-size: 12px; font-weight: 600;
+  padding: 5px 11px; border-radius: 999px;
+  margin-top: 4px;
 }
+.kz-tier.is-sweet .price .per { background: var(--kz-ink); color: var(--kz-yellow); }
 .kz-tier .eyebrow {
-  font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase;
-  font-weight: 800; color: rgba(0,0,0,.55);
+  font-family: var(--kz-mono); font-size: 10px; letter-spacing: .16em;
+  text-transform: uppercase; font-weight: 600; color: var(--kz-mute);
 }
-.kz-tier .bullets { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+.kz-tier .bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 12px;
+}
 .kz-tier .bullets li {
-  display: grid; grid-template-columns: 14px 1fr; column-gap: 6px;
-  font-size: 11px; font-weight: 500; line-height: 1.34;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  display: grid; grid-template-columns: 14px 1fr; column-gap: 8px;
+  font-size: 13px; font-weight: 400; line-height: 1.45;
+  color: rgba(0,0,0,.78);
 }
-.kz-tier .bullets li:last-child { border-bottom: none; }
-.kz-tier .bullets .arr { color: var(--kz-ink); font-weight: 700; }
-.kz-tier .bullets b { font-weight: 700; }
-.kz-tier.is-sweet { /* same shape, sweet pill is the only adornment */ }
+.kz-tier .bullets .arr {
+  color: var(--kz-ink); font-weight: 600; font-size: 13px;
+}
+.kz-tier .bullets b { font-weight: 600; color: var(--kz-ink); }
 
-.kz-pricing-divider {
-  margin: 14px 36px 0;
-  border-top: 1.5px solid #000; border-bottom: 1.5px solid #000;
-  padding: 10px 0; text-align: center;
-}
-.kz-pricing-divider h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.1; margin: 0; }
-.kz-pricing-divider .sub { margin-top: 5px; font-size: 11px; font-weight: 600; color: rgba(0,0,0,.6); letter-spacing: .06em; }
-
-.kz-pricing-helpers {
-  padding: 14px 36px 0;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
-}
-.kz-helper {
-  background: var(--kz-yellow-soft); border: 1.25px solid #000; border-radius: 5px;
-  padding: 14px; display: flex; flex-direction: column; gap: 8px;
-}
-.kz-helper.is-yellow { background: var(--kz-yellow); }
-.kz-helper .tag {
-  font-size: 9px; letter-spacing: .16em; text-transform: uppercase;
-  font-weight: 800; color: rgba(0,0,0,.7);
-}
-.kz-helper .name { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
-.kz-helper .rule { border-top: 1px solid rgba(0,0,0,.25); height: 0; }
-.kz-helper .sub {
-  font-size: 9.5px; font-weight: 800; letter-spacing: .16em;
-  text-transform: uppercase; text-align: center;
-  padding-bottom: 6px; border-bottom: 0.5px solid rgba(0,0,0,.35);
-  line-height: 1.3;
-}
-.kz-helper .promise { font-size: 11px; font-weight: 600; line-height: 1.38; }
-.kz-helper .promise b { font-weight: 800; }
-.kz-helper .promise i { font-style: italic; }
-.kz-helper .bullets { list-style: none; padding: 0; margin: 2px 0 0; display: flex; flex-direction: column; }
-.kz-helper .bullets li {
-  display: grid; grid-template-columns: 10px 1fr; column-gap: 5px;
-  font-size: 10px; font-weight: 500; line-height: 1.36;
-  padding: 5px 0;
-  border-top: 1px solid rgba(0,0,0,.18);
-}
-.kz-helper .bullets li:first-child { border-top: none; }
-.kz-helper .bullets b { font-weight: 800; }
-
-.kz-pricing-closing {
-  padding: 16px 36px 14px;
-}
-.kz-pricing-closing .row {
-  border: 1px solid #000; border-radius: 3px; padding: 10px 14px;
-  display: flex; gap: 14px; align-items: stretch;
-}
-.kz-pricing-closing .lbl {
-  flex-shrink: 0; padding-right: 14px; border-right: 1px solid rgba(0,0,0,.35);
-  display: flex; align-items: center; font-size: 9.5px;
-}
-.kz-pricing-closing p { font-size: 10.5px; font-weight: 500; line-height: 1.45; margin: 0; }
-.kz-pricing-closing .fine {
-  font-size: 10px; font-weight: 500; color: rgba(0,0,0,.55); line-height: 1.45; margin-top: 8px;
+.kz-pricing-fine {
+  margin: 28px 0 0;
+  font-size: 12px; color: var(--kz-mute); line-height: 1.6;
+  max-width: 860px;
 }
 
 /* ── Security page ────────────────────────────────────────────── */

@@ -680,9 +680,12 @@ def asset_v(rel: str) -> str:
 def page_head(title: str, depth: int, description: str = '') -> str:
     p = relpath(depth)
     desc = description or 'Kaizan — client super intelligence for professional services firms.'
-    tokens_v = asset_v('assets/css/tokens.css')
-    site_css_v = asset_v('assets/css/site.css')
-    site_js_v = asset_v('assets/js/site.js')
+    # Cache-busting query strings deliberately disabled — easier on the CDN.
+    # If you need to force a refresh after deploying CSS/JS, set these to
+    # asset_v('assets/css/tokens.css') etc.
+    tokens_v = ''
+    site_css_v = ''
+    site_js_v = ''
     return dedent(f'''\
         <!doctype html>
         <html lang="en">
@@ -2604,41 +2607,18 @@ PRICING_TIERS = [
 ]
 
 PRICING_HELPERS = [
-    dict(yellow=True, tag='AI ASSISTANT', name='AI Assistant for the Team',
-         sub='The AI your team talks to', promise_bold='',
-         promise='Joins every meeting, knows every client conversation, drafts what you need, updates your tools — accessed through your LLM of choice.',
-         bullets=[
-             ('Interact via your ', 'LLM of choice', ' — ChatGPT, Claude, Gemini, Copilot'),
-             ('Auto-updates your project management & CRM', '', ''),
-             ('Search all your unified client data instantly', '', ''),
-         ]),
-    dict(yellow=False, tag='AI HELPER', name='Client ROI',
-         sub='Working proactively across every client, 24/7 · Fully interactive',
-         promise_bold='Proactively increase the ROI on every client',
-         promise=' by leveraging all your unified data — turning conversations, emails, and project activity into demonstrable value.',
-         bullets=[
-             ('Auto-built QBR decks from real delivery activity', '', ''),
-             ('Value-gap alerts before review meetings', '', ''),
-             ('Renewal risk scoring tied to demonstrable value', '', ''),
-         ]),
-    dict(yellow=False, tag='AI HELPER', name='Relationships',
-         sub='Working proactively across every client, 24/7 · Fully interactive',
-         promise_bold='Grow CSAT with proactive recommendations',
-         promise=' — Kaizan flags weakening relationships before they cost you a renewal and tells your team exactly what to do next.',
-         bullets=[
-             ('Disengagement flags when stakeholder activity drops', '', ''),
-             ('Stakeholder coverage maps — who’s covered, who’s not', '', ''),
-             ('Auto-drafted re-engagement and coverage outreach', '', ''),
-         ]),
-    dict(yellow=False, tag='AI HELPER', name='Expansion',
-         sub='Working proactively across every client, 24/7 · Fully interactive',
-         promise_bold='Maximise client revenue',
-         promise=' with AI Helpers conducting market research, drafting outbound emails, and suggesting solutions matched to each client’s stated objectives.',
-         bullets=[
-             ('Market research run continuously per account', '', ''),
-             ('Outbound expansion emails drafted with full context', '', ''),
-             ('Solutions matched to each client’s stated objectives', '', ''),
-         ]),
+    dict(tag='AI ASSISTANT', name='For the Team',
+         sub='Joins every meeting, knows every client conversation, drafts what you need and updates your tools — accessed through your LLM of choice.',
+         features=['LLM of choice', 'Auto-updates CRM & PM', 'Search all unified data']),
+    dict(tag='AI HELPER', name='Client ROI',
+         sub='Proactively increase the ROI on every client by turning conversations, emails and project activity into demonstrable value.',
+         features=['Auto-built QBR decks', 'Value-gap alerts', 'Renewal risk scoring']),
+    dict(tag='AI HELPER', name='Relationships',
+         sub='Grow CSAT with proactive recommendations — Kaizan flags weakening relationships before they cost you a renewal.',
+         features=['Disengagement flags', 'Stakeholder coverage maps', 'Drafted re-engagement']),
+    dict(tag='AI HELPER', name='Expansion',
+         sub='Maximise client revenue with continuous market research, drafted outbound, and solutions matched to each client’s stated objectives.',
+         features=['Continuous market research', 'Drafted outbound', 'Solutions matched to objectives']),
 ]
 
 
@@ -2648,12 +2628,12 @@ def render_pricing() -> str:
             f'<li><span class="arr">→</span><span><b>{E(b[0])}</b>{E(b[1])}</span></li>'
             for b in t['bullets']
         )
-        clients_trail = f'<span class="trail">{E(t["clients_trail"])}</span>' if t.get('clients_trail') else ''
-        sweet = '<div class="sweet">SWEET SPOT</div>' if t.get('sweet') else ''
+        trail = f'<span class="trail">{E(t["clients_trail"])}</span>' if t.get('clients_trail') else ''
+        ribbon = '<div class="ribbon">Sweet spot</div>' if t.get('sweet') else ''
         return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
-          {sweet}
+          {ribbon}
           <div class="name">{E(t["name"])}</div>
-          <div class="clients">{E(t["clients"])}<div class="bold">{E(t["clients_bold"])}{clients_trail}</div></div>
+          <div class="clients">{E(t["clients"])}<div class="bold">{E(t["clients_bold"])}{trail}</div></div>
           <div class="rule"></div>
           <div class="price">
             <div class="line">{E(t["price"])}</div>
@@ -2666,78 +2646,48 @@ def render_pricing() -> str:
         </div>'''
     tiers_html = '\n'.join(tier_card(t) for t in PRICING_TIERS)
 
-    def helper_card(h):
-        bullets = '\n'.join(
-            f'<li><b>•</b> <span>{E(b[0])}{(("<b>" + E(b[1]) + "</b>") if b[1] else "")}{E(b[2])}</span></li>'
-            for b in h['bullets']
-        )
-        promise = (f'<b>{E(h["promise_bold"])}</b><i>{E(h["promise"])}</i>' if h['promise_bold']
-                   else f'<i>{E(h["promise"])}</i>')
-        return f'''<div class="kz-helper{' is-yellow' if h['yellow'] else ''}">
+    helpers_rows = '\n'.join(
+        f'''<div class="kz-included-row">
           <div class="tag">{E(h["tag"])}</div>
-          <div class="name">{E(h["name"])}</div>
-          <div class="rule"></div>
-          <div class="sub">{E(h["sub"])}</div>
-          <div class="promise">{promise}</div>
-          <ul class="bullets">{bullets}</ul>
-        </div>'''
-    helpers_html = '\n'.join(helper_card(h) for h in PRICING_HELPERS)
+          <div class="body">
+            <div class="name">{E(h["name"])}</div>
+            <div class="sub">{E(h["sub"])}</div>
+          </div>
+          <div class="features">{' '.join(f'<span>{E(f)}</span>' for f in h["features"])}</div>
+        </div>''' for h in PRICING_HELPERS
+    )
 
     body = f'''
     {nav_html(1, active='Pricing')}
 
-    <section class="kz-pricing">
-      <!-- 1. HERO BAND -->
-      <div class="kz-pricing-hero">
-        <div class="head">
-          <div class="brand">Kaizan</div>
-          <div class="kz-eyebrow">PRICING &amp; PACKAGING</div>
-        </div>
-        <h1>
-          Pay for the number of clients we help you manage and grow,
-          <span class="muted">unlimited users.</span>
-        </h1>
-        <p>
-          Priced by the <b>size of the client portfolio Kaizan covers</b>. Every tier includes unlimited
-          users, unified client data, full API &amp; MCP access, the AI Assistant + all three AI Helpers,
-          and a dedicated Account Manager — so you get maximum ROI from day one.
-        </p>
-      </div>
+    <!-- HERO -->
+    <section class="kz-section-tight" style="padding-top:60px;">
+      <div class="kz-eyebrow">Pricing</div>
+      <h1 class="kz-h1 kz-h1-xl" style="margin-top:18px;max-width:1100px;">
+        Pay for clients we <span class="kz-mark">manage and grow</span>.
+      </h1>
+      <p class="kz-lede" style="margin-top:22px;max-width:760px;">
+        Priced by the size of the portfolio Kaizan covers. <strong style="color:var(--kz-ink);font-weight:600;">Unlimited users</strong> &amp; the full product on every tier.
+      </p>
+    </section>
 
-      <!-- 2. CHOOSE YOUR FIT -->
-      <div class="kz-pricing-section-head">
-        <div class="kz-eyebrow">CHOOSE YOUR FIT</div>
-      </div>
-
-      <!-- 3. PRICING CARDS -->
+    <!-- TIER CARDS -->
+    <section class="kz-section" style="padding-top:8px;">
       <div class="kz-pricing-tiers">{tiers_html}</div>
+      <p class="kz-pricing-fine">
+        All prices GBP, annual commit. Monthly billing available at 10% uplift.
+        Fair-use limits on storage, API calls and integration volumes — full thresholds in your contract.
+        Custom AI Helpers, custom integrations and bespoke engineering quoted separately.
+      </p>
+    </section>
 
-      <!-- 4. INCLUDED IN EVERY PACKAGE -->
-      <div class="kz-pricing-divider">
-        <h3>Included In Every Package</h3>
-        <div class="sub">One Assistant your team talks to · Three Helpers working autonomously across every account</div>
-      </div>
-
-      <!-- 5. HELPERS -->
-      <div class="kz-pricing-helpers">{helpers_html}</div>
-
-      <!-- 6. CLOSING STRIP -->
-      <div class="kz-pricing-closing">
-        <div class="row">
-          <div class="kz-eyebrow lbl">HOW TIERS WORK</div>
-          <p>
-            Every tier includes <b>the full Kaizan product</b> — same AI Assistant, same three AI Helpers,
-            same intelligence, same dedicated Account Manager. What changes is <b>portfolio scale</b> and
-            the <b>level of human service</b> wrapped around it. Pick the tier that matches the size of
-            your strategic book today; upgrade when it grows.
-          </p>
-        </div>
-        <p class="fine">
-          Fair-use limits apply on storage, API calls, and integration volumes — full thresholds in your
-          contract. Custom AI Helpers, custom integrations, and bespoke engineering quoted separately.
-          All prices GBP, annual commit. Monthly billing available at 10% uplift.
-        </p>
-      </div>
+    <!-- INCLUDED IN EVERY TIER (stacked rows, vertical shape) -->
+    <section class="kz-section">
+      <div class="kz-eyebrow">Included in every tier</div>
+      <h2 class="kz-h2" style="margin-top:10px;max-width:820px;">
+        One AI Assistant and three AI Helpers, working across every account.
+      </h2>
+      <div class="kz-included-list">{helpers_rows}</div>
     </section>
 
     {footer_html(1)}
