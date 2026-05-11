@@ -690,10 +690,10 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{E(title)} · Kaizan</title>
         <meta name="description" content="{E(desc)}">
-        <link rel="icon" type="image/x-icon" href="{p}assets/img/favicon.ico">
-        <link rel="shortcut icon" type="image/x-icon" href="{p}assets/img/favicon.ico">
-        <link rel="apple-touch-icon" href="{p}assets/img/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="{p}assets/img/apple-touch-icon-precomposed.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{p}assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/webp" sizes="16x16" href="{p}assets/img/favicon-16x16.webp">
+        <link rel="apple-touch-icon" sizes="180x180" href="{p}assets/img/apple-touch-icon.png">
+        <link rel="mask-icon" href="{p}assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="{p}assets/css/tokens.css{tokens_v}">
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
@@ -2073,10 +2073,10 @@ def render_blog_hidden() -> str:
 <title>Blog (hidden) · Kaizan</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Hidden blog landing.">
-<link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
-<link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.ico">
-<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" href="../assets/img/apple-touch-icon-precomposed.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+<link rel="icon" type="image/webp" sizes="16x16" href="../assets/img/favicon-16x16.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+<link rel="mask-icon" href="../assets/img/safari-pinned-tab.svg" color="#FFB900">
 <link rel="stylesheet" href="../assets/css/tokens.css">
 <link rel="stylesheet" href="../assets/css/site.css">
 <script defer src="../assets/js/site.js"></script>
@@ -2098,10 +2098,10 @@ def render_blog_post(post: dict) -> str:
 <title>{title} · Kaizan</title>
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="{desc}">
-<link rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
-<link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.ico">
-<link rel="apple-touch-icon" href="../../assets/img/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" href="../../assets/img/apple-touch-icon-precomposed.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
+<link rel="icon" type="image/webp" sizes="16x16" href="../../assets/img/favicon-16x16.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
+<link rel="mask-icon" href="../../assets/img/safari-pinned-tab.svg" color="#FFB900">
 <link rel="stylesheet" href="../../assets/css/tokens.css">
 <link rel="stylesheet" href="../../assets/css/site.css">
 <script defer src="../../assets/js/site.js"></script>
