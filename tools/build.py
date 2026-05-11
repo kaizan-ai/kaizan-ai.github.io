@@ -30,7 +30,8 @@ ROOT = Path(__file__).resolve().parents[1]
 NAV = [
     ('Product',      'product/'),
     ('Integrations', 'integrations/'),
-    ('Blog',         'insights/'),
+    # TODO: re-enable "Blog" once posts are ready.
+    # ('Blog',         'insights/'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -686,6 +687,13 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         <!doctype html>
         <html lang="en">
         <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+        new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        }})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+        <!-- End Google Tag Manager -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{E(title)} · Kaizan</title>
@@ -699,6 +707,10 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         </head>
         <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
         <div class="kz-page">
         <main class="kz-main">
         ''')
@@ -1115,7 +1127,7 @@ SCENES = [scene_assistant, scene_helpers, scene_care, scene_chatbot]
 def render_home() -> str:
     scenes = [
         ('AI Assistant for the team',
-         'A single workspace your whole team works inside. Every account, every signal, every conversation — pulled together into one continuously-updated source of truth.'),
+         'Joins every call, understands every email, updates your systems. A unified system of intelligence housing what you need to know about every client relationship.'),
         ('AI Helpers on every client',
          "Specialist agents on every account, working 24/7: drafting replies, prepping QBRs, watching for risk, surfacing expansion the moment it lands."),
         ('CARE Model · Relationship health',
@@ -1256,9 +1268,6 @@ def render_home() -> str:
           <div class="num">21%+</div>
           <div class="lbl">average revenue growth per client across the full client portfolio.</div>
         </div>
-        <div class="footnote">
-          Defensible metric: clients whose portfolios grew while using Kaizan, measured over 12 months.
-        </div>
       </div>
       <div class="kz-proof-quotes">{quote_cards}</div>
     </section>
@@ -1280,7 +1289,7 @@ def render_home() -> str:
 
 def render_product() -> str:
     helpers = [
-        dict(k='$', name='ROI helpers', tag='Grow client ROI',
+        dict(k='$', name='ROI Helpers', tag='Grow client ROI',
              blurb=('Agents that read every piece of work — every brief, deck, recap, deliverable, call — across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.'),
              signals=[
                 'Acme briefs 28% shorter than top-quartile clients · template suggested',
@@ -1289,7 +1298,7 @@ def render_product() -> str:
                 'Hooli campaign tracking 12% under benchmark · two playbooks pulled from wins',
              ],
              evidence=("Helpers compare each client’s work against the patterns your best work follows — pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.")),
-        dict(k='❤', name='Relationship helpers', tag='Deepen relationship strength',
+        dict(k='❤', name='Relationship Helpers', tag='Deepen relationship strength',
              blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage — and write the warm re-intro before your weekly review.',
              signals=[
                 '21 days silent — Mike @ Acme · re-intro draft ready',
@@ -1298,7 +1307,7 @@ def render_product() -> str:
                 'Tone shift on Sarah @ Hooli · escalation flagged with evidence',
              ],
              evidence='Trained on your conversations: who replies fast, who goes quiet, what tone your champions actually use. The longer you run it, the more the helpers sound like your best AM at their best moment.'),
-        dict(k='⚙', name='Growth helpers', tag='Proactive client growth',
+        dict(k='⚙', name='Growth Helpers', tag='Proactive client growth',
              blurb=("Agents that listen for the moment a client says something they didn’t mean as a buying signal — and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week."),
              signals=[
                 '"Do you do analytics?" — Acme · scoped pitch drafted using 3 lookalike wins',
@@ -1307,7 +1316,7 @@ def render_product() -> str:
                 'Scale CMO joined Stark · suggest re-pitching the measurement workstream',
              ],
              evidence=("Suggestions are specific to that client’s objectives, history and tone — not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.")),
-        dict(k='+', name='Custom helpers', tag='Build your own',
+        dict(k='+', name='Custom Helpers', tag='Build your own',
              blurb='Spin up a helper grounded in your data and your objective — onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
              signals=[
                 '"Flag any account where the senior buyer has gone quiet 14d+"',
@@ -1488,8 +1497,10 @@ def render_product() -> str:
       </h1>
       <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-top:32px;align-items:flex-end;">
         <p class="kz-lede" style="font-size:19px;max-width:640px;">
-          The AI Assistant captures every meeting and ships the work behind it. AI Helpers act on every client.
-          The CARE Client Health Model scores every relationship. Client360 shares market intel that affects clients.
+          The AI Assistant captures and unifies every meeting, chat and email.
+          The CARE Client Health Model scores every relationship.
+          AI Helpers act on every client for you.
+          Client360 shares market intel that affects clients.
           Together they form a system of truth and action for your client teams.
         </p>
         <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
@@ -2068,6 +2079,13 @@ def render_blog_hidden() -> str:
     head = '''<!doctype html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Blog (hidden) · Kaizan</title>
@@ -2082,6 +2100,10 @@ def render_blog_hidden() -> str:
 <script defer src="../assets/js/site.js"></script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="kz-page">
 <main class="kz-main">
 '''
@@ -2093,6 +2115,13 @@ def render_blog_post(post: dict) -> str:
     head = '''<!doctype html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+}})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+<!-- End Google Tag Manager -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · Kaizan</title>
@@ -2107,6 +2136,10 @@ def render_blog_post(post: dict) -> str:
 <script defer src="../../assets/js/site.js"></script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="kz-page">
 <main class="kz-main">
 '''.format(title=E(post['title']), desc=E(post.get('excerpt', '')))
@@ -2460,7 +2493,6 @@ def render_integrations() -> str:
     <section class="kz-int-grid-section">
       <div class="kz-int-grid-head">
         <h2 class="kz-h2" style="font-size:32px;">Standard</h2>
-        <span class="kz-eyebrow">FREE · INCLUDED ON EVERY PLAN</span>
       </div>
       <div class="kz-int-grid">{tiles}</div>
     </section>
