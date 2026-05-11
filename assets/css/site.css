@@ -1178,21 +1178,31 @@ button { font-family: inherit; }
 }
 
 /* ── About (essay) ────────────────────────────────────────────── */
-.kz-about-hero { padding: 72px var(--kz-gutter) 32px; }
-.kz-about-byline {
-  display: flex; gap: 20px; align-items: center; margin-top: 32px;
-  padding-top: 24px; border-top: 1px solid var(--kz-line); max-width: 760px;
-}
-.kz-about-byline .avatar {
-  width: 54px; height: 54px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--kz-yellow), var(--kz-yellow-deep));
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 18px; color: var(--kz-ink);
-}
-.kz-about-byline .meta { font-size: 14px; color: var(--kz-mute); }
-.kz-about-byline .name { font-weight: 600; font-size: 16px; color: var(--kz-ink); }
+.kz-about-hero { padding: 72px var(--kz-gutter) 24px; }
 
-.kz-essay { padding: 40px var(--kz-gutter) 60px; display: grid; grid-template-columns: 1fr; justify-items: center; }
+.kz-essay {
+  padding: 32px var(--kz-gutter) 60px;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 780px);
+  gap: 56px;
+  justify-content: center;
+  align-items: start;
+}
+.kz-about-byline {
+  display: flex; flex-direction: column; gap: 14px;
+  position: sticky; top: 104px; /* clear the sticky nav (~84px tall) */
+}
+.kz-about-byline .photo {
+  width: 150px; height: 150px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 1px 2px rgba(40,30,15,.06), 0 16px 40px -22px rgba(40,30,15,.28);
+}
+.kz-about-byline .name { font-weight: 600; font-size: 17px; color: var(--kz-ink); line-height: 1.25; }
+.kz-about-byline .meta { font-size: 13px; color: var(--kz-mute); line-height: 1.4; }
+.kz-about-byline .name + .meta { margin-top: -10px; }
+
 .kz-essay-body { max-width: 780px; display: flex; flex-direction: column; gap: 22px; }
 .kz-essay-pull {
   font-family: var(--kz-display); font-size: 30px; font-weight: 500;
@@ -1332,9 +1342,13 @@ button { font-family: inherit; }
 
   .kz-hero, .kz-persona-hero-grid, .kz-dark-grid, .kz-c360-grid, .kz-trust-grid,
   .kz-helpers-detail, .kz-featured-case, .kz-proof, .kz-investors-grid,
-  .kz-case-hero, .kz-case-body, .kz-insights-featured, .kz-persona-quote-section {
+  .kz-case-hero, .kz-case-body, .kz-insights-featured, .kz-persona-quote-section,
+  .kz-essay {
     grid-template-columns: 1fr;
   }
+  .kz-essay { gap: 32px; }
+  .kz-about-byline { position: static; }
+  .kz-about-byline .photo { width: 110px; height: 110px; }
   .kz-investors-grid .right { border-left: none; padding-left: 0; padding-top: 32px; }
 
   .kz-tour { grid-template-columns: 1fr; }
@@ -1485,7 +1499,8 @@ button { font-family: inherit; }
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.kz-int-tile .logo svg { width: 36px; height: 36px; }
+.kz-int-tile .logo svg,
+.kz-int-tile .logo img { width: 36px; height: 36px; object-fit: contain; }
 .kz-int-tile .meta { flex: 1; }
 .kz-int-tile .name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
 .kz-int-tile .cat {
@@ -1507,7 +1522,8 @@ button { font-family: inherit; }
   background: #161616; border: 1px solid #2a2a2a; border-radius: 20px;
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;
 }
-.kz-int-api .logo-large svg { width: 56px; height: 56px; }
+.kz-int-api .logo-large svg,
+.kz-int-api .logo-large img { width: 56px; height: 56px; object-fit: contain; }
 .kz-int-api .head {
   font-family: var(--kz-display); font-size: 42px; font-weight: 600;
   letter-spacing: -0.025em; margin: 10px 0 12px; line-height: 1.05;
@@ -1752,7 +1768,8 @@ button { font-family: inherit; }
   font-family: var(--kz-mono); font-size: 11px; letter-spacing: .16em;
   color: var(--kz-yellow); margin-bottom: 18px;
 }
-.kz-secvis-badges { flex-direction: row; justify-content: center; align-items: center; gap: 28px; }
+.kz-secvis-badges { flex-direction: row; justify-content: center; align-items: center; gap: 28px; padding: 0; }
+.kz-secvis-badges img { max-width: 100%; max-height: 100%; width: 100%; height: auto; object-fit: contain; display: block; }
 .kz-secvis-badges .badge {
   width: 78px; height: 78px; border-radius: 50%;
   display: flex; flex-direction: column; align-items: center; justify-content: center;

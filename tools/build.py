@@ -2173,17 +2173,15 @@ def render_about() -> str:
       <h1 class="kz-h1" style="margin:22px 0 0;max-width:1200px;">
         A proactive system of <span class="kz-mark">intelligence</span> for client service.
       </h1>
-      <div class="kz-about-byline">
-        <div class="avatar">GC</div>
-        <div>
-          <div class="name">Glen Calvert</div>
-          <div class="meta">Co-founder &amp; CEO, Kaizan</div>
-        </div>
-      </div>
     </section>
 
     <!-- ESSAY -->
     <article class="kz-essay">
+      <aside class="kz-about-byline">
+        <img class="photo" src="../assets/img/people/glen-calvert.png" alt="Glen Calvert" loading="lazy">
+        <div class="name">Glen Calvert</div>
+        <div class="meta">Co-founder &amp; CEO, Kaizan</div>
+      </aside>
       <div class="kz-essay-body">
 
         <p class="kz-essay-pull">
@@ -2396,26 +2394,31 @@ def render_404() -> str:
 # INTEGRATIONS
 # ─────────────────────────────────────────────────────────────────────
 
-# Brand SVG marks for connector logos. Compact reproductions; not exact.
+# Connector brand marks. Real SVG files live in assets/img/integrations/.
+# `kzapi` is the only inline mark (the featured Kaizan API tile — no real brand,
+# we draw it ourselves in brand black + yellow).
+def _int_img(filename: str, alt: str) -> str:
+    return f'<img src="../assets/img/integrations/{filename}" alt="{E(alt)}" loading="lazy">'
+
 INT_LOGOS = {
-    'teams': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="2" y="10" width="26" height="28" rx="3" fill="#5059C9"/><text x="15" y="32" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">T</text><circle cx="36" cy="16" r="6" fill="#7B83EB"/><rect x="28" y="20" width="18" height="20" rx="3" fill="#7B83EB"/><text x="37" y="35" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">T</text></svg>''',
-    'claude': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" rx="8" fill="#D97757"/><path d="M16 32 l5 -16 h2.5 l5 16 h-2.6 l-1.2 -4 h-4.9 l-1.2 4 z M20.5 26 h3.6 l-1.8 -6 z M30 32 v-16 h2.5 v16 z" fill="#FFFBF0"/></svg>''',
-    'slack': '''<svg viewBox="0 0 48 48" width="44" height="44"><g><rect x="6" y="20" width="14" height="6" rx="3" fill="#36C5F0"/><rect x="20" y="20" width="6" height="14" rx="3" fill="#2EB67D"/><rect x="22" y="6" width="6" height="14" rx="3" fill="#ECB22E"/><rect x="28" y="22" width="14" height="6" rx="3" fill="#E01E5A"/><rect x="22" y="28" width="6" height="14" rx="3" fill="#36C5F0"/><rect x="6" y="28" width="6" height="6" rx="3" fill="#2EB67D"/><rect x="36" y="14" width="6" height="6" rx="3" fill="#ECB22E"/><rect x="20" y="36" width="6" height="6" rx="3" fill="#E01E5A"/></g></svg>''',
-    'hubspot': '''<svg viewBox="0 0 48 48" width="44" height="44"><circle cx="34" cy="24" r="9" fill="none" stroke="#FF7A59" stroke-width="3"/><circle cx="34" cy="24" r="2.5" fill="#FF7A59"/><line x1="34" y1="15" x2="34" y2="9" stroke="#FF7A59" stroke-width="3"/><circle cx="34" cy="7" r="3" fill="#FF7A59"/><line x1="26" y1="20" x2="14" y2="14" stroke="#FF7A59" stroke-width="3"/><circle cx="12" cy="13" r="3.5" fill="#FF7A59"/><line x1="26" y1="28" x2="14" y2="34" stroke="#FF7A59" stroke-width="3"/><circle cx="12" cy="35" r="3.5" fill="#FF7A59"/></svg>''',
-    'salesforce': '''<svg viewBox="0 0 48 48" width="44" height="44"><path d="M14 28 q-6 0 -6 -6 q0 -5 5 -6 q1 -5 7 -5 q4 0 6 3 q3 -3 7 -3 q7 0 9 7 q4 1 4 5 q0 5 -5 6 q-2 4 -7 4 q-3 0 -5 -2 q-2 3 -7 3 q-5 0 -7 -3 q-1 1 -1 1 z" fill="#00A1E0"/></svg>''',
-    'gmeet': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="6" y="14" width="22" height="20" rx="3" fill="#00832D"/><path d="M28 21 l8 -5 v16 l-8 -5 z" fill="#00AC47"/><rect x="28" y="14" width="6" height="6" fill="#FFBA00"/><rect x="28" y="28" width="6" height="6" fill="#EA4335"/></svg>''',
-    'gdrive': '''<svg viewBox="0 0 48 48" width="44" height="44"><path d="M18 8 h12 l12 22 h-12 z" fill="#FFCF63"/><path d="M18 8 l-12 22 h12 l6 -11 z" fill="#0066DA"/><path d="M6 30 l6 10 h24 l6 -10 h-12 l-6 11 h-12 z" fill="#00AC47"/></svg>''',
-    'monday': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="18" width="12" height="12" rx="6" fill="#FF3D57"/><rect x="18" y="18" width="12" height="12" rx="6" fill="#FFCB00"/><rect x="32" y="18" width="12" height="12" rx="6" fill="#00CA72"/></svg>''',
-    'sharepoint': '''<svg viewBox="0 0 48 48" width="44" height="44"><circle cx="18" cy="20" r="10" fill="#03787C"/><circle cx="30" cy="26" r="10" fill="#28A8EA"/><circle cx="38" cy="34" r="6" fill="#0078D4"/><text x="18" y="24" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">S</text></svg>''',
-    'zoom': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="14" width="28" height="20" rx="4" fill="#2D8CFF"/><path d="M32 22 l10 -6 v16 l-10 -6 z" fill="#2D8CFF"/></svg>''',
-    'wrike': '''<svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="18" fill="#08C"/><text x="24" y="30" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">W</text></svg>''',
+    'teams':      _int_img('teams.svg',      'Microsoft Teams'),
+    'claude':     _int_img('claude.svg',     'Claude'),
+    'slack':      _int_img('slack.svg',      'Slack'),
+    'hubspot':    _int_img('hubspot.svg',    'HubSpot'),
+    'salesforce': _int_img('salesforce.svg', 'Salesforce'),
+    'gmeet':      _int_img('gmeet.svg',      'Google Meet'),
+    'gdrive':     _int_img('gdrive.svg',     'Google Drive'),
+    'monday':     _int_img('monday.svg',     'Monday'),
+    'sharepoint': _int_img('sharepoint.svg', 'SharePoint'),
+    'zoom':       _int_img('zoom.svg',       'Zoom'),
+    'wrike':      _int_img('wrike.svg',      'Wrike'),
     'kzapi': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" rx="10" fill="#0A0A0A"/><path d="M14 18 l-5 6 l5 6 M34 18 l5 6 l-5 6 M22 32 l4 -16" stroke="#FFB900" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>''',
-    'gmail': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="10" width="40" height="28" rx="3" fill="#fff" stroke="rgba(0,0,0,.15)"/><path d="M4 12 L24 28 L44 12" stroke="#EA4335" stroke-width="3" fill="none"/><path d="M4 12 L4 38" stroke="#4285F4" stroke-width="3" fill="none"/><path d="M44 12 L44 38" stroke="#34A853" stroke-width="3" fill="none"/></svg>''',
-    'outlook': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="8" width="28" height="32" rx="3" fill="#0078D4"/><text x="18" y="32" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">O</text><rect x="32" y="14" width="12" height="20" fill="#106EBE"/></svg>''',
-    'jira': '''<svg viewBox="0 0 48 48" width="44" height="44"><path d="M24 6 L42 24 L24 42 L6 24 Z" fill="#2684FF"/><path d="M24 14 L34 24 L24 34 L14 24 Z" fill="#fff" opacity=".75"/></svg>''',
-    'asana': '''<svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="14" r="7" fill="#F06A6A"/><circle cx="14" cy="32" r="7" fill="#F06A6A"/><circle cx="34" cy="32" r="7" fill="#F06A6A"/></svg>''',
-    'clickup': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" rx="10" fill="#7B68EE"/><path d="M14 30 L24 20 L34 30" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>''',
-    'notion': '''<svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" rx="8" fill="#fff" stroke="rgba(0,0,0,.18)"/><path d="M16 14 L16 34 M16 14 L30 34 M30 14 L30 34" stroke="#0A0A0A" stroke-width="2.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>''',
+    'gmail':      _int_img('gmail.svg',      'Gmail'),
+    'outlook':    _int_img('outlook.svg',    'Outlook'),
+    'jira':       _int_img('jira.svg',       'Jira'),
+    'asana':      _int_img('asana.svg',      'Asana'),
+    'clickup':    _int_img('clickup.svg',    'ClickUp'),
+    'notion':     _int_img('notion.svg',     'Notion'),
 }
 
 INT_DATA = [
@@ -2739,14 +2742,11 @@ SECURITY_DATA = [
 
 def security_visual(kind: str) -> str:
     if kind == 'badges':
-        badges = [('AICPA','SOC 2','#3B82F6'), ('ISO','27001','#FFFFFF'),
-                  ('GDPR','EU/UK','#0046AB'), ('ADA','Verified','#10B981'),
-                  ('CCPA','','#3B82F6')]
-        return '<div class="kz-secvis kz-secvis-badges">' + ''.join(
-            f'<div class="badge" style="background:{c};color:{"#0A0A0A" if c == "#FFFFFF" else "#fff"};">'
-            f'<div>{E(l)}</div>' + (f'<div class="sub">{E(s)}</div>' if s else '') + '</div>'
-            for l, s, c in badges
-        ) + '</div>'
+        return ('<div class="kz-secvis kz-secvis-badges">'
+                '<img src="../assets/img/security/Security.png" '
+                'alt="SOC 2, ISO 27001, GDPR, CASA Verified, CCPA — security and compliance certifications" '
+                'loading="lazy">'
+                '</div>')
     if kind == 'protection':
         rows = [('TLS 1.2+', 'Every request, every region'),
                 ('AES-256', 'Per-tenant keys in AWS KMS'),
@@ -2759,10 +2759,10 @@ def security_visual(kind: str) -> str:
                           for k, v in rows) +
                 '</div></div>')
     if kind == 'access':
-        rows = [('12:04:18','admin@verkeer.com','role.update','kz-care-001 → manager'),
-                ('12:04:09','jdoe@adimo.io','session.start','sso · okta'),
+        rows = [('12:04:18','admin@northwind.com','role.update','kz-care-001 → manager'),
+                ('12:04:09','jdoe@hooli.io','session.start','sso · okta'),
                 ('12:03:55','sec-bot','access.review','weekly · ok'),
-                ('12:03:41','priya@jellyfish.com','export.audit','180 events · csv'),
+                ('12:03:41','priya@pied-piper.com','export.audit','180 events · csv'),
                 ('12:03:22','ops@kaizan.ai','access.granted','ttl 30m · ticket #4218')]
         return ('<div class="kz-secvis kz-secvis-log">'
                 '<div class="lbl">AUDIT LOG · LAST 60 SECONDS</div>'
@@ -2905,7 +2905,7 @@ def render_security() -> str:
     {''.join(sections_html)}
 
     <section class="kz-text-center" style="padding:80px 56px;">
-      <a class="kz-btn kz-btn-black" style="padding:18px 28px;font-size:16px;" href="#">Visit our Trust Centre →</a>
+      <a class="kz-btn kz-btn-black" style="padding:18px 28px;font-size:16px;" href="https://security.kaizan.ai/">Visit our Trust Centre →</a>
     </section>
 
     {footer_html(1)}
