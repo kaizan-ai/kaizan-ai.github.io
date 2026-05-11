@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # behaviour where the "Blog" nav target was the Insights page). The hidden
 # /blog/ landing is NOT in the nav by design.
 NAV = [
+    ('Home',         'index.html'),
     ('Product',      'product/'),
     ('Integrations', 'integrations/'),
     # TODO: re-enable "Blog" once posts are ready.
