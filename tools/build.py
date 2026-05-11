@@ -2342,12 +2342,14 @@ def render_about() -> str:
         </p>
         <div class="kz-flex" style="gap:12px;flex-wrap:wrap;">
           <a class="btn" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book time with Glen →</a>
+          <!-- TODO: re-enable "See open roles" once careers content is ready.
           <a class="btn" href="../careers/" style="background:transparent;color:#0A0A0A;border:1px solid #0A0A0A;">See open roles →</a>
+          -->
         </div>
       </div>
     </section>
 
-    <!-- INVESTORS + OFFICE -->
+    <!-- INVESTORS -->
     <section class="kz-investors">
       <div class="kz-investors-grid">
         <div>
@@ -2357,18 +2359,6 @@ def render_about() -> str:
             <div class="cell"><img src="../assets/img/inv-pembroke.png" alt="Pembroke VCT"></div>
             <div class="cell"><img src="../assets/img/inv-velocity.png" alt="Velocity Capital"></div>
             <div class="cell"><img src="../assets/img/inv-repeat.svg" alt="Repeat Ventures"></div>
-          </div>
-        </div>
-        <div class="right">
-          <div class="kz-eyebrow">Office</div>
-          <h2 class="kz-h2" style="margin-top:10px;">Shoreditch, London.</h2>
-          <p class="kz-lede" style="margin-top:14px;font-size:15px;">
-            A bright floor in EC2. Wednesdays and Thursdays are in-person; everything else is flexible.
-          </p>
-          <div class="addr">
-            KAIZAN LTD<br>
-            EC2A · LONDON, UK<br>
-            HELLO@KAIZAN.AI
           </div>
         </div>
       </div>
@@ -3209,9 +3199,9 @@ FAQ_DATA = [
     ]),
     ('Pricing and contracts', [
         ('How is Kaizan priced?',
-         'Kaizan is priced per active seat, with three tiers. Starter is for teams of up to 25 seats and includes the core CARE health model, drafted recaps and 5 integrations. Growth is for teams of 25 to 250 seats and adds QBR auto-generation, the API, advanced sentiment, and SSO. Enterprise is for 250+ seats and adds single-tenant deployment, custom data residency, and a dedicated solutions engineer. List pricing and a calculator are at kaizan.ai/pricing.'),
+         'Kaizan is priced based on the number of clients you have, there are no limits to the number of seats or users. List pricing and a calculator are at kaizan.ai/pricing.'),
         ('Is there a free trial?',
-         'Yes. Kaizan offers a 30-day pilot for a single team of up to 15 seats, with full feature access on the Growth plan. The pilot includes onboarding, calibration, and a written readout at day 30 covering observed risks caught, hours saved per account manager, and recommended rollout plan.'),
+         'No, we do paid pilots so you can assess the ROI and value received.'),
         ('What is the typical contract length?',
          'Standard contracts are 12 months, billed annually, with quarterly business reviews. Multi-year contracts (24 and 36 months) carry a discount and are common for enterprise clients. Month-to-month is available on Starter for teams piloting Kaizan before formal procurement.'),
     ]),
@@ -3222,8 +3212,6 @@ FAQ_DATA = [
          'Day 1–14: integrations connected, last 90 days of history backfilled, CARE scores live for every account. Day 15–45: account managers using drafted recaps and follow-ups daily; first risks caught and saved. Day 46–90: first QBR cycle run inside Kaizan; usage benchmarks and account-level outcomes reviewed with the Kaizan customer success team and a written 90-day report delivered.'),
     ]),
     ('Comparisons', [
-        ('How is Kaizan different from Gong or Chorus?',
-         'Gong and Chorus are conversational intelligence tools focused primarily on sales pipeline. Kaizan is focused on post-sale client relationships and account expansion. Kaizan ingests Gong and Chorus transcripts as a source, but goes further: it scores account health continuously, drafts the work account managers have to do, and is aimed at Heads of Client Services rather than VPs of Sales. Many Kaizan clients keep Gong or Chorus running on the sales side.'),
         ('How is Kaizan different from a generic AI note-taker like Otter, Fireflies, or Granola?',
          'AI note-takers transcribe meetings and write meeting notes. Kaizan does not stop there. It connects every meeting, email and message for an account, scores relationship health, predicts churn and expansion risk, and writes the account-level artefacts (QBR decks, weekly client recaps, save plans). Note-takers solve the meeting; Kaizan solves the account.'),
         ('How is Kaizan different from building this on top of ChatGPT or Claude internally?',
