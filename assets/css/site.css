@@ -343,7 +343,7 @@ button { font-family: inherit; }
 .kz-marquee:hover .kz-marquee-track { animation-play-state: paused; }
 .kz-marquee-track {
   display: flex; gap: 48px; white-space: nowrap;
-  animation: kz-mq-move 80s linear infinite;
+  animation: kz-mq-move 60s linear infinite;
   color: rgba(10,10,10,.55); font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
   align-items: center;
 }
