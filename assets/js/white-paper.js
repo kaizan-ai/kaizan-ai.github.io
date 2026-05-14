@@ -5,9 +5,8 @@
 (function () {
   'use strict';
 
-  // TODO: replace these placeholders with the real HubSpot portal id and form guid.
-  var HUBSPOT_PORTAL_ID = 'REPLACE_WITH_HUBSPOT_PORTAL_ID';
-  var HUBSPOT_FORM_GUID = 'REPLACE_WITH_HUBSPOT_FORM_GUID';
+  var HUBSPOT_PORTAL_ID = '144688314';
+  var HUBSPOT_FORM_GUID = 'bae37d8b-ce80-453b-8a02-6a378decb06e';
 
   var FREE_EMAIL_DOMAINS = [
     'gmail.com','googlemail.com','yahoo.com','yahoo.co.uk','hotmail.com','hotmail.co.uk',
