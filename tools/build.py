@@ -791,7 +791,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
       </nav>
       <div class="kz-nav-cta">
         <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
-        <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
         <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
       </div>
     </header>
@@ -817,7 +817,7 @@ def footer_html(depth: int) -> str:
                      # ('Insights', f'{p}insights/'),
                      # ('Clients', f'{p}customers/'),
                      ('FAQ', f'{p}faq/')]),
-        ('Get in touch', [('Book a demo', 'https://calendar.app.google/V9mCxVimwFr2ynSQ7'), ('Contact', 'mailto:hello@kaizan.ai'),
+        ('Get in touch', [('Book a demo', 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'), ('Contact', 'mailto:hello@kaizan.ai'),
                           ('LinkedIn', 'https://www.linkedin.com/company/kaizan')]),
     ]
     cols_html = []
@@ -1194,7 +1194,7 @@ def render_home() -> str:
           so your team increases the ROI and Revenue across all your clients.
         </p>
         <div class="kz-hero-cta-stack">
-          <a class="kz-cta-card is-yellow" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">
+          <a class="kz-cta-card is-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
             <div>
               <div class="kz-cta-eyebrow">30-min live demo</div>
               <div class="kz-cta-headline">See Kaizan in action</div>
@@ -1281,7 +1281,7 @@ def render_home() -> str:
     <section class="kz-cta-band">
       <h2 class="head">See your clients, clearly.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
       </div>
     </section>
 
@@ -1509,7 +1509,7 @@ def render_product() -> str:
           Together they form a system of truth and action for your client teams.
         </p>
         <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
-          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo →</a>
+          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo →</a>
         </div>
       </div>
       <div class="kz-pillars">{pillar_html}</div>
@@ -1663,7 +1663,7 @@ def render_product() -> str:
         Common questions, ranked by how often a security review asks them.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Answers ship with our security review pack. <a href="https://calendar.app.google/V9mCxVimwFr2ynSQ7" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
+        Answers ship with our security review pack. <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
       </p>
     </section>
 
@@ -1674,7 +1674,7 @@ def render_product() -> str:
         Tiered by seats and integration depth.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Detailed pricing is shared in the demo. <a href="https://calendar.app.google/V9mCxVimwFr2ynSQ7" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
+        Detailed pricing is shared in the demo. <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
       </p>
     </section>
 
@@ -1692,7 +1692,7 @@ def render_product() -> str:
     <section class="kz-cta-band kz-cta-band-md">
       <h2 class="head">Put the helpers to work.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
       </div>
     </section>
 
@@ -1752,7 +1752,7 @@ def render_persona(slug: str) -> str:
           </h1>
           <p class="kz-lede" style="margin-top:26px;max-width:560px;">{E(p['sub'])}</p>
           <div class="kz-flex" style="gap:10px;margin-top:28px;">
-            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo →</a>
+            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo →</a>
             <a class="kz-btn kz-btn-ghost" style="padding:14px 22px;" href="../../insights/">Download CARE white paper</a>
           </div>
         </div>
@@ -1810,7 +1810,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-cta-band-dark">
       <h2 class="head">{E(p['cta'])}</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-yellow" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-yellow" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
         <a class="kz-btn kz-btn-ghost-light" style="padding:14px 24px;font-size:15px;" href="../../about/">Talk to our CEO</a>
       </div>
     </section>
@@ -1898,7 +1898,7 @@ def render_customers() -> str:
     <section class="kz-cta-band kz-cta-band-sm">
       <h2 class="head">Be the next case study.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
       </div>
     </section>
 
@@ -1956,7 +1956,7 @@ def render_case_study(slug: str) -> str:
         Want this kind of story for your firm?
       </h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
         <a class="kz-btn kz-btn-ghost" style="padding:14px 24px;background:transparent;" href="../">Read more stories</a>
       </div>
     </section>
@@ -2346,7 +2346,7 @@ def render_about() -> str:
           and the best hires we&rsquo;ve made come from the same place.
         </p>
         <div class="kz-flex" style="gap:12px;flex-wrap:wrap;">
-          <a class="btn" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book time with Glen →</a>
+          <a class="btn" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book time with Glen →</a>
           <!-- TODO: re-enable "See open roles" once careers content is ready.
           <a class="btn" href="../careers/" style="background:transparent;color:#0A0A0A;border:1px solid #0A0A0A;">See open roles →</a>
           -->
@@ -2512,7 +2512,7 @@ def render_integrations() -> str:
             every score — in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
         </div>
         <div class="actions">
-          <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Talk to us</a>
+          <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Talk to us</a>
         </div>
       </div>
       <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
@@ -2534,7 +2534,7 @@ def render_integrations() -> str:
             client growth.
           </p>
           <div class="kz-flex" style="margin-top:26px;">
-            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book demo →</a>
+            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book demo →</a>
           </div>
         </div>
         <div class="right">{custom_cards}</div>
@@ -2550,7 +2550,7 @@ def render_integrations() -> str:
           <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet — tell us.
             We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
         </div>
-        <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">
+        <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
           Request an integration →
         </a>
       </div>
@@ -3248,7 +3248,7 @@ def render_faq() -> str:
           <p>Email <a href="mailto:hello@kaizan.ai" style="color:var(--kz-yellow);">hello@kaizan.ai</a>
             or book a 30-minute demo. We answer every enquiry within two working days.</p>
           <div class="kz-flex">
-            <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/V9mCxVimwFr2ynSQ7">Book a demo</a>
+            <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
             <a class="kz-btn kz-btn-ghost-light" href="../insights/">Read our insights</a>
           </div>
         </div>
