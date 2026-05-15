@@ -342,13 +342,14 @@ button { font-family: inherit; }
 }
 .kz-marquee:hover .kz-marquee-track { animation-play-state: paused; }
 .kz-marquee-track {
-  display: flex; gap: 48px; white-space: nowrap;
+  display: flex; white-space: nowrap;
   animation: kz-mq-move 60s linear infinite;
   color: rgba(10,10,10,.55); font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
   align-items: center;
 }
 .kz-marquee-item {
-  display: inline-flex; align-items: center; gap: 48px; flex-shrink: 0;
+  display: inline-flex; align-items: center; flex-shrink: 0;
+  margin-right: 48px;
 }
 .kz-marquee-text {
   display: inline-flex; align-items: center;
@@ -377,10 +378,9 @@ button { font-family: inherit; }
   transition: filter .25s ease;
 }
 .kz-marquee:hover .kz-marquee-logo img { filter: grayscale(1) brightness(0) opacity(0.9); }
-.kz-marquee-track .sep { opacity: .35; color: rgba(10,10,10,.45); }
 @keyframes kz-mq-move {
   from { transform: translateX(0); }
-  to   { transform: translateX(-33.333%); }
+  to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
   .kz-marquee-track { animation-duration: 0s; animation: none; }
@@ -1439,8 +1439,8 @@ button { font-family: inherit; }
   .kz-nav-logo .icon { height: 36px; width: 36px; }
   .kz-nav-logo .word { height: 24px; }
 
-  .kz-marquee-track { font-size: 16px; gap: 32px; }
-  .kz-marquee-item  { gap: 32px; }
+  .kz-marquee-track { font-size: 16px; }
+  .kz-marquee-item  { margin-right: 32px; }
   .kz-marquee-logo  { height: 32px; }
 
   .kz-product-row { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
