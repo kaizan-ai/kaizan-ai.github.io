@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # behaviour where the "Blog" nav target was the Insights page). The hidden
 # /blog/ landing is NOT in the nav by design.
 NAV = [
-    ('Home',         'index.html'),
+    ('Home',         '/'),
     ('Product',      'product/'),
     ('Integrations', 'integrations/'),
     # TODO: re-enable "Blog" once posts are ready.
@@ -876,7 +876,9 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
     p = relpath(depth)
     items_html = []
     for label, target in NAV:
-        href = p + target
+        # Absolute paths (starting with /) bypass the depth prefix so e.g.
+        # the Home link stays as "/" on every page.
+        href = target if target.startswith('/') else p + target
         cls = ' class="is-active"' if active == label else ''
         if label == 'Product' and with_mega:
             # Product mega-menu is disabled until sub-pages exist. The "Product"
