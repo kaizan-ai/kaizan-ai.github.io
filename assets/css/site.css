@@ -902,7 +902,7 @@ button { font-family: inherit; }
   display: grid; grid-template-columns: 1.35fr 1fr; gap: 48px; align-items: center; margin-top: 20px;
 }
 .kz-persona-quote {
-  border-radius: 14px; aspect-ratio: 4/5;
+  border-radius: 14px;
   position: relative; overflow: hidden;
   padding: 40px 32px 32px;
   display: flex; flex-direction: column; align-items: center; gap: 24px;
