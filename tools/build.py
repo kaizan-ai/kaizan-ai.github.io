@@ -1674,7 +1674,7 @@ def render_product() -> str:
         One platform for <span class="kz-mark">AI-first</span><br>
         client service teams.
       </h1>
-      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;margin-top:32px;align-items:flex-end;">
+      <div class="kz-product-hero-row">
         <p class="kz-lede" style="font-size:19px;max-width:640px;">
           The AI Assistant captures and unifies every meeting, chat and email.
           The CARE Client Health Model scores every relationship.
@@ -1682,7 +1682,7 @@ def render_product() -> str:
           Client360 shares market intel that affects clients.
           Together they form a system of truth and action for your client teams.
         </p>
-        <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;">
+        <div class="cta">
           <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo →</a>
         </div>
       </div>
@@ -1736,7 +1736,7 @@ def render_product() -> str:
 
     <!-- 03 · CARE MODEL -->
     <section class="kz-section-loose" id="health-model">
-      <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:flex-start;">
+      <div class="kz-product-care-row">
         <div>
           <div class="kz-eyebrow">03 · CARE Client Health Model</div>
           <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;max-width:520px;">
@@ -1854,9 +1854,9 @@ def render_product() -> str:
 
     <!-- QUOTE -->
     <section class="kz-section">
-      <div style="display:grid;grid-template-columns:1fr 1.5fr;gap:40px;align-items:center;">
+      <div class="kz-product-quote-row">
         {portrait(q['name'], q['role'], q['co'], q['tone'], size='xl', depth=1)}
-        <div style="font-family:var(--kz-display);font-size:36px;font-weight:400;line-height:1.25;letter-spacing:-0.015em;">
+        <div class="quote">
           &ldquo;{E(q['q'])}&rdquo;
         </div>
       </div>

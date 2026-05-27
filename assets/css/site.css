@@ -836,6 +836,25 @@ button { font-family: inherit; }
 .kz-composite .cell.is-warn .d { color: var(--kz-yellow); }
 .kz-composite .note { font-size: 13px; line-height: 1.55; color: rgba(255,251,240,.78); }
 
+/* ── Product page: row grids that need to stack on mobile ─────── */
+.kz-product-hero-row {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px;
+  margin-top: 32px; align-items: flex-end;
+}
+.kz-product-hero-row .cta {
+  display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap;
+}
+.kz-product-care-row {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: flex-start;
+}
+.kz-product-quote-row {
+  display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center;
+}
+.kz-product-quote-row .quote {
+  font-family: var(--kz-display); font-size: 36px; font-weight: 400;
+  line-height: 1.25; letter-spacing: -0.015em;
+}
+
 /* ── Client 360 feed ──────────────────────────────────────────── */
 .kz-c360 { padding: 90px var(--kz-gutter) 80px; background: var(--kz-sand); border-top: 1px solid var(--kz-line); }
 .kz-c360-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: flex-start; }
@@ -1544,9 +1563,21 @@ button { font-family: inherit; }
   .kz-personas-grid, .kz-trust-cards, .kz-case-grid, .kz-insights-cards,
   .kz-care-grid, .kz-objections, .kz-persona-ribbon-grid,
   .kz-helpers-tabs, .kz-composite .grid, .kz-investors-logos,
-  .kz-pricing-tiers, .kz-pricing-included {
+  .kz-pricing-tiers, .kz-pricing-included,
+  .kz-love-grid, .kz-love-grid.cols-2, .kz-love-grid.cols-3 {
     grid-template-columns: 1fr;
   }
+
+  /* Hero video overlay: poster branding bleeds through on narrow viewports.
+     Mask it with a stronger gradient and shrink the title. */
+  .kz-hero-video .overlay {
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.55) 100%);
+    padding: 18px;
+  }
+  .kz-hero-video .head { font-size: 10px; }
+  .kz-hero-video .play { width: 56px; height: 56px; font-size: 22px; }
+  .kz-hero-video .play-title { font-size: 20px; }
+  .kz-hero-video .play-row { gap: 12px; }
   .kz-included-row {
     grid-template-columns: 1fr;
     row-gap: 12px;
@@ -1580,6 +1611,33 @@ button { font-family: inherit; }
   .kz-product-row .n { font-size: 36px; }
   .kz-product-row .t { font-size: 18px; }
   .kz-product-row .frame { height: 110px; }
+
+  /* Product hero: book-a-demo CTA stacks below the lede text. */
+  .kz-product-hero-row { grid-template-columns: 1fr; gap: 24px; }
+  .kz-product-hero-row .cta { justify-content: flex-end; }
+
+  /* Product CARE row + product quote row: stack columns. */
+  .kz-product-care-row { grid-template-columns: 1fr; gap: 32px; }
+  .kz-product-quote-row {
+    grid-template-columns: 1fr; gap: 24px;
+    text-align: left;
+  }
+  /* Quote first, portrait second on mobile (DOM order is portrait, quote). */
+  .kz-product-quote-row > :first-child { order: 2; }
+  .kz-product-quote-row > :last-child  { order: 1; }
+  .kz-product-quote-row .quote { font-size: 26px; }
+
+  /* CARE composite: pack the 4 cells into 2 columns so the panel uses
+     its full width instead of leaving the right half empty. */
+  .kz-composite .grid { grid-template-columns: 1fr 1fr; }
+
+  /* Client 360 feed rows: stack tag/title/route so the title isn't
+     squeezed by the "→ helper" route label on the right. */
+  .kz-c360-row {
+    grid-template-columns: 1fr; gap: 8px;
+  }
+  .kz-c360-row .tag { justify-self: start; }
+  .kz-c360-row .route { margin-top: 0; }
 
   .kz-helpers-tab { flex-basis: 100%; }
   .kz-persona-quote q { font-size: 22px; }
