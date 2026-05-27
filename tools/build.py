@@ -2705,16 +2705,16 @@ def render_integrations() -> str:
         The tools your client teams already use - unify your data.
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">
-        Kaizan reads from the systems where work actually happens, and builds a continuous memory on every client.
-        <strong style="color:var(--kz-ink);font-weight:600;">All standard integrations are free.</strong>
-        They automatically capture every meeting, message, doc and ticket — and assign the context
-        to the right client, the right account, the right user. No new dashboard for the team to log into.
-        No data left stranded.
+        Kaizan builds a continuous memory on every client by automatically capturing every meeting,
+        message, doc and report. <strong style="color:var(--kz-ink);font-weight:600;">All standard
+        integrations are free.</strong> All client and communication data assigned to the right
+        client, the right stakeholders, with the right access rights. Unify your most precious
+        asset for your team and their AI Helpers.
       </p>
       <div class="kz-int-meta">
-        <span><span class="kz-dot"></span> <strong>2-way sync</strong> on CRMs</span>
-        <span><span class="kz-dot"></span> <strong>Read &amp; Write</strong> on conversation tools</span>
-        <span><span class="kz-dot"></span> <strong>OAuth 2.0</strong> · revoke anytime</span>
+        <span><span class="kz-dot"></span> <strong>2-way sync</strong></span>
+        <span><span class="kz-dot"></span> <strong>Read &amp; Write</strong></span>
+        <span><span class="kz-dot"></span> <strong>OAuth Access</strong></span>
       </div>
     </section>
 
@@ -3348,9 +3348,9 @@ def render_careers() -> str:
 FAQ_DATA = [
     ('About Kaizan', [
         ('What is Kaizan?',
-         'Kaizan is an AI Account Manager built for client-services teams. It listens to every client meeting, email and message, scores the health of each relationship, surfaces risks before they become churn, and drafts the follow-ups, recaps and QBR decks that account managers spend most of their week writing. Kaizan is used by 60+ client-services teams including Anything Is Possible, The Kite Factory, Adimo, Verkeer, Jellyfish and Scale.'),
+         'Kaizan is an AI platform built for Client Service teams and their AI Agents. It unifies all client data, captures every client meeting, email and message, scores the health of each relationship, surfaces risks before they become issues, and drafts the follow-ups, updates market intelligence and expansion plays that account managers spend most of their time doing. Kaizan is used by client-services teams globally obsessed with delivering elite client service.'),
         ('Who built Kaizan and where is the company based?',
-         'Kaizan was founded by Glen Calvert and is headquartered in London, with a remote-first team of fifteen people across the UK and Europe. The company has raised funding from notable angels and early-stage funds focused on B2B SaaS and AI infrastructure.'),
+         'Kaizan was founded by Glen Calvert and Pravin Paratey and is headquartered in London, UK.'),
         ('What does the name "Kaizan" mean?',
          'Kaizan is taken from the Japanese word kaizen (改善), meaning continuous improvement. The product is designed around the same idea: client relationships compound, and small, consistent improvements in how an account manager listens, follows up and reports compound into materially better retention and expansion outcomes.'),
     ]),
@@ -3358,7 +3358,7 @@ FAQ_DATA = [
         ('Who is Kaizan designed for?',
          'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, SaaS customer success organisations, and professional services firms. The typical buyer is a Managing Director, Head of Client Services, Chief Customer Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Customer Success Manager who owns a portfolio of 6 to 25 client relationships.'),
         ('How big does my team need to be to get value from Kaizan?',
-         'Kaizan is most useful for teams of 10 to 500 client-facing people. Smaller teams (under 10) tend to manage relationships informally and do not yet feel the reporting burden Kaizan removes. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
+         'Kaizan is most useful for teams of 10 to 500 client-facing people. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',
          'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work.'),
     ]),
@@ -3366,9 +3366,9 @@ FAQ_DATA = [
         ('How does Kaizan listen to client conversations?',
          'Kaizan ingests three sources: meeting transcripts (from Zoom, Google Meet, Microsoft Teams, Gong and Chorus), email threads (from Gmail and Outlook / Microsoft 365), and chat (from Slack and Microsoft Teams chat). Audio is transcribed by a speech-to-text model with speaker diarisation. Text is parsed for participants, topics, commitments, risks, sentiment and questions.'),
         ('What does Kaizan actually output?',
-         'Four things, every week, for every account: (1) a health score across four dimensions — Coverage, Activity, Relationship, Expansion (the CARE model); (2) a list of risks and opportunities with the underlying evidence cited from real conversations; (3) drafted follow-up emails, recap notes and meeting agendas in the account manager’s voice; (4) a QBR-ready deck assembled from the quarter’s conversations, decisions and outcomes.'),
+         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, Activity, Relationship, Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise to improve client ROI, satisfaction and revenue.'),
         ('What is the CARE model?',
-         'CARE is Kaizan’s framework for account health, with four pillars. Coverage measures how many stakeholders on the client side your team is in regular contact with. Activity measures the cadence and quality of touchpoints. Relationship measures sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals and growth intent. Each pillar is scored 0 to 100 weekly, with the underlying evidence linked.'),
+         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures the cadence and quality of touchpoints with stakeholders. Relationship measures sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained.'),
         ('How accurate is Kaizan’s sentiment analysis?',
          'Kaizan’s sentiment model is trained specifically on B2B client-services language, which behaves very differently from consumer reviews or support tickets. Internal benchmarks across 4.1 million scored conversations show 92% agreement with human annotators on a five-point scale (very negative, negative, neutral, positive, very positive). Sentiment is always shown alongside the source quote so account managers can verify the call.'),
         ('How long does it take to set up Kaizan?',
