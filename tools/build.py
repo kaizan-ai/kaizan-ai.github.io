@@ -30,6 +30,8 @@ ROOT = Path(__file__).resolve().parents[1]
 NAV = [
     ('Home',         '/'),
     ('Product',      'product/'),
+    # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
+    ('Personas',     '__personas_dropdown__'),
     ('Integrations', 'integrations/'),
     # TODO: re-enable "Blog" once posts are ready.
     # ('Blog',         'insights/'),
@@ -876,6 +878,22 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
     p = relpath(depth)
     items_html = []
     for label, target in NAV:
+        # Personas dropdown: hover-triggered, single column, absolute URLs.
+        if target == '__personas_dropdown__':
+            persona_links = '\n'.join(
+                f'<a class="kz-mega-link" href="/for/{slug}/">{E(name)}</a>'
+                for slug, name in PERSONA_LIST
+            )
+            items_html.append(
+                '<span class="kz-mega-wrap" data-mega-menu '
+                'style="position:relative;display:inline-block;">'
+                '<a class="kz-mega-trigger" aria-expanded="false">'
+                'Personas <span class="kz-mega-caret">▾</span></a>'
+                '<div class="kz-mega-panel kz-mega-panel--simple" role="menu">'
+                f'{persona_links}'
+                '</div></span>'
+            )
+            continue
         # Absolute paths (starting with /) bypass the depth prefix so e.g.
         # the Home link stays as "/" on every page.
         href = target if target.startswith('/') else p + target

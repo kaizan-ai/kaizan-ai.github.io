@@ -97,6 +97,23 @@ button { font-family: inherit; }
   opacity: 1;
   pointer-events: auto;
 }
+/* Simple single-column dropdown variant (used by the Personas nav item). */
+.kz-mega-panel.kz-mega-panel--simple {
+  width: 280px;
+  display: block;
+  padding: 10px;
+}
+.kz-mega-panel.kz-mega-panel--simple .kz-mega-link {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--kz-ink);
+  transition: background .12s ease;
+}
+.kz-mega-panel.kz-mega-panel--simple .kz-mega-link:hover {
+  background: var(--kz-sand);
+}
 .kz-mega-cta-row {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 18px; border: 1px solid var(--kz-line); border-radius: 10px;
