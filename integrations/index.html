@@ -1,341 +1,269 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Integrations · Kaizan</title>
-  <meta name="description"
-    content="Native connectors for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet and more — plus the Kaizan API.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/webp" sizes="16x16" href="/assets/img/favicon-16x16.webp">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
-  <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
-  <script defer src="/assets/js/site.js"></script>
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NCXT2FLQ');</script>
-  <!-- End Google Tag Manager -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrations · Kaizan</title>
+<meta name="description" content="Native connectors for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet and more — plus the Kaizan API.">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
+<link rel="icon" type="image/webp" sizes="16x16" href="../assets/img/favicon-16x16.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+<link rel="mask-icon" href="../assets/img/safari-pinned-tab.svg" color="#FFB900">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script defer src="../assets/js/site.js"></script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+<!-- End Google Tag Manager -->
 </head>
-
 <body>
-  <div class="kz-page">
-    <main class="kz-main">
+<div class="kz-page">
+<main class="kz-main">
 
-      <header class="kz-nav" role="banner">
-        <a class="kz-nav-logo" href="/">
-          <img class="icon" src="/assets/img/kaizan-icon.png" alt="">
-          <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+    <header class="kz-nav" role="banner">
+      <a class="kz-nav-logo" href="../index.html">
+        <img class="icon" src="../assets/img/kaizan-icon.png" alt="">
+        <img class="word" src="../assets/img/kaizan-logo.png" alt="Kaizan">
+      </a>
+      <nav class="kz-nav-links" aria-label="Primary">
+        <a href="../index.html">Home</a><a href="../product/">Product</a><a href="../integrations/" class="is-active">Integrations</a><a href="../pricing/">Pricing</a><a href="../security/">Security</a><a href="../faq/">FAQs</a><a href="../about/">About</a>
+      </nav>
+      <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
+        <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
+      </div>
+    </header>
+    
+
+    <!-- HERO -->
+    <section class="kz-section-tight" style="padding-top:60px;">
+      <div class="kz-eyebrow">Integrations</div>
+      <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
+        The tools your client teams already use - unify your data.
+      </h1>
+      <p class="kz-lede" style="margin-top:18px;max-width:760px;">
+        Kaizan reads from the systems where work actually happens, and builds a continuous memory on every client.
+        <strong style="color:var(--kz-ink);font-weight:600;">All standard integrations are free.</strong>
+        They automatically capture every meeting, message, doc and ticket — and assign the context
+        to the right client, the right account, the right user. No new dashboard for the team to log into.
+        No data left stranded.
+      </p>
+      <div class="kz-int-meta">
+        <span><span class="kz-dot"></span> <strong>2-way sync</strong> on CRMs</span>
+        <span><span class="kz-dot"></span> <strong>Read &amp; Write</strong> on conversation tools</span>
+        <span><span class="kz-dot"></span> <strong>OAuth 2.0</strong> · revoke anytime</span>
+      </div>
+    </section>
+
+    <!-- STANDARD GRID -->
+    <section class="kz-int-grid-section">
+      <div class="kz-int-grid-head">
+        <h2 class="kz-h2" style="font-size:32px;">Standard</h2>
+      </div>
+      <div class="kz-int-grid"><a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/teams.svg" alt="Microsoft Teams" loading="lazy"></div>
+          <div class="meta"><div class="name">Microsoft Teams</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Capture meeting transcripts and chat threads automatically.</p>
         </a>
-        <nav class="kz-nav-links" aria-label="Primary">
-          <a href="/">Home</a><a href="/product/">Product</a><a href="/integrations/"
-            class="is-active">Integrations</a><a href="/pricing/">Pricing</a><a href="/security/">Security</a><a
-            href="/faq/">FAQs</a><a href="/about/">About</a>
-        </nav>
-        <div class="kz-nav-cta">
-          <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
-          <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
-          <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
-        </div>
-      </header>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/claude.svg" alt="Claude" loading="lazy"></div>
+          <div class="meta"><div class="name">Claude</div>
+            <div class="cat">MODEL PROVIDER</div></div>
+          <p class="why">Frontier reasoning powers CARE, briefings and reply drafts.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/slack.svg" alt="Slack" loading="lazy"></div>
+          <div class="meta"><div class="name">Slack</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Surface unanswered client messages and route them to an owner.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/hubspot.svg" alt="HubSpot" loading="lazy"></div>
+          <div class="meta"><div class="name">HubSpot</div>
+            <div class="cat">CRM</div></div>
+          <p class="why">Two-way sync: deals, contacts, notes, activity, custom properties.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/salesforce.svg" alt="Salesforce" loading="lazy"></div>
+          <div class="meta"><div class="name">Salesforce</div>
+            <div class="cat">CRM</div></div>
+          <p class="why">Bidirectional sync; CARE score writes back to the Account object.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/gmeet.svg" alt="Google Meet" loading="lazy"></div>
+          <div class="meta"><div class="name">Google Meet</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Recordings and transcripts ingested the moment a call ends.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/gdrive.svg" alt="Google Drive" loading="lazy"></div>
+          <div class="meta"><div class="name">Google Drive</div>
+            <div class="cat">KNOWLEDGE</div></div>
+          <p class="why">Briefs, decks and notes indexed and joined to the right account.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/monday.svg" alt="Monday" loading="lazy"></div>
+          <div class="meta"><div class="name">Monday</div>
+            <div class="cat">DELIVERY</div></div>
+          <p class="why">Project status and blockers feed into account health signals.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/sharepoint.svg" alt="SharePoint" loading="lazy"></div>
+          <div class="meta"><div class="name">SharePoint</div>
+            <div class="cat">KNOWLEDGE</div></div>
+          <p class="why">Enterprise document libraries linked to the accounts they support.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/zoom.svg" alt="Zoom" loading="lazy"></div>
+          <div class="meta"><div class="name">Zoom</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Cloud recordings and transcripts ingested and attributed to accounts.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/wrike.svg" alt="Wrike" loading="lazy"></div>
+          <div class="meta"><div class="name">Wrike</div>
+            <div class="cat">DELIVERY</div></div>
+          <p class="why">Tasks, milestones and project status join the account timeline.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/gmail.svg" alt="Gmail" loading="lazy"></div>
+          <div class="meta"><div class="name">Gmail</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Inbound and outbound client email threaded into the account record.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/outlook.svg" alt="Outlook" loading="lazy"></div>
+          <div class="meta"><div class="name">Outlook</div>
+            <div class="cat">CONVERSATIONS</div></div>
+          <p class="why">Microsoft 365 mail and calendar joined to the unified client timeline.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/jira.svg" alt="Jira" loading="lazy"></div>
+          <div class="meta"><div class="name">Jira</div>
+            <div class="cat">DELIVERY</div></div>
+          <p class="why">Issues, sprints and release status surfaced as account signals.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/asana.svg" alt="Asana" loading="lazy"></div>
+          <div class="meta"><div class="name">Asana</div>
+            <div class="cat">DELIVERY</div></div>
+          <p class="why">Project tasks and milestones feed delivery health for every client.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/clickup.svg" alt="ClickUp" loading="lazy"></div>
+          <div class="meta"><div class="name">ClickUp</div>
+            <div class="cat">DELIVERY</div></div>
+          <p class="why">Workspaces, tasks and docs threaded into the account timeline.</p>
+        </a>
+<a class="kz-int-tile" href="#">
+          <div class="logo"><img src="../assets/img/integrations/notion.svg" alt="Notion" loading="lazy"></div>
+          <div class="meta"><div class="name">Notion</div>
+            <div class="cat">KNOWLEDGE</div></div>
+          <p class="why">Workspaces, docs and databases threaded into the right account record.</p>
+        </a></div>
+    </section>
 
+    <!-- KAIZAN API FEATURED -->
+    <section class="kz-int-grid-section">
+      <div class="kz-int-grid-head">
+        <h2 class="kz-h2" style="font-size:32px;">Featured</h2>
+        <span class="kz-eyebrow">BUILD YOUR OWN</span>
+      </div>
+      <div class="kz-int-api">
+        <div class="logo-large"><svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" rx="10" fill="#0A0A0A"/><path d="M14 18 l-5 6 l5 6 M34 18 l5 6 l-5 6 M22 32 l4 -16" stroke="#FFB900" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div>
+          <div class="kz-eyebrow" style="color:var(--kz-yellow);">BUILD YOUR OWN SOLUTIONS</div>
+          <h3 class="head">Kaizan API</h3>
+          <p class="lede">Leverage all your unified client intelligence — every meeting, every signal,
+            every score — in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
+        </div>
+        <div class="actions">
+          <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Talk to us</a>
+        </div>
+      </div>
+      <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
+        Contact Kaizan to understand the full suite of integrations available.
+      </h3>
+    </section>
 
-      <!-- HERO -->
-      <section class="kz-section-tight" style="padding-top:60px;">
-        <div class="kz-eyebrow">Integrations</div>
-        <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
-          The tools your client teams already use - unify your data.
-        </h1>
-        <p class="kz-lede" style="margin-top:18px;max-width:760px;">
-          Kaizan reads from the systems where work actually happens, and builds a continuous memory on every client.
-          <strong style="color:var(--kz-ink);font-weight:600;">All standard integrations are free.</strong>
-          They automatically capture every meeting, message, doc and ticket — and assign the context
-          to the right client, the right account, the right user. No new dashboard for the team to log into.
-          No data left stranded.
-        </p>
-        <div class="kz-int-meta">
-          <span><span class="kz-dot"></span> <strong>2-way sync</strong> on CRMs</span>
-          <span><span class="kz-dot"></span> <strong>Read &amp; Write</strong> on conversation tools</span>
-          <span><span class="kz-dot"></span> <strong>OAuth 2.0</strong> · revoke anytime</span>
+    <!-- CUSTOM INTEGRATIONS -->
+    <section class="kz-int-custom">
+      <div class="kz-int-custom-card-outer">
+        <div class="left">
+          <div class="kz-eyebrow">Forward-deployed engineering</div>
+          <h2 class="kz-h2" style="font-size:44px;margin:12px 0 18px;line-height:1.05;">
+            Custom <span class="kz-mark kz-mark-tight">integrations</span>
+          </h2>
+          <p class="kz-lede" style="font-size:16px;max-width:560px;">
+            Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
+            with your internal systems — for more client intelligence, workflow automation and autonomous
+            client growth.
+          </p>
+          <div class="kz-flex" style="margin-top:26px;">
+            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book demo →</a>
+          </div>
         </div>
-      </section>
+        <div class="right"><div class="kz-int-custom-card"><div class="lbl">CLIENT INTELLIGENCE</div><div class="d">Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine.</div></div>
+<div class="kz-int-custom-card"><div class="lbl">WORKFLOW AUTOMATION</div><div class="d">Trigger downstream actions in your delivery, billing and resourcing systems.</div></div>
+<div class="kz-int-custom-card"><div class="lbl">AUTONOMOUS GROWTH</div><div class="d">Connect agents to your account-planning, forecasting and outbound playbooks.</div></div>
+<div class="kz-int-custom-card"><div class="lbl">INTERNAL AI</div><div class="d">Embed Kaizan inside the AI platforms and copilots your team already uses.</div></div></div>
+      </div>
+    </section>
 
-      <!-- STANDARD GRID -->
-      <section class="kz-int-grid-section">
-        <div class="kz-int-grid-head">
-          <h2 class="kz-h2" style="font-size:32px;">Standard</h2>
+    <!-- REQUEST CTA -->
+    <section class="kz-int-request">
+      <div class="card">
+        <div>
+          <div class="kz-eyebrow" style="color:rgba(10,10,10,.6);">DON&rsquo;T SEE YOUR TOOL?</div>
+          <h3 class="head">We&rsquo;ll build it for design partners.</h3>
+          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet — tell us.
+            We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
         </div>
-        <div class="kz-int-grid"><a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/teams.svg" alt="Microsoft Teams" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Microsoft Teams</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Capture meeting transcripts and chat threads automatically.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/claude.svg" alt="Claude" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Claude</div>
-              <div class="cat">MODEL PROVIDER</div>
-            </div>
-            <p class="why">Frontier reasoning powers CARE, briefings and reply drafts.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/slack.svg" alt="Slack" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Slack</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Surface unanswered client messages and route them to an owner.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/hubspot.svg" alt="HubSpot" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">HubSpot</div>
-              <div class="cat">CRM</div>
-            </div>
-            <p class="why">Two-way sync: deals, contacts, notes, activity, custom properties.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/salesforce.svg" alt="Salesforce" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Salesforce</div>
-              <div class="cat">CRM</div>
-            </div>
-            <p class="why">Bidirectional sync; CARE score writes back to the Account object.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/gmeet.svg" alt="Google Meet" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Google Meet</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Recordings and transcripts ingested the moment a call ends.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/gdrive.svg" alt="Google Drive" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Google Drive</div>
-              <div class="cat">KNOWLEDGE</div>
-            </div>
-            <p class="why">Briefs, decks and notes indexed and joined to the right account.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/monday.svg" alt="Monday" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Monday</div>
-              <div class="cat">DELIVERY</div>
-            </div>
-            <p class="why">Project status and blockers feed into account health signals.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/sharepoint.svg" alt="SharePoint" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">SharePoint</div>
-              <div class="cat">KNOWLEDGE</div>
-            </div>
-            <p class="why">Enterprise document libraries linked to the accounts they support.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/zoom.svg" alt="Zoom" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Zoom</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Cloud recordings and transcripts ingested and attributed to accounts.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/wrike.svg" alt="Wrike" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Wrike</div>
-              <div class="cat">DELIVERY</div>
-            </div>
-            <p class="why">Tasks, milestones and project status join the account timeline.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/gmail.svg" alt="Gmail" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Gmail</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Inbound and outbound client email threaded into the account record.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/outlook.svg" alt="Outlook" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Outlook</div>
-              <div class="cat">CONVERSATIONS</div>
-            </div>
-            <p class="why">Microsoft 365 mail and calendar joined to the unified client timeline.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/jira.svg" alt="Jira" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Jira</div>
-              <div class="cat">DELIVERY</div>
-            </div>
-            <p class="why">Issues, sprints and release status surfaced as account signals.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/asana.svg" alt="Asana" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Asana</div>
-              <div class="cat">DELIVERY</div>
-            </div>
-            <p class="why">Project tasks and milestones feed delivery health for every client.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/clickup.svg" alt="ClickUp" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">ClickUp</div>
-              <div class="cat">DELIVERY</div>
-            </div>
-            <p class="why">Workspaces, tasks and docs threaded into the account timeline.</p>
-          </a>
-          <a class="kz-int-tile" href="#">
-            <div class="logo"><img src="/assets/img/integrations/notion.svg" alt="Notion" loading="lazy"></div>
-            <div class="meta">
-              <div class="name">Notion</div>
-              <div class="cat">KNOWLEDGE</div>
-            </div>
-            <p class="why">Workspaces, docs and databases threaded into the right account record.</p>
-          </a>
-        </div>
-      </section>
+        <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
+          Request an integration →
+        </a>
+      </div>
+    </section>
 
-      <!-- KAIZAN API FEATURED -->
-      <section class="kz-int-grid-section">
-        <div class="kz-int-grid-head">
-          <h2 class="kz-h2" style="font-size:32px;">Featured</h2>
-          <span class="kz-eyebrow">BUILD YOUR OWN</span>
-        </div>
-        <div class="kz-int-api">
-          <div class="logo-large"><svg viewBox="0 0 48 48" width="44" height="44">
-              <rect x="4" y="4" width="40" height="40" rx="10" fill="#0A0A0A" />
-              <path d="M14 18 l-5 6 l5 6 M34 18 l5 6 l-5 6 M22 32 l4 -16" stroke="#FFB900" stroke-width="2.6"
-                fill="none" stroke-linecap="round" stroke-linejoin="round" />
-            </svg></div>
-          <div>
-            <div class="kz-eyebrow" style="color:var(--kz-yellow);">BUILD YOUR OWN SOLUTIONS</div>
-            <h3 class="head">Kaizan API</h3>
-            <p class="lede">Leverage all your unified client intelligence — every meeting, every signal,
-              every score — in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
-          </div>
-          <div class="actions">
-            <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;"
-              href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Talk to us</a>
-          </div>
-        </div>
-        <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
-          Contact Kaizan to understand the full suite of integrations available.
-        </h3>
-      </section>
-
-      <!-- CUSTOM INTEGRATIONS -->
-      <section class="kz-int-custom">
-        <div class="kz-int-custom-card-outer">
-          <div class="left">
-            <div class="kz-eyebrow">Forward-deployed engineering</div>
-            <h2 class="kz-h2" style="font-size:44px;margin:12px 0 18px;line-height:1.05;">
-              Custom <span class="kz-mark kz-mark-tight">integrations</span>
-            </h2>
-            <p class="kz-lede" style="font-size:16px;max-width:560px;">
-              Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
-              with your internal systems — for more client intelligence, workflow automation and autonomous
-              client growth.
-            </p>
-            <div class="kz-flex" style="margin-top:26px;">
-              <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;"
-                href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book demo →</a>
-            </div>
-          </div>
-          <div class="right">
-            <div class="kz-int-custom-card">
-              <div class="lbl">CLIENT INTELLIGENCE</div>
-              <div class="d">Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine.</div>
-            </div>
-            <div class="kz-int-custom-card">
-              <div class="lbl">WORKFLOW AUTOMATION</div>
-              <div class="d">Trigger downstream actions in your delivery, billing and resourcing systems.</div>
-            </div>
-            <div class="kz-int-custom-card">
-              <div class="lbl">AUTONOMOUS GROWTH</div>
-              <div class="d">Connect agents to your account-planning, forecasting and outbound playbooks.</div>
-            </div>
-            <div class="kz-int-custom-card">
-              <div class="lbl">INTERNAL AI</div>
-              <div class="d">Embed Kaizan inside the AI platforms and copilots your team already uses.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- REQUEST CTA -->
-      <section class="kz-int-request">
-        <div class="card">
-          <div>
-            <div class="kz-eyebrow" style="color:rgba(10,10,10,.6);">DON&rsquo;T SEE YOUR TOOL?</div>
-            <h3 class="head">We&rsquo;ll build it for design partners.</h3>
-            <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet — tell us.
-              We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
-          </div>
-          <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;"
-            href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
-            Request an integration →
+    <footer class="kz-footer">
+      <div class="kz-footer-grid">
+        <div class="kz-footer-brand logo-light">
+          <a class="kz-nav-logo" href="../index.html">
+            <img class="icon" src="../assets/img/kaizan-icon.png" alt="">
+            <img class="word" src="../assets/img/kaizan-logo.png" alt="Kaizan">
           </a>
+          <p class="blurb">Client super intelligence for professional services firms. Runway East, Covent Garden · London.</p>
         </div>
-      </section>
-
-      <footer class="kz-footer">
-        <div class="kz-footer-grid">
-          <div class="kz-footer-brand logo-light">
-            <a class="kz-nav-logo" href="/">
-              <img class="icon" src="/assets/img/kaizan-icon.png" alt="">
-              <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
-            </a>
-            <p class="blurb">Client super intelligence for professional services firms. Runway East, Covent Garden ·
-              London.</p>
-          </div>
-          <div class="col">
-            <h4>Product</h4><a href="/product/">Overview</a>
-            <a href="/integrations/">Integrations</a>
-            <a href="/security/">Security</a>
-          </div>
-          <div class="col">
-            <h4>Company</h4><a href="/about/">About</a>
-            <a href="/security/">Security</a>
-            <a href="/faq/">FAQ</a>
-          </div>
-          <div class="col">
-            <h4>Get in touch</h4><a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
-            <a href="mailto:hello@kaizan.ai">Contact</a>
-            <a href="https://www.linkedin.com/company/kaizan">LinkedIn</a>
-          </div>
-        </div>
-        <div class="kz-footer-bot">
-          <span>© 2026 Kaizan Labs Ltd. Series A announced 6 May 2026.</span>
-          <span>
-            <a href="https://help.kaizan.ai/en/articles/6028739-privacy-policy">Privacy</a> ·
-            <a href="https://help.kaizan.ai/en/articles/6045324-license-agreement">Terms</a> ·
-            <a href="https://help.kaizan.ai/en/articles/6014333-cookie-policy">Cookies</a>
-          </span>
-        </div>
-      </footer>
+        <div class="col"><h4>Product</h4><a href="../product/">Overview</a>
+<a href="../integrations/">Integrations</a>
+<a href="../security/">Security</a></div><div class="col"><h4>For</h4><a href="../for/account-manager/">Account Manager</a>
+<a href="../for/project-manager/">Project Manager</a>
+<a href="../for/leadership/">Leadership</a>
+<a href="../for/new-business/">New Business</a></div><div class="col"><h4>Company</h4><a href="../about/">About</a>
+<a href="../security/">Security</a>
+<a href="../faq/">FAQ</a></div><div class="col"><h4>Get in touch</h4><a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+<a href="mailto:hello@kaizan.ai">Contact</a>
+<a href="https://www.linkedin.com/company/kaizan">LinkedIn</a></div>
+      </div>
+      <div class="kz-footer-bot">
+        <span>© 2026 Kaizan Labs Ltd. Series A announced 6 May 2026.</span>
+        <span>
+          <a href="https://help.kaizan.ai/en/articles/6028739-privacy-policy">Privacy</a> ·
+          <a href="https://help.kaizan.ai/en/articles/6045324-license-agreement">Terms</a> ·
+          <a href="https://help.kaizan.ai/en/articles/6014333-cookie-policy">Cookies</a>
+        </span>
+      </div>
+    </footer>
     </main>
-  </div>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+</div>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </body>
-
 </html>

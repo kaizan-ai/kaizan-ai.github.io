@@ -128,6 +128,51 @@
     });
   }
 
+  // ── Video lightbox: click [data-video-btn] → open modal with video ──
+  function initVideoLightbox() {
+    var triggers = document.querySelectorAll('[data-video-btn]');
+    if (!triggers.length) return;
+
+    // Lazy-create the lightbox once on first need.
+    var lb = document.createElement('div');
+    lb.className = 'kz-video-lightbox';
+    lb.innerHTML =
+      '<div class="kz-video-lightbox__frame">' +
+        '<button class="kz-video-lightbox__close" type="button" aria-label="Close video">×</button>' +
+        '<video controls playsinline></video>' +
+      '</div>';
+    document.body.appendChild(lb);
+    var video = lb.querySelector('video');
+    var closeBtn = lb.querySelector('.kz-video-lightbox__close');
+
+    function open(src) {
+      video.src = src;
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      var p = video.play();
+      if (p && typeof p.then === 'function') p.catch(function () {});
+    }
+    function close() {
+      lb.classList.remove('is-open');
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+      document.body.style.overflow = '';
+    }
+
+    triggers.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var src = b.getAttribute('data-video-src');
+        if (src) open(src);
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
@@ -136,6 +181,7 @@
     initHelpers();
     initHeroVideo();
     initSecurityTabs();
+    initVideoLightbox();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

@@ -1,6 +1,6 @@
 # Kaizan website (B-lite)
 
-Static site implementation of the Kaizan B-lite design — built for GitHub Pages.
+Static site implementation of the Kaizan B-lite design - built for GitHub Pages.
 Pure HTML + CSS + a tiny vanilla-JS file. No build step, no React in production.
 
 ## What's here
@@ -13,7 +13,7 @@ customers/<slug>/index.html             5 case-study detail pages
 insights/index.html                     Blog / Insights (linked as "Blog" in nav)
 about/index.html                        CEO essay + seed announcement + investors
 for/<persona-slug>/index.html           8 persona pages
-blog/index.html                         **Hidden** blog landing — not in main nav
+blog/index.html                         **Hidden** blog landing - not in main nav
 404.html                                Custom 404
 assets/css/tokens.css                   Brand palette + base button styles
 assets/css/site.css                     Component classes + responsive breakpoints
@@ -75,9 +75,9 @@ When you're ready to make the blog public, edit `NAV` in `tools/build.py` to poi
 
 The design ships with placeholders in three places:
 
-- **Hero video** on the home page — currently a black panel with a "drop a video src here" hint. To wire a real video, edit `tools/build.py` → `render_home()` → search for `kz-hero-video` and add a `<video src="…" autoplay muted loop playsinline>` inside.
-- **Marquee logos** — currently rendered as text logos (matches the design). Replace by editing `CLIENT_LOGOS` and `INTEGRATIONS` to use `<img>` tags, or restyle the marquee in `site.css`.
-- **Blog post covers** — gradient SVG data-URIs. Replace `cover(...)` calls in `INSIGHTS_POSTS` with an image path under `assets/img/`.
+- **Hero video** on the home page - currently a black panel with a "drop a video src here" hint. To wire a real video, edit `tools/build.py` → `render_home()` → search for `kz-hero-video` and add a `<video src="…" autoplay muted loop playsinline>` inside.
+- **Marquee logos** - currently rendered as text logos (matches the design). Replace by editing `CLIENT_LOGOS` and `INTEGRATIONS` to use `<img>` tags, or restyle the marquee in `site.css`.
+- **Blog post covers** - gradient SVG data-URIs. Replace `cover(...)` calls in `INSIGHTS_POSTS` with an image path under `assets/img/`.
 
 Drop any new images into `assets/img/`. Reference them by relative path; the depth is automatic via `relpath(depth)` in `build.py`.
 
@@ -93,7 +93,7 @@ Then open `http://localhost:8000/`.
 
 ## Browser support
 
-Modern evergreen browsers. The CSS uses `aspect-ratio`, `gap`, `clamp()` and CSS custom properties — all widely supported since 2022. No polyfills required.
+Modern evergreen browsers. The CSS uses `aspect-ratio`, `gap`, `clamp()` and CSS custom properties - all widely supported since 2022. No polyfills required.
 
 ## Responsive
 
@@ -101,4 +101,4 @@ Three breakpoints in `assets/css/site.css`: 1280px, 1024px, 768px, 480px. The fu
 
 ## Source design
 
-This site implements `Kaizan B-lite — full site.html` from the Claude Design handoff bundle. Original design files (React/JSX prototypes) are not included — see the bundle for reference.
+This site implements `Kaizan B-lite - full site.html` from the Claude Design handoff bundle. Original design files (React/JSX prototypes) are not included - see the bundle for reference.

@@ -904,16 +904,121 @@ button { font-family: inherit; }
 .kz-persona-quote {
   border-radius: 14px; aspect-ratio: 4/5;
   position: relative; overflow: hidden;
+  padding: 40px 32px 32px;
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
 }
-.kz-persona-quote .copy {
-  position: absolute; bottom: 18px; left: 20px; right: 20px; color: #fff;
+.kz-persona-quote .photo-wrap {
+  flex-shrink: 0;
 }
-.kz-persona-quote .role { font-size: 12px; opacity: .8; font-family: var(--kz-mono); letter-spacing: .08em; }
+.kz-persona-quote .photo {
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  border: 1.5px dashed rgba(255,255,255,.45);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.85);
+  font-family: var(--kz-mono); font-size: 48px; letter-spacing: .04em;
+  backdrop-filter: blur(2px);
+  object-fit: cover;
+}
+.kz-persona-quote .photo.is-placeholder { font-weight: 600; }
+.kz-persona-quote.is-nudge .photo { width: 240px; height: 240px; font-size: 38px; }
+.kz-persona-quote .copy { color: #fff; text-align: center; }
 .kz-persona-quote q {
-  display: block; font-family: var(--kz-display); font-size: 28px; line-height: 1.2; margin-top: 8px;
+  display: block; font-family: var(--kz-display); font-size: 22px;
+  line-height: 1.3; letter-spacing: -0.01em;
 }
 .kz-persona-quote q::before { content: "\""; }
 .kz-persona-quote q::after  { content: "\""; }
+.kz-persona-quote.is-nudge q { font-size: 19px; }
+.kz-persona-quote .who { margin-top: 18px; }
+.kz-persona-quote .who .name { font-size: 15px; font-weight: 600; letter-spacing: -0.005em; }
+.kz-persona-quote .who .role { font-size: 12.5px; opacity: .9; margin-top: 3px; line-height: 1.4; }
+.kz-persona-quote .who .co {
+  font-size: 11px; opacity: .7; font-family: var(--kz-mono);
+  letter-spacing: .1em; margin-top: 6px; text-transform: uppercase;
+}
+.kz-persona-quote .actions-stack {
+  margin-top: auto;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.kz-persona-quote .read-more,
+.kz-persona-quote .watch-video {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 999px;
+  font-family: var(--kz-sans); font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em; text-decoration: none;
+  white-space: nowrap;
+  transition: background .15s ease, transform .15s ease, border-color .15s ease;
+  cursor: pointer; border: 0;
+}
+.kz-persona-quote .read-more {
+  background: rgba(255,255,255,.95); color: #0A0A0A;
+}
+.kz-persona-quote .read-more:hover {
+  background: var(--kz-yellow); transform: translateY(-1px);
+}
+.kz-persona-quote .watch-video {
+  background: rgba(255,255,255,.15); color: #fff;
+  border: 1px solid rgba(255,255,255,.45);
+}
+.kz-persona-quote .watch-video:hover {
+  background: rgba(255,255,255,.25); transform: translateY(-1px);
+}
+.kz-persona-quote .watch-video .play { font-size: 10px; }
+
+/* ── Video lightbox ───────────────────────────────────────────── */
+.kz-video-lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 32px;
+}
+.kz-video-lightbox.is-open { display: flex; }
+.kz-video-lightbox__frame {
+  position: relative; width: 100%; max-width: 1100px;
+  aspect-ratio: 16/9;
+  background: #000; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+}
+.kz-video-lightbox__frame video {
+  width: 100%; height: 100%; display: block; background: #000;
+}
+.kz-video-lightbox__close {
+  position: absolute; top: -44px; right: 0;
+  width: 32px; height: 32px; border: 0; border-radius: 50%;
+  background: rgba(255,255,255,.95); color: #000;
+  font-size: 20px; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.kz-video-lightbox__close:hover { background: var(--kz-yellow); }
+@media (max-width: 700px) {
+  .kz-video-lightbox { padding: 16px; }
+  .kz-video-lightbox__close { top: -40px; }
+}
+
+/* persona "why X love Kaizan" grid (3 or 4 cards) */
+.kz-love-grid {
+  display: grid;
+  border-top: 1px solid var(--kz-line);
+  border-left: 1px solid var(--kz-line);
+}
+.kz-love-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.kz-love-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.kz-love-cell {
+  padding: 30px 28px;
+  border-right: 1px solid var(--kz-line);
+  border-bottom: 1px solid var(--kz-line);
+  background: var(--kz-paper);
+}
+.kz-love-cell .n {
+  font-family: var(--kz-mono); font-size: 11px; color: var(--kz-mute); letter-spacing: .08em;
+}
+.kz-love-cell .t {
+  font-family: var(--kz-sans); font-size: 22px; font-weight: 600;
+  letter-spacing: -0.02em; line-height: 1.2; margin: 12px 0;
+}
+.kz-love-cell .d { font-size: 15px; color: var(--kz-mute); line-height: 1.55; }
 
 /* persona "how Kaizan helps" rows */
 .kz-product-row {
@@ -929,18 +1034,29 @@ button { font-family: inherit; }
 .kz-product-row .d { font-size: 15px; color: var(--kz-mute); margin-top: 8px; line-height: 1.55; }
 .kz-product-row .frame {
   background: var(--kz-paper); border: 1px solid var(--kz-line);
-  border-radius: 10px; padding: 16px; height: 140px; position: relative;
+  border-radius: 10px; overflow: hidden; position: relative;
   box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 16px 40px -22px rgba(40,30,15,.22);
 }
 .kz-product-row .frame-label {
+  padding: 14px 16px 12px;
   font-family: var(--kz-mono); font-size: 10px; letter-spacing: .12em; color: var(--kz-mute);
 }
+/* Empty-state placeholder keeps the striped panel with a fixed min height. */
 .kz-product-row .frame-fill {
-  position: absolute; inset: 40px 16px 16px;
+  margin: 0 16px 16px;
+  min-height: 140px;
   background: repeating-linear-gradient(135deg, var(--kz-paper), var(--kz-paper) 8px, #F5EFE0 8px, #F5EFE0 16px);
   border: 1px solid var(--kz-line); border-radius: 6px;
   display: flex; align-items: center; justify-content: center;
   font-family: var(--kz-mono); font-size: 11px; color: var(--kz-mute-2);
+}
+/* Real media: fills the frame edge-to-edge under the label, sized by its
+   own natural dimensions so no cropping or letterboxing. */
+.kz-product-row .frame-fill.is-media {
+  display: block;
+  width: 100%; height: auto;
+  margin: 0; border: 0; border-radius: 0;
+  background: transparent; min-height: 0;
 }
 
 /* persona quote section */
