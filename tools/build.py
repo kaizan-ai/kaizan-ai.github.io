@@ -848,6 +848,9 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         <link rel="icon" type="image/webp" sizes="16x16" href="{p}assets/img/favicon-16x16.webp">
         <link rel="apple-touch-icon" sizes="180x180" href="{p}assets/img/apple-touch-icon.png">
         <link rel="mask-icon" href="{p}assets/img/safari-pinned-tab.svg" color="#FFB900">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
         <link rel="stylesheet" href="{p}assets/css/tokens.css{tokens_v}">
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
