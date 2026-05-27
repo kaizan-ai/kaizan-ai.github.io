@@ -13,12 +13,12 @@
   --kz-mute: #4a4a4a;
   --kz-mute-2: #777777;
 
-  /* Typography — PT Sans via Google Fonts (loaded in page_head). Falls
-     back to the system stack while the web font is fetching or if it
-     fails to load. */
-  --kz-sans:    "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --kz-display: "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --kz-mono:    "PT Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Typography — IBM Plex Sans via Google Fonts (loaded in page_head).
+     Falls back to the system stack while the web font is fetching or if
+     it fails to load. */
+  --kz-sans:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --kz-display: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --kz-mono:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Layout */
   --kz-gutter: 56px;
