@@ -872,7 +872,7 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        }})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+        }})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
         <!-- End Google Tag Manager -->
         </head>
         <body>
@@ -884,7 +884,7 @@ def page_head(title: str, depth: int, description: str = '') -> str:
 def page_foot() -> str:
     return ('</main>\n</div>\n'
             '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV" '
+            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
             'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
             '<!-- End Google Tag Manager (noscript) -->\n'
             '</body>\n</html>\n')
@@ -1405,7 +1405,7 @@ def render_home() -> str:
             </div>
             <div class="kz-cta-pill"><span>Book a demo</span><span class="kz-cta-arrow">→</span></div>
           </a>
-          <a class="kz-cta-card is-ghost" href="/white-paper">
+          <a class="kz-cta-card is-ghost" href="white-paper/">
             <div>
               <div class="kz-cta-eyebrow">CARE white paper · 18 min</div>
               <div class="kz-cta-headline">What the top 10% do differently?</div>
@@ -2362,7 +2362,7 @@ def render_blog_hidden() -> str:
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
 <!-- End Google Tag Manager -->
 </head>
 <body>
@@ -2371,7 +2371,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '''
     return (head + body + '</main>\n</div>\n'
             '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV" '
+            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
             'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
             '<!-- End Google Tag Manager (noscript) -->\n'
             '</body>\n</html>\n')
@@ -2399,7 +2399,7 @@ def render_blog_post(post: dict) -> str:
 new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-}})(window,document,'script','dataLayer','GTM-PNFJD9DV');</script>
+}})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
 <!-- End Google Tag Manager -->
 </head>
 <body>
@@ -2422,7 +2422,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     '''
     return (head + body + '</main>\n</div>\n'
             '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNFJD9DV" '
+            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
             'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
             '<!-- End Google Tag Manager (noscript) -->\n'
             '</body>\n</html>\n')
