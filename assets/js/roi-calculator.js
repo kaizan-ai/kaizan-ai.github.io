@@ -320,9 +320,94 @@
         ' Satisfaction is shown directionally and never monetised. Generated from your inputs on kaizan.ai.</div>' +
       '</div></body></html>';
   }
+  // One-click direct download: build a real PDF with jsPDF and save it (no
+  // print dialog). Falls back to the print method if jsPDF didn't load.
+  // NB: jsPDF's standard fonts are Latin-1 only — avoid glyphs like "→" here.
   function downloadBreakdown() {
-    // Render the report in an isolated iframe and invoke its print dialog, so
-    // the user can "Save as PDF". Dependency-free; avoids popup blockers.
+    var JsPDF = window.jspdf && window.jspdf.jsPDF;
+    if (!JsPDF) { printBreakdownFallback(); return; }
+
+    var s = state, r = compute(s);
+    var doc = new JsPDF({ unit: 'pt', format: 'a4' });
+    var PW = doc.internal.pageSize.getWidth();
+    var M = 48, RIGHT = PW - M, y = 64;
+
+    var INK = [20, 18, 16], GOLD = [255, 185, 0], MUTE = [87, 83, 78], GOLDD = [154, 123, 12],
+        CREAM = [255, 251, 240], GREY = [120, 120, 120], LINE = [225, 225, 225], TXT = [45, 45, 45];
+    function tcol(c) { doc.setTextColor(c[0], c[1], c[2]); }
+    function fcol(c) { doc.setFillColor(c[0], c[1], c[2]); }
+    function dcol(c) { doc.setDrawColor(c[0], c[1], c[2]); }
+
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); tcol(GOLDD);
+    doc.text('KAIZAN  ·  ROI BREAKDOWN', M, y); y += 20;
+    doc.setFontSize(21); tcol(INK);
+    doc.text('What Kaizan returns on your portfolio', M, y); y += 15;
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(10); tcol(MUTE);
+    doc.text(s.mode + ' model  ·  figures in GBP per year', M, y); y += 18;
+
+    var barH = 62; fcol(INK); doc.roundedRect(M, y, RIGHT - M, barH, 8, 8, 'F');
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); tcol(GOLD);
+    doc.text(r.isCustom ? 'TOTAL ANNUAL BENEFIT WITH KAIZAN' : 'NET ANNUAL GAIN WITH KAIZAN', M + 18, y + 23);
+    doc.setFontSize(26); tcol(CREAM);
+    doc.text(gbp0(r.isCustom ? r.gross : r.net) + ' / yr', M + 18, y + 48);
+    y += barH + 26;
+
+    function section(title) {
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(9); tcol(GOLDD);
+      doc.text(title.toUpperCase(), M, y); y += 9;
+      dcol(INK); doc.setLineWidth(1); doc.line(M, y, RIGHT, y); y += 16;
+    }
+    function rrow(label, value) {
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(10.5); tcol(TXT);
+      doc.text(label, M, y);
+      doc.setFont('helvetica', 'bold'); tcol(INK);
+      doc.text(value, RIGHT, y, { align: 'right' });
+      y += 9; dcol(LINE); doc.setLineWidth(0.5); doc.line(M, y, RIGHT, y); y += 15;
+    }
+
+    section('Your client portfolio today');
+    rrow('Total company headcount', num(s.totalHeadcount));
+    rrow('Client delivery team size', num(s.team));
+    rrow('Number of clients', num(s.clients));
+    rrow('Average annual revenue per client', gbp0(s.revPer));
+    rrow('Typical annual client attrition', s.churn + '%');
+    rrow('Client portfolio value', gbp0(r.portfolio) + ' / yr');
+    y += 8;
+
+    section('Where the ' + gbp0(r.gross) + ' of annual benefit comes from');
+    rrow('Revenue retained from churn', gbp0(r.revRetained));
+    rrow('Revenue expanded through upsell', gbp0(r.revUpsold));
+    rrow('Capacity recovered from admin', gbp0(r.capacity) + '   ·   +' + r.fte.toFixed(1) + ' FTE');
+    y += 8;
+
+    section('Headline & pricing');
+    rrow(r.isCustom ? 'Total annual benefit' : 'Net annual gain', gbp0(r.isCustom ? r.gross : r.net) + ' / yr');
+    if (r.isCustom) {
+      rrow('Kaizan tier', 'Enterprise (bespoke)');
+    } else {
+      rrow('Kaizan cost · ' + r.tier.name + ' tier', gbp0(r.tierPrice / 12) + ' / mo   ·   ' + gbp0(r.tierPrice) + ' / yr');
+      rrow('Cost per client', gbp0((r.tierPrice / 12) / (s.clients || 1)) + ' / mo');
+      rrow('Return', r.roiMultiple.toFixed(1) + 'x');
+      rrow('Payback', r.paybackMonths + ' months');
+    }
+    y += 10;
+
+    var footEl = q('[data-roi="footnote"]');
+    var footText = ((footEl ? footEl.textContent : '') +
+      ' Satisfaction is shown directionally and never monetised. Generated from your inputs on kaizan.ai.')
+      .replace(/\s+/g, ' ').trim();
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(8); tcol(GREY);
+    var lines = doc.splitTextToSize(footText, RIGHT - M);
+    doc.text(lines, M, y); y += lines.length * 11 + 14;
+
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); tcol(GOLDD);
+    doc.textWithLink('Book a demo', M, y, { url: DEMO_URL });
+
+    doc.save('kaizan-roi-breakdown.pdf');
+  }
+
+  // Fallback used only if jsPDF failed to load: print the HTML report to PDF.
+  function printBreakdownFallback() {
     var iframe = document.createElement('iframe');
     iframe.setAttribute('aria-hidden', 'true');
     iframe.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0;';

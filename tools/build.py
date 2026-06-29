@@ -3132,6 +3132,7 @@ def render_pricing() -> str:
     extra_head = (
         f'<link rel="stylesheet" href="{p}assets/css/roi-calculator.css">\n'
         f'        <script charset="utf-8" defer src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>\n'
+        f'        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n'
         f'        <script defer src="{p}assets/js/roi-calculator.js"></script>'
     )
     body = nav_html(1, active='ROI Calculator') + ROI_CALCULATOR_SECTION + footer_html(1)
