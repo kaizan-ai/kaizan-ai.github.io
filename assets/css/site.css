@@ -69,9 +69,21 @@ button { font-family: inherit; }
 .kz-nav-cta { display: flex; gap: 10px; align-items: center; }
 
 /* mega menu (Product) */
-.kz-mega-trigger { display: inline-flex; align-items: center; gap: 4px; cursor: pointer; }
-.kz-mega-caret { font-size: 9px; opacity: .7; transition: transform .2s; }
-.kz-mega-trigger[aria-expanded="true"] .kz-mega-caret { transform: rotate(180deg); }
+.kz-mega-trigger { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+/* Caret is a CSS-drawn chevron (reliable across fonts) so it's obvious an item
+   has a dropdown. The unicode glyph in the markup is hidden via font-size:0. */
+.kz-mega-caret {
+  display: inline-block; width: 7px; height: 7px; font-size: 0;
+  border-right: 1.7px solid currentColor;
+  border-bottom: 1.7px solid currentColor;
+  border-radius: 0 0 1px 0;
+  color: var(--kz-mute);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .2s ease, color .2s ease;
+}
+.kz-mega-trigger:hover .kz-mega-caret,
+.kz-mega-trigger[aria-expanded="true"] .kz-mega-caret { color: var(--kz-ink); }
+.kz-mega-trigger[aria-expanded="true"] .kz-mega-caret { transform: translateY(1px) rotate(225deg); }
 .kz-mega-panel {
   position: absolute;
   top: 100%;
@@ -149,6 +161,30 @@ button { font-family: inherit; }
 .kz-mega-mini-row { display: flex; justify-content: space-between; padding: 4px 0; color: rgba(255,251,240,.85); }
 .kz-mega-mini-row .v { color: var(--kz-yellow); }
 .kz-mega-mini-head { display: flex; justify-content: space-between; margin-bottom: 10px; color: rgba(255,251,240,.6); }
+
+/* Compact nav dropdown (Resources) — reuses the mega-menu show/hide */
+.kz-drop-panel {
+  display: flex; flex-direction: column;
+  width: 232px; min-width: 232px;
+  grid-template-columns: none;
+  gap: 2px; padding: 14px;
+  left: 0; transform: none;
+}
+.kz-drop-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: 8px;
+  font-size: 14px; font-weight: 500;
+  color: var(--kz-ink); text-decoration: none;
+  transition: background .15s ease;
+}
+.kz-drop-link:hover { background: rgba(0,0,0,.05); }
+.kz-drop-link .glyph {
+  width: 18px; height: 18px; border-radius: 5px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 700;
+}
+.kz-drop-link .glyph.is-yellow { background: var(--kz-yellow); }
+.kz-drop-link .glyph.is-mute { background: rgba(0,0,0,.08); }
 
 /* Mobile nav (hidden on desktop) */
 .kz-nav-toggle {
@@ -1135,6 +1171,74 @@ button { font-family: inherit; }
 }
 .kz-stat-cell .lbl { font-size: 13px; color: var(--kz-mute); margin-top: 8px; letter-spacing: .01em; }
 
+/* ── Our Research page ───────────────────────────────────────────── */
+.kz-research-hero {
+  padding: 64px var(--kz-gutter) 72px;
+  display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center;
+}
+.kz-research-inside {
+  list-style: none; margin: 28px 0 0; padding: 0;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.kz-research-inside li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 16px; color: var(--kz-ink); line-height: 1.45;
+}
+.kz-research-inside .tick { color: var(--kz-yellow); font-weight: 700; flex-shrink: 0; }
+.kz-research-cover { display: flex; justify-content: center; }
+.kz-research-cover-card {
+  width: 300px; aspect-ratio: 3 / 4; border-radius: 16px;
+  background: #0A0A0A; color: var(--kz-paper);
+  padding: 30px; display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: 0 30px 70px -28px rgba(40,30,15,.5);
+}
+.kz-research-cover-card .big {
+  font-family: var(--kz-display); font-size: 46px; line-height: 1.04;
+  letter-spacing: -0.03em; font-weight: 400;
+}
+.kz-research-nums {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 44px;
+}
+.kz-research-num .n { font-size: 88px; line-height: .95; }
+.kz-research-num .n .u { font-size: 44px; margin-left: 2px; }
+.kz-research-num p { margin: 16px 0 12px; font-size: 15px; line-height: 1.5; color: var(--kz-mute); }
+.kz-research-num .src { color: var(--kz-mute-2); }
+.kz-research-care { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.kz-research-care-card {
+  background: var(--kz-paper); border: 1px solid var(--kz-line); border-radius: 14px; padding: 26px;
+}
+.kz-research-care-card .head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+.kz-research-care-card .badge {
+  width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;
+  background: var(--kz-yellow); color: var(--kz-ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 18px;
+}
+.kz-research-care-card p { font-size: 15px; line-height: 1.5; color: var(--kz-mute); margin: 0 0 18px; }
+.kz-research-care-card .foot { display: flex; align-items: baseline; gap: 12px; border-top: 1px solid var(--kz-line); padding-top: 14px; }
+.kz-research-care-card .stat { font-family: var(--kz-display); font-size: 30px; letter-spacing: -0.03em; flex-shrink: 0; }
+.kz-research-care-card .note { font-size: 12.5px; color: var(--kz-mute); line-height: 1.4; }
+.kz-research-aud-card {
+  background: var(--kz-paper); border: 1px solid var(--kz-line); border-radius: 14px; padding: 24px;
+}
+.kz-research-aud-card p { font-size: 14.5px; line-height: 1.5; color: var(--kz-mute); margin: 8px 0 0; }
+.kz-research-form {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  margin: 28px auto 0; max-width: 520px;
+}
+.kz-research-form input {
+  flex: 1; min-width: 240px; padding: 13px 16px; border-radius: 10px;
+  border: 1px solid rgba(255,251,240,.25); background: rgba(255,251,240,.06);
+  color: var(--kz-paper); font-size: 15px; font-family: var(--kz-sans);
+}
+.kz-research-form input::placeholder { color: rgba(255,251,240,.5); }
+
+/* Knowledge Hub reuses the FAQ page components (.kz-faq-*) but has no aside,
+   so it overrides the two-column FAQ body to a single full-width column.
+   Double-class selectors keep these winning regardless of source order. */
+.kz-faq-body.kz-kh-body { display: block; grid-template-columns: none; }
+.kz-faq-content.kz-kh-content { max-width: none; }
+
 .kz-featured-case {
   padding: 60px var(--kz-gutter);
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: stretch;
@@ -1508,6 +1612,12 @@ button { font-family: inherit; }
   .kz-pillars .kz-pillar, .kz-pipeline-cell, .kz-stat-cell { border-right: none; border-bottom: 1px solid var(--kz-line); }
   .kz-care-cell { border-right: none; border-bottom: 1px solid var(--kz-line); }
 
+  .kz-research-hero { grid-template-columns: 1fr; }
+  .kz-research-cover { justify-content: flex-start; }
+  .kz-research-nums { grid-template-columns: 1fr; gap: 32px; }
+  .kz-research-num .n { font-size: 72px; }
+  .kz-research-care, .kz-research-aud { grid-template-columns: 1fr 1fr; }
+
   .kz-personas-grid, .kz-trust-cards, .kz-case-grid, .kz-insights-cards, .kz-investors-logos,
   .kz-care-grid, .kz-objections, .kz-persona-ribbon-grid, .kz-composite,
   .kz-helpers-tabs, .kz-pricing-tiers, .kz-pricing-included {
@@ -1537,6 +1647,9 @@ button { font-family: inherit; }
   .kz-section { padding-top: 40px; padding-bottom: 40px; }
   .kz-section-loose { padding-top: 60px; padding-bottom: 60px; }
   .kz-cta-band { padding-top: 64px; padding-bottom: 64px; }
+  .kz-research-hero { padding-left: var(--kz-gutter); padding-right: var(--kz-gutter); }
+  .kz-research-care, .kz-research-aud { grid-template-columns: 1fr; }
+  .kz-research-cover-card { width: 100%; max-width: 280px; }
 
   .kz-h1, .kz-h1-xl { font-size: 44px; line-height: 1.1; }
   .kz-h2, .kz-h2-lg, .kz-h2-xl { font-size: 28px; }

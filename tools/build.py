@@ -38,9 +38,21 @@ NAV = [
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
-    ('Security',     'security/'),
-    ('FAQs',         'faq/'),
+    # Sentinel-ish: nav_html renders "Resources" as a hover dropdown listing
+    # RESOURCES_MENU. The trigger itself points at the first item (Our Research).
+    ('Resources',    'research/'),
     ('About',        'about/'),
+]
+
+# Sub-links shown in the "Resources" nav dropdown. The "Resources" trigger
+# itself points at the Our Research page (research/, set in NAV above); the
+# dropdown lists the other resources. FAQ maps to /faq/; Security is the
+# Trust & Security page. Third column class (is-yellow / is-mute) is reserved
+# for an optional glyph treatment.
+RESOURCES_MENU = [
+    ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
+    ('FAQs',          'faq/',            'is-mute'),
+    ('Security',      'security/',       'is-mute'),
 ]
 
 # Client-logo marquee. Each entry is a dict with name + filename in
@@ -948,6 +960,22 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
                   </aside>
                 </div>
               </span>'''
+        elif label == 'Resources' and with_mega:
+            links = '\n'.join(
+                f'<a class="kz-drop-link" href="{p}{tgt}">{E(lbl)}</a>'
+                for lbl, tgt, gl in RESOURCES_MENU
+            )
+            trigger_cls = 'kz-mega-trigger is-active' if active == label else 'kz-mega-trigger'
+            # No href: the trigger only opens the dropdown (matches Personas).
+            items_html.append(f'''
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="{trigger_cls}" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
+                  Resources <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  {links}
+                </div>
+              </span>''')
         else:
             items_html.append(f'<a href="{E(href)}"{cls}>{E(label)}</a>')
 
@@ -1361,8 +1389,8 @@ def render_home() -> str:
     <section class="kz-hero kz-wash-gold-pale">
       <div class="kz-hero-copy">
         <h1 class="kz-h1">
-          Client Service<br>
-          <span class="kz-mark" style="margin-top:10px;">Excellence</span>
+          Client Service <span class="kz-mark">Intelligence</span><br>
+          for the AI Era
         </h1>
         <p class="kz-lede" style="margin-top:24px;font-size:18px;max-width:520px;">
           Kaizan is the AI platform for client service professionals. Where AI Helpers work 24/7
@@ -2221,7 +2249,7 @@ def render_insights() -> str:
     )
 
     body = f'''
-    {nav_html(1, active='Blog')}
+    {nav_html(1, active='Resources')}
 
     <section class="kz-insights-hero">
       <div class="kz-eyebrow">Blog · from the Kaizan team</div>
@@ -3124,7 +3152,7 @@ def render_security() -> str:
         </section>''')
 
     body = f'''
-    {nav_html(1, active='Security')}
+    {nav_html(1, active='Resources')}
 
     <section class="kz-section-tight" style="padding-top:60px;">
       <div class="kz-eyebrow">Trust Centre · Last reviewed April 2026</div>
@@ -3445,7 +3473,7 @@ def render_faq() -> str:
         </section>''')
 
     body = f'''
-    {nav_html(1, active='FAQs')}
+    {nav_html(1, active='Resources')}
 
     <section class="kz-section-tight" style="padding-top:60px;border-bottom:1px solid var(--kz-line);">
       <div class="kz-eyebrow">FAQ · Last updated April 2026</div>
@@ -3491,6 +3519,497 @@ def render_faq() -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────
+# RESEARCH  (Our Research — features the one published report)
+# ─────────────────────────────────────────────────────────────────────
+
+# The single published research report. No placeholders — when a second
+# report ships, add it to this list and extend render_research().
+RESEARCH_REPORT = dict(
+    eyebrow='OUR RESEARCH · THE 2026 CLIENT SERVICE REPORT',
+    title_a='The Best',
+    title_b='vs The Rest.',
+    sub='What drives higher revenue and CSAT in the top 10% of clients.',
+    lede=("A first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of "
+          "chat messages — all anonymised — comparing how client service professionals work on "
+          "the relationships that grow versus the ones that slip away."),
+    meta='Free · 15 pages · Instant download',
+    inside=[
+        'The 8 behaviours that consistently mark the top 10% of account teams',
+        'The KPIs that actually lead to happier, higher-revenue clients',
+        'The CARE framework — how the patterns cluster into four pillars',
+    ],
+    dataset=[
+        ('1M+',  'Anonymised client conversations'),
+        ('10M+', 'Emails analysed'),
+        ('15',   'Pages of research'),
+        ('8',    'Behaviours decoded'),
+    ],
+    numbers=[
+        ('2.2', '×', 'More risks surfaced at top-performing accounts than at bottom-performing ones. '
+                     'The accounts that look quiet and healthy usually are not — silence is absence, '
+                     'not stability.', 'The Risk Paradox'),
+        ('66', '%', 'Of all client-facing calls are handled by just 25% of account managers. Coverage '
+                    'across the whole portfolio is the lever most teams leave unpulled.', 'The AM Power Law'),
+        ('1.84', '×', 'More calls per account manager on top-performing clients — at the same portfolio '
+                      'size, email-to-call ratio and talk-time share. Top accounts are more of the same '
+                      'conversation, not a different one.', 'The Ideal AM Profile'),
+    ],
+    care=[
+        ('C', 'Client satisfaction', 'How happy the client is with you and the work being delivered.',
+         '4.2×', 'More proactive comms per account at the top decile'),
+        ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context — who matters, '
+         'what changed this week, the shape of the next conversation.',
+         '73%', 'Of top performers maintain a live stakeholder map'),
+        ('R', 'Relationship strength', 'Strategic partner or just a vendor? Whether rapport, trust and '
+         'sentiment are where they need to be.',
+         '2.1h', 'Median first response time at the top 10%'),
+        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion — the quiet ask in '
+         'passing, or the proactive suggestion of how to grow their business.',
+         '82%', 'Of expansion revenue comes from prioritising commercial conversations early'),
+    ],
+    audiences=[
+        ('Heads of Client Services & CS', 'Set the bar for the team. Benchmark, retrain, repeat.'),
+        ('Account Directors & Managers', 'See where your book sits — and what to change on Monday.'),
+        ('Agency Leaders', 'An operating system for client-facing teams at scale.'),
+        ('Founders & CEOs', 'Retention is the lever. Here is what moves it.'),
+        ('C-level teams', '82% of expansion is inbound — the data on how to catch it.'),
+        ('Heads of AI & CTOs', 'The metrics, the tooling and the workflow. Page 28 onward.'),
+    ],
+)
+
+
+def render_research() -> str:
+    r = RESEARCH_REPORT
+
+    inside_html = '\n'.join(
+        f'<li><span class="tick" aria-hidden="true">→</span>{E(x)}</li>' for x in r['inside']
+    )
+    dataset_html = '\n'.join(
+        f'''<div class="kz-stat-cell">
+          <div class="num">{E(num)}</div>
+          <div class="lbl">{E(lbl)}</div>
+        </div>''' for num, lbl in r['dataset']
+    )
+    numbers_html = '\n'.join(
+        f'''<div class="kz-research-num">
+          <div class="kz-display-stat n">{E(n)}<span class="u">{E(u)}</span></div>
+          <p>{E(desc)}</p>
+          <div class="kz-eyebrow src">Source · {E(src)}</div>
+        </div>''' for n, u, desc, src in r['numbers']
+    )
+    care_html = '\n'.join(
+        f'''<div class="kz-research-care-card">
+          <div class="head"><span class="badge">{E(letter)}</span>
+            <h3 class="kz-h3">{E(name)}</h3></div>
+          <p>{E(desc)}</p>
+          <div class="foot"><span class="stat">{E(stat)}</span><span class="note">{E(note)}</span></div>
+        </div>''' for letter, name, desc, stat, note in r['care']
+    )
+    aud_html = '\n'.join(
+        f'''<div class="kz-research-aud-card">
+          <h3 class="kz-h3" style="font-size:18px;">{E(name)}</h3>
+          <p>{E(desc)}</p>
+        </div>''' for name, desc in r['audiences']
+    )
+
+    body = f'''
+    {nav_html(1, active='Resources')}
+
+    <section class="kz-research-hero kz-wash-gold">
+      <div class="copy">
+        <div class="kz-eyebrow">{E(r['eyebrow'])}</div>
+        <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;">
+          <span class="kz-mark kz-mark-tight">{E(r['title_a'])}</span> {E(r['title_b'])}
+        </h1>
+        <p class="kz-h3" style="margin-top:22px;font-weight:500;color:var(--kz-mute);max-width:640px;">
+          {E(r['sub'])}
+        </p>
+        <p class="kz-lede" style="margin-top:18px;max-width:660px;">{E(r['lede'])}</p>
+        <ul class="kz-research-inside">{inside_html}</ul>
+        <div class="kz-flex" style="gap:12px;margin-top:32px;">
+          <a class="kz-btn kz-btn-yellow" href="#get-report">Download the report</a>
+          <a class="kz-btn kz-btn-ghost" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        </div>
+        <div class="kz-eyebrow" style="margin-top:18px;">{E(r['meta'])}</div>
+      </div>
+      <aside class="kz-research-cover" aria-hidden="true">
+        <div class="kz-research-cover-card">
+          <div class="kz-eyebrow" style="color:rgba(255,251,240,.6);">2026 REPORT</div>
+          <div class="big">The Best<br>vs<br>The Rest.</div>
+          <div class="kz-eyebrow" style="color:var(--kz-yellow);">15 PAGES · FREE</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="kz-section-x" style="padding-top:48px;padding-bottom:8px;">
+      <div class="kz-eyebrow">What you're getting</div>
+    </section>
+    <div class="kz-stat-row">{dataset_html}</div>
+
+    <section class="kz-section">
+      <div class="kz-eyebrow">01 · Unique insights</div>
+      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 0;max-width:760px;">
+        Three numbers that say it <span class="kz-mark kz-mark-tight">all.</span>
+      </h2>
+      <div class="kz-research-nums">{numbers_html}</div>
+    </section>
+
+    <section class="kz-section" style="background:var(--kz-sand);">
+      <div class="kz-eyebrow">02 · The framework</div>
+      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 8px;max-width:820px;">
+        CARE: how the patterns cluster.
+      </h2>
+      <p class="kz-lede" style="margin-bottom:36px;">Eleven behaviours, four pillars — the structure behind every top-decile account team.</p>
+      <div class="kz-research-care">{care_html}</div>
+    </section>
+
+    <section class="kz-section">
+      <div class="kz-eyebrow">03 · Who it's for</div>
+      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 36px;max-width:880px;">
+        If you care about client retention &amp; growth, this is for you.
+      </h2>
+      <div class="kz-research-aud kz-grid-3">{aud_html}</div>
+    </section>
+
+    <section id="get-report" class="kz-cta-band kz-cta-band-dark">
+      <div class="kz-eyebrow" style="color:var(--kz-yellow);">Get the full report</div>
+      <div class="head">The Best vs The Rest.</div>
+      <p style="color:rgba(255,251,240,.75);max-width:520px;margin:18px auto 0;font-size:16px;">
+        Free · 15 pages · straight to your inbox. Two fields, no spam.
+      </p>
+      <form class="kz-research-form" action="#" method="post" onsubmit="return false;">
+        <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
+        <button type="submit" class="kz-btn kz-btn-yellow">Get the report</button>
+      </form>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Our Research', 1,
+                     'The 2026 Client Service Report from Kaizan — the data on what great client '
+                     'service actually looks like, drawn from 1M+ anonymised client conversations.') + body + page_foot()
+
+
+# ─────────────────────────────────────────────────────────────────────
+# KNOWLEDGE HUB  ("Straight answers on client success and AI" — Q&A base)
+# ─────────────────────────────────────────────────────────────────────
+
+# Plain-language glossary / Q&A, grouped into topics. Each answer is written
+# to stand alone (readable by a person or a language model).
+KNOWLEDGE_HUB_DATA = [
+    ('Client intelligence', [
+        ('What is client intelligence?',
+         "Client intelligence is the practice of turning every interaction across a client "
+         "relationship into a structured, real-time view of account health, risk, and opportunity. It "
+         "reads the calls, emails, and meetings that fill a relationship, not just the activity logged "
+         "in a CRM. The point isn't to record what happened. It's to know what to do next, before a "
+         "renewal forces the question."),
+        ('How does client intelligence help an agency managing multiple clients?',
+         "Client intelligence gives an agency one current view of every client at once, so nothing "
+         "slips while attention is on the loudest account. It surfaces which relationships need "
+         "attention now, which are quietly slipping, and which are ready to grow, the way a great "
+         "account director would if they could sit in on every call."),
+        ('How is client intelligence different from a CRM?',
+         "Client intelligence reads the relationship, while a CRM stores what you log about it. A CRM "
+         "tells you what someone remembered to type in. Client intelligence works from the actual "
+         "conversations across calls, emails, and meetings, where intent and risk show up long before "
+         "anyone updates a record."),
+        ('What data sources feed client intelligence?',
+         "Client intelligence draws on communication data (calls, emails, meeting transcripts), "
+         "engagement activity, support history, and CRM records. The sharpest signals usually sit in "
+         "conversation data, because that's where a client reveals intent and frustration first."),
+    ]),
+    ('Client success fundamentals', [
+        ('What is client success?',
+         "Client success, often called customer success in SaaS, is the practice of proactively "
+         "helping clients reach their goals so they stay, grow, and refer you. It's a revenue "
+         "function, not a support desk, and in agencies it lives inside account management."),
+        ('What does an account manager do?',
+         "An account manager owns the client relationship and works to keep clients happy, retained, "
+         "and growing. Day to day that means running the relationship, leading reviews, catching risks "
+         "early, proving the value of the work, and finding room to grow the account."),
+        ('What is the difference between account management and client success?',
+         "Account management owns the commercial relationship (renewals, growth, the day-to-day), "
+         "while client success is the proactive discipline of making sure clients reach their goals. "
+         "In agencies the two usually sit in the same role. The cleanest split: client success is "
+         "whether the client wins, account management is whether the account grows."),
+        ('What is the difference between client success and client support?',
+         "Client success is proactive and long-term, while client support is reactive and "
+         "issue-by-issue. Support answers the question a client asks today. Success makes sure the "
+         "client reaches their goals across the whole relationship."),
+        ('What is a client success plan?',
+         "A client success plan is a documented strategy that ties a client's goals to the milestones, "
+         "owners, and metrics needed to reach them. A good one defines success in the client's terms, "
+         "not yours, and makes progress measurable."),
+        ('How do you become a trusted advisor to a client?',
+         "You become a trusted advisor by moving from order-taker to someone who shapes the client's "
+         "decisions, which means understanding their business goals and tying your work to them. It "
+         "comes from proactive insight, honest pushback, and showing up with the next idea before the "
+         "client asks."),
+    ]),
+    ('Client onboarding', [
+        ('What is client onboarding?',
+         "Client onboarding is the process of bringing a new client into your agency and setting the "
+         "relationship up to deliver, from kickoff and goal-setting through to access, expectations, "
+         "and the first results. It's the highest-leverage moment for retention, because most churn is "
+         "won or lost in the first few weeks."),
+        ('What should a client onboarding process include?',
+         "A strong onboarding process includes a clean handoff from sales to delivery, a kickoff "
+         "meeting, a questionnaire to capture goals and access, a clear scope and stakeholder map, and "
+         "a plan for the first 30 days. The aim is a fast first win and a client who leaves kickoff "
+         "thinking this feels organised."),
+        ('What questions should you ask a new client during onboarding?',
+         "The most useful onboarding questions cover the client's goals, how they define success, who "
+         "the decision-makers are, what their last agency got wrong, and how they prefer to "
+         "communicate. Keep the list tight, under fifteen questions, and only ask what the sales "
+         "process didn't already answer."),
+        ('How do you onboard a client without losing them early?',
+         "You hold onto new clients by delivering a quick early win, setting expectations clearly, and "
+         "showing you understand their business from day one. A smooth, organised start builds the "
+         "trust that carries the relationship through the first rough patch, which is usually when "
+         "early churn happens."),
+    ]),
+    ('Retention and revenue', [
+        ('What is client retention?',
+         "Client retention is the rate at which a business keeps its clients over a set period, and "
+         "the work that goes into keeping them. It's the foundation of stable revenue, because keeping "
+         "a client costs far less than winning a new one."),
+        ('How do you calculate client retention rate?',
+         "Client retention rate is the percentage of clients you keep over a period, not counting new "
+         "wins. Calculate it as: (clients at the end of the period - new clients gained) / clients at "
+         "the start, times 100. Track it alongside revenue retention, since losing one large client "
+         "hurts more than losing several small ones."),
+        ('What is a good client retention rate?',
+         "A healthy agency client retention rate is usually cited around 80 to 90% a year, though it "
+         "varies by sector and service model. What matters more than the benchmark is the trend in "
+         "your own numbers and the revenue behind each client, because one large account leaving "
+         "outweighs several small ones."),
+        ('What is net revenue retention (NRR) and how is it calculated?',
+         "Net revenue retention (NRR) is the percentage of recurring revenue you keep from existing "
+         "clients over a period, including growth and after losses. Calculate it as: (starting revenue "
+         "+ expansion - contraction - churn) / starting revenue. Above 100% means you can grow from "
+         "your existing clients alone."),
+        ('What is time-to-value and why does it matter?',
+         "Time-to-value is how long it takes a new client to see a first meaningful result from "
+         "working with you. Shortening it is one of the most reliable ways to reduce early churn, "
+         "because a client who sees value quickly is far more likely to stay."),
+        ('How do you reduce client churn?',
+         "You reduce client churn by catching at-risk clients early, fixing the root cause, and "
+         "proving value before the renewal conversation starts. The biggest lever is timing: act on "
+         "the warning signals while there's still room to change the outcome, not after the client has "
+         "decided to leave."),
+    ]),
+    ('Client health and risk', [
+        ('What is a client health score?',
+         "A client health score is a single metric that estimates how likely a client is to renew, "
+         "leave, or grow. It blends signals like engagement, sentiment, delivery, and communication "
+         "frequency so a team knows which relationships need attention first."),
+        ('How do you calculate a client health score?',
+         "You calculate a client health score by picking the signals that predict retention, weighting "
+         "them by importance, and combining them into one score. Common inputs are engagement, "
+         "response times, sentiment, delivery against expectations, and payment behaviour. The right "
+         "weighting comes from what actually predicts churn in your own client base."),
+        ('What are the warning signs a client is about to leave?',
+         "The earliest warning signs are behavioural: replies slow down, meetings get missed or "
+         "shortened, scope shrinks, and new stakeholders start appearing on calls. These show up well "
+         "before a client gives notice, which is exactly why they're worth tracking."),
+        ('What is an at-risk client?',
+         "An at-risk client is one showing signals of an elevated chance of leaving or cutting back at "
+         "renewal. Typical triggers are falling engagement, an unresolved complaint, a lost champion, "
+         "or a gap between the value promised and the value the client feels."),
+    ]),
+    ('Scope, expectations, and communication', [
+        ('What is scope creep?',
+         "Scope creep is the gradual expansion of a project beyond its agreed boundaries, usually "
+         "through small, undocumented additions that pile up over time. Left unmanaged it erodes "
+         "margin and breeds resentment on both sides."),
+        ('How do you prevent scope creep?',
+         "You prevent scope creep with a specific scope of work, a clear definition of what counts as a "
+         "change request, and documentation of every request as it lands. Catching the small asks "
+         "early, and naming them as out of scope politely, is what keeps a project profitable."),
+        ('How do you manage client expectations?',
+         "You manage client expectations by agreeing what success looks like up front, being honest "
+         "about timelines and trade-offs, and communicating before problems land rather than after. "
+         "Clear, proactive communication is the single biggest driver of whether a client feels well "
+         "served."),
+        ('How do you keep clients happy?',
+         "You keep clients happy by delivering results, communicating proactively, and consistently "
+         "connecting your work to their business goals. It comes from a client feeling understood and "
+         "seeing value, not from speed alone, and the agencies that retain best treat communication as "
+         "part of the deliverable."),
+        ('How do you handle an unhappy client?',
+         "You handle an unhappy client by responding quickly, listening before defending, owning what "
+         "went wrong, and coming back with a concrete plan. Most relationships are recoverable if the "
+         "client feels heard and sees you act, and catching the dissatisfaction early is what makes "
+         "recovery possible."),
+    ]),
+    ('Business reviews (QBRs)', [
+        ('What is a quarterly business review (QBR)?',
+         "A quarterly business review (QBR) is a recurring strategic meeting where you and a client "
+         "review progress, show the value delivered, and align on the next quarter. It's a "
+         "relationship checkpoint, not a status update, and in agencies it's often run monthly."),
+        ('What should a client business review include?',
+         "A strong review covers goals and progress, the value and outcomes delivered, current "
+         "challenges, and a plan for the next period. The best ones surface growth opportunities and "
+         "renewal context, and they stay anchored to the client's business objectives, not your "
+         "activity log."),
+        ('How do you run an effective client review?',
+         "You run an effective review by preparing around the client's goals, leading with outcomes "
+         "instead of activity, and using the time to set direction. Bring the numbers on value "
+         "delivered, get the right people in the room, and leave with owned next steps."),
+        ('How often should you review clients?',
+         "Most teams run a formal client review quarterly, with lighter monthly check-ins, though the "
+         "right cadence depends on account size and complexity. Larger or strategic clients usually "
+         "warrant more frequent reviews, and smaller ones often do fine with a lighter touch."),
+    ]),
+    ('Client reporting', [
+        ('What should a client report include?',
+         "A strong client report leads with progress against the client's goals, shows the outcomes "
+         "and value delivered, explains what the numbers mean, and sets out what's next. The best "
+         "reports translate activity into business impact, rather than handing the client a pile of "
+         "metrics to interpret."),
+        ('How often should you report to clients?',
+         "Most agencies report monthly, with a deeper review quarterly, though the right rhythm depends "
+         "on the client and the pace of the work. Consistency matters more than frequency, because a "
+         "predictable report a client can rely on builds more trust than sporadic detail."),
+    ]),
+    ('Expansion and growth', [
+        ('What is account expansion?',
+         "Account expansion is revenue growth from existing clients through additional services, wider "
+         "scope, and larger retainers. It's one of the most efficient ways to grow, because expanding "
+         "a happy client costs far less than winning a new one."),
+        ('What is the difference between upsell and cross-sell?',
+         "An upsell grows what a client already buys (a bigger retainer, more scope), while a "
+         "cross-sell adds a different service alongside it. An upsell deepens the commitment, and a "
+         "cross-sell broadens it."),
+        ('How do you identify expansion opportunities with a client?',
+         "You spot expansion by reading the signals that a client is ready for more: strong results, "
+         "new goals, growing teams, or needs raised in conversation. The clearest of these usually "
+         "surface in what clients say on calls, where they describe problems your current scope "
+         "doesn't cover yet."),
+    ]),
+    ('Metrics and benchmarks', [
+        ('What is churn rate and how is it calculated?',
+         "Churn rate is the percentage of clients or revenue lost over a period. Client churn is "
+         "clients lost divided by clients at the start of the period; revenue churn swaps client "
+         "counts for recurring revenue. Revenue churn is often the more useful number, because not "
+         "every client is worth the same."),
+        ('What is client lifetime value (LTV)?',
+         "Client lifetime value (LTV) is the total revenue you can expect from one client across the "
+         "whole relationship. Paired with the cost to acquire them, it shows whether the economics "
+         "hold up, with a healthy LTV to acquisition-cost ratio often cited near 3 to 1."),
+        ('What is the difference between NPS, CSAT, and CES?',
+         "NPS, CSAT, and CES each measure something different. NPS (net promoter score) gauges "
+         "long-term loyalty and likelihood to recommend, CSAT (customer satisfaction) measures how "
+         "happy a client was with a specific interaction, and CES (customer effort score) measures how "
+         "easy that interaction was. Used together they give a fuller picture than any one alone."),
+    ]),
+    ('AI for client management and account managers', [
+        ('How is AI used in account management?',
+         "AI is used in account management to read client conversations at scale, flag risk and "
+         "opportunity early, and prepare the account manager for reviews and renewals. Its real edge "
+         "is coverage: AI can read every call, email, and meeting across a whole book of clients, "
+         "which no team can do by hand."),
+        ('How can AI help account managers manage multiple clients?',
+         "AI helps account managers cover a full book of clients by keeping a current view of every "
+         "relationship, not just the ones touched this week. It reads the calls, emails, and meetings "
+         "across every account, flags who needs attention, and takes the manual tracking off the "
+         "manager's plate, so a lean team can give each client the attention once reserved for the top "
+         "few."),
+        ('Can AI predict client churn?',
+         "Yes. AI predicts churn by spotting patterns across engagement, sentiment, and conversation "
+         "data that tend to come before a client leaves. The value is timing: it flags risk early "
+         "enough to act, not after the decision is made."),
+        ('What is conversation intelligence?',
+         "Conversation intelligence is the use of AI to analyse calls, emails, and meetings for "
+         "sentiment, risk, intent, and opportunity. For client teams it turns thousands of scattered "
+         "interactions into signals you can act on, instead of insight that stays buried in "
+         "transcripts and inboxes."),
+        ('How does AI help agencies prove value to clients?',
+         "AI helps agencies prove value by pulling the evidence of work and outcomes together for "
+         "reviews and renewals, so an account manager walks in prepared rather than scrambling. It "
+         "surfaces what was delivered, where results landed, and what's next, which is the case that "
+         "keeps a client renewing."),
+    ]),
+    ('Voice of client', [
+        ('What is voice of client (voice of customer)?',
+         "Voice of client, also known as voice of customer (VoC), is the structured capture and "
+         "analysis of what clients say about their needs, expectations, and experience. It puts the "
+         "client's actual words into your decisions, so teams act on evidence instead of assumption."),
+        ('How do you collect voice of client data?',
+         "You collect it from surveys, interviews, reviews, and increasingly from the conversations "
+         "that already happen on calls, emails, and meetings. Analysing existing conversations scales "
+         "best, because it captures honest, in-context feedback without asking clients to do more "
+         "work."),
+        ('How do you turn client feedback into action?',
+         "You turn feedback into action by grouping what clients say into themes, ranking them by "
+         "impact and frequency, routing each to the team that owns it, and closing the loop with the "
+         "client. Insight only pays off when it changes a decision."),
+    ]),
+]
+
+
+def render_knowledge_hub() -> str:
+    toc_html = '\n'.join(
+        f'<li><span class="num">{i+1:02d}</span>'
+        f'<a href="#{faq_anchor(name)}">{E(name)}</a></li>'
+        for i, (name, _qs) in enumerate(KNOWLEDGE_HUB_DATA)
+    )
+    sections_html = []
+    for i, (name, qs) in enumerate(KNOWLEDGE_HUB_DATA):
+        items_html = '\n'.join(
+            f'''<details class="kz-faq-item">
+              <summary>
+                <h3>{E(q)}</h3>
+                <span class="ic" aria-hidden="true">+</span>
+              </summary>
+              <p>{E(a)}</p>
+            </details>''' for q, a in qs
+        )
+        sections_html.append(f'''
+        <section id="{faq_anchor(name)}" class="kz-faq-section">
+          <div class="head">
+            <span class="num">§ {i+1:02d}</span>
+            <h2 class="kz-h2" style="font-size:22px;font-weight:600;letter-spacing:-0.01em;">{E(name)}</h2>
+          </div>
+          {items_html}
+        </section>''')
+
+    body = f'''
+    {nav_html(1, active='Resources')}
+
+    <section class="kz-section-tight" style="padding-top:60px;border-bottom:1px solid var(--kz-line);">
+      <div class="kz-eyebrow">Knowledge Hub · Client success &amp; account management</div>
+      <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;line-height:1.28;">
+        <span class="kz-mark kz-mark-tight">Client success</span> and account management: FAQs
+      </h1>
+      <p class="kz-lede" style="margin-top:18px;max-width:820px;">
+        A resource hub of the questions agency account managers and client teams actually search for,
+        from onboarding and retention to client health, reporting, and using AI across a full book of
+        clients.
+      </p>
+    </section>
+
+    <section class="kz-faq-toc">
+      <div class="kz-eyebrow" style="margin-bottom:14px;">On this page</div>
+      <ol>{toc_html}</ol>
+    </section>
+
+    <section class="kz-faq-body kz-kh-body">
+      <div class="kz-faq-content kz-kh-content">
+        {''.join(sections_html)}
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Knowledge Hub', 1,
+                     'Client success and account management FAQs — a resource hub covering client '
+                     'intelligence, onboarding, retention, client health, reviews, reporting, '
+                     'expansion, metrics and AI for account managers.') + body + page_foot()
+
+
+# ─────────────────────────────────────────────────────────────────────
 # WRITE
 # ─────────────────────────────────────────────────────────────────────
 
@@ -3511,6 +4030,8 @@ def main():
     write(ROOT / 'security' / 'index.html',     render_security())
     write(ROOT / 'careers' / 'index.html',      render_careers())
     write(ROOT / 'faq' / 'index.html',          render_faq())
+    write(ROOT / 'research' / 'index.html',     render_research())
+    write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
     write(ROOT / 'customers' / 'index.html',    render_customers())
     write(ROOT / 'insights' / 'index.html',     render_insights())
     write(ROOT / 'about' / 'index.html',        render_about())
