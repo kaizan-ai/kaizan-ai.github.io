@@ -1404,15 +1404,13 @@ def render_home() -> str:
             </div>
             <div class="kz-cta-pill"><span>Book a demo</span><span class="kz-cta-arrow">→</span></div>
           </a>
-          <!-- TODO: re-enable when the CARE white paper is ready
-          <a class="kz-cta-card is-ghost" href="#whitepaper">
+          <a class="kz-cta-card is-ghost" href="/white-paper">
             <div>
               <div class="kz-cta-eyebrow">CARE white paper · 18 min</div>
               <div class="kz-cta-headline">What the top 10% do differently?</div>
             </div>
-            <div class="kz-cta-pill"><span>Whitepaper</span><span class="kz-cta-arrow">↓</span></div>
+            <div class="kz-cta-pill"><span>Whitepaper</span><span class="kz-cta-arrow">→</span></div>
           </a>
-          -->
         </div>
       </div>
       <div class="kz-hero-video">
