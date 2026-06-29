@@ -1,0 +1,231 @@
+/* ============================================================================
+   Kaizan · ROI Calculator — stylesheet
+   Brand palette: Gold #FFB900 / Gold Light #FFD133 / Gold Pale #FFF3C4 /
+                  Cream #FFFBF0 / Ink #171717 / Black #141210
+   All rules are scoped under #kaizan-roi so they won't collide with the host
+   site. Load the IBM Plex Sans webfont in your page <head> (see HTML file).
+   ========================================================================== */
+
+#kaizan-roi {
+  --kz-ink: #171717;
+  --kz-yellow: #FFB900;
+  --kz-yellow-deep: #FFD133;
+  --kz-yellow-soft: #FFF3C4;
+  --kz-paper: #FFFBF0;
+  --kz-line: rgba(0, 0, 0, 0.10);
+  --kz-mute: #4a4a4a;
+  --kz-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --kz-mono: 'SF Mono', ui-monospace, 'Menlo', 'Consolas', monospace;
+
+  /* derived tokens (mirror the original module-scope constants) */
+  --kz-section: #FFFBF0;
+  --kz-panel: #F6F2E7;
+  --kz-input: #FFFFFF;
+  --kz-border: rgba(0, 0, 0, 0.13);
+  --kz-hair: rgba(0, 0, 0, 0.10);
+  --kz-mutec: rgba(0, 0, 0, 0.56);
+  --kz-faint: rgba(0, 0, 0, 0.40);
+  --kz-black: #141210;
+  --kz-gold: #FFB900;
+  --kz-green-d: #2E6F4E;
+  --kz-green-m: #7BAE92;
+
+  background: var(--kz-section);
+  color: var(--kz-ink);
+  font-family: var(--kz-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+#kaizan-roi *,
+#kaizan-roi *::before,
+#kaizan-roi *::after { box-sizing: border-box; }
+
+#kaizan-roi h2,
+#kaizan-roi h3,
+#kaizan-roi p { margin: 0; }
+
+/* ── outer layout ───────────────────────────────────────────────────────── */
+.kzroi-inner { max-width: 1180px; margin: 0 auto; padding: clamp(40px, 5vw, 72px) clamp(20px, 4vw, 40px) 80px; }
+
+.kzroi-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #9A7B0C; font-weight: 700; margin-bottom: 16px; }
+
+.kzroi-h2 {
+  font-family: 'IBM Plex Sans', var(--kz-sans);
+  font-size: clamp(40px, 6.4vw, 76px);
+  font-weight: 400; letter-spacing: -0.035em; line-height: 1.1; max-width: 880px;
+}
+.kzroi-h2 .hl { background: var(--kz-gold); color: var(--kz-black); padding: 2px 14px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* ── headline result bar (black) ────────────────────────────────────────── */
+.kzroi-bar { background: var(--kz-black); border-radius: 18px; padding: clamp(24px, 3vw, 32px) clamp(22px, 4vw, 40px); margin-top: 40px; }
+.kzroi-bar-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+.kzroi-bar-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kz-gold); font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
+.kzroi-net-row { display: flex; align-items: baseline; gap: 6px; }
+.kzroi-net { font-family: var(--kz-mono); font-size: clamp(40px, 7vw, 52px); font-weight: 800; letter-spacing: -0.03em; line-height: 0.95; color: #fff; }
+.kzroi-net-unit { font-family: var(--kz-mono); font-size: 18px; color: rgba(255, 255, 255, 0.45); }
+.kzroi-custom-note { font-size: 12px; color: rgba(255, 255, 255, 0.5); margin-top: 8px; }
+
+.kzroi-metrics { display: flex; gap: 40px; flex-wrap: wrap; }
+.kzroi-metric-label { font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); font-weight: 600; margin-bottom: 8px; }
+.kzroi-metric-row { display: flex; align-items: baseline; gap: 5px; }
+.kzroi-metric-val { font-family: var(--kz-mono); font-size: 38px; font-weight: 700; color: #fff; line-height: 1; }
+.kzroi-metric-unit { font-family: var(--kz-mono); font-size: 17px; font-weight: 600; color: rgba(255, 255, 255, 0.5); }
+
+.kzroi-bar-bottom { display: flex; flex-wrap: wrap; gap: 14px 40px; align-items: flex-end; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.kzroi-cost-label { font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); font-weight: 600; margin-bottom: 6px; }
+.kzroi-cost-row { display: flex; align-items: baseline; gap: 4px; }
+.kzroi-cost-val { font-family: var(--kz-mono); font-size: 19px; font-weight: 700; color: #fff; }
+.kzroi-cost-unit { font-family: var(--kz-mono); font-size: 12px; font-weight: 600; color: rgba(255, 255, 255, 0.5); }
+.kzroi-bar-note { margin-left: auto; font-size: 11.5px; color: rgba(255, 255, 255, 0.45); line-height: 1.4; max-width: 230px; text-align: right; }
+.kzroi-bar-note.is-custom { max-width: 340px; }
+
+/* ── proof point ─────────────────────────────────────────────────────────── */
+.kzroi-proof { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 12.5px; color: var(--kz-mutec); flex-wrap: wrap; }
+.kzroi-proof .star { color: var(--kz-gold); font-weight: 700; }
+.kzroi-proof strong { color: var(--kz-ink); font-weight: 700; }
+
+/* ── controls row (mode toggle + CTAs) ──────────────────────────────────── */
+.kzroi-controls { display: flex; justify-content: space-between; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+.kzroi-toggle-wrap { display: flex; align-items: center; gap: 14px; }
+.kzroi-toggle-q { font-size: 13.5px; color: var(--kz-mutec); }
+.kzroi-toggle { display: inline-flex; background: #fff; border-radius: 999px; padding: 3px; border: 1px solid var(--kz-border); }
+.kzroi-toggle-btn { border: none; cursor: pointer; border-radius: 999px; padding: 7px 17px; font-size: 13px; font-weight: 600; font-family: var(--kz-sans); background: transparent; color: var(--kz-mutec); transition: all .15s ease; }
+.kzroi-toggle-btn.is-active { background: var(--kz-gold); color: var(--kz-black); }
+.kzroi-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* ── lead-capture button + form ─────────────────────────────────────────── */
+.kzroi-leadbtn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; border-radius: 999px; padding: 9px 18px; font-size: 13px; font-weight: 600; font-family: var(--kz-sans); cursor: pointer; border: 1px solid rgba(0, 0, 0, 0.18); background: transparent; color: var(--kz-ink); transition: all .15s ease; }
+.kzroi-leadbtn:hover { border-color: var(--kz-gold); background: var(--kz-gold); color: var(--kz-black); box-shadow: 0 8px 24px -8px rgba(255, 185, 0, .5); }
+
+.kzroi-leadform { margin-top: 16px; padding: 18px 20px; background: #fff; border: 1px solid rgba(0, 0, 0, 0.10); border-radius: 14px; max-width: 540px; box-shadow: 0 1px 3px rgba(28, 25, 23, 0.05); }
+.kzroi-leadform .lf-intro { font-size: 12.5px; color: #57534E; margin-bottom: 12px; line-height: 1.5; }
+.kzroi-leadform .lf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.kzroi-leadform input { height: 44px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.13); background: #FAFAF9; color: #171717; padding: 0 14px; font-size: 14px; font-family: var(--kz-sans); outline: none; width: 100%; }
+.kzroi-leadform input:focus { border-color: var(--kz-gold); box-shadow: 0 0 0 3px var(--kz-yellow-soft); }
+.kzroi-leadform input::placeholder { color: #A8A29E; }
+.kzroi-leadform .lf-company { margin-bottom: 12px; }
+.kzroi-leadform-submit { background: var(--kz-gold); color: var(--kz-black); border-radius: 999px; padding: 10px 22px; font-size: 13.5px; font-weight: 600; font-family: var(--kz-sans); border: none; cursor: pointer; }
+.kzroi-leadsent { margin-top: 16px; padding: 14px 18px; background: #ECFAF5; border: 1px solid #CDEDE2; border-radius: 12px; font-size: 13.5px; font-weight: 600; color: #2E6F4E; max-width: 540px; }
+@media (max-width: 560px) { .kzroi-leadform .lf-grid { grid-template-columns: 1fr; } }
+
+/* ── two-column body ────────────────────────────────────────────────────── */
+.kzroi-cols { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 24px; align-items: stretch; margin-top: 20px; }
+@media (max-width: 980px) { .kzroi-cols { grid-template-columns: 1fr; } }
+
+.kzroi-panel { background: var(--kz-panel); border: 1px solid var(--kz-hair); border-radius: 18px; padding: 30px 30px 26px; }
+.kzroi-panel-title { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
+.kzroi-panel-sub { font-size: 13.5px; color: var(--kz-mutec); line-height: 1.5; margin-bottom: 26px; }
+
+/* number input with steppers */
+.kzroi-num { margin-bottom: 22px; }
+.kzroi-num-label { display: block; font-size: 14px; font-weight: 600; color: var(--kz-ink); margin-bottom: 9px; }
+.kzroi-num-row { display: flex; align-items: center; gap: 8px; }
+.kzroi-step { width: 46px; height: 52px; flex-shrink: 0; border-radius: 12px; border: 1px solid var(--kz-border); background: #fff; cursor: pointer; font-size: 22px; font-weight: 600; color: var(--kz-ink); line-height: 1; display: flex; align-items: center; justify-content: center; font-family: var(--kz-sans); transition: all .15s ease; user-select: none; }
+.kzroi-step:hover { border-color: var(--kz-gold); background: var(--kz-paper); }
+.kzroi-step:active { transform: scale(0.94); }
+.kzroi-field { flex: 1; display: flex; align-items: center; background: var(--kz-input); border: 1px solid var(--kz-border); border-radius: 12px; padding: 0 16px; height: 52px; transition: border-color .15s, box-shadow .15s; }
+.kzroi-field:focus-within { border-color: var(--kz-gold); box-shadow: 0 0 0 3px var(--kz-yellow-soft); }
+.kzroi-field input { flex: 1; border: none; outline: none; background: transparent; text-align: center; font-family: var(--kz-mono); font-size: 18px; font-weight: 600; color: var(--kz-ink); width: 100%; padding: 0; }
+.kzroi-prefix { font-family: var(--kz-mono); font-size: 17px; color: var(--kz-faint); margin-right: 6px; }
+.kzroi-suffix { font-family: var(--kz-mono); font-size: 16px; color: var(--kz-faint); margin-left: 6px; }
+.kzroi-num-help { font-size: 12.5px; color: var(--kz-faint); line-height: 1.45; margin-top: 9px; max-width: 460px; }
+
+.kzroi-portfolio-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 6px; padding-top: 18px; border-top: 1px solid var(--kz-border); }
+.kzroi-portfolio-label { font-size: 14px; font-weight: 600; color: var(--kz-ink); }
+.kzroi-portfolio-val { font-family: var(--kz-mono); font-size: 22px; font-weight: 700; color: var(--kz-ink); }
+.kzroi-portfolio-val .unit { font-size: 13px; color: var(--kz-faint); font-weight: 500; }
+
+/* methodology expander */
+.kzroi-method { margin-top: 18px; border: 1px solid rgba(0, 0, 0, 0.10); border-radius: 12px; background: #fff; }
+.kzroi-method summary { padding: 13px 16px; font-size: 13px; font-weight: 600; color: #946200; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+.kzroi-method summary::-webkit-details-marker { display: none; }
+.kzroi-method summary::before { content: '▸'; font-size: 10px; transition: transform .15s ease; }
+.kzroi-method[open] summary::before { transform: rotate(90deg); }
+.kzroi-method .mbody { padding: 2px 16px 16px; font-size: 12px; color: #57534E; line-height: 1.5; }
+.kzroi-method .mbody p { margin-bottom: 9px; }
+.kzroi-method .mbody strong { color: var(--kz-ink); }
+
+/* right column */
+.kzroi-right { display: flex; flex-direction: column; gap: 20px; }
+
+/* composition card */
+.kzroi-comp { background: var(--kz-panel); border: 1px solid var(--kz-hair); border-radius: 16px; padding: 24px 26px; }
+.kzroi-comp-title { font-size: 14.5px; font-weight: 600; color: var(--kz-ink); margin-bottom: 16px; }
+.kzroi-comp-title .mono { font-family: var(--kz-mono); font-weight: 700; }
+.kzroi-bar-track { display: flex; width: 100%; height: 14px; border-radius: 999px; overflow: hidden; background: rgba(0, 0, 0, 0.06); }
+.kzroi-seg { height: 100%; }
+.kzroi-legend { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 15px; }
+.kzroi-legend-item { display: flex; align-items: center; gap: 9px; }
+.kzroi-legend-dot { width: 11px; height: 11px; border-radius: 3px; }
+.kzroi-legend-key { font-size: 13.5px; color: var(--kz-mutec); }
+.kzroi-legend-val { font-family: var(--kz-mono); font-size: 13.5px; font-weight: 700; color: var(--kz-ink); }
+
+/* area cards */
+.kzroi-areas { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; grid-auto-rows: 1fr; flex: 1; }
+@media (max-width: 620px) { .kzroi-areas { grid-template-columns: 1fr; } }
+.kzroi-card { background: var(--kz-panel); border: 1px solid var(--kz-hair); border-radius: 16px; padding: 22px 22px 20px; display: flex; flex-direction: column; }
+.kzroi-card-kicker { font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: #9A7B0C; font-weight: 700; line-height: 1.4; min-height: 30px; margin-bottom: 10px; }
+.kzroi-card-kicker .agent { color: var(--kz-faint); }
+.kzroi-card-fig-wrap { min-height: 48px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 12px; }
+.kzroi-card-fig { font-family: var(--kz-mono); font-size: 26px; font-weight: 700; color: var(--kz-ink); line-height: 1; font-variant-numeric: tabular-nums; }
+.kzroi-card-sub { font-size: 12px; color: var(--kz-mutec); margin-top: 5px; }
+.kzroi-card-title { font-size: 15.5px; font-weight: 700; color: var(--kz-ink); margin-bottom: 12px; letter-spacing: -0.01em; }
+.kzroi-card-bullets { display: flex; flex-direction: column; gap: 9px; flex: 1; }
+.kzroi-bullet { display: grid; grid-template-columns: 16px 1fr; column-gap: 9px; font-size: 13px; line-height: 1.4; color: rgba(0, 0, 0, 0.72); }
+.kzroi-bullet .arrow { color: var(--kz-gold); font-weight: 700; }
+
+/* footnote */
+.kzroi-footnote { margin-top: 28px; text-align: center; }
+.kzroi-footnote span { font-size: 11.5px; color: var(--kz-faint); line-height: 1.6; display: block; }
+.kzroi-footnote a { color: #9A7B0C; font-weight: 600; }
+
+/* closing CTA band */
+.kzroi-cta-band { background: var(--kz-black); border-radius: 20px; padding: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 48px); margin-top: 36px; text-align: center; }
+.kzroi-cta-band h3 { font-family: 'IBM Plex Sans', var(--kz-sans); font-weight: 400; color: #fff; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 10px; }
+.kzroi-cta-band p { color: rgba(255, 255, 255, 0.6); font-size: 14.5px; max-width: 520px; margin: 0 auto 22px; line-height: 1.5; text-align: center; }
+.kzroi-cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.kzroi-pill { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; padding: 12px 26px; font-size: 14px; font-weight: 600; font-family: var(--kz-sans); cursor: pointer; text-decoration: none; border: none; transition: all .15s ease; }
+.kzroi-pill-gold { background: var(--kz-gold); color: var(--kz-black); }
+.kzroi-pill-gold:hover { background: var(--kz-yellow-deep); }
+.kzroi-pill-ghost { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.35); }
+.kzroi-pill-ghost:hover { border-color: var(--kz-gold); background: var(--kz-gold); color: var(--kz-black); }
+.kzroi-pill.in-controls { padding: 9px 20px; font-size: 13px; }
+
+/* accessibility focus */
+#kaizan-roi a:focus-visible,
+#kaizan-roi button:focus-visible,
+#kaizan-roi summary:focus-visible { outline: 2px solid #946200; outline-offset: 2px; border-radius: 6px; }
+
+/* ── lead-capture modal ──────────────────────────────────────────────────── */
+body.kzroi-body-lock { overflow: hidden; }
+.kzroi-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.kzroi-modal-backdrop { position: absolute; inset: 0; background: rgba(20, 18, 16, 0.55); }
+.kzroi-modal-card {
+  position: relative; z-index: 1; width: 100%; max-width: 470px; max-height: 88vh; overflow-y: auto;
+  background: var(--kz-paper); border: 1px solid var(--kz-hair); border-radius: 18px;
+  padding: 30px 30px 28px; box-shadow: 0 40px 90px -25px rgba(0, 0, 0, 0.45);
+}
+.kzroi-modal-x {
+  position: absolute; top: 14px; right: 14px; width: 34px; height: 34px; border: none;
+  background: transparent; color: var(--kz-mutec); font-size: 24px; line-height: 1; cursor: pointer;
+  border-radius: 9px; display: flex; align-items: center; justify-content: center; transition: all .15s ease;
+}
+.kzroi-modal-x:hover { background: rgba(0, 0, 0, 0.06); color: var(--kz-ink); }
+.kzroi-modal-title { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--kz-ink); margin-bottom: 8px; padding-right: 28px; }
+.kzroi-modal-card .lf-intro { font-size: 13px; color: var(--kz-mutec); line-height: 1.55; margin-bottom: 18px; }
+
+/* lead-sent confirmation (now holds the download button) */
+.kzroi-leadsent .ls-msg { margin-bottom: 12px; }
+.kzroi-leadsent .kzroi-leadform-submit { cursor: pointer; }
+
+/* ── HubSpot embedded form ───────────────────────────────────────────────
+   This HubSpot form renders inside a same-origin <iframe> (src=""), so rules
+   here do NOT reach the form's fields or Submit button — CSS does not cross
+   the iframe boundary. The Kaizan styling (yellow Submit button, gold focus
+   ring) is injected INTO the iframe document by decorateHubspotForm() in
+   assets/js/roi-calculator.js. The rule below only sizes the wrapper.
+   (To change the form's own field layout, edit the form in HubSpot.) */
+.kzroi-hsform { margin-top: 4px; min-height: 180px; }
+
+/* utility */
+.kzroi-hidden { display: none !important; }

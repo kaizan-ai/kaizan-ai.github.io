@@ -35,7 +35,7 @@ NAV = [
     ('Integrations', 'integrations/'),
     # TODO: re-enable "Blog" once posts are ready.
     # ('Blog',         'insights/'),
-    ('Pricing',      'pricing/'),
+    ('ROI Calculator', 'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
     # Sentinel-ish: nav_html renders "Resources" as a hover dropdown listing
@@ -840,7 +840,7 @@ def asset_v(rel: str) -> str:
         return ''
 
 
-def page_head(title: str, depth: int, description: str = '') -> str:
+def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
     p = relpath(depth)
     desc = description or 'Kaizan — client super intelligence for professional services firms.'
     # Cache-busting query strings deliberately disabled — easier on the CDN.
@@ -867,6 +867,7 @@ def page_head(title: str, depth: int, description: str = '') -> str:
         <link rel="stylesheet" href="{p}assets/css/tokens.css{tokens_v}">
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
+        {extra_head}
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
         new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
@@ -2890,78 +2891,254 @@ PRICING_HELPERS = [
 ]
 
 
+# The ROI calculator is a self-contained widget (scoped #kaizan-roi markup +
+# assets/css/roi-calculator.css + assets/js/roi-calculator.js). It replaces the
+# old tier-cards pricing page — the tiers/cost are shown inside the calculator.
+# PRICING_TIERS / PRICING_HELPERS above are now unused but kept for reference.
+#
+# Lead capture is a HubSpot form (EU portal 144688314) rendered into
+# #kzroi-hubspot-form by roi-calculator.js. On successful submit, the JS unlocks
+# the "Download your breakdown (PDF)" button, which prints a report of the user's
+# own numbers (print-to-PDF, no dependency).
+ROI_CALCULATOR_SECTION = '''
+<section id="kaizan-roi">
+  <div class="kzroi-inner">
+
+    <!-- section header -->
+    <div class="kzroi-eyebrow">ROI calculator</div>
+    <h2 class="kzroi-h2">What Kaizan <span class="hl">returns</span> on the portfolio you run today.</h2>
+
+    <!-- full-width headline result bar -->
+    <div class="kzroi-bar">
+      <div class="kzroi-bar-top">
+        <div>
+          <div class="kzroi-bar-label" data-roi="headline-label">Net annual gain with Kaizan</div>
+          <div class="kzroi-net-row">
+            <span class="kzroi-net" data-roi="net">£0</span>
+            <span class="kzroi-net-unit">/ yr</span>
+          </div>
+          <div class="kzroi-custom-note kzroi-hidden" data-roi="custom-note">before platform cost — Enterprise pricing is bespoke</div>
+        </div>
+        <div class="kzroi-metrics" data-roi="metrics"><!-- metrics injected by JS --></div>
+      </div>
+      <div class="kzroi-bar-bottom" data-roi="cost-row"><!-- cost row injected by JS --></div>
+    </div>
+
+    <!-- proof point -->
+    <div class="kzroi-proof">
+      <span class="star" aria-hidden="true">★</span>
+      <span>Modelled on Kaizan clients seeing <strong>21%+ average revenue growth per client</strong>.</span>
+    </div>
+
+    <!-- model toggle (left) + CTAs (right) -->
+    <div class="kzroi-controls">
+      <div class="kzroi-toggle-wrap">
+        <span class="kzroi-toggle-q">How hard should we model it?</span>
+        <div class="kzroi-toggle" data-roi="mode-toggle">
+          <button type="button" class="kzroi-toggle-btn" data-mode="Conservative">Conservative</button>
+          <button type="button" class="kzroi-toggle-btn is-active" data-mode="Expected">Expected</button>
+        </div>
+      </div>
+      <div class="kzroi-actions">
+        <button type="button" class="kzroi-leadbtn" data-roi="lead-toggle">Email me the breakdown</button>
+        <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold in-controls">Book a demo →</a>
+      </div>
+    </div>
+
+    <!-- lead-capture lives in a modal (see end of section), opened by the
+         "Email me the breakdown" buttons. -->
+
+    <!-- two columns: inputs (left) · results (right) -->
+    <div class="kzroi-cols">
+
+      <!-- LEFT: portfolio inputs -->
+      <div class="kzroi-panel">
+        <div class="kzroi-panel-title">Your client portfolio today</div>
+        <div class="kzroi-panel-sub">Four things you'll know off the top of your head. We handle the rest.</div>
+
+        <div class="kzroi-num" data-key="totalHeadcount" data-min="1" data-max="5000" data-step="1">
+          <label class="kzroi-num-label">Total company headcount</label>
+          <div class="kzroi-num-row">
+            <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Total company headcount">−</button>
+            <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
+            <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Total company headcount">+</button>
+          </div>
+          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users — finance, ops and leadership can all use it at no extra cost.</div>
+        </div>
+
+        <div class="kzroi-num" data-key="team" data-min="1" data-max="500" data-step="1">
+          <label class="kzroi-num-label">Client delivery team size</label>
+          <div class="kzroi-num-row">
+            <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Client delivery team size">−</button>
+            <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
+            <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Client delivery team size">+</button>
+          </div>
+          <div class="kzroi-num-help">Of your headcount, those who touch client work — account managers, client success, delivery. This is what drives the capacity figure.</div>
+        </div>
+
+        <div class="kzroi-num" data-key="clients" data-min="1" data-max="2000" data-step="1">
+          <label class="kzroi-num-label">Number of clients</label>
+          <div class="kzroi-num-row">
+            <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Number of clients">−</button>
+            <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
+            <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Number of clients">+</button>
+          </div>
+        </div>
+
+        <div class="kzroi-num" data-key="revPer" data-min="1000" data-max="5000000" data-step="5000">
+          <label class="kzroi-num-label">Average annual revenue per client</label>
+          <div class="kzroi-num-row">
+            <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Average annual revenue per client">−</button>
+            <div class="kzroi-field"><span class="kzroi-prefix">£</span><input type="text" inputmode="numeric"></div>
+            <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Average annual revenue per client">+</button>
+          </div>
+          <div class="kzroi-num-help">Your average annual client value across the portfolio.</div>
+        </div>
+
+        <div class="kzroi-num" data-key="churn" data-min="1" data-max="60" data-step="1">
+          <label class="kzroi-num-label">Typical annual client attrition rate</label>
+          <div class="kzroi-num-row">
+            <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Typical annual client attrition rate">−</button>
+            <div class="kzroi-field"><input type="text" inputmode="numeric"><span class="kzroi-suffix">%</span></div>
+            <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Typical annual client attrition rate">+</button>
+          </div>
+          <div class="kzroi-num-help">The share of client accounts you lose in a typical year.</div>
+        </div>
+
+        <div class="kzroi-portfolio-row">
+          <span class="kzroi-portfolio-label">Client portfolio value</span>
+          <span class="kzroi-portfolio-val"><span data-roi="portfolio">£0</span> <span class="unit">/ yr</span></span>
+        </div>
+
+        <details class="kzroi-method">
+          <summary>How we calculate this</summary>
+          <div class="mbody">
+            <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals — <span data-roi="m-churn">45</span>% in <span data-roi="m-mode">Expected</span> mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
+            <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count <span data-roi="m-upsell">60</span>% — opportunities surfaced from clients you already have.</p>
+            <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which <span data-roi="m-capacity">60</span>% is handed back, across 46 working weeks. Valued at £30/hr loaded cost — UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
+            <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count; users are unlimited.</p>
+          </div>
+        </details>
+      </div>
+
+      <!-- RIGHT: results detail -->
+      <div class="kzroi-right">
+
+        <!-- composition card -->
+        <div class="kzroi-comp">
+          <div class="kzroi-comp-title">Where the <span class="mono" data-roi="gross">£0</span> of annual benefit comes from</div>
+          <div class="kzroi-bar-track" data-roi="seg-track"><!-- segments injected by JS --></div>
+          <div class="kzroi-legend" data-roi="legend"><!-- legend injected by JS --></div>
+        </div>
+
+        <!-- area cards -->
+        <div class="kzroi-areas">
+          <div class="kzroi-card">
+            <div class="kzroi-card-kicker">Retention <span class="agent">· AI Agents</span></div>
+            <div class="kzroi-card-fig-wrap"><div class="kzroi-card-fig" data-roi="fig-retained">£0</div></div>
+            <div class="kzroi-card-title">Revenue protected from churn</div>
+            <div class="kzroi-card-bullets">
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span><span data-roi="at-risk">£0</span> of your portfolio is at risk each year</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Every conversation scored against CARE — risks flagged before clients go quiet</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Drafted re-engagement, ready to send</span></div>
+            </div>
+          </div>
+
+          <div class="kzroi-card">
+            <div class="kzroi-card-kicker">White space <span class="agent">· AI Agents</span></div>
+            <div class="kzroi-card-fig-wrap"><div class="kzroi-card-fig" data-roi="fig-upsold">£0</div></div>
+            <div class="kzroi-card-title">Revenue expanded through upsell</div>
+            <div class="kzroi-card-bullets">
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Buying signals spotted in every client conversation</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Continuous research matched to each client's stated objectives</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>The most growth you'll get is from clients you already have</span></div>
+            </div>
+          </div>
+
+          <div class="kzroi-card">
+            <div class="kzroi-card-kicker">Efficiency <span class="agent">· AI Agents</span></div>
+            <div class="kzroi-card-fig-wrap"><div class="kzroi-card-fig" data-roi="fig-capacity">£0</div><div class="kzroi-card-sub" data-roi="fig-fte">+0.0 FTE</div></div>
+            <div class="kzroi-card-title">Capacity recovered from admin</div>
+            <div class="kzroi-card-bullets">
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span><span data-roi="admin-hours">0</span> admin hours sit across your team each year</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Notes, follow-ups and CRM updates handled automatically</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Time goes straight back into client-facing work</span></div>
+            </div>
+          </div>
+
+          <div class="kzroi-card">
+            <div class="kzroi-card-kicker">Satisfaction <span class="agent">· AI Agents</span></div>
+            <div class="kzroi-card-fig-wrap">
+              <div class="kzroi-card-fig">
+                <svg width="68" height="26" viewBox="0 0 68 26" fill="none" aria-label="trending up" style="display:block">
+                  <polyline points="2,22 17,15 30,18 46,9 66,3" stroke="#2E6F4E" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></polyline>
+                </svg>
+              </div>
+              <div class="kzroi-card-sub">NPS tends to climb</div>
+            </div>
+            <div class="kzroi-card-title">Client satisfaction</div>
+            <div class="kzroi-card-bullets">
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Every client conversation scored against the CARE framework</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Risks addressed early, actions never dropped</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Directional only — NPS typically rises over the first 1–2 quarters, never counted in the figures above</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- full-width centred footnote -->
+    <div class="kzroi-footnote">
+      <span data-roi="footnote"><!-- injected by JS --></span>
+    </div>
+
+    <!-- closing CTA band -->
+    <div class="kzroi-cta-band">
+      <h3>See your clients, clearly.</h3>
+      <p>Take the full breakdown with you — your numbers, the workings, and what comparable Kaizan clients see — or jump straight to a demo.</p>
+      <div class="kzroi-cta-actions">
+        <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
+        <button type="button" class="kzroi-pill kzroi-pill-ghost" data-roi="lead-toggle-cta">Email me the breakdown</button>
+      </div>
+    </div>
+
+    <!-- lead-capture modal (opened by the "Email me the breakdown" buttons).
+         HubSpot form (EU portal 144688314); on submit the JS swaps to the
+         download view. Close via the ×, the backdrop, or Esc. -->
+    <div class="kzroi-modal kzroi-hidden" data-roi="modal" role="dialog" aria-modal="true" aria-label="Get your ROI breakdown">
+      <div class="kzroi-modal-backdrop" data-roi="modal-close"></div>
+      <div class="kzroi-modal-card" role="document">
+        <button type="button" class="kzroi-modal-x" data-roi="modal-close" aria-label="Close">×</button>
+        <div data-roi="lead-form">
+          <div class="kzroi-modal-title">Get your ROI breakdown</div>
+          <div class="lf-intro">Your results are yours either way. For the full PDF breakdown — your numbers and the workings — tell us where to send it, then download it here.</div>
+          <div id="kzroi-hubspot-form" class="kzroi-hsform"></div>
+        </div>
+        <div class="kzroi-leadsent kzroi-hidden" data-roi="lead-sent">
+          <div class="ls-msg">Thanks — your breakdown is ready.</div>
+          <button type="button" class="kzroi-leadform-submit" data-roi="download">Download your breakdown (PDF) →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+'''
+
+
 def render_pricing() -> str:
-    def tier_card(t):
-        bullets = '\n'.join(
-            f'<li><span class="arr">→</span><span><b>{E(b[0])}</b>{E(b[1])}</span></li>'
-            for b in t['bullets']
-        )
-        trail = f'<span class="trail">{E(t["clients_trail"])}</span>' if t.get('clients_trail') else ''
-        ribbon = '<div class="ribbon">Sweet spot</div>' if t.get('sweet') else ''
-        return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
-          {ribbon}
-          <div class="name">{E(t["name"])}</div>
-          <div class="clients">{E(t["clients"])}<div class="bold">{E(t["clients_bold"])}{trail}</div></div>
-          <div class="rule"></div>
-          <div class="price">
-            <div class="line">{E(t["price"])}</div>
-            <div class="label">{E(t["price_label"])}</div>
-            <div class="per">{E(t["per_client"])}</div>
-          </div>
-          <div class="rule"></div>
-          <div class="eyebrow">{E(t["eyebrow"])}</div>
-          <ul class="bullets">{bullets}</ul>
-        </div>'''
-    tiers_html = '\n'.join(tier_card(t) for t in PRICING_TIERS)
-
-    helpers_rows = '\n'.join(
-        f'''<div class="kz-included-row">
-          <div class="tag">{E(h["tag"])}</div>
-          <div class="body">
-            <div class="name">{E(h["name"])}</div>
-            <div class="sub">{E(h["sub"])}</div>
-          </div>
-          <div class="features">{' '.join(f'<span>{E(f)}</span>' for f in h["features"])}</div>
-        </div>''' for h in PRICING_HELPERS
+    p = relpath(1)
+    extra_head = (
+        f'<link rel="stylesheet" href="{p}assets/css/roi-calculator.css">\n'
+        f'        <script charset="utf-8" defer src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>\n'
+        f'        <script defer src="{p}assets/js/roi-calculator.js"></script>'
     )
-
-    body = f'''
-    {nav_html(1, active='Pricing')}
-
-    <!-- HERO -->
-    <section class="kz-section-tight" style="padding-top:60px;">
-      <div class="kz-eyebrow">Pricing</div>
-      <h1 class="kz-h1 kz-h1-xl" style="margin-top:18px;max-width:1100px;">
-        <span class="kz-mark">Priced by client portfolio.</span><br>Not per seat.
-      </h1>
-      <p class="kz-lede" style="margin-top:22px;max-width:760px;">
-        You only pay for the size of the portfolio Kaizan covers. <strong style="color:var(--kz-ink);font-weight:600;">Unlimited users</strong> &amp; the full product on every tier.
-      </p>
-    </section>
-
-    <!-- TIER CARDS -->
-    <section class="kz-section" style="padding-top:8px;">
-      <div class="kz-pricing-tiers">{tiers_html}</div>
-      <p class="kz-pricing-fine">
-        All prices GBP, annual commit. Monthly billing available at 10% uplift.
-        Fair-use limits on storage, API calls and integration volumes — full thresholds in your contract.
-        Custom AI Helpers, custom integrations and bespoke engineering quoted separately.
-      </p>
-    </section>
-
-    <!-- INCLUDED IN EVERY TIER (stacked rows, vertical shape) -->
-    <section class="kz-section">
-      <div class="kz-eyebrow">Included in every tier</div>
-      <h2 class="kz-h2" style="margin-top:10px;max-width:820px;">
-        One AI Assistant and three AI Helpers, working across every account.
-      </h2>
-      <div class="kz-included-list">{helpers_rows}</div>
-    </section>
-
-    {footer_html(1)}
-    '''
-    return page_head('Pricing', 1,
-                     'Priced by the size of the client portfolio Kaizan covers. Unlimited users on every tier.') + body + page_foot()
+    body = nav_html(1, active='ROI Calculator') + ROI_CALCULATOR_SECTION + footer_html(1)
+    return page_head('ROI Calculator', 1,
+                     'Calculate the ROI Kaizan returns on your client portfolio — revenue retained, '
+                     'upsell surfaced and capacity recovered, with pricing set by client count.',
+                     extra_head=extra_head) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
