@@ -590,6 +590,7 @@ PERSONAS = {
         quote_name='Alex Beddoe',
         quote_role='Head of Biddable Media',
         quote_co='Transmission',
+        quote_co_url='https://transmissionagency.com/',
         quote_nudge=True,
         quote_cta='Read the Transmission case study →',
         quote_cta_href='https://blog.kaizan.ai/agency-leaders-who-dont-move-now-will-be-managing-the-fallout-later-9f792fe49686',
@@ -1921,6 +1922,11 @@ def render_persona(slug: str) -> str:
         initials = ''.join(part[0] for part in p['quote_name'].split()[:2]).upper()
         photo_html = f'<div class="photo is-placeholder">{E(initials)}</div>'
 
+    # Company name in the quote attribution — hyperlinked when quote_co_url is set.
+    co_html = E(p['quote_co'])
+    if p.get('quote_co_url'):
+        co_html = f'<a href="{E(p["quote_co_url"])}">{co_html}</a>'
+
     # "Watch video" button: rendered only when a matching file exists at
     # assets/video/people/<name-slug>.{mp4,webm}. Opens in the shared lightbox
     # (kz-video-lightbox) wired up in assets/js/site.js.
@@ -2021,7 +2027,7 @@ def render_persona(slug: str) -> str:
             <div class="who">
               <div class="name">{E(p['quote_name'])}</div>
               <div class="role">{E(p['quote_role'])}</div>
-              <div class="co">{E(p['quote_co'])}</div>
+              <div class="co">{co_html}</div>
             </div>
           </div>
           <div class="actions-stack">
@@ -3430,7 +3436,7 @@ FAQ_DATA = [
         ('How do I book a demo?',
          'Demos can be booked at kaizan.ai/demo. The standard demo is 30 minutes and covers a live walkthrough on a sample account, the CARE health model, the redaction pipeline, and pricing. For teams over 100 seats, a tailored demo using anonymised data from your own meeting recorder can be arranged.'),
         ('Is Kaizan hiring?',
-         'Yes. Kaizan is hiring engineers, designers, GTM and customer success roles, primarily in London and remote across UK and EU time zones. Open roles are listed at kaizan.ai/careers. The team is fifteen people as of 2026 and intentionally hiring slowly to preserve quality of work and culture.'),
+         'Yes. Kaizan is hiring engineers, designers, GTM and customer success roles, primarily in London and remote across UK and EU time zones. To express interest, email hello@kaizan.ai. The team is fifteen people as of 2026 and intentionally hiring slowly to preserve quality of work and culture.'),
         ('How can journalists or researchers contact Kaizan?',
          'Press and research enquiries should go to press@kaizan.ai. The team responds within two working days and can provide product screenshots, data on the CARE benchmarks (anonymised), and access to client references on request.'),
     ]),
@@ -4017,6 +4023,15 @@ def write(path: Path, content: str):
     print(f'  wrote {path.relative_to(ROOT)}')
 
 
+def _remove_page(directory: Path):
+    """Delete a generated page directory so a disabled page stops being served.
+    Keeps build output in sync with the source (no stale pages left behind)."""
+    import shutil
+    if directory.exists():
+        shutil.rmtree(directory)
+        print(f'  removed {directory.relative_to(ROOT)}/')
+
+
 def main():
     print(f'Building Kaizan site → {ROOT}')
 
@@ -4026,7 +4041,10 @@ def main():
     write(ROOT / 'integrations' / 'index.html', render_integrations())
     write(ROOT / 'pricing' / 'index.html',      render_pricing())
     write(ROOT / 'security' / 'index.html',     render_security())
-    write(ROOT / 'careers' / 'index.html',      render_careers())
+    # Careers page disabled until the content is ready. render_careers() is kept
+    # for easy re-enable. The /careers/ directory is removed on build so the page
+    # 404s rather than serving stale content.
+    _remove_page(ROOT / 'careers')
     write(ROOT / 'faq' / 'index.html',          render_faq())
     write(ROOT / 'research' / 'index.html',     render_research())
     write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
