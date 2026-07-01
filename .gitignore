@@ -1,0 +1,6 @@
+# Python bytecode (created when tools/build.py imports tools/*.py)
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
