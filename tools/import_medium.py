@@ -293,13 +293,99 @@ def import_feed(rss_url: str, limit: int = 0, overwrite: bool = False):
     print("\nDone. Imported posts are draft: true — review, set draft: false, then build.")
 
 
+# Standalone Medium UI blocks and trailing footers to scrub from extracted bodies.
+_CRUFT_BLOCK = re.compile(
+    r'^(--+|Listen|Share|Follow|Follow publication|Sign up|Sign in|Get app|Write|'
+    r'Open in app|Member-only story|Published\b.*|\d+\s*min read)$', re.IGNORECASE)
+_FOOTER = re.compile(
+    r'\n+\*?\s*(Originally published at|Join the Kaizan Community)\b.*$',
+    re.IGNORECASE | re.DOTALL)
+_MEDIUM_FOOTER = re.compile(
+    r'\n+(?:---\s*\n+)?[^\n]*was originally published in[^\n]*on Medium[^\n]*\s*$', re.IGNORECASE)
+
+
+def make_excerpt(md: str) -> str:
+    """First real paragraph, stripped of markup, cut at a word boundary."""
+    for block in md.split('\n\n'):
+        b = block.strip()
+        if b and not b.startswith(('#', '>', '-', '!', '`', '*', '|')):
+            e = re.sub(r'\*\*|[*`\[\]]|\(https?://[^)]+\)', '', b)
+            e = re.sub(r'\s+', ' ', e).strip()
+            if len(e) > 170:
+                e = e[:170].rsplit(' ', 1)[0].rstrip(',;:—-') + '…'
+            return e
+    return ''
+
+
+def scrub_body(md: str) -> str:
+    md = _FOOTER.sub('', md)
+    md = _MEDIUM_FOOTER.sub('', md)
+    blocks = [b for b in md.split('\n\n') if not _CRUFT_BLOCK.match(b.strip())]
+    md = '\n\n'.join(blocks)
+    # strip Medium/Kaizan tracking query strings from links
+    md = re.sub(r'(\]\(https?://[^)?\s]+)\?[^)\s]*(\))', r'\1\2', md)
+    return re.sub(r'\n{3,}', '\n\n', md).strip()
+
+
+def import_json(path: str, overwrite: bool = False):
+    """Import posts extracted in the browser: a JSON list of
+    {url,title,date,ogImage,images[],md}. Images download server-side (the
+    miro.medium.com CDN is reachable even though post HTML pages 403)."""
+    import json
+    posts = json.load(open(path, encoding='utf-8'))
+    print(f"Importing {len(posts)} extracted posts\n")
+    for post in posts:
+        title = (post.get('title') or 'Untitled').strip()
+        slug = slugify(title)
+        post_dir = CONTENT_DIR / slug
+        if post_dir.exists() and not overwrite:
+            print(f"SKIP  {slug} (exists)"); continue
+        post_dir.mkdir(parents=True, exist_ok=True)
+
+        md = post.get('md') or ''
+        images = post.get('images') or []
+        # download images; map placeholder -> filename (or drop if empty/failed)
+        cover = ''
+        for i, url in enumerate(images):
+            name = download_image(url, post_dir, i) if url else None
+            if name:
+                md = md.replace(f'__IMG_{i}__', name)
+                if not cover:
+                    cover = name
+            else:
+                md = re.sub(r'!\[[^\]]*\]\(__IMG_' + str(i) + r'__\)\s*', '', md)
+        # the lead image is the hero (cover) — drop its first inline occurrence
+        if cover:
+            md = re.sub(r'!\[[^\]]*\]\(' + re.escape(cover) + r'\)\s*', '', md, count=1)
+
+        md = scrub_body(md)
+
+        excerpt = make_excerpt(md)
+
+        fm = ['---', f'title: {fm_escape(title)}', f'date: {post.get("date","")}',
+              'category: POV', f'excerpt: {fm_escape(excerpt)}']
+        if cover:
+            fm.append(f'cover: {cover}')
+        fm.append('draft: true')
+        fm.append('---')
+        (post_dir / 'index.md').write_text('\n'.join(fm) + '\n\n' + md + '\n', encoding='utf-8')
+        print(f"WROTE {slug}  (cover={cover or 'none'}, {len(md)} chars)")
+    print("\nDone. Review, set draft: false, then build.")
+
+
 def main():
-    ap = argparse.ArgumentParser(description='Import a Medium RSS feed into content/blog/.')
-    ap.add_argument('--rss', required=True, help='Medium RSS feed URL (e.g. https://blog.kaizan.ai/feed)')
+    ap = argparse.ArgumentParser(description='Import Medium posts into content/blog/.')
+    ap.add_argument('--rss', help='Medium RSS feed URL (e.g. https://blog.kaizan.ai/feed)')
+    ap.add_argument('--from-json', help='JSON list of browser-extracted posts')
     ap.add_argument('--limit', type=int, default=0, help='Only import the first N posts')
     ap.add_argument('--overwrite', action='store_true', help='Overwrite existing content/blog/<slug>/')
     args = ap.parse_args()
-    import_feed(args.rss, limit=args.limit, overwrite=args.overwrite)
+    if args.from_json:
+        import_json(args.from_json, overwrite=args.overwrite)
+    elif args.rss:
+        import_feed(args.rss, limit=args.limit, overwrite=args.overwrite)
+    else:
+        ap.error('provide --rss or --from-json')
 
 
 if __name__ == '__main__':
