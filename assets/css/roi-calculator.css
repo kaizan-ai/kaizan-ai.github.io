@@ -181,7 +181,7 @@
 
 /* closing CTA band */
 .kzroi-cta-band { background: var(--kz-black); border-radius: 20px; padding: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 48px); margin-top: 36px; text-align: center; }
-.kzroi-cta-band h3 { font-family: 'IBM Plex Sans', var(--kz-sans); font-weight: 400; color: #fff; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 10px; }
+#kaizan-roi .kzroi-cta-band h3 { font-family: 'IBM Plex Sans', var(--kz-sans); font-weight: 400; color: #fff; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 22px; }
 /* #kaizan-roi prefix so `margin: 0 auto` beats the ID-specificity `#kaizan-roi p { margin: 0 }` reset (otherwise the 600px block stays left-aligned). */
 #kaizan-roi .kzroi-cta-band p { color: rgba(255, 255, 255, 0.6); font-size: 15px; max-width: 600px; margin: 0 auto 24px; line-height: 1.55; text-align: center; }
 .kzroi-cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
