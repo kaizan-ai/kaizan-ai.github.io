@@ -2353,11 +2353,10 @@ def render_blog_index(posts: list) -> str:
     <section class="kz-insights-hero">
       <div class="kz-eyebrow">Blog · from the Kaizan team</div>
       <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;max-width:1100px;">
-        Notes on <span class="kz-mark kz-mark-tight">client intelligence.</span>
+        Client Service <span class="kz-mark kz-mark-tight">Super Intelligence</span>
       </h1>
       <p class="kz-lede" style="margin-top:22px;max-width:680px;">
-        Field notes, product updates, and what we&rsquo;re learning about client relationships
-        from the teams running Kaizan.
+        How the best client teams win, keep and grow the relationships that matter.
       </p>
     </section>
     {grid}
