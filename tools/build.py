@@ -12,10 +12,13 @@ and re-run the script. /blog/index.html (hidden) will pick it up.
 
 from __future__ import annotations
 import os
+import sys
 from html import escape
 from pathlib import Path
 from textwrap import dedent
 from urllib.parse import quote
+
+import blog  # tools/blog.py — Markdown blog pipeline (loads content/blog/*/index.md)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -33,8 +36,7 @@ NAV = [
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
     ('Personas',     '__personas_dropdown__'),
     ('Integrations', 'integrations/'),
-    # TODO: re-enable "Blog" once posts are ready.
-    # ('Blog',         'insights/'),
+    ('Blog',         'blog/'),
     ('ROI Calculator', 'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -801,16 +803,8 @@ INSIGHTS_POSTS = [
          img=cover('#E8DFCB', '#FFB900', '06')),
 ]
 
-# Hidden blog posts — start empty. Append new dicts here to publish.
-# Schema:
-#   slug  (URL-safe), title, excerpt, date, author, category, cover (img URL), body (HTML)
-POSTS: list[dict] = [
-    # Example (uncomment to test):
-    # dict(slug='hello-world', title='Hello, world',
-    #      excerpt='A short opener.', date='9 May 2026', author='Glen Calvert',
-    #      category='POV', cover=cover('#FFB900', '#FFD86B', 'KZ'),
-    #      body='<p>First post.</p>'),
-]
+# Blog posts now live as Markdown at content/blog/<slug>/index.md and are loaded
+# by tools/blog.py (blog.load_posts()) in main() — no inline POSTS list.
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -2299,134 +2293,101 @@ def render_insights() -> str:
                      'Notes on building client super intelligence — POV, product updates, field notes and benchmarks.') + body + page_foot()
 
 
-def render_blog_hidden() -> str:
-    """The hidden /blog/ page. Not linked from anywhere.
+def cover_src(post: dict, depth: int) -> str:
+    """Cover image src for a post page at the given depth: the colocated asset if
+    present (assets/img/blog/<slug>/...), else a generated gradient fallback."""
+    if post.get('cover_asset'):
+        return relpath(depth) + 'assets/img/' + post['cover_asset']
+    glyph = (post.get('title') or 'KZ').strip()[:2].upper() or 'KZ'
+    return cover('#FFB900', '#FFD86B', glyph)
 
-    Renders an empty state when POSTS is empty; renders the same card grid as
-    the Insights page when POSTS contains entries. Each entry needs:
-      slug, title, excerpt, date, author, category, cover, body
-    """
-    has_posts = bool(POSTS)
-    if has_posts:
-        sorted_posts = sorted(POSTS, key=lambda p: p.get('date', ''), reverse=True)
+
+def og_tags(post: dict) -> str:
+    """OpenGraph/Twitter/canonical <head> tags for a blog post (depth 2).
+    `canonical` frontmatter (set on Medium imports) wins; else self-canonical."""
+    url = f"https://kaizan.ai/blog/{post['slug']}/"
+    img = f"https://kaizan.ai/assets/img/{post['cover_asset']}" if post.get('cover_asset') else ''
+    canon = post.get('canonical') or url
+    t = [
+        f'<link rel="canonical" href="{E(canon)}">',
+        '<meta property="og:type" content="article">',
+        f'<meta property="og:title" content="{E(post["title"])}">',
+        f'<meta property="og:description" content="{E(post.get("excerpt", ""))}">',
+        f'<meta property="og:url" content="{E(url)}">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{E(post["title"])}">',
+        f'<meta name="twitter:description" content="{E(post.get("excerpt", ""))}">',
+    ]
+    if img:
+        t.append(f'<meta property="og:image" content="{E(img)}">')
+        t.append(f'<meta name="twitter:image" content="{E(img)}">')
+    if post.get('iso_date'):
+        t.append(f'<meta property="article:published_time" content="{E(post["iso_date"])}">')
+    return '\n        '.join(t)
+
+
+def render_blog_index(posts: list) -> str:
+    """The public /blog/ landing — a card grid of all published posts (depth 1)."""
+    if posts:
         cards_html = '\n'.join(
             f'''<a class="kz-insights-card" href="{E(p["slug"])}/">
-              <div class="cover" style="background-image:url(\'{E(p.get("cover", ""))}\');"></div>
+              <div class="cover" style="background-image:url('{cover_src(p, 1)}');"></div>
               <div class="body">
-                <span class="kz-eyebrow">{E(p.get("category", ""))}</span>
+                <span class="kz-eyebrow">{E(p["category"])}</span>
                 <h3 class="title">{E(p["title"])}</h3>
-                <p class="excerpt">{E(p.get("excerpt", ""))}</p>
-                <div class="meta">{E(p.get("author", "").upper())} · {E(p.get("date", "").upper())}</div>
+                <p class="excerpt">{E(p["excerpt"])}</p>
+                <div class="meta">{E(p["author"].upper())} · {E(p["date"].upper())}</div>
               </div>
-            </a>''' for p in sorted_posts
+            </a>''' for p in posts
         )
         grid = f'<section class="kz-insights-grid"><div class="kz-insights-cards">{cards_html}</div></section>'
     else:
         grid = '''<section class="kz-blog-empty">
           <div class="head">No posts yet.</div>
-          <p>This page is hidden &mdash; not linked from the public nav.<br>
-          Add entries to the <code>POSTS</code> list in <code>tools/build.py</code> and re-run the build.</p>
+          <p>Add a post at <code>content/blog/&lt;slug&gt;/index.md</code> and re-run
+          <code>python3 tools/build.py</code>. See <code>content/blog/AUTHORING.md</code>.</p>
         </section>'''
 
     body = f'''
-    {nav_html(1)}
+    {nav_html(1, active='Blog')}
     <section class="kz-insights-hero">
-      <div class="kz-eyebrow">Blog · hidden landing</div>
-      <h1 class="kz-h1" style="margin:20px 0 0;max-width:1100px;">
-        Posts.
+      <div class="kz-eyebrow">Blog · from the Kaizan team</div>
+      <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;max-width:1100px;">
+        Notes on <span class="kz-mark kz-mark-tight">client intelligence.</span>
       </h1>
       <p class="kz-lede" style="margin-top:22px;max-width:680px;">
-        A staging ground for the public blog. Not linked from the main navigation. Once we&rsquo;re ready,
-        flip the &ldquo;Blog&rdquo; nav target to point here and unlist <code>/insights/</code>.
+        Field notes, product updates, and what we&rsquo;re learning about client relationships
+        from the teams running Kaizan.
       </p>
     </section>
     {grid}
     {footer_html(1)}
     '''
-    head = '''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog (hidden) · Kaizan</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Hidden blog landing.">
-<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-<link rel="icon" type="image/webp" sizes="16x16" href="../assets/img/favicon-16x16.webp">
-<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-<link rel="mask-icon" href="../assets/img/safari-pinned-tab.svg" color="#FFB900">
-<link rel="stylesheet" href="../assets/css/tokens.css">
-<link rel="stylesheet" href="../assets/css/site.css">
-<script defer src="../assets/js/site.js"></script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
-<!-- End Google Tag Manager -->
-</head>
-<body>
-<div class="kz-page">
-<main class="kz-main">
-'''
-    return (head + body + '</main>\n</div>\n'
-            '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
-            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
-            '<!-- End Google Tag Manager (noscript) -->\n'
-            '</body>\n</html>\n')
+    return page_head('Blog', 1,
+                     'Field notes, product updates and research on client relationships from the '
+                     'Kaizan team.') + body + page_foot()
 
 
 def render_blog_post(post: dict) -> str:
-    """Render a single hidden-blog post page at /blog/<slug>/index.html."""
-    head = '''<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title} · Kaizan</title>
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="{desc}">
-<link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon-32x32.png">
-<link rel="icon" type="image/webp" sizes="16x16" href="../../assets/img/favicon-16x16.webp">
-<link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png">
-<link rel="mask-icon" href="../../assets/img/safari-pinned-tab.svg" color="#FFB900">
-<link rel="stylesheet" href="../../assets/css/tokens.css">
-<link rel="stylesheet" href="../../assets/css/site.css">
-<script defer src="../../assets/js/site.js"></script>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-}})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
-<!-- End Google Tag Manager -->
-</head>
-<body>
-<div class="kz-page">
-<main class="kz-main">
-'''.format(title=E(post['title']), desc=E(post.get('excerpt', '')))
-
+    """Render a single blog post page at /blog/<slug>/index.html (depth 2)."""
+    hero = (f'<img class="kz-post-hero" src="{cover_src(post, 2)}" '
+            f'alt="{E(post["title"])}" decoding="async">') if post.get('cover_asset') else ''
     body = f'''
-    {nav_html(2)}
-    <article class="kz-essay" style="padding-top:48px;">
-      <div class="kz-essay-body">
+    {nav_html(2, active='Blog')}
+    <article class="kz-essay kz-post" style="padding-top:48px;">
+      <div class="kz-essay-body kz-post-body">
         <div class="kz-eyebrow">{E(post.get('category', ''))} · {E(post.get('date', ''))}</div>
-        <h1 class="kz-h1" style="font-size:64px;margin:18px 0 0;">{E(post['title'])}</h1>
-        <div class="kz-mute" style="font-size:14px;margin-top:12px;">{E(post.get('author', ''))}</div>
+        <h1 class="kz-post-title">{E(post['title'])}</h1>
+        <div class="kz-post-byline">By {E(post.get('author', ''))}</div>
+        {hero}
         {post.get('body', '<p>(empty)</p>')}
-        <div style="margin-top:32px;"><a href="../" style="font-weight:600;color:var(--kz-ink);">← Back to all posts</a></div>
+        <div class="kz-post-back"><a href="../">← Back to all posts</a></div>
       </div>
     </article>
     {footer_html(2)}
     '''
-    return (head + body + '</main>\n</div>\n'
-            '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
-            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
-            '<!-- End Google Tag Manager (noscript) -->\n'
-            '</body>\n</html>\n')
+    return page_head(post['title'], 2, post.get('excerpt', ''),
+                     extra_head=og_tags(post)) + body + page_foot()
 
 
 def render_about() -> str:
@@ -4227,7 +4188,9 @@ def main():
     write(ROOT / 'research' / 'index.html',     render_research())
     write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
     write(ROOT / 'customers' / 'index.html',    render_customers())
-    write(ROOT / 'insights' / 'index.html',     render_insights())
+    # /insights/ retired — the blog now lives at /blog/. render_insights() kept
+    # for easy revert; the directory is removed so it doesn't serve stale content.
+    _remove_page(ROOT / 'insights')
     write(ROOT / 'about' / 'index.html',        render_about())
     write(ROOT / '404.html',                    render_404())
 
@@ -4239,10 +4202,14 @@ def main():
     for slug in CASE_DATA:
         write(ROOT / 'customers' / slug / 'index.html', render_case_study(slug))
 
-    # Hidden blog
-    write(ROOT / 'blog' / 'index.html', render_blog_hidden())
-    for post in POSTS:
+    # Blog — Markdown posts from content/blog/<slug>/index.md (see tools/blog.py).
+    # Drafts (draft: true) are excluded unless `python3 tools/build.py --drafts`.
+    posts = blog.load_posts(include_drafts='--drafts' in sys.argv)
+    write(ROOT / 'blog' / 'index.html', render_blog_index(posts))
+    for post in posts:
+        blog.copy_post_images(post['slug'])
         write(ROOT / 'blog' / post['slug'] / 'index.html', render_blog_post(post))
+    print(f'  ({len(posts)} blog post(s) built)')
 
     print('Done.')
 

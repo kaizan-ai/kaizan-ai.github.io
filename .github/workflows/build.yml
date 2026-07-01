@@ -1,0 +1,50 @@
+name: Build site
+
+# Regenerate the static site whenever source changes land on main, and commit the
+# generated HTML back. This lets non-technical authors publish a post by merging a
+# content-only PR — no one has to run `python3 tools/build.py` locally.
+#
+# The trigger paths are SOURCE only (content/tools/styles/scripts). This job commits
+# generated output (blog/**, assets/img/blog/**, *.html), which is NOT under those
+# paths, so it never re-triggers itself. The `[skip ci]` marker is a second guard.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'tools/**'
+      - 'assets/css/**'
+      - 'assets/js/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build the site
+        run: python3 tools/build.py
+
+      - name: Commit regenerated site
+        run: |
+          git config user.name "kaizan-bot"
+          git config user.email "bot@kaizan.ai"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "build: regenerate site [skip ci]"
+            git push
+          fi

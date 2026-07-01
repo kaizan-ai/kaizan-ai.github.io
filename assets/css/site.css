@@ -1505,6 +1505,49 @@ button { font-family: inherit; }
   font-size: 22px; letter-spacing: -0.01em;
 }
 
+/* ── Blog post body (Markdown -> HTML) ───────────────────────────────────────
+   Scoped to .kz-post-body so it only styles converted blog Markdown, never the
+   hand-built /about/ essay (which shares .kz-essay-body). */
+/* /about/ uses .kz-essay as a 220px-sidebar grid; a blog post has a single
+   column, so override it to one centered column. */
+.kz-essay.kz-post { display: block; }
+.kz-post .kz-essay-body { max-width: 760px; margin: 0 auto; }
+.kz-post-title {
+  font-family: var(--kz-display); font-weight: 400;
+  font-size: 46px; line-height: 1.1; letter-spacing: -0.03em; margin: 14px 0 0;
+}
+.kz-post-byline { font-size: 14px; color: var(--kz-mute); margin-top: 14px; }
+.kz-post-hero { width: 100%; height: auto; border-radius: 14px; margin-top: 8px; }
+.kz-post-body h2 { font-size: 30px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 12px; }
+.kz-post-body h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin-top: 8px; }
+.kz-post-body ul, .kz-post-body ol {
+  font-size: 18px; line-height: 1.7; color: var(--kz-ink);
+  padding-left: 1.2em; margin: 0; display: flex; flex-direction: column; gap: 8px;
+}
+.kz-post-body li { padding-left: 2px; }
+.kz-post-body blockquote {
+  margin: 0; border-left: 3px solid var(--kz-yellow); padding: 2px 0 2px 20px;
+  font-size: 20px; line-height: 1.5; font-style: italic; color: var(--kz-mute);
+}
+.kz-post-body a { color: var(--kz-ink); text-decoration: underline; text-underline-offset: 3px; }
+.kz-post-body a:hover { color: var(--kz-yellow-deep); }
+.kz-post-body img { width: 100%; height: auto; border-radius: 12px; margin: 4px 0; }
+.kz-post-body figure { margin: 0; }
+.kz-post-body figcaption { font-size: 14px; color: var(--kz-mute); margin-top: 8px; text-align: center; }
+.kz-post-body hr { border: 0; border-top: 1px solid var(--kz-line); margin: 8px 0; }
+.kz-post-body pre {
+  background: #0A0A0A; color: #F1ECDD; padding: 18px 20px; border-radius: 12px;
+  overflow: auto; font-size: 14px; line-height: 1.55;
+}
+.kz-post-body :not(pre) > code {
+  font-family: var(--kz-mono); font-size: 0.9em;
+  background: rgba(0,0,0,0.06); padding: 1px 6px; border-radius: 5px;
+}
+.kz-post-body table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.kz-post-body th, .kz-post-body td { border-bottom: 1px solid var(--kz-line); padding: 10px 12px; text-align: left; }
+.kz-post-back { margin-top: 24px; }
+.kz-post-back a { font-weight: 600; color: var(--kz-ink); text-decoration: none; }
+
 .kz-about-cta { padding: 24px var(--kz-gutter) 80px; }
 .kz-about-cta-card {
   background: var(--kz-yellow); border-radius: 14px; padding: 48px 52px;
@@ -1664,6 +1707,11 @@ button { font-family: inherit; }
   .kz-case-body .sections section p { font-size: 16px; }
   .kz-essay-pull { font-size: 22px; }
   .kz-essay-body p { font-size: 16px; }
+  .kz-post-title { font-size: 32px; }
+  .kz-post-body h2 { font-size: 24px; }
+  .kz-post-body h3 { font-size: 19px; }
+  .kz-post-body ul, .kz-post-body ol { font-size: 16px; }
+  .kz-post-body blockquote { font-size: 18px; }
   .kz-essay-callout { padding: 22px; }
   .kz-essay-callout .pull { font-size: 20px; }
   .kz-essay-announce { padding: 24px; }

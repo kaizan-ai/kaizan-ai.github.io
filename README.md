@@ -35,10 +35,10 @@ knowledge-hub/index.html                Knowledge Hub — client-success Q&A (ge
 faq/index.html                          FAQs (in the Resources menu)      (generated)
 customers/index.html                    Clients (case-study index)        (generated)
 customers/<slug>/index.html             Case-study detail pages           (generated)
-insights/index.html                     Blog / Insights                   (generated)
 about/index.html                        CEO essay + investors             (generated)
 for/<persona-slug>/index.html           Persona pages                     (generated)
-blog/index.html                         Hidden blog landing               (generated)
+content/blog/<slug>/index.md            BLOG POSTS — Markdown source (hand-authored)
+blog/index.html + blog/<slug>/          Blog index + post pages           (generated)
 404.html                                Custom 404                        (generated)
 ```
 
@@ -93,30 +93,36 @@ reorder dropdown links by editing `RESOURCES_MENU`.
   That stops generating it **and** deletes any already-deployed copy so it 404s instead of
   serving stale HTML. Keep the `render_*` function around for easy re-enable.
 
-## Adding a blog post (hidden blog)
+## Adding a blog post
 
-The hidden blog at `/blog/` is the staging ground for posts. Append to `POSTS` in `tools/build.py`:
+The blog at `/blog/` is built from **Markdown** files — one folder per post:
 
-```python
-POSTS = [
-    dict(
-        slug='hello-world',
-        title='Hello, world',
-        excerpt='A short opener.',
-        date='9 May 2026',
-        author='Glen Calvert',
-        category='POV',
-        cover=cover('#FFB900', '#FFD86B', 'KZ'),
-        body='<p>Markdown? Just write HTML here. Use &lt;p&gt;, &lt;h2&gt;, &lt;blockquote&gt;, &lt;ul&gt; etc.</p>',
-    ),
-]
+```
+content/blog/<slug>/index.md      ← frontmatter + Markdown body
+content/blog/<slug>/cover.jpg     ← colocated images (referenced by filename)
 ```
 
-Run `python3 tools/build.py`. The build creates `/blog/index.html` (the hidden listing) and `/blog/<slug>/index.html` for each post.
+Add a post by creating that folder, then `python3 tools/build.py`. The build (via
+`tools/blog.py`, using the vendored `tools/markdown2.py`) converts the Markdown, copies
+images to `assets/img/blog/<slug>/`, and writes `/blog/index.html` + `/blog/<slug>/index.html`.
 
-To surface the blog in the nav, add a `Blog` entry to `RESOURCES_MENU` in `tools/build.py`
-(pointing at `blog/` for the hidden blog, or `insights/` for the Insights landing). The
-`insights/` page can stay as a separate "POV / white papers" section either way.
+- Frontmatter: `title, date (YYYY-MM-DD), author, category, excerpt`, optional `cover`,
+  `draft`, `tags`, `canonical`. Categories: POV · PRODUCT · FIELD NOTES · BENCHMARK ·
+  INTERVIEW · CUSTOMER STORY.
+- **`draft: true` posts are excluded** from the production build; use
+  `python3 tools/build.py --drafts` to preview them locally.
+- Images go in the post folder and are referenced by filename (`![alt](photo.jpg)`) — no
+  relative paths to compute.
+- **Non-technical authors:** see `content/blog/AUTHORING.md` (write with claude.ai + the
+  GitHub connector → PR). Locally, `/new-blog-post` in Claude Code does the same.
+- Posts publish automatically when a content PR is merged to `main` (the
+  `.github/workflows/build.yml` Action rebuilds and commits the site).
+
+### Migrating from Medium
+`tools/import_medium.py --rss https://blog.kaizan.ai/feed` imports the feed's posts as
+`draft: true` Markdown with images downloaded and `canonical` set to the Medium URL.
+Review, set `draft: false`, build. (RSS carries only the ~10 most recent posts; the full
+archive needs a Medium "Download your information" export.)
 
 ## Replacing placeholder media
 
@@ -124,7 +130,7 @@ The design ships with placeholders in three places:
 
 - **Hero video** on the home page - currently a black panel with a "drop a video src here" hint. To wire a real video, edit `tools/build.py` → `render_home()` → search for `kz-hero-video` and add a `<video src="…" autoplay muted loop playsinline>` inside.
 - **Marquee logos** - currently rendered as text logos (matches the design). Replace by editing `CLIENT_LOGOS` and `INTEGRATIONS` to use `<img>` tags, or restyle the marquee in `site.css`.
-- **Blog post covers** - gradient SVG data-URIs. Replace `cover(...)` calls in `INSIGHTS_POSTS` with an image path under `assets/img/`.
+- **Blog post covers** - set `cover: <filename>` in the post's frontmatter (image colocated in `content/blog/<slug>/`); omit it to fall back to a generated gradient.
 
 Drop any new images into `assets/img/`. Reference them by relative path; the depth is automatic via `relpath(depth)` in `build.py`.
 
