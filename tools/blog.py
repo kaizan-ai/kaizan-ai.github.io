@@ -158,7 +158,8 @@ def load_posts(include_drafts: bool = False) -> list:
         if draft and not include_drafts:
             continue
 
-        missing = [k for k in ('title', 'date', 'author', 'category', 'excerpt') if not meta.get(k)]
+        # `author` is optional — bylines are not shown on the blog.
+        missing = [k for k in ('title', 'date', 'category', 'excerpt') if not meta.get(k)]
         if missing:
             print(f"  [blog] WARN {slug}: missing frontmatter {missing}")
         category = str(meta.get('category', 'POV')).upper()

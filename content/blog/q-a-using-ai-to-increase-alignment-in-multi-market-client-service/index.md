@@ -6,7 +6,6 @@ category: POV
 excerpt: Looking after an expanding team which traverses a global footprint is no easy task, layering in the complexity of client service management with clients and stakeholders with different requirements an
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/q-a-using-ai-to-increase-alignment-in-multi-market-client-service-teams-34c3007d7ef3?source=rss----a72a4cc62ef2---4
 ---
 
 ## **Q&A — Using AI to increase alignment in multi-market Client Service teams**
@@ -34,7 +33,3 @@ A. Definitely, implementing AI has helped improve professionalism. We want to be
 **Q. It’s a great point, adding that level of professionalism into every interaction is important to maintaining healthy client relationships and client excellence. Obviously health relationships lead to client retention and increased revenues so it’s a win-win. How are you finding the data points you’re getting from AI supporting your CS teams?**
 
 A. We definitely find that we can improve client relationships with objective data points and we can get those data points from Kaizan. It’s not all complex data either, some of those data points allow us to understand how much time we spend on our clients and how often we interact with them which is super important to know. We want to remain relevant and be top of mind with our clients so being able to monitor our client interactions is super important. Given how global we are, with some of our clients we have a lot of contacts client side and it’s important that we touch base with all of them, AI allows us to track whether we’re doing a good job of maintaining those relationships.
-
----
-
-[Q&A — Using AI to increase alignment in multi-market Client Service teams](https://blog.kaizan.ai/q-a-using-ai-to-increase-alignment-in-multi-market-client-service-teams-34c3007d7ef3) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

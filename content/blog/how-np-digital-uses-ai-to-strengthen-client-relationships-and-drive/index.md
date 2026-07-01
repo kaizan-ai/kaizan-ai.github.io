@@ -6,7 +6,6 @@ category: POV
 excerpt: Brandon Smith, Managing Director at NP Digital, shares how AI is helping client teams gain visibility across relationships, save time, and protect revenue.
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive-retention-45f04f7fd0bc?source=rss----a72a4cc62ef2---4
 tags: [digital-marketing-agency, digital-marketing, ai, customer-retention, client-relationship]
 ---
 
@@ -136,7 +135,3 @@ This enables them to:
 - focus more time on strategy and growth
 
 For agencies managing complex client relationships, having this level of visibility is becoming essential.
-
----
-
-[How NP Digital Uses AI to Strengthen Client Relationships and Drive Retention](https://blog.kaizan.ai/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive-retention-45f04f7fd0bc) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

@@ -6,7 +6,6 @@ category: POV
 excerpt: Adam Hopkinson is the founder and managing director of PASHN Limited, a specialist media agency serving fashion, leisure and entertainment brands. We spoke to him about where the industry is heading,
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue-and-save-time-ebda9f8128b7?source=rss----a72a4cc62ef2---4
 tags: [customer-success, artificial-intelligence, marketing, productivity, revenue-management]
 ---
 
@@ -67,7 +66,3 @@ Presence in meetings. Follow-through after them. Those are the two things that d
 Adam’s final word on Kaizan is characteristically direct. He’d recommend it to anyone in a broad agency. Just not to his immediate competitors.
 
 The agencies that stay closer to their clients, catch problems earlier, and give their teams the visibility they need to act will be the ones that last. That’s not a prediction. For PASHN Limited, it’s already happening.
-
----
-
-[How PASHN Uses AI to Strengthen Client Relationships, Protect Revenue, and Save Time](https://blog.kaizan.ai/how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue-and-save-time-ebda9f8128b7) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

@@ -6,7 +6,6 @@ category: POV
 excerpt: Introducing CARE — the standard for client relationship intelligence, live for every Kaizan user today.
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/the-client-relationship-has-always-been-the-asset-today-it-has-become-an-operating-system-554feff6b779?source=rss----a72a4cc62ef2---4
 tags: [client-success, ai-agent, software-development, ai, account-management]
 ---
 
@@ -109,7 +108,3 @@ The teams that win the next decade won’t be the ones with the most accounts or
 CARE is live in the app today, for every Kaizan user. Open your Kaizan and see it.
 
 **See CARE in your portfolio →**
-
----
-
-[The client relationship has always been the asset. Today it has become an operating system.](https://blog.kaizan.ai/the-client-relationship-has-always-been-the-asset-today-it-has-become-an-operating-system-554feff6b779) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

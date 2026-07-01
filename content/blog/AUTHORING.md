@@ -71,7 +71,7 @@ More text. **Bold**, *italic*, and [a link](https://kaizan.ai). Lists:
 |---|---|---|
 | `title` | yes | Plain text. |
 | `date` | yes | `YYYY-MM-DD`. Shown as e.g. "22 June 2026". |
-| `author` | yes | Display name. |
+| `author` | optional | Not shown on the blog (no bylines); keep for your own records if useful. |
 | `category` | yes | One of: **POV, PRODUCT, FIELD NOTES, BENCHMARK, INTERVIEW, CUSTOMER STORY**. |
 | `excerpt` | yes | One sentence; card + meta description. |
 | `cover` | recommended | Filename of the cover image in this folder. If omitted, a gradient is used. |

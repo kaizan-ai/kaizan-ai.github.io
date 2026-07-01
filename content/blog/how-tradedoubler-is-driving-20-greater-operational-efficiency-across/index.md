@@ -6,7 +6,6 @@ category: POV
 excerpt: Derek Grant, VP of Operations at Tradedoubler, shares how AI is helping standardise client operations, reduce admin, and improve visibility across global teams.
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/how-tradedoubler-is-driving-20-greater-operational-efficiency-across-3-500-clients-5f99fd11d1a6?source=rss----a72a4cc62ef2---4
 tags: [ai, client-relationship, affiliate-marketing, operations-management, artificial-intelligence]
 ---
 
@@ -193,7 +192,3 @@ This enables them to:
 For operations leaders managing complex, global client bases, this creates a more scalable and efficient way to run client servicing.
 
 **“Kaizan has significantly helped us achieve our goal of 20% greater efficiency across the business.”**
-
----
-
-[How Tradedoubler Is Driving 20% Greater Operational Efficiency Across 3,500 Clients](https://blog.kaizan.ai/how-tradedoubler-is-driving-20-greater-operational-efficiency-across-3-500-clients-5f99fd11d1a6) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

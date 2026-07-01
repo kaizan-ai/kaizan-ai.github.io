@@ -6,7 +6,6 @@ category: POV
 excerpt: As we look ahead to a big year for AI, we sat down with some of our clients over the Christmas period to ask them what they foresee for AI in 2025 to help them deliver exceptional products and service
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/csl-2025-ai-predictions-searchlab-bf259fb0b7d4?source=rss----a72a4cc62ef2---4
 tags: [productivity, 2025-predictions, ai, clients, client-services]
 ---
 
@@ -33,7 +32,3 @@ Kaizan is a great example of this. It would be incredibly labor-heavy and time-c
 Kaizan does all that and more, and it’s REALLY good at it. It was immediately our team’s favourite tool, and one that after less than a week, we absolutely could not live without.
 
 Now that we have an AI system like Kaizan which track sentiment and contact points, our team doesn’t have to spend their time monitoring or measuring client minutiae. Instead, we can spend more time on strategic and impactful activities that will benefit our clients. It’s a win win.
-
----
-
-[2025 AI Predictions: SearchLab](https://blog.kaizan.ai/csl-2025-ai-predictions-searchlab-bf259fb0b7d4) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

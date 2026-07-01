@@ -6,7 +6,6 @@ category: POV
 excerpt: Corin Ward, Director of AI, shares how AI is helping standardise global operations, quantify client feedback, and turn conversations into structured data for product and business decisions.
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and-product-decisions-5669edac12c8?source=rss----a72a4cc62ef2---4
 tags: [affiliate-marketing, client-relationship, artificial-intelligence, ai-strategy, ai]
 ---
 
@@ -160,7 +159,3 @@ This enables them to:
 For AI leaders, the ability to turn unstructured communication into structured intelligence is becoming a key competitive advantage.
 
 **“The scope for the future is very exciting… we can now use this data to power the next generation of AI and automation.”**
-
----
-
-[How Tradedoubler is Quantifying Client Conversations to Power AI and Product decisions](https://blog.kaizan.ai/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and-product-decisions-5669edac12c8) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.

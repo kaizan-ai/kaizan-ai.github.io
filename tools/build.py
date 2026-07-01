@@ -2336,7 +2336,7 @@ def render_blog_index(posts: list) -> str:
                 <span class="kz-eyebrow">{E(p["category"])}</span>
                 <h3 class="title">{E(p["title"])}</h3>
                 <p class="excerpt">{E(p["excerpt"])}</p>
-                <div class="meta">{E(p["author"].upper())} · {E(p["date"].upper())}</div>
+                <div class="meta">{E(p["date"].upper())}</div>
               </div>
             </a>''' for p in posts
         )
@@ -2378,7 +2378,6 @@ def render_blog_post(post: dict) -> str:
       <div class="kz-essay-body kz-post-body">
         <div class="kz-eyebrow">{E(post.get('category', ''))} · {E(post.get('date', ''))}</div>
         <h1 class="kz-post-title">{E(post['title'])}</h1>
-        <div class="kz-post-byline">By {E(post.get('author', ''))}</div>
         {hero}
         {post.get('body', '<p>(empty)</p>')}
         <div class="kz-post-back"><a href="../">← Back to all posts</a></div>

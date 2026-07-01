@@ -169,9 +169,13 @@ def html_to_markdown(html: str):
     parser = MediumToMarkdown()
     parser.feed(html)
     md, images = parser.result()
-    # Trim Medium's trailing "Originally published at ..." footer if present.
-    md = re.sub(r'\n+_?Originally published at.*$', '', md, flags=re.DOTALL).strip()
-    return md, images
+    # Trim Medium's trailing footer(s) — both the "... was originally published in
+    # <pub> on Medium ..." blurb (with its preceding --- rule) and the older
+    # "Originally published at ..." form.
+    md = re.sub(r'\n+(?:---\s*\n+)?[^\n]*was originally published in[^\n]*on Medium[^\n]*\s*$',
+                '', md, flags=re.IGNORECASE)
+    md = re.sub(r'\n+_?Originally published at.*$', '', md, flags=re.DOTALL | re.IGNORECASE)
+    return md.strip(), images
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -278,8 +282,7 @@ def import_feed(rss_url: str, limit: int = 0, overwrite: bool = False):
         if cover:
             fm.append(f'cover: {cover}')
         fm.append('draft: true')
-        if link:
-            fm.append(f'canonical: {link}')
+        # No canonical: migrated posts are self-canonical to kaizan.ai/blog/<slug>/.
         if tags:
             fm.append('tags: [' + ', '.join(fm_escape(t) for t in tags[:6]) + ']')
         fm.append('---')

@@ -6,7 +6,6 @@ category: POV
 excerpt: Alex Beddoe leads biddable media at Transmission, a global B2B agency with clients across technology, manufacturing, and professional services. We sat down with him to talk about how AI is changing th
 cover: img-1.png
 draft: false
-canonical: https://blog.kaizan.ai/agency-leaders-who-dont-move-now-will-be-managing-the-fallout-later-9f792fe49686?source=rss----a72a4cc62ef2---4
 tags: [client-relationship, media, artificial-intelligence, ai, b2b-marketing]
 ---
 
@@ -59,7 +58,3 @@ This is the shift that Kaizan enables. Not just a dashboard, but a genuine sourc
 The thread running through everything Alex says is this: the agency model is not collapsing. It’s sharpening. The teams that survive will be the ones that move into strategy, use AI as infrastructure rather than novelty, and build client relationships that go beyond comfortable.
 
 Transmission is already operating that way. The question is whether the rest of the industry catches up.
-
----
-
-[Agency leaders who don’t move now will be managing the fallout later](https://blog.kaizan.ai/agency-leaders-who-dont-move-now-will-be-managing-the-fallout-later-9f792fe49686) was originally published in [Kaizan](https://blog.kaizan.ai) on Medium, where people are continuing the conversation by highlighting and responding to this story.
