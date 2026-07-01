@@ -192,8 +192,7 @@
     }
     foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool; capacity on ' + ADMIN_HRS +
       ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr; 1 FTE = ' + num(FTE_HOURS) +
-      ' hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count — see ' +
-      '<a href="https://kaizan.ai/pricing" target="_blank" rel="noopener">kaizan.ai/pricing</a>.';
+      ' hrs. Satisfaction shown directionally, not monetised. Pricing is set automatically from your client count.';
     q('[data-roi="footnote"]').innerHTML = foot;
 
     // keep the hidden lead summary in sync

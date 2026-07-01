@@ -37,7 +37,7 @@ NAV = [
     ('Personas',     '__personas_dropdown__'),
     ('Integrations', 'integrations/'),
     ('Blog',         'blog/'),
-    ('ROI Calculator', 'pricing/'),
+    ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
     # Sentinel-ish: nav_html renders "Resources" as a hover dropdown listing
@@ -2789,9 +2789,11 @@ def render_integrations() -> str:
 # ─────────────────────────────────────────────────────────────────────
 
 PRICING_TIERS = [
-    dict(name='Team', clients='Up to ', clients_bold='30 clients',
-         price='£3,495', price_label='per month',
-         per_client='Equivalent to £117 / client pm',
+    dict(name='Pilot', badge='PILOT', note='First 90 days',
+         clients='Up to ', clients_bold='10 clients',
+         price='£2,995', price_label='per month',
+         per_client='Equivalent to £300 / client pm',
+         cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING YOU GET',
          bullets=[
              ('Unlimited users', ''),
@@ -2802,9 +2804,18 @@ PRICING_TIERS = [
              ('MCP', ' — access your data in your LLM of choice'),
              ('Dedicated Account Manager', ''),
          ]),
-    dict(name='Growth', sweet=True, clients='Up to ', clients_bold='75 clients',
-         price='£5,995', price_label='per month',
-         per_client='Equivalent to £80 / client pm',
+    dict(name='Team', clients='Up to ', clients_bold='30 clients',
+         price='£4,950', price_label='per month',
+         per_client='Equivalent to £165 / client pm',
+         cta='Book a demo', cta_solid=False,
+         eyebrow='EVERYTHING IN PILOT, PLUS',
+         bullets=[
+             ('3× the portfolio', ' — up to 30 accounts'),
+         ]),
+    dict(name='Growth', sweet=True, badge='SWEET SPOT', clients='Up to ', clients_bold='75 clients',
+         price='£8,995', price_label='per month',
+         per_client='Equivalent to £120 / client pm',
+         cta='Book a demo', cta_solid=True,
          eyebrow='EVERYTHING IN TEAM, PLUS',
          bullets=[
              ('2.5× the portfolio', ' — up to 75 accounts'),
@@ -2812,8 +2823,9 @@ PRICING_TIERS = [
              ('Priority support', ' & quarterly value reviews'),
          ]),
     dict(name='Scale', clients='Up to ', clients_bold='150 clients',
-         price='£9,995', price_label='per month',
-         per_client='Equivalent to £67 / client pm',
+         price='£14,950', price_label='per month',
+         per_client='Equivalent to £100 / client pm',
+         cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING IN GROWTH, PLUS',
          bullets=[
              ('2× the portfolio', ' — up to 150 accounts'),
@@ -2824,6 +2836,7 @@ PRICING_TIERS = [
          clients_trail=' & custom work',
          price='Let’s talk', price_label='Custom annual',
          per_client='Built around your network',
+         cta='Talk to us', cta_solid=False,
          eyebrow='EVERYTHING IN SCALE, PLUS',
          bullets=[
              ('Unlimited portfolio scale', ' across multi-office, multi-region'),
@@ -2833,6 +2846,33 @@ PRICING_TIERS = [
              ('Custom CARE calibration', ' per practice'),
          ]),
 ]
+
+
+def tier_card(t: dict) -> str:
+    bullets = '\n'.join(
+        f'<li><span class="arr">→</span><span><b>{E(b[0])}</b>{E(b[1])}</span></li>'
+        for b in t['bullets']
+    )
+    trail = f'<span class="trail">{E(t["clients_trail"])}</span>' if t.get('clients_trail') else ''
+    badge = f'<div class="ribbon">{E(t["badge"])}</div>' if t.get('badge') else ''
+    note = f'<div class="note">{E(t["note"])}</div>' if t.get('note') else ''
+    cta_cls = 'cta is-solid' if t.get('cta_solid') else 'cta'
+    demo = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'
+    cta = f'<a class="{cta_cls}" href="{demo}" target="_blank" rel="noopener">{E(t["cta"])}</a>' if t.get('cta') else ''
+    return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
+      {badge}
+      <div class="name">{E(t["name"])}</div>
+      {note}
+      <div class="clients">{E(t["clients"])}<div class="bold">{E(t["clients_bold"])}{trail}</div></div>
+      <div class="price">
+        <div class="line">{E(t["price"])}</div>
+        <div class="label">{E(t["price_label"])}</div>
+        <div class="per">{E(t["per_client"])}</div>
+      </div>
+      {cta}
+      <div class="eyebrow">{E(t["eyebrow"])}</div>
+      <ul class="bullets">{bullets}</ul>
+    </div>'''
 
 PRICING_HELPERS = [
     dict(tag='AI ASSISTANT', name='For the Team',
@@ -2864,7 +2904,7 @@ ROI_CALCULATOR_SECTION = '''
   <div class="kzroi-inner">
 
     <!-- section header -->
-    <div class="kzroi-eyebrow">ROI calculator</div>
+    <div class="kzroi-eyebrow">Pricing</div>
     <h2 class="kzroi-h2">What Kaizan <span class="hl">returns</span> on the portfolio you run today.</h2>
 
     <!-- full-width headline result bar -->
@@ -3094,10 +3134,27 @@ def render_pricing() -> str:
         f'        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n'
         f'        <script defer src="{p}assets/js/roi-calculator.js"></script>'
     )
-    body = nav_html(1, active='ROI Calculator') + ROI_CALCULATOR_SECTION + footer_html(1)
-    return page_head('ROI Calculator', 1,
-                     'Calculate the ROI Kaizan returns on your client portfolio — revenue retained, '
-                     'upsell surfaced and capacity recovered, with pricing set by client count.',
+    tiers_html = '\n'.join(tier_card(t) for t in PRICING_TIERS)
+    tiers_section = f'''
+    <section class="kz-pricing-plans">
+      <div class="kzroi-head">
+        <div class="kz-eyebrow">Plans</div>
+        <h2>Priced by the size of the portfolio we help you grow.</h2>
+      </div>
+      <div class="kz-pricing-tiers">{tiers_html}</div>
+      <p class="kz-pricing-foot">
+        All prices GBP, annual contract. Unlimited users on every tier. Fair-use limits apply on
+        storage, API calls and integration volumes. Custom AI Helpers, integrations and bespoke
+        engineering quoted separately.
+      </p>
+    </section>
+
+    <!-- closing CTA band -->'''
+    section = ROI_CALCULATOR_SECTION.replace('<!-- closing CTA band -->', tiers_section, 1)
+    body = nav_html(1, active='Pricing') + section + footer_html(1)
+    return page_head('Pricing', 1,
+                     'Kaizan pricing — priced by the size of the client portfolio we help you manage '
+                     'and grow. Unlimited users on every tier.',
                      extra_head=extra_head) + body + page_foot()
 
 

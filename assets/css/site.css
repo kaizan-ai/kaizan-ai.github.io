@@ -1966,19 +1966,37 @@ button { font-family: inherit; }
   font-size: 12px; flex-shrink: 0;
 }
 
+/* ── Pricing plans (below the ROI calculator) ─────────────────────────────── */
+.kz-pricing-plans { padding: 40px 4px 8px; }
+.kz-pricing-plans .kzroi-head { margin-bottom: 22px; }
+.kz-pricing-foot {
+  padding: 18px 4px 0; margin: 0; max-width: 900px;
+  font-size: 11px; font-weight: 500; line-height: 1.5; color: rgba(0,0,0,.5);
+}
+
 .kz-pricing-tiers {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: start;
 }
 .kz-tier {
   position: relative;
   background: var(--kz-cream);
   border: 1px solid var(--kz-line);
   border-radius: 14px;
-  padding: 28px 26px 26px;
-  display: flex; flex-direction: column; gap: 16px;
+  padding: 22px 20px 20px;
+  display: flex; flex-direction: column; gap: 12px;
   box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 16px 40px -22px rgba(40,30,15,.18);
   transition: transform .2s ease, box-shadow .2s ease;
 }
+.kz-tier .note { font-size: 11.5px; font-weight: 600; color: var(--kz-mute); margin-top: -8px; }
+.kz-tier .cta {
+  display: block; text-align: center; text-decoration: none;
+  font-size: 13px; font-weight: 700; color: var(--kz-ink);
+  padding: 10px 12px; border-radius: 8px; border: 1.25px solid var(--kz-ink);
+  background: transparent; transition: background .15s ease, color .15s ease;
+}
+.kz-tier .cta:hover { background: var(--kz-ink); color: var(--kz-cream); }
+.kz-tier .cta.is-solid { background: var(--kz-yellow); border-color: var(--kz-yellow); }
+.kz-tier .cta.is-solid:hover { background: var(--kz-ink); border-color: var(--kz-ink); color: var(--kz-yellow); }
 .kz-tier:hover {
   transform: translateY(-2px);
   box-shadow: 0 1px 2px rgba(40,30,15,.06), 0 24px 48px -20px rgba(40,30,15,.28);
@@ -2002,7 +2020,7 @@ button { font-family: inherit; }
   border-right: 6px solid transparent;
 }
 .kz-tier .name {
-  font-size: 26px; font-weight: 700; letter-spacing: -0.025em; line-height: 1;
+  font-size: 23px; font-weight: 700; letter-spacing: -0.025em; line-height: 1;
 }
 .kz-tier .clients {
   font-size: 14px; font-weight: 500; color: var(--kz-mute); line-height: 1.3;
@@ -2023,9 +2041,10 @@ button { font-family: inherit; }
 }
 .kz-tier .price .line {
   font-family: var(--kz-display); font-weight: 400;
-  font-size: 44px; letter-spacing: -0.035em; line-height: 1;
+  font-size: 34px; letter-spacing: -0.035em; line-height: 1;
   color: var(--kz-ink);
 }
+.kz-tier .clients .bold { font-size: 24px; }
 .kz-tier .price .label {
   font-size: 12px; font-weight: 600; color: var(--kz-mute);
   letter-spacing: 0;
