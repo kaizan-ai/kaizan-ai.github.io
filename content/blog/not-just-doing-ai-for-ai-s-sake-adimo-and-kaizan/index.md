@@ -3,7 +3,7 @@ title: "Not just doing AI for AI’s sake: Adimo and Kaizan"
 date: 2024-07-24
 category: POV
 excerpt: It’s been just over 18 months since ChatGPT formally launched, with 1 million users signed up within a few days of launching, and over 100 million users over the next…
-cover: img-1.jpg
+cover: img-1.png
 draft: false
 ---
 
