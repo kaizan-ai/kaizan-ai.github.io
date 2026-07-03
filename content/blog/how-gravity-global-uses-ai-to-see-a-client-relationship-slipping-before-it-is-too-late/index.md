@@ -5,7 +5,7 @@ author: Lia
 category: POV
 excerpt: Ada Cavalmoretti, Group Account Director at Gravity Global, shares how AI helps client teams catch the quiet signals of a slipping relationship, confirm their instincts, and protect the time for human work that keeps clients close.
 cover: cover.png
-draft: true
+draft: false
 tags: [client-relationship, artificial-intelligence, advertising, customer-retention, account-management]
 ---
 
