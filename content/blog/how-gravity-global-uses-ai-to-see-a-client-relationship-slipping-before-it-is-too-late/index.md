@@ -17,6 +17,12 @@ We recently sat down with Ada Cavalmoretti, Group Account Director at Gravity Gl
 
 It turned into one of those conversations that puts words to something a lot of client services people feel but rarely name. If you only take one idea away, make it this one: the relationships that hurt you most are usually the ones you stopped noticing.
 
+## Watch the full conversation
+
+Prefer to hear it in Ada's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/iEmMPkblbs8?si=3RlKsQe-YM_zKZu2" target="_blank" rel="noopener">Watch the full video →</a>
+
 ## More with less, without dropping the human part
 
 The backdrop will be familiar to anyone in an agency. Every team is being asked to do more with less, faster, and stay consistent while they do it. Ada described the squeeze plainly: it is a real challenge when you are working with a lot less budget and a lot less time, but the expectation to deliver strategic, human-centric work has not softened at all.
