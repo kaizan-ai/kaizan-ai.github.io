@@ -5,7 +5,7 @@ author: Lia
 category: POV
 excerpt: Ada Cavalmoretti, Group Account Director at Gravity Global, shares how AI helps client teams catch the quiet signals of a slipping relationship, confirm their instincts, and protect the time for human work that keeps clients close.
 cover: cover.png
-draft: true
+draft: false
 tags: [client-relationship, artificial-intelligence, advertising, customer-retention, account-management]
 ---
 
@@ -16,6 +16,12 @@ When a client relationship goes quiet, you rarely see it coming.
 We recently sat down with Ada Cavalmoretti, Group Account Director at Gravity Global, to talk about what running client relationships actually looks like right now: the pressure, the risks, and where the right tools genuinely help.
 
 It turned into one of those conversations that puts words to something a lot of client services people feel but rarely name. If you only take one idea away, make it this one: the relationships that hurt you most are usually the ones you stopped noticing.
+
+## Watch the full conversation
+
+Prefer to hear it in Ada's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/iEmMPkblbs8?si=3RlKsQe-YM_zKZu2" target="_blank" rel="noopener">Watch the full video →</a>
 
 ## More with less, without dropping the human part
 
