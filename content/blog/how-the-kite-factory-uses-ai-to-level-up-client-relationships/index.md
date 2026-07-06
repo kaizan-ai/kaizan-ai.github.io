@@ -5,7 +5,7 @@ author: Lia
 category: POV
 excerpt: Rik Moore, Managing Partner for Strategy at The Kite Factory, shares how AI is helping teams better understand clients, spot risks earlier, and continuously improve client interactions.
 cover: cover.png
-draft: true
+draft: false
 tags: [client-relationship, artificial-intelligence, media-agency, client-services, ai]
 ---
 
