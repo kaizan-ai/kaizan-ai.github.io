@@ -11,6 +11,13 @@ tags: [affiliate-marketing, client-relationship, artificial-intelligence, ai-str
 
 **Corin Ward, Director of AI, shares how AI is helping standardise global operations, quantify client feedback, and turn conversations into structured data for product and business decisions.**
 
+## Watch the full conversation
+
+Prefer to hear it in Corin's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/KedIdGXyX80" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 Tradedoubler operates across multiple markets, with local teams delivering tailored services to clients in each region.
 
 This decentralised model is a key strength. It enables strong local relationships. But it also creates a challenge for AI leaders:
@@ -23,14 +30,9 @@ In this case study, Corin Ward explains how implementing Kaizan AI has enabled T
 
 Using Kaizan, Tradedoubler is now able to:
 
-**Standardise data across global teams while maintaining local nuance  
-** Create a consistent, comparable view of client interactions across markets.
-
-**Quantify qualitative client feedback at scale  
-** Turn conversations into measurable themes, trends, and signals.
-
-**Turn conversations into product and business decisions  
-** Use real client insight to inform roadmap, prioritisation, and strategy.
+- **Standardise data across global teams while maintaining local nuance** — Create a consistent, comparable view of client interactions across markets.
+- **Quantify qualitative client feedback at scale** — Turn conversations into measurable themes, trends, and signals.
+- **Turn conversations into product and business decisions** — Use real client insight to inform roadmap, prioritisation, and strategy.
 
 ## **The Challenge: Global Scale Without Standardised Insight**
 
@@ -38,7 +40,7 @@ Tradedoubler operates across multiple countries, each with its own processes and
 
 While this enables high-quality local service, it introduces complexity when trying to scale insight across the organisation.
 
-“Each country is its own entity… the more local processes you have, you move away from globalisation efficiencies.”
+> “Each country is its own entity… the more local processes you have, you move away from globalisation efficiencies.”
 
 From an AI leadership perspective, this creates a core challenge:
 
@@ -46,7 +48,7 @@ From an AI leadership perspective, this creates a core challenge:
 
 At the same time, client insight was largely anecdotal.
 
-“You hear a lot of word-of-mouth about issues and positive things, but quantifying that is very difficult.”
+> “You hear a lot of word-of-mouth about issues and positive things, but quantifying that is very difficult.”
 
 Without structured data, it was difficult to determine:
 
@@ -62,7 +64,7 @@ Kaizan enables Tradedoubler to transform unstructured client conversations into 
 
 Instead of relying on subjective feedback loops, teams can now quantify what is being said across thousands of interactions.
 
-“You can see how many times an issue is mentioned and how much positive feedback is coming in.”
+> “You can see how many times an issue is mentioned and how much positive feedback is coming in.”
 
 This allows AI and product leaders to:
 
@@ -78,13 +80,13 @@ What was previously anecdotal becomes measurable and actionable.
 
 Before implementing Kaizan, transcripts and recordings already existed, but were time-consuming to use.
 
-“Transcripts and video recordings are nothing new… but they were very admin-heavy.”
+> “Transcripts and video recordings are nothing new… but they were very admin-heavy.”
 
 Kaizan removes that burden by automatically generating summaries, follow-ups, and structured outputs.
 
 More importantly, it changes how this data is used.
 
-“We can move beyond just recording to actually building business decisions and business cases off the data.”
+> “We can move beyond just recording to actually building business decisions and business cases off the data.”
 
 What was once documentation becomes a **strategic data layer for the business.**
 
@@ -98,7 +100,7 @@ With access to a growing dataset of client interactions, Tradedoubler can now:
 
 - build data-backed product business cases
 
-“We can query how many times something has been mentioned… which helps build a business case for a product.”
+> “We can query how many times something has been mentioned… which helps build a business case for a product.”
 
 This removes guesswork and enables faster, more confident decision-making.
 
@@ -108,7 +110,7 @@ As adoption has grown, so has the dataset.
 
 Tradedoubler now has access to years of meeting data, enabling deeper analysis over time.
 
-“We have this huge dataset now… we can start making not just client decisions, but product decisions.”
+> “We have this huge dataset now… we can start making not just client decisions, but product decisions.”
 
 Insights can be structured at multiple levels:
 
@@ -126,7 +128,7 @@ What began as a client-facing tool has evolved into a broader data foundation fo
 
 The structured dataset created by Kaizan can now be used to power internal AI initiatives.
 
-“We can feed this data into agents and proofs of concept… to empower them and get better results.”
+> “We can feed this data into agents and proofs of concept… to empower them and get better results.”
 
 This opens up new possibilities for:
 
@@ -158,4 +160,4 @@ This enables them to:
 
 For AI leaders, the ability to turn unstructured communication into structured intelligence is becoming a key competitive advantage.
 
-**“The scope for the future is very exciting… we can now use this data to power the next generation of AI and automation.”**
+> “The scope for the future is very exciting… we can now use this data to power the next generation of AI and automation.”
