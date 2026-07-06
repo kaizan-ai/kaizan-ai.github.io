@@ -13,6 +13,13 @@ Alex Beddoe leads biddable media at Transmission, a global B2B agency with clien
 
 Here’s what he had to say.
 
+## Watch the full conversation
+
+Prefer to hear it in Alex's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/zrNlCRB28UU" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 **Agencies that don’t adopt AI in the next 6 months won’t survive**
 
 Alex doesn’t soften the message. For him, AI adoption isn’t a competitive advantage right now. It’s a baseline.

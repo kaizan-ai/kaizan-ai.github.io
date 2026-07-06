@@ -13,6 +13,13 @@ Adam Hopkinson is the founder and managing director of PASHN Limited, a speciali
 
 Here’s what he had to say.
 
+## Watch the full conversation
+
+Prefer to hear it in Adam's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/wPO2Skl_k-8" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 **Efficiency is the first thing to change**
 
 Adam isn’t hedging on what AI means for agencies. The processes that have always been slow, manual, and resource-heavy are the first to shift.

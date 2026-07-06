@@ -11,6 +11,13 @@ tags: [ai, client-relationship, affiliate-marketing, operations-management, arti
 
 **Derek Grant, VP of Operations at Tradedoubler, shares how AI is helping standardise client operations, reduce admin, and improve visibility across global teams.**
 
+## Watch the full conversation
+
+Prefer to hear it in Derek's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/QbX3FSgDnf4" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 Tradedoubler is a leading affiliate marketing platform with over **3,500 clients globally**, operating across multiple territories, languages, and stakeholder groups.
 
 At that scale, maintaining visibility, consistency, and efficiency across client operations is a significant challenge.

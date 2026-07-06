@@ -11,6 +11,13 @@ tags: [client-success, advertising, artificial-intelligence, client-relationship
 
 **Gabriella Kite, Managing Partner of Operations at The Kite Factory, shares how AI is helping her team unify fragmented client data, improve visibility, and create accountability across client relationships.**
 
+## Watch the full conversation
+
+Prefer to hear it in Gabriella's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/z0F95dq25o4" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 The Kite Factory is an independent media agency known for delivering highly tailored client servicing.
 
 But delivering that level of service at scale requires more than strong relationships. It requires **clear, consistent visibility across every client interaction**.

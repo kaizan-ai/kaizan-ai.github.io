@@ -13,6 +13,13 @@ Managing client relationships has never been more demanding. With inboxes overfl
 
 We sat down with **Fiona Skilton**, Client Services Director at *Collective Content*, to hear how their team is navigating the modern challenges of client management, and what’s made the biggest difference.
 
+## Watch the full conversation
+
+Prefer to hear it in Fiona's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/LuiHoKH4M2w" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 Collective Content is a content marketing agency that helps brands tell better stories, producing strategic, high-quality content that connects with audiences and drives real business results. With a team spanning editorial, strategy, and client services, they work with clients across a range of sectors, making strong relationship management central to everything they do.
 
 ## The Noise Problem: When Busy Clients Go Quiet

@@ -11,6 +11,13 @@ tags: [affiliate-marketing, client-relationship, artificial-intelligence, ai-str
 
 **Corin Ward, Director of AI, shares how AI is helping standardise global operations, quantify client feedback, and turn conversations into structured data for product and business decisions.**
 
+## Watch the full conversation
+
+Prefer to hear it in Corin's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/KedIdGXyX80" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 Tradedoubler operates across multiple markets, with local teams delivering tailored services to clients in each region.
 
 This decentralised model is a key strength. It enables strong local relationships. But it also creates a challenge for AI leaders:

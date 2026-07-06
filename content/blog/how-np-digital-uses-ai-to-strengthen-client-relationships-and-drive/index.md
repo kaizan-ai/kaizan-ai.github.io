@@ -11,6 +11,13 @@ tags: [digital-marketing-agency, digital-marketing, ai, customer-retention, clie
 
 **Brandon Smith, Managing Director at NP Digital, shares how AI is helping client teams gain visibility across relationships, save time, and protect revenue.**
 
+## Watch the full conversation
+
+Prefer to hear it in Brandon's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/QRm-4IypOv0" target="_blank" rel="noopener">Watch the full video →</a>
+
+
 NP Digital is a global performance marketing agency helping brands grow through data-driven digital strategies across SEO, paid media, and content marketing.
 
 With teams operating across multiple markets and managing a wide portfolio of clients, maintaining visibility across every client relationship is critical. But as the business scaled, so did the complexity of client communication.
