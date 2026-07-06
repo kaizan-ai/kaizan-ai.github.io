@@ -51,7 +51,7 @@ Each person had their own perspective on the status of the relationship based on
 
 The result was a lack of unified visibility.
 
-**“There are conversations taking place across so many platforms that we don’t really have visibility over the health of a client.”**
+> “There are conversations taking place across so many platforms that we don’t really have visibility over the health of a client.”
 
 Without a central view of client engagement, it became harder to track relationship health, identify potential risks, and spot opportunities to strengthen partnerships.
 
@@ -61,7 +61,7 @@ For NP Digital, AI is not just a tool for automation. It is becoming fundamental
 
 Across the business, teams are encouraged to adopt AI to improve efficiency, automate workflows, and unlock insights from operational data.
 
-**“We see AI as critical to the future of our business, not just across client servicing, but across every facet of the business.”**
+> “We see AI as critical to the future of our business, not just across client servicing, but across every facet of the business.”
 
 By analysing communication data and engagement signals, AI enables the agency to move from purely relationship-driven client management toward a more data-driven approach.
 
@@ -83,7 +83,7 @@ This provides client teams with:
 
 - AI-driven signals highlighting risks and opportunities
 
-**“Using Kaizan has enabled us to analyse large data sets across different platforms and across multiple client servicing staff.”**
+> “Using Kaizan has enabled us to analyse large data sets across different platforms and across multiple client servicing staff.”
 
 With this unified visibility, teams can quickly revisit previous conversations and better understand the context behind client interactions.
 
@@ -97,7 +97,7 @@ With Kaizan analysing communication data automatically, much of this manual work
 
 On average, NP Digital’s client service managers are now saving several hours each week, with some saving **up to eight hours per month**.
 
-**“This gives time back to the teams to focus on strategy, and that’s the most important thing in a healthy client relationship.”**
+> “This gives time back to the teams to focus on strategy, and that’s the most important thing in a healthy client relationship.”
 
 Instead of spending time on administrative tasks, teams can focus on building stronger relationships and delivering better strategic outcomes for clients.
 
@@ -109,7 +109,7 @@ By analysing conversation patterns and engagement signals across communication c
 
 This allows teams to act before issues escalate.
 
-**“We’ve had numerous occasions where we’ve been able to spot and identify high-risk clients that potentially were going to leave.”**
+> “We’ve had numerous occasions where we’ve been able to spot and identify high-risk clients that potentially were going to leave.”
 
 This early visibility gives teams the opportunity to address concerns, strengthen engagement, and maintain healthier client relationships.
 
@@ -121,7 +121,7 @@ For agencies, retaining existing clients is one of the most important drivers of
 
 By identifying risks earlier and highlighting opportunities to strengthen relationships, Kaizan helps NP Digital protect and grow client partnerships.
 
-**“Client retention is one of the key areas. The ability to identify where we’ve got high-risk clients or an opportunity to get things back on track.”**
+> “Client retention is one of the key areas. The ability to identify where we’ve got high-risk clients or an opportunity to get things back on track.”
 
 Rather than reacting after problems appear, the team can now take proactive steps to keep relationships on track.
 

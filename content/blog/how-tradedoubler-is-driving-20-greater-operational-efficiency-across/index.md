@@ -52,11 +52,11 @@ Teams manage:
 
 - different local processes and nuances
 
-“To get a proper overview of that client base and what’s going on can be very difficult.”
+> “To get a proper overview of that client base and what’s going on can be very difficult.”
 
 From an operations perspective, one of the biggest challenges was gaining a **consistent, high-level view across the entire client base**.
 
-“Getting a bird’s-eye view over the client base… across multiple territories and languages.”
+> “Getting a bird’s-eye view over the client base… across multiple territories and languages.”
 
 At the same time, teams were spending significant time on manual administrative tasks such as:
 
@@ -72,13 +72,13 @@ This limited their ability to focus on higher-value work.
 
 Improving efficiency was a clear priority for Tradedoubler.
 
-“We have a target of achieving 20% better efficiency across the business… 20% less time spent on administration.”
+> “We have a target of achieving 20% better efficiency across the business… 20% less time spent on administration.”
 
 To achieve this, the organisation needed to reduce reliance on manual processes and introduce more consistent ways of working across teams.
 
 Kaizan played a key role in enabling this shift.
 
-“Kaizan has significantly helped us achieve that target.”
+> “Kaizan has significantly helped us achieve that target.”
 
 ## **Standardising Client Operations at Scale**
 
@@ -86,7 +86,7 @@ By implementing Kaizan, Tradedoubler introduced a more structured and consistent
 
 Meeting summaries, action points, and follow-ups are now generated automatically, creating a standard workflow across teams.
 
-“The summaries and the action points that it produces are spot on.”
+> “The summaries and the action points that it produces are spot on.”
 
 This has helped teams:
 
@@ -98,7 +98,7 @@ This has helped teams:
 
 It also introduced a more structured way of working across client service teams.
 
-“It put a good structure in place within the business.”
+> “It put a good structure in place within the business.”
 
 ## Improving Visibility Across Teams and Clients
 
@@ -120,7 +120,7 @@ This makes it significantly easier for operations leaders to monitor performance
 
 Initially, Kaizan helped improve basic reporting and visibility into client activity.
 
-“We can clearly show clients how much engagement is happening on their account and how proactive we’re being.”
+> “We can clearly show clients how much engagement is happening on their account and how proactive we’re being.”
 
 But over time, this evolved into something more valuable.
 
@@ -132,7 +132,7 @@ Teams can now use this data to:
 
 - focus on opportunities that drive revenue
 
-“It helps us focus in on opportunities that we know will be an uplift in gross profit or sales.”
+> “It helps us focus in on opportunities that we know will be an uplift in gross profit or sales.”
 
 This shifts operations from reactive reporting to **proactive, commercially driven decision-making.**
 
@@ -148,7 +148,7 @@ By analysing client activity and communication patterns, teams can identify pote
 
 - fraudulent publishers
 
-“Kaizan’s helped us pick up on some of those very quickly.”
+> “Kaizan’s helped us pick up on some of those very quickly.”
 
 This allows teams to act faster and reduce potential negative impact on clients and revenue.
 
@@ -156,7 +156,7 @@ This allows teams to act faster and reduce potential negative impact on clients 
 
 Although initially rolled out to client service teams, the impact of Kaizan quickly spread across the organisation.
 
-“Sales teams, partnerships teams, tech teams all requested to use the tool.”
+> “Sales teams, partnerships teams, tech teams all requested to use the tool.”
 
 This cross-functional adoption highlights the value of having a shared, consistent view of client interactions.
 
@@ -198,4 +198,4 @@ This enables them to:
 
 For operations leaders managing complex, global client bases, this creates a more scalable and efficient way to run client servicing.
 
-**“Kaizan has significantly helped us achieve our goal of 20% greater efficiency across the business.”**
+> “Kaizan has significantly helped us achieve our goal of 20% greater efficiency across the business.”
