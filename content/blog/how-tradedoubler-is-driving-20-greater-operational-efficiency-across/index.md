@@ -28,17 +28,10 @@ In this case study, Derek Grant explains how implementing Kaizan AI has helped t
 
 Using Kaizan, Tradedoubler is now able to:
 
-**Achieve a target of 20% greater operational efficiency  
-** Reduce time spent on manual, repetitive administrative tasks.
-
-**Gain a bird’s-eye view across 3,500+ clients  
-** Understand client activity across territories, languages, and teams.
-
-**Standardise client servicing processes across teams  
-** Automate summaries, follow-ups, and action tracking.
-
-**Identify revenue opportunities and risks earlier  
-** Prioritise high-impact partnerships and detect issues such as fraud.
+- **Achieve a target of 20% greater operational efficiency** — Reduce time spent on manual, repetitive administrative tasks.
+- **Gain a bird’s-eye view across 3,500+ clients** — Understand client activity across territories, languages, and teams.
+- **Standardise client servicing processes across teams** — Automate summaries, follow-ups, and action tracking.
+- **Identify revenue opportunities and risks earlier** — Prioritise high-impact partnerships and detect issues such as fraud.
 
 ## The Challenge: Scaling Operations Across a Complex Client Base
 

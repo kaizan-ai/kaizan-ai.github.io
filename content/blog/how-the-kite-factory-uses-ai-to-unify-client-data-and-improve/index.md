@@ -30,14 +30,9 @@ In this case study, Gabriella Kite explains how implementing Kaizan AI has helpe
 
 Using Kaizan, The Kite Factory’s operations teams are now able to:
 
-**Unify client data across teams and conversations  
-** Bring fragmented information into one central, accessible view.
-
-**Improve visibility across every client relationship  
-** Access real-time insights without relying on meetings or manual updates.
-
-**Increase accountability with a single source of truth  
-** Track what has been said, agreed, and delivered across all interactions.
+- **Unify client data across teams and conversations** — Bring fragmented information into one central, accessible view.
+- **Improve visibility across every client relationship** — Access real-time insights without relying on meetings or manual updates.
+- **Increase accountability with a single source of truth** — Track what has been said, agreed, and delivered across all interactions.
 
 ## The Challenge: Fragmented Data Across Teams
 

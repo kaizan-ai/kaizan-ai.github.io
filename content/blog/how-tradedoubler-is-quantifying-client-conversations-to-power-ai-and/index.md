@@ -30,14 +30,9 @@ In this case study, Corin Ward explains how implementing Kaizan AI has enabled T
 
 Using Kaizan, Tradedoubler is now able to:
 
-**Standardise data across global teams while maintaining local nuance  
-** Create a consistent, comparable view of client interactions across markets.
-
-**Quantify qualitative client feedback at scale  
-** Turn conversations into measurable themes, trends, and signals.
-
-**Turn conversations into product and business decisions  
-** Use real client insight to inform roadmap, prioritisation, and strategy.
+- **Standardise data across global teams while maintaining local nuance** — Create a consistent, comparable view of client interactions across markets.
+- **Quantify qualitative client feedback at scale** — Turn conversations into measurable themes, trends, and signals.
+- **Turn conversations into product and business decisions** — Use real client insight to inform roadmap, prioritisation, and strategy.
 
 ## **The Challenge: Global Scale Without Standardised Insight**
 
