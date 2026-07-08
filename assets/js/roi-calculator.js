@@ -15,7 +15,11 @@
   if (!root) return;
 
   /* ── constants ──────────────────────────────────────────────────────── */
-  var DEMO_URL = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8';
+  // Points at the /demo/ anti-bot interstitial, not the raw calendar link
+  // (see render_demo in tools/build.py). DEMO_URL_ABS is the absolute form for
+  // the generated PDF, where root-relative paths don't resolve.
+  var DEMO_URL = '/demo/';
+  var DEMO_URL_ABS = 'https://kaizan.ai/demo/';
 
   // Real Kaizan pricing — annual (GBP), unlimited users.
   var TIERS = [
@@ -400,7 +404,7 @@
     doc.text(lines, M, y); y += lines.length * 11 + 14;
 
     doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); tcol(GOLDD);
-    doc.textWithLink('Book a demo', M, y, { url: DEMO_URL });
+    doc.textWithLink('Book a demo', M, y, { url: DEMO_URL_ABS });
 
     doc.save('kaizan-roi-breakdown.pdf');
   }
