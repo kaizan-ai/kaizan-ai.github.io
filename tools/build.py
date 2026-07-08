@@ -46,6 +46,21 @@ NAV = [
     ('About',        'about/'),
 ]
 
+# ─────────────────────────────────────────────────────────────────────
+# DEMO BOOKING — anti-bot interstitial.
+# "Book a demo" buttons across the site point at /demo/ (see render_demo)
+# rather than the raw Google Calendar link, so crawlers can't harvest the
+# booking URL and hammer the calendar. /demo/ shows a Cloudflare Turnstile
+# human-check; only after it passes does the page reveal the (base64-obfuscated)
+# calendar URL and redirect. CALENDAR_URL never appears as a plain href in the
+# generated HTML.
+#
+# TURNSTILE_SITE_KEY: public, safe to commit. Create a Turnstile widget in the
+# Cloudflare dashboard (scoped to kaizan.ai) and paste its Site Key here. Until
+# a real key is set, /demo/ will not render the widget.
+CALENDAR_URL = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'
+TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
+
 # Sub-links shown in the "Resources" nav dropdown. The "Resources" trigger
 # itself points at the Our Research page (research/, set in NAV above); the
 # dropdown lists the other resources. FAQ maps to /faq/; Security is the
@@ -985,7 +1000,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
       </nav>
       <div class="kz-nav-cta">
         <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
-        <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-yellow" href="/demo/">Book a demo</a>
         <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
       </div>
     </header>
@@ -1010,7 +1025,7 @@ def footer_html(depth: int) -> str:
                      # ('Insights', f'{p}insights/'),
                      # ('Clients', f'{p}customers/'),
                      ('FAQ', f'{p}faq/')]),
-        ('Get in touch', [('Book a demo', 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'), ('Contact', 'mailto:hello@kaizan.ai'),
+        ('Get in touch', [('Book a demo', '/demo/'), ('Contact', 'mailto:hello@kaizan.ai'),
                           ('LinkedIn', 'https://www.linkedin.com/company/kaizan')]),
     ]
     cols_html = []
@@ -1393,7 +1408,7 @@ def render_home() -> str:
           so your team increases the ROI and Revenue across all your clients.
         </p>
         <div class="kz-hero-cta-stack">
-          <a class="kz-cta-card is-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
+          <a class="kz-cta-card is-yellow" href="/demo/">
             <div>
               <div class="kz-cta-eyebrow">30-min live demo</div>
               <div class="kz-cta-headline">See Kaizan in action</div>
@@ -1477,7 +1492,7 @@ def render_home() -> str:
     <section class="kz-cta-band">
       <h2 class="head">See your clients, clearly.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
       </div>
     </section>
 
@@ -1705,7 +1720,7 @@ def render_product() -> str:
           Together they form a system of truth and action for your client teams.
         </p>
         <div class="cta">
-          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo →</a>
+          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
         </div>
       </div>
       <div class="kz-pillars">{pillar_html}</div>
@@ -1859,7 +1874,7 @@ def render_product() -> str:
         Common questions, ranked by how often a security review asks them.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Answers ship with our security review pack. <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
+        Answers ship with our security review pack. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
       </p>
     </section>
 
@@ -1870,7 +1885,7 @@ def render_product() -> str:
         Tiered by seats and integration depth.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Detailed pricing is shared in the demo. <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
+        Detailed pricing is shared in the demo. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
       </p>
     </section>
 
@@ -1888,7 +1903,7 @@ def render_product() -> str:
     <section class="kz-cta-band kz-cta-band-md">
       <h2 class="head">Put the helpers to work.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
       </div>
     </section>
 
@@ -2011,7 +2026,7 @@ def render_persona(slug: str) -> str:
           <h1 class="kz-h1">{h1_html}</h1>
           <p class="kz-lede" style="margin-top:26px;max-width:560px;">{E(p['sub'])}</p>
           <div class="kz-flex" style="gap:10px;margin-top:28px;">
-            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo →</a>
+            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
             <a class="kz-btn kz-btn-ghost" style="padding:14px 22px;" href="../../white-paper/">Download CARE white paper</a>
           </div>
         </div>
@@ -2066,7 +2081,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-cta-band-dark">
       <h2 class="head">{E(p['cta'])}</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-yellow" style="padding:14px 24px;font-size:15px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-yellow" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
         <a class="kz-btn kz-btn-ghost-light" style="padding:14px 24px;font-size:15px;" href="../../about/">Talk to our CEO</a>
       </div>
     </section>
@@ -2154,7 +2169,7 @@ def render_customers() -> str:
     <section class="kz-cta-band kz-cta-band-sm">
       <h2 class="head">Be the next case study.</h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="/demo/">Book a demo</a>
       </div>
     </section>
 
@@ -2212,7 +2227,7 @@ def render_case_study(slug: str) -> str:
         Want this kind of story for your firm?
       </h2>
       <div class="actions">
-        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+        <a class="kz-btn kz-btn-black" style="padding:14px 24px;" href="/demo/">Book a demo</a>
         <a class="kz-btn kz-btn-ghost" style="padding:14px 24px;background:transparent;" href="../">Read more stories</a>
       </div>
     </section>
@@ -2567,7 +2582,7 @@ def render_about() -> str:
           and the best hires we&rsquo;ve made come from the same place.
         </p>
         <div class="kz-flex" style="gap:12px;flex-wrap:wrap;">
-          <a class="btn" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book time with Glen →</a>
+          <a class="btn" href="/demo/">Book time with Glen →</a>
           <!-- TODO: re-enable "See open roles" once careers content is ready.
           <a class="btn" href="../careers/" style="background:transparent;color:#0A0A0A;border:1px solid #0A0A0A;">See open roles →</a>
           -->
@@ -2733,7 +2748,7 @@ def render_integrations() -> str:
             every score — in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
         </div>
         <div class="actions">
-          <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Talk to us</a>
+          <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="/demo/">Talk to us</a>
         </div>
       </div>
       <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
@@ -2755,7 +2770,7 @@ def render_integrations() -> str:
             client growth.
           </p>
           <div class="kz-flex" style="margin-top:26px;">
-            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book demo →</a>
+            <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="/demo/">Book demo →</a>
           </div>
         </div>
         <div class="right">{custom_cards}</div>
@@ -2771,7 +2786,7 @@ def render_integrations() -> str:
           <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet — tell us.
             We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
         </div>
-        <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">
+        <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="/demo/">
           Request an integration →
         </a>
       </div>
@@ -2857,7 +2872,7 @@ def tier_card(t: dict) -> str:
     badge = f'<div class="ribbon">{E(t["badge"])}</div>' if t.get('badge') else ''
     note = f'<div class="note">{E(t["note"])}</div>' if t.get('note') else ''
     cta_cls = 'cta is-solid' if t.get('cta_solid') else 'cta'
-    demo = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'
+    demo = '/demo/'
     cta = f'<a class="{cta_cls}" href="{demo}" target="_blank" rel="noopener">{E(t["cta"])}</a>' if t.get('cta') else ''
     return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
       {badge}
@@ -2940,7 +2955,7 @@ ROI_CALCULATOR_SECTION = '''
       </div>
       <div class="kzroi-actions">
         <button type="button" class="kzroi-leadbtn" data-roi="lead-toggle">Email me the breakdown</button>
-        <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold in-controls">Book a demo →</a>
+        <a href="/demo/" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold in-controls">Book a demo →</a>
       </div>
     </div>
 
@@ -3097,7 +3112,7 @@ ROI_CALCULATOR_SECTION = '''
       <h3>See your clients, clearly.</h3>
       <p>Take the full breakdown with you — your numbers, the workings, and what comparable Kaizan clients see — or jump straight to a demo.</p>
       <div class="kzroi-cta-actions">
-        <a href="https://calendar.app.google/Eae719Ejh3xxN3Lg8" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
+        <a href="/demo/" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
         <button type="button" class="kzroi-pill kzroi-pill-ghost" data-roi="lead-toggle-cta">Email me the breakdown</button>
       </div>
     </div>
@@ -3703,7 +3718,7 @@ def render_faq() -> str:
           <p>Email <a href="mailto:hello@kaizan.ai" style="color:var(--kz-yellow);">hello@kaizan.ai</a>
             or book a 30-minute demo. We answer every enquiry within two working days.</p>
           <div class="kz-flex">
-            <a class="kz-btn kz-btn-yellow" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+            <a class="kz-btn kz-btn-yellow" href="/demo/">Book a demo</a>
             <a class="kz-btn kz-btn-ghost-light" href="../insights/">Read our insights</a>
           </div>
         </div>
@@ -3826,7 +3841,7 @@ def render_research() -> str:
         <ul class="kz-research-inside">{inside_html}</ul>
         <div class="kz-flex" style="gap:12px;margin-top:32px;">
           <a class="kz-btn kz-btn-yellow" href="#get-report">Download the report</a>
-          <a class="kz-btn kz-btn-ghost" href="https://calendar.app.google/Eae719Ejh3xxN3Lg8">Book a demo</a>
+          <a class="kz-btn kz-btn-ghost" href="/demo/">Book a demo</a>
         </div>
         <div class="kz-eyebrow" style="margin-top:18px;">{E(r['meta'])}</div>
       </div>
@@ -4211,6 +4226,81 @@ def render_knowledge_hub() -> str:
 # WRITE
 # ─────────────────────────────────────────────────────────────────────
 
+def render_demo() -> str:
+    """Anti-bot interstitial for /demo/.
+
+    Buttons across the site link here instead of straight to the calendar. The
+    real booking URL is base64-obfuscated and only revealed after a Cloudflare
+    Turnstile human-check passes — so crawlers can't scrape the link, and the
+    common headless-bot bookers are stopped by Turnstile. This is a static page
+    (no server-side token verification), which is the practical ceiling on
+    GitHub Pages; it kills link-harvesting and most automated bookings."""
+    import base64
+    enc = base64.b64encode(CALENDAR_URL.encode()).decode()
+
+    extra_head = (
+        '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" '
+        'async defer></script>'
+    )
+
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
+      <div style="max-width:520px;width:100%;text-align:center;">
+        <div class="kz-eyebrow" style="justify-content:center;">Book a demo · 30-min live walkthrough</div>
+        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">One quick check, then your calendar.</h1>
+        <p class="kz-lede" style="margin-top:16px;">
+          We ask everyone to confirm they're human before booking — it keeps our
+          calendar clear for real conversations. This takes a second.
+        </p>
+
+        <div style="display:flex;justify-content:center;margin:28px 0 8px;">
+          <div class="cf-turnstile"
+               data-sitekey="{TURNSTILE_SITE_KEY}"
+               data-callback="kzOnVerified"
+               data-error-callback="kzOnError"></div>
+        </div>
+
+        <p id="kz-demo-status" role="status" aria-live="polite"
+           style="min-height:22px;color:var(--kz-ink-soft, #6b6b6b);font-size:14px;"></p>
+
+        <noscript>
+          <p class="kz-lede" style="margin-top:12px;">
+            JavaScript is required to book online. Email
+            <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>
+            and we'll set up a time.
+          </p>
+        </noscript>
+
+        <p style="margin-top:20px;font-size:14px;color:var(--kz-ink-soft, #6b6b6b);">
+          Trouble verifying? Email
+          <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>.
+        </p>
+      </div>
+    </section>
+
+    <script>
+    (function () {{
+      var DEST = '{enc}';
+      var statusEl = document.getElementById('kz-demo-status');
+      window.kzOnVerified = function () {{
+        if (statusEl) statusEl.textContent = 'Verified — opening the calendar…';
+        window.location.href = atob(DEST);
+      }};
+      window.kzOnError = function () {{
+        if (statusEl) statusEl.textContent = 'Verification failed. Please refresh and try again, or email hello@kaizan.ai.';
+      }};
+    }})();
+    </script>
+
+    {footer_html(1)}
+    '''
+    return page_head('Book a demo', 1,
+                     "Confirm you're human, then book a 30-minute live demo of Kaizan.",
+                     extra_head=extra_head) + body + page_foot()
+
+
 def write(path: Path, content: str):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding='utf-8')
@@ -4247,6 +4337,7 @@ def main():
     # for easy revert; the directory is removed so it doesn't serve stale content.
     _remove_page(ROOT / 'insights')
     write(ROOT / 'about' / 'index.html',        render_about())
+    write(ROOT / 'demo' / 'index.html',         render_demo())
     write(ROOT / '404.html',                    render_404())
 
     # Persona pages
