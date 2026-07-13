@@ -3,7 +3,7 @@ title: How to use AI automation to enrich Client Services
 date: 2024-06-25
 category: POV
 excerpt: Client Services play a fundamental role in shaping the way every organisation is able to generate and create long lasting and sustainable revenues. Enabling teams to…
-cover: img-1.jpg
+cover: img-1.png
 draft: false
 ---
 
