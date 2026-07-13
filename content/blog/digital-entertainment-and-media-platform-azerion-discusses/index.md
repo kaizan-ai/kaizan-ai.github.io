@@ -3,7 +3,7 @@ title: Digital entertainment and media platform, Azerion, discusses implementing
 date: 2024-07-15
 category: POV
 excerpt: Azerion is a leading digital entertainment and media platform, who scale the distribution, consumption and monetization of digital gaming and entertainment content. As a…
-cover: img-1.jpg
+cover: img-1.png
 draft: false
 ---
 
