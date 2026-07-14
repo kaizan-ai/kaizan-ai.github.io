@@ -2348,7 +2348,6 @@ def render_blog_index(posts: list) -> str:
             f'''<a class="kz-insights-card" href="{E(p["slug"])}/">
               <div class="cover" style="background-image:url('{cover_src(p, 1)}');"></div>
               <div class="body">
-                <span class="kz-eyebrow">{E(p["category"])}</span>
                 <h3 class="title">{E(p["title"])}</h3>
                 <p class="excerpt">{E(p["excerpt"])}</p>
                 <div class="meta">{E(p["date"].upper())}</div>
@@ -2390,7 +2389,7 @@ def render_blog_post(post: dict) -> str:
     {nav_html(2, active='Blog')}
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
-        <div class="kz-eyebrow">{E(post.get('category', ''))} · {E(post.get('date', ''))}</div>
+        <div class="kz-eyebrow">{E(post.get('date', ''))}</div>
         <h1 class="kz-post-title">{E(post['title'])}</h1>
         {hero}
         {post.get('body', '<p>(empty)</p>')}
