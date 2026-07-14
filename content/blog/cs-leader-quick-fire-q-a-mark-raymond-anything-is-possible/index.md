@@ -2,7 +2,7 @@
 title: "CS Leader Quick Fire Q&A: Mark Raymond @ Anything is Possible"
 date: 2024-03-14
 category: POV
-excerpt: 
+excerpt: Mark Raymond, co-founder of media, creative and tech agency Anything is Possible, on delivering a frictionless, world-class client experience and the pitfalls of scaling client services.
 cover: img-1.png
 draft: false
 ---

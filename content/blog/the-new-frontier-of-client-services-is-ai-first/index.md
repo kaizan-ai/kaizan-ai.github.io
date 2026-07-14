@@ -2,12 +2,10 @@
 title: The new frontier of Client Services is AI first
 date: 2024-06-20
 category: POV
-excerpt: 1
+excerpt: Why AI is becoming the foundation of Client Services — automating routine work, surfacing client-health signals earlier, and freeing teams to focus on high-value, proactive work.
 cover: img-1.png
 draft: false
 ---
-
-1
 
 Providing exceptional Client Services is key to any organisation’s growth and success, technology already supports these needs and with the advancements in AI this will exponentially improve. As the demands of client relationships grow and advance, technology, and specifically AI will continue to play a significant role in the future of Client Services. Ensuring client health leads to client retention and ultimately organisational growth. Every organisation is already addressing these challenges with the use of technology to support them in achieving those goals, but the new frontier involves bringing more automation into the process to provide client service teams the ability to focus elsewhere.
 
