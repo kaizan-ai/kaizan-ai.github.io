@@ -15,6 +15,12 @@ Ask most agency owners what AI has done for them and you'll get a wall of buzzwo
 
 We recently sat down with Greg Gifford, Chief Operating Officer of Searchlab, to talk about where AI is genuinely helping, where it's overhyped, and what it means for the future of agency work. The conversation kept circling back to one theme: the agencies that win aren't the ones checking the most boxes. They're the ones who actually understand their clients. Here's what stood out.
 
+## Watch the full conversation
+
+Prefer to hear it in Greg's own words? Watch the full interview on YouTube.
+
+<a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="https://youtu.be/z0kU9NxbcSw" target="_blank" rel="noopener">Watch the full video →</a>
+
 ## Outcomes over activity
 
 "For us, it's more about the outcome than the activity," Gifford told us. It sounds obvious, but it cuts against how a lot of the industry actually operates.
