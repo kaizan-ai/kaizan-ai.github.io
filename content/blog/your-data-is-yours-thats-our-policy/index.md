@@ -37,5 +37,5 @@ The blueprint for CARE, and the client brain that decides what you and your agen
 
 The companies that win the next decade are the ones whose learning compounds privately. Who collect tacit knowledge about their clients, their domain and their workflows to compound their IP. Your client intelligence is your alpha. Our job is to sharpen it and hand you the edge.
 
-Glen  
+Glen Calvert  
 CEO
