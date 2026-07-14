@@ -9,7 +9,7 @@ draft: false
 tags: [data-privacy, artificial-intelligence, client-intelligence, enterprise, trust]
 ---
 
-Quick thoughts after reading Satya Nadella's post this weekend on what he calls the Reverse Information Paradox. Worth a read. The short version: you pay for AI twice. Once with money. Again with the knowledge you feed it to make it useful. Your conversations, your corrections, your context. The stuff that makes your company yours.
+Quick thoughts after reading [Satya Nadella's post](https://x.com/satyanadella/status/2076323181154230284) this weekend on what he calls the Reverse Information Paradox. Worth a read. The short version: you pay for AI twice. Once with money. Again with the knowledge you feed it to make it useful. Your conversations, your corrections, your context. The stuff that makes your company yours.
 
 It's a topic worth debating. And it's exactly why we have a clear stance on this at Kaizan. Your data is yours. And you should be safe in the knowledge we're here to level up your organisation's IP, not dilute it.
 
@@ -37,4 +37,5 @@ The blueprint for CARE, and the client brain that decides what you and your agen
 
 The companies that win the next decade are the ones whose learning compounds privately. Who collect tacit knowledge about their clients, their domain and their workflows to compound their IP. Your client intelligence is your alpha. Our job is to sharpen it and hand you the edge.
 
-Glen
+Glen  
+CEO
