@@ -11,6 +11,7 @@ and re-run the script. /blog/index.html (hidden) will pick it up.
 """
 
 from __future__ import annotations
+import json
 import os
 import sys
 from html import escape
@@ -4318,6 +4319,42 @@ def _remove_page(directory: Path):
         print(f'  removed {directory.relative_to(ROOT)}/')
 
 
+def render_redirect(target: str) -> str:
+    """A tiny redirect stub for a legacy URL. Meta-refresh + JS forward, plus a
+    canonical to the target so search engines consolidate ranking onto it."""
+    canon = f'https://kaizan.ai{target}'
+    return (
+        '<!doctype html>\n<html lang="en"><head><meta charset="utf-8">\n'
+        '<title>Redirecting…</title>\n'
+        f'<link rel="canonical" href="{E(canon)}">\n'
+        f'<meta http-equiv="refresh" content="0; url={E(target)}">\n'
+        f'<script>location.replace({json.dumps(target)})</script>\n'
+        '</head><body>\n'
+        f'<p>This page has moved to <a href="{E(target)}">{E(target)}</a>.</p>\n'
+        '</body></html>\n'
+    )
+
+
+def write_redirects():
+    """Generate redirect stub pages for legacy (pre-migration) URLs so they no
+    longer 404. Map lives in tools/redirects.json ({old_path: new_url})."""
+    map_file = Path(__file__).resolve().parent / 'redirects.json'
+    if not map_file.exists():
+        return
+    redirects = json.loads(map_file.read_text(encoding='utf-8'))
+    written = skipped = 0
+    for old, new in redirects.items():
+        dest = ROOT / old.strip('/') / 'index.html'
+        # never clobber a real generated page
+        if dest.exists():
+            skipped += 1
+            continue
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(render_redirect(new), encoding='utf-8')
+        written += 1
+    print(f'  ({written} redirect stub(s) written, {skipped} skipped — real page exists)')
+
+
 def main():
     print(f'Building Kaizan site → {ROOT}')
 
@@ -4358,6 +4395,8 @@ def main():
         blog.copy_post_images(post['slug'])
         write(ROOT / 'blog' / post['slug'] / 'index.html', render_blog_post(post))
     print(f'  ({len(posts)} blog post(s) built)')
+
+    write_redirects()
 
     print('Done.')
 
