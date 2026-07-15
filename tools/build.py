@@ -877,6 +877,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
+        <!-- Start of HubSpot Embed Code -->
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/144688314.js"></script>
+        <!-- End of HubSpot Embed Code -->
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
         new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
