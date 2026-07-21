@@ -2614,6 +2614,158 @@ def render_about() -> str:
                      'Founder’s Letter from Glen Calvert, Co-founder & CEO of Kaizan. A proactive system of intelligence for client service.') + body + page_foot()
 
 
+MAILCHIMP_POPUP = ''  # paste the Mailchimp pop-up embed <script> here (or into extra_head below)
+
+
+JULY_OFFER_STYLE = '''
+<style>
+  .july-wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .july-hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; padding: 80px 0 64px; }
+  .july-hero-head { position: relative; display: inline-block; }
+  .july-rays { position: absolute; top: -68px; left: -78px; width: 200px; height: 200px; pointer-events: none; }
+  .july-hero h1 { font-size: 72px; line-height: 0.98; letter-spacing: -0.02em; margin: 0; color: var(--kz-ink); }
+  .july-hero .july-lede { font-size: 18px; line-height: 1.55; color: var(--kz-ink-soft, #6b6b6b); margin: 22px 0 0; max-width: 440px; }
+  .july-imgwrap { border-radius: 22px; overflow: hidden; box-shadow: 0 24px 60px -24px rgba(0,0,0,.30); }
+  .july-imgwrap img { display: block; width: 100%; height: auto; }
+  .july-form { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 18px; padding: 34px; margin-top: 30px; max-width: 560px;
+               box-shadow: 0 2px 0 rgba(0,0,0,.03), 0 22px 54px -22px rgba(0,0,0,.24); }
+  .july-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .july-form label { display: block; font-size: 14px; font-weight: 600; color: var(--kz-ink); margin: 0 0 8px; }
+  .july-form input, .july-form select { width: 100%; padding: 15px 16px; font-size: 16px; border: 1px solid rgba(0,0,0,.16); border-radius: 12px;
+                                        font-family: inherit; color: var(--kz-ink); background: #fff; }
+  .july-form input:focus, .july-form select:focus { outline: none; border-color: var(--kz-yellow); box-shadow: 0 0 0 3px rgba(255,185,0,.25); }
+  .july-form .kz-btn { width: 100%; justify-content: center; margin-top: 14px; padding: 15px 22px; font-size: 16px; }
+  .july-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .july-step { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 16px; padding: 26px;
+               box-shadow: 0 12px 30px -18px rgba(0,0,0,.16); }
+  .july-badge { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px;
+                background: var(--kz-yellow); color: var(--kz-ink); font-weight: 700; font-size: 15px; }
+  .july-steplabel { display: inline-block; margin-left: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--kz-ink-soft, #6b6b6b); vertical-align: middle; }
+  .july-step h3 { font-size: 20px; margin: 16px 0 8px; color: var(--kz-ink); }
+  .july-step p { margin: 0; color: var(--kz-ink-soft, #6b6b6b); line-height: 1.5; }
+  .july-fine { text-align: center; font-size: 16px; color: var(--kz-ink-soft, #6b6b6b); margin: 30px auto 96px; }
+  @media (max-width: 900px) {
+    .july-hero { grid-template-columns: 1fr; gap: 34px; padding: 52px 0 44px; }
+    .july-hero h1 { font-size: 48px; }
+    .july-form { max-width: none; }
+    .july-steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 460px) { .july-form-row { grid-template-columns: 1fr; } }
+</style>
+'''
+
+JULY_OFFER_SCRIPT = '''
+<script>
+// The inline form opens the Mailchimp pop-up (which collects email + role and
+// reveals the offer code). Wire this to your Mailchimp embed: replace the body
+// of openCoffeePopup() with the call your Mailchimp snippet exposes.
+(function () {
+  var form = document.getElementById('kz-coffee-form');
+  function openCoffeePopup() {
+    if (typeof window.kzMailchimpPopup === 'function') { window.kzMailchimpPopup(); return; }
+    // Fallback until the Mailchimp snippet is added:
+    console.log('Mailchimp pop-up not yet configured on this page.');
+  }
+  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); openCoffeePopup(); });
+})();
+</script>
+'''
+
+
+def render_july_offer() -> str:
+    """Campaign landing page: /marketing/july-offer/ — free iced-coffee offer.
+
+    Collects email + role via a Mailchimp pop-up, which then reveals the offer
+    code. Submitting the inline form opens the pop-up; the Mailchimp embed script
+    goes in MAILCHIMP_POPUP (injected into <head> alongside the page styles)."""
+    role_options = '\n                  '.join(
+        f'<option>{E(name)}</option>' for _, name in PERSONA_LIST
+    ) + '\n                  <option>Other</option>'
+    # Sun-ray burst wrapping the top-left corner of the heading (tapered rays,
+    # thick at the base, coming to a fine point — drawn as triangles).
+    import math
+    C, R_IN, R_OUT, W = 60, 22, 56, 0.5  # centre, inner gap, ray length, half base-width
+    def ray(d):
+        a = math.radians(d)
+        dx, dy = math.cos(a), math.sin(a)
+        px, py = -dy, dx                      # perpendicular
+        ix, iy = C + R_IN * dx, C + R_IN * dy  # base centre
+        ox, oy = C + R_OUT * dx, C + R_OUT * dy  # tip
+        return (f'{ix + W*px:.1f},{iy + W*py:.1f} '
+                f'{ox:.1f},{oy:.1f} '
+                f'{ix - W*px:.1f},{iy - W*py:.1f}')
+    rays = ''.join(f'<polygon points="{ray(d)}"/>' for d in range(150, 331, 30))
+    rays_svg = (
+        '<svg class="july-rays" viewBox="0 0 120 120" aria-hidden="true">'
+        f'<g fill="var(--kz-yellow)" stroke="var(--kz-yellow)" stroke-width="1.6" '
+        f'stroke-linejoin="round" stroke-linecap="round">{rays}</g>'
+        '</svg>'
+    )
+    body = f'''
+    {nav_html(2)}
+
+    <section class="july-wrap">
+      <div class="july-hero">
+        <div>
+          <div class="july-hero-head">{rays_svg}<h1>Iced coffees on us this July!</h1></div>
+          <p class="july-lede">
+            Pop in your email and role and we&rsquo;ll hand you a code for a free iced
+            coffee. Our way of beating the heat, and saying hello.
+          </p>
+
+          <form id="kz-coffee-form" class="july-form" novalidate>
+            <div class="july-form-row">
+              <div>
+                <label for="kz-email">Work email</label>
+                <input id="kz-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="kz-role">Your role</label>
+                <select id="kz-role" name="role">
+                  {role_options}
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="kz-btn kz-btn-yellow">Claim your free iced coffee →</button>
+          </form>
+        </div>
+
+        <div class="july-imgwrap">
+          <img src="{relpath(2)}assets/img/marketing/july-offer-coffee.png"
+               alt="Four hands holding iced coffees with sleeves reading: Survived another client call? Have a coffee on us. Kaffeine x Kaizan."
+               decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <section class="july-steps">
+      <div class="july-step">
+        <div><span class="july-badge">1</span><span class="july-steplabel">Step 01</span></div>
+        <h3>Tell us who you are</h3>
+        <p>Enter your email and role in the quick pop-up.</p>
+      </div>
+      <div class="july-step">
+        <div><span class="july-badge">2</span><span class="july-steplabel">Step 02</span></div>
+        <h3>Get your code</h3>
+        <p>We&rsquo;ll email you your code &mdash; show the email to the baristas at Kaffeine.</p>
+      </div>
+      <div class="july-step">
+        <div><span class="july-badge">3</span><span class="july-steplabel">Step 03</span></div>
+        <h3>Enjoy the coffee</h3>
+        <p>Show your code at Kaffeine and enjoy an iced coffee on Kaizan.</p>
+      </div>
+    </section>
+
+    <p class="july-fine">Valid July only at <strong>Kaffeine</strong>, <strong>15 Eastcastle Street, London W1W 8DY</strong>. One coffee per person, while stocks last.</p>
+
+    {JULY_OFFER_SCRIPT}
+    {footer_html(2)}
+    '''
+    return page_head('Free iced coffee this July', 2,
+                     "Iced coffee's on us this July — enter your email and role to get your free coffee code.",
+                     extra_head=JULY_OFFER_STYLE + MAILCHIMP_POPUP) + body + page_foot()
+
+
 def render_404() -> str:
     body = f'''
     {nav_html(0)}
@@ -4378,6 +4530,9 @@ def main():
     write(ROOT / 'about' / 'index.html',        render_about())
     write(ROOT / 'demo' / 'index.html',         render_demo())
     write(ROOT / '404.html',                    render_404())
+
+    # Marketing / campaign landing pages
+    write(ROOT / 'marketing' / 'july-offer' / 'index.html', render_july_offer())
 
     # Persona pages
     for slug in PERSONAS:
