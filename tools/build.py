@@ -2807,7 +2807,7 @@ def render_integrations() -> str:
 # ─────────────────────────────────────────────────────────────────────
 
 PRICING_TIERS = [
-    dict(name='Pilot', badge='PILOT', note='First 90 days',
+    dict(name='Pilot', badge='PILOT', note='First 60 days',
          clients='Up to ', clients_bold='10 clients',
          price='£2,995', price_label='per month',
          per_client='Equivalent to £300 / client pm',
