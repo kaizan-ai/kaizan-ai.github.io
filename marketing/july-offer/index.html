@@ -139,6 +139,13 @@
             <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Claim your free iced coffee →</button>
             <p id="kz-coffee-msg" class="july-msg" role="status" aria-live="polite"></p>
           </form>
+
+          <div id="kz-success" style="display:none; text-align:center; padding:32px; background:#FFB900; border-radius:16px; font-family:Arial, sans-serif;">
+            <h2 style="margin:0 0 8px; color:#000; font-size:28px; font-weight:bold;">You're in! ☕</h2>
+            <p style="margin:0 0 16px; color:#000; font-size:16px;">Show this at the counter at Kaffeine to claim your free iced coffee:</p>
+            <div style="display:inline-block; background:#000; color:#FFB900; font-size:30px; font-weight:bold; letter-spacing:0.15em; padding:16px 28px; border-radius:12px;">KAIZAN</div>
+            <p style="margin:16px 0 0; color:#000; font-size:13px;">We've also emailed this to you — check your inbox in a few minutes.</p>
+          </div>
         </div>
 
         <div class="july-imgwrap">
@@ -197,7 +204,9 @@
       try {
         if (data && data.result === 'success') {
           form.reset();
-          show('You\u2019re in! Check your inbox for your free coffee code \u2615', true);
+          form.style.display = 'none';
+          var succ = document.getElementById('kz-success');
+          if (succ) succ.style.display = 'block';
         } else {
           var m = (data && data.msg) ? String(data.msg).replace(/^\d+\s*-\s*/, '') : 'Something went wrong \u2014 please try again.';
           show(m, false);
