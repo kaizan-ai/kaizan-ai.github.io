@@ -2698,7 +2698,7 @@ def render_july_offer() -> str:
     rays_svg = (
         '<svg class="july-rays" viewBox="0 0 120 120" aria-hidden="true">'
         f'<g fill="var(--kz-yellow)" stroke="var(--kz-yellow)" stroke-width="1.6" '
-        f'stroke-linejoin="round" stroke-linecap="round">{rays}</g>'
+        f'opacity="0.55" stroke-linejoin="round" stroke-linecap="round">{rays}</g>'
         '</svg>'
     )
     body = f'''
@@ -2707,10 +2707,10 @@ def render_july_offer() -> str:
     <section class="july-wrap">
       <div class="july-hero">
         <div>
-          <div class="july-hero-head">{rays_svg}<h1>Iced coffees on us this July!</h1></div>
+          <div class="july-hero-head">{rays_svg}<h1>Iced coffees on us!</h1></div>
           <p class="july-lede">
             Pop in your email and role and we&rsquo;ll hand you a code for a free iced
-            coffee. Our way of beating the heat, and saying hello.
+            coffee on <strong>Thursday 30 July</strong>. Our way of beating the heat, and saying hello.
           </p>
 
           <form id="kz-coffee-form" class="july-form" novalidate>
@@ -2756,7 +2756,7 @@ def render_july_offer() -> str:
       </div>
     </section>
 
-    <p class="july-fine">Valid July only at <strong>Kaffeine</strong>, <strong>15 Eastcastle Street, London W1W 8DY</strong>. One coffee per person, while stocks last.</p>
+    <p class="july-fine">Valid <strong>Thursday 30 July</strong> only at <strong>Kaffeine</strong>, <strong>15 Eastcastle Street, London W1W 8DY</strong>. One coffee per person, while stocks last.</p>
 
     {JULY_OFFER_SCRIPT}
     {footer_html(2)}
