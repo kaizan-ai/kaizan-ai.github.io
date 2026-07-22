@@ -2614,7 +2614,10 @@ def render_about() -> str:
                      'Founder’s Letter from Glen Calvert, Co-founder & CEO of Kaizan. A proactive system of intelligence for client service.') + body + page_foot()
 
 
-MAILCHIMP_POPUP = ''  # paste the Mailchimp pop-up embed <script> here (or into extra_head below)
+# Mailchimp embedded-form endpoints for the July free-coffee campaign.
+MC_POST = 'https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0'
+MC_JSON = 'https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0'
+MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_40f0f855d8'
 
 
 JULY_OFFER_STYLE = '''
@@ -2635,6 +2638,7 @@ JULY_OFFER_STYLE = '''
                                         font-family: inherit; color: var(--kz-ink); background: #fff; }
   .july-form input:focus, .july-form select:focus { outline: none; border-color: var(--kz-yellow); box-shadow: 0 0 0 3px rgba(255,185,0,.25); }
   .july-form .kz-btn { width: 100%; justify-content: center; margin-top: 14px; padding: 15px 22px; font-size: 16px; }
+  .july-msg { display: none; margin: 14px 0 0; font-size: 15px; font-weight: 500; }
   .july-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
   .july-step { background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 16px; padding: 26px;
                box-shadow: 0 12px 30px -18px rgba(0,0,0,.16); }
@@ -2656,17 +2660,47 @@ JULY_OFFER_STYLE = '''
 
 JULY_OFFER_SCRIPT = '''
 <script>
-// The inline form opens the Mailchimp pop-up (which collects email + role and
-// reveals the offer code). Wire this to your Mailchimp embed: replace the body
-// of openCoffeePopup() with the call your Mailchimp snippet exposes.
+// Submit the inline form to Mailchimp via JSONP so the visitor stays on the page
+// and we can show an inline confirmation. If JS is unavailable, the form still
+// POSTs normally to Mailchimp (progressive enhancement via the form action).
 (function () {
   var form = document.getElementById('kz-coffee-form');
-  function openCoffeePopup() {
-    if (typeof window.kzMailchimpPopup === 'function') { window.kzMailchimpPopup(); return; }
-    // Fallback until the Mailchimp snippet is added:
-    console.log('Mailchimp pop-up not yet configured on this page.');
+  if (!form) return;
+  var msg = document.getElementById('kz-coffee-msg');
+  var jsonUrl = form.getAttribute('data-mc-json');
+  function show(text, ok) {
+    if (!msg) return;
+    msg.textContent = text;
+    msg.style.color = ok ? 'var(--kz-ink)' : '#b00020';
+    msg.style.display = 'block';
   }
-  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); openCoffeePopup(); });
+  form.addEventListener('submit', function (e) {
+    if (!jsonUrl) return;                 // no-JS / no endpoint -> normal POST
+    e.preventDefault();
+    var emailEl = form.querySelector('[name=EMAIL]');
+    if (!emailEl || !emailEl.value) { show('Please enter your email.', false); return; }
+    var params = new URLSearchParams(new FormData(form)).toString();
+    var cb = 'mccb_' + Date.now();
+    var s;
+    window[cb] = function (data) {
+      try {
+        if (data && data.result === 'success') {
+          form.reset();
+          show('You\\u2019re in! Check your inbox for your free coffee code \\u2615', true);
+        } else {
+          var m = (data && data.msg) ? String(data.msg).replace(/^\\d+\\s*-\\s*/, '') : 'Something went wrong \\u2014 please try again.';
+          show(m, false);
+        }
+      } finally {
+        delete window[cb];
+        if (s && s.parentNode) s.parentNode.removeChild(s);
+      }
+    };
+    s = document.createElement('script');
+    s.src = jsonUrl + '&' + params + '&c=' + cb;
+    s.onerror = function () { show('Network error \\u2014 please try again.', false); };
+    document.body.appendChild(s);
+  });
 })();
 </script>
 '''
@@ -2678,7 +2712,7 @@ def render_july_offer() -> str:
     Collects email + role via a Mailchimp pop-up, which then reveals the offer
     code. Submitting the inline form opens the pop-up; the Mailchimp embed script
     goes in MAILCHIMP_POPUP (injected into <head> alongside the page styles)."""
-    role_options = '\n                  '.join(
+    role_options = '<option value="">Select your role…</option>\n                  ' + '\n                  '.join(
         f'<option>{E(name)}</option>' for _, name in PERSONA_LIST
     ) + '\n                  <option>Other</option>'
     # Sun-ray burst wrapping the top-left corner of the heading (tapered rays,
@@ -2713,20 +2747,26 @@ def render_july_offer() -> str:
             coffee on <strong>Thursday 30 July</strong>. Our way of beating the heat, and saying hello.
           </p>
 
-          <form id="kz-coffee-form" class="july-form" novalidate>
+          <form id="kz-coffee-form" class="july-form" action="{MC_POST}" method="post" target="_blank"
+                data-mc-json="{MC_JSON}" novalidate>
             <div class="july-form-row">
               <div>
-                <label for="kz-email">Work email</label>
-                <input id="kz-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+                <label for="mce-EMAIL">Work email</label>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
               </div>
               <div>
-                <label for="kz-role">Your role</label>
-                <select id="kz-role" name="role">
+                <label for="mce-ROLE">Your role</label>
+                <select id="mce-ROLE" name="ROLE">
                   {role_options}
                 </select>
               </div>
             </div>
-            <button type="submit" class="kz-btn kz-btn-yellow">Claim your free iced coffee →</button>
+            <!-- Mailchimp bot-prevention field — keep, do not remove -->
+            <div style="position:absolute;left:-5000px;" aria-hidden="true">
+              <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
+            </div>
+            <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Claim your free iced coffee →</button>
+            <p id="kz-coffee-msg" class="july-msg" role="status" aria-live="polite"></p>
           </form>
         </div>
 
@@ -2763,7 +2803,7 @@ def render_july_offer() -> str:
     '''
     return page_head('Free iced coffee this July', 2,
                      "Iced coffee's on us this July — enter your email and role to get your free coffee code.",
-                     extra_head=JULY_OFFER_STYLE + MAILCHIMP_POPUP) + body + page_foot()
+                     extra_head=JULY_OFFER_STYLE) + body + page_foot()
 
 
 def render_404() -> str:
