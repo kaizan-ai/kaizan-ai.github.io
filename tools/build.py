@@ -1049,7 +1049,7 @@ def footer_html(depth: int) -> str:
         {''.join(cols_html)}
       </div>
       <div class="kz-footer-bot">
-        <span>© 2026 Kaizan Labs Ltd. Series A announced 6 May 2026.</span>
+        <span>© 2026 Kaizan Ltd.</span>
         <span>
           <a href="https://help.kaizan.ai/en/articles/6028739-privacy-policy">Privacy</a> ·
           <a href="https://help.kaizan.ai/en/articles/6045324-license-agreement">Terms</a> ·
