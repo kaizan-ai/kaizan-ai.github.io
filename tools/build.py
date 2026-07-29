@@ -2763,6 +2763,8 @@ def render_july_offer() -> str:
                 </select>
               </div>
             </div>
+            <!-- Tag every landing-page signup so the voucher automation fires — do not remove -->
+            <input type="hidden" name="tags" value="july-coffee">
             <!-- Mailchimp bot-prevention field — keep, do not remove -->
             <div style="position:absolute;left:-5000px;" aria-hidden="true">
               <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
