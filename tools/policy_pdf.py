@@ -31,6 +31,7 @@ POLICIES = [
     ('privacy-policy', 'Privacy Policy'),
     ('license-agreement', 'Licence Agreement'),
     ('cookie-policy', 'Cookie Policy'),
+    ('data-processing-agreement', 'Data Processing Agreement'),
 ]
 
 logo_b64 = base64.b64encode((ROOT / 'assets/img/kaizan-logo.png').read_bytes()).decode()
