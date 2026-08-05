@@ -878,16 +878,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
-        <!-- Start of HubSpot Embed Code -->
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/144688314.js"></script>
-        <!-- End of HubSpot Embed Code -->
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
-        new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        }})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
-        <!-- End Google Tag Manager -->
+        <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
+             cookie consent — see assets/js/consent.js -->
+        <script defer src="{p}assets/js/consent.js"></script>
         </head>
         <body>
         <div class="kz-page">
@@ -896,11 +889,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
 
 
 def page_foot() -> str:
+    # No GTM <noscript> iframe: it cannot be consent-gated, and analytics only
+    # run after consent (assets/js/consent.js).
     return ('</main>\n</div>\n'
-            '<!-- Google Tag Manager (noscript) -->\n'
-            '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXT2FLQ" '
-            'height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>\n'
-            '<!-- End Google Tag Manager (noscript) -->\n'
             '</body>\n</html>\n')
 
 
@@ -1053,7 +1044,9 @@ def footer_html(depth: int) -> str:
         <span>
           <a href="{p}privacy-policy/">Privacy</a> ·
           <a href="{p}license-agreement/">Terms</a> ·
-          <a href="{p}cookie-policy/">Cookies</a>
+          <a href="{p}cookie-policy/">Cookies</a> ·
+          <a href="{p}data-processing-agreement/">DPA</a> ·
+          <a href="#" data-cookie-settings>Cookie settings</a>
         </span>
       </div>
     </footer>'''
@@ -3397,7 +3390,7 @@ SECURITY_DATA = [
     ]),
     dict(title='Privacy', tabs=[
         dict(k='compliance', icon='⚖', label='Compliance',
-             desc='Kaizan complies with leading industry standards and regulations, including SOC 2, GDPR, and the EU-U.S. Data Privacy Framework. Regular audits and third-party assessments help us maintain and improve our security posture.',
+             desc='Kaizan complies with leading industry standards and regulations, including SOC 2 and UK & EU GDPR. Transfers of personal data to US-based subprocessors are safeguarded under the UK International Data Transfer Agreement and, where the subprocessor is certified, the EU-U.S. Data Privacy Framework. Regular audits and third-party assessments help us maintain and improve our security posture.',
              visual='trust-center'),
         dict(k='policy', icon='📄', label='Policy',
              desc='Plain-English Data Processing Agreement and privacy policy, reviewed quarterly. Material changes are notified to enterprise customers 30 days in advance with the right to object. Standard MNDA turnaround typically under 24 hours.',
@@ -4522,6 +4515,8 @@ POLICIES = [
          desc='The terms on which Kaizan Limited supplies the Kaizan software.'),
     dict(slug='cookie-policy', title='Cookie Policy',
          desc='The cookies Kaizan uses on its website and app, and how to manage them.'),
+    dict(slug='data-processing-agreement', title='Data Processing Agreement',
+         desc='How Kaizan processes personal data on behalf of its customers.'),
 ]
 
 

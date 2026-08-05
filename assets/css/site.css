@@ -2884,3 +2884,21 @@ button { font-family: inherit; }
 .kz-btn-pdf .arr { margin-left: 2px; }
 .kz-policy-pdf-link { font-weight: 400 !important; color: var(--kz-mute) !important; text-decoration: underline !important; text-underline-offset: 3px; font-size: 13px; }
 .kz-policy-pdf-link:hover { color: var(--kz-ink) !important; }
+
+/* Cookie consent banner (assets/js/consent.js) */
+.kz-consent {
+  position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 200;
+  display: none; align-items: center; gap: 20px; flex-wrap: wrap;
+  max-width: 720px; margin: 0 auto;
+  background: var(--kz-paper); border: 1px solid var(--kz-line-strong);
+  border-radius: 14px; padding: 18px 22px;
+  box-shadow: 0 8px 40px -8px rgba(0,0,0,.25);
+}
+.kz-consent.is-visible { display: flex; }
+.kz-consent p { margin: 0; font-size: 14px; line-height: 1.55; flex: 1 1 320px; }
+.kz-consent a { color: var(--kz-ink); text-decoration: underline; text-underline-offset: 3px; }
+.kz-consent-btns { display: flex; gap: 10px; }
+.kz-consent-btns .kz-btn { font-size: 13px; padding: 10px 18px; cursor: pointer; }
+@media (max-width: 600px) {
+  .kz-consent { left: 12px; right: 12px; bottom: 12px; padding: 16px; }
+}
