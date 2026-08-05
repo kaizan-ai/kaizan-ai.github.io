@@ -77,6 +77,17 @@ TEMPLATE = '''<!doctype html>
   td p, th p {{ margin-bottom: 5px; }}
   td ol, td ul {{ padding-left: 1.2em; margin: 0 0 5px; }}
   a {{ color: #111; text-decoration: none; }}
+  dl.kz-kv {{ margin: 0 0 10px; }}
+  dl.kz-kv dt {{ font-weight: 600; margin: 8px 0 2px; }}
+  dl.kz-kv dd {{ margin: 0; }}
+  .kz-subproc {{ border: 1px solid #ccc; border-radius: 8px;
+                padding: 10px 12px 8px; margin: 0 0 8px; break-inside: avoid; }}
+  .kz-subproc h3 {{ font-size: 11px; font-weight: 600; margin: 0 0 2px; }}
+  .kz-subproc .loc {{ font-weight: 400; font-size: 9px; color: #555; margin-left: 8px; }}
+  .kz-subproc dl {{ margin: 4px 0 0; }}
+  .kz-subproc dt {{ font-weight: 600; font-size: 8.5px; letter-spacing: .04em;
+                   text-transform: uppercase; color: #777; margin-top: 5px; }}
+  .kz-subproc dd {{ margin: 0; }}
   .doc-foot {{ margin-top: 32px; padding-top: 10px; border-top: 1px solid #ddd;
               font-size: 9px; color: #777; }}
 </style>
