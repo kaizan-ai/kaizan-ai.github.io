@@ -49,6 +49,25 @@
     document.head.appendChild(h);
   }
 
+  // Cookies set by the trackers we gate (GA via GTM, HubSpot). Deleted
+  // best-effort when a visitor withdraws consent.
+  var TRACKING_COOKIES = /^(_ga|_gid|_gat|__hstc|hubspotutk|__hssc|__hssrc|__hs)/;
+
+  function clearTrackingCookies() {
+    var host = location.hostname;
+    var domains = ['', host, '.' + host];
+    var parent = host.split('.').slice(1).join('.');
+    if (parent.indexOf('.') > -1) domains.push('.' + parent);
+    document.cookie.split(';').forEach(function (c) {
+      var name = c.split('=')[0].trim();
+      if (!TRACKING_COOKIES.test(name)) return;
+      domains.forEach(function (d) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' +
+          (d ? '; domain=' + d : '');
+      });
+    });
+  }
+
   function banner() {
     var el = document.querySelector('.kz-consent');
     if (el) return el;
@@ -57,6 +76,7 @@
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'Cookie consent');
     el.innerHTML =
+      '<div class="kz-consent-title">Cookies</div>' +
       '<p>We use optional cookies to understand how the site is used and to improve ' +
       'our marketing. We won’t set them unless you accept. See our ' +
       '<a href="/cookie-policy/">Cookie Policy</a>.</p>' +
@@ -70,8 +90,15 @@
       hide();
     });
     el.querySelector('[data-consent-decline]').addEventListener('click', function () {
+      var hadTrackers = !!window.__kzTrackersLoaded;
       saveChoice('declined');
       hide();
+      if (hadTrackers) {
+        // Consent withdrawn after trackers already ran: delete their cookies
+        // (best effort) and reload so the running scripts stop too.
+        clearTrackingCookies();
+        location.reload();
+      }
     });
     document.body.appendChild(el);
     return el;
