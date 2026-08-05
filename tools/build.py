@@ -1051,9 +1051,9 @@ def footer_html(depth: int) -> str:
       <div class="kz-footer-bot">
         <span>© 2026 Kaizan Ltd.</span>
         <span>
-          <a href="https://help.kaizan.ai/en/articles/6028739-privacy-policy">Privacy</a> ·
-          <a href="https://help.kaizan.ai/en/articles/6045324-license-agreement">Terms</a> ·
-          <a href="https://help.kaizan.ai/en/articles/6014333-cookie-policy">Cookies</a>
+          <a href="{p}privacy-policy/">Privacy</a> ·
+          <a href="{p}license-agreement/">Terms</a> ·
+          <a href="{p}cookie-policy/">Cookies</a>
         </span>
       </div>
     </footer>'''
@@ -4507,6 +4507,113 @@ def render_demo() -> str:
                      extra_head=extra_head) + body + page_foot()
 
 
+# ─────────────────────────────────────────────────────────────────────
+# POLICIES — versioned legal documents (Privacy / Licence / Cookies).
+# Source of truth: content/policies/<slug>/<YYYY-MM-DD>.html, one file per
+# version, filename = the date that version took effect. The newest file
+# becomes the live page at /<slug>/; every file also gets a dated archive
+# page at /<slug>/<date>/. See content/policies/README.md.
+# ─────────────────────────────────────────────────────────────────────
+
+POLICIES = [
+    dict(slug='privacy-policy', title='Privacy Policy',
+         desc='How Kaizan Limited collects, uses and protects your personal data.'),
+    dict(slug='license-agreement', title='Licence Agreement',
+         desc='The terms on which Kaizan Limited supplies the Kaizan software.'),
+    dict(slug='cookie-policy', title='Cookie Policy',
+         desc='The cookies Kaizan uses on its website and app, and how to manage them.'),
+]
+
+
+def _policy_date(iso: str) -> str:
+    """'2025-10-01' → '1 October 2025'."""
+    from datetime import date
+    d = date.fromisoformat(iso)
+    return f'{d.day} {d.strftime("%B %Y")}'
+
+
+def load_policy_versions(slug: str) -> list[dict]:
+    """All versions of a policy, newest first."""
+    folder = ROOT / 'content' / 'policies' / slug
+    return [dict(date=f.stem, body=f.read_text(encoding='utf-8'))
+            for f in sorted(folder.glob('????-??-??.html'), reverse=True)]
+
+
+def _policy_pdf_name(slug: str, date: str) -> str | None:
+    """Site-relative filename of a version's PDF, if one was committed
+    alongside the HTML source (content/policies/<slug>/<date>.pdf)."""
+    if (ROOT / 'content' / 'policies' / slug / f'{date}.pdf').exists():
+        return f'kaizan-{slug}-{date}.pdf'
+    return None
+
+
+def _policy_pdf_button(slug: str, date: str, p: str) -> str:
+    pdf = _policy_pdf_name(slug, date)
+    if not pdf:
+        return ''
+    return (f'<div class="kz-policy-actions">'
+            f'<a class="kz-btn kz-btn-ghost kz-btn-pdf" href="{p}{slug}/{pdf}" download>'
+            f'Download PDF <span class="arr">↓</span></a></div>')
+
+
+def render_policy(pol: dict, version: dict, versions: list[dict], dated: bool) -> str:
+    """One policy page. The live page (/<slug>/, depth 1) shows the newest
+    version; dated archive pages (/<slug>/<date>/, depth 2) show each version,
+    with a banner and noindex when it is no longer the current one."""
+    depth = 2 if dated else 1
+    p = relpath(depth)
+    is_latest = version['date'] == versions[0]['date']
+
+    banner = '' if is_latest else f'''
+        <div class="kz-policy-banner">
+          You are reading an archived version of this document, last updated
+          {_policy_date(version['date'])}.
+          <a href="{p}{pol['slug']}/">Read the current version →</a>
+        </div>'''
+
+    items = []
+    for v in versions:
+        href = f'{p}{pol["slug"]}/' if v is versions[0] else f'{p}{pol["slug"]}/{v["date"]}/'
+        here = ' aria-current="page"' if v['date'] == version['date'] else ''
+        tag = ' <span class="kz-policy-tag">Current</span>' if v is versions[0] else ''
+        v_pdf = _policy_pdf_name(pol['slug'], v['date'])
+        pdf_link = (f' · <a class="kz-policy-pdf-link" href="{p}{pol["slug"]}/{v_pdf}">PDF</a>'
+                    if v_pdf else '')
+        items.append(f'<li><a href="{href}"{here}><time datetime="{v["date"]}">'
+                     f'{_policy_date(v["date"])}</time></a>{tag}{pdf_link}</li>')
+    versions_html = f'''
+        <div class="kz-policy-versions" id="version-history">
+          <h2>Version history</h2>
+          <p>Earlier versions of this document stay available, so you can see
+             exactly what applied on a given date.</p>
+          <ul>{''.join(items)}</ul>
+        </div>'''
+
+    body = f'''
+    {nav_html(depth)}
+    <article class="kz-policy">
+      <div class="kz-policy-inner">
+        <div class="kz-eyebrow">Legal</div>
+        <h1 class="kz-post-title">{E(pol['title'])}</h1>
+        <p class="kz-policy-meta">Last updated
+          <time datetime="{version['date']}">{_policy_date(version['date'])}</time>
+          · <a href="#version-history">Version history</a></p>
+        {_policy_pdf_button(pol['slug'], version['date'], p)}
+        {banner}
+        <div class="kz-policy-body">
+{version['body']}
+        </div>
+        {versions_html}
+      </div>
+    </article>
+    {footer_html(depth)}
+    '''
+    title = pol['title'] if is_latest else f'{pol["title"]} — {_policy_date(version["date"])}'
+    # Archive pages shouldn't compete with the live page in search results.
+    extra_head = '<meta name="robots" content="noindex">' if dated else ''
+    return page_head(title, depth, pol['desc'], extra_head=extra_head) + body + page_foot()
+
+
 def write(path: Path, content: str):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding='utf-8')
@@ -4601,6 +4708,31 @@ def main():
         blog.copy_post_images(post['slug'])
         write(ROOT / 'blog' / post['slug'] / 'index.html', render_blog_post(post))
     print(f'  ({len(posts)} blog post(s) built)')
+
+    # Policies — versioned legal documents from content/policies/ (see README there).
+    n_pol = 0
+    for pol in POLICIES:
+        versions = load_policy_versions(pol['slug'])
+        if not versions:
+            continue
+        write(ROOT / pol['slug'] / 'index.html',
+              render_policy(pol, versions[0], versions, dated=False))
+        n_pol += 1
+        # Only superseded versions get dated archive URLs; the current version
+        # lives at the undated URL alone.
+        for v in versions[1:]:
+            write(ROOT / pol['slug'] / v['date'] / 'index.html',
+                  render_policy(pol, v, versions, dated=True))
+            n_pol += 1
+        # Copy committed per-version PDFs next to the pages.
+        import shutil
+        for v in versions:
+            pdf = _policy_pdf_name(pol['slug'], v['date'])
+            if pdf:
+                src = ROOT / 'content' / 'policies' / pol['slug'] / f'{v["date"]}.pdf'
+                shutil.copy2(src, ROOT / pol['slug'] / pdf)
+                print(f'  wrote {pol["slug"]}/{pdf}')
+    print(f'  ({n_pol} policy version(s) built)')
 
     write_redirects()
 
