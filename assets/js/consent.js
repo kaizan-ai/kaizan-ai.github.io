@@ -57,6 +57,7 @@
     el.setAttribute('role', 'dialog');
     el.setAttribute('aria-label', 'Cookie consent');
     el.innerHTML =
+      '<div class="kz-consent-title">Cookies</div>' +
       '<p>We use optional cookies to understand how the site is used and to improve ' +
       'our marketing. We won’t set them unless you accept. See our ' +
       '<a href="/cookie-policy/">Cookie Policy</a>.</p>' +

@@ -838,14 +838,17 @@ def relpath(depth: int) -> str:
 
 
 def asset_v(rel: str) -> str:
-    """Cache-busting query string based on the asset's mtime.
+    """Cache-busting query string based on the asset's content hash.
 
-    Returns "?v=<int>" if the file exists, or "" otherwise. Appended to CSS
-    and JS hrefs so a fresh build invalidates browser caches automatically.
+    Returns "?v=<hash8>" if the file exists, or "" otherwise. Content-based
+    (not mtime) so the value is identical across rebuilds and CI checkouts,
+    and changes exactly when the asset itself changes — browsers and the CDN
+    refetch only then.
     """
+    import hashlib
     f = ROOT / rel
     try:
-        return f'?v={int(f.stat().st_mtime)}'
+        return f'?v={hashlib.md5(f.read_bytes()).hexdigest()[:8]}'
     except OSError:
         return ''
 
@@ -853,12 +856,13 @@ def asset_v(rel: str) -> str:
 def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
     p = relpath(depth)
     desc = description or 'Kaizan — client super intelligence for professional services firms.'
-    # Cache-busting query strings deliberately disabled — easier on the CDN.
-    # If you need to force a refresh after deploying CSS/JS, set these to
-    # asset_v('assets/css/tokens.css') etc.
-    tokens_v = ''
-    site_css_v = ''
-    site_js_v = ''
+    # Content-hash cache busting: the query changes only when the file does,
+    # so caches stay warm between deploys but refresh immediately on change.
+    # (Previously disabled, which left visitors on stale CSS/JS after deploys.)
+    tokens_v = asset_v('assets/css/tokens.css')
+    site_css_v = asset_v('assets/css/site.css')
+    site_js_v = asset_v('assets/js/site.js')
+    consent_js_v = asset_v('assets/js/consent.js')
     return dedent(f'''\
         <!doctype html>
         <html lang="en">
@@ -880,7 +884,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         {extra_head}
         <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
              cookie consent — see assets/js/consent.js -->
-        <script defer src="{p}assets/js/consent.js"></script>
+        <script defer src="{p}assets/js/consent.js{consent_js_v}"></script>
         </head>
         <body>
         <div class="kz-page">
@@ -986,7 +990,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
             items_html.append(f'<a href="{E(href)}"{cls}>{E(label)}</a>')
 
     return f'''<header class="kz-nav" role="banner">
-      <a class="kz-nav-logo" href="{p}index.html">
+      <a class="kz-nav-logo" href="/">
         <img class="icon" src="{p}assets/img/kaizan-icon.png" alt="">
         <img class="word" src="{p}assets/img/kaizan-logo.png" alt="Kaizan">
       </a>
@@ -1031,7 +1035,7 @@ def footer_html(depth: int) -> str:
     return f'''<footer class="kz-footer">
       <div class="kz-footer-grid">
         <div class="kz-footer-brand logo-light">
-          <a class="kz-nav-logo" href="{p}index.html">
+          <a class="kz-nav-logo" href="/">
             <img class="icon" src="{p}assets/img/kaizan-icon.png" alt="">
             <img class="word" src="{p}assets/img/kaizan-logo.png" alt="Kaizan">
           </a>
@@ -2818,7 +2822,7 @@ def render_404() -> str:
       <div class="head">That page got distracted by a client.</div>
       <div class="sub">The link you followed isn&rsquo;t here. Try the homepage, or one of the main sections below.</div>
       <div class="kz-flex" style="gap:12px;margin-top:14px;">
-        <a class="kz-btn kz-btn-yellow" href="index.html">Back to home</a>
+        <a class="kz-btn kz-btn-yellow" href="/">Back to home</a>
         <a class="kz-btn kz-btn-ghost" href="product/">Product</a>
         <a class="kz-btn kz-btn-ghost" href="customers/">Clients</a>
         <a class="kz-btn kz-btn-ghost" href="about/">About</a>
