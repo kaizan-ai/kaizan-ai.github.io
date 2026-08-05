@@ -67,6 +67,22 @@ button { font-family: inherit; }
 .kz-nav-links a:hover, .kz-nav-links a.is-active { opacity: 1; }
 .kz-nav-links a.is-active { font-weight: 600; }
 .kz-nav-cta { display: flex; gap: 10px; align-items: center; }
+.kz-nav-cta .kz-btn { white-space: nowrap; }
+.kz-nav-logo .icon, .kz-nav-logo .word { flex: none; }
+
+/* Mid-width squeeze: the full nav needs ~1300px; the burger menu only takes
+   over at 1024px. Tighten progressively in between so nothing overlaps. */
+@media (max-width: 1320px) {
+  .kz-nav { padding: 18px 28px; font-size: 13.5px; }
+  .kz-nav-links { gap: 18px; }
+  .kz-nav-logo { gap: 10px; }
+  .kz-nav-logo .icon { height: 40px; width: 40px; }
+  .kz-nav-logo .word { height: 26px; }
+}
+@media (max-width: 1180px) and (min-width: 1025px) {
+  .kz-nav-links { gap: 13px; }
+  .kz-nav-cta a.kz-btn-ghost { display: none; }
+}
 
 /* mega menu (Product) */
 .kz-mega-trigger { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
