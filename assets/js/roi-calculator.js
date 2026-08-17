@@ -22,11 +22,14 @@
   var DEMO_URL_ABS = 'https://kaizan.ai/demo/';
 
   // Real Kaizan pricing — annual (GBP), unlimited users.
+  // Updated for the approved retiering (Aug 2026): Growth shrinks to "up to 50"
+  // at a new price, Scale takes over Growth's old "up to 75 @ £8,995" slot,
+  // Enterprise now starts at 75+ (was 150+).
   var TIERS = [
     { name: 'Pilot',      maxClients: 10,       price: 2995 * 12 },
     { name: 'Team',       maxClients: 30,       price: 4950 * 12 },
-    { name: 'Growth',     maxClients: 75,       price: 8995 * 12 },
-    { name: 'Scale',      maxClients: 150,      price: 14950 * 12 },
+    { name: 'Growth',     maxClients: 50,       price: 6950 * 12 },
+    { name: 'Scale',      maxClients: 75,       price: 8995 * 12 },
     { name: 'Enterprise', maxClients: Infinity, price: null, custom: true }
   ];
 
@@ -140,7 +143,7 @@
       costEl.innerHTML =
         '<div><div class="kzroi-cost-label">Kaizan cost · Enterprise tier</div>' +
         '<div class="kzroi-cost-val">Custom</div></div>' +
-        '<div class="kzroi-bar-note is-custom">150+ clients — Enterprise pricing is bespoke. Book a demo for a tailored figure. Unlimited users included as standard.</div>';
+        '<div class="kzroi-bar-note is-custom">75+ clients — Enterprise pricing is bespoke. Book a demo for a tailored figure. Unlimited users included as standard.</div>';
     } else {
       var costPer = state.clients > 0 ? (r.tierPrice / 12) / state.clients : 0;
       costEl.innerHTML =
@@ -190,13 +193,14 @@
     // footnote
     var foot;
     if (r.isCustom) {
-      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost — Enterprise (150+ clients) pricing is bespoke; book a demo for your figure. ';
+      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost — Enterprise (75+ clients) pricing is bespoke; book a demo for your figure. ';
     } else {
       foot = 'Net gain = ' + gbp0(r.gross) + ' benefit − ' + gbp0(r.tierPrice) + ' ' + r.tier.name + ' (annual, unlimited users). ';
     }
     foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool; capacity on ' + ADMIN_HRS +
       ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr; 1 FTE = ' + num(FTE_HOURS) +
-      ' hrs. Satisfaction shown directionally, not monetised.';
+      ' hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count — see ' +
+      '<a href="/pricing/" target="_blank" rel="noopener">kaizan.ai/pricing</a>.';
     q('[data-roi="footnote"]').innerHTML = foot;
 
     // keep the hidden lead summary in sync
