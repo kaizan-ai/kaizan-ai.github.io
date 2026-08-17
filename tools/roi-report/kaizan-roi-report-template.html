@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--
+  Kaizan · ROI breakdown — PDF report TEMPLATE
+  ============================================
+  This is the document that gets emailed to a prospect after they submit the
+  calculator's "Email me the breakdown" form. It is styled for A4 PDF output
+  (render with Puppeteer / Playwright `page.pdf({ format: 'A4', printBackground: true })`).
+
+  HOW IT'S USED
+    The serverless function recomputes the figures from the prospect's raw inputs
+    (same model as the calculator), then replaces the {{TOKENS}} below and renders
+    the result to PDF. Tokens are plain mustache-style placeholders — swap with any
+    templating, or a simple string .replace().
+
+  TOKENS (all pre-formatted strings unless noted)
+    Header / meta
+      {{PROSPECT_NAME}}      e.g. "Sarah"               (falls back to "there")
+      {{COMPANY}}           e.g. "Acme Agency"          (optional; hide block if empty)
+      {{DATE}}              e.g. "23 June 2026"
+    Headline
+      {{HEADLINE_LABEL}}    "Net annual gain with Kaizan" | "Total annual benefit with Kaizan"
+      {{NET}}               e.g. "£318,300"             (net, or gross if Enterprise/custom)
+      {{RETURN}}            e.g. "3.9×"
+      {{PAYBACK}}           e.g. "3"                    (months, number only)
+      {{FTE}}               e.g. "+2.9"
+    Cost row
+      {{TIER_NAME}}         e.g. "Growth"
+      {{COST_MONTHLY}}      e.g. "£8,995"               (per month)
+      {{COST_PER_CLIENT}}   e.g. "£225"                 (per client / month)
+    Portfolio recap
+      {{TOTAL_HEADCOUNT}}   e.g. "50"
+      {{TEAM}}              e.g. "20"
+      {{CLIENTS}}           e.g. "40"
+      {{REV_PER}}           e.g. "£60,000"
+      {{CHURN}}             e.g. "15%"
+      {{MODE}}              "Conservative" | "Expected"
+      {{PORTFOLIO_VALUE}}   e.g. "£2.4M"
+    Composition + areas
+      {{GROSS}}             e.g. "£426,240"
+      {{SEG_RETAINED_PCT}}  e.g. "38"   (number only, % width)
+      {{SEG_UPSOLD_PCT}}    e.g. "27"
+      {{SEG_CAPACITY_PCT}}  e.g. "35"
+      {{REV_RETAINED}}      e.g. "£162,000"
+      {{REV_UPSOLD}}        e.g. "£115,200"
+      {{CAPACITY}}          e.g. "£149,040"
+      {{AT_RISK}}           e.g. "£360,000"
+      {{ADMIN_HOURS}}       e.g. "8,280"
+    Methodology (mode-dependent numbers)
+      {{M_CHURN}}           e.g. "45"
+      {{M_UPSELL}}          e.g. "60"
+      {{M_CAPACITY}}        e.g. "60"
+    Links
+      {{DEMO_URL}}          e.g. "https://calendar.app.google/Eae719Ejh3xxN3Lg8"
+
+  ENTERPRISE / CUSTOM (75+ clients) variant:
+    Set {{HEADLINE_LABEL}} to "Total annual benefit with Kaizan", put the gross in
+    {{NET}}, and the function should hide the Return/Payback metrics and the cost row
+    (elements tagged data-hide-if-custom) and show the .report-custom-note block.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kaizan · Your ROI breakdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #FFB900;
+    --gold-dark: #946200;
+    --paper: #FFFBF0;
+    --panel: #F6F2E7;
+    --black: #141210;
+    --ink: #1C1917;
+    --secondary: #57534E;
+    --muted: #6B6560;
+    --faint: rgba(0,0,0,0.40);
+    --hair: rgba(0,0,0,0.10);
+    --border: rgba(0,0,0,0.13);
+    --green-d: #2E6F4E;
+    --green-m: #7BAE92;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'SF Mono', ui-monospace, 'Menlo', 'Consolas', monospace;
+  }
+
+  @page { size: A4; margin: 0; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    background: #fff;
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 0 0 24mm;
+    position: relative;
+  }
+  .page + .page { page-break-before: always; }
+  .pad { padding: 0 16mm; }
+
+  /* ── header band ─────────────────────────────────────────────── */
+  .report-head {
+    background: var(--black);
+    color: #fff;
+    padding: 22mm 16mm 16mm;
+  }
+  .report-logo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+  .report-logo .mark { width: 30px; height: 30px; border-radius: 7px; background: var(--gold); display: flex; align-items: center; justify-content: center; }
+  .report-logo .word { font-family: 'IBM Plex Sans', var(--sans); font-weight: 500; font-size: 19px; letter-spacing: 0.16em; color: #fff; }
+  .report-kicker { font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+  .report-title { font-family: 'IBM Plex Sans', var(--sans); font-weight: 400; font-size: 34px; letter-spacing: -0.03em; line-height: 1.1; color: #fff; }
+  .report-meta { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .report-meta strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+  /* ── headline result ─────────────────────────────────────────── */
+  /* Full-bleed: breaks out of .pad's 16mm side padding so it spans the
+     same width as the header band above it, then re-pads internally so
+     its content stays aligned with the rest of the report. */
+  .report-headline {
+    background: var(--black);
+    padding: 20px 16mm 22px;
+    margin: 0 -16mm;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .rh-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; }
+  .rh-label { font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 10px; }
+  .rh-figrow { display: flex; align-items: baseline; gap: 6px; }
+  .rh-fig { font-family: var(--mono); font-size: 44px; font-weight: 800; letter-spacing: -0.03em; color: #fff; line-height: 0.95; }
+  .rh-unit { font-family: var(--mono); font-size: 15px; color: rgba(255,255,255,0.45); }
+  .report-custom-note { font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 8px; display: none; }
+  .rh-metrics { display: flex; gap: 30px; }
+  .rh-metric-label { font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 6px; }
+  .rh-metric-row { display: flex; align-items: baseline; gap: 4px; }
+  .rh-metric-val { font-family: var(--mono); font-size: 28px; font-weight: 700; color: #fff; line-height: 1; }
+  .rh-metric-unit { font-family: var(--mono); font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.5); }
+  .rh-bottom { display: flex; flex-wrap: wrap; gap: 12px 36px; align-items: flex-end; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .rh-cost-label { font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); font-weight: 600; margin-bottom: 5px; }
+  .rh-cost-row { display: flex; align-items: baseline; gap: 4px; }
+  .rh-cost-val { font-family: var(--mono); font-size: 17px; font-weight: 700; color: #fff; }
+  .rh-cost-unit { font-family: var(--mono); font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); }
+  .rh-note { margin-left: auto; font-size: 10.5px; color: rgba(255,255,255,0.45); line-height: 1.4; max-width: 210px; text-align: right; }
+
+  /* ── proof point ─────────────────────────────────────────────── */
+  .report-proof { display: flex; align-items: center; gap: 8px; margin-top: 14px; font-size: 11.5px; color: var(--secondary); }
+  .report-proof .star { color: var(--gold-dark); font-weight: 700; }
+  .report-proof strong { color: var(--ink); font-weight: 700; }
+
+  /* ── section heading ─────────────────────────────────────────── */
+  .sec-h { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); font-weight: 700; margin: 24px 0 12px; }
+
+  /* ── portfolio recap ─────────────────────────────────────────── */
+  .recap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .recap-item { background: var(--panel); border: 1px solid var(--hair); border-radius: 12px; padding: 12px 14px; }
+  .recap-label { font-size: 10px; color: var(--muted); margin-bottom: 5px; line-height: 1.3; }
+  .recap-val { font-family: var(--mono); font-size: 18px; font-weight: 700; color: var(--ink); }
+  .recap-val .small { font-size: 11px; color: var(--faint); font-weight: 500; }
+
+  /* ── composition ─────────────────────────────────────────────── */
+  .comp { background: var(--panel); border: 1px solid var(--hair); border-radius: 14px; padding: 18px 20px; }
+  .comp-title { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 13px; }
+  .comp-title .mono { font-family: var(--mono); font-weight: 700; }
+  .comp-track { display: flex; width: 100%; height: 13px; border-radius: 999px; overflow: hidden; background: rgba(0,0,0,0.06); }
+  .comp-seg { height: 100%; }
+  .comp-legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 13px; }
+  .comp-li { display: flex; align-items: center; gap: 8px; }
+  .comp-dot { width: 10px; height: 10px; border-radius: 3px; }
+  .comp-key { font-size: 12px; color: var(--secondary); }
+  .comp-val { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--ink); }
+
+  /* ── area cards ──────────────────────────────────────────────── */
+  .areas { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .acard { background: var(--panel); border: 1px solid var(--hair); border-radius: 14px; padding: 16px 16px 14px; }
+  .acard-kicker { font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-dark); font-weight: 700; margin-bottom: 8px; }
+  .acard-fig { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--ink); line-height: 1; }
+  .acard-sub { font-size: 10.5px; color: var(--muted); margin-top: 4px; }
+  .acard-title { font-size: 12.5px; font-weight: 700; color: var(--ink); margin: 10px 0 8px; letter-spacing: -0.01em; }
+  .acard-desc { font-size: 11px; line-height: 1.45; color: rgba(0,0,0,0.66); }
+
+  /* ── methodology ─────────────────────────────────────────────── */
+  .method { background: #fff; border: 1px solid var(--hair); border-radius: 12px; padding: 16px 18px; }
+  .method p { font-size: 11px; color: var(--secondary); line-height: 1.55; margin-bottom: 8px; }
+  .method p:last-child { margin-bottom: 0; }
+  .method strong { color: var(--ink); }
+
+  /* ── CTA band ────────────────────────────────────────────────── */
+  .report-cta { background: var(--black); border-radius: 16px; padding: 26px 28px; margin-top: 22px; text-align: center; }
+  .report-cta h3 { font-family: 'IBM Plex Sans', var(--sans); font-weight: 400; color: #fff; font-size: 26px; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 8px; }
+  .report-cta p { color: rgba(255,255,255,0.6); font-size: 12.5px; max-width: 440px; margin: 0 auto 16px; line-height: 1.5; }
+  .report-btn { display: inline-block; background: var(--gold); color: var(--black); border-radius: 999px; padding: 11px 26px; font-size: 13px; font-weight: 600; text-decoration: none; }
+
+  /* ── footnote ────────────────────────────────────────────────── */
+  .report-foot { margin-top: 16px; font-size: 9.5px; color: var(--faint); line-height: 1.55; text-align: center; }
+  .report-foot a { color: var(--gold-dark); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- header band -->
+  <div class="report-head">
+    <div class="report-logo">
+      <span class="mark">
+        <svg width="20" height="20" viewBox="0 0 512 512" aria-label="Kaizan">
+          <polyline points="80,452 256,96 432,452" fill="none" stroke="#141210" stroke-width="94" stroke-linecap="round" stroke-linejoin="round"></polyline>
+        </svg>
+      </span>
+      <span class="word">KAIZAN</span>
+    </div>
+    <div class="report-kicker">ROI breakdown</div>
+    <div class="report-title">What Kaizan returns on the portfolio you run today.</div>
+    <div class="report-meta">
+      Prepared for <strong>{{PROSPECT_NAME}}</strong>, <strong>{{COMPANY}}</strong> &nbsp;·&nbsp; {{DATE}}<br>
+      Modelled in <strong>{{MODE}}</strong> mode from the figures you entered.
+    </div>
+  </div>
+
+  <div class="pad">
+    <!-- headline result -->
+    <div class="report-headline">
+      <div class="rh-top">
+        <div>
+          <div class="rh-label">{{HEADLINE_LABEL}}</div>
+          <div class="rh-figrow">
+            <span class="rh-fig">{{NET}}</span>
+            <span class="rh-unit">/ yr</span>
+          </div>
+          <div class="report-custom-note">before platform cost — Enterprise pricing is bespoke</div>
+        </div>
+        <div class="rh-metrics">
+          <div data-hide-if-custom>
+            <div class="rh-metric-label">Return</div>
+            <div class="rh-metric-row"><span class="rh-metric-val">{{RETURN}}</span></div>
+          </div>
+          <div data-hide-if-custom>
+            <div class="rh-metric-label">Payback</div>
+            <div class="rh-metric-row"><span class="rh-metric-val">{{PAYBACK}}</span><span class="rh-metric-unit">mo</span></div>
+          </div>
+          <div>
+            <div class="rh-metric-label">Capacity</div>
+            <div class="rh-metric-row"><span class="rh-metric-val">{{FTE}}</span><span class="rh-metric-unit">FTE</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="rh-bottom" data-hide-if-custom>
+        <div>
+          <div class="rh-cost-label">Kaizan cost · {{TIER_NAME}} tier</div>
+          <div class="rh-cost-row"><span class="rh-cost-val">{{COST_MONTHLY}}</span><span class="rh-cost-unit">/ mo</span></div>
+        </div>
+        <div>
+          <div class="rh-cost-label">Cost per client</div>
+          <div class="rh-cost-row"><span class="rh-cost-val">{{COST_PER_CLIENT}}</span><span class="rh-cost-unit">/ mo</span></div>
+        </div>
+        <div class="rh-note">Unlimited users — your whole team of {{TOTAL_HEADCOUNT}} on Kaizan at no extra cost.</div>
+      </div>
+    </div>
+
+    <!-- proof point -->
+    <div class="report-proof">
+      <span class="star">★</span>
+      <span>Modelled on Kaizan clients seeing <strong>21%+ average revenue growth per client</strong>.</span>
+    </div>
+
+    <!-- portfolio recap -->
+    <div class="sec-h">The portfolio you entered</div>
+    <div class="recap">
+      <div class="recap-item"><div class="recap-label">Total company headcount</div><div class="recap-val">{{TOTAL_HEADCOUNT}}</div></div>
+      <div class="recap-item"><div class="recap-label">Client delivery team size</div><div class="recap-val">{{TEAM}}</div></div>
+      <div class="recap-item"><div class="recap-label">Number of clients</div><div class="recap-val">{{CLIENTS}}</div></div>
+      <div class="recap-item"><div class="recap-label">Avg annual revenue / client</div><div class="recap-val">{{REV_PER}}</div></div>
+      <div class="recap-item"><div class="recap-label">Annual client attrition</div><div class="recap-val">{{CHURN}}</div></div>
+      <div class="recap-item"><div class="recap-label">Client portfolio value</div><div class="recap-val">{{PORTFOLIO_VALUE}} <span class="small">/ yr</span></div></div>
+    </div>
+
+    <!-- composition -->
+    <div class="sec-h">Where the benefit comes from</div>
+    <div class="comp">
+      <div class="comp-title">Where the <span class="mono">{{GROSS}}</span> of annual benefit comes from</div>
+      <div class="comp-track">
+        <div class="comp-seg" style="width:{{SEG_RETAINED_PCT}}%;background:#2E6F4E"></div>
+        <div class="comp-seg" style="width:{{SEG_UPSOLD_PCT}}%;background:#7BAE92"></div>
+        <div class="comp-seg" style="width:{{SEG_CAPACITY_PCT}}%;background:#FFB900"></div>
+      </div>
+      <div class="comp-legend">
+        <div class="comp-li"><span class="comp-dot" style="background:#2E6F4E"></span><span class="comp-key">Revenue retained</span><span class="comp-val">{{REV_RETAINED}}</span></div>
+        <div class="comp-li"><span class="comp-dot" style="background:#7BAE92"></span><span class="comp-key">Revenue upsold</span><span class="comp-val">{{REV_UPSOLD}}</span></div>
+        <div class="comp-li"><span class="comp-dot" style="background:#FFB900"></span><span class="comp-key">Capacity (£)</span><span class="comp-val">{{CAPACITY}}</span></div>
+      </div>
+    </div>
+
+    <!-- area cards -->
+    <div class="areas">
+      <div class="acard">
+        <div class="acard-kicker">Retention · AI Agents</div>
+        <div class="acard-fig">{{REV_RETAINED}}</div>
+        <div class="acard-title">Revenue protected from churn</div>
+        <div class="acard-desc">{{AT_RISK}} of your portfolio is at risk each year. Every conversation is scored against CARE, so risks are flagged before clients go quiet — with re-engagement drafted and ready to send.</div>
+      </div>
+      <div class="acard">
+        <div class="acard-kicker">White space · AI Agents</div>
+        <div class="acard-fig">{{REV_UPSOLD}}</div>
+        <div class="acard-title">Revenue expanded through upsell</div>
+        <div class="acard-desc">Buying signals are spotted in every client conversation and matched to each client's stated objectives. The most growth you'll get is from clients you already have.</div>
+      </div>
+      <div class="acard">
+        <div class="acard-kicker">Efficiency · AI Agents</div>
+        <div class="acard-fig">{{CAPACITY}}</div>
+        <div class="acard-sub">{{FTE}} FTE</div>
+        <div class="acard-title">Capacity recovered from admin</div>
+        <div class="acard-desc">{{ADMIN_HOURS}} admin hours sit across your team each year. Notes, follow-ups and CRM updates are handled automatically, so time goes straight back into client-facing work.</div>
+      </div>
+    </div>
+
+    <!-- methodology -->
+    <div class="sec-h">How we calculate this</div>
+    <div class="method">
+      <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals — {{M_CHURN}}% in {{MODE}} mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
+      <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count {{M_UPSELL}}% — opportunities surfaced from clients you already have.</p>
+      <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which {{M_CAPACITY}}% is handed back, across 46 working weeks. Valued at £30/hr loaded cost — UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
+      <p><strong>Satisfaction</strong> is shown directionally and never monetised — NPS typically rises over the first 1–2 quarters. <strong>Pricing</strong> is set automatically from your client count; users are unlimited.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="report-cta">
+      <h3>See your clients, clearly.</h3>
+      <p>These are your numbers. The next step is seeing it on your own portfolio — book a short demo and we'll walk through it together.</p>
+      <a class="report-btn" href="{{DEMO_URL}}">Book a demo →</a>
+    </div>
+
+    <!-- footnote -->
+    <div class="report-foot">
+      Figures are an estimate based on the inputs you provided and Kaizan's benchmark model. Upsell modelled on an 8% addressable pool; capacity on 9 admin hrs/person/week × 46 weeks at £30/hr; 1 FTE = 1,725 hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count — see <a href="https://kaizan.ai/pricing">kaizan.ai/pricing</a>.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

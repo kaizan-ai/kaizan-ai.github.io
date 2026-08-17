@@ -3009,8 +3009,7 @@ def render_integrations() -> str:
 PRICING_TIERS = [
     dict(name='Pilot', badge='PILOT', note='First 60 days',
          clients='Up to ', clients_bold='10 clients',
-         price='£2,995', price_label='per month',
-         per_client='Equivalent to £300 / client pm',
+         price='From £300', price_label='per client / mo — billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING YOU GET',
          bullets=[
@@ -3023,37 +3022,33 @@ PRICING_TIERS = [
              ('Dedicated Account Manager', ''),
          ]),
     dict(name='Team', clients='Up to ', clients_bold='30 clients',
-         price='£4,950', price_label='per month',
-         per_client='Equivalent to £165 / client pm',
+         price='From £165', price_label='per client / mo — billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING IN PILOT, PLUS',
          bullets=[
              ('3× the portfolio', ' — up to 30 accounts'),
          ]),
-    dict(name='Growth', sweet=True, badge='SWEET SPOT', clients='Up to ', clients_bold='75 clients',
-         price='£8,995', price_label='per month',
-         per_client='Equivalent to £120 / client pm',
+    dict(name='Growth', sweet=True, badge='SWEET SPOT', clients='Up to ', clients_bold='50 clients',
+         price='From £139', price_label='per client / mo — billed as one flat monthly plan',
          cta='Book a demo', cta_solid=True,
          eyebrow='EVERYTHING IN TEAM, PLUS',
          bullets=[
-             ('2.5× the portfolio', ' — up to 75 accounts'),
+             ('Bigger portfolio', ' — up to 50 accounts'),
              ('Guided onboarding', ' with CARE calibration'),
              ('Priority support', ' & quarterly value reviews'),
          ]),
-    dict(name='Scale', clients='Up to ', clients_bold='150 clients',
-         price='£14,950', price_label='per month',
-         per_client='Equivalent to £100 / client pm',
+    dict(name='Scale', clients='Up to ', clients_bold='75 clients',
+         price='From £120', price_label='per client / mo — billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING IN GROWTH, PLUS',
          bullets=[
-             ('2× the portfolio', ' — up to 150 accounts'),
+             ('1.5× the portfolio', ' — up to 75 accounts'),
              ('Multi-team segmentation', ' across practices'),
              ('Custom AI Helpers', ' — talk to us for pricing'),
          ]),
-    dict(name='Enterprise', clients='', clients_bold='150+ clients',
+    dict(name='Enterprise', clients='', clients_bold='75+ clients',
          clients_trail=' & custom work',
-         price='Let’s talk', price_label='Custom annual',
-         per_client='Built around your network',
+         price='Custom', price_label='Per-client rate negotiated to your portfolio',
          cta='Talk to us', cta_solid=False,
          eyebrow='EVERYTHING IN SCALE, PLUS',
          bullets=[
@@ -3077,6 +3072,7 @@ def tier_card(t: dict) -> str:
     cta_cls = 'cta is-solid' if t.get('cta_solid') else 'cta'
     demo = '/demo/'
     cta = f'<a class="{cta_cls}" href="{demo}" target="_blank" rel="noopener">{E(t["cta"])}</a>' if t.get('cta') else ''
+    per = f'<div class="per">{E(t["per_client"])}</div>' if t.get('per_client') else ''
     return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
       {badge}
       <div class="name">{E(t["name"])}</div>
@@ -3085,7 +3081,7 @@ def tier_card(t: dict) -> str:
       <div class="price">
         <div class="line">{E(t["price"])}</div>
         <div class="label">{E(t["price_label"])}</div>
-        <div class="per">{E(t["per_client"])}</div>
+        {per}
       </div>
       {cta}
       <div class="eyebrow">{E(t["eyebrow"])}</div>
