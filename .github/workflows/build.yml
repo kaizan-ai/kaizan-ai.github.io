@@ -1,6 +1,6 @@
 name: Build site
 
-# Regenerate the static site whenever source changes land on main, and commit the
+# Regenerate the static site whenever source changes land on master, and commit the
 # generated HTML back. This lets non-technical authors publish a post by merging a
 # content-only PR — no one has to run `python3 tools/build.py` locally.
 #
@@ -10,7 +10,7 @@ name: Build site
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'content/**'
       - 'tools/**'

@@ -16,7 +16,7 @@
 #   - The target repo is cloned to /Users/prav/Kaizan/kaizan-ai.github.io
 #       git clone git@github.com:kaizan-ai/kaizan-ai.github.io.git /Users/prav/Kaizan/kaizan-ai.github.io
 #   - Your SSH key is paired with GitHub (test: ssh -T git@github.com)
-#   - In the GitHub repo settings, Pages → Source = main / (root)
+#   - In the GitHub repo settings, Pages → Source = master / (root)
 
 set -euo pipefail
 

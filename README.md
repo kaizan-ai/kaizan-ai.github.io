@@ -50,10 +50,10 @@ Disabled pages (e.g. `careers/`) are removed on each build via `_remove_page()` 
 1. Add a remote and push:
    ```
    git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
+   git push -u origin master
    ```
 
-2. In the repo on GitHub: **Settings → Pages → Source:** select **Deploy from a branch**, branch `main`, folder `/ (root)`. Save. The site will be live at `https://<you>.github.io/<repo>/` within a minute or two.
+2. In the repo on GitHub: **Settings → Pages → Source:** select **Deploy from a branch**, branch `master`, folder `/ (root)`. Save. The site will be live at `https://<you>.github.io/<repo>/` within a minute or two.
 
 3. (Optional) Custom domain: add a `CNAME` file at the repo root containing your domain (e.g. `kaizan.ai`), then point your DNS at `<you>.github.io`. GitHub will provision HTTPS automatically.
 
@@ -115,7 +115,7 @@ images to `assets/img/blog/<slug>/`, and writes `/blog/index.html` + `/blog/<slu
   relative paths to compute.
 - **Non-technical authors:** see `content/blog/AUTHORING.md` (write with claude.ai + the
   GitHub connector → PR). Locally, `/new-blog-post` in Claude Code does the same.
-- Posts publish automatically when a content PR is merged to `main` (the
+- Posts publish automatically when a content PR is merged to `master` (the
   `.github/workflows/build.yml` Action rebuilds and commits the site).
 
 ### Migrating from Medium

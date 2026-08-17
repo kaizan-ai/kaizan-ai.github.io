@@ -33,7 +33,7 @@ Requires Python 3.9+ and no pip installs (stdlib only; `tools/markdown2.py` is v
   in Claude Code).
 
 ## Working conventions
-- **Open a PR; do not push to `main`** for content. Merges to `main` trigger the CI build
+- **Open a PR; do not push to `master`** for content. Merges to `master` trigger the CI build
   (`.github/workflows/build.yml`) which regenerates the site — so content PRs contain only
   source (`content/**`), not generated HTML.
 - Don't run `tools/deploy.sh` from an authoring flow (it's a separate mirror-and-push step).

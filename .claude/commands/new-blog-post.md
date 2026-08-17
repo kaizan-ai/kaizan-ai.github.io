@@ -14,7 +14,7 @@ non-technical.
    (one of: POV, PRODUCT, FIELD NOTES, BENCHMARK, INTERVIEW, CUSTOMER STORY), and a
    one-sentence excerpt. Derive `slug` = kebab-cased title; confirm it with the user.
 
-2. **Branch.** `git checkout -b blog/<slug>` — never commit to `main`.
+2. **Branch.** `git checkout -b blog/<slug>` — never commit to `master`.
 
 3. **Write the post.** Create `content/blog/<slug>/index.md` with valid frontmatter
    (set `draft: true`, today's date as `YYYY-MM-DD` unless told otherwise) and the body
@@ -34,5 +34,5 @@ non-technical.
    (facts checked, links work, excerpt set, images have alt text). **Stop after the PR.**
 
 Guardrails: keep `draft: true` (an editor flips it on merge); PR only — never push to
-`main`, never run `tools/deploy.sh`. The post goes live automatically when the PR is
+`master`, never run `tools/deploy.sh`. The post goes live automatically when the PR is
 merged (the build workflow regenerates the site).
