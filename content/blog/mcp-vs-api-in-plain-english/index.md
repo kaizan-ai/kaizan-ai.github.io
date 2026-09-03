@@ -4,7 +4,7 @@ date: 2026-09-03
 category: POV
 excerpt: MCP vs API, explained without the tech jargon — why the difference decides whether your AI is a shortcut or a second brain for your client relationships.
 cover: cover.png
-draft: true
+draft: false
 tags: [mcp, api, artificial-intelligence, client-intelligence, ai-for-cavemen]
 ---
 
