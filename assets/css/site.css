@@ -452,6 +452,9 @@ button { font-family: inherit; }
   to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
+  /* No auto-scroll for reduced-motion users — but let them scroll the band
+     by hand so every client logo is still reachable (not just the first row). */
+  .kz-marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .kz-marquee-track { animation-duration: 0s; animation: none; }
 }
 
