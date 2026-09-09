@@ -97,9 +97,9 @@ CLIENT_LOGOS = [
     dict(name='PASHN Media Agency',       file='pashn-media-agency.svg'),
     dict(name='Viola',                    file='viola.png'),
     dict(name='Webtopia',                 file='webtopia.png'),
-    dict(name='Other.',                   file='other.svg'),
-    dict(name='Acceleration Partners',    file='acceleration-partners.svg'),
-    dict(name='Transmission',             file='transmission.svg'),
+    dict(name='Other.',                   file='other.png'),
+    dict(name='Acceleration Partners',    file='acceleration-partners.png'),
+    dict(name='Transmission',             file='transmission.png'),
 ]
 INTEGRATIONS = ['Salesforce', 'Gmail', 'Slack', 'Google Calendar',
                 'Teams', 'Zoom', 'Outlook', 'Notion', 'Asana']
