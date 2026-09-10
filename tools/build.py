@@ -85,11 +85,11 @@ CLIENT_LOGOS = [
     dict(name='Tradedoubler',             file='tradedoubler.png'),
     dict(name='Open Partners',            file='open-partners.svg'),
     dict(name='Verkeer',                  file='verkeer.png'),
-    dict(name='AMS',                      file='ams.png', detail=True),
+    dict(name='AMS',                      file='ams.png', detail=True, big=True),
     dict(name='Assembly Global',          file='assembly-global.svg'),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
-    dict(name='Gifta',                    file='gifta.png'),
+    dict(name='Gifta',                    file='gifta.png', detail=True),
     dict(name='Gravity Global',           file='gravity-global.svg'),
     dict(name='Kohort',                   file='kohort.png'),
     dict(name='Marketing Architects',     file='marketing-architects.png'),
@@ -1080,7 +1080,7 @@ def marquee_html(items, depth: int = 0):
             # because they're layered marks that read as a blob when flattened;
             # they also render a touch larger so the detail is readable.
             img_cls = ' is-detail' if x.get('detail') else ''
-            span_cls = ' kz-marquee-logo--lg' if x.get('detail') else ''
+            span_cls = ' kz-marquee-logo--lg' if x.get('big') else ''
             return (f'<span class="kz-marquee-logo{span_cls}">'
                     f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
                     f'</span>')
