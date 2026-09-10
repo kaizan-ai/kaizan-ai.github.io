@@ -85,16 +85,16 @@ CLIENT_LOGOS = [
     dict(name='Tradedoubler',             file='tradedoubler.png'),
     dict(name='Open Partners',            file='open-partners.svg'),
     dict(name='Verkeer',                  file='verkeer.png'),
-    dict(name='AMS',                      file='ams.png', detail=True, big=True),
+    dict(name='AMS',                      file='ams.png', treat='detail', big=True),
     dict(name='Assembly Global',          file='assembly-global.svg'),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
-    dict(name='Gifta',                    file='gifta.png', detail=True, big=True),
+    dict(name='Gifta',                    file='gifta.png', treat='soft', big=True),
     dict(name='Gravity Global',           file='gravity-global.svg'),
     dict(name='Kohort',                   file='kohort.png'),
     dict(name='Marketing Architects',     file='marketing-architects.png'),
     dict(name='Medialab',                 file='medialab.png'),
-    dict(name='PASHN Media Agency',       file='pashn-media-agency.svg'),
+    dict(name='PASHN Media Agency',       file='pashn-media-agency.svg', treat='light'),
     dict(name='Viola',                    file='viola.png'),
     dict(name='Webtopia',                 file='webtopia.png'),
     dict(name='Other.',                   file='other.png'),
@@ -1079,7 +1079,8 @@ def marquee_html(items, depth: int = 0):
             # `detail` logos keep their grey shades (skip the black silhouette)
             # because they're layered marks that read as a blob when flattened;
             # they also render a touch larger so the detail is readable.
-            img_cls = ' is-detail' if x.get('detail') else ''
+            treat = x.get('treat')  # 'detail' (AMS mark) | 'soft' (Gifta badge) | 'light' (heavy wordmarks)
+            img_cls = f' is-{treat}' if treat else ''
             span_cls = ' kz-marquee-logo--lg' if x.get('big') else ''
             return (f'<span class="kz-marquee-logo{span_cls}">'
                     f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
