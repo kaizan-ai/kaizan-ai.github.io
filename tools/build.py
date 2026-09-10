@@ -77,7 +77,7 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.svg'),
+    dict(name='The Kite Factory',         file='the-kite-factory.svg', big=True),
     dict(name='Searchlab',                file='searchlab.png'),
     dict(name='NP Digital',               file='np-digital.png'),
     dict(name='The Gap Partnership',      file='the-gap-partnership.svg'),
@@ -89,7 +89,7 @@ CLIENT_LOGOS = [
     dict(name='Assembly Global',          file='assembly-global.svg'),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
-    dict(name='Gifta',                    file='gifta.png', detail=True),
+    dict(name='Gifta',                    file='gifta.png', detail=True, big=True),
     dict(name='Gravity Global',           file='gravity-global.svg'),
     dict(name='Kohort',                   file='kohort.png'),
     dict(name='Marketing Architects',     file='marketing-architects.png'),
