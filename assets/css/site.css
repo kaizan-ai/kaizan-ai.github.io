@@ -660,17 +660,31 @@ button { font-family: inherit; }
 .kz-carousel-viewport::-webkit-scrollbar { display: none; }
 .kz-qcard {
   flex: 0 0 400px; max-width: 84vw; margin: 0; scroll-snap-align: start;
-  background: var(--kz-paper); border: 1px solid var(--kz-line); border-radius: 16px;
-  padding: 32px; display: flex; flex-direction: column; gap: 26px;
-  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 44px -26px rgba(40,30,15,.22);
+  background: var(--kz-yellow); border-radius: 18px;
+  padding: 34px 30px; display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 22px;
+  box-shadow: 0 2px 0 rgba(120,80,0,.10), 0 22px 50px -22px rgba(255,185,0,.7);
 }
+/* Company logo — rendered dark so it reads clearly on the yellow. */
+.kz-qcard-logo {
+  height: 30px; width: auto; max-width: 170px; object-fit: contain;
+  filter: grayscale(1) brightness(0) opacity(0.82);
+}
+.kz-qcard-co { font-weight: 700; font-size: 15px; color: rgba(0,0,0,.75); }
 .kz-qcard q {
-  font-family: var(--kz-display); font-size: 21px; line-height: 1.42; flex: 1;
-  quotes: "\201C" "\201D";
+  font-family: var(--kz-display); font-size: 20px; line-height: 1.42; flex: 1;
+  color: var(--kz-ink); quotes: "\201C" "\201D";
+  display: flex; align-items: center; justify-content: center;
 }
 .kz-qcard q::before { content: open-quote; }
 .kz-qcard q::after  { content: close-quote; }
 .kz-qcard figcaption { margin: 0; }
+/* Centred, stacked attribution inside the card. */
+.kz-qcard .kz-portrait { flex-direction: column; gap: 8px; }
+.kz-qcard .kz-portrait .meta { text-align: center; }
+.kz-qcard .kz-portrait .name { font-weight: 700; color: var(--kz-ink); }
+.kz-qcard .kz-portrait .role { color: rgba(0,0,0,.62); }
+.kz-qcard .kz-portrait .avatar { box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 0 0 4px rgba(0,0,0,.08); }
 .kz-carousel-arrow {
   flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%;
   border: 1px solid var(--kz-line-strong); background: var(--kz-paper);

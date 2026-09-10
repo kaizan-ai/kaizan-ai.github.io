@@ -1433,13 +1433,26 @@ def render_home() -> str:
         _pp = _by_quote_name[_n]
         carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
                                     role=_pp['quote_role'], co=_pp['quote_co']))
-    carousel_cards = '\n'.join(
-        f'<figure class="kz-qcard">'
-        f'<q>{E(cq["q"])}</q>'
-        f'<figcaption>{portrait(cq["name"], cq["role"], cq["co"], depth=0)}</figcaption>'
-        f'</figure>'
-        for cq in carousel_quotes
-    )
+    # Company logo per quote — shown on the card for credibility.
+    company_logo = {
+        'Gravity Global': 'gravity-global.svg', 'Searchlab': 'searchlab.png',
+        'NP Digital': 'np-digital.png', 'Tradedoubler': 'tradedoubler.png',
+        'Collective Content': 'collective-content.svg', 'Verkeer': 'verkeer.png',
+        'PASHN': 'pashn-media-agency.svg', 'The Kite Factory': 'the-kite-factory.png',
+        'Transmission': 'transmission.png',
+    }
+
+    def _qcard(cq):
+        logo = company_logo.get(cq['co'], '')
+        logo_html = (f'<img class="kz-qcard-logo" src="assets/img/clients/{logo}" '
+                     f'alt="{E(cq["co"])}">') if logo else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        return (f'<figure class="kz-qcard">'
+                f'{logo_html}'
+                f'<q>{E(cq["q"])}</q>'
+                f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
+                f'</figure>')
+
+    carousel_cards = '\n'.join(_qcard(cq) for cq in carousel_quotes)
     carousel_dots = '\n'.join(
         f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
         for i in range(len(carousel_quotes))
