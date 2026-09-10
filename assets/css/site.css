@@ -660,15 +660,15 @@ button { font-family: inherit; }
 .kz-carousel-viewport::-webkit-scrollbar { display: none; }
 .kz-qcard {
   flex: 0 0 400px; max-width: 84vw; margin: 0; scroll-snap-align: start;
-  background: var(--kz-yellow); border-radius: 18px;
+  background: #FFD54A; border-radius: 18px;
   padding: 34px 30px; display: flex; flex-direction: column; align-items: center;
-  text-align: center; gap: 22px;
-  box-shadow: 0 2px 0 rgba(120,80,0,.10), 0 22px 50px -22px rgba(255,185,0,.7);
+  text-align: center; gap: 24px;
+  box-shadow: 0 2px 0 rgba(120,80,0,.08), 0 22px 48px -24px rgba(255,185,0,.55);
 }
-/* Company logo — rendered dark so it reads clearly on the yellow. */
+/* Company logo — dark, sized within a consistent box so all read proportionate. */
 .kz-qcard-logo {
-  height: 30px; width: auto; max-width: 170px; object-fit: contain;
-  filter: grayscale(1) brightness(0) opacity(0.82);
+  height: 42px; width: auto; max-width: 210px; object-fit: contain;
+  filter: grayscale(1) brightness(0) opacity(0.85);
 }
 .kz-qcard-co { font-weight: 700; font-size: 15px; color: rgba(0,0,0,.75); }
 .kz-qcard q {
