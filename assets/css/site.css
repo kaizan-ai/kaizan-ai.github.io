@@ -416,6 +416,7 @@ button { font-family: inherit; }
   color: rgba(10,10,10,.55); font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
   align-items: center;
 }
+.kz-mq-run { display: flex; align-items: center; flex: 0 0 auto; }
 .kz-marquee-item {
   display: inline-flex; align-items: center; flex-shrink: 0;
   margin-right: 48px;
@@ -433,6 +434,8 @@ button { font-family: inherit; }
   height: 44px;
   flex-shrink: 0;
 }
+/* Detail marks (e.g. AMS) render a little taller so their internal detail reads. */
+.kz-marquee-logo--lg { height: 62px; }
 .kz-marquee-logo img {
   display: block;
   height: 100%;
@@ -458,10 +461,14 @@ button { font-family: inherit; }
   to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  /* No auto-scroll for reduced-motion users — but let them scroll the band
-     by hand so every client logo is still reachable (not just the first row). */
-  .kz-marquee { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .kz-marquee-track { animation-duration: 0s; animation: none; }
+  /* No auto-scroll for reduced-motion users. Instead of freezing on the first
+     screenful, drop the duplicate runs and let the logos wrap into a static,
+     centred grid so every client is visible at once — no scrolling needed. */
+  .kz-marquee { overflow: visible; }
+  .kz-marquee-track { animation: none; transform: none; white-space: normal; flex-wrap: wrap; }
+  .kz-mq-run:nth-child(n+2) { display: none; }
+  .kz-mq-run { flex: 1 1 100%; flex-wrap: wrap; justify-content: center; row-gap: 22px; }
+  .kz-marquee-item { margin: 0 26px; }
 }
 
 /* ── Generic eyebrow / labels ─────────────────────────────────── */

@@ -1077,10 +1077,12 @@ def marquee_html(items, depth: int = 0):
         if 'file' in x and x['file']:
             src = f'{p}assets/img/clients/{x["file"]}'
             # `detail` logos keep their grey shades (skip the black silhouette)
-            # because they're layered marks that read as a blob when flattened.
-            cls = ' is-detail' if x.get('detail') else ''
-            return (f'<span class="kz-marquee-logo">'
-                    f'<img class="kz-marquee-img{cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
+            # because they're layered marks that read as a blob when flattened;
+            # they also render a touch larger so the detail is readable.
+            img_cls = ' is-detail' if x.get('detail') else ''
+            span_cls = ' kz-marquee-logo--lg' if x.get('detail') else ''
+            return (f'<span class="kz-marquee-logo{span_cls}">'
+                    f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
                     f'</span>')
         return f'<span class="kz-marquee-text">{E(name)}</span>'
 
@@ -1088,8 +1090,12 @@ def marquee_html(items, depth: int = 0):
         f'<span class="kz-marquee-item">{render_one(x)}<span class="sep">✺</span></span>'
         for x in items
     )
+    # Three runs so the scroll loops seamlessly. When motion is reduced the
+    # animation is off, so we hide runs 2–3 and let run 1 wrap into a static
+    # grid — every logo stays visible without scrolling (see site.css).
+    run = f'<div class="kz-mq-run">{one_run}</div>'
     return f'''<div class="kz-marquee" aria-hidden="true">
-      <div class="kz-marquee-track">{one_run}{one_run}{one_run}</div>
+      <div class="kz-marquee-track">{run}{run}{run}</div>
     </div>'''
 
 
