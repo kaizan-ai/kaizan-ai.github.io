@@ -1546,7 +1546,7 @@ def render_home() -> str:
     <section class="kz-quotes">
       <div class="kz-quotes-head">
         <div class="kz-eyebrow">In their words</div>
-        <h2 class="kz-quotes-title">What client service teams say</h2>
+        <h2 class="kz-quotes-title">What our clients say</h2>
       </div>
       <div class="kz-carousel" data-carousel>
         <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
