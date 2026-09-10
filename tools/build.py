@@ -77,10 +77,17 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
+    # US clients lead the band (US market push) — order as supplied.
+    dict(name='Gravity Global',           file='gravity-global.svg'),
+    dict(name='Transmission',             file='transmission.png'),
+    dict(name='Acceleration Partners',    file='acceleration-partners.png', h=58),
+    dict(name='Marketing Architects',     file='marketing-architects.png'),
     dict(name='Searchlab',                file='searchlab.png'),
     dict(name='NP Digital',               file='np-digital.png', big=True),
+    dict(name='Other.',                   file='other.png', big=True),
     dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
+    # Remaining clients.
+    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
     dict(name='Scale Digital',            file='scale-digital.png'),
     dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
     dict(name='Open Partners',            file='open-partners.svg'),
@@ -90,16 +97,11 @@ CLIENT_LOGOS = [
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
     dict(name='Gifta',                    file='gifta.png', treat='soft', big=True),
-    dict(name='Gravity Global',           file='gravity-global.svg'),
     dict(name='Kohort',                   file='kohort.png'),
-    dict(name='Marketing Architects',     file='marketing-architects.png'),
     dict(name='Medialab',                 file='medialab.png'),
     dict(name='PASHN Media Agency',       file='pashn-media-agency.svg', treat='light', h=40),
     dict(name='Viola',                    file='viola.png'),
     dict(name='Webtopia',                 file='webtopia.png', h=58),
-    dict(name='Other.',                   file='other.png', big=True),
-    dict(name='Acceleration Partners',    file='acceleration-partners.png', h=58),
-    dict(name='Transmission',             file='transmission.png'),
 ]
 INTEGRATIONS = ['Salesforce', 'Gmail', 'Slack', 'Google Calendar',
                 'Teams', 'Zoom', 'Outlook', 'Notion', 'Asana']
