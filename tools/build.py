@@ -77,7 +77,7 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=74),
+    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
     dict(name='Searchlab',                file='searchlab.png'),
     dict(name='NP Digital',               file='np-digital.png', big=True),
     dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
@@ -1082,8 +1082,12 @@ def marquee_html(items, depth: int = 0):
             treat = x.get('treat')  # 'detail' (AMS mark) | 'soft' (Gifta badge) | 'light' (heavy wordmarks)
             img_cls = f' is-{treat}' if treat else ''
             span_cls = ' kz-marquee-logo--lg' if x.get('big') else ''
-            # Optional per-logo height override (px) for fine optical balancing.
-            style = f' style="height:{int(x["h"])}px"' if x.get('h') else ''
+            # Optional per-logo height (px) and vertical nudge (dy px) for fine
+            # optical balancing/alignment.
+            rules = []
+            if x.get('h'):  rules.append(f'height:{int(x["h"])}px')
+            if x.get('dy'): rules.append(f'transform:translateY({int(x["dy"])}px)')
+            style = f' style="{";".join(rules)}"' if rules else ''
             return (f'<span class="kz-marquee-logo{span_cls}"{style}>'
                     f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
                     f'</span>')

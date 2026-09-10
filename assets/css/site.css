@@ -416,7 +416,7 @@ button { font-family: inherit; }
      of the logos (not 50% of the viewport). Two copies + -50% = seamless loop
      through every logo. */
   width: max-content;
-  animation: kz-mq-move 48s linear infinite;
+  animation: kz-mq-move 56s linear infinite;
   color: rgba(10,10,10,.55); font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
   align-items: center;
 }
@@ -469,7 +469,7 @@ button { font-family: inherit; }
 }
 /* Heavy wordmarks (e.g. PASHN): lighter so their bold letterforms don't read
    noticeably darker than the rest of the band. */
-.kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.4); }
+.kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.5); }
 .kz-marquee:hover .kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.62); }
 @keyframes kz-mq-move {
   from { transform: translateX(0); }
