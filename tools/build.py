@@ -1419,20 +1419,34 @@ def render_home() -> str:
     carousel_quotes = [
         dict(q='Knowledgeable, helpful, and like a friend, like a colleague. '
                'It’s almost like somebody else that I can ask a question to.',
-             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global'),
+             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
+             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
                'It’s money very well spent. An invaluable customer tool.',
-             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab'),
+             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
+             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
         dict(q='We’ve had numerous occasions where we’ve been able to spot and '
                'identify high-risk clients that potentially were going to leave.',
-             name='Brandon Smith', role='Managing Director', co='NP Digital'),
+             name='Brandon Smith', role='Managing Director', co='NP Digital',
+             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
     ]
+    # Blog post each persona is featured in — powers the card's "Read more" link.
+    _persona_blog = {
+        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
+        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
+        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
+        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
+        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
+        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+    }
     _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
     for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
                'Adam Hopkinson', 'Gabriella Krite', 'Alex Beddoe']:
         _pp = _by_quote_name[_n]
         carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
-                                    role=_pp['quote_role'], co=_pp['quote_co']))
+                                    role=_pp['quote_role'], co=_pp['quote_co'],
+                                    blog=_persona_blog.get(_n)))
     # Company logo per quote — shown on the card for credibility.
     company_logo = {
         'Gravity Global': 'gravity-global.svg', 'Searchlab': 'searchlab.png',
@@ -1455,11 +1469,14 @@ def render_home() -> str:
         logo_html = (f'<img class="kz-qcard-logo" style="height:{h}px" '
                      f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+                if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
                 f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
                 f'<q>{E(cq["q"])}</q>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
+                f'{more}'
                 f'</figure>')
 
     carousel_cards = '\n'.join(_qcard(cq) for cq in carousel_quotes)

@@ -692,7 +692,7 @@ button { font-family: inherit; }
 }
 .kz-qcard q {
   font-family: var(--kz-display); font-size: 21px; font-weight: 600;
-  line-height: 1.42; flex: 1; color: var(--kz-ink); quotes: none;
+  line-height: 1.42; color: var(--kz-ink); quotes: none;
   display: flex; align-items: center; justify-content: center;
 }
 .kz-qcard q::before, .kz-qcard q::after { content: none; }
@@ -703,6 +703,17 @@ button { font-family: inherit; }
 .kz-qcard .kz-portrait .name { font-weight: 700; color: var(--kz-ink); }
 .kz-qcard .kz-portrait .role { color: rgba(0,0,0,.62); }
 .kz-qcard .kz-portrait .avatar { box-shadow: 0 0 0 3px var(--kz-yellow); }
+/* Read-more CTA — pinned to the bottom so the face/title sit higher. */
+.kz-qcard-more {
+  margin-top: auto; align-self: center;
+  font-family: var(--kz-display); font-weight: 700; font-size: 14px;
+  color: var(--kz-ink); text-decoration: none; white-space: nowrap;
+  padding: 9px 20px; border-radius: 999px;
+  border: 1.5px solid var(--kz-ink); background: transparent;
+  transition: background .18s, border-color .18s;
+}
+.kz-qcard-more:hover,
+.kz-qcard-more:focus-visible { background: var(--kz-yellow); border-color: var(--kz-yellow); }
 .kz-carousel-arrow {
   flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%;
   border: 1px solid var(--kz-line-strong); background: var(--kz-paper);
