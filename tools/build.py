@@ -77,7 +77,7 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.svg', h=74),
+    dict(name='The Kite Factory',         file='the-kite-factory.png', h=74),
     dict(name='Searchlab',                file='searchlab.png'),
     dict(name='NP Digital',               file='np-digital.png', big=True),
     dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
