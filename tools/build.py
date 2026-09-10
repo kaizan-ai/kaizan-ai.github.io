@@ -77,7 +77,15 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    # US clients lead the band (US market push) — order as supplied.
+    # A few clients lead in, then the US clients (US market push) land around the
+    # middle — so US prospects catch familiar logos once they've scrolled to the
+    # band, rather than the US set scrolling past before they get there.
+    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
+    dict(name='Scale Digital',            file='scale-digital.png'),
+    dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
+    dict(name='Open Partners',            file='open-partners.svg'),
+    dict(name='Verkeer',                  file='verkeer.png'),
+    # US clients — order as supplied.
     dict(name='Gravity Global',           file='gravity-global.svg'),
     dict(name='Transmission',             file='transmission.png'),
     dict(name='Acceleration Partners',    file='acceleration-partners.png', h=58),
@@ -87,11 +95,6 @@ CLIENT_LOGOS = [
     dict(name='Other.',                   file='other.png', big=True),
     dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
     # Remaining clients.
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
-    dict(name='Scale Digital',            file='scale-digital.png'),
-    dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
-    dict(name='Open Partners',            file='open-partners.svg'),
-    dict(name='Verkeer',                  file='verkeer.png'),
     dict(name='AMS',                      file='ams.png', treat='detail', h=74),
     dict(name='Assembly Global',          file='assembly-global.svg', h=40),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
