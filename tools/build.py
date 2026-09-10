@@ -1413,9 +1413,9 @@ def render_home() -> str:
         for slug, label in PERSONA_LIST
     )
 
-    # Carousel quotes: lead with the Gravity Global and Searchlab case studies
-    # (US market push), then the strongest case-study quote from each persona
-    # page (same people/photos as the persona hero quotes).
+    # Carousel quotes: lead with the US case studies (Gravity Global, Searchlab,
+    # NP Digital) for the US market push, then the strongest case-study quote
+    # from each remaining persona page (same people/photos as the persona heroes).
     carousel_quotes = [
         dict(q='Knowledgeable, helpful, and like a friend, like a colleague. '
                'It’s almost like somebody else that I can ask a question to.',
@@ -1423,10 +1423,13 @@ def render_home() -> str:
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
                'It’s money very well spent. An invaluable customer tool.',
              name='Greg Gifford', role='Chief Operating Officer', co='Searchlab'),
+        dict(q='We’ve had numerous occasions where we’ve been able to spot and '
+               'identify high-risk clients that potentially were going to leave.',
+             name='Brandon Smith', role='Managing Director', co='NP Digital'),
     ] + [
         dict(q=pp['quote_pull'], name=pp['quote_name'],
              role=pp['quote_role'], co=pp['quote_co'])
-        for pp in PERSONAS.values()
+        for pp in PERSONAS.values() if pp['quote_name'] != 'Brandon Smith'
     ]
     carousel_cards = '\n'.join(
         f'<figure class="kz-qcard">'
