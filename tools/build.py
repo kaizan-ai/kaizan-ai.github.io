@@ -1411,16 +1411,23 @@ def render_home() -> str:
         for slug, label in PERSONA_LIST
     )
 
+    # Carousel quotes = the strongest case-study quote from each persona page
+    # (same people/photos as the persona hero quotes).
+    carousel_quotes = [
+        dict(q=pp['quote_pull'], name=pp['quote_name'],
+             role=pp['quote_role'], co=pp['quote_co'])
+        for pp in PERSONAS.values()
+    ]
     carousel_cards = '\n'.join(
         f'<figure class="kz-qcard">'
-        f'<q>{E(q["q"])}</q>'
-        f'<figcaption>{portrait(q["name"], q["role"], q["co"], q["tone"], depth=0)}</figcaption>'
+        f'<q>{E(cq["q"])}</q>'
+        f'<figcaption>{portrait(cq["name"], cq["role"], cq["co"], depth=0)}</figcaption>'
         f'</figure>'
-        for q in QUOTES
+        for cq in carousel_quotes
     )
     carousel_dots = '\n'.join(
         f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
-        for i in range(len(QUOTES))
+        for i in range(len(carousel_quotes))
     )
 
     body = f'''
