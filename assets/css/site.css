@@ -653,13 +653,9 @@ button { font-family: inherit; }
   padding: 42px 32px 34px;
   box-shadow: 0 2px 6px rgba(40,30,15,.10), 0 22px 38px -18px rgba(40,30,15,.42);
 }
-.kz-statcard::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
-  background: var(--kz-yellow);
-}
 .kz-statcard-num {
   font-family: var(--kz-display); font-weight: 800; letter-spacing: -.02em;
-  font-size: clamp(50px, 6vw, 70px); line-height: 1; color: #fff;
+  font-size: clamp(62px, 7.5vw, 88px); line-height: 1; color: var(--kz-yellow);
 }
 .kz-statcard-cat {
   margin-top: 18px; display: inline-block; padding: 5px 15px; border-radius: 999px;
