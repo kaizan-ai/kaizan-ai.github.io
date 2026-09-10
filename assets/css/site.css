@@ -664,12 +664,20 @@ button { font-family: inherit; }
   padding: 32px 30px; display: flex; flex-direction: column; align-items: center;
   text-align: center; gap: 18px; position: relative; overflow: hidden;
 }
-/* Kaizan-yellow top accent bar — the pop, without flooding the card. */
-.kz-qcard::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+/* Kaizan-yellow accent bars top and bottom — the pop, without flooding the card. */
+.kz-qcard::before,
+.kz-qcard::after {
+  content: ""; position: absolute; left: 0; right: 0; height: 6px;
   background: var(--kz-yellow);
 }
-.kz-qcard { box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 20px 44px -26px rgba(40,30,15,.22); }
+.kz-qcard::before { top: 0; }
+.kz-qcard::after  { bottom: 0; }
+/* Bolder, layered shadow — lifts the card off the page (3D). */
+.kz-qcard {
+  box-shadow: 0 2px 6px rgba(40,30,15,.08),
+              0 16px 28px -10px rgba(40,30,15,.22),
+              0 40px 60px -24px rgba(40,30,15,.34);
+}
 /* Company logo — dark, sized per-company so all read proportionate. */
 .kz-qcard-logo {
   height: 42px; width: auto; max-width: 210px; object-fit: contain;
