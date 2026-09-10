@@ -471,9 +471,6 @@ button { font-family: inherit; }
    noticeably darker than the rest of the band. */
 .kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.4); }
 .kz-marquee:hover .kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.62); }
-/* Light/thin logos rendered darker so they read as boldly as the rest. */
-.kz-marquee-logo img.is-bold { filter: grayscale(1) brightness(0) opacity(0.8); }
-.kz-marquee:hover .kz-marquee-logo img.is-bold { filter: grayscale(1) brightness(0) opacity(0.95); }
 @keyframes kz-mq-move {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }

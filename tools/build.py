@@ -77,10 +77,10 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.svg', big=True, treat='bold'),
+    dict(name='The Kite Factory',         file='the-kite-factory.svg', big=True),
     dict(name='Searchlab',                file='searchlab.png'),
-    dict(name='NP Digital',               file='np-digital.png', big=True, treat='bold'),
-    dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True, treat='bold'),
+    dict(name='NP Digital',               file='np-digital.png', big=True),
+    dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
     dict(name='Scale Digital',            file='scale-digital.png'),
     dict(name='Tradedoubler',             file='tradedoubler.png'),
     dict(name='Open Partners',            file='open-partners.svg'),
@@ -97,7 +97,7 @@ CLIENT_LOGOS = [
     dict(name='PASHN Media Agency',       file='pashn-media-agency.svg', treat='light'),
     dict(name='Viola',                    file='viola.png'),
     dict(name='Webtopia',                 file='webtopia.png'),
-    dict(name='Other.',                   file='other.png', big=True, treat='bold'),
+    dict(name='Other.',                   file='other.png', big=True),
     dict(name='Acceleration Partners',    file='acceleration-partners.png'),
     dict(name='Transmission',             file='transmission.png'),
 ]
