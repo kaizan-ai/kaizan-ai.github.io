@@ -173,11 +173,62 @@
     });
   }
 
+  // ── Quote carousel ───────────────────────────────────────────────
+  function initQuoteCarousel() {
+    document.querySelectorAll('[data-carousel]').forEach(function (root) {
+      var vp = root.querySelector('[data-carousel-viewport]');
+      if (!vp) return;
+      var cards = Array.prototype.slice.call(vp.children);
+      if (!cards.length) return;
+      var prev = root.querySelector('[data-carousel-prev]');
+      var next = root.querySelector('[data-carousel-next]');
+      var dotsWrap = root.parentElement.querySelector('[data-carousel-dots]');
+      var dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.children) : [];
+
+      function step() {
+        var gap = parseFloat(getComputedStyle(vp).gap) || 20;
+        return cards[0].getBoundingClientRect().width + gap;
+      }
+      function index() { return Math.round(vp.scrollLeft / step()); }
+      function atEnd() { return vp.scrollLeft >= vp.scrollWidth - vp.clientWidth - 2; }
+      function goTo(i) {
+        i = Math.max(0, Math.min(cards.length - 1, i));
+        vp.scrollTo({ left: i * step(), behavior: 'smooth' });
+      }
+      function refresh() {
+        var i = index();
+        dots.forEach(function (d, di) { d.classList.toggle('is-active', di === i); });
+        if (prev) prev.disabled = vp.scrollLeft <= 2;
+        if (next) next.disabled = atEnd();
+      }
+
+      if (prev) prev.addEventListener('click', function () { goTo(index() - 1); });
+      if (next) next.addEventListener('click', function () { goTo(index() + 1); });
+      dots.forEach(function (d, di) { d.addEventListener('click', function () { goTo(di); }); });
+
+      var t;
+      vp.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(refresh, 90); });
+      window.addEventListener('resize', refresh);
+
+      // Auto-advance (skipped when the user prefers reduced motion).
+      var timer = null;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function play() { if (reduce) return; stop(); timer = setInterval(function () { atEnd() ? goTo(0) : goTo(index() + 1); }, 5500); }
+      function stop() { if (timer) { clearInterval(timer); timer = null; } }
+      ['pointerenter', 'pointerdown', 'focusin'].forEach(function (e) { root.addEventListener(e, stop); });
+      ['pointerleave', 'focusout'].forEach(function (e) { root.addEventListener(e, play); });
+
+      refresh();
+      play();
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
     initMegaMenu();
     initTour();
+    initQuoteCarousel();
     initHelpers();
     initHeroVideo();
     initSecurityTabs();

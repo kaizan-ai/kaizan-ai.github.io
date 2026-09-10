@@ -1411,12 +1411,16 @@ def render_home() -> str:
         for slug, label in PERSONA_LIST
     )
 
-    quote_cards = '\n'.join(
-        f'<div class="kz-quote-card kz-shadow-card">'
+    carousel_cards = '\n'.join(
+        f'<figure class="kz-qcard">'
         f'<q>{E(q["q"])}</q>'
-        f'{portrait(q["name"], q["role"], q["co"], q["tone"], depth=0)}'
-        f'</div>'
-        for q in QUOTES[:2]
+        f'<figcaption>{portrait(q["name"], q["role"], q["co"], q["tone"], depth=0)}</figcaption>'
+        f'</figure>'
+        for q in QUOTES
+    )
+    carousel_dots = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
+        for i in range(len(QUOTES))
     )
 
     body = f'''
@@ -1503,15 +1507,20 @@ def render_home() -> str:
     </section>
 
     <!-- PROOF -->
-    <section class="kz-proof">
-      <div class="kz-proof-stat">
-        <div class="kz-eyebrow" style="color:rgba(255,251,240,.6);">Measured</div>
-        <div>
-          <div class="num">21%+</div>
-          <div class="lbl">average revenue growth per client across the full client portfolio.</div>
-        </div>
+    <!-- QUOTE CAROUSEL -->
+    <section class="kz-quotes">
+      <div class="kz-quotes-head">
+        <div class="kz-eyebrow">In their words</div>
+        <h2 class="kz-quotes-title">What client service teams say</h2>
       </div>
-      <div class="kz-proof-quotes">{quote_cards}</div>
+      <div class="kz-carousel" data-carousel>
+        <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
+        <div class="kz-carousel-viewport" data-carousel-viewport>
+          {carousel_cards}
+        </div>
+        <button class="kz-carousel-arrow is-next" type="button" data-carousel-next aria-label="Next quote">&rsaquo;</button>
+      </div>
+      <div class="kz-carousel-dots" data-carousel-dots>{carousel_dots}</div>
     </section>
 
     <!-- CTA -->
