@@ -661,7 +661,7 @@ button { font-family: inherit; }
   margin-top: 14px; color: var(--kz-ink);
   font-weight: 700; font-size: 23px;
 }
-.kz-statcard-desc { margin-top: 14px; font-size: 17.5px; font-weight: 600; line-height: 1.45; color: rgba(0,0,0,.78); }
+.kz-statcard-desc { margin-top: 14px; font-size: 15.5px; font-weight: 600; line-height: 1.45; color: rgba(0,0,0,.78); }
 @media (max-width: 860px) { .kz-stats-grid { grid-template-columns: 1fr; } }
 
 /* ── Quote carousel (homepage) ────────────────────────────────── */
