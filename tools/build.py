@@ -120,8 +120,6 @@ QUOTES = [
          name='Mark Raymond', role='Co-founder', co='Anything Is Possible', tone='warm'),
     dict(q='Our clients expect us to innovate, and they’ve been excited about our use of Kaizan.',
          name='Gabriella Krite', role='Head of Operations', co='The Kite Factory', tone='sand'),
-    dict(q='Kaizan improves our client interactions — the most valuable thing we have.',
-         name='Samantha Bessant', role='Head of Client Success', co='Adimo', tone='blush'),
     dict(q='We’ve seen the sentiment of every client go up.',
          name='Hannah Carthy', role='MD', co='Verkeer', tone='olive'),
     dict(q='Kaizan is now fundamental to the team and managing client relationships.',
@@ -724,26 +722,6 @@ CASE_DATA = {
             ('What it unlocked',
              "£480k of revenue retained that would otherwise have been a churn line item. More "
              "importantly, AMs trust the signal — adoption hit 100% within six weeks."),
-        ],
-    ),
-    'adimo': dict(
-        co='Adimo', kind='SaaS · 60 people', tone='blush',
-        headline='CSAT moved before pipeline did. Then pipeline followed.',
-        metric='+18pt CSAT · 1.4× expansion',
-        quote='Our CSAT moved before our pipeline did — and then pipeline followed.',
-        name='Samantha Bessant', role='Head of Client Success',
-        stats=[('+18pt','CSAT in 2 quarters'), ('1.4×','expansion bookings'), ('12','agents using Kaizan')],
-        body=[
-            ('The hypothesis',
-             "Sam believed that retention was a leading indicator of expansion. The data lived in "
-             "five tools and nobody had time to assemble it."),
-            ('What changed',
-             "Kaizan's Health agent gave every CSM a single dashboard — engagement, sentiment, "
-             "exec touch, expansion fit. Weekly digests went from “what happened” to "
-             "“what to do”."),
-            ('What it unlocked',
-             "Eighteen points of CSAT in two quarters. Expansion bookings followed at 1.4× the "
-             "previous run rate."),
         ],
     ),
     'jellyfish': dict(
@@ -2128,8 +2106,6 @@ def render_customers() -> str:
          'We cut account review prep from 6 hours to 40 minutes.','Hannah Carthy','MD', 'verkeer'),
         ('The Kite Factory','Media · 120 people','3 saves / quarter','sand',
          'Three client saves this quarter we would have missed.','Gabriella Krite','Head of Operations', 'the-kite-factory'),
-        ('Adimo','SaaS · 60 people','+18pt CSAT','blush',
-         'Our CSAT moved before our pipeline did — and then pipeline followed.','Samantha Bessant','Head of Client Success', 'adimo'),
         ('Scale Digital','Consulting · 200 people','2.1× upsell','warm',
          'Expansion signals we used to miss now hit our desk the same day.','Stephen Kerin','Director', 'scale'),
     ]
