@@ -680,19 +680,19 @@ button { font-family: inherit; }
 }
 /* Company logo — dark, sized per-company so all read proportionate. */
 .kz-qcard-logo {
-  height: 42px; width: auto; max-width: 210px; object-fit: contain;
+  height: 52px; width: auto; max-width: 260px; object-fit: contain;
   filter: grayscale(1) brightness(0) opacity(0.85); margin-top: 6px;
 }
 .kz-qcard-co { font-weight: 700; font-size: 15px; color: var(--kz-ink); }
 /* Big yellow quotation mark — the brand accent. */
 .kz-qcard-mark {
   font-family: Georgia, "Times New Roman", serif; font-weight: 700;
-  font-size: 52px; line-height: 1; color: var(--kz-yellow);
-  margin: -2px 0 -18px; user-select: none;
+  font-size: 74px; line-height: 1; color: var(--kz-yellow);
+  margin: -4px 0 -26px; user-select: none;
 }
 .kz-qcard q {
-  font-family: var(--kz-display); font-size: 20px; line-height: 1.42; flex: 1;
-  color: var(--kz-ink); quotes: none;
+  font-family: var(--kz-display); font-size: 21px; font-weight: 600;
+  line-height: 1.42; flex: 1; color: var(--kz-ink); quotes: none;
   display: flex; align-items: center; justify-content: center;
 }
 .kz-qcard q::before, .kz-qcard q::after { content: none; }

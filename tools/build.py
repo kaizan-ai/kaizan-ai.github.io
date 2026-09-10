@@ -1444,14 +1444,14 @@ def render_home() -> str:
 
     # Per-company logo height (px) so every mark reads at a proportionate size.
     logo_h = {
-        'Gravity Global': 40, 'Searchlab': 34, 'NP Digital': 40, 'Tradedoubler': 32,
-        'Collective Content': 36, 'Verkeer': 40, 'PASHN': 27,
-        'The Kite Factory': 58, 'Transmission': 32,
+        'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
+        'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
+        'The Kite Factory': 74, 'Transmission': 42,
     }
 
     def _qcard(cq):
         logo = company_logo.get(cq['co'], '')
-        h = logo_h.get(cq['co'], 40)
+        h = logo_h.get(cq['co'], 52)
         logo_html = (f'<img class="kz-qcard-logo" style="height:{h}px" '
                      f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
