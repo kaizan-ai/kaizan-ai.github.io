@@ -1417,8 +1417,8 @@ def render_home() -> str:
     # NP Digital) for the US market push, then the strongest case-study quote
     # from each remaining persona page (same people/photos as the persona heroes).
     carousel_quotes = [
-        dict(q='Knowledgeable, helpful, and like a friend, like a colleague. '
-               'It’s almost like somebody else that I can ask a question to.',
+        dict(q='Kaizan is helping us reduce the manual tasks — the ones that take a '
+               'long time but are less valuable — so we can focus on our clients.',
              name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
              blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
