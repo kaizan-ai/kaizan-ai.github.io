@@ -13,6 +13,7 @@ and re-run the script. /blog/index.html (hidden) will pick it up.
 from __future__ import annotations
 import json
 import os
+import re
 import sys
 from html import escape
 from pathlib import Path
@@ -119,8 +120,6 @@ QUOTES = [
          name='Mark Raymond', role='Co-founder', co='Anything Is Possible', tone='warm'),
     dict(q='Our clients expect us to innovate, and they’ve been excited about our use of Kaizan.',
          name='Gabriella Krite', role='Head of Operations', co='The Kite Factory', tone='sand'),
-    dict(q='Kaizan improves our client interactions — the most valuable thing we have.',
-         name='Samantha Bessant', role='Head of Client Success', co='Adimo', tone='blush'),
     dict(q='We’ve seen the sentiment of every client go up.',
          name='Hannah Carthy', role='MD', co='Verkeer', tone='olive'),
     dict(q='Kaizan is now fundamental to the team and managing client relationships.',
@@ -725,26 +724,6 @@ CASE_DATA = {
              "importantly, AMs trust the signal — adoption hit 100% within six weeks."),
         ],
     ),
-    'adimo': dict(
-        co='Adimo', kind='SaaS · 60 people', tone='blush',
-        headline='CSAT moved before pipeline did. Then pipeline followed.',
-        metric='+18pt CSAT · 1.4× expansion',
-        quote='Our CSAT moved before our pipeline did — and then pipeline followed.',
-        name='Samantha Bessant', role='Head of Client Success',
-        stats=[('+18pt','CSAT in 2 quarters'), ('1.4×','expansion bookings'), ('12','agents using Kaizan')],
-        body=[
-            ('The hypothesis',
-             "Sam believed that retention was a leading indicator of expansion. The data lived in "
-             "five tools and nobody had time to assemble it."),
-            ('What changed',
-             "Kaizan's Health agent gave every CSM a single dashboard — engagement, sentiment, "
-             "exec touch, expansion fit. Weekly digests went from “what happened” to "
-             "“what to do”."),
-            ('What it unlocked',
-             "Eighteen points of CSAT in two quarters. Expansion bookings followed at 1.4× the "
-             "previous run rate."),
-        ],
-    ),
     'jellyfish': dict(
         co='Jellyfish', kind='Global agency', tone='gold',
         headline='Standardised account health across 9 offices in a quarter.',
@@ -1047,12 +1026,13 @@ def footer_html(depth: int) -> str:
             <img class="icon" src="{p}assets/img/kaizan-icon.png" alt="">
             <img class="word" src="{p}assets/img/kaizan-logo.png" alt="Kaizan">
           </a>
-          <p class="blurb">Client super intelligence for professional services firms. Runway East, Covent Garden · London.</p>
+          <p class="blurb">Client super intelligence for professional services firms.</p>
+          <p class="footer-address">Covent Garden, London · Madison Avenue, New York</p>
         </div>
         {''.join(cols_html)}
       </div>
       <div class="kz-footer-bot">
-        <span>© 2026 Kaizan Ltd.</span>
+        <span>© 2026 Kaizan Ltd. · <a class="kz-locale-switch" data-locale-switch href="#" hidden></a></span>
         <span>
           <a href="{p}privacy-policy/">Privacy</a> ·
           <a href="{p}license-agreement/">Terms</a> ·
@@ -2221,8 +2201,6 @@ def render_customers() -> str:
          'We cut account review prep from 6 hours to 40 minutes.','Hannah Carthy','MD', 'verkeer'),
         ('The Kite Factory','Media · 120 people','3 saves / quarter','sand',
          'Three client saves this quarter we would have missed.','Gabriella Krite','Head of Operations', 'the-kite-factory'),
-        ('Adimo','SaaS · 60 people','+18pt CSAT','blush',
-         'Our CSAT moved before our pipeline did — and then pipeline followed.','Samantha Bessant','Head of Client Success', 'adimo'),
         ('Scale Digital','Consulting · 200 people','2.1× upsell','warm',
          'Expansion signals we used to miss now hit our desk the same day.','Stephen Kerin','Director', 'scale'),
     ]
@@ -4780,6 +4758,164 @@ def write_redirects():
     print(f'  ({written} redirect stub(s) written, {skipped} skipped — real page exists)')
 
 
+# ── US locale ──────────────────────────────────────────────────────────
+# The UK site is the default (root). After it's built we mirror every page
+# into /us/ with US spelling, the US booking link, the US legal entity, and
+# self-canonical + hreflang tags so each market is independently indexable.
+
+US_CALENDAR_URL = ('https://calendar.google.com/calendar/u/0/appointments/schedules/'
+                   'AcZssZ1X3q1r4-z6R58nnBW1GK8d5FXnJXh8oeDooQT32qTL6Y3edStY9k_Rj-BoPyQi3PYVnmEjdtIN')
+SITE_ORIGIN = 'https://kaizan.ai'
+
+# en-GB → en-US spelling (base forms; -ing/-ed/-ation variants listed explicitly
+# where they occur). Applied to visible text only, case-preserving.
+US_SPELLING = {
+    'optimise': 'optimize', 'optimised': 'optimized', 'optimising': 'optimizing',
+    'optimisation': 'optimization', 'optimises': 'optimizes',
+    'organise': 'organize', 'organised': 'organized', 'organising': 'organizing',
+    'organisation': 'organization', 'organisations': 'organizations', 'organisational': 'organizational',
+    'personalise': 'personalize', 'personalised': 'personalized', 'personalising': 'personalizing',
+    'personalisation': 'personalization',
+    'prioritise': 'prioritize', 'prioritised': 'prioritized', 'prioritising': 'prioritizing',
+    'recognise': 'recognize', 'recognised': 'recognized', 'recognising': 'recognizing',
+    'analyse': 'analyze', 'analysed': 'analyzed', 'analysing': 'analyzing',
+    'maximise': 'maximize', 'maximised': 'maximized', 'maximising': 'maximizing',
+    'minimise': 'minimize', 'minimised': 'minimized', 'minimising': 'minimizing',
+    'standardise': 'standardize', 'standardised': 'standardized', 'standardising': 'standardizing',
+    'standardisation': 'standardization',
+    'categorise': 'categorize', 'categorised': 'categorized',
+    'summarise': 'summarize', 'summarised': 'summarized', 'summarising': 'summarizing',
+    'utilise': 'utilize', 'utilised': 'utilized', 'utilising': 'utilizing', 'utilisation': 'utilization',
+    'specialise': 'specialize', 'specialised': 'specialized', 'specialising': 'specializing',
+    'realise': 'realize', 'realised': 'realized', 'realising': 'realizing',
+    'emphasise': 'emphasize', 'emphasised': 'emphasized',
+    'customise': 'customize', 'customised': 'customized', 'customising': 'customizing',
+    'customisation': 'customization',
+    'centralise': 'centralize', 'centralised': 'centralized',
+    'capitalise': 'capitalize', 'capitalised': 'capitalized',
+    'colour': 'color', 'colours': 'colors', 'coloured': 'colored',
+    'behaviour': 'behavior', 'behaviours': 'behaviors', 'behavioural': 'behavioral',
+    'favour': 'favor', 'favourite': 'favorite', 'favourable': 'favorable', 'favoured': 'favored',
+    'labour': 'labor', 'honour': 'honor', 'honoured': 'honored',
+    'centre': 'center', 'centres': 'centers', 'centred': 'centered',
+    'licence': 'license', 'licences': 'licenses',
+    'defence': 'defense', 'offence': 'offense',
+    'programme': 'program', 'programmes': 'programs',
+    'catalogue': 'catalog', 'catalogues': 'catalogs',
+    'fulfil': 'fulfill', 'fulfilment': 'fulfillment', 'enrolment': 'enrollment',
+    'travelled': 'traveled', 'travelling': 'traveling',
+    'cancelled': 'canceled', 'cancelling': 'canceling',
+    'modelling': 'modeling', 'modelled': 'modeled',
+    'labelled': 'labeled', 'labelling': 'labeling',
+    'grey': 'gray', 'whilst': 'while', 'amongst': 'among',
+    'judgement': 'judgment', 'acknowledgement': 'acknowledgment',
+}
+_US_SPELL_RE = re.compile(r'\b(' + '|'.join(sorted(US_SPELLING, key=len, reverse=True)) + r')\b', re.I)
+
+
+def _match_case(src: str, repl: str) -> str:
+    if src.isupper():   return repl.upper()
+    if src[:1].isupper(): return repl.capitalize()
+    return repl
+
+
+def us_spell(text: str) -> str:
+    return _US_SPELL_RE.sub(lambda m: _match_case(m.group(0), US_SPELLING[m.group(0).lower()]), text)
+
+
+def _spell_text_nodes(html: str) -> str:
+    # Transform visible text only; never touch <script>/<style> contents.
+    parts = re.split(r'(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', html, flags=re.S | re.I)
+    for i in range(0, len(parts), 2):
+        parts[i] = re.sub(r'>([^<]+)<', lambda m: '>' + us_spell(m.group(1)) + '<', parts[i])
+    # Also transform meta description / og:description content (attributes).
+    parts_joined = ''.join(parts)
+    parts_joined = re.sub(r'(name="description" content=")([^"]*)(")',
+                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    parts_joined = re.sub(r'(property="og:description" content=")([^"]*)(")',
+                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    return parts_joined
+
+
+def _hreflang_block(path: str) -> str:
+    return (f'<link rel="alternate" hreflang="en-GB" href="{SITE_ORIGIN}{path}">'
+            f'<link rel="alternate" hreflang="en-US" href="{SITE_ORIGIN}/us{path if path != "/" else "/"}">'
+            f'<link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}{path}">')
+
+
+def build_us_locale():
+    """Mirror every UK page into /us/ with US spelling, booking link, legal
+    entity and self-canonical + hreflang. Relative page links resolve within
+    /us/ automatically; only assets and the handful of absolute internal links
+    (/ , /demo/, /for/) need rewriting."""
+    import base64, shutil
+    us_dir = ROOT / 'us'
+    if us_dir.exists():
+        shutil.rmtree(us_dir)
+
+    uk_cal_b64 = base64.b64encode(CALENDAR_URL.encode()).decode()
+    us_cal_b64 = base64.b64encode(US_CALENDAR_URL.encode()).decode()
+
+    skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github'}
+
+    def _safe(rel: Path) -> bool:
+        # Only real page paths — guards against stray/garbage files in the tree.
+        return all(re.fullmatch(r'[A-Za-z0-9._-]+', part) for part in rel.parts)
+
+    pages = [f for f in ROOT.rglob('*.html')
+             if f.relative_to(ROOT).parts[0] not in skip_top and _safe(f.relative_to(ROOT))]
+
+    written = 0
+    for f in pages:
+        rel = f.relative_to(ROOT)
+        # URL path for hreflang/canonical: /product/, /, /404.html …
+        if rel.name == 'index.html':
+            path = '/' + ('' if rel.parent == Path('.') else str(rel.parent).replace('\\', '/') + '/')
+        else:
+            path = '/' + str(rel).replace('\\', '/')
+
+        html = f.read_text(encoding='utf-8')
+
+        # 1. Inject hreflang into the UK page (idempotent) and write it back.
+        if 'hreflang=' not in html:
+            html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
+            f.write_text(html, encoding='utf-8')
+
+        # 2. Build the US version.
+        us = html
+        # Assets → root-absolute (shared, no duplication).
+        us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
+        # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
+        us = us.replace('href="/"', 'href="/us/"')
+        us = re.sub(r'href="/(demo|for)(/|")', r'href="/us/\1\2', us)
+        # Self-canonical + og:url for the US page.
+        us = us.replace(f'rel="canonical" href="{SITE_ORIGIN}',
+                        f'rel="canonical" href="{SITE_ORIGIN}/us')
+        us = us.replace(f'property="og:url" content="{SITE_ORIGIN}',
+                        f'property="og:url" content="{SITE_ORIGIN}/us')
+        # US booking link (only the /demo/ interstitial carries it, base64-encoded).
+        us = us.replace(uk_cal_b64, us_cal_b64)
+        # US legal entity.
+        us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
+        # US spelling.
+        us = _spell_text_nodes(us)
+
+        out = us_dir / rel
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(us, encoding='utf-8')
+        written += 1
+
+    # Mirror policy PDFs so their (relative) links resolve under /us/ too.
+    for pdf in ROOT.rglob('*.pdf'):
+        if pdf.relative_to(ROOT).parts[0] in skip_top:
+            continue
+        dest = us_dir / pdf.relative_to(ROOT)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(pdf, dest)
+
+    print(f'  ({written} US locale page(s) written to /us/)')
+
+
 def main():
     print(f'Building Kaizan site → {ROOT}')
 
@@ -4850,6 +4986,8 @@ def main():
     print(f'  ({n_pol} policy version(s) built)')
 
     write_redirects()
+
+    build_us_locale()
 
     print('Done.')
 
