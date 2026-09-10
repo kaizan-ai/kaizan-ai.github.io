@@ -461,16 +461,10 @@ button { font-family: inherit; }
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
-@media (prefers-reduced-motion: reduce) {
-  /* No auto-scroll for reduced-motion users. Instead of freezing on the first
-     screenful, drop the duplicate runs and let the logos wrap into a static,
-     centred grid so every client is visible at once — no scrolling needed. */
-  .kz-marquee { overflow: visible; }
-  .kz-marquee-track { animation: none; transform: none; white-space: normal; flex-wrap: wrap; }
-  .kz-mq-run:nth-child(n+2) { display: none; }
-  .kz-mq-run { flex: 1 1 100%; flex-wrap: wrap; justify-content: center; row-gap: 22px; }
-  .kz-marquee-item { margin: 0 26px; }
-}
+/* The client band always scrolls (even under prefers-reduced-motion): it is a
+   decorative, continuous logo wall and the motion is the intended experience.
+   Reduced-motion previously froze it on the first screenful, which read as the
+   band "stopping" after the first few logos. */
 
 /* ── Generic eyebrow / labels ─────────────────────────────────── */
 .kz-eyebrow-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
