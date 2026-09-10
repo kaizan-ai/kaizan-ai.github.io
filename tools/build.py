@@ -1090,12 +1090,13 @@ def marquee_html(items, depth: int = 0):
         f'<span class="kz-marquee-item">{render_one(x)}<span class="sep">✺</span></span>'
         for x in items
     )
-    # Three runs so the scroll loops seamlessly. When motion is reduced the
-    # animation is off, so we hide runs 2–3 and let run 1 wrap into a static
-    # grid — every logo stays visible without scrolling (see site.css).
+    # Two identical runs + a -50% translate = a seamless loop that scrolls
+    # through every logo before repeating. When motion is reduced the animation
+    # is off, so we hide run 2 and let run 1 wrap into a static grid — every
+    # logo stays visible without scrolling (see site.css).
     run = f'<div class="kz-mq-run">{one_run}</div>'
     return f'''<div class="kz-marquee" aria-hidden="true">
-      <div class="kz-marquee-track">{run}{run}{run}</div>
+      <div class="kz-marquee-track">{run}{run}</div>
     </div>'''
 
 
