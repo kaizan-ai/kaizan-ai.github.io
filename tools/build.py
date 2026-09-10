@@ -1426,11 +1426,13 @@ def render_home() -> str:
         dict(q='We’ve had numerous occasions where we’ve been able to spot and '
                'identify high-risk clients that potentially were going to leave.',
              name='Brandon Smith', role='Managing Director', co='NP Digital'),
-    ] + [
-        dict(q=pp['quote_pull'], name=pp['quote_name'],
-             role=pp['quote_role'], co=pp['quote_co'])
-        for pp in PERSONAS.values() if pp['quote_name'] != 'Brandon Smith'
     ]
+    _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
+    for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
+               'Adam Hopkinson', 'Gabriella Krite', 'Alex Beddoe']:
+        _pp = _by_quote_name[_n]
+        carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
+                                    role=_pp['quote_role'], co=_pp['quote_co']))
     carousel_cards = '\n'.join(
         f'<figure class="kz-qcard">'
         f'<q>{E(cq["q"])}</q>'
