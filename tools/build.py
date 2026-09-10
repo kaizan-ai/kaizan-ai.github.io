@@ -1126,6 +1126,8 @@ PEOPLE_PHOTOS = {
     'Corin Ward':        'corin-ward.png',
     'Adam Hopkinson':    'adam-hopkinson.png',
     'Alex Beddoe':       'alex-beddoe.png',
+    'Ada Cavalmoretti':  'ada-cavalmoretti.png',
+    'Greg Gifford':      'greg-gifford.png',
 }
 
 
@@ -1411,9 +1413,17 @@ def render_home() -> str:
         for slug, label in PERSONA_LIST
     )
 
-    # Carousel quotes = the strongest case-study quote from each persona page
-    # (same people/photos as the persona hero quotes).
+    # Carousel quotes: lead with the Gravity Global and Searchlab case studies
+    # (US market push), then the strongest case-study quote from each persona
+    # page (same people/photos as the persona hero quotes).
     carousel_quotes = [
+        dict(q='Knowledgeable, helpful, and like a friend, like a colleague. '
+               'It’s almost like somebody else that I can ask a question to.',
+             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global'),
+        dict(q='This tool is an absolute game-changer. Don’t even question it. '
+               'It’s money very well spent. An invaluable customer tool.',
+             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab'),
+    ] + [
         dict(q=pp['quote_pull'], name=pp['quote_name'],
              role=pp['quote_role'], co=pp['quote_co'])
         for pp in PERSONAS.values()
