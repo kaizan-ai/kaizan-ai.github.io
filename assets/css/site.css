@@ -743,6 +743,30 @@ button { font-family: inherit; }
 }
 .kz-footer-bot a:hover { color: rgba(245,245,239,.85); }
 .kz-footer .logo-light img.word { filter: invert(1) brightness(1.05); }
+.kz-footer-brand .footer-address {
+  margin-top: 8px; max-width: 260px; font-size: 13px;
+  color: rgba(245,245,239,.6); line-height: 1.6;
+}
+.kz-footer-bot a.kz-locale-switch { text-decoration: underline; }
+
+/* Locale suggestion banner */
+.kz-locale-banner {
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
+  z-index: 60; display: flex; align-items: center; gap: 16px;
+  background: var(--kz-ink); color: var(--kz-paper);
+  padding: 12px 14px 12px 20px; border-radius: 14px;
+  box-shadow: 0 20px 50px -18px rgba(0,0,0,.5);
+  font-size: 14px; max-width: calc(100vw - 32px);
+}
+.kz-locale-banner .kz-btn { padding: 9px 16px; font-size: 14px; white-space: nowrap; }
+.kz-locale-banner__x {
+  background: none; border: none; color: rgba(245,245,239,.6);
+  font-size: 20px; line-height: 1; cursor: pointer; padding: 0 4px;
+}
+.kz-locale-banner__x:hover { color: var(--kz-paper); }
+@media (max-width: 520px) {
+  .kz-locale-banner { flex-wrap: wrap; left: 16px; right: 16px; transform: none; }
+}
 
 /* ── Generic dark-section helpers (Product page AI Assistant) ──── */
 .kz-dark-section {

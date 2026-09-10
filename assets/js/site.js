@@ -173,11 +173,53 @@
     });
   }
 
+  // ── Locale (UK / US) switch + suggestion banner ──────────────────
+  function initLocale() {
+    var onUS = location.pathname === '/us' || location.pathname.indexOf('/us/') === 0;
+    function ukPath() { return location.pathname.replace(/^\/us(\/|$)/, '/'); }
+    function usPath() { return '/us' + location.pathname; }
+
+    // Footer switch link.
+    var sw = document.querySelector('[data-locale-switch]');
+    if (sw) {
+      sw.textContent = onUS ? 'View UK site' : 'View US site';
+      sw.href = onUS ? ukPath() : usPath();
+      sw.hidden = false;
+      sw.addEventListener('click', function () {
+        try { localStorage.setItem('kz-locale', onUS ? 'uk' : 'us'); } catch (e) {}
+      });
+    }
+
+    // One-time suggestion banner for US-timezone visitors on the UK site.
+    var chosen = null;
+    try { chosen = localStorage.getItem('kz-locale'); } catch (e) {}
+    if (onUS || chosen) return;
+    var tz = '';
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+    var isUS = /^America\/(New_York|Detroit|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Adak|Boise|Juneau|Sitka|Menominee|Indiana|Kentucky|North_Dakota)/.test(tz)
+      || tz === 'Pacific/Honolulu';
+    if (!isUS) return;
+
+    var bar = document.createElement('div');
+    bar.className = 'kz-locale-banner';
+    bar.innerHTML =
+      '<span>Looks like you’re in the US — see the US site?</span>' +
+      '<a class="kz-btn kz-btn-yellow" href="' + usPath() + '" data-go-us>View US site</a>' +
+      '<button type="button" class="kz-locale-banner__x" aria-label="Dismiss">×</button>';
+    document.body.appendChild(bar);
+    function remember(v) { try { localStorage.setItem('kz-locale', v); } catch (e) {} }
+    bar.querySelector('[data-go-us]').addEventListener('click', function () { remember('us'); });
+    bar.querySelector('.kz-locale-banner__x').addEventListener('click', function () {
+      remember('uk'); bar.remove();
+    });
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
     initMegaMenu();
     initTour();
+    initLocale();
     initHelpers();
     initHeroVideo();
     initSecurityTabs();
