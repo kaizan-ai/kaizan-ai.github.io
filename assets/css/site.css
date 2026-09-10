@@ -423,8 +423,9 @@ button { font-family: inherit; }
 .kz-mq-run { display: flex; align-items: center; flex: 0 0 auto; }
 .kz-marquee-item {
   display: inline-flex; align-items: center; flex-shrink: 0;
-  margin-right: 48px;
 }
+/* Centre the divider dot in the gap between logos (equal space each side). */
+.kz-marquee .sep { margin: 0 30px; }
 .kz-marquee-text {
   display: inline-flex; align-items: center;
   font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
@@ -470,6 +471,9 @@ button { font-family: inherit; }
    noticeably darker than the rest of the band. */
 .kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.4); }
 .kz-marquee:hover .kz-marquee-logo img.is-light { filter: grayscale(1) brightness(0) opacity(0.62); }
+/* Light/thin logos rendered darker so they read as boldly as the rest. */
+.kz-marquee-logo img.is-bold { filter: grayscale(1) brightness(0) opacity(0.8); }
+.kz-marquee:hover .kz-marquee-logo img.is-bold { filter: grayscale(1) brightness(0) opacity(0.95); }
 @keyframes kz-mq-move {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -1805,7 +1809,7 @@ button { font-family: inherit; }
   .kz-nav-logo .word { height: 24px; }
 
   .kz-marquee-track { font-size: 16px; }
-  .kz-marquee-item  { margin-right: 32px; }
+  .kz-marquee .sep  { margin: 0 20px; }
   .kz-marquee-logo  { height: 32px; }
 
   .kz-product-row { grid-template-columns: 1fr; gap: 12px; padding: 22px 0; }
