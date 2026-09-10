@@ -1460,7 +1460,7 @@ def render_home() -> str:
     logo_h = {
         'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
         'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
-        'The Kite Factory': 70, 'Transmission': 42,
+        'The Kite Factory': 84, 'Transmission': 42,
     }
 
     def _qcard(cq):
