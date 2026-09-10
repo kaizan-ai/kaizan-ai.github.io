@@ -77,26 +77,34 @@ RESOURCES_MENU = [
 # assets/img/clients/. Add or remove entries here to update the homepage
 # marquee — the build picks them up automatically.
 CLIENT_LOGOS = [
-    dict(name='The Kite Factory',         file='the-kite-factory.svg'),
-    dict(name='Searchlab',                file='searchlab.png'),
-    dict(name='NP Digital',               file='np-digital.png'),
-    dict(name='The Gap Partnership',      file='the-gap-partnership.svg'),
+    # A few clients lead in, then the US clients (US market push) land around the
+    # middle — so US prospects catch familiar logos once they've scrolled to the
+    # band, rather than the US set scrolling past before they get there.
+    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
     dict(name='Scale Digital',            file='scale-digital.png'),
-    dict(name='Tradedoubler',             file='tradedoubler.png'),
+    dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
     dict(name='Open Partners',            file='open-partners.svg'),
     dict(name='Verkeer',                  file='verkeer.png'),
-    dict(name='AMS',                      file='ams.png'),
-    dict(name='Assembly Global',          file='assembly-global.svg'),
+    # US clients — order as supplied.
+    dict(name='Gravity Global',           file='gravity-global.svg'),
+    dict(name='Transmission',             file='transmission.png'),
+    dict(name='Acceleration Partners',    file='acceleration-partners.png', h=58),
+    dict(name='Marketing Architects',     file='marketing-architects.png'),
+    dict(name='Searchlab',                file='searchlab.png'),
+    dict(name='NP Digital',               file='np-digital.png', big=True),
+    dict(name='Other.',                   file='other.png', big=True),
+    dict(name='The Gap Partnership',      file='the-gap-partnership.svg', big=True),
+    # Remaining clients.
+    dict(name='AMS',                      file='ams.png', treat='detail', h=74),
+    dict(name='Assembly Global',          file='assembly-global.svg', h=40),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
-    dict(name='Gifta',                    file='gifta.png'),
-    dict(name='Gravity Global',           file='gravity-global.svg'),
+    dict(name='Gifta',                    file='gifta.png', treat='soft', big=True),
     dict(name='Kohort',                   file='kohort.png'),
-    dict(name='Marketing Architects',     file='marketing-architects.png'),
     dict(name='Medialab',                 file='medialab.png'),
-    dict(name='PASHN Media Agency',       file='pashn-media-agency.svg'),
+    dict(name='PASHN Media Agency',       file='pashn-media-agency.svg', treat='light', h=40),
     dict(name='Viola',                    file='viola.png'),
-    dict(name='Webtopia',                 file='webtopia.png'),
+    dict(name='Webtopia',                 file='webtopia.png', h=58),
 ]
 INTEGRATIONS = ['Salesforce', 'Gmail', 'Slack', 'Google Calendar',
                 'Teams', 'Zoom', 'Outlook', 'Notion', 'Asana']
@@ -1073,8 +1081,20 @@ def marquee_html(items, depth: int = 0):
         name = x.get('name', '')
         if 'file' in x and x['file']:
             src = f'{p}assets/img/clients/{x["file"]}'
-            return (f'<span class="kz-marquee-logo">'
-                    f'<img src="{E(src)}" alt="{E(name)}" loading="lazy">'
+            # `detail` logos keep their grey shades (skip the black silhouette)
+            # because they're layered marks that read as a blob when flattened;
+            # they also render a touch larger so the detail is readable.
+            treat = x.get('treat')  # 'detail' (AMS mark) | 'soft' (Gifta badge) | 'light' (heavy wordmarks)
+            img_cls = f' is-{treat}' if treat else ''
+            span_cls = ' kz-marquee-logo--lg' if x.get('big') else ''
+            # Optional per-logo height (px) and vertical nudge (dy px) for fine
+            # optical balancing/alignment.
+            rules = []
+            if x.get('h'):  rules.append(f'height:{int(x["h"])}px')
+            if x.get('dy'): rules.append(f'transform:translateY({int(x["dy"])}px)')
+            style = f' style="{";".join(rules)}"' if rules else ''
+            return (f'<span class="kz-marquee-logo{span_cls}"{style}>'
+                    f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
                     f'</span>')
         return f'<span class="kz-marquee-text">{E(name)}</span>'
 
@@ -1082,8 +1102,13 @@ def marquee_html(items, depth: int = 0):
         f'<span class="kz-marquee-item">{render_one(x)}<span class="sep">✺</span></span>'
         for x in items
     )
+    # Two identical runs + a -50% translate = a seamless loop that scrolls
+    # through every logo before repeating. When motion is reduced the animation
+    # is off, so we hide run 2 and let run 1 wrap into a static grid — every
+    # logo stays visible without scrolling (see site.css).
+    run = f'<div class="kz-mq-run">{one_run}</div>'
     return f'''<div class="kz-marquee" aria-hidden="true">
-      <div class="kz-marquee-track">{one_run}{one_run}{one_run}</div>
+      <div class="kz-marquee-track">{run}{run}</div>
     </div>'''
 
 
@@ -1442,7 +1467,7 @@ def render_home() -> str:
       </div>
     </section>
 
-    {marquee_html(CLIENT_LOGOS + INTEGRATIONS, depth=0)}
+    {marquee_html(CLIENT_LOGOS, depth=0)}
 
     <!-- PRODUCT TOUR -->
     <section class="kz-section-loose" data-tour>
