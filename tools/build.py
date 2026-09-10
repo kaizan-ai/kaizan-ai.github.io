@@ -1455,7 +1455,7 @@ def render_home() -> str:
       </div>
     </section>
 
-    {marquee_html(CLIENT_LOGOS + INTEGRATIONS, depth=0)}
+    {marquee_html(CLIENT_LOGOS, depth=0)}
 
     <!-- PRODUCT TOUR -->
     <section class="kz-section-loose" data-tour>
