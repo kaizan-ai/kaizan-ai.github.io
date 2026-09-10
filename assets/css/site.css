@@ -649,9 +649,9 @@ button { font-family: inherit; }
 .kz-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .kz-statcard {
   position: relative; overflow: hidden; text-align: center;
-  background: var(--kz-paper); border: 1px solid var(--kz-line); border-radius: 18px;
+  background: var(--kz-ink); border: 1px solid var(--kz-ink); border-radius: 18px;
   padding: 42px 32px 34px;
-  box-shadow: 0 2px 6px rgba(40,30,15,.08), 0 20px 34px -18px rgba(40,30,15,.28);
+  box-shadow: 0 2px 6px rgba(40,30,15,.10), 0 22px 38px -18px rgba(40,30,15,.42);
 }
 .kz-statcard::before {
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
@@ -659,14 +659,14 @@ button { font-family: inherit; }
 }
 .kz-statcard-num {
   font-family: var(--kz-display); font-weight: 800; letter-spacing: -.02em;
-  font-size: clamp(50px, 6vw, 70px); line-height: 1; color: var(--kz-ink);
+  font-size: clamp(50px, 6vw, 70px); line-height: 1; color: #fff;
 }
 .kz-statcard-cat {
   margin-top: 18px; display: inline-block; padding: 5px 15px; border-radius: 999px;
   background: var(--kz-yellow); color: var(--kz-ink);
   font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
 }
-.kz-statcard-desc { margin-top: 14px; font-size: 15.5px; line-height: 1.45; color: rgba(0,0,0,.66); }
+.kz-statcard-desc { margin-top: 14px; font-size: 15.5px; line-height: 1.45; color: rgba(255,255,255,.72); }
 @media (max-width: 860px) { .kz-stats-grid { grid-template-columns: 1fr; } }
 
 /* ── Quote carousel (homepage) ────────────────────────────────── */
