@@ -1460,15 +1460,16 @@ def render_home() -> str:
     logo_h = {
         'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
         'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
-        'The Kite Factory': 74, 'Transmission': 42,
+        'The Kite Factory': 70, 'Transmission': 42,
     }
 
     def _qcard(cq):
         logo = company_logo.get(cq['co'], '')
         h = logo_h.get(cq['co'], 52)
-        logo_html = (f'<img class="kz-qcard-logo" style="height:{h}px" '
-                     f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
+        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+                 f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
         more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
