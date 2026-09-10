@@ -1486,6 +1486,20 @@ def render_home() -> str:
         for i in range(len(carousel_quotes))
     )
 
+    # Headline outcome stats — bold cards above the quote carousel.
+    home_stats = [
+        ('23%',  'Efficiency', 'Reduce the cost-to-serve each client'),
+        ('2×',   'Capability', 'Create unique products, services & insights'),
+        ('21%+', 'Revenue',    'Proactive personalised actions for each client'),
+    ]
+    stats_cards = '\n'.join(
+        f'<div class="kz-statcard">'
+        f'<div class="kz-statcard-num">{E(num)}</div>'
+        f'<div class="kz-statcard-cat">{E(cat)}</div>'
+        f'<div class="kz-statcard-desc">{E(desc)}</div>'
+        f'</div>'
+        for num, cat, desc in home_stats)
+
     body = f'''
     {nav_html(0, active='Home')}
 
@@ -1567,6 +1581,15 @@ def render_home() -> str:
         Pick your role to see how Kaizan fits into your week - personalised guidance, real use cases and daily workflows.
       </p>
       <div class="kz-personas-grid">{persona_pills}</div>
+    </section>
+
+    <!-- IMPACT STATS -->
+    <section class="kz-stats">
+      <div class="kz-quotes-head">
+        <div class="kz-eyebrow">By the numbers</div>
+        <h2 class="kz-quotes-title">The impact on client teams</h2>
+      </div>
+      <div class="kz-stats-grid">{stats_cards}</div>
     </section>
 
     <!-- PROOF -->
