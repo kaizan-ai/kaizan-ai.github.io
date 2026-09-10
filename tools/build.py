@@ -85,7 +85,7 @@ CLIENT_LOGOS = [
     dict(name='Tradedoubler',             file='tradedoubler.png'),
     dict(name='Open Partners',            file='open-partners.svg'),
     dict(name='Verkeer',                  file='verkeer.png'),
-    dict(name='AMS',                      file='ams.png'),
+    dict(name='AMS',                      file='ams.png', detail=True),
     dict(name='Assembly Global',          file='assembly-global.svg'),
     dict(name='Click Through Marketing',  file='click-through-marketing.png'),
     dict(name='Collective Content',       file='collective-content.svg'),
@@ -1076,8 +1076,11 @@ def marquee_html(items, depth: int = 0):
         name = x.get('name', '')
         if 'file' in x and x['file']:
             src = f'{p}assets/img/clients/{x["file"]}'
+            # `detail` logos keep their grey shades (skip the black silhouette)
+            # because they're layered marks that read as a blob when flattened.
+            cls = ' is-detail' if x.get('detail') else ''
             return (f'<span class="kz-marquee-logo">'
-                    f'<img src="{E(src)}" alt="{E(name)}" loading="lazy">'
+                    f'<img class="kz-marquee-img{cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
                     f'</span>')
         return f'<span class="kz-marquee-text">{E(name)}</span>'
 

@@ -447,6 +447,12 @@ button { font-family: inherit; }
   transition: filter .25s ease;
 }
 .kz-marquee:hover .kz-marquee-logo img { filter: grayscale(1) brightness(0) opacity(0.9); }
+/* Layered marks (e.g. AMS) keep their grey shades so their detail stays legible
+   instead of collapsing into a solid blob under the black-silhouette filter. */
+.kz-marquee-logo img.is-detail,
+.kz-marquee:hover .kz-marquee-logo img.is-detail {
+  filter: grayscale(1) contrast(1.25) brightness(0.62) opacity(0.85);
+}
 @keyframes kz-mq-move {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
