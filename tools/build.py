@@ -1106,6 +1106,8 @@ PEOPLE_PHOTOS = {
     'Corin Ward':        'corin-ward.png',
     'Adam Hopkinson':    'adam-hopkinson.png',
     'Alex Beddoe':       'alex-beddoe.png',
+    'Ada Cavalmoretti':  'ada-cavalmoretti.png',
+    'Greg Gifford':      'greg-gifford.png',
 }
 
 
@@ -1391,13 +1393,92 @@ def render_home() -> str:
         for slug, label in PERSONA_LIST
     )
 
-    quote_cards = '\n'.join(
-        f'<div class="kz-quote-card kz-shadow-card">'
-        f'<q>{E(q["q"])}</q>'
-        f'{portrait(q["name"], q["role"], q["co"], q["tone"], depth=0)}'
-        f'</div>'
-        for q in QUOTES[:2]
+    # Carousel quotes: lead with the US case studies (Gravity Global, Searchlab,
+    # NP Digital) for the US market push, then the strongest case-study quote
+    # from each remaining persona page (same people/photos as the persona heroes).
+    carousel_quotes = [
+        dict(q='Kaizan is helping us reduce the manual tasks — the ones that take a '
+               'long time but are less valuable — so we can focus on our clients.',
+             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
+             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
+        dict(q='This tool is an absolute game-changer. Don’t even question it. '
+               'It’s money very well spent. An invaluable customer tool.',
+             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
+             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
+        dict(q='We’ve had numerous occasions where we’ve been able to spot and '
+               'identify high-risk clients that potentially were going to leave.',
+             name='Brandon Smith', role='Managing Director', co='NP Digital',
+             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
+    ]
+    # Blog post each persona is featured in — powers the card's "Read more" link.
+    _persona_blog = {
+        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
+        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
+        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
+        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
+        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
+        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+    }
+    _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
+    for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
+               'Adam Hopkinson', 'Gabriella Krite', 'Alex Beddoe']:
+        _pp = _by_quote_name[_n]
+        carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
+                                    role=_pp['quote_role'], co=_pp['quote_co'],
+                                    blog=_persona_blog.get(_n)))
+    # Company logo per quote — shown on the card for credibility.
+    company_logo = {
+        'Gravity Global': 'gravity-global.svg', 'Searchlab': 'searchlab.png',
+        'NP Digital': 'np-digital.png', 'Tradedoubler': 'tradedoubler.png',
+        'Collective Content': 'collective-content.svg', 'Verkeer': 'verkeer.png',
+        'PASHN': 'pashn-media-agency.svg', 'The Kite Factory': 'the-kite-factory.png',
+        'Transmission': 'transmission.png',
+    }
+
+    # Per-company logo height (px) so every mark reads at a proportionate size.
+    logo_h = {
+        'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
+        'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
+        'The Kite Factory': 84, 'Transmission': 42,
+    }
+
+    def _qcard(cq):
+        logo = company_logo.get(cq['co'], '')
+        h = logo_h.get(cq['co'], 52)
+        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+                 f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
+            else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+                if cq.get('blog') else '')
+        return (f'<figure class="kz-qcard">'
+                f'{logo_html}'
+                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
+                f'<q>{E(cq["q"])}</q>'
+                f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
+                f'{more}'
+                f'</figure>')
+
+    carousel_cards = '\n'.join(_qcard(cq) for cq in carousel_quotes)
+    carousel_dots = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
+        for i in range(len(carousel_quotes))
     )
+
+    # Headline outcome stats — bold cards above the quote carousel.
+    home_stats = [
+        ('23%',  'Efficiency', 'Reduce the cost-to-serve each client'),
+        ('2×',   'Capability', 'Create unique products, services & insights'),
+        ('21%+', 'Revenue',    'Proactive personalised actions for each client'),
+    ]
+    stats_cards = '\n'.join(
+        f'<div class="kz-statcard">'
+        f'<div class="kz-statcard-num">{E(num)}</div>'
+        f'<div class="kz-statcard-cat">{E(cat)}</div>'
+        f'<div class="kz-statcard-desc">{E(desc)}</div>'
+        f'</div>'
+        for num, cat, desc in home_stats)
 
     body = f'''
     {nav_html(0, active='Home')}
@@ -1482,16 +1563,30 @@ def render_home() -> str:
       <div class="kz-personas-grid">{persona_pills}</div>
     </section>
 
-    <!-- PROOF -->
-    <section class="kz-proof">
-      <div class="kz-proof-stat">
-        <div class="kz-eyebrow" style="color:rgba(255,251,240,.6);">Measured</div>
-        <div>
-          <div class="num">21%+</div>
-          <div class="lbl">average revenue growth per client across the full client portfolio.</div>
-        </div>
+    <!-- IMPACT STATS -->
+    <section class="kz-stats">
+      <div class="kz-quotes-head">
+        <div class="kz-eyebrow">By the numbers</div>
+        <h2 class="kz-quotes-title">The impact on client teams</h2>
       </div>
-      <div class="kz-proof-quotes">{quote_cards}</div>
+      <div class="kz-stats-grid">{stats_cards}</div>
+    </section>
+
+    <!-- PROOF -->
+    <!-- QUOTE CAROUSEL -->
+    <section class="kz-quotes">
+      <div class="kz-quotes-head">
+        <div class="kz-eyebrow">In their words</div>
+        <h2 class="kz-quotes-title">What our clients say</h2>
+      </div>
+      <div class="kz-carousel" data-carousel>
+        <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
+        <div class="kz-carousel-viewport" data-carousel-viewport>
+          {carousel_cards}
+        </div>
+        <button class="kz-carousel-arrow is-next" type="button" data-carousel-next aria-label="Next quote">&rsaquo;</button>
+      </div>
+      <div class="kz-carousel-dots" data-carousel-dots>{carousel_dots}</div>
     </section>
 
     <!-- CTA -->

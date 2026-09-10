@@ -3,13 +3,13 @@ title: How The Kite Factory Uses AI to Unify Client Data and Improve Operational
 date: 2026-05-18
 author: Lia
 category: POV
-excerpt: Gabriella Kite, Managing Partner of Operations at The Kite Factory, shares how AI is helping her team unify fragmented client data, improve visibility, and create accountability across client relation
+excerpt: Gabriella Krite, Managing Partner of Operations at The Kite Factory, shares how AI is helping her team unify fragmented client data, improve visibility, and create accountability across client relation
 cover: img-1.png
 draft: false
 tags: [client-success, advertising, artificial-intelligence, client-relationship, operations-management]
 ---
 
-**Gabriella Kite, Managing Partner of Operations at The Kite Factory, shares how AI is helping her team unify fragmented client data, improve visibility, and create accountability across client relationships.**
+**Gabriella Krite, Managing Partner of Operations at The Kite Factory, shares how AI is helping her team unify fragmented client data, improve visibility, and create accountability across client relationships.**
 
 ## Watch the full conversation
 
@@ -24,7 +24,7 @@ But delivering that level of service at scale requires more than strong relation
 
 As the agency grew, client data became increasingly fragmented across teams, tools, and individuals.
 
-In this case study, Gabriella Kite explains how implementing Kaizan AI has helped unify client data, reduce reliance on manual processes, and give teams a single, reliable view of every client.
+In this case study, Gabriella Krite explains how implementing Kaizan AI has helped unify client data, reduce reliance on manual processes, and give teams a single, reliable view of every client.
 
 ## Key Results
 
