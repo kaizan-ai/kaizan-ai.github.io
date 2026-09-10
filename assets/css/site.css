@@ -660,31 +660,41 @@ button { font-family: inherit; }
 .kz-carousel-viewport::-webkit-scrollbar { display: none; }
 .kz-qcard {
   flex: 0 0 400px; max-width: 84vw; margin: 0; scroll-snap-align: start;
-  background: #FFD54A; border-radius: 18px;
-  padding: 34px 30px; display: flex; flex-direction: column; align-items: center;
-  text-align: center; gap: 24px;
-  box-shadow: 0 2px 0 rgba(120,80,0,.08), 0 22px 48px -24px rgba(255,185,0,.55);
+  background: var(--kz-paper); border: 1px solid var(--kz-line); border-radius: 18px;
+  padding: 32px 30px; display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 18px; position: relative; overflow: hidden;
 }
-/* Company logo — dark, sized within a consistent box so all read proportionate. */
+/* Kaizan-yellow top accent bar — the pop, without flooding the card. */
+.kz-qcard::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: var(--kz-yellow);
+}
+.kz-qcard { box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 20px 44px -26px rgba(40,30,15,.22); }
+/* Company logo — dark, sized per-company so all read proportionate. */
 .kz-qcard-logo {
   height: 42px; width: auto; max-width: 210px; object-fit: contain;
-  filter: grayscale(1) brightness(0) opacity(0.85);
+  filter: grayscale(1) brightness(0) opacity(0.85); margin-top: 6px;
 }
-.kz-qcard-co { font-weight: 700; font-size: 15px; color: rgba(0,0,0,.75); }
+.kz-qcard-co { font-weight: 700; font-size: 15px; color: var(--kz-ink); }
+/* Big yellow quotation mark — the brand accent. */
+.kz-qcard-mark {
+  font-family: Georgia, "Times New Roman", serif; font-weight: 700;
+  font-size: 52px; line-height: 1; color: var(--kz-yellow);
+  margin: -2px 0 -18px; user-select: none;
+}
 .kz-qcard q {
   font-family: var(--kz-display); font-size: 20px; line-height: 1.42; flex: 1;
-  color: var(--kz-ink); quotes: "\201C" "\201D";
+  color: var(--kz-ink); quotes: none;
   display: flex; align-items: center; justify-content: center;
 }
-.kz-qcard q::before { content: open-quote; }
-.kz-qcard q::after  { content: close-quote; }
+.kz-qcard q::before, .kz-qcard q::after { content: none; }
 .kz-qcard figcaption { margin: 0; }
 /* Centred, stacked attribution inside the card. */
 .kz-qcard .kz-portrait { flex-direction: column; gap: 8px; }
 .kz-qcard .kz-portrait .meta { text-align: center; }
 .kz-qcard .kz-portrait .name { font-weight: 700; color: var(--kz-ink); }
 .kz-qcard .kz-portrait .role { color: rgba(0,0,0,.62); }
-.kz-qcard .kz-portrait .avatar { box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 0 0 4px rgba(0,0,0,.08); }
+.kz-qcard .kz-portrait .avatar { box-shadow: 0 0 0 3px var(--kz-yellow); }
 .kz-carousel-arrow {
   flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%;
   border: 1px solid var(--kz-line-strong); background: var(--kz-paper);

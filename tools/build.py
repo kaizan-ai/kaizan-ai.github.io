@@ -1457,6 +1457,7 @@ def render_home() -> str:
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
+                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
                 f'<q>{E(cq["q"])}</q>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
                 f'</figure>')
