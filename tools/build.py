@@ -669,8 +669,8 @@ PERSONAS = {
 
 PERSONA_LIST = [
     ('account-manager',            'Client Service / Account Manager'),
-    ('client-service-director',    'Client Service Director'),
-    ('leadership',                 'Senior Leadership / Director'),
+    ('client-service-director',    'Head of Client Services'),
+    ('leadership',                 'Senior Leadership'),
     ('head-of-ai',                 'Head of AI / CTO'),
     ('project-manager',            'Project Manager'),
     ('new-business',               'New Business / Sales'),
@@ -4899,6 +4899,13 @@ def build_us_locale():
         us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
         # US spelling.
         us = _spell_text_nodes(us)
+        # Homepage: drop TradeDoubler from the client-logo belt — the brand
+        # isn't well known in the US, so it's stripped from the US marquee.
+        if path == '/':
+            us = re.sub(
+                r'<span class="kz-marquee-item"><span class="kz-marquee-logo"[^>]*>'
+                r'<img[^>]*tradedoubler[^>]*></span><span class="sep">✺</span></span>',
+                '', us)
 
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
