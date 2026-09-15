@@ -14,11 +14,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
 <link rel="stylesheet" href="../assets/css/tokens.css?v=508b7a89">
-<link rel="stylesheet" href="../assets/css/site.css?v=21e7ed34">
-<script defer src="../assets/js/site.js?v=4eab62ff"></script>
+<link rel="stylesheet" href="../assets/css/site.css?v=a2f38731">
+<script defer src="../assets/js/site.js?v=8d1798b3"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
-     cookie consent — see assets/js/consent.js -->
+     cookie consent (see assets/js/consent.js) -->
 <script defer src="../assets/js/consent.js?v=6ba3a10f"></script>
 </head>
 <body>
@@ -63,7 +63,7 @@
         <div class="kz-eyebrow" style="justify-content:center;">Book a demo · 30-min live walkthrough</div>
         <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">One quick check, then your calendar.</h1>
         <p class="kz-lede" style="margin-top:16px;">
-          We ask everyone to confirm they're human before booking — it keeps our
+          We ask everyone to confirm they're human before booking. It keeps our
           calendar clear for real conversations. This takes a second.
         </p>
 
@@ -97,7 +97,7 @@
       var DEST = 'aHR0cHM6Ly9jYWxlbmRhci5hcHAuZ29vZ2xlL0VhZTcxOUVqaDN4eE4zTGc4';
       var statusEl = document.getElementById('kz-demo-status');
       window.kzOnVerified = function () {
-        if (statusEl) statusEl.textContent = 'Verified — opening the calendar…';
+        if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
         window.location.href = atob(DEST);
       };
       window.kzOnError = function () {
