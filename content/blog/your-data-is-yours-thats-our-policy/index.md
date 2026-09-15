@@ -3,7 +3,7 @@ title: "Your Data Is Yours. That's Our Policy."
 date: 2026-07-14
 author: Glen Calvert
 category: POV
-excerpt: Kaizan CEO Glen Calvert on why your client intelligence stays yours — customisable, portable, fragmented across models by design, and never used to train anyone's foundation model.
+excerpt: Kaizan CEO Glen Calvert on why your client intelligence stays yours: customisable, portable, fragmented across models by design, and never used to train anyone's foundation model.
 cover: cover.png
 draft: false
 tags: [data-privacy, artificial-intelligence, client-intelligence, enterprise, trust]

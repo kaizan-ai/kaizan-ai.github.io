@@ -143,7 +143,7 @@
       costEl.innerHTML =
         '<div><div class="kzroi-cost-label">Kaizan cost · Enterprise tier</div>' +
         '<div class="kzroi-cost-val">Custom</div></div>' +
-        '<div class="kzroi-bar-note is-custom">75+ clients — Enterprise pricing is bespoke. Book a demo for a tailored figure. Unlimited users included as standard.</div>';
+        '<div class="kzroi-bar-note is-custom">75+ clients: Enterprise pricing is bespoke. Book a demo for a tailored figure. Unlimited users included as standard.</div>';
     } else {
       var costPer = state.clients > 0 ? (r.tierPrice / 12) / state.clients : 0;
       costEl.innerHTML =
@@ -151,7 +151,7 @@
         '<div class="kzroi-cost-row"><span class="kzroi-cost-val">' + gbp0(r.tierPrice / 12) + '</span><span class="kzroi-cost-unit">/ mo</span></div></div>' +
         '<div><div class="kzroi-cost-label">Cost per client</div>' +
         '<div class="kzroi-cost-row"><span class="kzroi-cost-val">' + gbp0(costPer) + '</span><span class="kzroi-cost-unit">/ mo</span></div></div>' +
-        '<div class="kzroi-bar-note">Unlimited users — your whole team of ' + num(state.totalHeadcount) + ' on Kaizan at no extra cost.</div>';
+        '<div class="kzroi-bar-note">Unlimited users: your whole team of ' + num(state.totalHeadcount) + ' on Kaizan at no extra cost.</div>';
     }
 
     // composition card
@@ -193,13 +193,13 @@
     // footnote
     var foot;
     if (r.isCustom) {
-      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost — Enterprise (75+ clients) pricing is bespoke; book a demo for your figure. ';
+      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost: Enterprise (75+ clients) pricing is bespoke; book a demo for your figure. ';
     } else {
       foot = 'Net gain = ' + gbp0(r.gross) + ' benefit − ' + gbp0(r.tierPrice) + ' ' + r.tier.name + ' (annual, unlimited users). ';
     }
     foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool; capacity on ' + ADMIN_HRS +
       ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr; 1 FTE = ' + num(FTE_HOURS) +
-      ' hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count — see ' +
+      ' hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count, see ' +
       '<a href="/pricing/" target="_blank" rel="noopener">kaizan.ai/pricing</a>.';
     q('[data-roi="footnote"]').innerHTML = foot;
 

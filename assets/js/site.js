@@ -253,7 +253,7 @@
     var bar = document.createElement('div');
     bar.className = 'kz-locale-banner';
     bar.innerHTML =
-      '<span>Looks like you’re in the US — see the US site?</span>' +
+      '<span>Looks like you’re in the US. See the US site?</span>' +
       '<a class="kz-btn kz-btn-yellow" href="' + usPath() + '" data-go-us>View US site</a>' +
       '<button type="button" class="kz-locale-banner__x" aria-label="Dismiss">×</button>';
     document.body.appendChild(bar);

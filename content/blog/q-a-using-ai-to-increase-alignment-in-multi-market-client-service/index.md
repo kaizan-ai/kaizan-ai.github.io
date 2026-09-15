@@ -1,5 +1,5 @@
 ---
-title: Q&A — Using AI to increase alignment in multi-market Client Service teams
+title: Q&A: Using AI to increase alignment in multi-market Client Service teams
 date: 2024-08-21
 author: Soraya Selinger
 category: POV
@@ -8,7 +8,7 @@ cover: img-1.png
 draft: false
 ---
 
-## **Q&A — Using AI to increase alignment in multi-market Client Service teams**
+## **Q&A: Using AI to increase alignment in multi-market Client Service teams**
 
 Looking after an expanding team which traverses a global footprint is no easy task, layering in the complexity of client service management with clients and stakeholders with different requirements and ways of working makes this task even more challenging. But, with new Client Services (CS) Platforms coming to market which improve the way CS managers engage with clients, managing the professional services side of the business is becoming easier. Multi-market client teams create challenges, but managing CS teams where there is a significant amount of remote working compounds the problem and creates risks with visibility and alignment.
 
@@ -16,7 +16,7 @@ Boasting 15 offices worldwide and with a footprint in 84 countries, performance 
 
 Specialising in performance marketing, Tradedoubler amongst other services, also offers clients affiliate, influencer, app and programmatic marketing. Tradedoubler have been using Kaizan’s Client Service Platform as a way to measure client sentiment and health, as well as aggregate comms channels for increased alignment and visibility. This isn’t easy at the best of times but AI has been simplifying the process and continuously improving their client relationships.
 
-Kaizan is an AI powered Client Service Platform which empowers teams to increase the metrics they care about most; client satisfaction, profitability, revenue and their own productivity and knowledge. CEO and Co-Founder of Kaizan, [Glen Calvert](https://www.linkedin.com/in/glencalvert/), caught up with [Ulrik Ljungberg](https://www.linkedin.com/in/ulrikljungberg/) — Head of International Client Development, at Tradedoubler to talk through some of the nuances and benefits of implementing AI within a global team.
+Kaizan is an AI powered Client Service Platform which empowers teams to increase the metrics they care about most; client satisfaction, profitability, revenue and their own productivity and knowledge. CEO and Co-Founder of Kaizan, [Glen Calvert](https://www.linkedin.com/in/glencalvert/), caught up with [Ulrik Ljungberg](https://www.linkedin.com/in/ulrikljungberg/), Head of International Client Development, at Tradedoubler to talk through some of the nuances and benefits of implementing AI within a global team.
 
 **Q. Hi Ulrik, it’s great to chat with you. Tradedoubler have been on a remarkable journey implementing AI into their business. Can you tell us a bit about yourself, what your team does and how you’ve been using AI?**
 
@@ -24,7 +24,7 @@ A. Of course, I head up Tradedoubler’s International Client Development Team. 
 
 **Q. It’s fantastic that you’ve already experienced the benefits of implementing an AI platform into your CS team. It’s really a new area of AI which we’re witnessing, where the professional services element of the business is being supported and provided with rich data. What are some of the ways you have experienced those benefits first hand at Tradedoubler?**
 
-A. One of the notable areas for us has been understanding client sentiment better — It’s super important to understand what our clients think about the work that we do and equally important for us to be constantly monitoring this, using AI means that we really have our finger on the pulse. This works both when the sentiment is improving but also when it’s going down. We have found the sentiment score can be used internally to better understand what we’re doing right and where we can improve. It’s also a great tool for internal 121’s with the team.
+A. One of the notable areas for us has been understanding client sentiment better. It’s super important to understand what our clients think about the work that we do and equally important for us to be constantly monitoring this, using AI means that we really have our finger on the pulse. This works both when the sentiment is improving but also when it’s going down. We have found the sentiment score can be used internally to better understand what we’re doing right and where we can improve. It’s also a great tool for internal 121’s with the team.
 
 **Q. Understanding client sentiment is a game changer, because in the worst case scenario you can step in preventatively and isolate where a problem might come from. In the best case scenario if you’re seeing client sentiment improving, CS managers can focus on selling products which are useful or relevant to the client. If the sentiment and the relationship are healthy, it provides a good opportunity to start those conversations. Teams can be freed up from some of the admin to think strategically and be action oriented. Have you seen much of this since implementing AI?**
 

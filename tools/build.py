@@ -691,12 +691,12 @@ CASE_DATA = {
             ('Before Kaizan',
              "Quarterly business reviews were Hannah's least favourite part of the month. Each one "
              "meant pulling threads out of HubSpot, exporting Slack, scrubbing Gong calls, and "
-             "writing a brief from scratch. The work was real but it was repeatable — which made "
+             "writing a brief from scratch. The work was real but it was repeatable, which made "
              "it doubly painful."),
             ('What changed',
              "Kaizan's Insights agent now drafts the QBR brief automatically the week before each "
              "review. Health, sentiment, expansion signals and risk flags are all there in a "
-             "single doc. Hannah edits — she doesn't write."),
+             "single doc. Hannah edits, she doesn't write."),
             ('What it unlocked',
              "Verkeer's account managers spend the saved time on the conversations themselves. "
              "CSAT moved 1.4 points in two quarters. Three accounts that were quietly drifting got "
@@ -712,7 +712,7 @@ CASE_DATA = {
         stats=[('3','at-risk saves in Q2'), ('£480k','revenue retained'), ('100%','AM adoption')],
         body=[
             ('The pattern',
-             "Mid-tier accounts at TKF were churning quietly — sentiment dropped on calls a few "
+             "Mid-tier accounts at TKF were churning quietly, sentiment dropped on calls a few "
              "weeks before any explicit signal. By the time the AM noticed, the client had already "
              "had the internal conversation."),
             ('What changed',
@@ -721,7 +721,7 @@ CASE_DATA = {
              "the client partner to step in personally."),
             ('What it unlocked',
              "£480k of revenue retained that would otherwise have been a churn line item. More "
-             "importantly, AMs trust the signal — adoption hit 100% within six weeks."),
+             "importantly, AMs trust the signal: adoption hit 100% within six weeks."),
         ],
     ),
     'jellyfish': dict(
@@ -756,7 +756,7 @@ CASE_DATA = {
              "of mining them manually meant they almost never did."),
             ('What changed',
              "The Expansion agent watches every client thread for buying language, scope creep, "
-             "and stakeholder shifts — flagging the partner the same day."),
+             "and stakeholder shifts, flagging the partner the same day."),
             ('What it unlocked',
              "Upsell pipeline doubled year-on-year, and partners spend their selling time on real "
              "signals instead of cold check-ins."),
@@ -781,7 +781,7 @@ def cover(a, b, glyph):
 
 INSIGHTS_POSTS = [
     dict(cat='POV', t='What the top 10% of account managers do differently',
-         d='Patterns we found across the highest-NPS teams — from briefing rituals to how they handle silence.',
+         d='Patterns we found across the highest-NPS teams, from briefing rituals to how they handle silence.',
          meta='9 min read', author='Glen Calvert', date='2 May 2026',
          img=cover('#FFB900', '#FFD86B', '01')),
     dict(cat='PRODUCT', t='Want to see Kaizan in action?',
@@ -789,19 +789,19 @@ INSIGHTS_POSTS = [
          meta='6 min watch', author='Kaizan team', date='28 Apr 2026',
          img=cover('#0A0A0A', '#3A3A3A', '02')),
     dict(cat='WHITE PAPER', t='The 146% paradox',
-         d='Why headline numbers hide risk — and the four leading indicators that actually predict the next year.',
+         d='Why headline numbers hide risk, and the four leading indicators that actually predict the next year.',
          meta='18 min · gated', author='Pravin Paratey', date='21 Apr 2026',
          img=cover('#F1ECDD', '#E0D6BB', '03')),
     dict(cat='FIELD NOTES', t='The Monday briefing, decoded',
-         d='What a good weekly client-health ritual looks like — from the firms running Kaizan in production.',
+         d='What a good weekly client-health ritual looks like, from the firms running Kaizan in production.',
          meta='9 min read', author='Hannah Bowes', date='14 Apr 2026',
          img=cover('#D9E5DA', '#A8C4AE', '04')),
     dict(cat='INTERVIEW', t='A conversation with Waseem Ali',
-         d='Why we call it Client Super Intelligence — and what changes when judgement becomes infrastructure.',
+         d='Why we call it Client Super Intelligence, and what changes when judgement becomes infrastructure.',
          meta='22 min listen', author='Glen Calvert', date='7 Apr 2026',
          img=cover('#FFB900', '#0A0A0A', '05')),
     dict(cat='BENCHMARK', t='The 2026 client-services benchmarks',
-         d='Industry baselines for sentiment, coverage, account activity and engagement growth — with sources.',
+         d='Industry baselines for sentiment, coverage, account activity and engagement growth, with sources.',
          meta='12 min read', author='Kaizan Labs', date='30 Mar 2026',
          img=cover('#E8DFCB', '#FFB900', '06')),
 ]
@@ -842,7 +842,7 @@ def asset_v(rel: str) -> str:
 
 def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
     p = relpath(depth)
-    desc = description or 'Kaizan — client super intelligence for professional services firms.'
+    desc = description or 'Kaizan: client super intelligence for professional services firms.'
     # Content-hash cache busting: the query changes only when the file does,
     # so caches stay warm between deploys but refresh immediately on change.
     # (Previously disabled, which left visitors on stale CSS/JS after deploys.)
@@ -870,7 +870,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
         <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
-             cookie consent — see assets/js/consent.js -->
+             cookie consent (see assets/js/consent.js) -->
         <script defer src="{p}assets/js/consent.js{consent_js_v}"></script>
         </head>
         <body>
@@ -1207,9 +1207,9 @@ def scene_assistant() -> str:
 def scene_helpers() -> str:
     """Scene 02 — AI Helpers acting on Acme."""
     helpers = [
-        ('K', 'Reply drafter',     'Drafted QBR follow-up to Sarah — adds three outcomes from yesterday\'s call.', '2 min ago'),
+        ('K', 'Reply drafter',     'Drafted QBR follow-up to Sarah, adds three outcomes from yesterday\'s call.', '2 min ago'),
         ('K', 'Risk watcher',      'Mike has been quiet 21 days. Re-intro draft ready, CC\'d James.',                '14 min ago'),
-        ('K', 'Expansion scout',   '"Do you do analytics?" — picked up on Tue\'s call. Scoped pitch ready.',         '1 hr ago'),
+        ('K', 'Expansion scout',   '"Do you do analytics?" picked up on Tue\'s call. Scoped pitch ready.',         '1 hr ago'),
         ('K', 'QBR builder',       'Friday deck compiled from 12 meetings. Awaiting your review.',                    'today'),
     ]
     cards_html = '\n'.join(
@@ -1358,9 +1358,9 @@ def render_home() -> str:
         ('AI Helpers on every client',
          "Specialist agents on every account, working 24/7: drafting replies, prepping QBRs, watching for risk, surfacing expansion the moment it lands."),
         ('CARE Model · Relationship health',
-         "The four-pillar framework — Client satisfaction, Activity with stakeholders, Relationship strength, Expansion opportunities — scored and tracked on every account."),
+         "The four-pillar framework: Client satisfaction, Activity with stakeholders, Relationship strength, Expansion opportunities, scored and tracked on every account."),
         ('Chatbot and MCP',
-         "Ask anything in natural language. Connect Kaizan to Claude, ChatGPT or any MCP-aware tool — answers with citations from the source conversations."),
+         "Ask anything in natural language. Connect Kaizan to Claude, ChatGPT or any MCP-aware tool, answers with citations from the source conversations."),
     ]
     tour_tabs = '\n'.join(
         f'<button class="kz-tour-tab{" is-active" if i == 0 else ""}" data-tour-tab type="button">'
@@ -1373,13 +1373,13 @@ def render_home() -> str:
 
     care = [
         ('C', 'Client satisfaction',
-         "Sentiment on every stakeholder and thread. Not RAG guesses — evidence pulled from the source conversations."),
+         "Sentiment on every stakeholder and thread. Not RAG guesses: evidence pulled from the source conversations."),
         ('A', 'Activity with stakeholders',
          'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically.'),
         ('R', 'Relationship strength',
-         'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros — handled before you ask.'),
+         'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros, handled before you ask.'),
         ('E', 'Expansion opportunities',
-         'Upsell and cross-sell signals surfaced the moment a client raises them — not next quarter.'),
+         'Upsell and cross-sell signals surfaced the moment a client raises them, not next quarter.'),
     ]
     care_html = '\n'.join(
         f'<div class="kz-care-cell"><div class="glyph">{E(k)}</div>'
@@ -1397,8 +1397,8 @@ def render_home() -> str:
     # NP Digital) for the US market push, then the strongest case-study quote
     # from each remaining persona page (same people/photos as the persona heroes).
     carousel_quotes = [
-        dict(q='Kaizan is helping us reduce the manual tasks — the ones that take a '
-               'long time but are less valuable — so we can focus on our clients.',
+        dict(q='Kaizan is helping us reduce the manual tasks, the ones that take a '
+               'long time but are less valuable, so we can focus on our clients.',
              name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
              blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
@@ -1600,41 +1600,41 @@ def render_home() -> str:
     {footer_html(0)}
     '''
     return page_head('Client super intelligence for client service teams', 0,
-                     'Kaizan is the AI platform for client service professionals — '
+                     'Kaizan is the AI platform for client service professionals, '
                      'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.') + body + page_foot()
 
 
 def render_product() -> str:
     helpers = [
         dict(k='$', name='ROI Helpers', tag='Grow client ROI',
-             blurb=('Agents that read every piece of work — every brief, deck, recap, deliverable, call — across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.'),
+             blurb=('Agents that read every piece of work, every brief, deck, recap, deliverable, call, across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.'),
              signals=[
                 'Acme briefs 28% shorter than top-quartile clients · template suggested',
                 'Verkeer creative review skipped 3 weeks running · cadence fix drafted',
                 'Northwind targeting brief missing 4 fields your best work always has',
                 'Hooli campaign tracking 12% under benchmark · two playbooks pulled from wins',
              ],
-             evidence=("Helpers compare each client’s work against the patterns your best work follows — pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.")),
+             evidence=("Helpers compare each client’s work against the patterns your best work follows, pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.")),
         dict(k='❤', name='Relationship Helpers', tag='Deepen relationship strength',
-             blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage — and write the warm re-intro before your weekly review.',
+             blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage, and write the warm re-intro before your weekly review.',
              signals=[
-                '21 days silent — Mike @ Acme · re-intro draft ready',
+                '21 days silent · Mike @ Acme · re-intro draft ready',
                 'No senior coverage at Northwind · exec match suggested',
                 'New buyer joined at Stark · onboarding note drafted',
                 'Tone shift on Sarah @ Hooli · escalation flagged with evidence',
              ],
              evidence='Trained on your conversations: who replies fast, who goes quiet, what tone your champions actually use. The longer you run it, the more the helpers sound like your best AM at their best moment.'),
         dict(k='⚙', name='Growth Helpers', tag='Proactive client growth',
-             blurb=("Agents that listen for the moment a client says something they didn’t mean as a buying signal — and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week."),
+             blurb=("Agents that listen for the moment a client says something they didn’t mean as a buying signal, and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week."),
              signals=[
-                '"Do you do analytics?" — Acme · scoped pitch drafted using 3 lookalike wins',
+                '"Do you do analytics?" · Acme · scoped pitch drafted using 3 lookalike wins',
                 "Hooli mentioned a new product line on Tuesday’s call · launch playbook pulled",
                 'Verkeer brief widened to include retention work · capacity check + brief drafted',
                 'Scale CMO joined Stark · suggest re-pitching the measurement workstream',
              ],
-             evidence=("Suggestions are specific to that client’s objectives, history and tone — not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.")),
+             evidence=("Suggestions are specific to that client’s objectives, history and tone, not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.")),
         dict(k='+', name='Custom Helpers', tag='Build your own',
-             blurb='Spin up a helper grounded in your data and your objective — onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
+             blurb='Spin up a helper grounded in your data and your objective: onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
              signals=[
                 '"Flag any account where the senior buyer has gone quiet 14d+"',
                 "\"Draft a renewal narrative using last quarter’s wins on this client\"",
@@ -1646,13 +1646,13 @@ def render_product() -> str:
 
     care_dims = [
         ('C', 'Client sentiment',
-         'How the client actually feels about the work — tone, effort, intent, pulled from every email, call and review.', 78, '+3'),
+         'How the client actually feels about the work: tone, effort, intent, pulled from every email, call and review.', 78, '+3'),
         ('A', 'Account activity',
          'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.', 64, '+1'),
         ('R', 'Relationship coverage',
          'Who you know, how senior, how warm. Spots thin coverage and dormant champions before the work suffers.', 52, '-9'),
         ('E', 'Engagement growth',
-         'Where the scope can deepen — capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.', 71, '+2'),
+         'Where the scope can deepen: capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.', 71, '+2'),
     ]
 
     pillar_hero = [
@@ -1673,7 +1673,7 @@ def render_product() -> str:
         ('Does the work',
          'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs. Humans approve what matters; the rest just gets done.'),
         ('Sounds like you',
-         "Reads every doc, deck and Slack thread for that client — so a draft for Acme actually sounds like Acme, not a template."),
+         "Reads every doc, deck and Slack thread for that client, so a draft for Acme actually sounds like Acme, not a template."),
     ]
     asst_html = '\n'.join(
         f'<div class="kz-dark-feature"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
@@ -1687,7 +1687,7 @@ def render_product() -> str:
         dict(when='Tue · 11:00', who='Creative brief',
              sum='New campaign signed off. Wants ROI deck before exec read-out on Friday.',
              tags=['Action: deck']),
-        dict(when='Mon · 09:15', who='Slack — #acme-team',
+        dict(when='Mon · 09:15', who='Slack #acme-team',
              sum='Three messages on attribution model. Resolved by lunch. No blocker.',
              tags=['Resolved']),
     ]
@@ -1758,7 +1758,7 @@ def render_product() -> str:
     )
 
     c360_rows = [
-        ('EXEC MOVE', 'New CMO joined from Stark — Jen Patel',
+        ('EXEC MOVE', 'New CMO joined from Stark, Jen Patel',
          'Likely to push for analytics tooling. Buyer profile updated.', '→ Growth helper'),
         ('EARNINGS', 'Q1 call: cost discipline; growth still funded',
          'CFO emphasised brand spend. Renewal posture: positive.', '→ Relationship helper'),
@@ -1840,7 +1840,7 @@ def render_product() -> str:
       <div class="kz-dark-grid">
         <div>
           <p class="copy">
-            The AI Assistant joins every call — Teams, Zoom, Google Meet — and turns it into structured,
+            The AI Assistant joins every call (Teams, Zoom, Google Meet) and turns it into structured,
             searchable memory by client automatically. Decisions, owners, deadlines, sentiment. A living
             personalised memory of every client. Then it ships the work behind the meeting: recaps,
             follow-ups, status notes, CRM hygiene. Humans approve what matters; the rest just gets done.
@@ -1863,7 +1863,7 @@ def render_product() -> str:
         <div class="kz-eyebrow">02 · AI Helpers</div>
         <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;">Helpers built for client growth. Acting around the clock.</h2>
         <p class="kz-lede" style="font-size:18px;margin-top:18px;max-width:720px;">
-          Three packs of AI Helpers — plus your own. Every helper is grounded in your company data:
+          Three packs of AI Helpers, plus your own. Every helper is grounded in your company data:
           docs, decks, transcripts, Slack, CRM, email. They keep learning from every new conversation,
           so the output gets more personal to each client&rsquo;s objectives the longer you run them.
         </p>
@@ -1882,14 +1882,14 @@ def render_product() -> str:
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:520px;">
             The unifying score across every Helper. It learns from your won pitches, kept clients and
-            lost briefs — what predicts a healthy engagement in your company, not the average of someone
+            lost briefs: what predicts a healthy engagement in your company, not the average of someone
             else&rsquo;s. Not a biased RAG status. Re-tuned weekly against your data.
           </p>
           <div style="margin-top:26px;padding:18px 22px;background:var(--kz-paper);border:1px solid var(--kz-line);border-radius:12px;max-width:520px;">
             <div class="kz-eyebrow" style="margin-bottom:10px;">Trained on you</div>
             <p style="font-size:15px;line-height:1.55;color:rgba(10,10,10,.78);">
               The weights that drive CARE for a 200-person agency look nothing like a 20-person consultancy.
-              We tune privately, per tenant — your model never trains a foundation model and never crosses
+              We tune privately, per tenant. Your model never trains a foundation model and never crosses
               tenant lines.
             </p>
           </div>
@@ -1919,9 +1919,9 @@ def render_product() -> str:
             Market research on every client. Always-on context for every Helper.
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:560px;">
-            Client 360 continuously researches every account — funding, hiring, exec moves, competitor noise,
-            earnings tone, product launches — and feeds it into the Helpers as live ground truth. So when CARE drops,
-            you don&rsquo;t just know <em>that</em> something changed — you know <em>what</em>.
+            Client 360 continuously researches every account (funding, hiring, exec moves, competitor noise,
+            earnings tone, product launches) and feeds it into the Helpers as live ground truth. So when CARE drops,
+            you don&rsquo;t just know <em>that</em> something changed: you know <em>what</em>.
           </p>
           <div class="kz-dark-features" style="margin-top:28px;color:var(--kz-ink);max-width:560px;">
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Always-on research</h4><p style="color:var(--kz-mute);">Re-checks every client every day. No briefs to commission.</p></div>
@@ -2011,7 +2011,7 @@ def render_product() -> str:
     {footer_html(1)}
     '''
     return page_head('Product', 1,
-                     'AI Assistant, AI Helpers, the Client Health Model and Client 360 — '
+                     'AI Assistant, AI Helpers, the Client Health Model and Client 360, '
                      'one platform for AI-first client service teams.') + body + page_foot()
 
 
@@ -2404,7 +2404,7 @@ def render_insights() -> str:
     {footer_html(1)}
     '''
     return page_head('Blog', 1,
-                     'Notes on building client super intelligence — POV, product updates, field notes and benchmarks.') + body + page_foot()
+                     'Notes on building client super intelligence: POV, product updates, field notes and benchmarks.') + body + page_foot()
 
 
 def cover_src(post: dict, depth: int) -> str:
@@ -2666,7 +2666,7 @@ def render_about() -> str:
           </div>
         </div>
 
-        <div class="kz-essay-sign-off">— Glen &amp; Pravin</div>
+        <div class="kz-essay-sign-off">Glen &amp; Pravin</div>
       </div>
     </article>
 
@@ -2858,9 +2858,9 @@ def render_july_offer() -> str:
                 </select>
               </div>
             </div>
-            <!-- Tag every landing-page signup so the voucher automation fires — do not remove -->
+            <!-- Tag every landing-page signup so the voucher automation fires; do not remove -->
             <input type="hidden" name="tags" value="july-coffee">
-            <!-- Mailchimp bot-prevention field — keep, do not remove -->
+            <!-- Mailchimp bot-prevention field, keep, do not remove -->
             <div style="position:absolute;left:-5000px;" aria-hidden="true">
               <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
             </div>
@@ -2872,7 +2872,7 @@ def render_july_offer() -> str:
             <h2 style="margin:0 0 8px; color:#000; font-size:28px; font-weight:bold;">You're in! ☕</h2>
             <p style="margin:0 0 16px; color:#000; font-size:16px;">Show this at the counter at Kaffeine to claim your free iced coffee:</p>
             <div style="display:inline-block; background:#000; color:#FFB900; font-size:30px; font-weight:bold; letter-spacing:0.15em; padding:16px 28px; border-radius:12px;">KAIZAN</div>
-            <p style="margin:16px 0 0; color:#000; font-size:13px;">We've also emailed this to you — check your inbox in a few minutes.</p>
+            <p style="margin:16px 0 0; color:#000; font-size:13px;">We've also emailed this to you, check your inbox in a few minutes.</p>
           </div>
         </div>
 
@@ -2908,7 +2908,7 @@ def render_july_offer() -> str:
     {footer_html(2)}
     '''
     return page_head('Free iced coffee this July', 2,
-                     "Iced coffee's on us this July — enter your email and role to get your free coffee code.",
+                     "Iced coffee's on us this July: enter your email and role to get your free coffee code.",
                      extra_head=JULY_OFFER_STYLE) + body + page_foot()
 
 
@@ -3045,8 +3045,8 @@ def render_integrations() -> str:
         <div>
           <div class="kz-eyebrow" style="color:var(--kz-yellow);">BUILD YOUR OWN SOLUTIONS</div>
           <h3 class="head">Kaizan API</h3>
-          <p class="lede">Leverage all your unified client intelligence — every meeting, every signal,
-            every score — in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
+          <p class="lede">Leverage all your unified client intelligence (every meeting, every signal,
+            every score) in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
         </div>
         <div class="actions">
           <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="/demo/">Talk to us</a>
@@ -3067,7 +3067,7 @@ def render_integrations() -> str:
           </h2>
           <p class="kz-lede" style="font-size:16px;max-width:560px;">
             Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
-            with your internal systems — for more client intelligence, workflow automation and autonomous
+            with your internal systems, for more client intelligence, workflow automation and autonomous
             client growth.
           </p>
           <div class="kz-flex" style="margin-top:26px;">
@@ -3084,7 +3084,7 @@ def render_integrations() -> str:
         <div>
           <div class="kz-eyebrow" style="color:rgba(10,10,10,.6);">DON&rsquo;T SEE YOUR TOOL?</div>
           <h3 class="head">We&rsquo;ll build it for design partners.</h3>
-          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet — tell us.
+          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet, tell us.
             We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
         </div>
         <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="/demo/">
@@ -3097,7 +3097,7 @@ def render_integrations() -> str:
     '''
     return page_head('Integrations', 1,
                      'Native connectors for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet '
-                     'and more — plus the Kaizan API.') + body + page_foot()
+                     'and more, plus the Kaizan API.') + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -3107,42 +3107,42 @@ def render_integrations() -> str:
 PRICING_TIERS = [
     dict(name='Pilot', badge='PILOT', note='First 60 days',
          clients='Up to ', clients_bold='10 clients',
-         price='From £300', price_label='per client / mo — billed as one flat monthly plan',
+         price='From £300', price_label='per client / mo, billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING YOU GET',
          bullets=[
              ('Unlimited users', ''),
-             ('Meeting Assistant', ' — joins every meeting, captures notes, actions and decisions'),
-             ('All integrations', ' — calls, emails, chat, workspaces, CRM, project management'),
-             ('Client Intelligence Platform', ' — unified comms, stakeholder intel, health scores, market intel, SWOTs'),
-             ('API', ' — leverage your unified client data'),
-             ('MCP', ' — access your data in your LLM of choice'),
+             ('Meeting Assistant', ': joins every meeting, captures notes, actions and decisions'),
+             ('All integrations', ': calls, emails, chat, workspaces, CRM, project management'),
+             ('Client Intelligence Platform', ': unified comms, stakeholder intel, health scores, market intel, SWOTs'),
+             ('API', ': leverage your unified client data'),
+             ('MCP', ': access your data in your LLM of choice'),
              ('Dedicated Account Manager', ''),
          ]),
     dict(name='Team', clients='Up to ', clients_bold='30 clients',
-         price='From £165', price_label='per client / mo — billed as one flat monthly plan',
+         price='From £165', price_label='per client / mo, billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING IN PILOT, PLUS',
          bullets=[
-             ('3× the portfolio', ' — up to 30 accounts'),
+             ('3× the portfolio', ': up to 30 accounts'),
          ]),
     dict(name='Growth', sweet=True, badge='SWEET SPOT', clients='Up to ', clients_bold='50 clients',
-         price='From £139', price_label='per client / mo — billed as one flat monthly plan',
+         price='From £139', price_label='per client / mo, billed as one flat monthly plan',
          cta='Book a demo', cta_solid=True,
          eyebrow='EVERYTHING IN TEAM, PLUS',
          bullets=[
-             ('Bigger portfolio', ' — up to 50 accounts'),
+             ('Bigger portfolio', ': up to 50 accounts'),
              ('Guided onboarding', ' with CARE calibration'),
              ('Priority support', ' & quarterly value reviews'),
          ]),
     dict(name='Scale', clients='Up to ', clients_bold='75 clients',
-         price='From £120', price_label='per client / mo — billed as one flat monthly plan',
+         price='From £120', price_label='per client / mo, billed as one flat monthly plan',
          cta='Book a demo', cta_solid=False,
          eyebrow='EVERYTHING IN GROWTH, PLUS',
          bullets=[
-             ('1.5× the portfolio', ' — up to 75 accounts'),
+             ('1.5× the portfolio', ': up to 75 accounts'),
              ('Multi-team segmentation', ' across practices'),
-             ('Custom AI Helpers', ' — talk to us for pricing'),
+             ('Custom AI Helpers', ': talk to us for pricing'),
          ]),
     dict(name='Enterprise', clients='', clients_bold='75+ clients',
          clients_trail=' & custom work',
@@ -3151,7 +3151,7 @@ PRICING_TIERS = [
          eyebrow='EVERYTHING IN SCALE, PLUS',
          bullets=[
              ('Unlimited portfolio scale', ' across multi-office, multi-region'),
-             ('API + MCP custom', ' — extended access & rate limits'),
+             ('API + MCP custom', ': extended access & rate limits'),
              ('Custom integrations & bespoke builds', ' scoped to your requirements'),
              ('SSO/SAML, custom retention', ' & data residency'),
              ('Custom CARE calibration', ' per practice'),
@@ -3188,13 +3188,13 @@ def tier_card(t: dict) -> str:
 
 PRICING_HELPERS = [
     dict(tag='AI ASSISTANT', name='For the Team',
-         sub='Joins every meeting, knows every client conversation, drafts what you need and updates your tools — accessed through your LLM of choice.',
+         sub='Joins every meeting, knows every client conversation, drafts what you need and updates your tools, accessed through your LLM of choice.',
          features=['LLM of choice', 'Auto-updates CRM & PM', 'Search all unified data']),
     dict(tag='AI HELPER', name='Client ROI',
          sub='Proactively increase the ROI on every client by turning conversations, emails and project activity into demonstrable value.',
          features=['Auto-built QBR decks', 'Value-gap alerts', 'Renewal risk scoring']),
     dict(tag='AI HELPER', name='Relationships',
-         sub='Grow CSAT with proactive recommendations — Kaizan flags weakening relationships before they cost you a renewal.',
+         sub='Grow CSAT with proactive recommendations: Kaizan flags weakening relationships before they cost you a renewal.',
          features=['Disengagement flags', 'Stakeholder coverage maps', 'Drafted re-engagement']),
     dict(tag='AI HELPER', name='Expansion',
          sub='Maximise client revenue with continuous market research, drafted outbound, and solutions matched to each client’s stated objectives.',
@@ -3228,7 +3228,7 @@ ROI_CALCULATOR_SECTION = '''
             <span class="kzroi-net" data-roi="net">£0</span>
             <span class="kzroi-net-unit">/ yr</span>
           </div>
-          <div class="kzroi-custom-note kzroi-hidden" data-roi="custom-note">before platform cost — Enterprise pricing is bespoke</div>
+          <div class="kzroi-custom-note kzroi-hidden" data-roi="custom-note">before platform cost: Enterprise pricing is bespoke</div>
         </div>
         <div class="kzroi-metrics" data-roi="metrics"><!-- metrics injected by JS --></div>
       </div>
@@ -3274,7 +3274,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
             <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Total company headcount">+</button>
           </div>
-          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users — finance, ops and leadership can all use it at no extra cost.</div>
+          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users: finance, ops and leadership can all use it at no extra cost.</div>
         </div>
 
         <div class="kzroi-num" data-key="team" data-min="1" data-max="500" data-step="1">
@@ -3284,7 +3284,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
             <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Client delivery team size">+</button>
           </div>
-          <div class="kzroi-num-help">Of your headcount, those who touch client work — account managers, client success, delivery. This is what drives the capacity figure.</div>
+          <div class="kzroi-num-help">Of your headcount, those who touch client work: account managers, client success, delivery. This is what drives the capacity figure.</div>
         </div>
 
         <div class="kzroi-num" data-key="clients" data-min="1" data-max="2000" data-step="1">
@@ -3324,9 +3324,9 @@ ROI_CALCULATOR_SECTION = '''
         <details class="kzroi-method">
           <summary>How we calculate this</summary>
           <div class="mbody">
-            <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals — <span data-roi="m-churn">45</span>% in <span data-roi="m-mode">Expected</span> mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
-            <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count <span data-roi="m-upsell">60</span>% — opportunities surfaced from clients you already have.</p>
-            <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which <span data-roi="m-capacity">60</span>% is handed back, across 46 working weeks. Valued at £30/hr loaded cost — UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
+            <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals: <span data-roi="m-churn">45</span>% in <span data-roi="m-mode">Expected</span> mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
+            <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count <span data-roi="m-upsell">60</span>%: opportunities surfaced from clients you already have.</p>
+            <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which <span data-roi="m-capacity">60</span>% is handed back, across 46 working weeks. Valued at £30/hr loaded cost: UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
             <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count; users are unlimited.</p>
           </div>
         </details>
@@ -3350,7 +3350,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-card-title">Revenue protected from churn</div>
             <div class="kzroi-card-bullets">
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span><span data-roi="at-risk">£0</span> of your portfolio is at risk each year</span></div>
-              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Every conversation scored against CARE — risks flagged before clients go quiet</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Every conversation scored against CARE: risks flagged before clients go quiet</span></div>
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Drafted re-engagement, ready to send</span></div>
             </div>
           </div>
@@ -3391,7 +3391,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-card-bullets">
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Every client conversation scored against the CARE framework</span></div>
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Risks addressed early, actions never dropped</span></div>
-              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Directional only — NPS typically rises over the first 1–2 quarters, never counted in the figures above</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Directional only: NPS typically rises over the first 1–2 quarters, never counted in the figures above</span></div>
             </div>
           </div>
         </div>
@@ -3407,7 +3407,7 @@ ROI_CALCULATOR_SECTION = '''
     <!-- closing CTA band -->
     <div class="kzroi-cta-band">
       <h3>See your clients, clearly.</h3>
-      <p>Take the full breakdown with you — your numbers, the workings, and what comparable Kaizan clients see — or jump straight to a demo.</p>
+      <p>Take the full breakdown with you (your numbers, the workings, and what comparable Kaizan clients see) or jump straight to a demo.</p>
       <div class="kzroi-cta-actions">
         <a href="/demo/" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
         <button type="button" class="kzroi-pill kzroi-pill-ghost" data-roi="lead-toggle-cta">Email me the breakdown</button>
@@ -3423,11 +3423,11 @@ ROI_CALCULATOR_SECTION = '''
         <button type="button" class="kzroi-modal-x" data-roi="modal-close" aria-label="Close">×</button>
         <div data-roi="lead-form">
           <div class="kzroi-modal-title">Get your ROI breakdown</div>
-          <div class="lf-intro">Your results are yours either way. For the full PDF breakdown — your numbers and the workings — tell us where to send it, then download it here.</div>
+          <div class="lf-intro">Your results are yours either way. For the full PDF breakdown (your numbers and the workings) tell us where to send it, then download it here.</div>
           <div id="kzroi-hubspot-form" class="kzroi-hsform"></div>
         </div>
         <div class="kzroi-leadsent kzroi-hidden" data-roi="lead-sent">
-          <div class="ls-msg">Thanks — your breakdown is ready.</div>
+          <div class="ls-msg">Thanks, your breakdown is ready.</div>
           <button type="button" class="kzroi-leadform-submit" data-roi="download">Download your breakdown (PDF) →</button>
         </div>
       </div>
@@ -3465,7 +3465,7 @@ def render_pricing() -> str:
     section = ROI_CALCULATOR_SECTION.replace('<!-- closing CTA band -->', tiers_section, 1)
     body = nav_html(1, active='Pricing') + section + footer_html(1)
     return page_head('Pricing', 1,
-                     'Kaizan pricing — priced by the size of the client portfolio we help you manage '
+                     'Kaizan pricing: priced by the size of the client portfolio we help you manage '
                      'and grow. Unlimited users on every tier.',
                      extra_head=extra_head) + body + page_foot()
 
@@ -3515,7 +3515,7 @@ def security_visual(kind: str) -> str:
     if kind == 'badges':
         return ('<div class="kz-secvis kz-secvis-badges">'
                 '<img src="../assets/img/security/Security.png" '
-                'alt="SOC 2, ISO 27001, GDPR, CASA Verified, CCPA — security and compliance certifications" '
+                'alt="SOC 2, ISO 27001, GDPR, CASA Verified, CCPA: security and compliance certifications" '
                 'loading="lazy">'
                 '</div>')
     if kind == 'protection':
@@ -3801,7 +3801,7 @@ def render_careers() -> str:
         <p>[Second paragraph. The hard parts. What&rsquo;s genuinely difficult about working here. The
           tradeoffs. The stuff you won&rsquo;t say in the interview but will tell a friend after a pint.
           People respect honesty here more than recruiting copy.]</p>
-        <div class="signoff">— Glen &amp; the team</div>
+        <div class="signoff">Glen &amp; the team</div>
       </div>
     </section>
 
@@ -3831,7 +3831,7 @@ def render_careers() -> str:
         {roles_html}
       </div>
       <p class="footer-note">
-        Don&rsquo;t see the right role? <a href="mailto:hi@kaizan.ai">hi@kaizan.ai</a> — we always read
+        Don&rsquo;t see the right role? <a href="mailto:hi@kaizan.ai">hi@kaizan.ai</a>, we always read
         speculative applications from senior operators.
       </p>
     </section>
@@ -3989,7 +3989,7 @@ def render_faq() -> str:
       <div class="kz-eyebrow">FAQ · Last updated April 2026</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">Frequently asked questions about Kaizan.</h1>
       <p class="kz-lede" style="margin-top:18px;max-width:820px;">
-        Plain-text answers, written so a person — or a language model — can read any single question and
+        Plain-text answers, written so a person (or a language model) can read any single question and
         answer in isolation and still get the full picture. If something is missing, email
         <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>.
       </p>
@@ -4025,7 +4025,7 @@ def render_faq() -> str:
     {footer_html(1)}
     '''
     return page_head('FAQs', 1,
-                     'Plain-text answers about Kaizan — designed for people and language models.') + body + page_foot()
+                     'Plain-text answers about Kaizan: designed for people and language models.') + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -4040,13 +4040,13 @@ RESEARCH_REPORT = dict(
     title_b='vs The Rest.',
     sub='What drives higher revenue and CSAT in the top 10% of clients.',
     lede=("A first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of "
-          "chat messages — all anonymised — comparing how client service professionals work on "
+          "chat messages (all anonymised) comparing how client service professionals work on "
           "the relationships that grow versus the ones that slip away."),
     meta='Free · 15 pages · Instant download',
     inside=[
         'The 8 behaviours that consistently mark the top 10% of account teams',
         'The KPIs that actually lead to happier, higher-revenue clients',
-        'The CARE framework — how the patterns cluster into four pillars',
+        'The CARE framework: how the patterns cluster into four pillars',
     ],
     dataset=[
         ('1M+',  'Anonymised client conversations'),
@@ -4056,33 +4056,33 @@ RESEARCH_REPORT = dict(
     ],
     numbers=[
         ('2.2', '×', 'More risks surfaced at top-performing accounts than at bottom-performing ones. '
-                     'The accounts that look quiet and healthy usually are not — silence is absence, '
+                     'The accounts that look quiet and healthy usually are not: silence is absence, '
                      'not stability.', 'The Risk Paradox'),
         ('66', '%', 'Of all client-facing calls are handled by just 25% of account managers. Coverage '
                     'across the whole portfolio is the lever most teams leave unpulled.', 'The AM Power Law'),
-        ('1.84', '×', 'More calls per account manager on top-performing clients — at the same portfolio '
+        ('1.84', '×', 'More calls per account manager on top-performing clients, at the same portfolio '
                       'size, email-to-call ratio and talk-time share. Top accounts are more of the same '
                       'conversation, not a different one.', 'The Ideal AM Profile'),
     ],
     care=[
         ('C', 'Client satisfaction', 'How happy the client is with you and the work being delivered.',
          '4.2×', 'More proactive comms per account at the top decile'),
-        ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context — who matters, '
+        ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context: who matters, '
          'what changed this week, the shape of the next conversation.',
          '73%', 'Of top performers maintain a live stakeholder map'),
         ('R', 'Relationship strength', 'Strategic partner or just a vendor? Whether rapport, trust and '
          'sentiment are where they need to be.',
          '2.1h', 'Median first response time at the top 10%'),
-        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion — the quiet ask in '
+        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion: the quiet ask in '
          'passing, or the proactive suggestion of how to grow their business.',
          '82%', 'Of expansion revenue comes from prioritising commercial conversations early'),
     ],
     audiences=[
         ('Heads of Client Services & CS', 'Set the bar for the team. Benchmark, retrain, repeat.'),
-        ('Account Directors & Managers', 'See where your book sits — and what to change on Monday.'),
+        ('Account Directors & Managers', 'See where your book sits, and what to change on Monday.'),
         ('Agency Leaders', 'An operating system for client-facing teams at scale.'),
         ('Founders & CEOs', 'Retention is the lever. Here is what moves it.'),
-        ('C-level teams', '82% of expansion is inbound — the data on how to catch it.'),
+        ('C-level teams', '82% of expansion is inbound: the data on how to catch it.'),
         ('Heads of AI & CTOs', 'The metrics, the tooling and the workflow. Page 28 onward.'),
     ],
 )
@@ -4169,7 +4169,7 @@ def render_research() -> str:
       <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 8px;max-width:820px;">
         CARE: how the patterns cluster.
       </h2>
-      <p class="kz-lede" style="margin-bottom:36px;">Eleven behaviours, four pillars — the structure behind every top-decile account team.</p>
+      <p class="kz-lede" style="margin-bottom:36px;">Eleven behaviours, four pillars: the structure behind every top-decile account team.</p>
       <div class="kz-research-care">{care_html}</div>
     </section>
 
@@ -4196,7 +4196,7 @@ def render_research() -> str:
     {footer_html(1)}
     '''
     return page_head('Our Research', 1,
-                     'The 2026 Client Service Report from Kaizan — the data on what great client '
+                     'The 2026 Client Service Report from Kaizan: the data on what great client '
                      'service actually looks like, drawn from 1M+ anonymised client conversations.') + body + page_foot()
 
 
@@ -4514,7 +4514,7 @@ def render_knowledge_hub() -> str:
     {footer_html(1)}
     '''
     return page_head('Knowledge Hub', 1,
-                     'Client success and account management FAQs — a resource hub covering client '
+                     'Client success and account management FAQs: a resource hub covering client '
                      'intelligence, onboarding, retention, client health, reviews, reporting, '
                      'expansion, metrics and AI for account managers.') + body + page_foot()
 
@@ -4548,7 +4548,7 @@ def render_demo() -> str:
         <div class="kz-eyebrow" style="justify-content:center;">Book a demo · 30-min live walkthrough</div>
         <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">One quick check, then your calendar.</h1>
         <p class="kz-lede" style="margin-top:16px;">
-          We ask everyone to confirm they're human before booking — it keeps our
+          We ask everyone to confirm they're human before booking. It keeps our
           calendar clear for real conversations. This takes a second.
         </p>
 
@@ -4582,7 +4582,7 @@ def render_demo() -> str:
       var DEST = '{enc}';
       var statusEl = document.getElementById('kz-demo-status');
       window.kzOnVerified = function () {{
-        if (statusEl) statusEl.textContent = 'Verified — opening the calendar…';
+        if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
         window.location.href = atob(DEST);
       }};
       window.kzOnError = function () {{
@@ -4701,7 +4701,7 @@ def render_policy(pol: dict, version: dict, versions: list[dict], dated: bool) -
     </article>
     {footer_html(depth)}
     '''
-    title = pol['title'] if is_latest else f'{pol["title"]} — {_policy_date(version["date"])}'
+    title = pol['title'] if is_latest else f'{pol["title"]}, {_policy_date(version["date"])}'
     # Archive pages shouldn't compete with the live page in search results.
     extra_head = '<meta name="robots" content="noindex">' if dated else ''
     return page_head(title, depth, pol['desc'], extra_head=extra_head) + body + page_foot()

@@ -2,7 +2,7 @@
 title: "MCP vs API, in Plain English"
 date: 2026-09-03
 category: POV
-excerpt: MCP vs API, explained without the tech jargon — why the difference decides whether your AI is a shortcut or a second brain for your client relationships.
+excerpt: MCP vs API, explained without the tech jargon: why the difference decides whether your AI is a shortcut or a second brain for your client relationships.
 cover: cover.png
 draft: false
 tags: [mcp, api, artificial-intelligence, client-intelligence, ai-for-cavemen]
@@ -60,7 +60,7 @@ With MCP, you just ask. In your own words.
 
 One of our clients put it like this:
 
-> "I probably on a daily basis interrogate Kaizan — take me back to this meeting where so-and-so was talking about such-and-such. Without Kaizan, what's the alternative? Just reaching into the deepest recesses of your mind, which is obviously flawed."
+> "I probably on a daily basis interrogate Kaizan, take me back to this meeting where so-and-so was talking about such-and-such. Without Kaizan, what's the alternative? Just reaching into the deepest recesses of your mind, which is obviously flawed."
 
 That is the real unlock. Not another report. The ability to go digging through a whole client history without knowing in advance what you are looking for.
 

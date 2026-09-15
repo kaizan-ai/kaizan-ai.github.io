@@ -3052,7 +3052,7 @@ button { font-family: inherit; }
 .kz-policy-versions a { color: var(--kz-ink); font-weight: 500; text-decoration: none; }
 .kz-policy-versions a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .kz-policy-versions a[aria-current="page"] { pointer-events: none; }
-.kz-policy-versions a[aria-current="page"] time::after { content: " — you are here"; font-weight: 400; color: var(--kz-mute-2); }
+.kz-policy-versions a[aria-current="page"] time::after { content: " (you are here)"; font-weight: 400; color: var(--kz-mute-2); }
 .kz-policy-tag {
   display: inline-block; margin-left: 8px; padding: 1px 8px;
   background: var(--kz-yellow); border-radius: 999px;

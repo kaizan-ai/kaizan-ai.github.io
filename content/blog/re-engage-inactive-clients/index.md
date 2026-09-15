@@ -54,19 +54,19 @@ Re-engagement done badly looks like a generic "just checking in" email that ever
 
 People search for this constantly, from "how do i email inactive clients" to "sample letter to inactive customers," and the honest answer is that no template works if it reads like a template. Use these as starting structures, then make them specific to the actual relationship.
 
-**The value-first re-open** — best when you have something genuinely useful to share.
+**The value-first re-open:** best when you have something genuinely useful to share.
 
 > **Subject:** Thought of you when I saw this
 >
 > Hi [name], I came across [specific insight, result, or idea relevant to their world] and immediately thought of [their company]. Based on what you were working on last, this looked directly relevant. Happy to talk it through if useful, no pressure either way.
 
-**The client who has gone dark** — best after a stretch of no response.
+**The client who has gone dark:** best after a stretch of no response.
 
 > **Subject:** Still worth a conversation?
 >
 > Hi [name], I know things have been busy on your side and I do not want to add noise. I would rather ask directly: is this still a priority for you right now? If the timing is off, tell me and I will step back. If it is worth picking up, I have one idea I think is worth ten minutes.
 
-**The re-introduction** — best when your original contact has moved on and you need a new one.
+**The re-introduction:** best when your original contact has moved on and you need a new one.
 
 > **Subject:** Reconnecting on [account]
 >

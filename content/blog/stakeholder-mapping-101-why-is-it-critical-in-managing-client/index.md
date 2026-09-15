@@ -75,17 +75,17 @@ Once you’ve identified your stakeholders and their interests, you need to cate
 
 One common method for categorising stakeholders is to use the MEDDIC sales qualification process. This is a framework used by businesses to categorise prospects and potential customers. Let’s explore each category in more detail:
 
-- **Metrics Questions** — Metrics are the quantifiable measures of the value that your product or service provides to your customers. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
+- **Metrics Questions.** Metrics are the quantifiable measures of the value that your product or service provides to your customers. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
 
-- **Economic Buyer**— The person who is the overall decision maker; they have the knowledge, perspective, and energy to commit to a meaningful purchase.
+- **Economic Buyer.** The person who is the overall decision maker; they have the knowledge, perspective, and energy to commit to a meaningful purchase.
 
-- **Decision Process** — A decision process will include the person who makes a decision, the potential customer’s timeline, and any formal approval processes.
+- **Decision Process.** A decision process will include the person who makes a decision, the potential customer’s timeline, and any formal approval processes.
 
-- **Decision Criteria** — This is the criteria on which a purchase decision is made. This usually falls into three categories:   **1. Technical Criteria**— Does your solution have the technical capability to do what the customer needs?**2. Economic Criteria** — Does your solution deliver the expected ROI?  **3. Relationship Criteria**— Have you created a collaborative partnership with the customer?
+- **Decision Criteria.** This is the criteria on which a purchase decision is made. This usually falls into three categories:   **1. Technical Criteria.** Does your solution have the technical capability to do what the customer needs?**2. Economic Criteria.** Does your solution deliver the expected ROI?  **3. Relationship Criteria.** Have you created a collaborative partnership with the customer?
 
-- **Identify Pain**— The potential customer must have evident business pain before pursuing a solution, and it’s vital to understand these pain points and then identify how your solution can relieve it.
+- **Identify Pain.** The potential customer must have evident business pain before pursuing a solution, and it’s vital to understand these pain points and then identify how your solution can relieve it.
 
-- **Champion**— Champions are respected stakeholders within your customers’ business who meet very distinct criteria:   1. They have Power and Influence  2. They are selling internally for you   3. They have a vested interest in your success
+- **Champion.** Champions are respected stakeholders within your customers’ business who meet very distinct criteria:   1. They have Power and Influence  2. They are selling internally for you   3. They have a vested interest in your success
 
 If you’re looking at clients rather than a project, then categorisation is likely to work differently. They are all directly affected by your work, just to different extents. You might categorise them using another division, depending on what is most appropriate for your business:
 

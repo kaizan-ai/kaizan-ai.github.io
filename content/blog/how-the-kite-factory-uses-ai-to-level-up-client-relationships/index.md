@@ -27,9 +27,9 @@ Prefer to hear it in Rik's own words? Watch the full interview on YouTube.
 
 Using Kaizan, The Kite Factory's strategy teams are now able to:
 
-- **Capture client sentiment and intent in every conversation** — understand not just what clients say, but what they mean.
-- **Identify risks and opportunities earlier** — spot subtle signals before they become bigger issues.
-- **Improve coaching and review of client interactions** — replay conversations and continuously improve how teams engage with clients.
+- **Capture client sentiment and intent in every conversation:** understand not just what clients say, but what they mean.
+- **Identify risks and opportunities earlier:** spot subtle signals before they become bigger issues.
+- **Improve coaching and review of client interactions:** replay conversations and continuously improve how teams engage with clients.
 
 ## The challenge: understanding what clients really mean
 
