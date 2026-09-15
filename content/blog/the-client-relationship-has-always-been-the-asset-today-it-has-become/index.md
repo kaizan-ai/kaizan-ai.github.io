@@ -3,13 +3,13 @@ title: The client relationship has always been the asset. Today it has become an
 date: 2026-06-22
 author: Lia
 category: POV
-excerpt: Introducing CARE — the standard for client relationship intelligence, live for every Kaizan user today.
+excerpt: Introducing CARE, the standard for client relationship intelligence, live for every Kaizan user today.
 cover: img-1.png
 draft: false
 tags: [client-success, ai-agent, software-development, ai, account-management]
 ---
 
-*Introducing CARE — the standard for client relationship intelligence, live for every Kaizan user today.*
+*Introducing CARE, the standard for client relationship intelligence, live for every Kaizan user today.*
 
 Every professional services company runs on a number it never sees.
 
@@ -31,11 +31,11 @@ People have that definition; it lives in the heads of your best account director
 
 CARE is that definition, made explicit and made shared. It gives humans and agents the same map of the same client.
 
-- **A shared workspace to collaborate around an account** — one place where the AM, the wider team, and Kaizan’s AI Helpers all see the same signals and work the same problem.
+- **A shared workspace to collaborate around an account**: one place where the AM, the wider team, and Kaizan’s AI Helpers all see the same signals and work the same problem.
 
-- **A framework that defines what great looks like** — so an agent knows the difference between a client venting and a client leaving, and how each account can improve from all the work occurring across the portfolio.
+- **A framework that defines what great looks like**, so an agent knows the difference between a client venting and a client leaving, and how each account can improve from all the work occurring across the portfolio.
 
-- **A living, always-on company brain** — CARE is the evals of what matters in your company. The way an AI lab writes down the behaviours it wants from a model and grades against them, CARE writes down what a great client relationship looks like and grades every account against it, continuously. Your standards stop living in your best people’s heads and become a measurable, shared definition the whole company — and every agent — works toward.
+- **A living, always-on company brain.** CARE is the evals of what matters in your company. The way an AI lab writes down the behaviours it wants from a model and grades against them, CARE writes down what a great client relationship looks like and grades every account against it, continuously. Your standards stop living in your best people’s heads and become a measurable, shared definition the whole company, and every agent, works toward.
 
 Software replacing relationship managers was never the future. **People plus agents, working from a shared definition of great, 24/7.** That’s the future, and CARE is the operating layer that makes it real.
 
@@ -45,19 +45,19 @@ CARE is a proprietary relationship intelligence score built from analysing milli
 
 That headline number decomposes into four lenses. Together they spell CARE.
 
-## C — Client Satisfaction
+## C: Client Satisfaction
 
-How the client actually feels about you and the work, read from the sentiment behind every interaction — not the formal review. Sentiment, your teams market & sector awareness, client goal-to-activity alignment, work quality, and how proactively the team manages expectations. It also covers every commitment made: the client brain remembers what was promised, so you never miss a commitment and the client never has to chase. The reality of the relationship, not the version that surfaces in a status call.
+How the client actually feels about you and the work, read from the sentiment behind every interaction, not the formal review. Sentiment, your teams market & sector awareness, client goal-to-activity alignment, work quality, and how proactively the team manages expectations. It also covers every commitment made: the client brain remembers what was promised, so you never miss a commitment and the client never has to chase. The reality of the relationship, not the version that surfaces in a status call.
 
-## A — Activity with Stakeholders
+## A: Activity with Stakeholders
 
 Whether you’re reaching the people who sign the budget off. Response time, stakeholder coverage against target, decision-maker recency, time invested against tier, communication recency, and contact distribution. This is the lens that catches single-threading before it becomes a churn post-mortem; *the decision-maker who hasn’t been on a call in six weeks while day-to-day contact looks perfectly healthy.*
 
-## R — Relationship Quality
+## R: Relationship Quality
 
 The foundation; follow-through, responsiveness, advocacy. Risk trajectory, active listening, communication-style fit, advocacy signals, sentiment trend, behavioural DISC profiling and conversational depth. The signals that tell you whether trust is building or eroding. *The client who was warm and is now merely neutral matters more than the one who was always blunt.*
 
-## E — Expansion
+## E: Expansion
 
 Where a client is ready to grow; market signals, upsell coverage, organisational coverage, objection handling, proactive insight delivery, and a readiness gate. Crucially, **E won’t tell you to push growth into a stressed relationship.** Expansion readiness is gated behind satisfaction, relationship strength, and decision-maker access. White space you have permission to pursue, not white space that exists on paper.
 

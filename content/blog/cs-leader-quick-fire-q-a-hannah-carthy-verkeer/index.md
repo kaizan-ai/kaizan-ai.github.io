@@ -21,7 +21,7 @@ A lot of CS teams try to run without too many processes as they put the human co
 
 **How are you leveraging AI in your organisation? What are the opportunities and risks you see?**
 
-There’s a couple of different ways — firstly for our client services to take call notes and measure client satisfaction consistently across the client set (which leads into our goals and KPIs for managers), but also to speed up operational tasks like writing job descriptions and to do research on niche topics.
+There’s a couple of different ways: firstly for our client services to take call notes and measure client satisfaction consistently across the client set (which leads into our goals and KPIs for managers), but also to speed up operational tasks like writing job descriptions and to do research on niche topics.
 
 **What does the future of client service look like? What changes do you expect?**
 

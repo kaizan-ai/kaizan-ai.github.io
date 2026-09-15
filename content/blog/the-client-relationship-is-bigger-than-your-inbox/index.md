@@ -35,7 +35,7 @@ A stakeholder goes quiet. Sentiment cools on one workstream while the headline n
 
 By the time it reaches a QBR, the decision has usually already been made. Ricky Abbott, CEO at Transmission, reduced it to one question:
 
-> "I just want to know — is my revenue at risk?"
+> "I just want to know, is my revenue at risk?"
 
 You cannot answer that from a transcript summary.
 
@@ -60,7 +60,7 @@ CARE is a leading indicator, not a report card written after the fact. It tells 
 
 Institutional memory earns its keep the moment someone needs it under pressure. Joe Etchells at AIP/SearchLab uses it daily:
 
-> "I probably on a daily basis interrogate Kaizan — take me back to this meeting where so-and-so was talking about such-and-such. Without Kaizan, what's the alternative? Just reaching into the deepest recesses of your mind, which is obviously flawed."
+> "I probably on a daily basis interrogate Kaizan, take me back to this meeting where so-and-so was talking about such-and-such. Without Kaizan, what's the alternative? Just reaching into the deepest recesses of your mind, which is obviously flawed."
 
 Call prep is where it shows up most. Pulling up what a client pitched three months ago takes seconds instead of an afternoon of asking around.
 

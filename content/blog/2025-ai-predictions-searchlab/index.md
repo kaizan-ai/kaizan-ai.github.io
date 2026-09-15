@@ -17,7 +17,7 @@ First up, Greg Gifford; COO at SearchLab!
 
 Most people are worried that AI will take their jobs, but that’s not what’s happening or is going to happen. Instead, it will continue to make our jobs easier. AI isn’t a replacement for human effort, it allows us to focus on what truly matters.
 
-When used correctly, AI becomes a powerful tool which makes you more efficient, productive, and helps level up your overall game! Rather than spending time on repetitive, boring tasks, AI allows us to spend more time on impactful, strategic activities — like creative problem-solving, deeper client engagement, or long term account planning.
+When used correctly, AI becomes a powerful tool which makes you more efficient, productive, and helps level up your overall game! Rather than spending time on repetitive, boring tasks, AI allows us to spend more time on impactful, strategic activities: like creative problem-solving, deeper client engagement, or long term account planning.
 
 ## AI gives us Happier Clients
 

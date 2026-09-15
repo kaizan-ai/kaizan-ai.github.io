@@ -65,23 +65,23 @@ Generative AI offers a number of techniques that businesses can use to measure c
 
 Measuring client health metrics is crucial for businesses to assess the overall satisfaction and success of their clients. These metrics provide valuable insights into the relationship between the business and its clients, helping identify areas of improvement and potential risks. While the specific metrics to measure may vary depending on the nature of the business and its products or services, here are some essential client health metrics that businesses should consider:
 
-- **Client Engagement** — Frequency of contact between the client service team and client team.
+- **Client Engagement:** Frequency of contact between the client service team and client team.
 
-- **Tracker Phrases** — Positive, negative or risk phrases that are flagged when they are mentioned by the client team.
+- **Tracker Phrases:** Positive, negative or risk phrases that are flagged when they are mentioned by the client team.
 
-- **Sentiment** — Overall sentiment captured by analysing positive, negative or neutral language from calls and email communication.
+- **Sentiment:** Overall sentiment captured by analysing positive, negative or neutral language from calls and email communication.
 
-- **Decision Maker Sentiment**— Positive, negative or neutral language of the key decision maker captured on calls and email communication.
+- **Decision Maker Sentiment:** Positive, negative or neutral language of the key decision maker captured on calls and email communication.
 
-- **Decision Maker Coverage** — The frequency of contact between client service team and client decision maker.
+- **Decision Maker Coverage:** The frequency of contact between client service team and client decision maker.
 
-- **CSM Response Time** — The average response time between client service team and client.
+- **CSM Response Time:** The average response time between client service team and client.
 
-- **Stakeholder Coverage** — The frequency of contact between client service team and key stakeholders.
+- **Stakeholder Coverage:** The frequency of contact between client service team and key stakeholders.
 
-- **Time on Client** — The average time spent on each client per week.
+- **Time on Client:** The average time spent on each client per week.
 
-- **RAG Status** — Traffic light system to illustrate the overall health of each client. Red, Amber or Green status is determined by the factors which impact client health. These factors include client engagement, sentiment, engagement with decision makers and stakeholder coverage.
+- **RAG Status:** Traffic light system to illustrate the overall health of each client. Red, Amber or Green status is determined by the factors which impact client health. These factors include client engagement, sentiment, engagement with decision makers and stakeholder coverage.
 
 These metrics that can be captured by client engagement tools such as [Kaizan](http://kaizan.ai). It’s essential to integrate these AI tools effectively with your client relationship management (CRM) system or other relevant data sources to ensure accurate and real-time data analysis, which can lead to actionable insights and informed decision-making in client success and client development.
 
