@@ -2912,6 +2912,7 @@ def render_july_offer() -> str:
                      extra_head=JULY_OFFER_STYLE) + body + page_foot()
 
 
+
 def render_404() -> str:
     body = f'''
     {nav_html(0)}
@@ -4906,6 +4907,23 @@ def build_us_locale():
                 r'<span class="kz-marquee-item"><span class="kz-marquee-logo"[^>]*>'
                 r'<img[^>]*tradedoubler[^>]*></span><span class="sep">✺</span></span>',
                 '', us)
+        # US-only persona titles: match the retitled "I am a…" selector labels.
+        # UK source keeps its own titles; these rewrites apply to /us/ only.
+        # (Upper-case plural runs before singular so it isn't half-matched.)
+        for old, new in (
+            ('CLIENT SERVICE DIRECTORS',    'HEADS OF CLIENT SERVICES'),
+            ('Client Service Directors',    'Heads of Client Services'),
+            ('client service directors',    'heads of client services'),
+            ('CLIENT SERVICE DIRECTOR',     'HEAD OF CLIENT SERVICES'),
+            ('SENIOR LEADERSHIP / DIRECTOR', 'SENIOR LEADERSHIP'),
+        ):
+            us = us.replace(old, new)
+        # US-only nav CTA: a "Become a partner" button linking to the US-only
+        # referral landing page (added just before the "Client log in" button).
+        us = us.replace(
+            '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>',
+            '<a class="kz-btn kz-btn-ghost" href="/us/referral-partners/">Become a partner</a>'
+            '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>')
 
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -4995,6 +5013,16 @@ def main():
     write_redirects()
 
     build_us_locale()
+
+    # US-only Referral Partner Program landing page. An exact static export of
+    # the approved design (self-contained markup + styles, native <details> FAQ,
+    # images under assets/img/referral/). Emitted after build_us_locale() because
+    # that wipes and rebuilds the /us/ tree.
+    import shutil
+    ref_dst = ROOT / 'us' / 'referral-partners' / 'index.html'
+    ref_dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ROOT / 'content' / 'referral-partners' / 'index.html', ref_dst)
+    print('  (US referral partner page → /us/referral-partners/)')
 
     print('Done.')
 
