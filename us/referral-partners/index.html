@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaizan Referral Partner Program</title>
+<meta name="description" content="Earn 15% of the first year and 7.5% of the second when you introduce a firm to Kaizan. Book a call with the partner team.">
+<style>html,body{margin:0;padding:0;background:#000;}</style>
+<style>
+    .sc-placeholder{background:color-mix(in srgb,currentColor 8%,transparent);
+      border:1px solid color-mix(in srgb,currentColor 50%,transparent);
+      border-radius:2px;box-sizing:border-box;overflow:hidden}
+    @keyframes sc-shine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+    html.sc-dc-streaming .sc-placeholder,
+    html.sc-dc-streaming .sc-interp.sc-missing{position:relative;
+      background:color-mix(in srgb,currentColor 5%,transparent);
+      border-color:transparent}
+    html.sc-dc-streaming .sc-placeholder::before,
+    html.sc-dc-streaming .sc-interp.sc-missing::before{content:'';
+      position:absolute;inset:0;pointer-events:none;
+      background:linear-gradient(90deg,rgba(217,119,87,0) 25%,rgba(247,225,211,.95) 37%,rgba(217,119,87,0) 63%);
+      background-size:400% 100%;animation:sc-shine 1.4s ease infinite}
+    html.sc-dc-streaming .sc-placeholder:nth-child(n+9 of .sc-placeholder)::before,
+    html.sc-dc-streaming .sc-interp.sc-missing:nth-child(n+9 of .sc-interp.sc-missing)::before{animation:none;
+      background:color-mix(in srgb,currentColor 8%,transparent)}
+    .sc-placeholder-error{padding:4px 8px;font:11px/1.4 ui-monospace,monospace;
+      color:color-mix(in srgb,currentColor 70%,transparent);word-break:break-word}
+    .sc-interp.sc-missing{display:inline-block;width:2em;height:1em;overflow:hidden;
+      vertical-align:text-bottom;background:rgba(255,255,255,.3);border:1px solid rgba(0,0,0,.5);
+      border-radius:2px;box-sizing:border-box;color:transparent;
+      user-select:none}
+    .sc-interp.sc-unresolved{font-family:ui-monospace,monospace;font-size:.85em;
+      color:color-mix(in srgb,currentColor 50%,transparent);
+      background:color-mix(in srgb,currentColor 10%,transparent);border-radius:3px;
+      padding:0 3px}
+    .sc-host.sc-has-error{position:relative}
+    .sc-logic-error{position:absolute;top:8px;left:8px;z-index:2147483647;max-width:60ch;
+      padding:6px 10px;background:#b00020;color:#fff;font:12px/1.4 ui-monospace,monospace;
+      border-radius:4px;white-space:pre-wrap;pointer-events:none}
+    /* Mirrors PRINT_BASELINE_CSS in apps/web deck-stage-export.ts — keep both
+       in sync until dc-runtime regains a build step. */
+    @media print {
+      @page { margin: 0.5cm; }
+      figure, table { break-inside: avoid; }
+      #dc-root, #dc-root > .sc-host { height: auto; }
+      *, *::before, *::after {
+        print-color-adjust: exact; -webkit-print-color-adjust: exact;
+        backdrop-filter: none !important; -webkit-backdrop-filter: none !important;
+        animation-delay: -99s !important; animation-duration: .001s !important;
+        animation-iteration-count: 1 !important; animation-fill-mode: both !important;
+        animation-play-state: running !important; transition-duration: 0s !important;
+      }
+    }
+  
+x-dc{display:none!important}
+html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
+/* ============================================================
+   KAIZAN DESIGN SYSTEM — colors_and_type.css
+   Single source of truth for color + type tokens.
+   Brand source: "Kaizan Brand Design Guidelines For Content" (Apr 2026)
+   ------------------------------------------------------------
+   Brand law (do not break):
+   - Gold #FFB900 is dominant. Every surface needs one gold moment.
+   - Black text on gold/cream/pale. Gold OR cream text on black.
+   - Gold Light / Gold Pale are SUPPORTING tints, never dominant.
+   - Cream replaces pure white. Never cream text on light surfaces.
+   - Gold #FFB900 is never small body text (contrast).
+   ============================================================ */
+
+:root {
+  /* ---------- 01 · Brand core palette ---------- */
+  --gold:        #FFB900;   /* dominant brand color */
+  --gold-light:  #FFD133;   /* supporting tint — highlights, dividers */
+  --gold-pale:   #FFF3C4;   /* lightest tint — soft panels only */
+  --cream:       #FFFBF0;   /* primary light background (use over white) */
+  --black:       #000000;   /* primary text + bold dark surfaces */
+
+  /* ---------- Derived warm neutrals ----------
+     NOT in the content brand guide (which is black-only for text).
+     Added for PRODUCT UI where secondary/muted text + borders are
+     needed. Warm-tinted to sit naturally on cream. Flagged as derived. */
+  --ink:    #000000;   /* = black, primary text */
+  --ink-2:  #38322A;   /* secondary text / strong labels */
+  --ink-3:  #6E665A;   /* muted text, captions, metadata */
+  --ink-4:  #9A9082;   /* placeholder, disabled text */
+  --line:   #ECE6D7;   /* hairline border on cream */
+  --line-2: #DED7C4;   /* stronger border / divider */
+  --surface:     #FFFBF0;  /* cream — app background */
+  --surface-raised: #FFFFFF; /* white — raised cards above cream */
+  --surface-sunken: #F6F0E2; /* warm sunken wells, table stripes */
+  --surface-pale:   #FFF3C4; /* gold-pale supporting panel */
+  --surface-ink:    #000000; /* black sections */
+  --on-ink:    #FFFBF0;    /* cream text on black */
+  --on-ink-accent: #FFB900;/* gold text on black */
+
+  /* ---------- Semantic / status (charts + health) ----------
+     Brand caps charts at gold + gold-light. Status colors below are
+     derived for product states (health, alerts) — warm, low-saturation
+     so they coexist with gold. Flagged as derived. */
+  --positive: #2E9E6B;     /* healthy / on-track */
+  --positive-bg: #E4F3EB;
+  --warning:  #E8A300;     /* at-risk — a deeper gold, not red-adjacent */
+  --warning-bg: #FFF1CC;
+  --critical: #D2563B;     /* churn risk / overdue (warm terracotta) */
+  --critical-bg: #FBE7E1;
+  --info:     #3E7DA6;     /* neutral informational (warm steel blue) */
+  --info-bg:  #E6EEF4;
+
+  /* ---------- Chart & illustration secondary palette ----------
+     CHARTS + ILLUSTRATIONS ONLY (Kaizan Research guidelines, May 2026).
+     These never become a brand background or a content colour.
+     Gold is ALWAYS series one. Reach-for order as you add series:
+       Gold → Green → Coral → Blue → Purple.
+     Bright value = FILL (bars/areas). Deep value = coloured TEXT / thin
+     lines. Default text stays black. Backgrounds stay cream/gold/black. */
+  --chart-1:      #FFB900;  --chart-1-text:      #000000;  /* gold · lead series, hero stat */
+  --chart-green:  #06D6A0;  --chart-green-text:  #07795C;  /* performance · success · positive */
+  --chart-coral:  #FF6B6B;  --chart-coral-text:  #C23A3A;  /* risk · decline · the warning */
+  --chart-blue:   #4CC9F0;  --chart-blue-text:   #1E7CA0;  /* analytics · neutral series */
+  --chart-purple: #B388FF;  --chart-purple-text: #5A2EC4;  /* forward · projected · milestones */
+  --chart-grid:   #ECE6D7;
+  /* legacy aliases */
+  --chart-2: #06D6A0;  --chart-3: #FF6B6B;
+
+  /* ============================================================
+     02 · TYPOGRAPHY
+     Content brand = system sans stack (no decorative fonts).
+     The KAIZAN logotype is a separate custom geometric wordmark
+     (use the supplied PNG; do not set logo text in the UI font).
+     ============================================================ */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo,
+               Consolas, monospace;
+
+  /* Type scale (1.250 major-third-ish, tuned) */
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   22px;
+  --text-xl:   28px;
+  --text-2xl:  36px;
+  --text-3xl:  48px;
+  --text-4xl:  64px;
+  --text-display: 88px;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+
+  --leading-tight:  1.15;  /* display / headlines */
+  --leading-snug:   1.3;   /* subheads */
+  --leading-normal: 1.5;   /* body (brand: 1.4–1.55) */
+
+  --tracking-tight: -0.02em; /* headlines: slightly tight */
+  --tracking-normal: 0;
+  --tracking-wide:  0.04em;  /* eyebrows / small caps labels */
+
+  /* ============================================================
+     03 · SPACING · RADII · SHADOWS · MOTION
+     ============================================================ */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;   /* default control / card radius */
+  --radius-lg: 16px;
+  --radius-xl: 24px;   /* echoes the icon's rounded-square corner */
+  --radius-pill: 999px;
+
+  /* Warm, soft shadows (tinted black, never blue/gray) */
+  --shadow-xs: 0 1px 2px rgba(40, 33, 20, 0.06);
+  --shadow-sm: 0 1px 3px rgba(40, 33, 20, 0.08), 0 1px 2px rgba(40, 33, 20, 0.04);
+  --shadow-md: 0 4px 12px rgba(40, 33, 20, 0.08), 0 2px 4px rgba(40, 33, 20, 0.04);
+  --shadow-lg: 0 12px 32px rgba(40, 33, 20, 0.12), 0 4px 8px rgba(40, 33, 20, 0.05);
+
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+
+  /* ---------- Semantic type roles ---------- */
+  --fg-1: var(--ink);     /* primary text */
+  --fg-2: var(--ink-2);   /* secondary */
+  --fg-3: var(--ink-3);   /* muted */
+}
+
+/* ============================================================
+   SEMANTIC ELEMENT STYLES
+   Apply via classes or use as a reference for component CSS.
+   ============================================================ */
+.ka-display {
+  font-family: var(--font-sans);
+  font-size: var(--text-display);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.ka-h1 {
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.ka-h2 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.ka-h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+}
+.ka-subhead {
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--ink-2);
+}
+.ka-body {
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--ink);
+}
+.ka-body-sm {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--ink-2);
+}
+.ka-caption {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--ink-3);
+}
+.ka-eyebrow {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.ka-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+
+  body{margin:0;background:var(--cream);}
+  a{color:var(--ink);text-decoration:none;}
+  input:focus-visible, select:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:4px;}
+  .inp{width:100%;font-family:var(--font-sans);font-size:13px;padding:12px 14px;border-radius:var(--radius-md);border:1px solid var(--line-2);background:#fff;color:var(--ink);box-sizing:border-box;}
+  .inp:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-pale);}
+  @keyframes tickIn{from{opacity:0;transform:scale(0.7) rotate(-8deg);}to{opacity:1;transform:scale(1) rotate(0);}}
+  details summary::-webkit-details-marker{display:none;}
+  .pair-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:20px;align-items:stretch;}
+  @media (max-width:760px){.pair-row{grid-template-columns:minmax(0,1fr);}.pair-row .pair-arrow svg{transform:rotate(90deg);}}
+</style>
+</head>
+<body>
+<div id="dc-root"><div class="sc-host" data-sc-name="Kaizan Referral Partner Program (2)"><div data-dc-tpl="4" style="font-family: var(--font-sans); color: var(--ink); background: var(--cream);">
+
+  <nav data-dc-tpl="5" style="position: sticky; top: 0px; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 14px clamp(16px, 5vw, 40px); background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(10px);">
+    <div data-dc-tpl="6" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0px;">
+      <a data-dc-tpl="7" href="https://kaizan.ai" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 10px; flex: 0 0 auto;">
+        <img data-dc-tpl="8" src="/assets/img/referral/f3572782.png" alt="Kaizan" style="width: 28px; height: 28px; border-radius: 7px;">
+        <img data-dc-tpl="9" src="/assets/img/referral/616aa7d8.png" alt="Kaizan" style="height: 15px;">
+      </a>
+      <span data-dc-tpl="10" style="width: 1px; height: 16px; background: rgba(255, 251, 240, 0.2); margin: 0px 2px;"></span>
+      <span data-dc-tpl="11" style="font-size: 13px; color: rgba(255, 251, 240, 0.65); white-space: nowrap;">Referral Partner Program</span>
+    </div>
+    <a data-dc-tpl="12" href="https://calendar.app.google/nXCQjV6kHfsmDs5c7" target="_blank" rel="noopener" title="Walk through a demo, align on referral fit, and get your questions on the partner program answered." style="background: var(--gold); color: rgb(0, 0, 0); font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: var(--radius-md); flex: 0 0 auto; white-space: nowrap;">Book a call</a>
+  </nav>
+
+  <header data-dc-tpl="13" style="background: rgb(0, 0, 0); color: var(--cream); padding: 64px clamp(20px, 5vw, 40px) 56px; text-align: center;">
+    
+    <h1 data-dc-tpl="14" style="font-size: clamp(3rem, 2rem + 5vw, 6.5rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1; color: var(--gold); margin: 0px auto; max-width: 18ch;">Grow your revenue by partnering with Kaizan</h1>
+    <p data-dc-tpl="15" style="font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.25rem); line-height: 1.5; color: rgba(255, 251, 240, 0.72); max-width: 52ch; margin: 22px auto 0px; text-align: center;">Kaizan is the client intelligence engine for agencies and services firms. You introduce a firm you already work with. You earn 15% of their first year and 7.5% of their second.</p>
+    <div data-dc-tpl="16" style="margin-top: 34px;">
+      <a data-dc-tpl="17" href="https://calendar.app.google/nXCQjV6kHfsmDs5c7" target="_blank" rel="noopener" style="display: inline-block; white-space: nowrap; background: var(--gold); color: rgb(0, 0, 0); font-weight: 600; font-size: 17px; padding: 14px 26px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">Book a call</a>
+    </div>
+  </header>
+
+  <section data-dc-tpl="19" style="background: var(--cream); padding: 56px clamp(20px, 5vw, 40px) 40px;">
+    <div data-dc-tpl="20" style="max-width: 1100px; margin: 0px auto;">
+      <div data-dc-tpl="21" style="width: 90px; height: 10px; background: var(--gold); border-radius: 5px; margin: 0px 0px 26px;"></div>
+      <h2 data-dc-tpl="22" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 44px;">Four reasons partners sign up</h2>
+      <div data-dc-tpl="23" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 30px; align-items: stretch;">
+        <div data-dc-tpl="24" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 5px solid rgb(255, 185, 0); border-radius: var(--radius-lg); box-shadow: rgb(0, 0, 0) 10px 10px 0px; padding: 28px 26px 30px; display: flex; flex-direction: column; gap: 14px;">
+          <div data-dc-tpl="25" style="display: flex; align-items: center; gap: 14px;">
+            <span data-dc-tpl="26" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; background: rgb(255, 185, 0); display: flex; align-items: center; justify-content: center;">
+              <img data-dc-tpl="27" src="/assets/img/referral/5b3820d2.png" alt="" style="width: 22px; height: 22px;">
+            </span>
+            <h3 data-dc-tpl="28" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px;">Revenue that compounds.</h3>
+          </div>
+          <p data-dc-tpl="29" style="margin: 0px; font-size: 17px; line-height: 1.55; color: var(--ink);">Around $22,000 per referred firm across two years on a mid-tier subscription, paid quarterly on revenue we have collected. Larger clients earn you more.</p>
+        </div>
+        <div data-dc-tpl="30" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 5px solid rgb(6, 214, 160); border-radius: var(--radius-lg); box-shadow: rgb(0, 0, 0) 10px 10px 0px; padding: 28px 26px 30px; display: flex; flex-direction: column; gap: 14px;">
+          <div data-dc-tpl="31" style="display: flex; align-items: center; gap: 14px;">
+            <span data-dc-tpl="32" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; background: rgb(6, 214, 160); display: flex; align-items: center; justify-content: center;">
+              <img data-dc-tpl="33" src="/assets/img/referral/89fd2c3b.png" alt="" style="width: 22px; height: 22px;">
+            </span>
+            <h3 data-dc-tpl="34" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px;">A service your clients are already asking for.</h3>
+          </div>
+          <p data-dc-tpl="35" style="margin: 0px; font-size: 17px; line-height: 1.55; color: var(--ink);">Every agency leader is being asked how to use AI properly. Most are guessing. This is a real answer with a real implementation.</p>
+        </div>
+        <div data-dc-tpl="36" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 5px solid rgb(255, 107, 107); border-radius: var(--radius-lg); box-shadow: rgb(0, 0, 0) 10px 10px 0px; padding: 28px 26px 30px; display: flex; flex-direction: column; gap: 14px;">
+          <div data-dc-tpl="37" style="display: flex; align-items: center; gap: 14px;">
+            <span data-dc-tpl="38" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; background: rgb(255, 107, 107); display: flex; align-items: center; justify-content: center;">
+              <img data-dc-tpl="39" src="/assets/img/referral/bb2c3fe0.png" alt="" style="width: 22px; height: 22px;">
+            </span>
+            <h3 data-dc-tpl="40" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px;">Retention you can point to.</h3>
+          </div>
+          <p data-dc-tpl="41" style="margin: 0px; font-size: 17px; line-height: 1.55; color: var(--ink);">Kaizan flags revenue risk before renewal. Your clients keep more of their accounts, and clients who grow stay with you longer.</p>
+        </div>
+        <div data-dc-tpl="42" style="background: rgb(255, 255, 255); color: rgb(0, 0, 0); border: 5px solid rgb(76, 201, 240); border-radius: var(--radius-lg); box-shadow: rgb(0, 0, 0) 10px 10px 0px; padding: 28px 26px 30px; display: flex; flex-direction: column; gap: 14px;">
+          <div data-dc-tpl="43" style="display: flex; align-items: center; gap: 14px;">
+            <span data-dc-tpl="44" style="width: 44px; height: 44px; flex: 0 0 auto; border-radius: 12px; background: rgb(76, 201, 240); display: flex; align-items: center; justify-content: center;">
+              <img data-dc-tpl="45" src="/assets/img/referral/4370be52.svg" alt="" style="width: 22px; height: 22px;">
+            </span>
+            <h3 data-dc-tpl="46" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px;">A reason to be in the room again.</h3>
+          </div>
+          <p data-dc-tpl="47" style="margin: 0px; font-size: 17px; line-height: 1.55; color: var(--ink);">Introducing Kaizan puts you back in a strategic conversation about how they run their business, not just the work you deliver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="48" style="padding: 76px clamp(20px, 5vw, 40px) 80px; background-color: var(--surface-pale);">
+    <div data-dc-tpl="49" style="max-width: 1100px; margin: 0px auto;">
+      <div data-dc-tpl="50" style="width: 90px; height: 10px; background: var(--gold); border-radius: 5px; margin: 0px 0px 26px;"></div>
+      <div data-dc-tpl="51" style="display: flex; flex-direction: column; gap: 26px;">
+      <div data-dc-tpl="52" class="pair-row" style="align-items: end;">
+        <h2 data-dc-tpl="53" style="min-width: 0px; margin: 0px; font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; color: var(--ink);">Heard this from your clients?</h2>
+        <div data-dc-tpl="54" class="pair-arrow" style="visibility: hidden;"><svg data-dc-tpl="55" viewBox="0 0 48 24" width="48" height="24" aria-hidden="true"></svg></div>
+        <h2 data-dc-tpl="56" style="min-width: 0px; margin: 0px; font-size: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; color: var(--ink);">What Kaizan does about it</h2>
+      </div>
+      <div data-dc-tpl="57" class="pair-row">
+        <div data-dc-tpl="58" style="min-width: 0px; background: var(--cream); border: 2px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px;">
+          <p data-dc-tpl="59" style="margin: 0px; font-size: 20px; line-height: 1.45; color: var(--ink);">The client relationship lives across forty conversations a quarter and nobody has time to read them all.</p>
+        </div>
+        <div data-dc-tpl="60" class="pair-arrow" style="display: flex; align-items: center; justify-content: center; align-self: center;">
+          <svg data-dc-tpl="61" viewBox="0 0 48 24" width="48" height="24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="62" d="M2 12h40"></path><path data-dc-tpl="63" d="M34 4l8 8-8 8"></path></svg>
+        </div>
+        <div data-dc-tpl="64" style="min-width: 0px; background: var(--gold); border: 3px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px; box-shadow: rgb(0, 0, 0) 8px 8px 0px;">
+          <p data-dc-tpl="65" style="margin: 0px; font-size: 20px; line-height: 1.45; font-weight: 600; color: rgb(0, 0, 0);">Kaizan reads every one of them and turns them into a single view of where the account actually stands.</p>
+        </div>
+      </div>
+      <div data-dc-tpl="66" class="pair-row">
+        <div data-dc-tpl="67" style="min-width: 0px; background: var(--cream); border: 2px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px;">
+          <p data-dc-tpl="68" style="margin: 0px; font-size: 20px; line-height: 1.45; color: var(--ink);">An account goes quiet for ninety days and nobody notices until the renewal conversation.</p>
+        </div>
+        <div data-dc-tpl="69" class="pair-arrow" style="display: flex; align-items: center; justify-content: center; align-self: center;">
+          <svg data-dc-tpl="70" viewBox="0 0 48 24" width="48" height="24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="71" d="M2 12h40"></path><path data-dc-tpl="72" d="M34 4l8 8-8 8"></path></svg>
+        </div>
+        <div data-dc-tpl="73" style="min-width: 0px; background: var(--gold); border: 3px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px; box-shadow: rgb(0, 0, 0) 8px 8px 0px;">
+          <p data-dc-tpl="74" style="margin: 0px; font-size: 20px; line-height: 1.45; font-weight: 600; color: rgb(0, 0, 0);">Kaizan tracks engagement across every contact and flags the drop the month it starts, not at renewal.</p>
+        </div>
+      </div>
+      <div data-dc-tpl="75" class="pair-row">
+        <div data-dc-tpl="76" style="min-width: 0px; background: var(--cream); border: 2px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px;">
+          <p data-dc-tpl="77" style="margin: 0px; font-size: 20px; line-height: 1.45; color: var(--ink);">When an account director leaves, the account history leaves with them.</p>
+        </div>
+        <div data-dc-tpl="78" class="pair-arrow" style="display: flex; align-items: center; justify-content: center; align-self: center;">
+          <svg data-dc-tpl="79" viewBox="0 0 48 24" width="48" height="24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="80" d="M2 12h40"></path><path data-dc-tpl="81" d="M34 4l8 8-8 8"></path></svg>
+        </div>
+        <div data-dc-tpl="82" style="min-width: 0px; background: var(--gold); border: 3px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 26px 26px 28px; box-shadow: rgb(0, 0, 0) 8px 8px 0px;">
+          <p data-dc-tpl="83" style="margin: 0px; font-size: 20px; line-height: 1.45; font-weight: 600; color: rgb(0, 0, 0);">Kaizan holds the institutional memory for the account, so the history stays when the person doesn’t.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="84" id="economics" style="background: rgb(0, 0, 0); color: var(--cream); padding: 64px clamp(20px, 5vw, 40px);">
+    <div data-dc-tpl="85" style="max-width: 820px; margin: 0px auto;">
+      <div data-dc-tpl="86">
+        <div data-dc-tpl="87" style="font-size: 20px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px;">Earn</div>
+        <div data-dc-tpl="88" style="font-family: var(--font-mono); font-weight: 700; font-size: clamp(3.4rem, 2.4rem + 6.5vw, 6.8rem); line-height: 0.95; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; color: var(--gold); margin: 0px 0px 18px;"><span class="sc-interp" id="rp-count" data-target="22050">$22,050</span></div>
+        <p data-dc-tpl="89" style="margin: 0px; font-size: 25px; line-height: 1.55; color: rgba(255, 251, 240, 0.8); max-width: 56ch;">A services firm you introduce runs a three-month pilot, then signs for twelve months at $7,500 a month, then renews. You earn that across the two years.</p>
+        <p data-dc-tpl="90" style="margin: 16px 0px 0px; font-size: 13px; color: rgba(255, 251, 240, 0.5); max-width: 48ch;">Based on a mid-tier subscription. Not a price quote.</p>
+      </div>
+
+      <div data-dc-tpl="91" style="margin-top: 56px; border-top: 2px solid var(--cream);">
+        <div data-dc-tpl="92" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 22px 0px; border-bottom: 2px solid var(--cream);">
+          <span data-dc-tpl="93" style="flex: 1 1 0%; min-width: 200px; font-size: 19px; line-height: 1.5; color: var(--cream);">Paid pilot, up to three months. 15% of pilot fees, paid within 30 days of the pilot ending.</span>
+          <span data-dc-tpl="94" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gold); flex: 0 0 auto;">15%</span>
+        </div>
+        <div data-dc-tpl="95" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 22px 0px; border-bottom: 2px solid var(--cream);">
+          <span data-dc-tpl="96" style="flex: 1 1 0%; min-width: 200px; font-size: 19px; line-height: 1.5; color: var(--cream);">Their first 12 months. 15% of subscription fees, paid quarterly as Kaizan collects.</span>
+          <span data-dc-tpl="97" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gold); flex: 0 0 auto;">15%</span>
+        </div>
+        <div data-dc-tpl="98" style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 22px 0px; border-bottom: 2px solid var(--cream);">
+          <span data-dc-tpl="99" style="flex: 1 1 0%; min-width: 200px; font-size: 19px; line-height: 1.5; color: var(--cream);">Their second 12 months. 7.5% of subscription fees, paid quarterly as Kaizan collects.</span>
+          <span data-dc-tpl="100" style="font-family: var(--font-mono); font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--gold); flex: 0 0 auto;">7.5%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="101" style="background: var(--cream); padding: 56px clamp(20px, 5vw, 40px);">
+    <div data-dc-tpl="102" style="max-width: 1100px; margin: 0px auto;">
+      <h2 data-dc-tpl="103" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 36px;">How it works.</h2>
+      <div data-dc-tpl="104" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 22px; align-items: stretch;">
+        <div data-dc-tpl="105" style="background: var(--gold); border: 5px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 28px 26px 30px; box-shadow: rgb(0, 0, 0) 10px 10px 0px;">
+          <div data-dc-tpl="106" style="display: flex; gap: 18px; align-items: flex-start;">
+            <div data-dc-tpl="107" style="flex: 0 0 auto;"><div data-dc-tpl="108" style="width: 40px; height: 40px; border-radius: 10px; color: var(--fg-2); font-weight: 900; font-size: 19px; display: flex; align-items: center; justify-content: center; background-color: var(--gold-pale);">1</div></div>
+            <div data-dc-tpl="109">
+              <h3 data-dc-tpl="110" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px 0px 10px;">We do a kickoff call.</h3>
+              <p data-dc-tpl="111" style="margin: 0px; font-size: 17px; line-height: 1.55; color: rgba(0, 0, 0, 0.78);">We check the fit, both the client type and the product match.</p>
+            </div>
+          </div>
+        </div>
+        <div data-dc-tpl="112" style="background: var(--gold); border: 5px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 28px 26px 30px; box-shadow: rgb(0, 0, 0) 10px 10px 0px;">
+          <div data-dc-tpl="113" style="display: flex; gap: 18px; align-items: flex-start;">
+            <div data-dc-tpl="114" style="flex: 0 0 auto;"><div data-dc-tpl="115" style="width: 40px; height: 40px; border-radius: 10px; color: var(--fg-2); font-weight: 900; font-size: 19px; display: flex; align-items: center; justify-content: center; background-color: var(--surface-pale);">2</div></div>
+            <div data-dc-tpl="116">
+              <h3 data-dc-tpl="117" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px 0px 10px;">We sign the agreement.</h3>
+              <p data-dc-tpl="118" style="margin: 0px; font-size: 17px; line-height: 1.55; color: rgba(0, 0, 0, 0.78);">A contract sets out the terms before anyone is introduced.</p>
+            </div>
+          </div>
+        </div>
+        <div data-dc-tpl="119" style="background: var(--gold); border: 5px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 28px 26px 30px; box-shadow: rgb(0, 0, 0) 10px 10px 0px;">
+          <div data-dc-tpl="120" style="display: flex; gap: 18px; align-items: flex-start;">
+            <div data-dc-tpl="121" style="flex: 0 0 auto;"><div data-dc-tpl="122" style="width: 40px; height: 40px; border-radius: 10px; color: var(--fg-2); font-weight: 900; font-size: 19px; display: flex; align-items: center; justify-content: center; background-color: var(--surface-pale);">3</div></div>
+            <div data-dc-tpl="123">
+              <h3 data-dc-tpl="124" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px 0px 10px;">You make the introduction.</h3>
+              <p data-dc-tpl="125" style="margin: 0px; font-size: 17px; line-height: 1.55; color: rgba(0, 0, 0, 0.78);">Written or in person, whichever fits the relationship.</p>
+            </div>
+          </div>
+        </div>
+        <div data-dc-tpl="126" style="background: var(--gold); border: 5px solid rgb(0, 0, 0); border-radius: var(--radius-lg); padding: 28px 26px 30px; box-shadow: rgb(0, 0, 0) 10px 10px 0px;">
+          <div data-dc-tpl="127" style="display: flex; gap: 18px; align-items: flex-start;">
+            <div data-dc-tpl="128" style="flex: 0 0 auto;"><div data-dc-tpl="129" style="width: 40px; height: 40px; border-radius: 10px; color: var(--fg-2); font-weight: 900; font-size: 19px; display: flex; align-items: center; justify-content: center; background-color: var(--surface-pale);">4</div></div>
+            <div data-dc-tpl="130">
+              <h3 data-dc-tpl="131" style="font-size: 21px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; margin: 0px 0px 10px;">You get paid.</h3>
+              <p data-dc-tpl="132" style="margin: 0px; font-size: 17px; line-height: 1.55; color: rgba(0, 0, 0, 0.78);">Statement and payment every quarter, for two years.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="133" style="padding: 56px clamp(20px, 5vw, 40px); background-color: var(--gold-pale);">
+    <div data-dc-tpl="134" style="max-width: 760px; margin: 0px auto;">
+      <h2 data-dc-tpl="135" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 34px;">A good introduction looks like this.</h2>
+      <div data-dc-tpl="136" style="display: flex; flex-direction: column;">
+        <div data-dc-tpl="137" style="display: flex; gap: 16px; padding: 18px 0px; border-top: 2px solid var(--ink); align-items: center;">
+          <span data-dc-tpl="138" style="width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center;">
+            <svg data-dc-tpl="139" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="140" d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          </span>
+          <span data-dc-tpl="141" style="font-size: 19px; line-height: 1.5;">A marketing, media, creative or technology services firm</span>
+        </div>
+        <div data-dc-tpl="142" style="display: flex; gap: 16px; padding: 18px 0px; border-top: 2px solid var(--ink); align-items: center;">
+          <span data-dc-tpl="143" style="width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center;">
+            <svg data-dc-tpl="144" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="145" d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          </span>
+          <span data-dc-tpl="146" style="font-size: 19px; line-height: 1.5;">5 or more client relationships they care about keeping</span>
+        </div>
+        <div data-dc-tpl="147" style="display: flex; gap: 16px; padding: 18px 0px; border-top: 2px solid var(--ink); align-items: center;">
+          <span data-dc-tpl="148" style="width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center;">
+            <svg data-dc-tpl="149" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="150" d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          </span>
+          <span data-dc-tpl="151" style="font-size: 19px; line-height: 1.5;">A Chief Client Officer, SVP Client Services or head of client success</span>
+        </div>
+        <div data-dc-tpl="152" style="display: flex; gap: 16px; padding: 18px 0px; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); align-items: center;">
+          <span data-dc-tpl="153" style="width: 30px; height: 30px; flex: 0 0 auto; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center;">
+            <svg data-dc-tpl="154" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path data-dc-tpl="155" d="M5 12.5l4.5 4.5L19 7.5"></path></svg>
+          </span>
+          <span data-dc-tpl="156" style="font-size: 19px; line-height: 1.5;">Roughly 50 to 500 people</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-dc-tpl="157" style="background: var(--cream); padding: 48px clamp(20px, 5vw, 40px);">
+    <div data-dc-tpl="158" style="max-width: 680px; margin: 0px auto;">
+      <h2 data-dc-tpl="159" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 16px;">We ask one thing.</h2>
+      <p data-dc-tpl="160" style="margin: 0px; font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 56ch;">Tell the company you have a financial interest before you make the introduction. One sentence is enough. Everything else is in the Referral Partner Agreement, sent before you register anything.</p>
+    </div>
+  </section>
+
+  <section data-dc-tpl="161" id="form" style="background: rgb(0, 0, 0); color: var(--cream); padding: 56px clamp(20px, 5vw, 40px); text-align: center;">
+    <div data-dc-tpl="162" style="max-width: 560px; margin: 0px auto;">
+      <h2 data-dc-tpl="163" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 16px; color: var(--gold);">Book a call.</h2>
+      <p data-dc-tpl="164" style="margin: 0px 0px 30px; font-size: 19px; line-height: 1.55; color: rgba(255, 251, 240, 0.72);">A short call with the partner team. We will walk through the program, check the fit, and answer any questions before you introduce anyone.</p>
+      <a data-dc-tpl="165" href="https://calendar.app.google/nXCQjV6kHfsmDs5c7" target="_blank" rel="noopener" style="display: inline-block; white-space: nowrap; background: var(--gold); color: rgb(0, 0, 0); font-weight: 600; font-size: 17px; padding: 14px 26px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">Book a call</a>
+      <p data-dc-tpl="166" style="margin: 18px 0px 0px; font-size: 13px; color: rgba(255, 251, 240, 0.5);">Registered introductions are protected for twelve months.</p>
+    </div>
+  </section>
+
+  <section data-dc-tpl="167" style="padding: 56px clamp(20px, 5vw, 40px); background-color: var(--surface-pale);">
+    <div data-dc-tpl="168" style="max-width: 760px; margin: 0px auto;">
+      <h2 data-dc-tpl="169" style="font-size: clamp(2.2rem, 1.6rem + 2.2vw, 3.4rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.06; margin: 0px 0px 30px;">Questions.</h2>
+      <div data-dc-tpl="170" style="display: flex; flex-direction: column;">
+        <details data-dc-tpl="171" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="172" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">What if they are already talking to you?<span data-dc-tpl="173" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="174" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">We tell you within five business days if they are already an active opportunity, were in our pipeline in the last ninety days, or are an existing or former client. Nothing is awkward because you checked before you made the introduction.</p>
+        </details>
+        <details data-dc-tpl="175" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="176" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">What if two of us register the same company?<span data-dc-tpl="177" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="178" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">The first registration we accept governs. Whoever registers the company first keeps the introduction.</p>
+        </details>
+        <details data-dc-tpl="179" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="180" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">What if they do not sign within twelve months?<span data-dc-tpl="181" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="182" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">The registration lapses. You are free to submit it again, and we treat it as a new introduction.</p>
+        </details>
+        <details data-dc-tpl="183" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="184" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">Do I have to sell anything?<span data-dc-tpl="185" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="186" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">No. You make the introduction, we run the process. Join the first call if you want to, and skip it if you would rather not.</p>
+        </details>
+        <details data-dc-tpl="187" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="188" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">When exactly do I get paid?<span data-dc-tpl="189" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="190" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">Quarterly, on revenue we have actually collected, with a statement showing the calculation. Pilot fees are paid within 30 days of the pilot ending.</p>
+        </details>
+        <details data-dc-tpl="191" style="border-top: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="192" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">What if I stop being a partner?<span data-dc-tpl="193" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="194" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">You still get paid on everyone who has already signed, and on registered introductions that sign inside their twelve-month protection window.</p>
+        </details>
+        <details data-dc-tpl="195" style="border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 18px 0px;">
+          <summary data-dc-tpl="196" style="cursor: pointer; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; list-style: none; display: flex; justify-content: space-between; gap: 16px;">Do I need to be a US company?<span data-dc-tpl="197" aria-hidden="true" style="color: var(--ink-3);">+</span></summary>
+          <p data-dc-tpl="198" style="margin: 14px 0px 0px; font-size: 17px; line-height: 1.55; max-width: 62ch; color: var(--ink-2);">No. Non-US partners complete a Form W-8 instead of a W-9. Fees are paid in US dollars either way.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer data-dc-tpl="199" style="background: rgb(0, 0, 0); color: rgba(255, 251, 240, 0.6); padding: 28px clamp(20px, 5vw, 40px); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(255, 251, 240, 0.1);">
+    <div data-dc-tpl="200" style="display: flex; align-items: center; gap: 10px;">
+      <img data-dc-tpl="201" src="/assets/img/referral/616aa7d8.png" alt="Kaizan" style="height: 14px;">
+      <span data-dc-tpl="202" style="font-size: 13px;">Kaizan Inc. New York and London. Backed by Pembroke VCT and Velocity Capital.</span>
+    </div>
+    <div data-dc-tpl="203" style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px;">
+      <a data-dc-tpl="204" href="#" style="color: rgba(255, 251, 240, 0.7);">Privacy policy</a>
+      <a data-dc-tpl="205" href="mailto:partners@kaizan.ai" style="color: rgba(255, 251, 240, 0.7);">partners@kaizan.ai</a>
+    </div>
+  </footer></div></div></div>
+<script>
+(function(){
+  var el=document.getElementById('rp-count');
+  if(!el) return;
+  var target=+el.getAttribute('data-target')||0;
+  var fmt=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=fmt(target);return;}
+  var done=false;
+  function run(){
+    if(done) return; done=true;
+    var start=null, dur=1600;
+    el.textContent=fmt(0);
+    requestAnimationFrame(function step(ts){
+      if(!start) start=ts;
+      var p=Math.min((ts-start)/dur,1), eased=1-Math.pow(1-p,3);
+      el.textContent=fmt(target*eased);
+      if(p<1) requestAnimationFrame(step); else el.textContent=fmt(target);
+    });
+  }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(e){if(e.isIntersecting){run();o.disconnect();}});},{threshold:0.4}).observe(el);
+  } else { run(); }
+})();
+</script>
+</body>
+</html>
