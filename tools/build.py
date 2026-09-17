@@ -3106,86 +3106,80 @@ def render_integrations() -> str:
 # ─────────────────────────────────────────────────────────────────────
 
 PRICING_TIERS = [
-    dict(name='Pilot', badge='PILOT', note='First 60 days',
-         clients='Up to ', clients_bold='10 clients',
-         price='From £300', price_label='per client / mo, billed as one flat monthly plan',
-         cta='Book a demo', cta_solid=False,
-         eyebrow='EVERYTHING YOU GET',
-         bullets=[
-             ('Unlimited users', ''),
-             ('Meeting Assistant', ': joins every meeting, captures notes, actions and decisions'),
-             ('All integrations', ': calls, emails, chat, workspaces, CRM, project management'),
-             ('Client Intelligence Platform', ': unified comms, stakeholder intel, health scores, market intel, SWOTs'),
-             ('API', ': leverage your unified client data'),
-             ('MCP', ': access your data in your LLM of choice'),
-             ('Dedicated Account Manager', ''),
-         ]),
-    dict(name='Team', clients='Up to ', clients_bold='30 clients',
-         price='From £165', price_label='per client / mo, billed as one flat monthly plan',
-         cta='Book a demo', cta_solid=False,
-         eyebrow='EVERYTHING IN PILOT, PLUS',
-         bullets=[
-             ('3× the portfolio', ': up to 30 accounts'),
-         ]),
-    dict(name='Growth', sweet=True, badge='SWEET SPOT', clients='Up to ', clients_bold='50 clients',
-         price='From £139', price_label='per client / mo, billed as one flat monthly plan',
-         cta='Book a demo', cta_solid=True,
-         eyebrow='EVERYTHING IN TEAM, PLUS',
-         bullets=[
-             ('Bigger portfolio', ': up to 50 accounts'),
-             ('Guided onboarding', ' with CARE calibration'),
-             ('Priority support', ' & quarterly value reviews'),
-         ]),
-    dict(name='Scale', clients='Up to ', clients_bold='75 clients',
-         price='From £120', price_label='per client / mo, billed as one flat monthly plan',
-         cta='Book a demo', cta_solid=False,
-         eyebrow='EVERYTHING IN GROWTH, PLUS',
-         bullets=[
-             ('1.5× the portfolio', ': up to 75 accounts'),
-             ('Multi-team segmentation', ' across practices'),
-             ('Custom AI Helpers', ': talk to us for pricing'),
-         ]),
-    dict(name='Enterprise', clients='', clients_bold='75+ clients',
-         clients_trail=' & custom work',
-         price='Custom', price_label='Per-client rate negotiated to your portfolio',
-         cta='Talk to us', cta_solid=False,
-         eyebrow='EVERYTHING IN SCALE, PLUS',
-         bullets=[
-             ('Unlimited portfolio scale', ' across multi-office, multi-region'),
-             ('API + MCP custom', ': extended access & rate limits'),
-             ('Custom integrations & bespoke builds', ' scoped to your requirements'),
-             ('SSO/SAML, custom retention', ' & data residency'),
-             ('Custom CARE calibration', ' per practice'),
-         ]),
+    dict(name='Pilot', clients_pre='Full access for ', clients_bold='14 days',
+         price='Free', per='No card, no commitment',
+         plan='Speak to a Kaizan Account Executive to get set up',
+         cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
+         cta_style='primary', ribbon='Start here', card='hero',
+         features=['Full platform for 14 days',
+                   'Connect your own client data',
+                   'Guided setup and kick off',
+                   '2 to 3 outcomes agreed up front',
+                   'CARE']),   # 'CARE' renders the linked CARE bullet
+    dict(name='Starter', clients_pre='Minimum ', clients_bold='10 clients',
+         price='£99', per='per client / month, billed as one flat monthly plan',
+         plan='Minimum 10 clients on contract',
+         cta='Book a demo', cta_note='Upgrade any time as your book grows', cta_style='outline',
+         features=['Unlimited users, no extra cost',
+                   'Meeting assistant',
+                   'Standard chat and CRM integrations',
+                   'Client intelligence platform',
+                   'MCP access',
+                   'Desktop SDK',
+                   'Dedicated account manager']),
+    dict(name='Growth', clients_pre='Minimum ', clients_bold='25 clients',
+         price='£119', per='per client / month, billed as one flat monthly plan',
+         plan='Minimum 25 clients on contract',
+         cta='Book a demo', cta_note='Upgrade any time as your book grows', cta_style='outline',
+         ribbon='Most popular', ribbon_quiet=True, card='changed',
+         features=['Everything in Starter',
+                   'Guided onboarding and AI maturity framework assessment',
+                   'API access',
+                   'Priority support']),
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+         price='Custom', per='Per client rate negotiated to your portfolio',
+         plan='Scoped with you, billed as one flat monthly plan',
+         cta='Talk to us', cta_note='', cta_style='dark',
+         features=['Unlimited users, no per seat fees',
+                   'Unlimited portfolio, multi office and region',
+                   'Multi team segmentation across practices',
+                   'CARE calibration per practice',
+                   'Custom AI helpers, quoted to your requirements',
+                   'API and MCP, extended access and rate limits',
+                   'Custom integrations and bespoke builds']),
 ]
 
 
-def tier_card(t: dict) -> str:
-    bullets = '\n'.join(
-        f'<li><span class="arr">→</span><span><b>{E(b[0])}</b>{E(b[1])}</span></li>'
-        for b in t['bullets']
-    )
-    trail = f'<span class="trail">{E(t["clients_trail"])}</span>' if t.get('clients_trail') else ''
-    badge = f'<div class="ribbon">{E(t["badge"])}</div>' if t.get('badge') else ''
-    note = f'<div class="note">{E(t["note"])}</div>' if t.get('note') else ''
-    cta_cls = 'cta is-solid' if t.get('cta_solid') else 'cta'
-    demo = '/demo/'
-    cta = f'<a class="{cta_cls}" href="{demo}" target="_blank" rel="noopener">{E(t["cta"])}</a>' if t.get('cta') else ''
-    per = f'<div class="per">{E(t["per_client"])}</div>' if t.get('per_client') else ''
-    return f'''<div class="kz-tier{' is-sweet' if t.get('sweet') else ''}">
-      {badge}
-      <div class="name">{E(t["name"])}</div>
-      {note}
-      <div class="clients">{E(t["clients"])}<div class="bold">{E(t["clients_bold"])}{trail}</div></div>
-      <div class="price">
-        <div class="line">{E(t["price"])}</div>
-        <div class="label">{E(t["price_label"])}</div>
-        {per}
-      </div>
-      {cta}
-      <div class="eyebrow">{E(t["eyebrow"])}</div>
-      <ul class="bullets">{bullets}</ul>
-    </div>'''
+def tier_card(t: dict, p: str = '') -> str:
+    care_href = f'{p}product/#health-model'
+    feats = []
+    for f in t['features']:
+        if f == 'CARE':
+            feats.append(f'<li><span><a href="{care_href}">CARE</a> scores and findings at day 14</span></li>')
+        else:
+            feats.append(f'<li>{E(f)}</li>')
+    features = '\n        '.join(feats)
+    ribbon = ''
+    if t.get('ribbon'):
+        rc = ' quiet' if t.get('ribbon_quiet') else ''
+        ribbon = f'<div class="kzp-ribbon{rc}">{E(t["ribbon"])}</div>'
+    card_cls = f' {t["card"]}' if t.get('card') else ''
+    note = E(t['cta_note']) if t.get('cta_note') else '&nbsp;'
+    style = t.get('cta_style', 'outline')
+    return f'''<div class="kzp-tier{card_cls}">
+        {ribbon}
+        <div class="kzp-name">{E(t["name"])}</div>
+        <div class="kzp-clients">{E(t["clients_pre"])}<strong>{E(t["clients_bold"])}</strong></div>
+        <div class="kzp-price">{E(t["price"])}</div>
+        <p class="kzp-per">{E(t["per"])}</p>
+        <p class="kzp-plan">{E(t["plan"])}</p>
+        <ul class="kzp-features">
+        {features}
+        </ul>
+        <a class="kzp-btn kzp-btn-{style}" href="/demo/" target="_blank" rel="noopener">{E(t["cta"])}</a>
+        <p class="kzp-btn-note">{note}</p>
+      </div>'''
+
 
 PRICING_HELPERS = [
     dict(tag='AI ASSISTANT', name='For the Team',
@@ -3217,7 +3211,7 @@ ROI_CALCULATOR_SECTION = '''
   <div class="kzroi-inner">
 
     <!-- section header -->
-    <div class="kzroi-eyebrow">Pricing</div>
+    <div class="kzroi-eyebrow">ROI calculator</div>
     <h2 class="kzroi-h2">What Kaizan <span class="hl">returns</span> on the portfolio you run today.</h2>
 
     <!-- full-width headline result bar -->
@@ -3442,33 +3436,51 @@ ROI_CALCULATOR_SECTION = '''
 def render_pricing() -> str:
     p = relpath(1)
     extra_head = (
-        f'<link rel="stylesheet" href="{p}assets/css/roi-calculator.css">\n'
+        f'<link rel="stylesheet" href="{p}assets/css/pricing.css">\n'
+        f'        <link rel="stylesheet" href="{p}assets/css/roi-calculator.css">\n'
+        f'        <link rel="stylesheet" href="{p}assets/css/roi-accordion.css">\n'
         f'        <script charset="utf-8" defer src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>\n'
         f'        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n'
         f'        <script defer src="{p}assets/js/roi-calculator.js"></script>'
     )
-    tiers_html = '\n'.join(tier_card(t) for t in PRICING_TIERS)
-    tiers_section = f'''
-    <section class="kz-pricing-plans">
-      <div class="kzroi-head">
-        <div class="kz-eyebrow">Plans</div>
-        <h2>Priced by the size of the portfolio we help you grow.</h2>
+    tiers_html = '\n'.join(tier_card(t, p) for t in PRICING_TIERS)
+    pricing_section = f'''
+    <section class="kzp">
+      <div class="kzp-wrap">
+        <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
+        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <div class="kzp-badges">
+          <span class="kzp-tag">✓ New: 14 day pilot, free of charge</span>
+          <span class="kzp-tag">✓ Unlimited users on every plan</span>
+        </div>
+        <div class="kzp-grid">{tiers_html}</div>
+        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
       </div>
-      <div class="kz-pricing-tiers">{tiers_html}</div>
-      <p class="kz-pricing-foot">
-        All prices GBP, annual contract. Unlimited users on every tier. Fair-use limits apply on
-        storage, API calls and integration volumes. Custom AI Helpers, integrations and bespoke
-        engineering quoted separately.
-      </p>
-    </section>
-
-    <!-- closing CTA band -->'''
-    section = ROI_CALCULATOR_SECTION.replace('<!-- closing CTA band -->', tiers_section, 1)
-    body = nav_html(1, active='Pricing') + section + footer_html(1)
+    </section>'''
+    chevron = ('<svg class="kzacc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+               'stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+               '<polyline points="6 9 12 15 18 9"></polyline></svg>')
+    accordion = f'''
+    <section class="kzp-calc">
+      <details class="kzacc">
+        <summary class="kzacc-summary">
+          <div>
+            <p class="kzacc-title">Worried this costs more than it saves? See the maths.</p>
+            <p class="kzacc-sub">Takes 30 seconds. No email required.</p>
+          </div>
+          {chevron}
+        </summary>
+        <div class="kzacc-body">
+          {ROI_CALCULATOR_SECTION}
+        </div>
+      </details>
+    </section>'''
+    body = nav_html(1, active='Pricing') + pricing_section + accordion + footer_html(1)
     return page_head('Pricing', 1,
-                     'Kaizan pricing: priced by the size of the client portfolio we help you manage '
-                     'and grow. Unlimited users on every tier.',
+                     'Kaizan pricing: priced by the size of the client portfolio we help you grow. '
+                     'Free 14 day pilot, then per client per month. Unlimited users on every tier.',
                      extra_head=extra_head) + body + page_foot()
+
 
 
 # ─────────────────────────────────────────────────────────────────────

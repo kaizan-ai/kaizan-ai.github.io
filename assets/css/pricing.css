@@ -1,0 +1,132 @@
+/* ============================================================================
+   Kaizan pricing page — tier cards. Ported from the approved kaizan-pricing.html
+   reference. Scoped under .kzp so nothing collides with the host site styles.
+   Card row heights are custom properties so every card's price, dotted rule and
+   button line up across the row; they switch off below 600px.
+   ========================================================================== */
+.kzp {
+  --kzp-gold: #FFB900;
+  --kzp-gold-dark: #946200;
+  --kzp-gold-bg: #FFFBF0;
+  --kzp-page-bg: #FAFAF9;
+  --kzp-card: #FFFFFF;
+  --kzp-header: #E7E5E4;
+  --kzp-ink: #1C1917;
+  --kzp-ink-2: #57534E;
+  --kzp-mute: #6B6560;
+  --kzp-line: #D6D3D1;
+  --kzp-ok: #2E7D68;
+  --kzp-ok-bg: #ECFAF5;
+  --kzp-r-md: 10px;
+  --kzp-r-lg: 14px;
+  --kzp-r-full: 9999px;
+  --kzp-sh-sm: 0 1px 3px rgba(28,25,23,0.06), 0 1px 2px rgba(28,25,23,0.04);
+  --kzp-sh-md: 0 12px 28px rgba(28,25,23,0.10), 0 2px 6px rgba(28,25,23,0.05);
+
+  --row-name: 26px;
+  --row-clients: 46px;
+  --row-price: 40px;
+  --row-per: 36px;
+  --row-plan: 40px;
+  --row-note: 34px;
+
+  background: var(--kzp-page-bg);
+  color: var(--kzp-ink);
+  padding: 56px 24px 40px;
+}
+.kzp * { box-sizing: border-box; }
+.kzp-wrap { max-width: 1180px; margin: 0 auto; }
+
+.kzp-eyebrow {
+  text-align: center; color: var(--kzp-gold-dark);
+  font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.kzp-h1 { text-align: center; font-size: 2.4rem; letter-spacing: -0.02em; margin: 0 0 12px; }
+.kzp-sub {
+  text-align: center; color: var(--kzp-ink-2); font-size: 1.05rem;
+  max-width: 640px; margin: 0 auto 12px; line-height: 1.5;
+}
+.kzp-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+.kzp-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--kzp-ok-bg); color: var(--kzp-ok);
+  border-radius: var(--kzp-r-full); padding: 5px 14px; font-size: 0.78rem; font-weight: 600;
+}
+
+.kzp-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  align-items: stretch; padding-top: 16px;
+}
+.kzp-tier {
+  background: var(--kzp-card); border: 2px solid var(--kzp-line);
+  border-radius: var(--kzp-r-lg); padding: 26px 20px 24px;
+  box-shadow: var(--kzp-sh-sm); display: flex; flex-direction: column; position: relative;
+}
+.kzp-tier.changed { border-color: var(--kzp-gold); }
+.kzp-tier.hero {
+  border-color: var(--kzp-gold); box-shadow: var(--kzp-sh-md);
+  background: linear-gradient(180deg, var(--kzp-gold-bg) 0%, #FFFFFF 46%);
+}
+.kzp-ribbon {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--kzp-gold); color: var(--kzp-ink);
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: var(--kzp-r-full); box-shadow: var(--kzp-sh-sm); white-space: nowrap;
+}
+.kzp-ribbon.quiet { background: var(--kzp-header); color: var(--kzp-ink-2); }
+
+.kzp-name { font-size: 1.15rem; font-weight: 700; min-height: var(--row-name); margin: 0 0 2px; }
+.kzp-clients {
+  color: var(--kzp-ink-2); font-size: 0.86rem; line-height: 1.35;
+  min-height: var(--row-clients); margin: 0 0 14px;
+}
+.kzp-clients strong { display: block; font-size: 1rem; color: var(--kzp-ink); font-weight: 700; }
+.kzp-price {
+  font-size: 2rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1;
+  min-height: var(--row-price); display: flex; align-items: flex-end;
+}
+.kzp-per { color: var(--kzp-mute); font-size: 0.78rem; line-height: 1.4; min-height: var(--row-per); margin: 6px 0 0; }
+.kzp-plan {
+  color: var(--kzp-ink-2); font-size: 0.76rem; line-height: 1.4;
+  min-height: var(--row-plan); margin: 0 0 20px;
+  padding-top: 10px; border-top: 1px dashed var(--kzp-line);
+  display: flex; align-items: center;
+}
+.kzp-features {
+  list-style: none; margin: 0 0 22px; padding: 0;
+  font-size: 0.83rem; color: var(--kzp-ink-2);
+  display: flex; flex-direction: column; gap: 9px; flex: 1;
+}
+.kzp-features li { display: flex; gap: 8px; align-items: flex-start; line-height: 1.35; }
+.kzp-features a { color: var(--kzp-gold-dark); text-decoration: underline; text-underline-offset: 2px; }
+.kzp-features li::before { content: "✓"; color: var(--kzp-ok); font-weight: 700; flex-shrink: 0; }
+
+.kzp-btn {
+  display: block; text-align: center; padding: 10px 16px; border-radius: var(--kzp-r-md);
+  font-size: 0.85rem; font-weight: 700; text-decoration: none;
+  border: 1.5px solid var(--kzp-line); color: var(--kzp-ink-2); transition: all 0.15s;
+}
+.kzp-btn-primary { background: var(--kzp-gold); color: var(--kzp-ink); border-color: var(--kzp-gold); }
+.kzp-btn-outline { background: transparent; }
+.kzp-btn-dark { background: var(--kzp-ink); color: #FAFAF9; border-color: var(--kzp-ink); }
+.kzp-btn:hover { transform: translateY(-1px); }
+.kzp-btn-note {
+  text-align: center; color: var(--kzp-mute); font-size: 0.72rem; line-height: 1.35;
+  min-height: var(--row-note); margin: 8px 0 0;
+}
+.kzp-foot {
+  max-width: 900px; margin: 48px auto 0; text-align: center;
+  color: var(--kzp-mute); font-size: 0.82rem; line-height: 1.6;
+}
+
+/* Accordion wrapper section (continues the pricing background). */
+.kzp-calc { background: #FAFAF9; padding: 0 24px 72px; }
+
+@media (max-width: 1000px) {
+  .kzp-grid { grid-template-columns: repeat(2, 1fr); row-gap: 32px; }
+}
+@media (max-width: 600px) {
+  .kzp-grid { grid-template-columns: 1fr; }
+  .kzp-name, .kzp-clients, .kzp-price, .kzp-per, .kzp-plan, .kzp-btn-note { min-height: 0; }
+}
