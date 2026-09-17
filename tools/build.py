@@ -38,7 +38,6 @@ NAV = [
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
     ('Personas',     '__personas_dropdown__'),
     ('Integrations', 'integrations/'),
-    ('Blog',         'blog/'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -69,6 +68,7 @@ TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
 # Trust & Security page. Third column class (is-yellow / is-mute) is reserved
 # for an optional glyph treatment.
 RESOURCES_MENU = [
+    ('Blog',          'blog/',           'is-mute'),
     ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
     ('FAQs',          'faq/',            'is-mute'),
     ('Security',      'security/',       'is-mute'),
