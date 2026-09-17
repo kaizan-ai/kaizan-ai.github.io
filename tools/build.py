@@ -3150,7 +3150,7 @@ PRICING_TIERS = [
 ]
 
 
-def tier_card(t: dict, p: str = '') -> str:
+def tier_card(t: dict, p: str = '', demo_href: str = '/demo/') -> str:
     care_href = f'{p}product/#health-model'
     feats = []
     for f in t['features']:
@@ -3170,15 +3170,80 @@ def tier_card(t: dict, p: str = '') -> str:
         {ribbon}
         <div class="kzp-name">{E(t["name"])}</div>
         <div class="kzp-clients">{E(t["clients_pre"])}<strong>{E(t["clients_bold"])}</strong></div>
-        <div class="kzp-price">{E(t["price"])}</div>
+        <div class="kzp-price{' sm' if t.get('price_small') else ''}">{E(t["price"])}</div>
         <p class="kzp-per">{E(t["per"])}</p>
         <p class="kzp-plan">{E(t["plan"])}</p>
         <ul class="kzp-features">
         {features}
         </ul>
-        <a class="kzp-btn kzp-btn-{style}" href="/demo/" target="_blank" rel="noopener">{E(t["cta"])}</a>
+        <a class="kzp-btn kzp-btn-{style}" href="{demo_href}" target="_blank" rel="noopener">{E(t["cta"])}</a>
         <p class="kzp-btn-note">{note}</p>
       </div>'''
+
+
+# US (USD) pricing tiers. Same card shape as PRICING_TIERS, but band-based
+# ("up to N" / "N to M") rather than minimum-based, per the approved US artefact.
+# Rendered US-only into /us/pricing/ by build_us_locale() (see us_pricing_section).
+PRICING_TIERS_US = [
+    dict(name='Pilot', clients_pre='14 days of ', clients_bold='full access',
+         price='Free', per='No card, no commitment',
+         plan='Speak to a Kaizan Account Executive to get set up',
+         cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
+         cta_style='primary', ribbon='Start here', card='hero',
+         features=['Full platform for 14 days',
+                   'Connect your own client data',
+                   'Guided setup and kick off',
+                   '2 to 3 outcomes agreed up front',
+                   'CARE']),
+    dict(name='Starter', clients_pre='Up to ', clients_bold='20 clients',
+         price='$129', per='per client / month, billed as one flat monthly plan',
+         plan='$2,580 a month at 20 clients',
+         cta='Book a demo', cta_note='Upgrade any time as your book grows', cta_style='outline',
+         features=['Unlimited users, no extra cost',
+                   'Meeting assistant',
+                   'Full integrations suite',
+                   'Client intelligence platform',
+                   'API and MCP access',
+                   'Dedicated account manager']),
+    dict(name='Growth', clients_pre='21 to ', clients_bold='49 clients',
+         price='$159', per='per client / month, billed as one flat monthly plan',
+         plan='$7,791 a month at 49 clients',
+         cta='Book a demo', cta_note='Upgrade any time as your book grows', cta_style='outline',
+         ribbon='Most popular', ribbon_quiet=True, card='changed',
+         features=['Everything in Starter',
+                   'Bigger portfolio, up to 49 accounts',
+                   'Guided onboarding with CARE calibration']),
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+         price='Custom', per='Per client rate negotiated to your portfolio',
+         plan='Scoped with you, billed as one flat monthly plan',
+         cta='Talk to us', cta_note='', cta_style='dark', price_small=True,
+         features=['Unlimited portfolio, multi office and region',
+                   'Unlimited users, no per-seat fees',
+                   'Multi team segmentation across practices',
+                   'Custom AI helpers, quoted to your requirements',
+                   'API and MCP, extended access and rate limits',
+                   'Custom integrations and bespoke builds',
+                   'SSO and SAML, custom retention and data residency']),
+]
+
+
+def us_pricing_section() -> str:
+    """The USD <section class="kzp"> for /us/pricing/. Injected by build_us_locale
+    in place of the mirrored GBP section. CTAs point at the US booking; the CARE
+    link and 'View UK pricing' link resolve correctly from /us/pricing/."""
+    tiers_html = '\n'.join(tier_card(t, '../', '/us/demo/') for t in PRICING_TIERS_US)
+    return f'''<section class="kzp">
+      <div class="kzp-wrap">
+        <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
+        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <div class="kzp-badges">
+          <span class="kzp-tag">✓ New: 14-day pilot, free of charge</span>
+          <span class="kzp-tag">✓ Unlimited users on every plan</span>
+        </div>
+        <div class="kzp-grid">{tiers_html}</div>
+        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
+      </div>
+    </section>'''
 
 
 PRICING_HELPERS = [
@@ -4936,6 +5001,11 @@ def build_us_locale():
             '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>',
             '<a class="kz-btn kz-btn-ghost" href="/us/referral-partners/">Become a partner</a>'
             '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>')
+        # US pricing page: swap the mirrored GBP tier cards + footnote for the
+        # USD version (lambda replacement avoids re backreference escaping).
+        if path == '/pricing/':
+            us = re.sub(r'<section class="kzp">.*?</section>',
+                        lambda m: us_pricing_section(), us, count=1, flags=re.S)
 
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)

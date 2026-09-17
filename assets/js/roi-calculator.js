@@ -32,6 +32,8 @@
   var IS_US = location.pathname.indexOf('/us/') === 0;
   var DEMO_URL = IS_US ? '/us/demo/' : '/demo/';
   var PRICING_URL = IS_US ? '/us/pricing/' : '/pricing/';
+  var CUR = IS_US ? '$' : '£';
+  var LOCALE_CODE = IS_US ? 'en-US' : 'en-GB';
 
   var PILOT_DAYS = 14;      // free pilot, no card, before any commitment
   var ENTERPRISE_FROM = 50; // client count at which the calculator stops pricing
@@ -39,7 +41,11 @@
   // Real Kaizan pricing, per client per month, billed as one flat monthly plan.
   // Unlimited users on every tier. maxClients is a calculator-only boundary,
   // see the note above.
-  var TIERS = [
+  var TIERS = IS_US ? [
+    { name: 'Starter',    rate: 129,  minClients: 1,  maxClients: 20 },
+    { name: 'Growth',     rate: 159,  minClients: 21, maxClients: ENTERPRISE_FROM - 1 },
+    { name: 'Enterprise', rate: null, minClients: ENTERPRISE_FROM, maxClients: Infinity, custom: true }
+  ] : [
     { name: 'Starter',    rate: 99,   minClients: 10, maxClients: ENTERPRISE_FROM > 25 ? 24 : ENTERPRISE_FROM - 1 },
     { name: 'Growth',     rate: 119,  minClients: 25, maxClients: ENTERPRISE_FROM - 1 },
     { name: 'Enterprise', rate: null, minClients: ENTERPRISE_FROM, maxClients: Infinity, custom: true }
@@ -55,26 +61,26 @@
   var BASE_UPSELL = 0.08; // addressable upsell pool as % of portfolio
   var ADMIN_HRS   = 9;    // admin hrs / wk / client-facing person
   var WEEKS_YEAR  = 46;   // working weeks / year
-  var LOADED_RATE = 30;   // £/hr loaded cost
+  var LOADED_RATE = IS_US ? 40 : 30;   // loaded cost per hour ($ US placeholder / £ UK)
   var FTE_HOURS   = 1725; // hrs in one FTE-year
 
   var GREEN_D = '#2E6F4E', GREEN_M = '#7BAE92', GOLD = '#FFB900';
 
   /* ── formatters ─────────────────────────────────────────────────────── */
-  function gbp0(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+  function gbp0(n) { return CUR + Math.round(n).toLocaleString(LOCALE_CODE); }
   function gbpM(n) {
-    if (n >= 1e6) return '£' + (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
-    if (n >= 1e3) return '£' + Math.round(n / 1e3) + 'k';
+    if (n >= 1e6) return CUR + (n / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (n >= 1e3) return CUR + Math.round(n / 1e3) + 'k';
     return gbp0(n);
   }
-  function num(n) { return Math.round(n).toLocaleString('en-GB'); }
+  function num(n) { return Math.round(n).toLocaleString(LOCALE_CODE); }
 
   /* ── state ──────────────────────────────────────────────────────────── */
   var state = {
     totalHeadcount: 50,
     team: 20,
     clients: 40,
-    revPer: 60000,
+    revPer: IS_US ? 70000 : 60000,
     churn: 15,
     mode: 'Expected',
     churnRecover: MODES.Expected.churnRecover,
@@ -230,14 +236,15 @@
         ENTERPRISE_FROM + '+ clients) pricing is bespoke, book a demo for your figure. ';
     } else {
       foot = 'Net gain = ' + gbp0(r.gross) + ' benefit less ' + gbp0(r.tierPrice) + ' ' + r.tier.name +
-        ' (annual, unlimited users), priced at £' + r.tier.rate + ' per client / month across ' +
+        ' (annual, unlimited users), priced at ' + CUR + r.tier.rate + ' per client / month across ' +
         num(r.billedClients) + ' clients' + (r.atMinimum ? ', the tier minimum' : '') + '. ';
     }
     foot += 'Every engagement starts with a free ' + PILOT_DAYS + ' day pilot, so nothing is payable until it proves out. ';
     foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool, capacity on ' + ADMIN_HRS +
-      ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr, 1 FTE = ' + num(FTE_HOURS) +
+      ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at ' + CUR + LOADED_RATE + '/hr, 1 FTE = ' + num(FTE_HOURS) +
       ' hrs. Satisfaction shown directionally, not monetised. Pricing set from your client count, see ' +
       '<a href="' + PRICING_URL + '">the pricing above</a>.';
+    if (IS_US) foot = foot.replace('modelled', 'modeled').replace('monetised', 'monetized');
     q('[data-roi="footnote"]').innerHTML = foot;
 
     // keep the hidden lead summary in sync
