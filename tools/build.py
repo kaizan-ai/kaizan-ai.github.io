@@ -3501,12 +3501,12 @@ ROI_CALCULATOR_SECTION = '''
 def render_pricing() -> str:
     p = relpath(1)
     extra_head = (
-        f'<link rel="stylesheet" href="{p}assets/css/pricing.css">\n'
-        f'        <link rel="stylesheet" href="{p}assets/css/roi-calculator.css">\n'
-        f'        <link rel="stylesheet" href="{p}assets/css/roi-accordion.css">\n'
+        f'<link rel="stylesheet" href="{p}assets/css/pricing.css{asset_v("assets/css/pricing.css")}">\n'
+        f'        <link rel="stylesheet" href="{p}assets/css/roi-calculator.css{asset_v("assets/css/roi-calculator.css")}">\n'
+        f'        <link rel="stylesheet" href="{p}assets/css/roi-accordion.css{asset_v("assets/css/roi-accordion.css")}">\n'
         f'        <script charset="utf-8" defer src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>\n'
         f'        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n'
-        f'        <script defer src="{p}assets/js/roi-calculator.js"></script>'
+        f'        <script defer src="{p}assets/js/roi-calculator.js{asset_v("assets/js/roi-calculator.js")}"></script>'
     )
     tiers_html = '\n'.join(tier_card(t, p) for t in PRICING_TIERS)
     pricing_section = f'''
