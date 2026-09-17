@@ -4,7 +4,19 @@
    Live recompute on every input. Net-gain headline never gated.
 
    Model notes:
-     • Pricing tiers are the real Kaizan tiers (kaizan.ai/pricing), unlimited users.
+     • Pricing rebuilt for the Sept 2026 model: a free 14 day pilot, then a
+       per client monthly rate with a minimum client count per tier.
+       Starter £99 per client / month, minimum 10 clients.
+       Growth  £119 per client / month, minimum 25 clients.
+       Enterprise, bespoke, from ENTERPRISE_FROM clients.
+     • Annual cost = max(tier minimum, your clients) × rate × 12.
+       Below the minimum you are billed at the minimum, and the calculator
+       shows the resulting real cost per client rather than the headline rate.
+     • TIER BOUNDARIES: the published page no longer puts a ceiling on any
+       tier, so client count alone cannot tell you which tier someone is on.
+       The boundaries below exist only so the calculator can pick one. They
+       follow the tier minimums (Growth starts where its 25 client minimum
+       starts) and ENTERPRISE_FROM is a placeholder until that number is set.
      • Conservative defaults aligned to the validated working model:
          churnRecover 30%, capacityRecover 45%, upsellLift 44%.
    ========================================================================== */
@@ -15,22 +27,22 @@
   if (!root) return;
 
   /* ── constants ──────────────────────────────────────────────────────── */
-  // Points at the /demo/ anti-bot interstitial, not the raw calendar link
-  // (see render_demo in tools/build.py). DEMO_URL_ABS is the absolute form for
-  // the generated PDF, where root-relative paths don't resolve.
-  var DEMO_URL = '/demo/';
-  var DEMO_URL_ABS = 'https://kaizan.ai/demo/';
+  // Match the host site's own Book-a-demo / pricing links, US or UK, so the
+  // /us/ mirror never links back to the UK page.
+  var IS_US = location.pathname.indexOf('/us/') === 0;
+  var DEMO_URL = IS_US ? '/us/demo/' : '/demo/';
+  var PRICING_URL = IS_US ? '/us/pricing/' : '/pricing/';
 
-  // Real Kaizan pricing — annual (GBP), unlimited users.
-  // Updated for the approved retiering (Aug 2026): Growth shrinks to "up to 50"
-  // at a new price, Scale takes over Growth's old "up to 75 @ £8,995" slot,
-  // Enterprise now starts at 75+ (was 150+).
+  var PILOT_DAYS = 14;      // free pilot, no card, before any commitment
+  var ENTERPRISE_FROM = 50; // client count at which the calculator stops pricing
+
+  // Real Kaizan pricing, per client per month, billed as one flat monthly plan.
+  // Unlimited users on every tier. maxClients is a calculator-only boundary,
+  // see the note above.
   var TIERS = [
-    { name: 'Pilot',      maxClients: 10,       price: 2995 * 12 },
-    { name: 'Team',       maxClients: 30,       price: 4950 * 12 },
-    { name: 'Growth',     maxClients: 50,       price: 6950 * 12 },
-    { name: 'Scale',      maxClients: 75,       price: 8995 * 12 },
-    { name: 'Enterprise', maxClients: Infinity, price: null, custom: true }
+    { name: 'Starter',    rate: 99,   minClients: 10, maxClients: ENTERPRISE_FROM > 25 ? 24 : ENTERPRISE_FROM - 1 },
+    { name: 'Growth',     rate: 119,  minClients: 25, maxClients: ENTERPRISE_FROM - 1 },
+    { name: 'Enterprise', rate: null, minClients: ENTERPRISE_FROM, maxClients: Infinity, custom: true }
   ];
 
   // Conservative / Expected presets drive the per-area assumptions.
@@ -72,7 +84,7 @@
     leadSent: false
   };
 
-  /* ── compute (identical to the React useMemo) ───────────────────────── */
+  /* ── compute ────────────────────────────────────────────────────────── */
   function compute(s) {
     var portfolio   = s.clients * s.revPer;
     var atRisk      = portfolio * (s.churn / 100);
@@ -88,16 +100,25 @@
     for (var i = 0; i < TIERS.length; i++) {
       if (s.clients <= TIERS[i].maxClients) { tier = TIERS[i]; break; }
     }
+    if (!tier) tier = TIERS[TIERS.length - 1];
+
     var isCustom = tier.custom === true;
-    var tierPrice = isCustom ? null : tier.price;
-    var net = isCustom ? null : gross - tierPrice;
-    var roiMultiple = isCustom ? null : (tierPrice > 0 ? gross / tierPrice : 0);
+
+    // Below the tier minimum you are still billed for the minimum.
+    var billedClients = isCustom ? s.clients : Math.max(tier.minClients, s.clients);
+    var atMinimum     = !isCustom && s.clients < tier.minClients;
+
+    var tierPrice     = isCustom ? null : billedClients * tier.rate * 12;
+    var effectiveRate = isCustom ? null : (s.clients > 0 ? (tierPrice / 12) / s.clients : 0);
+    var net           = isCustom ? null : gross - tierPrice;
+    var roiMultiple   = isCustom ? null : (tierPrice > 0 ? gross / tierPrice : 0);
     var paybackMonths = isCustom ? null : (gross > 0 ? Math.max(1, Math.round(tierPrice / (gross / 12))) : 0);
 
     return {
       portfolio: portfolio, atRisk: atRisk, revRetained: revRetained, revUpsold: revUpsold,
       adminHours: adminHours, capHours: capHours, capacity: capacity, fte: fte, gross: gross,
-      tier: tier, isCustom: isCustom, tierPrice: tierPrice, net: net,
+      tier: tier, isCustom: isCustom, billedClients: billedClients, atMinimum: atMinimum,
+      tierPrice: tierPrice, effectiveRate: effectiveRate, net: net,
       roiMultiple: roiMultiple, paybackMonths: paybackMonths
     };
   }
@@ -125,7 +146,9 @@
     // headline label + figure
     setText('headline-label', r.isCustom ? 'Total annual benefit with Kaizan' : 'Net annual gain with Kaizan');
     setText('net', gbp0(r.isCustom ? r.gross : r.net));
-    show(q('[data-roi="custom-note"]'), r.isCustom);
+    var customNote = q('[data-roi="custom-note"]');
+    if (customNote) customNote.textContent = 'before platform cost, Enterprise pricing is bespoke';
+    show(customNote, r.isCustom);
 
     // metrics block
     var metrics = '';
@@ -143,15 +166,25 @@
       costEl.innerHTML =
         '<div><div class="kzroi-cost-label">Kaizan cost · Enterprise tier</div>' +
         '<div class="kzroi-cost-val">Custom</div></div>' +
-        '<div class="kzroi-bar-note is-custom">75+ clients: Enterprise pricing is bespoke. Book a demo for a tailored figure. Unlimited users included as standard.</div>';
+        '<div class="kzroi-bar-note is-custom">' + ENTERPRISE_FROM + '+ clients, Enterprise pricing is bespoke. ' +
+        'Book a demo for a tailored figure. Unlimited users included as standard, and the first ' +
+        PILOT_DAYS + ' days are free.</div>';
     } else {
-      var costPer = state.clients > 0 ? (r.tierPrice / 12) / state.clients : 0;
+      var note;
+      if (r.atMinimum) {
+        note = 'Billed at the ' + r.tier.minClients + ' client minimum on ' + esc(r.tier.name) +
+          ', so your real rate is ' + gbp0(r.effectiveRate) + ' per client. Unlimited users, and the first ' +
+          PILOT_DAYS + ' days are free.';
+      } else {
+        note = 'Unlimited users, your whole team of ' + num(state.totalHeadcount) +
+          ' on Kaizan at no extra cost. The first ' + PILOT_DAYS + ' days are free.';
+      }
       costEl.innerHTML =
         '<div><div class="kzroi-cost-label">Kaizan cost · ' + esc(r.tier.name) + ' tier</div>' +
         '<div class="kzroi-cost-row"><span class="kzroi-cost-val">' + gbp0(r.tierPrice / 12) + '</span><span class="kzroi-cost-unit">/ mo</span></div></div>' +
         '<div><div class="kzroi-cost-label">Cost per client</div>' +
-        '<div class="kzroi-cost-row"><span class="kzroi-cost-val">' + gbp0(costPer) + '</span><span class="kzroi-cost-unit">/ mo</span></div></div>' +
-        '<div class="kzroi-bar-note">Unlimited users: your whole team of ' + num(state.totalHeadcount) + ' on Kaizan at no extra cost.</div>';
+        '<div class="kzroi-cost-row"><span class="kzroi-cost-val">' + gbp0(r.effectiveRate) + '</span><span class="kzroi-cost-unit">/ mo</span></div></div>' +
+        '<div class="kzroi-bar-note">' + note + '</div>';
     }
 
     // composition card
@@ -193,14 +226,18 @@
     // footnote
     var foot;
     if (r.isCustom) {
-      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost: Enterprise (75+ clients) pricing is bespoke; book a demo for your figure. ';
+      foot = 'Total benefit ' + gbp0(r.gross) + '/yr shown before platform cost. Enterprise (' +
+        ENTERPRISE_FROM + '+ clients) pricing is bespoke, book a demo for your figure. ';
     } else {
-      foot = 'Net gain = ' + gbp0(r.gross) + ' benefit − ' + gbp0(r.tierPrice) + ' ' + r.tier.name + ' (annual, unlimited users). ';
+      foot = 'Net gain = ' + gbp0(r.gross) + ' benefit less ' + gbp0(r.tierPrice) + ' ' + r.tier.name +
+        ' (annual, unlimited users), priced at £' + r.tier.rate + ' per client / month across ' +
+        num(r.billedClients) + ' clients' + (r.atMinimum ? ', the tier minimum' : '') + '. ';
     }
-    foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool; capacity on ' + ADMIN_HRS +
-      ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr; 1 FTE = ' + num(FTE_HOURS) +
-      ' hrs. Satisfaction shown directionally, not monetised. Pricing set automatically from your client count, see ' +
-      '<a href="/pricing/" target="_blank" rel="noopener">kaizan.ai/pricing</a>.';
+    foot += 'Every engagement starts with a free ' + PILOT_DAYS + ' day pilot, so nothing is payable until it proves out. ';
+    foot += 'Upsell modelled on an ' + Math.round(BASE_UPSELL * 100) + '% addressable pool, capacity on ' + ADMIN_HRS +
+      ' admin hrs/person/week × ' + WEEKS_YEAR + ' weeks at £' + LOADED_RATE + '/hr, 1 FTE = ' + num(FTE_HOURS) +
+      ' hrs. Satisfaction shown directionally, not monetised. Pricing set from your client count, see ' +
+      '<a href="' + PRICING_URL + '">the pricing above</a>.';
     q('[data-roi="footnote"]').innerHTML = foot;
 
     // keep the hidden lead summary in sync
@@ -210,6 +247,9 @@
         totalHeadcount: state.totalHeadcount, team: state.team, clients: state.clients,
         revPer: state.revPer, churn: state.churn, mode: state.mode,
         gross: Math.round(r.gross), tier: r.tier.name,
+        rate: r.isCustom ? null : r.tier.rate,
+        billedClients: r.isCustom ? null : r.billedClients,
+        annualCost: r.isCustom ? null : Math.round(r.tierPrice),
         net: r.isCustom ? null : Math.round(r.net)
       });
     }
@@ -277,259 +317,42 @@
     });
   }
 
-  /* ── downloadable breakdown (print-to-PDF of the user's own numbers) ──── */
-  function row(label, value) {
-    return '<tr><td>' + esc(label) + '</td><td class="v">' + esc(value) + '</td></tr>';
-  }
-  function buildReportHTML() {
-    var s = state, r = compute(s);
-    var headline = r.isCustom
-      ? row('Total annual benefit', gbp0(r.gross) + ' / yr')
-      : row('Net annual gain', gbp0(r.net) + ' / yr');
-    var costRows = r.isCustom
-      ? row('Kaizan tier', 'Enterprise (bespoke)')
-      : row('Kaizan cost · ' + r.tier.name + ' tier', gbp0(r.tierPrice / 12) + ' / mo  ·  ' + gbp0(r.tierPrice) + ' / yr')
-        + row('Cost per client', gbp0((r.tierPrice / 12) / (s.clients || 1)) + ' / mo')
-        + row('Return', r.roiMultiple.toFixed(1) + '×')
-        + row('Payback', r.paybackMonths + ' months');
-    return '<!doctype html><html lang="en"><head><meta charset="utf-8">' +
-      '<title>Kaizan · ROI breakdown</title><style>' +
-      '*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#171717;margin:0;padding:40px;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}' +
-      '.wrap{max-width:720px;margin:0 auto}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9A7B0C;font-weight:700}' +
-      'h1{font-size:30px;font-weight:700;letter-spacing:-.02em;margin:6px 0 2px}.sub{color:#57534E;font-size:13px;margin-bottom:24px}' +
-      '.bar{background:#141210;color:#fff;border-radius:14px;padding:22px 26px;margin:18px 0}.bar .k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#FFB900;font-weight:700}' +
-      '.bar .n{font-size:40px;font-weight:800;letter-spacing:-.03em;margin-top:4px}' +
-      'h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#9A7B0C;margin:26px 0 8px}' +
-      'table{width:100%;border-collapse:collapse}td{padding:9px 0;border-bottom:1px solid rgba(0,0,0,.1);font-size:14px}td.v{text-align:right;font-weight:700}' +
-      '.foot{font-size:11px;color:#777;line-height:1.6;margin-top:24px}.cta{margin-top:22px;font-size:13px}.cta a{color:#9A7B0C;font-weight:700}' +
-      '</style></head><body><div class="wrap">' +
-      '<div class="eyebrow">Kaizan · ROI breakdown</div>' +
-      '<h1>What Kaizan returns on your portfolio</h1>' +
-      '<div class="sub">' + esc(s.mode) + ' model · figures in GBP per year</div>' +
-      '<div class="bar"><div class="k">' + (r.isCustom ? 'Total annual benefit with Kaizan' : 'Net annual gain with Kaizan') +
-        '</div><div class="n">' + gbp0(r.isCustom ? r.gross : r.net) + ' <span style="font-size:16px;font-weight:500;color:rgba(255,255,255,.5)">/ yr</span></div></div>' +
-      '<h2>Your client portfolio today</h2><table>' +
-        row('Total company headcount', num(s.totalHeadcount)) +
-        row('Client delivery team size', num(s.team)) +
-        row('Number of clients', num(s.clients)) +
-        row('Average annual revenue per client', gbp0(s.revPer)) +
-        row('Typical annual client attrition', s.churn + '%') +
-        row('Client portfolio value', gbp0(r.portfolio) + ' / yr') +
-      '</table>' +
-      '<h2>Where the ' + gbp0(r.gross) + ' of annual benefit comes from</h2><table>' +
-        row('Revenue retained from churn', gbp0(r.revRetained)) +
-        row('Revenue expanded through upsell', gbp0(r.revUpsold)) +
-        row('Capacity recovered from admin', gbp0(r.capacity) + '  ·  +' + r.fte.toFixed(1) + ' FTE') +
-      '</table>' +
-      '<h2>Headline &amp; pricing</h2><table>' + headline + costRows + '</table>' +
-      '<div class="cta">Ready to see your clients clearly? <a href="' + DEMO_URL + '">Book a demo →</a></div>' +
-      '<div class="foot">' + (q('[data-roi="footnote"]') ? q('[data-roi="footnote"]').textContent : '') +
-        ' Satisfaction is shown directionally and never monetised. Generated from your inputs on kaizan.ai.</div>' +
-      '</div></body></html>';
-  }
-  // One-click direct download: build a real PDF with jsPDF and save it (no
-  // print dialog). Falls back to the print method if jsPDF didn't load.
-  // NB: jsPDF's standard fonts are Latin-1 only — avoid glyphs like "→" here.
-  function downloadBreakdown() {
-    var JsPDF = window.jspdf && window.jspdf.jsPDF;
-    if (!JsPDF) { printBreakdownFallback(); return; }
-
-    var s = state, r = compute(s);
-    var doc = new JsPDF({ unit: 'pt', format: 'a4' });
-    var PW = doc.internal.pageSize.getWidth();
-    var M = 48, RIGHT = PW - M, y = 64;
-
-    var INK = [20, 18, 16], GOLD = [255, 185, 0], MUTE = [87, 83, 78], GOLDD = [154, 123, 12],
-        CREAM = [255, 251, 240], GREY = [120, 120, 120], LINE = [225, 225, 225], TXT = [45, 45, 45];
-    function tcol(c) { doc.setTextColor(c[0], c[1], c[2]); }
-    function fcol(c) { doc.setFillColor(c[0], c[1], c[2]); }
-    function dcol(c) { doc.setDrawColor(c[0], c[1], c[2]); }
-
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); tcol(GOLDD);
-    doc.text('KAIZAN  ·  ROI BREAKDOWN', M, y); y += 20;
-    doc.setFontSize(21); tcol(INK);
-    doc.text('What Kaizan returns on your portfolio', M, y); y += 15;
-    doc.setFont('helvetica', 'normal'); doc.setFontSize(10); tcol(MUTE);
-    doc.text(s.mode + ' model  ·  figures in GBP per year', M, y); y += 18;
-
-    var barH = 62; fcol(INK); doc.roundedRect(M, y, RIGHT - M, barH, 8, 8, 'F');
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); tcol(GOLD);
-    doc.text(r.isCustom ? 'TOTAL ANNUAL BENEFIT WITH KAIZAN' : 'NET ANNUAL GAIN WITH KAIZAN', M + 18, y + 23);
-    doc.setFontSize(26); tcol(CREAM);
-    doc.text(gbp0(r.isCustom ? r.gross : r.net) + ' / yr', M + 18, y + 48);
-    y += barH + 26;
-
-    function section(title) {
-      doc.setFont('helvetica', 'bold'); doc.setFontSize(9); tcol(GOLDD);
-      doc.text(title.toUpperCase(), M, y); y += 9;
-      dcol(INK); doc.setLineWidth(1); doc.line(M, y, RIGHT, y); y += 16;
-    }
-    function rrow(label, value) {
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(10.5); tcol(TXT);
-      doc.text(label, M, y);
-      doc.setFont('helvetica', 'bold'); tcol(INK);
-      doc.text(value, RIGHT, y, { align: 'right' });
-      y += 9; dcol(LINE); doc.setLineWidth(0.5); doc.line(M, y, RIGHT, y); y += 15;
-    }
-
-    section('Your client portfolio today');
-    rrow('Total company headcount', num(s.totalHeadcount));
-    rrow('Client delivery team size', num(s.team));
-    rrow('Number of clients', num(s.clients));
-    rrow('Average annual revenue per client', gbp0(s.revPer));
-    rrow('Typical annual client attrition', s.churn + '%');
-    rrow('Client portfolio value', gbp0(r.portfolio) + ' / yr');
-    y += 8;
-
-    section('Where the ' + gbp0(r.gross) + ' of annual benefit comes from');
-    rrow('Revenue retained from churn', gbp0(r.revRetained));
-    rrow('Revenue expanded through upsell', gbp0(r.revUpsold));
-    rrow('Capacity recovered from admin', gbp0(r.capacity) + '   ·   +' + r.fte.toFixed(1) + ' FTE');
-    y += 8;
-
-    section('Headline & pricing');
-    rrow(r.isCustom ? 'Total annual benefit' : 'Net annual gain', gbp0(r.isCustom ? r.gross : r.net) + ' / yr');
-    if (r.isCustom) {
-      rrow('Kaizan tier', 'Enterprise (bespoke)');
-    } else {
-      rrow('Kaizan cost · ' + r.tier.name + ' tier', gbp0(r.tierPrice / 12) + ' / mo   ·   ' + gbp0(r.tierPrice) + ' / yr');
-      rrow('Cost per client', gbp0((r.tierPrice / 12) / (s.clients || 1)) + ' / mo');
-      rrow('Return', r.roiMultiple.toFixed(1) + 'x');
-      rrow('Payback', r.paybackMonths + ' months');
-    }
-    y += 10;
-
-    var footEl = q('[data-roi="footnote"]');
-    var footText = ((footEl ? footEl.textContent : '') +
-      ' Satisfaction is shown directionally and never monetised. Generated from your inputs on kaizan.ai.')
-      .replace(/\s+/g, ' ').trim();
-    doc.setFont('helvetica', 'normal'); doc.setFontSize(8); tcol(GREY);
-    var lines = doc.splitTextToSize(footText, RIGHT - M);
-    doc.text(lines, M, y); y += lines.length * 11 + 14;
-
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(10.5); tcol(GOLDD);
-    doc.textWithLink('Book a demo', M, y, { url: DEMO_URL_ABS });
-
-    doc.save('kaizan-roi-breakdown.pdf');
-  }
-
-  // Fallback used only if jsPDF failed to load: print the HTML report to PDF.
-  function printBreakdownFallback() {
-    var iframe = document.createElement('iframe');
-    iframe.setAttribute('aria-hidden', 'true');
-    iframe.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0;';
-    document.body.appendChild(iframe);
-    var d = iframe.contentWindow.document;
-    d.open(); d.write(buildReportHTML()); d.close();
-    var win = iframe.contentWindow;
-    win.onafterprint = function () { if (iframe.parentNode) iframe.parentNode.removeChild(iframe); };
-    setTimeout(function () { win.focus(); win.print(); }, 300);
-  }
-
-  /* ── lead capture (modal → HubSpot form → gated download) ───────────── */
+  /* ── lead capture ───────────────────────────────────────────────────── */
   function wireLead() {
-    var modal = q('[data-roi="modal"]');
-    var leadBox = q('[data-roi="lead-form"]');
+    var form = q('[data-roi="lead-form"]');
     var sent = q('[data-roi="lead-sent"]');
-    var openers = qa('[data-roi="lead-toggle"], [data-roi="lead-toggle-cta"]');
-    var closers = qa('[data-roi="modal-close"]');
-    var dlBtn = q('[data-roi="download"]');
+    var toggles = qa('[data-roi="lead-toggle"], [data-roi="lead-toggle-cta"]');
 
     function syncLeadUI() {
-      show(modal, state.showLead);
-      show(leadBox, !state.leadSent);
+      show(form, state.showLead && !state.leadSent);
       show(sent, state.leadSent);
-      if (document.body) document.body.classList.toggle('kzroi-body-lock', state.showLead);
+      toggles.forEach(function (t) { show(t, !state.leadSent); });
     }
 
-    // Build the HubSpot form into the modal target (lazily, on first open, so
-    // it renders while visible). Idempotent via the data-built guard.
-    function createHubspot(tries) {
-      var target = q('#kzroi-hubspot-form');
-      if (!target || target.getAttribute('data-built') === '1') return;
-      if (!window.hbspt || !window.hbspt.forms) {
-        if ((tries || 0) < 40) setTimeout(function () { createHubspot((tries || 0) + 1); }, 150);
-        return;
-      }
-      target.setAttribute('data-built', '1');
-      window.hbspt.forms.create({
-        portalId: '144688314',
-        formId: '5a6fc72e-3835-404c-97eb-fb04aa89cba8',
-        region: 'eu1',
-        target: '#kzroi-hubspot-form',
-        onFormReady: function () {
-          decorateHubspotForm(0);
-        },
-        onFormSubmitted: function () {
-          // Step 3 of the flow: email captured → swap the modal to the download view.
+    toggles.forEach(function (t) {
+      t.addEventListener('click', function () {
+        // the controls button toggles; the CTA-band button always opens
+        if (t.getAttribute('data-roi') === 'lead-toggle') state.showLead = !state.showLead;
+        else state.showLead = true;
+        syncLeadUI();
+        if (state.showLead && form && typeof form.scrollIntoView === 'function') {
+          form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        // On a hosted (e.g. Netlify) deploy the form posts normally and captures the lead.
+        // Running locally (file://) there's no backend, so just confirm inline.
+        if (!window.location.hostname || window.location.protocol === 'file:') {
+          e.preventDefault();
           state.leadSent = true;
+          state.showLead = false;
           syncLeadUI();
         }
       });
     }
-
-    // HubSpot renders the form inside a same-origin iframe (src=""), so neither
-    // our external CSS nor a parent-document query reach it. Reach into the
-    // iframe to (1) paint the Submit button + focus ring in Kaizan colours and
-    // (2) start the email field empty with the cursor in it. Retries until the
-    // iframe's form DOM exists.
-    function decorateHubspotForm(tries) {
-      var iframe = q('#kzroi-hubspot-form iframe');
-      var doc = null;
-      if (iframe) { try { doc = iframe.contentDocument || iframe.contentWindow.document; } catch (e) { doc = null; } }
-      var em = doc && doc.querySelector('input[type="email"], input[name="email"]');
-      if (!doc || !em) {
-        if ((tries || 0) < 15) setTimeout(function () { decorateHubspotForm((tries || 0) + 1); }, 100);
-        return;
-      }
-      if (!doc.getElementById('kzroi-hs-style')) {
-        var st = doc.createElement('style');
-        st.id = 'kzroi-hs-style';
-        st.textContent =
-          '.hs-button,.hs-button.primary,input[type=submit].hs-button{' +
-            'background-color:#FFB900!important;border-color:#FFB900!important;color:#141210!important;' +
-            'border-radius:999px!important;font-weight:600!important;padding:11px 26px!important;' +
-            'box-shadow:none!important;cursor:pointer!important;transition:background-color .15s ease!important;}' +
-          '.hs-button:hover,.hs-button.primary:hover{background-color:#FFD133!important;border-color:#FFD133!important;}' +
-          '.hs-input:focus{border-color:#FFB900!important;box-shadow:0 0 0 3px #FFF3C4!important;outline:none!important;}';
-        (doc.head || doc.documentElement).appendChild(st);
-      }
-      // Start clean: disable autofill, clear any autofilled value, focus the field.
-      em.setAttribute('autocomplete', 'off');
-      em.value = '';
-      try { em.focus({ preventScroll: true }); } catch (e) { try { em.focus(); } catch (e2) {} }
-      // Chrome re-autofills the freshly-rendered field a beat after render, even
-      // with autocomplete=off. Keep clearing for a short window, but bail the
-      // moment the user actually types or pastes (autofill fires neither).
-      if (!em.__kzGuard) {
-        em.__kzGuard = true;
-        var ticks = 0, stop = false;
-        var giveUp = function () { stop = true; };
-        em.addEventListener('keydown', giveUp);
-        em.addEventListener('paste', giveUp);
-        var iv = setInterval(function () {
-          if (stop || ++ticks > 8) { clearInterval(iv); return; }
-          if (em.value) em.value = '';
-        }, 90);
-      }
-    }
-
-    function openModal() {
-      state.showLead = true;
-      syncLeadUI();
-      createHubspot(0);
-      // onFormReady covers the first build; this covers re-opening a built form.
-      setTimeout(function () { decorateHubspotForm(0); }, 60);
-    }
-    function closeModal() { state.showLead = false; syncLeadUI(); }
-
-    openers.forEach(function (t) { t.addEventListener('click', openModal); });
-    closers.forEach(function (el) { el.addEventListener('click', closeModal); });
-    document.addEventListener('keydown', function (e) {
-      if ((e.key === 'Escape' || e.key === 'Esc') && state.showLead) closeModal();
-    });
-
-    if (dlBtn) dlBtn.addEventListener('click', downloadBreakdown);
 
     syncLeadUI();
   }

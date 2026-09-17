@@ -1,0 +1,84 @@
+/* ============================================================================
+   Kaizan · ROI calculator accordion — stylesheet
+   Wraps the ROI calculator in a collapsed card that expands on click.
+   Built on <details>/<summary>, so it needs no JavaScript and is keyboard
+   and screen-reader accessible out of the box.
+   Scoped under .kzacc so nothing collides with the host site or with
+   kaizan-roi-calculator.css.
+   ========================================================================== */
+
+.kzacc {
+  --kzacc-gold: #FFB900;
+  --kzacc-paper: #FFFBF0;
+  --kzacc-ink: #171717;
+  --kzacc-mute: rgba(0, 0, 0, 0.56);
+  --kzacc-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  display: block;
+  max-width: 1180px;
+  margin: 0 auto;
+  border: 2px solid var(--kzacc-gold);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--kzacc-paper) 0%, #FFFFFF 70%);
+  box-shadow: 0 1px 3px rgba(28, 25, 23, 0.06), 0 1px 2px rgba(28, 25, 23, 0.04);
+  font-family: var(--kzacc-sans);
+  color: var(--kzacc-ink);
+  overflow: hidden;
+}
+
+/* ── the closed bar ─────────────────────────────────────────────────────── */
+.kzacc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(20px, 3vw, 30px) clamp(22px, 4vw, 40px);
+  cursor: pointer;
+  list-style: none;
+  transition: background .15s ease;
+}
+.kzacc-summary::-webkit-details-marker { display: none; }  /* Safari */
+.kzacc-summary::marker { content: ''; }
+.kzacc-summary:hover { background: rgba(255, 185, 0, 0.06); }
+.kzacc-summary:focus-visible {
+  outline: 3px solid var(--kzacc-gold);
+  outline-offset: -3px;
+}
+
+.kzacc-title {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin: 0;
+}
+.kzacc-sub {
+  font-size: clamp(13px, 1.4vw, 15px);
+  color: var(--kzacc-mute);
+  line-height: 1.45;
+  margin: 6px 0 0;
+}
+
+.kzacc-chevron {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  color: var(--kzacc-ink);
+  transition: transform .2s ease;
+}
+.kzacc[open] .kzacc-chevron { transform: rotate(180deg); }
+
+/* ── the revealed body ──────────────────────────────────────────────────── */
+.kzacc-body {
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+/* The calculator brings its own section padding, so trim the top of it
+   when it sits inside the accordion. */
+.kzacc-body #kaizan-roi { background: transparent; }
+.kzacc-body #kaizan-roi .kzroi-inner { padding-top: clamp(28px, 3vw, 44px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .kzacc-chevron, .kzacc-summary { transition: none; }
+}
