@@ -21,11 +21,7 @@ Generic AI is reactive by design. You give it context, it works with that contex
 
 That works for drafting an email. It falls apart for managing a client relationship, because the information that matters most is almost always the information nobody thought to hand over.
 
-Veronica Norcross at Jellyfish described the problem exactly:
-
-> "I can't know the 20 different conversations that are happening on one client before I go and meet with that client. That's the thing that's impossible to stay on top of."
-
-No account manager can hold that. No generic AI tool is even looking for it.
+Twenty different conversations can be running on a single client before you go in to meet with them, and staying on top of all of it is impossible. No account manager can hold that. No generic AI tool is even looking for it.
 
 ## What a partial picture costs
 
