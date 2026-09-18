@@ -34,10 +34,11 @@ ROOT = Path(__file__).resolve().parents[1]
 # /blog/ landing is NOT in the nav by design.
 NAV = [
     ('Home',         '/'),
+    # nav_html renders "Product" as a hover dropdown listing PRODUCT_MENU
+    # (Integrations lives under it, so it has no top-level nav item).
     ('Product',      'product/'),
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
     ('Personas',     '__personas_dropdown__'),
-    ('Integrations', 'integrations/'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -61,6 +62,13 @@ NAV = [
 # a real key is set, /demo/ will not render the widget.
 CALENDAR_URL = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'
 TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
+
+# Sub-links shown in the "Product" nav dropdown. The "Product" trigger itself
+# opens the dropdown (no direct link); "Overview" is the /product/ page.
+PRODUCT_MENU = [
+    ('Overview',     'product/'),
+    ('Integrations', 'integrations/'),
+]
 
 # Sub-links shown in the "Resources" nav dropdown. The "Resources" trigger
 # itself points at the Our Research page (research/, set in NAV above); the
@@ -911,11 +919,28 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
         href = target if target.startswith('/') else p + target
         cls = ' class="is-active"' if active == label else ''
         if label == 'Product' and with_mega:
-            # Product mega-menu is disabled until sub-pages exist. The "Product"
-            # link is just a plain link to /product/ for now. To re-enable the
-            # dropdown later, restore the mega-menu block below (currently in
-            # the triple-quoted comment) and remove this simple anchor branch.
-            items_html.append(f'<a href="{E(href)}"{cls}>{E(label)}</a>')
+            # Simple hover dropdown listing PRODUCT_MENU (Overview, Integrations).
+            # The full mega-menu below stays disabled until the other sub-pages
+            # exist; to re-enable it, restore the block in the triple-quoted
+            # comment and drop this branch.
+            links = '\n'.join(
+                f'<a class="kz-drop-link" href="{p}{tgt}">{E(lbl)}</a>'
+                for lbl, tgt in PRODUCT_MENU
+            )
+            trigger_cls = ('kz-mega-trigger is-active'
+                           if active in ('Product', 'Integrations')
+                           else 'kz-mega-trigger')
+            # Keeps its href to /product/ so the trigger is still a real link
+            # (and works on mobile, where the panel renders inline).
+            items_html.append(f'''
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="{trigger_cls}" href="{E(href)}" aria-expanded="false" aria-haspopup="true">
+                  Product <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  {links}
+                </div>
+              </span>''')
             _PRODUCT_MEGA_DISABLED = '''
               <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
                 <a href="{E(href)}"{cls} class="kz-mega-trigger" aria-expanded="false">
