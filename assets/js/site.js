@@ -27,6 +27,8 @@
 
   // ── Product mega-menu (hover with delay) ─────────────────────────
   function initMegaMenu() {
+    function canHover() { return window.matchMedia('(hover: hover)').matches; }
+    var touchRoots = [];
     document.querySelectorAll('[data-mega-menu]').forEach(function (root) {
       var trigger = root.querySelector('.kz-mega-trigger');
       var panel = root.querySelector('.kz-mega-panel');
@@ -45,20 +47,39 @@
       trigger.addEventListener('focus', open);
       trigger.addEventListener('blur', close);
 
-      // Touch: on a device that can't hover (tablet in landscape is still
+      // Touch: on a device that can't hover (a tablet in landscape is still
       // above the 1024px mobile-nav breakpoint, so it gets the desktop nav),
       // the first tap opens the panel instead of following the trigger's
-      // href; a second tap on an open trigger navigates as normal.
+      // href; a second tap navigates as normal.
+      //
+      // The open state can't be read off aria-expanded here: a tap fires
+      // mousedown -> focus -> mouseup -> click, and the focus handler above
+      // has already set it to "true" by the time click arrives. Track the
+      // tap separately.
+      var tapOpened = false;
       trigger.addEventListener('click', function (e) {
-        if (window.matchMedia('(hover: hover)').matches) return;
-        if (trigger.getAttribute('aria-expanded') === 'true') return;
+        if (canHover()) return;
+        if (tapOpened) return;
         e.preventDefault();
+        tapOpened = true;
         open();
       });
-      // Tapping outside closes it again.
-      document.addEventListener('click', function (e) {
-        if (window.matchMedia('(hover: hover)').matches) return;
-        if (!root.contains(e.target)) trigger.setAttribute('aria-expanded', 'false');
+      touchRoots.push({ root: root, trigger: trigger, reset: function () {
+        tapOpened = false;
+        trigger.setAttribute('aria-expanded', 'false');
+      } });
+    });
+
+    // Tapping outside any dropdown closes it. One listener for all of them,
+    // and it ignores taps on the hamburger — that click sets aria-expanded on
+    // every trigger (the open mobile menu shows the panels inline) and would
+    // otherwise be undone here as it bubbles.
+    document.addEventListener('click', function (e) {
+      if (canHover()) return;
+      if (e.target.closest && e.target.closest('.kz-nav-toggle')) return;
+      if (document.querySelector('.kz-nav.is-mobile-open')) return;
+      touchRoots.forEach(function (d) {
+        if (!d.root.contains(e.target)) d.reset();
       });
     });
   }
