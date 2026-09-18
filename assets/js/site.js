@@ -10,7 +10,13 @@
       var toggle = nav.querySelector('.kz-nav-toggle');
       if (!toggle) return;
       toggle.addEventListener('click', function () {
-        nav.classList.toggle('is-mobile-open');
+        var open = nav.classList.toggle('is-mobile-open');
+        // The open mobile menu renders the dropdown panels inline (see the
+        // 1024px breakpoint in site.css), so the triggers are expanded in
+        // fact — say so, or assistive tech announces them as collapsed.
+        nav.querySelectorAll('.kz-mega-trigger').forEach(function (t) {
+          t.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
       });
       // Close on link click
       nav.querySelectorAll('.kz-nav-links a').forEach(function (a) {
@@ -38,6 +44,22 @@
       // Keyboard: toggle on focus / blur
       trigger.addEventListener('focus', open);
       trigger.addEventListener('blur', close);
+
+      // Touch: on a device that can't hover (tablet in landscape is still
+      // above the 1024px mobile-nav breakpoint, so it gets the desktop nav),
+      // the first tap opens the panel instead of following the trigger's
+      // href; a second tap on an open trigger navigates as normal.
+      trigger.addEventListener('click', function (e) {
+        if (window.matchMedia('(hover: hover)').matches) return;
+        if (trigger.getAttribute('aria-expanded') === 'true') return;
+        e.preventDefault();
+        open();
+      });
+      // Tapping outside closes it again.
+      document.addEventListener('click', function (e) {
+        if (window.matchMedia('(hover: hover)').matches) return;
+        if (!root.contains(e.target)) trigger.setAttribute('aria-expanded', 'false');
+      });
     });
   }
 
