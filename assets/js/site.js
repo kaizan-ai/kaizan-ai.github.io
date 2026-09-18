@@ -57,13 +57,23 @@
       // has already set it to "true" by the time click arrives. Track the
       // tap separately.
       var tapOpened = false;
-      trigger.addEventListener('click', function (e) {
+      // Capture phase, so this runs before the anchor's own click handlers —
+      // initMobileNav's "close on link click" is one of them, and it strips
+      // is-mobile-open, which the mobile check below needs to still see.
+      root.addEventListener('click', function (e) {
+        if (!trigger.contains(e.target)) return;
         if (canHover()) return;
+        // Keyboard Enter also fires click, with detail 0 — let it navigate on
+        // the first press rather than making it take two.
+        if (!e.detail) return;
+        // In the open mobile menu the panel is already rendered inline, so
+        // there is nothing to open: the trigger is a plain link again.
+        if (trigger.closest('.kz-nav.is-mobile-open')) return;
         if (tapOpened) return;
         e.preventDefault();
         tapOpened = true;
         open();
-      });
+      }, true);
       touchRoots.push({ root: root, trigger: trigger, reset: function () {
         tapOpened = false;
         trigger.setAttribute('aria-expanded', 'false');
