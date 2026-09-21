@@ -1010,6 +1010,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
         {''.join(items_html)}
       </nav>
       <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost" href="/referral-partners/">Become a partner</a>
         <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
         <a class="kz-btn kz-btn-yellow" href="/demo/">Book a demo</a>
         <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
@@ -4990,7 +4991,7 @@ def build_us_locale():
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
-        us = re.sub(r'href="/(demo|for)(/|")', r'href="/us/\1\2', us)
+        us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)
         # Self-canonical + og:url for the US page.
         us = us.replace(f'rel="canonical" href="{SITE_ORIGIN}',
                         f'rel="canonical" href="{SITE_ORIGIN}/us')
@@ -5020,12 +5021,6 @@ def build_us_locale():
             ('SENIOR LEADERSHIP / DIRECTOR', 'SENIOR LEADERSHIP'),
         ):
             us = us.replace(old, new)
-        # US-only nav CTA: a "Become a partner" button linking to the US-only
-        # referral landing page (added just before the "Client log in" button).
-        us = us.replace(
-            '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>',
-            '<a class="kz-btn kz-btn-ghost" href="/us/referral-partners/">Become a partner</a>'
-            '<a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>')
         # US pricing page: swap the mirrored GBP tier cards + footnote for the
         # USD version (lambda replacement avoids re backreference escaping).
         if path == '/pricing/':
@@ -5121,15 +5116,27 @@ def main():
 
     build_us_locale()
 
-    # US-only Referral Partner Program landing page. An exact static export of
-    # the approved design (self-contained markup + styles, native <details> FAQ,
-    # images under assets/img/referral/). Emitted after build_us_locale() because
-    # that wipes and rebuilds the /us/ tree.
-    import shutil
-    ref_dst = ROOT / 'us' / 'referral-partners' / 'index.html'
-    ref_dst.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(ROOT / 'content' / 'referral-partners' / 'index.html', ref_dst)
-    print('  (US referral partner page → /us/referral-partners/)')
+    # Referral Partner Program landing page. Exact static export of the approved
+    # design (self-contained markup + styles, native <details> FAQ, images under
+    # assets/img/referral/). Emitted after build_us_locale() because that wipes
+    # and rebuilds the /us/ tree. The USD source ships to /us/; a GBP version
+    # (figures converted at ~1 GBP = 1.25 USD) ships to the UK root. The count-up
+    # reads its currency symbol from the figure text, so it animates in the right
+    # currency on each.
+    ref_usd = (ROOT / 'content' / 'referral-partners' / 'index.html').read_text(encoding='utf-8')
+    ref_gbp = (ref_usd
+               .replace('$7,500', '£6,000')
+               .replace('$22,050', '£17,640')
+               .replace('$22,000', '£17,600')
+               .replace('data-target="22050"', 'data-target="17640"')
+               # UK "Book a call" goes to the same place as the UK "Book a demo"
+               # button (the /demo/ booking flow), not the US partner calendar.
+               .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7', '/demo/'))
+    for path_rel, html in ((ROOT / 'referral-partners' / 'index.html', ref_gbp),
+                           (ROOT / 'us' / 'referral-partners' / 'index.html', ref_usd)):
+        path_rel.parent.mkdir(parents=True, exist_ok=True)
+        path_rel.write_text(html, encoding='utf-8')
+    print('  (referral partner page → /referral-partners/ [GBP] + /us/referral-partners/ [USD])')
 
     print('Done.')
 

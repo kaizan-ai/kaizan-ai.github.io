@@ -565,7 +565,8 @@ html,body{height:100%;margin:0}#dc-root,#dc-root>.sc-host{height:100%}
   var el=document.getElementById('rp-count');
   if(!el) return;
   var target=+el.getAttribute('data-target')||0;
-  var fmt=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+  var cur=(el.textContent.match(/[£$]/)||['$'])[0];
+  var fmt=function(n){return cur+Math.round(n).toLocaleString(cur==='£'?'en-GB':'en-US');};
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=fmt(target);return;}
   var done=false;
   function run(){
