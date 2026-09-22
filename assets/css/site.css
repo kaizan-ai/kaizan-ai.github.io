@@ -5,7 +5,15 @@
 
 /* ── Reset & base ─────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  color-scheme: light;      /* light design: keep iOS dark mode from theming the canvas */
+  background: #F2EFE7;       /* match body so any gutter/canvas is parchment, never dark */
+  /* Stop iOS Safari "shrink to fit" from zooming the whole page out when a wide
+     element (the animated logo marquee) would otherwise extend past the viewport.
+     `clip` (not `hidden`) preserves the sticky nav. */
+  overflow-x: clip;
+}
 body {
   margin: 0;
   /* Outside the 1440px page, show parchment so the contained site
