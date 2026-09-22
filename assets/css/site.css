@@ -16,6 +16,8 @@ html {
 }
 body {
   margin: 0;
+  max-width: 100%;
+  overflow-x: clip;          /* belt-and-suspenders with html: no horizontal spill on iOS */
   /* Outside the 1440px page, show parchment so the contained site
      visually lifts off the canvas on wider monitors. Matches the
      body background of the original design handoff. */
