@@ -60,7 +60,7 @@ NAV = [
 # TURNSTILE_SITE_KEY: public, safe to commit. Create a Turnstile widget in the
 # Cloudflare dashboard (scoped to kaizan.ai) and paste its Site Key here. Until
 # a real key is set, /demo/ will not render the widget.
-CALENDAR_URL = 'https://calendar.app.google/Eae719Ejh3xxN3Lg8'
+CALENDAR_URL = 'https://calendar.app.google/eWwFxNXq3mCZqw7HA'
 TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
 
 # Sub-links shown in the "Product" nav dropdown. The "Product" trigger itself
@@ -5129,9 +5129,9 @@ def main():
                .replace('$22,050', '£17,640')
                .replace('$22,000', '£17,600')
                .replace('data-target="22050"', 'data-target="17640"')
-               # UK "Book a call" goes to the same place as the UK "Book a demo"
-               # button (the /demo/ booking flow), not the US partner calendar.
-               .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7', '/demo/'))
+               # UK "Book a call" CTAs point to the UK partner calendar.
+               .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7',
+                        'https://calendar.app.google/eWwFxNXq3mCZqw7HA'))
     for path_rel, html in ((ROOT / 'referral-partners' / 'index.html', ref_gbp),
                            (ROOT / 'us' / 'referral-partners' / 'index.html', ref_usd)):
         path_rel.parent.mkdir(parents=True, exist_ok=True)
