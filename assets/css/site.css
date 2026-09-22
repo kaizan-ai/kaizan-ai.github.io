@@ -1820,11 +1820,13 @@ button { font-family: inherit; }
   .kz-nav-toggle { display: inline-flex; }
   .kz-nav.is-mobile-open .kz-nav-links {
     display: flex; flex-direction: column; gap: 0;
+    align-items: stretch;   /* override desktop's center so every row left-aligns */
+    text-align: left;
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--kz-paper); border-bottom: 1px solid var(--kz-line);
     padding: 12px 24px 20px;
   }
-  .kz-nav.is-mobile-open .kz-nav-links a { padding: 12px 0; opacity: 1; border-bottom: 1px solid var(--kz-line); }
+  .kz-nav.is-mobile-open .kz-nav-links a { padding: 12px 0; opacity: 1; border-bottom: 1px solid var(--kz-line); text-align: left; }
   .kz-nav.is-mobile-open .kz-nav-links a:last-child { border-bottom: none; }
   .kz-nav-cta a.kz-btn-ghost { display: none; }
   .kz-mega-panel { display: none !important; }
