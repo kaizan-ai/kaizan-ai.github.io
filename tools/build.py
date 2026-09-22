@@ -46,6 +46,9 @@ NAV = [
     # RESOURCES_MENU. The trigger itself points at the first item (Our Research).
     ('Resources',    'research/'),
     ('About',        'about/'),
+    # Plain text nav link (relative, so it resolves to /referral-partners/ on UK
+    # and /us/referral-partners/ on US via normal relative paths).
+    ('Become a partner', 'referral-partners/'),
 ]
 
 # ─────────────────────────────────────────────────────────────────────
@@ -1010,7 +1013,6 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
         {''.join(items_html)}
       </nav>
       <div class="kz-nav-cta">
-        <a class="kz-btn kz-btn-ghost" href="/referral-partners/">Become a partner</a>
         <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
         <a class="kz-btn kz-btn-yellow" href="/demo/">Book a demo</a>
         <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
