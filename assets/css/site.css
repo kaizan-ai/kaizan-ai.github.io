@@ -412,6 +412,121 @@ button { font-family: inherit; }
   color: var(--kz-paper);
 }
 
+/* ── Home hero: copy + 14-day free trial form ─────────────────── */
+.kz-hero--trial {
+  grid-template-columns: minmax(0, 552px) minmax(400px, 1fr);
+  column-gap: 44px;
+  align-items: start;
+  padding-top: 52px;
+  padding-bottom: 28px;
+}
+.kz-hero-trial-h1 {
+  font-family: var(--kz-display);
+  font-size: 40px; line-height: 1.18; font-weight: 400; letter-spacing: -1px;
+  margin: 0;
+}
+.kz-hero-trial-h1 .kz-mark { padding: 3px 10px; }
+.kz-hero-trial-lede {
+  margin: 20px 0 0; max-width: 480px;
+  font-size: 17px; line-height: 1.55; color: var(--kz-mute);
+}
+.kz-hero-checks {
+  margin: 18px 0 0; padding: 0; list-style: none; max-width: 480px;
+  display: flex; flex-direction: column; gap: 11px;
+}
+.kz-hero-checks li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.5; }
+.kz-hero-checks .tick {
+  flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px; border-radius: 50%;
+  background: var(--kz-yellow);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.kz-hero--trial .kz-hero-cta-stack { margin-top: 26px; }
+.kz-hero--trial .kz-cta-card { padding: 18px 20px 18px 24px; gap: 16px; }
+.kz-hero--trial .kz-cta-headline { font-size: 21px; margin-top: 2px; }
+.kz-hero--trial .kz-cta-pill { padding: 11px 16px; font-size: 13.5px; gap: 8px; }
+
+.kz-trial {
+  position: relative; overflow: hidden; z-index: 1;
+  background: var(--kz-ink); color: var(--kz-paper);
+  border: 1px solid rgba(255,251,240,.22); border-radius: 14px;
+  padding: 34px 34px 28px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4), 0 24px 64px rgba(0,0,0,.3);
+}
+.kz-trial-art {
+  position: absolute; top: -14px; right: -10px; width: 260px; height: 140px;
+  opacity: .9; color: var(--kz-paper); pointer-events: none;
+}
+.kz-trial-form, .kz-trial-done { position: relative; }
+.kz-trial-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255,185,0,.18); color: var(--kz-yellow);
+  border-radius: 999px; padding: 6px 12px 6px 10px;
+  font-family: var(--kz-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .46px;
+}
+.kz-trial-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--kz-yellow); }
+.kz-trial-title {
+  margin: 16px 0 0; font-size: 27px; font-weight: 600; letter-spacing: -.68px; line-height: 1.2;
+  color: var(--kz-paper);
+}
+.kz-trial-sub { margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,251,240,.8); }
+.kz-trial-fields { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+.kz-trial-row { display: flex; gap: 14px; }
+.kz-trial-row > * { flex: 1; min-width: 0; }
+.kz-trial-field label {
+  display: block; margin-bottom: 7px;
+  font-family: var(--kz-mono); font-size: 11px; font-weight: 500; letter-spacing: .66px;
+  text-transform: uppercase; color: rgba(255,251,240,.76);
+}
+.kz-trial-field input, .kz-trial-field select {
+  box-sizing: border-box; width: 100%;
+  background: rgba(255,251,240,.05); color: var(--kz-paper);
+  border: 1px solid rgba(255,251,240,.22); border-radius: 8px;
+  font: inherit; font-size: 15px; padding: 13px 14px;
+}
+.kz-trial-field .req { color: #FF5A52; }
+.kz-trial-field input::placeholder { color: rgba(255,251,240,.4); }
+.kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-yellow); outline-offset: 1px; }
+.kz-trial-field select {
+  appearance: none; -webkit-appearance: none; padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FFFBF0' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+}
+.kz-trial-field select option { color: var(--kz-ink); background: #fff; }
+/* Extra fields and the legal note expand in once name, email and phone are filled.
+   Collapsed only once JS runs (.is-js), so without JS every field is usable. */
+.kz-trial-more {
+  display: grid; grid-template-rows: 1fr;
+  transition: grid-template-rows .35s ease, opacity .35s ease, margin-top .35s ease;
+}
+.kz-trial.is-js .kz-trial-more:not(.is-open) { grid-template-rows: 0fr; margin-top: -14px; opacity: 0; }
+.kz-trial-more-inner { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 3px; margin: -3px; }
+.kz-trial-submit {
+  margin-top: 20px; width: 100%;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: var(--kz-yellow); color: var(--kz-ink);
+  border: none; border-radius: 999px; padding: 16px 22px; cursor: pointer;
+  font: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.16px;
+  box-shadow: 0 2px 6px rgba(255,185,0,.28), 0 10px 28px rgba(255,185,0,.32);
+  transition: filter .2s ease;
+}
+.kz-trial-submit:hover { filter: brightness(.96); }
+.kz-trial-submit:disabled { opacity: .6; cursor: progress; }
+.kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #FFB4A8; }
+.kz-trial-msg.is-shown { display: block; }
+.kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(255,251,240,.6); }
+.kz-trial.is-js .kz-trial-legal:not(.is-open) { display: none; }
+.kz-trial-legal a { color: var(--kz-yellow); text-decoration: underline; }
+@media (max-width: 1024px) {
+  .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
+  .kz-hero--trial .kz-trial { max-width: 640px; }
+}
+@media (max-width: 768px) {
+  .kz-hero-trial-h1 { font-size: 32px; }
+  .kz-trial { padding: 28px 22px 24px; }
+  .kz-trial-art { width: 200px; height: 108px; opacity: .6; }
+}
+@media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+
 /* ── Marquee ──────────────────────────────────────────────────── */
 .kz-marquee {
   overflow: hidden; padding: 28px 0; background: transparent;
