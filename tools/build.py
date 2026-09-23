@@ -1351,6 +1351,152 @@ SCENES = [scene_assistant, scene_helpers, scene_care, scene_chatbot]
 # PAGE TEMPLATES
 # ─────────────────────────────────────────────────────────────────────
 
+# ── 14-day free trial form (home hero) ───────────────────────────────
+# Mailchimp embedded form "Header — trial" (audience 1ea9163949). The inputs use
+# the audience's merge-field names; assets/js/trial-form.js submits via JSONP so
+# the visitor stays on the page, and fills the hidden UTM fields from the URL.
+TRIAL_MC_POST = ('https://kaizan.us6.list-manage.com/subscribe/post'
+                 '?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id=001aefe5f0')
+TRIAL_MC_JSON = TRIAL_MC_POST.replace('/subscribe/post?', '/subscribe/post-json?')
+TRIAL_MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_1ea9163949'
+
+# Hidden attribution fields: (merge tag, URL query parameter that fills it).
+TRIAL_UTM_FIELDS = [
+    ('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'),
+    ('UTMQRPLC', 'qr_placement'), ('UTMCTA', 'utm_cta'),
+    ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
+]
+
+# Values must match the Mailchimp MMERGE12 dropdown choices exactly.
+TRIAL_HEARD_OPTIONS = [
+    'Google Search', 'LinkedIn', 'Social Media (Facebook/Instagram/TikTok/YouTube)',
+    'AI Tool (Chat GPT/Claude/Gemini)', 'Referral (Friend/Colleague/Word of Mouth)',
+    'Email Newsletter', 'Event/Conference', 'Other',
+]
+
+CHECK_SVG = ('<svg width="11" height="9" viewBox="0 0 12 10" fill="none">'
+             '<path d="M1 5L4.5 8.5L11 1.5" stroke="#000" stroke-width="1.8" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+# Signal-map motif in the form's top-right corner (decorative).
+TRIAL_SIGNAL_SVG = '''<svg class="kz-trial-art" viewBox="0 0 280 150" aria-hidden="true">
+  <circle cx="140" cy="78" r="62" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.10"/>
+  <circle cx="140" cy="78" r="40" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.18"/>
+  <circle cx="140" cy="78" r="22" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+  <g stroke="currentColor" stroke-linecap="round">
+    <line x1="140" y1="78" x2="82" y2="38" stroke-width="0.8" opacity="0.32"/>
+    <line x1="140" y1="78" x2="58" y2="92" stroke-width="1.6" opacity="0.62"/>
+    <line x1="140" y1="78" x2="198" y2="30" stroke-width="1" opacity="0.42"/>
+    <line x1="140" y1="78" x2="224" y2="82" stroke-width="1.6" opacity="0.58"/>
+    <line x1="140" y1="78" x2="170" y2="128" stroke-width="0.9" opacity="0.36"/>
+    <line x1="140" y1="78" x2="98" y2="122" stroke-width="1.1" opacity="0.46"/>
+    <line x1="140" y1="78" x2="246" y2="42" stroke-width="0.6" opacity="0.22" stroke-dasharray="2 3"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="82" cy="38" r="3.5"/><circle cx="198" cy="30" r="2.5"/><circle cx="224" cy="82" r="5"/>
+    <circle cx="170" cy="128" r="2.5"/><circle cx="98" cy="122" r="4"/><circle cx="246" cy="42" r="2"/>
+  </g>
+  <circle cx="58" cy="92" r="6" fill="#FFB900" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="58" cy="92" r="2" fill="currentColor"/>
+  <circle cx="198" cy="30" r="9" fill="none" stroke="#FFB900" stroke-width="1.4" opacity="0.7"/>
+  <circle cx="140" cy="78" r="9" fill="currentColor"/>
+  <circle cx="140" cy="78" r="3.5" fill="#FFB900"/>
+  <g fill="#FFB900">
+    <circle cx="32" cy="22" r="2"/><circle cx="258" cy="118" r="2.2"/>
+    <circle cx="22" cy="108" r="1.4" opacity="0.6"/><circle cx="262" cy="62" r="1.6" opacity="0.65"/>
+    <circle cx="48" cy="138" r="1.4" opacity="0.55"/>
+  </g>
+  <path d="M 14 56 L 18 60 L 14 64 L 10 60 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+  <path d="M 268 18 L 272 22 L 268 26 L 264 22 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+</svg>'''
+
+
+def trial_form_html(depth: int) -> str:
+    """The dark "Start your 14-day free trial" card. Company, job title and source
+    are revealed once name, email and phone are filled in. Required fields (red
+    asterisk) match the Mailchimp audience settings."""
+    p = relpath(depth)
+    heard = '\n'.join(f'<option value="{E(o)}">{E(o)}</option>' for o in TRIAL_HEARD_OPTIONS)
+    utm = '\n'.join(f'<input type="hidden" name="{tag}" id="mce-{tag}" value="" data-utm="{param}">'
+                    for tag, param in TRIAL_UTM_FIELDS)
+    arrow = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+             '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
+    return f'''<div class="kz-trial" data-trial>
+        {TRIAL_SIGNAL_SVG}
+        <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+              action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
+          <div class="kz-trial-badge"><span class="dot"></span>No credit card required</div>
+          <h2 class="kz-trial-title">Start your 14-day free trial</h2>
+          <p class="kz-trial-sub">Discover the risks and growth opportunities in your own client
+            conversations, benchmarked against best-in-class.</p>
+          <div class="kz-trial-fields">
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-PHONE" name="PHONE" type="tel" placeholder="07700 900000" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="kz-trial-more" data-trial-more>
+              <div class="kz-trial-more-inner">
+                <div class="kz-trial-row">
+                  <div class="kz-trial-field">
+                    <label for="mce-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+                  </div>
+                  <div class="kz-trial-field">
+                    <label for="mce-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+                  </div>
+                </div>
+                <div class="kz-trial-field">
+                  <label for="mce-MMERGE12">How did you hear about us?</label>
+                  <select id="mce-MMERGE12" name="MMERGE12">
+                    <option value="">Select an option</option>
+                    {heard}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
+          {utm}
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe" class="kz-trial-submit">Start my free trial {arrow}</button>
+          <p class="kz-trial-msg" data-trial-msg role="status" aria-live="polite"></p>
+          <p class="kz-trial-legal" data-trial-legal>
+            By submitting your details to Kaizan you are showing interest in our product and so we may
+            contact you from time to time about our product and services. You may unsubscribe from these
+            communications at any time. Please review our <a href="{p}privacy-policy/">Privacy Policy</a>
+            for information on how to unsubscribe and our privacy practices.
+          </p>
+        </form>
+        <div class="kz-trial-done" data-trial-done hidden>
+          <div class="kz-trial-badge"><span class="dot"></span>You&rsquo;re in</div>
+          <h2 class="kz-trial-title">Thanks, your free trial is on its way.</h2>
+          <p class="kz-trial-sub">Check your inbox, we&rsquo;ll email you the next steps to get your
+            14-day trial set up.</p>
+        </div>
+      </div>'''
+
+
 def render_home() -> str:
     scenes = [
         ('AI Assistant for the team',
@@ -1480,20 +1626,30 @@ def render_home() -> str:
         f'</div>'
         for num, cat, desc in home_stats)
 
+    hero_checks = ''.join(
+        f'<li><span class="tick" aria-hidden="true">{CHECK_SVG}</span>{E(t)}</li>'
+        for t in (
+            'Find growth opportunities hidden in everyday client conversations.',
+            "Catch engagement risks early so your team can act before it's too late.",
+            'Improve account efficiency with AI Helpers that take care of admin for the team.',
+            'See every client clearly by unifying every conversation, commitment and '
+            'deliverable into one source of truth.',
+        ))
+
     body = f'''
     {nav_html(0, active='Home')}
 
     <!-- HERO -->
-    <section class="kz-hero kz-wash-gold-pale">
+    <section class="kz-hero kz-hero--trial kz-wash-gold-pale">
       <div class="kz-hero-copy">
-        <h1 class="kz-h1">
-          Client Service <span class="kz-mark">Intelligence</span><br>
-          for the AI Era
+        <h1 class="kz-hero-trial-h1">
+          Grow your existing clients. <span class="kz-mark">Spot risks</span> before they leave.
         </h1>
-        <p class="kz-lede" style="margin-top:24px;font-size:18px;max-width:520px;">
-          Kaizan is the AI platform for client service professionals. Where AI Helpers work 24/7
-          so your team increases the ROI and Revenue across all your clients.
+        <p class="kz-hero-trial-lede">
+          Kaizan unifies all client meetings, emails &amp; chats to recommend next steps. Proactively
+          protecting revenue, uncovering opportunities and saving your team hours.
         </p>
+        <ul class="kz-hero-checks">{hero_checks}</ul>
         <div class="kz-hero-cta-stack">
           <a class="kz-cta-card is-yellow" href="/demo/">
             <div>
@@ -1511,21 +1667,7 @@ def render_home() -> str:
           </a>
         </div>
       </div>
-      <div class="kz-hero-video">
-        <video data-hero-video src="assets/video/hero.mp4"
-               poster="assets/video/hero-poster.jpg"
-               loop playsinline preload="metadata"></video>
-        <button class="overlay" type="button" data-hero-overlay aria-label="Play video">
-          <div class="head">
-            <span>▶ KAIZAN · 2 MIN OVERVIEW</span>
-            <span>00:00 / 02:07</span>
-          </div>
-          <div class="play-row">
-            <div class="play">▶</div>
-            <div class="play-title">See Kaizan in action</div>
-          </div>
-        </button>
-      </div>
+      {trial_form_html(0)}
     </section>
 
     {marquee_html(CLIENT_LOGOS, depth=0)}
@@ -1599,9 +1741,12 @@ def render_home() -> str:
 
     {footer_html(0)}
     '''
+    extra_head = (f'<script defer src="assets/js/trial-form.js'
+                  f'{asset_v("assets/js/trial-form.js")}"></script>')
     return page_head('Client super intelligence for client service teams', 0,
                      'Kaizan is the AI platform for client service professionals, '
-                     'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.') + body + page_foot()
+                     'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.',
+                     extra_head=extra_head) + body + page_foot()
 
 
 def render_product() -> str:
