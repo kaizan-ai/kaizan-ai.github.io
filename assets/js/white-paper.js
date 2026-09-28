@@ -129,6 +129,18 @@
     return box;
   }
 
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+  function getUtmFields() {
+    var params = new URLSearchParams(window.location.search);
+    var fields = [];
+    UTM_KEYS.forEach(function (key) {
+      var value = params.get(key);
+      if (value) fields.push({ objectTypeId: '0-1', name: key, value: value });
+    });
+    return fields;
+  }
+
   function submitToHubSpot(payload) {
     var endpoint = 'https://api.hsforms.com/submissions/v3/integration/submit/'
       + encodeURIComponent(HUBSPOT_PORTAL_ID) + '/'
@@ -182,7 +194,7 @@
         fields: [
           { objectTypeId: '0-1', name: 'email', value: emailVal },
           { objectTypeId: '0-1', name: 'jobtitle', value: roleVal }
-        ],
+        ].concat(getUtmFields()),
         context: {
           pageUri: window.location.href,
           pageName: document.title,
