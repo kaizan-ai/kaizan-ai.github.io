@@ -2012,6 +2012,9 @@ button { font-family: inherit; }
 
 @media (max-width: 480px) {
   .kz-nav { padding: 12px 16px; }
+  /* Match the open mobile menu's side padding to the nav's own gutter at
+     this breakpoint, so the links line up with the logo on the left. */
+  .kz-nav.is-mobile-open .kz-nav-links { padding-left: 16px; padding-right: 16px; }
   .kz-nav-cta a.kz-btn-yellow { padding: 8px 12px; }
   .kz-footer-grid { grid-template-columns: 1fr; }
   .kz-h1, .kz-h1-xl { font-size: 36px; }

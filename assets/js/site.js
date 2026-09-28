@@ -296,7 +296,8 @@
     // One-time suggestion banner for US-timezone visitors on the UK site.
     var chosen = null;
     try { chosen = localStorage.getItem('kz-locale'); } catch (e) {}
-    if (onUS || chosen) return;
+    // Pages with no /us/ twin opt out: <meta name="kz-no-us-page">.
+    if (onUS || chosen || document.querySelector('meta[name="kz-no-us-page"]')) return;
     var tz = '';
     try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
     var isUS = /^America\/(New_York|Detroit|Chicago|Denver|Los_Angeles|Phoenix|Anchorage|Adak|Boise|Juneau|Sitka|Menominee|Indiana|Kentucky|North_Dakota)/.test(tz)
