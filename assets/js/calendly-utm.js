@@ -1,7 +1,8 @@
 /* Calendly attribution — captures UTMs from the landing URL and forwards
    them to any Calendly link, so bookings carry the campaign that drove them.
-   UK-only: /demo/ reads the same sessionStorage key to tag its own
-   (base64-obfuscated) Calendly redirect — see render_demo() in build.py. */
+   Loaded on both the UK and /us/ site: /demo/ reads the same sessionStorage
+   key to tag its own (base64-obfuscated) Calendly redirect, whichever
+   locale's link that is — see render_demo() in build.py. */
 (function () {
   var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
   var STORE = 'calendly_utms';

@@ -60,8 +60,9 @@ NAV = [
 # calendar URL and redirect. CALENDAR_URL never appears as a plain href in the
 # generated HTML.
 #
-# UK books via Calendly; /us/ keeps its own Google Calendar link
-# (US_CALENDAR_URL, substituted in by build_us_locale()).
+# UK and /us/ each book via their own Calendly link (rep-specific — UK is
+# Glen, US is Ray); /us/'s is US_CALENDAR_URL, substituted in by
+# build_us_locale().
 #
 # TURNSTILE_SITE_KEY: public, safe to commit. Create a Turnstile widget in the
 # Cloudflare dashboard (scoped to kaizan.ai) and paste its Site Key here. Until
@@ -884,8 +885,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
-        <!-- Calendly attribution (UK only — stripped from /us/ pages at build
-             time, see build_us_locale()). -->
+        <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
         <script defer src="{p}assets/js/calendly-utm.js{calendly_utm_v}"></script>
         <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
              cookie consent (see assets/js/consent.js) -->
@@ -4846,10 +4846,9 @@ def render_demo() -> str:
     (function () {{
       var DEST = '{enc}';
       var statusEl = document.getElementById('kz-demo-status');
-      // Calendly (UK) destinations carry the visit's UTMs, captured earlier
-      // by assets/js/calendly-utm.js into the same sessionStorage key. The
-      // /us/ destination (Google Calendar) is untouched — it's never a
-      // calendly.com URL, so the check below skips it.
+      // Both UK and /us/ redirect to a Calendly link (different reps), and
+      // both carry the visit's UTMs, captured earlier by
+      // assets/js/calendly-utm.js into the same sessionStorage key.
       var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var UTM_STORE = 'calendly_utms';
       function withUtms(dest) {{
@@ -5043,8 +5042,7 @@ def write_redirects():
 # into /us/ with US spelling, the US booking link, the US legal entity, and
 # self-canonical + hreflang tags so each market is independently indexable.
 
-US_CALENDAR_URL = ('https://calendar.google.com/calendar/u/0/appointments/schedules/'
-                   'AcZssZ1X3q1r4-z6R58nnBW1GK8d5FXnJXh8oeDooQT32qTL6Y3edStY9k_Rj-BoPyQi3PYVnmEjdtIN')
+US_CALENDAR_URL = 'https://calendly.com/ray-kaizan/30min'
 SITE_ORIGIN = 'https://kaizan.ai'
 
 # US-only trial-form config: a separate Mailchimp embed instance (f_id) and
@@ -5170,14 +5168,8 @@ def build_us_locale():
         us = html
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
-        # Calendly attribution is UK-only (US books via Google Calendar, not
-        # Calendly), so /us/ pages don't load the script at all. Leading
-        # whitespace varies by call site (page_head() is flush-left; some
-        # inline templates indent it), so tolerate either.
-        us = re.sub(
-            r'[ \t]*<!-- Calendly attribution[^>]*-->\n'
-            r'[ \t]*<script defer src="[^"]*assets/js/calendly-utm\.js[^"]*"></script>\n',
-            '', us)
+        # calendly-utm.js (from page_head()) is kept as-is — /us/ also books
+        # via Calendly, just a different link (US_CALENDAR_URL, below).
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
         us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)
@@ -5188,6 +5180,9 @@ def build_us_locale():
                         f'property="og:url" content="{SITE_ORIGIN}/us')
         # US booking link (only the /demo/ interstitial carries it, base64-encoded).
         us = us.replace(uk_cal_b64, us_cal_b64)
+        # About page CTA names the rep it books with — Glen on the UK link,
+        # Ray on the US one — so it stays accurate after the link swap above.
+        us = us.replace('Book time with Glen →', 'Book time with Ray →')
         # US legal entity.
         us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
         # US spelling.

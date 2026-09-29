@@ -17,9 +17,8 @@
 <link rel="stylesheet" href="../assets/css/site.css?v=5212e9fa">
 <script defer src="../assets/js/site.js?v=721fcb42"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<!-- Calendly attribution (UK only — stripped from /us/ pages at build
-     time, see build_us_locale()). -->
-<script defer src="../assets/js/calendly-utm.js?v=264cf932"></script>
+<!-- Calendly attribution: both UK and /us/ book via Calendly. -->
+<script defer src="../assets/js/calendly-utm.js?v=2ce26b8f"></script>
 <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
      cookie consent (see assets/js/consent.js) -->
 <script defer src="../assets/js/consent.js?v=6ba3a10f"></script>
@@ -109,10 +108,9 @@
     (function () {
       var DEST = 'aHR0cHM6Ly9jYWxlbmRseS5jb20vZ2xlbi1rYWl6YW4vMzBtaW4=';
       var statusEl = document.getElementById('kz-demo-status');
-      // Calendly (UK) destinations carry the visit's UTMs, captured earlier
-      // by assets/js/calendly-utm.js into the same sessionStorage key. The
-      // /us/ destination (Google Calendar) is untouched — it's never a
-      // calendly.com URL, so the check below skips it.
+      // Both UK and /us/ redirect to a Calendly link (different reps), and
+      // both carry the visit's UTMs, captured earlier by
+      // assets/js/calendly-utm.js into the same sessionStorage key.
       var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
       var UTM_STORE = 'calendly_utms';
       function withUtms(dest) {
