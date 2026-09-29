@@ -54,16 +54,20 @@ NAV = [
 # ─────────────────────────────────────────────────────────────────────
 # DEMO BOOKING — anti-bot interstitial.
 # "Book a demo" buttons across the site point at /demo/ (see render_demo)
-# rather than the raw Google Calendar link, so crawlers can't harvest the
-# booking URL and hammer the calendar. /demo/ shows a Cloudflare Turnstile
+# rather than the raw booking link, so crawlers can't harvest the booking
+# URL and hammer the calendar. /demo/ shows a Cloudflare Turnstile
 # human-check; only after it passes does the page reveal the (base64-obfuscated)
 # calendar URL and redirect. CALENDAR_URL never appears as a plain href in the
 # generated HTML.
 #
+# UK and /us/ each book via their own Calendly link (rep-specific — UK is
+# Glen, US is Ray); /us/'s is US_CALENDAR_URL, substituted in by
+# build_us_locale().
+#
 # TURNSTILE_SITE_KEY: public, safe to commit. Create a Turnstile widget in the
 # Cloudflare dashboard (scoped to kaizan.ai) and paste its Site Key here. Until
 # a real key is set, /demo/ will not render the widget.
-CALENDAR_URL = 'https://calendar.app.google/eWwFxNXq3mCZqw7HA'
+CALENDAR_URL = 'https://calendly.com/glen-kaizan/30min'
 TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
 
 # Sub-links shown in the "Product" nav dropdown. The "Product" trigger itself
@@ -861,6 +865,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
     site_css_v = asset_v('assets/css/site.css')
     site_js_v = asset_v('assets/js/site.js')
     consent_js_v = asset_v('assets/js/consent.js')
+    calendly_utm_v = asset_v('assets/js/calendly-utm.js')
     return dedent(f'''\
         <!doctype html>
         <html lang="en">
@@ -880,6 +885,8 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
+        <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
+        <script defer src="{p}assets/js/calendly-utm.js{calendly_utm_v}"></script>
         <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
              cookie consent (see assets/js/consent.js) -->
         <script defer src="{p}assets/js/consent.js{consent_js_v}"></script>
@@ -1383,16 +1390,21 @@ SCENES = [scene_assistant, scene_helpers, scene_care, scene_chatbot]
 # Mailchimp embedded form "Header — trial" (audience 1ea9163949). The inputs use
 # the audience's merge-field names; assets/js/trial-form.js submits via JSONP so
 # the visitor stays on the page, and fills the hidden UTM fields from the URL.
+TRIAL_MC_F_ID = '001aefe5f0'
 TRIAL_MC_POST = ('https://kaizan.us6.list-manage.com/subscribe/post'
-                 '?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id=001aefe5f0')
+                 f'?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id={TRIAL_MC_F_ID}')
 TRIAL_MC_JSON = TRIAL_MC_POST.replace('/subscribe/post?', '/subscribe/post-json?')
 TRIAL_MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_1ea9163949'
+# Tag IDs Mailchimp should apply to every UK trial-form signup (audience 1ea9163949).
+# /us/ overrides this to its own tag IDs — see US_TRIAL_TAGS in build_us_locale().
+TRIAL_MC_TAGS = '3789537,3789536'
 
 # Hidden attribution fields: (merge tag, URL query parameter that fills it).
 TRIAL_UTM_FIELDS = [
     ('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'),
     ('UTMQRPLC', 'qr_placement'), ('UTMCTA', 'utm_cta'),
     ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
+    ('UTMCOUNTRY', 'utm_country'),
 ]
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
@@ -1503,6 +1515,8 @@ def trial_form_html(depth: int) -> str:
           </div>
           <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
           {utm}
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="{TRIAL_MC_TAGS}"></div>
           <!-- Mailchimp bot-prevention field, keep, do not remove -->
           <div style="position:absolute;left:-5000px;" aria-hidden="true">
             <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
@@ -4832,9 +4846,23 @@ def render_demo() -> str:
     (function () {{
       var DEST = '{enc}';
       var statusEl = document.getElementById('kz-demo-status');
+      // Both UK and /us/ redirect to a Calendly link (different reps), and
+      // both carry the visit's UTMs, captured earlier by
+      // assets/js/calendly-utm.js into the same sessionStorage key.
+      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var UTM_STORE = 'calendly_utms';
+      function withUtms(dest) {{
+        try {{
+          var url = new URL(dest);
+          if (url.hostname.indexOf('calendly.com') === -1) return dest;
+          var saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{{}}');
+          UTM_KEYS.forEach(function (k) {{ if (saved[k]) url.searchParams.set(k, saved[k]); }});
+          return url.toString();
+        }} catch (e) {{ return dest; }}
+      }}
       window.kzOnVerified = function () {{
         if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
-        window.location.href = atob(DEST);
+        window.location.href = withUtms(atob(DEST));
       }};
       window.kzOnError = function () {{
         if (statusEl) statusEl.textContent = 'Verification failed. Please refresh and try again, or email hello@kaizan.ai.';
@@ -5014,9 +5042,13 @@ def write_redirects():
 # into /us/ with US spelling, the US booking link, the US legal entity, and
 # self-canonical + hreflang tags so each market is independently indexable.
 
-US_CALENDAR_URL = ('https://calendar.google.com/calendar/u/0/appointments/schedules/'
-                   'AcZssZ1X3q1r4-z6R58nnBW1GK8d5FXnJXh8oeDooQT32qTL6Y3edStY9k_Rj-BoPyQi3PYVnmEjdtIN')
+US_CALENDAR_URL = 'https://calendly.com/ray-kaizan/30min'
 SITE_ORIGIN = 'https://kaizan.ai'
+
+# US-only trial-form config: a separate Mailchimp embed instance (f_id) and
+# tag IDs, so US leads route differently downstream from UK ones.
+US_TRIAL_MC_F_ID = '0018efe5f0'
+US_TRIAL_TAGS = '3789549,3789550'
 
 # en-GB → en-US spelling (base forms; -ing/-ed/-ation variants listed explicitly
 # where they occur). Applied to visible text only, case-preserving.
@@ -5136,6 +5168,8 @@ def build_us_locale():
         us = html
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
+        # calendly-utm.js (from page_head()) is kept as-is — /us/ also books
+        # via Calendly, just a different link (US_CALENDAR_URL, below).
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
         us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)
@@ -5146,6 +5180,9 @@ def build_us_locale():
                         f'property="og:url" content="{SITE_ORIGIN}/us')
         # US booking link (only the /demo/ interstitial carries it, base64-encoded).
         us = us.replace(uk_cal_b64, us_cal_b64)
+        # About page CTA names the rep it books with — Glen on the UK link,
+        # Ray on the US one — so it stays accurate after the link swap above.
+        us = us.replace('Book time with Glen →', 'Book time with Ray →')
         # US legal entity.
         us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
         # US spelling.
@@ -5157,6 +5194,12 @@ def build_us_locale():
                 r'<span class="kz-marquee-item"><span class="kz-marquee-logo"[^>]*>'
                 r'<img[^>]*tradedoubler[^>]*></span><span class="sep">✺</span></span>',
                 '', us)
+            # US-only trial-form Mailchimp config: a different form instance
+            # (f_id) and tag IDs than the UK form, so US signups route and
+            # tag distinctly. The UK homepage keeps the original config.
+            us = us.replace(f'f_id={TRIAL_MC_F_ID}', f'f_id={US_TRIAL_MC_F_ID}')
+            us = us.replace(f'name="tags" value="{TRIAL_MC_TAGS}"',
+                             f'name="tags" value="{US_TRIAL_TAGS}"')
         # US-only persona titles: match the retitled "I am a…" selector labels.
         # UK source keeps its own titles; these rewrites apply to /us/ only.
         # (Upper-case plural runs before singular so it isn't half-matched.)
