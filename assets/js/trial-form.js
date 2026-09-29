@@ -5,8 +5,9 @@
 //  - Fills the hidden UTM merge fields (UTMSRC, UTMMED, …) from the page URL's
 //    query string (?utm_source=…&qr_placement=…). Values are kept for the tab's
 //    session so they survive a click to another page and back.
-//  - Submits via Mailchimp's JSONP endpoint so the visitor stays on the page. If
-//    JS is unavailable the form still POSTs normally to Mailchimp.
+//  - Submits via Mailchimp's JSONP endpoint, then sends the visitor to
+//    /confirmation/ on success. If JS is unavailable the form still POSTs
+//    normally to Mailchimp.
 (function () {
   var root = document.querySelector('[data-trial]');
   if (!root) return;
@@ -14,7 +15,6 @@
   var more = root.querySelector('[data-trial-more]');
   var legal = root.querySelector('[data-trial-legal]');
   var msg = root.querySelector('[data-trial-msg]');
-  var done = root.querySelector('[data-trial-done]');
   var submit = form.querySelector('[type=submit]');
   var jsonUrl = form.getAttribute('data-mc-json');
   var STORE = 'kz-utm';
@@ -85,10 +85,12 @@
     window[cb] = function (data) {
       finish();
       if (data && data.result === 'success') {
-        form.hidden = true;
-        done.hidden = false;
         try { sessionStorage.removeItem(STORE); } catch (e) {}
         if (window.dataLayer) window.dataLayer.push({ event: 'trial_signup' });
+        // The thank-you card now lives on its own page (same look, see
+        // render_confirmation() in tools/build.py) so the URL reflects the
+        // conversion and the visitor can't resubmit by refreshing.
+        window.location.href = 'https://kaizan.ai/confirmation';
       } else {
         show(clean(data && data.msg) || 'Something went wrong, please try again.');
       }

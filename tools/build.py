@@ -1573,6 +1573,57 @@ TRIAL_SIGNAL_SVG = '''<svg class="kz-trial-art" viewBox="0 0 280 150" aria-hidde
 </svg>'''
 
 
+def trial_done_inner_html() -> str:
+    """The "you're in" confirmation copy shown on the standalone /confirmation/
+    page (render_confirmation) that the trial form redirects to on success."""
+    return '''<div class="kz-trial-badge"><span class="dot"></span>You&rsquo;re in</div>
+          <h2 class="kz-trial-title">Thanks, your free trial is on its way.</h2>
+          <p class="kz-trial-sub">Check your inbox, we&rsquo;ll email you the next steps to get your
+            14-day trial set up.</p>'''
+
+
+def trial_hero_copy_html(depth: int) -> str:
+    """The hero headline/lede/checks/CTA-stack that sits beside the trial card
+    on the home hero. Shared with render_confirmation() so the /confirmation/
+    page matches the homepage hero exactly."""
+    p = relpath(depth)
+    hero_checks = ''.join(
+        f'<li><span class="tick" aria-hidden="true">{CHECK_SVG}</span>{E(t)}</li>'
+        for t in (
+            'Find growth opportunities hidden in everyday client conversations.',
+            "Catch engagement risks early so your team can act before it's too late.",
+            'Improve account efficiency with AI Helpers that take care of admin for the team.',
+            'See every client clearly by unifying every conversation, commitment and '
+            'deliverable into one source of truth.',
+        ))
+    return f'''<div class="kz-hero-copy">
+        <h1 class="kz-hero-trial-h1">
+          Grow your existing clients. <span class="kz-mark">Spot risks</span> before they leave.
+        </h1>
+        <p class="kz-hero-trial-lede">
+          Kaizan unifies all client meetings, emails &amp; chats to recommend next steps. Proactively
+          protecting revenue, uncovering opportunities and saving your team hours.
+        </p>
+        <ul class="kz-hero-checks">{hero_checks}</ul>
+        <div class="kz-hero-cta-stack">
+          <a class="kz-cta-card is-yellow" href="/demo/">
+            <div>
+              <div class="kz-cta-eyebrow">30-min live demo</div>
+              <div class="kz-cta-headline">See Kaizan in action</div>
+            </div>
+            <div class="kz-cta-pill"><span>Book a demo</span><span class="kz-cta-arrow">→</span></div>
+          </a>
+          <a class="kz-cta-card is-ghost" href="{p}white-paper/">
+            <div>
+              <div class="kz-cta-eyebrow">CARE white paper · 18 min</div>
+              <div class="kz-cta-headline">What the top 10% do differently?</div>
+            </div>
+            <div class="kz-cta-pill"><span>Whitepaper</span><span class="kz-cta-arrow">→</span></div>
+          </a>
+        </div>
+      </div>'''
+
+
 def trial_form_html(depth: int) -> str:
     """The dark "Start your 14-day free trial" card. Company, job title and source
     are revealed once name, email and phone are filled in. Required fields (red
@@ -1652,12 +1703,6 @@ def trial_form_html(depth: int) -> str:
             for information on how to unsubscribe and our privacy practices.
           </p>
         </form>
-        <div class="kz-trial-done" data-trial-done hidden>
-          <div class="kz-trial-badge"><span class="dot"></span>You&rsquo;re in</div>
-          <h2 class="kz-trial-title">Thanks, your free trial is on its way.</h2>
-          <p class="kz-trial-sub">Check your inbox, we&rsquo;ll email you the next steps to get your
-            14-day trial set up.</p>
-        </div>
       </div>'''
 
 
@@ -1790,47 +1835,12 @@ def render_home() -> str:
         f'</div>'
         for num, cat, desc in home_stats)
 
-    hero_checks = ''.join(
-        f'<li><span class="tick" aria-hidden="true">{CHECK_SVG}</span>{E(t)}</li>'
-        for t in (
-            'Find growth opportunities hidden in everyday client conversations.',
-            "Catch engagement risks early so your team can act before it's too late.",
-            'Improve account efficiency with AI Helpers that take care of admin for the team.',
-            'See every client clearly by unifying every conversation, commitment and '
-            'deliverable into one source of truth.',
-        ))
-
     body = f'''
     {nav_html(0, active='Home')}
 
     <!-- HERO -->
     <section class="kz-hero kz-hero--trial kz-wash-gold-pale">
-      <div class="kz-hero-copy">
-        <h1 class="kz-hero-trial-h1">
-          Grow your existing clients. <span class="kz-mark">Spot risks</span> before they leave.
-        </h1>
-        <p class="kz-hero-trial-lede">
-          Kaizan unifies all client meetings, emails &amp; chats to recommend next steps. Proactively
-          protecting revenue, uncovering opportunities and saving your team hours.
-        </p>
-        <ul class="kz-hero-checks">{hero_checks}</ul>
-        <div class="kz-hero-cta-stack">
-          <a class="kz-cta-card is-yellow" href="/demo/">
-            <div>
-              <div class="kz-cta-eyebrow">30-min live demo</div>
-              <div class="kz-cta-headline">See Kaizan in action</div>
-            </div>
-            <div class="kz-cta-pill"><span>Book a demo</span><span class="kz-cta-arrow">→</span></div>
-          </a>
-          <a class="kz-cta-card is-ghost" href="white-paper/">
-            <div>
-              <div class="kz-cta-eyebrow">CARE white paper · 18 min</div>
-              <div class="kz-cta-headline">What the top 10% do differently?</div>
-            </div>
-            <div class="kz-cta-pill"><span>Whitepaper</span><span class="kz-cta-arrow">→</span></div>
-          </a>
-        </div>
-      </div>
+      {trial_hero_copy_html(0)}
       {trial_form_html(0)}
     </section>
 
@@ -1911,6 +1921,32 @@ def render_home() -> str:
                      'Kaizan is the AI platform for client service professionals, '
                      'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.',
                      extra_head=extra_head) + body + page_foot()
+
+
+def render_confirmation() -> str:
+    """/confirmation/ — where the 14-day trial form (home hero) sends the
+    visitor after a successful signup, instead of swapping the card in place.
+    Mirrors the homepage hero exactly (trial_hero_copy_html / trial_form_html
+    share their markup with render_home), but with the card already showing
+    the "you're in" state and no live form to resubmit."""
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-hero kz-hero--trial kz-wash-gold-pale">
+      {trial_hero_copy_html(1)}
+      <div class="kz-trial">
+        {TRIAL_SIGNAL_SVG}
+        <div class="kz-trial-done">
+          {trial_done_inner_html()}
+        </div>
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Thanks for signing up', 1,
+                     "You're in — check your inbox for the next steps on your 14-day trial.",
+                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
 
 
 def render_product() -> str:
@@ -5377,6 +5413,7 @@ def main():
     _remove_page(ROOT / 'insights')
     write(ROOT / 'about' / 'index.html',        render_about())
     write(ROOT / 'demo' / 'index.html',         render_demo())
+    write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / '404.html',                    render_404())
 
     # Marketing / campaign landing pages
