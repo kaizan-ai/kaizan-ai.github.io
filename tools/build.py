@@ -1387,12 +1387,15 @@ TRIAL_MC_POST = ('https://kaizan.us6.list-manage.com/subscribe/post'
                  '?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id=001aefe5f0')
 TRIAL_MC_JSON = TRIAL_MC_POST.replace('/subscribe/post?', '/subscribe/post-json?')
 TRIAL_MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_1ea9163949'
+# Tag IDs Mailchimp should apply to every trial-form signup (audience 1ea9163949).
+TRIAL_MC_TAGS = '3789537,3789536'
 
 # Hidden attribution fields: (merge tag, URL query parameter that fills it).
 TRIAL_UTM_FIELDS = [
     ('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'),
     ('UTMQRPLC', 'qr_placement'), ('UTMCTA', 'utm_cta'),
     ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
+    ('UTMCOUNTRY', 'utm_country'),
 ]
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
@@ -1503,6 +1506,8 @@ def trial_form_html(depth: int) -> str:
           </div>
           <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
           {utm}
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="{TRIAL_MC_TAGS}"></div>
           <!-- Mailchimp bot-prevention field, keep, do not remove -->
           <div style="position:absolute;left:-5000px;" aria-hidden="true">
             <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
