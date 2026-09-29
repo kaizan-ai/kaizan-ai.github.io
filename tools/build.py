@@ -54,16 +54,19 @@ NAV = [
 # ─────────────────────────────────────────────────────────────────────
 # DEMO BOOKING — anti-bot interstitial.
 # "Book a demo" buttons across the site point at /demo/ (see render_demo)
-# rather than the raw Google Calendar link, so crawlers can't harvest the
-# booking URL and hammer the calendar. /demo/ shows a Cloudflare Turnstile
+# rather than the raw booking link, so crawlers can't harvest the booking
+# URL and hammer the calendar. /demo/ shows a Cloudflare Turnstile
 # human-check; only after it passes does the page reveal the (base64-obfuscated)
 # calendar URL and redirect. CALENDAR_URL never appears as a plain href in the
 # generated HTML.
 #
+# UK books via Calendly; /us/ keeps its own Google Calendar link
+# (US_CALENDAR_URL, substituted in by build_us_locale()).
+#
 # TURNSTILE_SITE_KEY: public, safe to commit. Create a Turnstile widget in the
 # Cloudflare dashboard (scoped to kaizan.ai) and paste its Site Key here. Until
 # a real key is set, /demo/ will not render the widget.
-CALENDAR_URL = 'https://calendar.app.google/eWwFxNXq3mCZqw7HA'
+CALENDAR_URL = 'https://calendly.com/glen-kaizan/30min'
 TURNSTILE_SITE_KEY = '0x4AAAAAADx9Zptj_zGxAWBm'
 
 # Sub-links shown in the "Product" nav dropdown. The "Product" trigger itself
@@ -861,6 +864,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
     site_css_v = asset_v('assets/css/site.css')
     site_js_v = asset_v('assets/js/site.js')
     consent_js_v = asset_v('assets/js/consent.js')
+    calendly_utm_v = asset_v('assets/js/calendly-utm.js')
     return dedent(f'''\
         <!doctype html>
         <html lang="en">
@@ -880,6 +884,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
+        <!-- Calendly attribution (UK only — stripped from /us/ pages at build
+             time, see build_us_locale()). -->
+        <script defer src="{p}assets/js/calendly-utm.js{calendly_utm_v}"></script>
         <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
              cookie consent (see assets/js/consent.js) -->
         <script defer src="{p}assets/js/consent.js{consent_js_v}"></script>
@@ -4839,9 +4846,24 @@ def render_demo() -> str:
     (function () {{
       var DEST = '{enc}';
       var statusEl = document.getElementById('kz-demo-status');
+      // Calendly (UK) destinations carry the visit's UTMs, captured earlier
+      // by assets/js/calendly-utm.js into the same sessionStorage key. The
+      // /us/ destination (Google Calendar) is untouched — it's never a
+      // calendly.com URL, so the check below skips it.
+      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var UTM_STORE = 'calendly_utms';
+      function withUtms(dest) {{
+        try {{
+          var url = new URL(dest);
+          if (url.hostname.indexOf('calendly.com') === -1) return dest;
+          var saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{{}}');
+          UTM_KEYS.forEach(function (k) {{ if (saved[k]) url.searchParams.set(k, saved[k]); }});
+          return url.toString();
+        }} catch (e) {{ return dest; }}
+      }}
       window.kzOnVerified = function () {{
         if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
-        window.location.href = atob(DEST);
+        window.location.href = withUtms(atob(DEST));
       }};
       window.kzOnError = function () {{
         if (statusEl) statusEl.textContent = 'Verification failed. Please refresh and try again, or email hello@kaizan.ai.';
@@ -5148,6 +5170,14 @@ def build_us_locale():
         us = html
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
+        # Calendly attribution is UK-only (US books via Google Calendar, not
+        # Calendly), so /us/ pages don't load the script at all. Leading
+        # whitespace varies by call site (page_head() is flush-left; some
+        # inline templates indent it), so tolerate either.
+        us = re.sub(
+            r'[ \t]*<!-- Calendly attribution[^>]*-->\n'
+            r'[ \t]*<script defer src="[^"]*assets/js/calendly-utm\.js[^"]*"></script>\n',
+            '', us)
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
         us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)

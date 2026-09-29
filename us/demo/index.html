@@ -106,9 +106,24 @@
     (function () {
       var DEST = 'aHR0cHM6Ly9jYWxlbmRhci5nb29nbGUuY29tL2NhbGVuZGFyL3UvMC9hcHBvaW50bWVudHMvc2NoZWR1bGVzL0FjWnNzWjFYM3ExcjQtejZSNThubkJXMUdLOGQ1RlhuSlhoOG9lRG9vUVQzMnFUTDZZM2VkU3RZOWtfUmotQm9QeVFpM1BZVm5tRWpkdElO';
       var statusEl = document.getElementById('kz-demo-status');
+      // Calendly (UK) destinations carry the visit's UTMs, captured earlier
+      // by assets/js/calendly-utm.js into the same sessionStorage key. The
+      // /us/ destination (Google Calendar) is untouched — it's never a
+      // calendly.com URL, so the check below skips it.
+      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var UTM_STORE = 'calendly_utms';
+      function withUtms(dest) {
+        try {
+          var url = new URL(dest);
+          if (url.hostname.indexOf('calendly.com') === -1) return dest;
+          var saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{}');
+          UTM_KEYS.forEach(function (k) { if (saved[k]) url.searchParams.set(k, saved[k]); });
+          return url.toString();
+        } catch (e) { return dest; }
+      }
       window.kzOnVerified = function () {
         if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
-        window.location.href = atob(DEST);
+        window.location.href = withUtms(atob(DEST));
       };
       window.kzOnError = function () {
         if (statusEl) statusEl.textContent = 'Verification failed. Please refresh and try again, or email hello@kaizan.ai.';
