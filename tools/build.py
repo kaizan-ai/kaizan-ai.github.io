@@ -1388,12 +1388,16 @@ TRIAL_MC_POST = ('https://kaizan.us6.list-manage.com/subscribe/post'
                  f'?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id={TRIAL_MC_F_ID}')
 TRIAL_MC_JSON = TRIAL_MC_POST.replace('/subscribe/post?', '/subscribe/post-json?')
 TRIAL_MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_1ea9163949'
+# Tag IDs Mailchimp should apply to every UK trial-form signup (audience 1ea9163949).
+# /us/ overrides this to its own tag IDs — see US_TRIAL_TAGS in build_us_locale().
+TRIAL_MC_TAGS = '3789537,3789536'
 
 # Hidden attribution fields: (merge tag, URL query parameter that fills it).
 TRIAL_UTM_FIELDS = [
     ('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'),
     ('UTMQRPLC', 'qr_placement'), ('UTMCTA', 'utm_cta'),
     ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
+    ('UTMCOUNTRY', 'utm_country'),
 ]
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
@@ -1504,6 +1508,8 @@ def trial_form_html(depth: int) -> str:
           </div>
           <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
           {utm}
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="{TRIAL_MC_TAGS}"></div>
           <!-- Mailchimp bot-prevention field, keep, do not remove -->
           <div style="position:absolute;left:-5000px;" aria-hidden="true">
             <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
@@ -5019,10 +5025,10 @@ US_CALENDAR_URL = ('https://calendar.google.com/calendar/u/0/appointments/schedu
                    'AcZssZ1X3q1r4-z6R58nnBW1GK8d5FXnJXh8oeDooQT32qTL6Y3edStY9k_Rj-BoPyQi3PYVnmEjdtIN')
 SITE_ORIGIN = 'https://kaizan.ai'
 
-# US-only trial-form config: a separate Mailchimp embed instance (f_id) that
-# tags US signups, so US leads route differently downstream from UK ones.
+# US-only trial-form config: a separate Mailchimp embed instance (f_id) and
+# tag IDs, so US leads route differently downstream from UK ones.
 US_TRIAL_MC_F_ID = '0018efe5f0'
-US_TRIAL_TAGS_FIELD = '<input type="hidden" name="tags" value="3789549,3789550">'
+US_TRIAL_TAGS = '3789549,3789550'
 
 # en-GB → en-US spelling (base forms; -ing/-ed/-ation variants listed explicitly
 # where they occur). Applied to visible text only, case-preserving.
@@ -5164,16 +5170,11 @@ def build_us_locale():
                 r'<img[^>]*tradedoubler[^>]*></span><span class="sep">✺</span></span>',
                 '', us)
             # US-only trial-form Mailchimp config: a different form instance
-            # (f_id) than the UK form, plus a hidden tags field so US signups
-            # are tagged distinctly. The UK homepage keeps the original config.
+            # (f_id) and tag IDs than the UK form, so US signups route and
+            # tag distinctly. The UK homepage keeps the original config.
             us = us.replace(f'f_id={TRIAL_MC_F_ID}', f'f_id={US_TRIAL_MC_F_ID}')
-            us = us.replace(
-                '<div style="position:absolute;left:-5000px;" aria-hidden="true">\n'
-                f'            <input type="text" name="{TRIAL_MC_HONEYPOT}"',
-                f'<div hidden>{US_TRIAL_TAGS_FIELD}</div>\n'
-                '          <div style="position:absolute;left:-5000px;" aria-hidden="true">\n'
-                f'            <input type="text" name="{TRIAL_MC_HONEYPOT}"',
-                1)
+            us = us.replace(f'name="tags" value="{TRIAL_MC_TAGS}"',
+                             f'name="tags" value="{US_TRIAL_TAGS}"')
         # US-only persona titles: match the retitled "I am a…" selector labels.
         # UK source keeps its own titles; these rewrites apply to /us/ only.
         # (Upper-case plural runs before singular so it isn't half-matched.)
