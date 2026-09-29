@@ -3091,35 +3091,79 @@ button { font-family: inherit; }
 .kz-policy-pdf-link { font-weight: 400 !important; color: var(--kz-mute) !important; text-decoration: underline !important; text-underline-offset: 3px; font-size: 13px; }
 .kz-policy-pdf-link:hover { color: var(--kz-ink) !important; }
 
-/* Cookie consent banner (assets/js/consent.js) — compact card, bottom-left */
-.kz-consent {
-  position: fixed; left: 24px; bottom: 24px; z-index: 200;
-  max-width: 400px;
-  background: #fff; border: 1px solid var(--kz-line-strong);
-  border-radius: 16px; padding: 20px 22px 18px;
-  box-shadow: 0 16px 48px -12px rgba(0,0,0,.28), 0 2px 8px rgba(0,0,0,.06);
-  display: none; opacity: 0; transform: translateY(14px);
+/* Cookie consent modal (assets/js/consent.js) — tabbed dialog (Consent /
+   Details / About) with per-category toggles. Markup is emitted by
+   page_foot() in tools/build.py on every page; kept in its own `cb-`
+   namespace since it's a self-contained overlay. Font is pinned to the
+   site's own type stack for visual consistency with the rest of the page. */
+:root {
+  --cb-primary: var(--kz-yellow); --cb-primary-ink: var(--kz-ink);
+  --cb-surface: #ffffff; --cb-text: #003e51; --cb-link: #1e50c8;
+  --cb-line: #d9dfe1; --cb-pill: #e3e8ea; --cb-overlay: rgba(0,0,0,.55);
+  --cb-font: var(--kz-sans);
 }
-.kz-consent.is-visible {
-  display: block;
-  animation: kz-consent-in .35s cubic-bezier(.2,.7,.3,1) .15s forwards;
-}
-@keyframes kz-consent-in { to { opacity: 1; transform: translateY(0); } }
-.kz-consent-title {
-  font-size: 15px; font-weight: 600; letter-spacing: -0.01em;
-  margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
-}
-.kz-consent-title::before {
-  content: ''; width: 8px; height: 8px; border-radius: 50%;
-  background: var(--kz-yellow); flex: none;
-}
-.kz-consent p { margin: 0 0 16px; font-size: 13.5px; line-height: 1.6; color: var(--kz-mute); }
-.kz-consent a { color: var(--kz-ink); text-decoration: underline; text-underline-offset: 3px; }
-.kz-consent a:hover { color: var(--kz-yellow-deep); }
-.kz-consent-btns { display: flex; gap: 8px; }
-.kz-consent-btns .kz-btn { font-size: 13px; padding: 9px 20px; cursor: pointer; }
-@media (max-width: 600px) {
-  .kz-consent { left: 12px; right: 12px; bottom: 12px; max-width: none; padding: 18px; }
+
+.cb-overlay{position:fixed;inset:0;z-index:2147483000;background:var(--cb-overlay);display:flex;align-items:center;justify-content:center;
+  padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.cb-overlay[hidden]{display:none}
+.cb-dialog{font:500 15px/1.5 var(--cb-font);color:var(--cb-text);background:var(--cb-surface);width:100%;max-width:900px;max-height:100%;
+  display:flex;flex-direction:column;border-radius:8px;box-shadow:0 32px 68px rgba(0,0,0,.3);overflow:hidden}
+.cb-dialog *{box-sizing:border-box}
+.cb-overlay.cb-in .cb-dialog{animation:cb-pop .28s ease-out both}
+@keyframes cb-pop{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cb-overlay.cb-in .cb-dialog{animation:none}}
+
+.cb-head{padding:16px 22px 12px;display:flex;align-items:center;min-height:60px}
+.cb-logo{font:700 26px/1 var(--cb-font);letter-spacing:-.02em;display:inline-flex;align-items:center;gap:8px}
+.cb-logo svg{width:28px;height:28px;flex:none}
+.cb-logo-lockup{display:inline-flex;align-items:center;gap:10px}
+.cb-logo-icon{display:block;height:36px;width:36px;border-radius:8px;flex:none}
+.cb-logo-img{display:block;height:24px;width:auto;flex:none}
+
+.cb-tabs{display:flex;border-bottom:1px solid var(--cb-line)}
+.cb-tab{flex:1;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--cb-text);
+  font:600 16px/1.2 var(--cb-font);padding:20px 8px;cursor:pointer}
+.cb-tab[aria-selected="true"]{color:var(--cb-link);border-bottom-color:var(--cb-link)}
+.cb-tab:hover{background:color-mix(in srgb,var(--cb-text) 5%,transparent)}
+
+.cb-body{flex:1;min-height:0;overflow-y:auto;padding:20px 22px}
+.cb-body [hidden]{display:none}
+.cb-body h2{font:600 15px/1.4 var(--cb-font);margin:0 0 10px}
+.cb-body p{margin:0 0 12px}
+.cb-body a{color:var(--cb-link);font-weight:700}
+
+.cb-cat{border-bottom:1px solid var(--cb-line);padding:14px 0}
+.cb-cat:last-child{border-bottom:0}
+.cb-cat-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cb-cat-toggle{display:flex;align-items:center;gap:12px;background:none;border:0;color:inherit;font:600 16px/1.3 var(--cb-font);cursor:pointer;padding:4px 0;text-align:left}
+.cb-cat-toggle svg{width:14px;height:14px;transition:transform .2s}
+.cb-cat-toggle[aria-expanded="false"] svg{transform:rotate(-90deg)}
+.cb-count{background:var(--cb-pill);border-radius:999px;font-size:12px;font-weight:600;padding:1px 8px}
+.cb-cat-desc{margin:8px 0 0 26px;max-width:70ch}
+.cb-cat-desc[hidden]{display:none}
+
+.cb-switch{position:relative;display:inline-block;width:52px;height:32px;flex:none}
+.cb-switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
+.cb-switch span{position:absolute;inset:0;border-radius:32px;background:#8a9a9f;transition:background .2s}
+.cb-switch span::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s}
+.cb-switch input:checked + span{background:var(--cb-primary)}
+.cb-switch input:checked + span::after{background:#0a0a0a}
+.cb-switch input:checked + span::after{transform:translateX(20px)}
+.cb-switch input:disabled{cursor:not-allowed}
+.cb-switch input:disabled + span{opacity:.6}
+.cb-switch input:focus-visible + span{outline:3px solid var(--cb-link);outline-offset:2px}
+
+.cb-foot{display:flex;gap:12px;justify-content:flex-end;padding:16px 22px 20px;border-top:1px solid var(--cb-line)}
+.cb-foot[hidden]{display:none}
+.cb-btn{font:600 15px/1.2 var(--cb-font);padding:15px 22px;border-radius:4px;border:2px solid var(--cb-primary);cursor:pointer;min-width:0;flex:1 1 0;max-width:290px}
+.cb-btn.fill{background:var(--cb-primary);color:var(--cb-primary-ink)}
+.cb-btn.line{background:transparent;color:var(--cb-text);border-color:var(--cb-text)}
+.cb-btn:hover{filter:brightness(.94)}
+.cb-dialog :focus-visible{outline:3px solid var(--cb-link);outline-offset:2px}
+@media (max-width:640px){
+  .cb-foot{flex-direction:column-reverse}
+  .cb-btn{max-width:none;flex:none;width:100%}
+  .cb-tab{font-size:15px;padding:16px 4px}
 }
 
 /* Policy pages: labelled key/value blocks (DPA Schedule 1) */

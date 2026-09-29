@@ -848,6 +848,48 @@ def asset_v(rel: str) -> str:
         return ''
 
 
+def gtm_head_snippet() -> str:
+    """Google Consent Mode v2 default state, plus the GTM loader itself.
+
+    Per Google's Consent Mode setup guide, the default 'denied' command must
+    run before GTM's own script executes, and GTM should always be present
+    (not conditionally injected) so it can receive consent updates. What
+    actually fires past that point is decided per-tag:
+      - Google's own tags (GA4, Ads) read these signals automatically.
+      - Third-party tags in this container (HubSpot, LinkedIn, ads pixels)
+        only respect it if "Additional Consent Checks" is turned on for each
+        tag inside the GTM container itself — that's GTM-admin configuration,
+        not something this repo controls. See content/RUNBOOK or ask Claude
+        for the setup checklist.
+    consent.js calls gtag('consent', 'update', …) once a visitor chooses, and
+    on every subsequent page view for a returning visitor.
+    """
+    return dedent('''\
+        <!-- Google Consent Mode v2: deny non-essential storage until
+             consent.js reads the visitor's saved choice (or they make one). -->
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied',
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'functionality_storage': 'denied',
+          'personalization_storage': 'denied',
+          'security_storage': 'granted'
+        });
+        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
+        <!-- End Google Tag Manager -->
+        ''')
+
+
 def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
     p = relpath(depth)
     desc = description or 'Kaizan: client super intelligence for professional services firms.'
@@ -864,6 +906,7 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        {gtm_head_snippet()}
         <title>{E(title)} · Kaizan</title>
         <meta name="description" content="{E(desc)}">
         <link rel="icon" type="image/png" sizes="32x32" href="{p}assets/img/favicon-32x32.png">
@@ -877,8 +920,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
-        <!-- Analytics (Google Tag Manager) and HubSpot tracking load only after
-             cookie consent (see assets/js/consent.js) -->
+        <!-- HubSpot's own direct tracking script loads only after cookie
+             consent for Marketing (see assets/js/consent.js), which also
+             sends Consent Mode updates for GTM's own tags. -->
         <script defer src="{p}assets/js/consent.js{consent_js_v}"></script>
         </head>
         <body>
@@ -887,10 +931,88 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         ''')
 
 
+def cookie_consent_html() -> str:
+    """Cookie consent dialog markup (Consent / Details / About tabs, per-
+    category toggles). Behavior lives in assets/js/consent.js, styles in
+    assets/css/site.css (.cb-* rules) — both loaded by page_head() on every
+    page, so this only needs to emit the dialog itself."""
+    return '''
+<div class="cb-overlay" id="cb-overlay" hidden>
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
+    <div class="cb-head">
+      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
+    </div>
+
+    <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
+      <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
+      <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
+      <button class="cb-tab" role="tab" data-tab="about" aria-selected="false" tabindex="-1">About</button>
+    </div>
+
+    <div class="cb-body">
+      <section data-panel="consent" role="tabpanel">
+        <h2 id="cb-title">This website uses cookies</h2>
+        <p>We use cookies to keep the site working, to remember your preferences and to understand which pages are useful so we can improve them. You choose which types to allow. <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">Read our privacy policy.</a></p>
+      </section>
+
+      <section data-panel="details" role="tabpanel" hidden>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-necessary"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Necessary <span class="cb-count">12</span></button>
+            <label class="cb-switch"><input type="checkbox" checked disabled aria-label="Necessary cookies, always on"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-necessary">These cookies keep the site working, for example by remembering your consent choice and keeping forms secure. The site can't work properly without them.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-preferences"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Preferences <span class="cb-count">3</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="preferences" aria-label="Preferences cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-preferences">These remember choices you make, like your language or region, so the site feels familiar next time you visit.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-statistics"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Statistics <span class="cb-count">5</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="statistics" aria-label="Statistics cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-statistics">These collect anonymous information about how visitors use the site, so we can see what works and fix what doesn't.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-marketing"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Marketing <span class="cb-count">8</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="marketing" aria-label="Marketing cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-marketing">These measure how well our campaigns perform and show you relevant ads on other websites.</p>
+        </div>
+      </section>
+
+      <section data-panel="about" role="tabpanel" hidden>
+        <p>Cookies are small text files that websites store on your device. Some are essential; others help us remember your settings or understand how the site is used.</p>
+        <p>Your choice is remembered for this browser. You can change or withdraw it at any time using <strong>Cookie settings</strong> in the page footer.</p>
+        <p>For details on who we share data with and how long we keep it, see our <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+      </section>
+    </div>
+
+    <div class="cb-foot" data-foot="consent">
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+    </div>
+    <div class="cb-foot" data-foot="details" hidden>
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
+      <button class="cb-btn line" data-act="selection">Allow selection</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+    </div>
+  </div>
+</div>
+'''
+
+
 def page_foot() -> str:
-    # No GTM <noscript> iframe: it cannot be consent-gated, and analytics only
-    # run after consent (assets/js/consent.js).
-    return ('</main>\n</div>\n'
+    # No GTM <noscript> iframe: its pageview pixel can't be gated by
+    # Consent Mode the way the tag-level checks in the container can.
+    return ('</main>\n</div>\n' +
+            cookie_consent_html() +
             '</body>\n</html>\n')
 
 
