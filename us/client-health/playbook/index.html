@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client Health Playbook · Kaizan</title>
+<link rel="alternate" hreflang="en-GB" href="https://kaizan.ai/client-health/playbook/"><link rel="alternate" hreflang="en-US" href="https://kaizan.ai/us/client-health/playbook/"><link rel="alternate" hreflang="x-default" href="https://kaizan.ai/client-health/playbook/">
+<meta name="description" content="Client health playbook: how the best client service teams build real-time, proactive client-health visibility that prevents revenue loss.">
+<link rel="canonical" href="https://kaizan.ai/us/client-health/playbook/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Client Health Playbook · Kaizan">
+<meta property="og:description" content="How the best client service teams build real-time, proactive client-health visibility that prevents revenue loss.">
+<meta property="og:url" content="https://kaizan.ai/us/client-health/playbook/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+<link rel="icon" type="image/webp" sizes="16x16" href="/assets/img/favicon-16x16.webp">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/css/tokens.css?v=508b7a89">
+<link rel="stylesheet" href="/assets/css/site.css?v=5212e9fa">
+<script defer src="/assets/js/site.js?v=721fcb42"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:Manrope,"Helvetica Neue",Helvetica,sans-serif;color:#1C1C1E;background:#F7F6F2;-webkit-font-smoothing:antialiased}
+a{color:#1C1C1E}a:hover{color:#11708C}
+input,select,button{font-family:inherit}
+input:focus,select:focus{outline:2px solid #F6B60B;outline-offset:1px;border-color:#1C1C1E}
+.pb-page div{min-width:0}
+.pb-page{max-width:1440px;margin:0 auto;display:flex;flex-direction:column;background:#F7F6F2}
+.pb-field{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.pb-field input,.pb-field select{height:48px;padding:0 14px;border:1px solid #C9C8C2;border-radius:10px;font-size:16px;background:#FFFFFF;color:#1C1C1E;width:100%}
+.pb-field select{padding:0 12px}
+.pb-req{color:#B3383C}
+.pb-help{font-size:12.5px;font-weight:500;line-height:1.4;color:#6E6E73}
+.pb-field input::placeholder{color:#9A9A9F}
+.pb-field input.is-invalid,.pb-field select.is-invalid{border-color:#B3383C}
+/* Second half of the form reveals once the first two rows are filled in */
+.pb-more{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .35s ease,opacity .35s ease}
+.pb-more>div{overflow:hidden;min-height:0}
+.pb-more.is-open{grid-template-rows:1fr;opacity:1}
+.pb-logo{display:inline-flex;align-items:center;height:44px;padding:0 16px;border-radius:8px;background:#FFFFFF}
+.pb-logo img{display:block;width:auto;max-height:22px}
+.pb-logo img.pb-logo-tall{max-height:30px}
+.pb-logo--dark{background:#000000;border:1px solid #3A3A3E}
+/* Shared site nav (from site.css) keeps the site font, not the page's Manrope */
+.kz-nav{font-family:var(--kz-sans)}
+/* Responsive: the design is authored at 1440px; collapse grids and padding below it. */
+@media (max-width:1180px){
+  .pb-sec,.pb-hero{padding-left:48px!important;padding-right:48px!important}
+  .pb-foot{padding-left:48px!important;padding-right:48px!important}
+  .pb-hero{grid-template-columns:minmax(0,1fr)!important;gap:56px!important}
+  .pb-g4{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .pb-g3{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .pb-g2{grid-template-columns:minmax(0,1fr)!important;gap:40px!important}
+  .pb-stack{flex-direction:column!important;align-items:flex-start!important;gap:32px!important}
+}
+@media (max-width:640px){
+  .pb-sec,.pb-hero{padding:64px 16px!important}
+  .pb-foot{padding-left:16px!important;padding-right:16px!important}
+  .pb-foot{flex-direction:column;gap:16px}
+  .pb-g4,.pb-g3{grid-template-columns:minmax(0,1fr)!important}
+  .pb-2col{gap:10px!important}
+  .pb-h1{font-size:46px!important}
+  .pb-h2{font-size:34px!important}
+  .pb-bq{font-size:21px!important}
+  .pb-stat{font-size:44px!important}
+  .pb-lede{font-size:18px!important}
+  .pb-card{padding:28px 20px!important}
+  .pb-band,.pb-quote{padding:28px 24px!important}
+}
+</style>
+</head>
+<body>
+<div class="pb-page">
+
+<!-- NAV: the site's own nav, injected by tools/build.py -->
+<header class="kz-nav" role="banner">
+      <a class="kz-nav-logo" href="/us/">
+        <img class="icon" src="/assets/img/kaizan-icon.png" alt="">
+        <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+      </a>
+      <nav class="kz-nav-links" aria-label="Primary">
+        <a href="/us/">Home</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" href="../../product/" aria-expanded="false" aria-haspopup="true">
+                  Product <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../product/">Overview</a>
+<a class="kz-drop-link" href="../../integrations/">Integrations</a>
+                </div>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Personas <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/us/for/account-manager/">Client Service / Account Manager</a>
+<a class="kz-mega-link" href="/us/for/client-service-director/">Head of Client Services</a>
+<a class="kz-mega-link" href="/us/for/leadership/">Senior Leadership</a>
+<a class="kz-mega-link" href="/us/for/head-of-ai/">Head of AI / CTO</a>
+<a class="kz-mega-link" href="/us/for/project-manager/">Project Manager</a>
+<a class="kz-mega-link" href="/us/for/new-business/">New Business / Sales</a>
+<a class="kz-mega-link" href="/us/for/performance/">Performance / Operations</a>
+<a class="kz-mega-link" href="/us/for/strategy-creative-marketing/">Strategy, Creative, Marketing</a></div></span><a href="../../pricing/">Pricing</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
+                  Resources <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../blog/">Blog</a>
+<a class="kz-drop-link" href="../../knowledge-hub/">Knowledge Hub</a>
+<a class="kz-drop-link" href="../../faq/">FAQs</a>
+<a class="kz-drop-link" href="../../security/">Security</a>
+                </div>
+              </span><a href="../../about/">About</a><a href="../../referral-partners/">Become a partner</a>
+      </nav>
+      <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
+        <a class="kz-btn kz-btn-yellow" href="/us/demo/">Book a demo</a>
+        <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
+      </div>
+    </header>
+    
+
+<!-- HERO + FORM -->
+<section id="download" class="pb-hero" style="padding: 88px 96px 96px; background: #1C1C1E; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 80px; align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 28px; padding-top: 8px;">
+<div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 8px 14px; border: 1px solid #3A3A3E; border-radius: 999px; color: #F6B60B; font-size: 13px; font-weight: 700; letter-spacing: 0.16em;">
+<span style="width: 8px; height: 8px; border-radius: 2px; background: #F6B60B;"></span>CLIENT HEALTH PLAYBOOK</div>
+<h1 class="pb-h1" style="margin: 0; font-size: 76px; line-height: 1.02; font-weight: 800; letter-spacing: -0.03em; color: #FFFFFF;">See risk before<br>it's too late.</h1>
+<div style="width: 136px; height: 8px; border-radius: 4px; background: linear-gradient(90deg,#F6B60B,#11708C 60%,#1F8A5B);"></div>
+<p class="pb-lede" style="margin: 0; max-width: 620px; font-size: 21px; line-height: 1.55; color: #D4D4D6;">How the best client service teams build real-time, proactive client-health visibility that prevents revenue loss - and a step-by-step way to do it yourself, with or without Kaizan.</p>
+<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+<div style="display: flex; gap: 14px; align-items: flex-start; color: #FFFFFF; font-size: 17px; line-height: 1.5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6B60B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M20 6 9 17l-5-5"></path></svg>Why monthly RAG reports structurally can't catch churn in time</div>
+<div style="display: flex; gap: 14px; align-items: flex-start; color: #FFFFFF; font-size: 17px; line-height: 1.5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6B60B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M20 6 9 17l-5-5"></path></svg>The five habits that separate top client teams from the rest</div>
+<div style="display: flex; gap: 14px; align-items: flex-start; color: #FFFFFF; font-size: 17px; line-height: 1.5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6B60B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M20 6 9 17l-5-5"></path></svg>Four case studies</div>
+<div style="display: flex; gap: 14px; align-items: flex-start; color: #FFFFFF; font-size: 17px; line-height: 1.5;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6B60B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px;"><path d="M20 6 9 17l-5-5"></path></svg>Two ready-to-run checklists you can start on today</div>
+</div>
+<div style="margin-top: 28px; padding-top: 28px; border-top: 1px solid #333336; display: flex; flex-direction: column; gap: 18px;">
+<div style="font-size: 14px; color: #A1A1A6; line-height: 1.5;">Built from research across 15+ agencies and consultancies, including how these teams solved it in practice</div>
+</div>
+</div>
+
+<!-- FORM CARD - posts to Mailchimp audience "Lead Magnet - Client Health Playbook"
+     (list d42e1256b5, form 0019efe5f0). Field names are the audience merge tags. -->
+<div class="pb-card" style="background: #FFFFFF; border-radius: 20px; padding: 40px; box-shadow: 0 30px 80px rgba(0,0,0,0.35); display: flex; flex-direction: column; gap: 24px;">
+<div id="pb-form-wrap" style="display: flex; flex-direction: column; gap: 24px;">
+<div style="display: flex; gap: 20px; align-items: center;">
+<div style="width: 84px; height: 108px; flex-shrink: 0; border-radius: 6px; background: #1C1C1E; padding: 12px 10px; display: flex; flex-direction: column; gap: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.18);" aria-hidden="true">
+<img src="/assets/img/kaizan-icon.png" alt="" width="14" height="14" style="display: block; border-radius: 3px;">
+<div style="font-size: 5px; font-weight: 700; letter-spacing: 0.14em; color: #F6B60B; margin-top: 8px;">CLIENT HEALTH PLAYBOOK</div>
+<div style="font-size: 10px; font-weight: 800; line-height: 1.05; color: #FFFFFF;">See Risk Before It's Too Late.</div>
+<div style="width: 26px; height: 3px; border-radius: 2px; background: linear-gradient(90deg,#F6B60B,#11708C);"></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px;">
+<h2 style="margin: 0; font-size: 26px; line-height: 1.2; font-weight: 800; letter-spacing: -0.02em;">Get the client health playbook</h2>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #56565B;">12 pages. Instant PDF download.</p>
+</div>
+</div>
+<form id="pb-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&amp;id=d42e1256b5&amp;f_id=0019efe5f0"
+      data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&amp;id=d42e1256b5&amp;f_id=0019efe5f0"
+      method="post" target="_blank" novalidate style="display: flex; flex-direction: column; gap: 16px;">
+<div class="pb-2col" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+<label class="pb-field" for="mce-FNAME"><span>First Name <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-FNAME" name="FNAME" type="text" autocomplete="given-name" placeholder="Jane" required>
+</label>
+<label class="pb-field" for="mce-LNAME"><span>Last Name <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-LNAME" name="LNAME" type="text" autocomplete="family-name" placeholder="Smith" required>
+</label>
+</div>
+<div class="pb-2col" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+<label class="pb-field" for="mce-EMAIL"><span>Work Email <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-EMAIL" name="EMAIL" type="email" autocomplete="email" placeholder="jane@company.com" required>
+</label>
+<label class="pb-field" for="mce-PHONE"><span>Phone Number <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-PHONE" name="PHONE" type="tel" autocomplete="tel" placeholder="+44 7123 456789" required>
+</label>
+</div>
+<div id="pb-more" class="pb-more" aria-hidden="true">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div class="pb-2col" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+<label class="pb-field" for="mce-COMPNAME"><span>Company Name <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-COMPNAME" name="COMPNAME" type="text" autocomplete="organization" placeholder="Acme Agency" required>
+</label>
+<label class="pb-field" for="mce-JOBT"><span>Job Title <span class="pb-req" aria-hidden="true">*</span></span>
+<input id="mce-JOBT" name="JOBT" type="text" autocomplete="organization-title" placeholder="Head of Client Services" required>
+</label>
+</div>
+<label class="pb-field" for="mce-MMERGE14">How Did You Hear About Us?
+<select id="mce-MMERGE14" name="MMERGE14">
+<option value="">Select an option…</option>
+<option value="Google Search">Google Search</option>
+<option value="LinkedIn">LinkedIn</option>
+<option value="Social Media (Facebook/Instagram/TikTok/YouTube)">Social Media (Facebook/Instagram/TikTok/YouTube)</option>
+<option value="AI Tool (Chat GPT/Claude/Gemini)">AI Tool (ChatGPT/Claude/Gemini)</option>
+<option value="Referral (Friend/Colleague/Word of Mouth)">Referral (Friend/Colleague/Word of Mouth)</option>
+<option value="Email Newsletter">Email Newsletter</option>
+<option value="Event/Conference">Event/Conference</option>
+<option value="Other">Other</option>
+</select>
+</label>
+</div>
+</div>
+<!-- Hidden audience fields, filled from the page URL's utm_* params by the script below -->
+<input type="hidden" name="UTMSRC" data-utm="utm_source">
+<input type="hidden" name="UTMMED" data-utm="utm_medium">
+<input type="hidden" name="UTMTRM" data-utm="utm_term">
+<input type="hidden" name="UTMCAMP" data-utm="utm_campaign">
+<input type="hidden" name="UTMCONT" data-utm="utm_content">
+<input type="hidden" name="UTMCTA" data-utm="utm_cta">
+<input type="hidden" name="UTMQRPLC" data-utm="qr_placement">
+<input type="hidden" name="UTMCOUNTRY" data-utm="utm_country">
+<!-- Segments this signup into the "Lead Magnet - Client Health Playbook" tags in Mailchimp -->
+<input type="hidden" name="tags" value="3789539,3789538">
+<!-- Mailchimp bot-prevention field, keep, do not remove -->
+<div aria-hidden="true" style="position: absolute; left: -5000px;"><input type="text" name="b_b61e5cb1cebf0c30b44ebb455_d42e1256b5" tabindex="-1" value=""></div>
+<div id="pb-error" role="alert" style="display: none; padding: 10px 14px; border-radius: 10px; background: #FBE9E9; color: #9F2A2E; font-size: 14px; font-weight: 600;"></div>
+<button id="pb-submit" type="submit" name="subscribe" style="height: 56px; border: 0; border-radius: 12px; background: #F6B60B; color: #1C1C1E; font-size: 17px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
+Download the playbook
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="m6 11 6 6 6-6"></path><path d="M5 20h14"></path></svg>
+</button>
+<p style="margin: 0; font-size: 12px; line-height: 1.5; color: #6E6E73;">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="/privacy-policy/" style="color: #1C1C1E;">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
+</form>
+</div>
+
+<div id="pb-success" hidden style="flex-direction: column; gap: 22px; padding: 12px 0;">
+<div style="width: 64px; height: 64px; border-radius: 16px; background: #E8F4EE; display: flex; align-items: center; justify-content: center;">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F8A5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+</div>
+<h2 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em;">Your client health playbook is ready<span id="pb-greeting"></span></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #56565B;">We've also sent a copy to <strong id="pb-email" style="color: #1C1C1E;"></strong>.</p>
+<a href="/assets/playbooks/client-health-playbook.pdf" style="height: 56px; border-radius: 12px; background: #1C1C1E; color: #FFFFFF; font-size: 17px; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px;">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F6B60B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m13 6 6 6-6 6"></path></svg>
+Open the client health playbook</a>
+<div style="padding: 20px; border-radius: 14px; background: #F7F6F2; display: flex; flex-direction: column; gap: 10px;">
+<div style="font-size: 15px; font-weight: 700;">Want the checklist on autopilot?</div>
+<div style="font-size: 14px; line-height: 1.5; color: #56565B;">Take a 14-day trial and let Kaizan run every step for you.</div>
+<a href="/us/demo/" style="font-size: 15px; font-weight: 700; color: #11708C;">Start your trial →</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STATS BAND -->
+<section class="pb-sec" style="box-sizing: border-box; padding: 72px 96px; background: #FFFFFF; border-bottom: 1px solid #E6E4DD; display: flex; flex-direction: column; gap: 36px;">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8A6D00;">WHAT KAIZAN CUSTOMERS SEE</div>
+<div class="pb-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px;">
+<div style="padding: 28px; border-radius: 16px; background: #EAF3F6; border: 1px solid #C7DEE6; display: flex; flex-direction: column; gap: 10px;">
+<div class="pb-stat" style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #0D5A71;">45%</div>
+<div style="font-size: 16px; line-height: 1.5; color: #3A3A3E;">of at-risk revenue protected through early CARE-signal intervention</div>
+</div>
+<div style="padding: 28px; border-radius: 16px; background: #EAF5EF; border: 1px solid #C6E2D2; display: flex; flex-direction: column; gap: 10px;">
+<div class="pb-stat" style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #17693F;">4.8%</div>
+<div style="font-size: 16px; line-height: 1.5; color: #3A3A3E;">average addressable upsell pool surfaced from existing clients</div>
+</div>
+<div style="padding: 28px; border-radius: 16px; background: #F1EDF7; border: 1px solid #DCD2EB; display: flex; flex-direction: column; gap: 10px;">
+<div class="pb-stat" style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #563D86;">5.4 hrs</div>
+<div style="font-size: 16px; line-height: 1.5; color: #3A3A3E;">of admin reclaimed per person, every week</div>
+</div>
+<div style="padding: 28px; border-radius: 16px; background: #1C1C1E; display: flex; flex-direction: column; gap: 10px;">
+<div class="pb-stat" style="font-size: 52px; font-weight: 800; letter-spacing: -0.03em; color: #F6B60B;">21%+</div>
+<div style="font-size: 16px; line-height: 1.5; color: #D4D4D6;">average revenue growth per client</div>
+</div>
+</div>
+</section>
+
+<!-- THE PROBLEM -->
+<section class="pb-sec" style="box-sizing: border-box; padding: 112px 96px; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 80px; align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 22px;">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8A6D00;">THE PROBLEM</div>
+<h2 class="pb-h2" style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 800; letter-spacing: -0.025em;">Most teams find out a client is unhappy when it's already too late.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #48484D;">It's the most-repeated struggle in conversations with agency and consultancy leaders. The root cause isn't a lack of care - it's a measurement problem.</p>
+<figure style="margin: 12px 0 0; padding: 24px 28px; background: #FFFFFF; border-radius: 14px; border: 1px solid #E6E4DD;">
+<blockquote style="margin: 0; font-size: 19px; line-height: 1.5; font-style: italic; color: #1C1C1E;">"Clients are not always very honest. They often don't tell you they're unhappy until they're… way too late."</blockquote>
+<figcaption style="margin-top: 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #8A6D00;">AGENCY PROSPECT</figcaption>
+</figure>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="padding: 28px; background: #FFFFFF; border-radius: 16px; border: 1px solid #E6E4DD; display: flex; gap: 22px; align-items: flex-start;">
+<div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: #FBE9E9; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B3383C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></div>
+<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 20px; font-weight: 800;">Monthly, not continuous</div><div style="font-size: 16px; line-height: 1.55; color: #48484D;">A once-a-month RAG rating is a snapshot, not a signal. By the time it's updated, sentiment has already shifted.</div></div>
+</div>
+<div style="padding: 28px; background: #FFFFFF; border-radius: 16px; border: 1px solid #E6E4DD; display: flex; gap: 22px; align-items: flex-start;">
+<div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: #F1EDF7; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#563D86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M9.5 8.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.4v.3M12 15h.01"></path></svg></div>
+<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 20px; font-weight: 800;">Subjective, not evidenced</div><div style="font-size: 16px; line-height: 1.55; color: #48484D;">Status is usually one manager's gut feel from memory - not what was actually said on calls or in email threads.</div></div>
+</div>
+<div style="padding: 28px; background: #FFFFFF; border-radius: 16px; border: 1px solid #E6E4DD; display: flex; gap: 22px; align-items: flex-start;">
+<div style="width: 52px; height: 52px; flex-shrink: 0; border-radius: 14px; background: #EAF3F6; display: flex; align-items: center; justify-content: center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0D5A71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1.5"></rect><rect x="3" y="10" width="18" height="5" rx="1.5"></rect><rect x="3" y="16" width="18" height="5" rx="1.5"></rect></svg></div>
+<div style="display: flex; flex-direction: column; gap: 6px;"><div style="font-size: 20px; font-weight: 800;">Manual, not scalable</div><div style="font-size: 16px; line-height: 1.55; color: #48484D;">1:1s, Slack-scanning and Google Alerts work for five accounts. Across a full portfolio, they're impossible.</div></div>
+</div>
+</div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="pb-sec" style="box-sizing: border-box; padding: 104px 96px; background: #FFFFFF; border-top: 1px solid #E6E4DD; border-bottom: 1px solid #E6E4DD; display: flex; flex-direction: column; gap: 48px;">
+<div class="pb-stack" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px;">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8A6D00;">WHAT'S INSIDE</div>
+<h2 class="pb-h2" style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 800; letter-spacing: -0.025em;">Eleven sections. One clear path from gut feel to real signal.</h2>
+</div>
+</div>
+<div class="pb-g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">
+<div style="padding: 30px; border-radius: 16px; background: #EAF3F6; border: 1px solid #C7DEE6; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #0D5A71;">01 - 02</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #1C1C1E;">Why the old process can't catch it</div>
+<div style="font-size: 16px; line-height: 1.55; color: #3A3A3E;">What client leaders told us about being blindsided, and the structural reasons status reports lag reality.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #EAF5EF; border: 1px solid #C6E2D2; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #17693F;">03</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #1C1C1E;">What the best client teams do differently</div>
+<div style="font-size: 16px; line-height: 1.55; color: #3A3A3E;">Five habits drawn from leaders who solved this in practice. None of them started with a perfect system.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #F1EDF7; border: 1px solid #DCD2EB; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #563D86;">04</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #1C1C1E;">The CARE framework</div>
+<div style="font-size: 16px; line-height: 1.55; color: #3A3A3E;">A four-pillar view of relationship health, with 16 verified metrics comparing top and bottom client cohorts.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #FDF4DC; border: 1px solid #F1DFA8; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #8A6D00;">05 - 08</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #1C1C1E;">Four case studies</div>
+<div style="font-size: 16px; line-height: 1.55; color: #3A3A3E;">How Tradedoubler, NP Digital, Gravity Global and Transmission turned visibility into retained revenue.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #FBE9E9; border: 1px solid #F0CFCF; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #9F2A2E;">09</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #1C1C1E;">The do-it-yourself playbook</div>
+<div style="font-size: 16px; line-height: 1.55; color: #3A3A3E;">The process, step by step, done manually - side by side with what changes when Kaizan runs it for you.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #1C1C1E; border: 1px solid #1C1C1E; display: flex; flex-direction: column; gap: 12px;">
+<div style="font-size: 14px; font-weight: 800; color: #F6B60B;">10 - 11</div>
+<div style="font-size: 21px; font-weight: 800; line-height: 1.3; color: #FFFFFF;">Day-one and next-day checklists</div>
+<div style="font-size: 16px; line-height: 1.55; color: #D4D4D6;">Two timed, ready-to-run checklists - your first hour mapped out, then the habits to layer in next. No new tooling needed.</div>
+</div>
+</div>
+</section>
+
+<!-- CARE -->
+<section class="pb-sec" style="box-sizing: border-box; padding: 112px 96px; display: flex; flex-direction: column; gap: 48px;">
+<div class="pb-g2" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: end;">
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; color: #8A6D00;">THE CARE FRAMEWORK</div>
+<h2 class="pb-h2" style="margin: 0; font-size: 48px; line-height: 1.1; font-weight: 800; letter-spacing: -0.025em;">Four pillars, scored independently.</h2>
+</div>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #48484D;">Built from analysis of 1M+ calls, 10M+ emails and thousands of chat messages. Strength in one pillar never masks weakness in another.</p>
+</div>
+<div class="pb-g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px;">
+<div style="padding: 30px; border-radius: 16px; background: #11708C; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px; min-height: 220px; box-sizing: border-box;">
+<div style="font-size: 64px; font-weight: 800; line-height: 1; color: rgba(255,255,255,0.55);">C</div>
+<div style="font-size: 21px; font-weight: 800; margin-top: auto;">Client Satisfaction</div>
+<div style="font-size: 15px; line-height: 1.5; color: #E4F1F5;">How the client actually feels - and how often you measure it.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #1F7A50; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px; min-height: 220px; box-sizing: border-box;">
+<div style="font-size: 64px; font-weight: 800; line-height: 1; color: rgba(255,255,255,0.55);">A</div>
+<div style="font-size: 21px; font-weight: 800; margin-top: auto;">Activity with Stakeholders</div>
+<div style="font-size: 15px; line-height: 1.5; color: #E3F2EA;">Whether the right people are engaged, often enough.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #5E4594; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px; min-height: 220px; box-sizing: border-box;">
+<div style="font-size: 64px; font-weight: 800; line-height: 1; color: rgba(255,255,255,0.55);">R</div>
+<div style="font-size: 21px; font-weight: 800; margin-top: auto;">Relationship Quality</div>
+<div style="font-size: 15px; line-height: 1.5; color: #ECE6F5;">Whether interactions are deepening, or quietly turning transactional.</div>
+</div>
+<div style="padding: 30px; border-radius: 16px; background: #8F6A05; color: #FFFFFF; display: flex; flex-direction: column; gap: 10px; min-height: 220px; box-sizing: border-box;">
+<div style="font-size: 64px; font-weight: 800; line-height: 1; color: rgba(255,255,255,0.55);">E</div>
+<div style="font-size: 21px; font-weight: 800; margin-top: auto;">Expansion</div>
+<div style="font-size: 15px; line-height: 1.5; color: #F6EDD5;">Whether conditions are right to grow - and whether the team acts on them.</div>
+</div>
+</div>
+<div class="pb-stack pb-band" style="padding: 36px 40px; border-radius: 18px; background: #1C1C1E; display: flex; gap: 48px; align-items: center;">
+<div style="display: flex; gap: 28px; flex-shrink: 0;">
+<div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 44px; font-weight: 800; color: #F6B60B; letter-spacing: -0.02em;">41×</div><div style="font-size: 13px; color: #A1A1A6;">top accounts measured / yr</div></div>
+<div style="width: 1px; background: #3A3A3E;"></div>
+<div style="display: flex; flex-direction: column; gap: 4px;"><div style="font-size: 44px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.02em;">14×</div><div style="font-size: 13px; color: #A1A1A6;">bottom accounts measured / yr</div></div>
+</div>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #E5E5E7;">Where CSAT is measured, top and bottom accounts score <strong style="color: #F6B60B;">identically</strong>. The real gap is <strong style="color: #F6B60B;">how often</strong> you measure. The client health playbook shows what to do about it.</p>
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="pb-sec pb-stack" style="box-sizing: border-box; padding: 96px; background: #1C1C1E; display: flex; justify-content: space-between; align-items: center; gap: 64px;">
+<div style="display: flex; flex-direction: column; gap: 18px; max-width: 760px;">
+<h2 class="pb-h2" style="margin: 0; font-size: 52px; line-height: 1.08; font-weight: 800; letter-spacing: -0.025em; color: #FFFFFF;">Stop waiting for the monthly report.</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #D4D4D6;">Get the client health playbook and start acting on real signals - with or without Kaizan.</p>
+</div>
+<a href="#download" style="display: inline-flex; align-items: center; gap: 10px; height: 60px; padding: 0 30px; border-radius: 12px; background: #F6B60B; color: #1C1C1E; text-decoration: none; font-size: 18px; font-weight: 800; flex-shrink: 0;">Download the playbook
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12"></path><path d="m6 11 6 6 6-6"></path><path d="M5 20h14"></path></svg></a>
+</section>
+
+<!-- FOOTER: the site's own footer, injected by tools/build.py -->
+<footer class="kz-footer">
+      <div class="kz-footer-grid">
+        <div class="kz-footer-brand logo-light">
+          <a class="kz-nav-logo" href="/us/">
+            <img class="icon" src="/assets/img/kaizan-icon.png" alt="">
+            <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+          </a>
+          <p class="blurb">Client super intelligence for professional services firms.</p>
+          <p class="footer-address">Covent Garden, London · Madison Avenue, New York</p>
+        </div>
+        <div class="col"><h4>Product</h4><a href="../../product/">Overview</a>
+<a href="../../integrations/">Integrations</a>
+<a href="../../security/">Security</a></div><div class="col"><h4>For</h4><a href="../../for/account-manager/">Account Manager</a>
+<a href="../../for/project-manager/">Project Manager</a>
+<a href="../../for/leadership/">Leadership</a>
+<a href="../../for/new-business/">New Business</a></div><div class="col"><h4>Company</h4><a href="../../about/">About</a>
+<a href="../../security/">Security</a>
+<a href="../../faq/">FAQ</a></div><div class="col"><h4>Get in touch</h4><a href="/us/demo/">Book a demo</a>
+<a href="mailto:hello@kaizan.ai">Contact</a>
+<a href="https://www.linkedin.com/company/kaizan">LinkedIn</a></div>
+      </div>
+      <div class="kz-footer-bot">
+        <span>© 2026 Kaizan Inc. · <a class="kz-locale-switch" data-locale-switch href="#" hidden></a></span>
+        <span>
+          <a href="../../privacy-policy/">Privacy</a> ·
+          <a href="../../license-agreement/">Terms</a> ·
+          <a href="../../cookie-policy/">Cookies</a> ·
+          <a href="../../data-processing-agreement/">DPA</a> ·
+          <a href="#" data-cookie-settings>Cookie settings</a>
+        </span>
+      </div>
+    </footer>
+
+</div>
+
+<script>
+// Submit to Mailchimp via JSONP so the visitor stays on the page and gets the
+// download straight away. Without JS the form still POSTs to Mailchimp normally.
+(function () {
+  var form = document.getElementById('pb-form');
+  if (!form) return;
+  var err = document.getElementById('pb-error');
+  var btn = document.getElementById('pb-submit');
+  var jsonUrl = form.getAttribute('data-mc-json');
+
+  // Carry utm_* / qr_placement params from the landing URL into the hidden
+  // audience fields (UTMSRC, UTMMED, …). They're kept for the browser session,
+  // so a visitor who lands with them, browses, then comes back still carries them.
+  var qs = new URLSearchParams(location.search);
+  form.querySelectorAll('[data-utm]').forEach(function (el) {
+    var key = el.getAttribute('data-utm');
+    var v = qs.get(key);
+    try {
+      if (v) sessionStorage.setItem('kz-' + key, v);
+      else v = sessionStorage.getItem('kz-' + key);
+    } catch (e) { /* storage blocked: URL value only */ }
+    if (v) el.value = v.slice(0, 255);
+  });
+
+  // Reveal the second half of the form once the first two rows are filled in.
+  var more = document.getElementById('pb-more');
+  var firstRows = ['FNAME', 'LNAME', 'EMAIL', 'PHONE'];
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function firstRowsDone() {
+    // Any value in each field is enough to reveal; the email format is checked on submit.
+    return firstRows.every(function (n) { return form[n].value.trim(); });
+  }
+  function openMore() {
+    if (more.classList.contains('is-open')) return;
+    more.classList.add('is-open');
+    more.removeAttribute('aria-hidden');
+  }
+  function onEdit(e) {
+    if (e.target.classList.contains('is-invalid') && e.target.value.trim()) e.target.classList.remove('is-invalid');
+    if (firstRowsDone()) openMore();
+  }
+  // 'change' as well as 'input': some browsers' autofill only fires 'change'.
+  form.addEventListener('input', onEdit);
+  form.addEventListener('change', onEdit);
+  // Values restored by the browser (back button, autofill on load).
+  window.addEventListener('pageshow', function () { if (firstRowsDone()) openMore(); });
+
+  function fail(text) {
+    err.textContent = text;
+    err.style.display = 'block';
+    btn.disabled = false;
+    btn.style.opacity = '';
+  }
+  function succeed() {
+    var first = form.FNAME.value.trim();
+    document.getElementById('pb-greeting').textContent = first ? ', ' + first : '';
+    document.getElementById('pb-email').textContent = form.EMAIL.value.trim();
+    document.getElementById('pb-form-wrap').style.display = 'none';
+    var s = document.getElementById('pb-success');
+    s.hidden = false;
+    s.style.display = 'flex';
+    if (window.dataLayer) window.dataLayer.push({ event: 'playbook_download_signup' });
+    // Take them straight to the playbook PDF (opens in the browser's viewer).
+    // The success panel above stays as the fallback, and is what they see if
+    // they come back to this page.
+    setTimeout(function () { location.href = '/assets/playbooks/client-health-playbook.pdf'; }, 400);
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    var labels = { FNAME: 'first name', LNAME: 'last name', EMAIL: 'work email', PHONE: 'phone number', COMPNAME: 'company name', JOBT: 'job title' };
+    var missing = Object.keys(labels).filter(function (n) {
+      var bad = !form[n].value.trim() || (n === 'EMAIL' && !EMAIL_RE.test(form.EMAIL.value.trim()));
+      form[n].classList.toggle('is-invalid', bad);
+      return bad;
+    });
+    if (missing.length) {
+      // Missing fields in the hidden half? Show it so they can be filled in.
+      if (missing.some(function (n) { return n === 'COMPNAME' || n === 'JOBT'; }) && firstRowsDone()) openMore();
+      var n0 = missing[0];
+      fail(n0 === 'EMAIL' && form.EMAIL.value.trim() ? 'Please enter a valid work email.' : 'Please add your ' + labels[n0] + '.');
+      form[n0].focus();
+      return;
+    }
+    btn.disabled = true;
+    btn.style.opacity = '0.7';
+    var cb = 'mccb_' + Date.now();
+    var tag;
+    var timer = setTimeout(function () { cleanup(); fail('Network error - please try again.'); }, 15000);
+    function cleanup() {
+      clearTimeout(timer);
+      delete window[cb];
+      if (tag && tag.parentNode) tag.parentNode.removeChild(tag);
+    }
+    window[cb] = function (data) {
+      cleanup();
+      var msg = (data && data.msg) ? String(data.msg) : '';
+      // Already on the list? They still get the playbook.
+      if ((data && data.result === 'success') || /already subscribed/i.test(msg)) { succeed(); return; }
+      fail(msg.replace(/^\d+\s*-\s*/, '').replace(/<[^>]*>/g, '') || 'Something went wrong - please try again.');
+    };
+    tag = document.createElement('script');
+    tag.src = jsonUrl + '&' + new URLSearchParams(new FormData(form)).toString() + '&c=' + cb;
+    tag.onerror = function () { cleanup(); fail('Network error - please try again.'); };
+    document.body.appendChild(tag);
+  });
+})();
+</script>
+<!-- Analytics load only after cookie consent, same as the rest of the site -->
+<script defer src="/assets/js/consent.js"></script>
+</body>
+</html>
