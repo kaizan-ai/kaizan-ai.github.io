@@ -1536,6 +1536,7 @@ TRIAL_UTM_FIELDS = [
     ('UTMQRPLC', 'qr_placement'), ('UTMCTA', 'utm_cta'),
     ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
     ('UTMCOUNTRY', 'utm_country'),
+    ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'), ('UTMHOOK', 'utm_hook'),
 ]
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
