@@ -21,7 +21,7 @@
   --kz-mono:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   /* Layout */
-  --kz-gutter: max(56px, calc(50vw - 744px)); /* centres content ~1488px; bands bleed full-width */
+  --kz-gutter: max(76px, calc(50vw - 680px)); /* content caps ~1360px, stops growing + keeps side margins; bands still bleed full-width */
   --kz-max-w: 1440px;
 }
 
