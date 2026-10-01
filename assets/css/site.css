@@ -8,7 +8,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   color-scheme: light;      /* light design: keep iOS dark mode from theming the canvas */
-  background: #F2EFE7;       /* match body so any gutter/canvas is parchment, never dark */
+  background: var(--kz-cream); /* gutters match the page so there is no two-tone split */
   /* Stop iOS Safari "shrink to fit" from zooming the whole page out when a wide
      element (the animated logo marquee) would otherwise extend past the viewport.
      `clip` (not `hidden`) preserves the sticky nav. */
@@ -18,10 +18,9 @@ body {
   margin: 0;
   max-width: 100%;
   overflow-x: clip;          /* belt-and-suspenders with html: no horizontal spill on iOS */
-  /* Outside the 1440px page, show parchment so the contained site
-     visually lifts off the canvas on wider monitors. Matches the
-     body background of the original design handoff. */
-  background: #F2EFE7;
+  /* Gutters beyond the capped page use the same cream as the page, so
+     wide screens read as one seamless background, not a two-tone split. */
+  background: var(--kz-cream);
   color: var(--kz-ink);
   font-family: var(--kz-sans);
   font-size: 16px;
@@ -39,10 +38,8 @@ button { font-family: inherit; }
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* Cap the site at 1440px on wider displays — content stays centered,
-     stone canvas shows in the gutters. Matches the source design's artboard width. */
-  max-width: 1440px;
-  margin-inline: auto;
+  /* Full-width: coloured section bands bleed to the viewport edges. Content
+     stays centred/contained via --kz-gutter (see tokens.css). */
   width: 100%;
   background: var(--kz-cream);
 }
@@ -53,7 +50,7 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 20px max(40px, calc(50vw - 744px));
   font-size: 14px;
   font-weight: 500;
   border-bottom: 1px solid var(--kz-line);
@@ -418,6 +415,10 @@ button { font-family: inherit; }
   border-top: 1px solid var(--kz-line);
   border-bottom: 1px solid var(--kz-line);
   margin-top: 40px;
+  /* Full-bleed: the logo bar spans the whole viewport (and shows more logos)
+     as the screen widens, even though the page is capped at 1600px. */
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
 }
 .kz-marquee:hover .kz-marquee-track { animation-play-state: paused; }
 .kz-marquee-track {
@@ -681,13 +682,17 @@ button { font-family: inherit; }
   font-family: var(--kz-display); font-size: 40px; font-weight: 700;
   letter-spacing: -0.02em; line-height: 1.1; margin: 12px 0 0; color: var(--kz-ink);
 }
-.kz-carousel { display: flex; align-items: center; gap: 14px; }
+.kz-carousel { position: relative; width: 100vw; margin-inline: calc(50% - 50vw); }
 .kz-carousel-viewport {
-  display: flex; gap: 20px; flex: 1; min-width: 0;
+  display: flex; gap: 20px;
   overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
-  /* Generous bottom padding so the card's drop shadow is never clipped by the
-     scroll container's implicit overflow-y (which auto-follows overflow-x). */
-  padding: 20px 10px 72px; scrollbar-width: none;
+  /* Full-bleed flow: cards run edge-to-edge; first/last align to the content
+     gutter and the sides fade out instead of cutting off hard. Bottom padding
+     keeps the card drop shadow from being clipped by the scroll overflow. */
+  padding: 20px var(--kz-gutter) 72px; scroll-padding-inline: var(--kz-gutter);
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--kz-gutter), #000 calc(100% - var(--kz-gutter)), transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 var(--kz-gutter), #000 calc(100% - var(--kz-gutter)), transparent 100%);
 }
 .kz-carousel-viewport::-webkit-scrollbar { display: none; }
 .kz-qcard {
@@ -762,6 +767,7 @@ button { font-family: inherit; }
 }
 .kz-carousel-arrow:hover:not(:disabled) { background: var(--kz-yellow); border-color: var(--kz-yellow); }
 .kz-carousel-arrow:disabled { opacity: .3; cursor: default; }
+.kz-carousel-arrow { display: none; }  /* edge-to-edge carousel: fade + dots + swipe, no side arrows */
 .kz-carousel-dots { display: flex; justify-content: center; gap: 9px; margin-top: 8px; }
 .kz-carousel-dot {
   width: 8px; height: 8px; border-radius: 999px; border: none; padding: 0;
@@ -842,7 +848,7 @@ button { font-family: inherit; }
 
 /* ── Footer ───────────────────────────────────────────────────── */
 .kz-footer {
-  padding: 60px 40px 40px;
+  padding: 60px max(40px, calc(50vw - 744px)) 40px;
   background: #0A0A0A; color: #F5F5EF;
 }
 .kz-footer-grid {

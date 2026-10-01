@@ -869,9 +869,9 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{E(title)} · Kaizan</title>
         <meta name="description" content="{E(desc)}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{p}assets/img/favicon-32x32.png">
-        <link rel="icon" type="image/webp" sizes="16x16" href="{p}assets/img/favicon-16x16.webp">
-        <link rel="apple-touch-icon" sizes="180x180" href="{p}assets/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{p}assets/img/favicon-32x32.png{asset_v('assets/img/favicon-32x32.png')}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{p}assets/img/favicon-16x16.png{asset_v('assets/img/favicon-16x16.png')}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{p}assets/img/apple-touch-icon.png{asset_v('assets/img/apple-touch-icon.png')}">
         <link rel="mask-icon" href="{p}assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1006,7 +1006,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
 
     return f'''<header class="kz-nav" role="banner">
       <a class="kz-nav-logo" href="/">
-        <img class="icon" src="{p}assets/img/kaizan-icon.png" alt="">
+        <img class="icon" src="{p}assets/img/kaizan-icon.png{asset_v('assets/img/kaizan-icon.png')}" alt="">
         <img class="word" src="{p}assets/img/kaizan-logo.png" alt="Kaizan">
       </a>
       <nav class="kz-nav-links" aria-label="Primary">
@@ -1051,7 +1051,7 @@ def footer_html(depth: int) -> str:
       <div class="kz-footer-grid">
         <div class="kz-footer-brand logo-light">
           <a class="kz-nav-logo" href="/">
-            <img class="icon" src="{p}assets/img/kaizan-icon.png" alt="">
+            <img class="icon" src="{p}assets/img/kaizan-icon.png{asset_v('assets/img/kaizan-icon.png')}" alt="">
             <img class="word" src="{p}assets/img/kaizan-logo.png" alt="Kaizan">
           </a>
           <p class="blurb">Client super intelligence for professional services firms.</p>
