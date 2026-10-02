@@ -1,0 +1,4 @@
+# Everything is crawlable except gated lead-magnet downloads, which are only
+# reached after signing up on their landing page.
+User-agent: *
+Disallow: /assets/playbooks/
