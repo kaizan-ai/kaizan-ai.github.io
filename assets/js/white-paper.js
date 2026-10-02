@@ -203,17 +203,6 @@
       };
 
       submitToHubSpot(payload).then(function () {
-        submitBtn.classList.add('btn--success');
-        submitBtn.innerHTML =
-          '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> On its way to your inbox';
-        submitBtn.animate(
-          [
-            { transform: 'translateY(0) scale(1)' },
-            { transform: 'translateY(-2px) scale(1.015)' },
-            { transform: 'translateY(0) scale(1)' }
-          ],
-          { duration: 360, easing: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }
-        );
         if (window.dataLayer) {
           window.dataLayer.push({
             event: 'white_paper_download',
@@ -221,6 +210,10 @@
             role: roleVal
           });
         }
+        // Thank-you copy lives on its own page (render_white_paper_confirmation()
+        // in tools/build.py) so the URL reflects the conversion and the visitor
+        // can't resubmit by refreshing.
+        window.location.href = 'https://kaizan.ai/white-paper-confirmation';
       }).catch(function () {
         formError.classList.add('is-visible');
         submitBtn.disabled = false;

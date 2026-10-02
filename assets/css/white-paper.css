@@ -721,13 +721,6 @@ i.display-i, em.display-i {
 
 .form-card--dark .form-meta__num { color: var(--cream); }
 
-/* Success state */
-.btn--success {
-  background: #1F8A4C !important;
-  color: var(--cream) !important;
-  box-shadow: 0 1px 2px rgba(31, 138, 76, 0.20), 0 6px 16px rgba(31, 138, 76, 0.22) !important;
-}
-
 /* Placeholder badge */
 .ph-mark {
   position: absolute;
