@@ -856,16 +856,14 @@ def asset_v(rel: str) -> str:
 
 
 def gtm_head_snippet() -> str:
-    """Google Consent Mode v2 default state, the standalone Google Ads tag
-    (gtag.js, G-FZPRQJK2CY), and the GTM loader itself.
+    """Google Consent Mode v2 default state, and the GTM loader itself.
 
     Per Google's Consent Mode setup guide, the default 'denied' command must
-    run before any Google tag's script executes (gtag.js and GTM alike), and
-    both should always be present (not conditionally injected) so they can
-    receive consent updates. What actually fires past that point is decided
-    per-tag:
-      - Google's own tags (gtag.js above, and GA4/Ads tags configured inside
-        the GTM container) read these signals automatically.
+    run before any Google tag's script executes (GTM included), and it should
+    always be present (not conditionally injected) so it can receive consent
+    updates. What actually fires past that point is decided per-tag:
+      - Google's own tags (GA4/Ads tags configured inside the GTM container)
+        read these signals automatically.
       - Third-party tags in this container (HubSpot, LinkedIn, ads pixels)
         only respect it if "Additional Consent Checks" is turned on for each
         tag inside the GTM container itself — that's GTM-admin configuration,
@@ -889,12 +887,6 @@ def gtm_head_snippet() -> str:
           'personalization_storage': 'denied',
           'security_storage': 'granted'
         });
-        </script>
-        <!-- Google tag (gtag.js) — Google Ads (G-FZPRQJK2CY) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZPRQJK2CY"></script>
-        <script>
-        gtag('js', new Date());
-        gtag('config', 'G-FZPRQJK2CY');
         </script>
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
