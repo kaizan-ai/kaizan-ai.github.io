@@ -943,17 +943,13 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
 
 
 def cookie_consent_html() -> str:
-    """Cookie consent dialog markup (Consent / Details / About tabs, per-
-    category toggles). Behavior lives in assets/js/consent.js, styles in
+    """Cookie consent card markup (Consent / Details / About tabs, per-
+    category toggles), docked non-modally to the bottom of the viewport. Behavior lives in assets/js/consent.js, styles in
     assets/css/site.css (.cb-* rules) — both loaded by page_head() on every
     page, so this only needs to emit the dialog itself."""
     return '''
 <div class="cb-overlay" id="cb-overlay" hidden>
-  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
-    <div class="cb-head">
-      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
-    </div>
-
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
     <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
       <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
       <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
@@ -1005,14 +1001,14 @@ def cookie_consent_html() -> str:
     </div>
 
     <div class="cb-foot" data-foot="consent">
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
-      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
     <div class="cb-foot" data-foot="details" hidden>
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
       <button class="cb-btn line" data-act="selection">Allow selection</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
   </div>
 </div>
