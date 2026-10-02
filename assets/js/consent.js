@@ -1,4 +1,4 @@
-/* Kaizan — cookie consent dialog.
+/* Kaizan — cookie consent card (docked to the bottom, non-modal).
    Markup lives in tools/build.py (cookie_consent_html, emitted by page_foot
    on every page); styles are the .cb-* rules in assets/css/site.css. This
    file wires up the dialog's behavior and syncs consent to our trackers.
@@ -106,18 +106,19 @@
     overlay.querySelector('.cb-body').scrollTop = 0;
   }
 
-  function open(tab) {
+  // The card is non-modal (docked to the bottom, page stays usable), so it
+  // only takes focus when the visitor asked for it via "Cookie settings" —
+  // not when it appears on its own on a first visit.
+  function open(tab, focus) {
     var saved = read() || {};
     switches.forEach(function (s) { s.checked = !!saved[s.dataset.cat]; });   // all OFF by default
     showTab(tab || 'consent');
     overlay.hidden = false;
     overlay.classList.remove('cb-in'); void overlay.offsetWidth; overlay.classList.add('cb-in');
-    document.documentElement.style.overflow = 'hidden';
-    dialog.focus();
+    if (focus) dialog.focus({ preventScroll: true });
   }
   function close() {
     overlay.hidden = true;
-    document.documentElement.style.overflow = '';
   }
 
   function announce(v) {
@@ -154,19 +155,12 @@
     }
   });
 
-  // Arrow keys between tabs + keep focus inside the dialog
+  // Arrow keys between tabs
   overlay.addEventListener('keydown', function (e) {
     if (e.target.classList.contains('cb-tab') && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
       var i = tabs.indexOf(e.target), n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-      showTab(n.dataset.tab); n.focus(); return;
+      showTab(n.dataset.tab); n.focus();
     }
-    if (e.key !== 'Tab') return;
-    var f = [].slice.call(dialog.querySelectorAll('button,input,a[href]')).filter(function (el) {
-      return !el.disabled && el.offsetParent !== null; });
-    if (!f.length) return;
-    var first = f[0], last = f[f.length - 1];
-    if (e.shiftKey && (document.activeElement === first || document.activeElement === dialog)) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   });
 
   // Footer "Cookie settings" link reopens the dialog.
@@ -174,13 +168,13 @@
     var t = e.target.closest && e.target.closest('[data-cookie-settings]');
     if (!t) return;
     e.preventDefault();
-    open('consent');
+    open('consent', true);
   });
 
   // Public API: CookieBanner.open() from a "Cookie settings" link, .get() for current choice
-  window.CookieBanner = { open: open, get: read, reset: function () {
+  window.CookieBanner = { open: function (tab) { open(tab, true); }, get: read, reset: function () {
     try { localStorage.removeItem(KEY); } catch (e) {}
-    open('consent');
+    open('consent', true);
   } };
 
   // Show straight away on first visit (or after 12 months / a version bump);
