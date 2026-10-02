@@ -856,16 +856,14 @@ def asset_v(rel: str) -> str:
 
 
 def gtm_head_snippet() -> str:
-    """Google Consent Mode v2 default state, the standalone Google Ads tag
-    (gtag.js, G-FZPRQJK2CY), and the GTM loader itself.
+    """Google Consent Mode v2 default state, and the GTM loader itself.
 
     Per Google's Consent Mode setup guide, the default 'denied' command must
-    run before any Google tag's script executes (gtag.js and GTM alike), and
-    both should always be present (not conditionally injected) so they can
-    receive consent updates. What actually fires past that point is decided
-    per-tag:
-      - Google's own tags (gtag.js above, and GA4/Ads tags configured inside
-        the GTM container) read these signals automatically.
+    run before any Google tag's script executes (GTM included), and it should
+    always be present (not conditionally injected) so it can receive consent
+    updates. What actually fires past that point is decided per-tag:
+      - Google's own tags (GA4/Ads tags configured inside the GTM container)
+        read these signals automatically.
       - Third-party tags in this container (HubSpot, LinkedIn, ads pixels)
         only respect it if "Additional Consent Checks" is turned on for each
         tag inside the GTM container itself — that's GTM-admin configuration,
@@ -889,12 +887,6 @@ def gtm_head_snippet() -> str:
           'personalization_storage': 'denied',
           'security_storage': 'granted'
         });
-        </script>
-        <!-- Google tag (gtag.js) — Google Ads (G-FZPRQJK2CY) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZPRQJK2CY"></script>
-        <script>
-        gtag('js', new Date());
-        gtag('config', 'G-FZPRQJK2CY');
         </script>
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1537,6 +1529,7 @@ TRIAL_UTM_FIELDS = [
     ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
     ('UTMCOUNTRY', 'utm_country'),
     ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'), ('UTMHOOK', 'utm_hook'),
+    ('GCLID', 'gclid'), ('UTMID', 'utm_id'), ('UTMADGRP', 'utm_adgroup'),
 ]
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
@@ -5450,6 +5443,34 @@ def render_demo() -> str:
                      extra_head=extra_head) + body + page_foot()
 
 
+def render_demo_confirmed() -> str:
+    """/demo-confirmed/ — set as the Confirmation Page redirect on the Calendly
+    event type both /demo/ links point to, so a visitor lands here right after
+    booking a slot (UK and US both redirect here; nothing routes them by rep)."""
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
+      <div style="max-width:520px;width:100%;text-align:center;">
+        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>You're booked</div>
+        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks, we&rsquo;ll see you soon.</h1>
+        <p class="kz-lede" style="margin-top:16px;">
+          Your demo is confirmed, check your inbox for the calendar invite with the
+          details and a link to join.
+        </p>
+        <div style="margin-top:28px;">
+          <a class="kz-btn kz-btn-yellow" href="/">Back to homepage</a>
+        </div>
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Demo booked', 1,
+                     "Your demo with Kaizan is confirmed, check your inbox for the details.",
+                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
+
+
 # ─────────────────────────────────────────────────────────────────────
 # POLICIES — versioned legal documents (Privacy / Licence / Cookies).
 # Source of truth: content/policies/<slug>/<YYYY-MM-DD>.html, one file per
@@ -5829,6 +5850,7 @@ def main():
     write(ROOT / 'about' / 'index.html',        render_about())
     write(ROOT / 'demo' / 'index.html',         render_demo())
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
+    write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
     write(ROOT / '404.html',                    render_404())
 
     # Marketing / campaign landing pages
