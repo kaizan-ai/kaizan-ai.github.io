@@ -1590,39 +1590,25 @@ def trial_hero_copy_html(depth: int) -> str:
     on the home hero. Shared with render_confirmation() so the /confirmation/
     page matches the homepage hero exactly."""
     p = relpath(depth)
-    hero_checks = ''.join(
-        f'<li><span class="tick" aria-hidden="true">{CHECK_SVG}</span>{E(t)}</li>'
-        for t in (
-            'Find growth opportunities hidden in everyday client conversations.',
-            "Catch engagement risks early so your team can act before it's too late.",
-            'Improve account efficiency with AI Helpers that take care of admin for the team.',
-            'See every client clearly by unifying every conversation, commitment and '
-            'deliverable into one source of truth.',
-        ))
-    return f'''<div class="kz-hero-copy">
-        <h1 class="kz-hero-trial-h1">
-          Grow your existing clients. <span class="kz-mark">Spot risks</span> before they leave.
-        </h1>
-        <p class="kz-hero-trial-lede">
-          Kaizan unifies all client meetings, emails &amp; chats to recommend next steps. Proactively
-          protecting revenue, uncovering opportunities and saving your team hours.
-        </p>
-        <ul class="kz-hero-checks">{hero_checks}</ul>
-        <div class="kz-hero-cta-stack">
-          <a class="kz-cta-card is-yellow" href="/demo/">
-            <div>
-              <div class="kz-cta-eyebrow">30-min live demo</div>
-              <div class="kz-cta-headline">See Kaizan in action</div>
-            </div>
-            <div class="kz-cta-pill"><span>Book a demo</span><span class="kz-cta-arrow">→</span></div>
-          </a>
-          <a class="kz-cta-card is-ghost" href="{p}white-paper/">
-            <div>
-              <div class="kz-cta-eyebrow">CARE white paper · 18 min</div>
-              <div class="kz-cta-headline">What the top 10% do differently?</div>
-            </div>
-            <div class="kz-cta-pill"><span>Whitepaper</span><span class="kz-cta-arrow">→</span></div>
-          </a>
+    return f'''<div class="kz-hero-copy kz-hero-copy--v2">
+        <div class="kz-hero-deco" aria-hidden="true">
+          <div class="kz-hero-bubble kz-hero-bubble--blue"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--teal"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--gold"><span></span><span></span></div>
+          <span class="kz-hero-dot kz-hero-dot--blue"></span>
+          <span class="kz-hero-dot kz-hero-dot--teal"></span>
+          <span class="kz-hero-dot kz-hero-dot--gold"></span>
+          <span class="kz-hero-dot kz-hero-dot--red"></span>
+          <span class="kz-hero-dot kz-hero-dot--purple"></span>
+          <span class="kz-hero-dot kz-hero-dot--sage"></span>
+        </div>
+        <div class="kz-hero-copy-inner">
+          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
+          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
+            best action so you keep every client and grow every account.</p>
+          <div class="kz-hero-v2-cta">
+            <a class="kz-hero-pill" href="{p}demo/">Book a demo</a>
+          </div>
         </div>
       </div>'''
 
@@ -1639,10 +1625,8 @@ def trial_form_html(depth: int) -> str:
              'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
              '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
     return f'''<div class="kz-trial" data-trial>
-        {TRIAL_SIGNAL_SVG}
         <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
               action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
-          <div class="kz-trial-badge"><span class="dot"></span>No credit card required</div>
           <h2 class="kz-trial-title">Start your 14-day free trial</h2>
           <p class="kz-trial-sub">Discover the risks and growth opportunities in your own client
             conversations, benchmarked against best-in-class.</p>
@@ -1707,6 +1691,395 @@ def trial_form_html(depth: int) -> str:
           </p>
         </form>
       </div>'''
+
+
+def playbooks_sections_html() -> str:
+    """Ported 'Playbooks / risk / actions / growth' section (replaces the old
+    product tour). Inherits the site font (IBM Plex). Includes the scroll-synced
+    bubble-traveler connectors (wired up in assets/js/site.js: initPbConnectors)."""
+    return '''<div class="kz-pb" id="sceneRoot">
+  <!-- connector A travelers: Playbooks illustration -> One source of truth (left side) -->
+  <div class="bubbleTraveler connA" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #1FA591; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+
+  <!-- connector B travelers: One source of truth (left side) -> Every action stays inside Kaizan (right side) -->
+  <div class="bubbleTraveler connB" style="background: #1FA591; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #7C5CFC; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(124,92,252,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #E8432B; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 8px; background: rgba(255,255,255,.75);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(255,255,255,.55);"></span>
+  </div>
+
+  <!-- connector C travelers: Every action stays inside Kaizan -> One view of every client relationship -->
+  <div class="bubbleTraveler connC" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #E8432B; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+  <!-- ================= Playbooks that run themselves ================= -->
+  <section style="padding: 72px var(--kz-gutter) 96px; overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Follow-ups and replies drafted for your approval</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">CRM and project tools updated automatically</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">QBRs and account briefs ready before you ask</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneA" style="position: relative; width: 100%; max-width: 540px; height: 460px;">
+
+          <!-- BOLD themed decorative: glow behind the playbook bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: 10px; width: 170px; height: 120px; background: #2F5FE0; opacity: 0.88; border-radius: 26px 26px 6px 26px; box-shadow: 0 24px 40px rgba(47,95,224,.4); animation: cardFloat 5.5s ease-in-out infinite; z-index: 0; padding: 20px 22px;">
+            <span style="display: block; height: 8px; width: 70%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 12px;"></span>
+            <span style="display: block; height: 8px; width: 45%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; right: 10px; bottom: -10px; width: 130px; height: 95px; background: #E8432B; opacity: 0.88; border-radius: 24px 24px 24px 6px; box-shadow: 0 20px 34px rgba(232,67,43,.38); animation: cardFloat 4.8s ease-in-out infinite; animation-delay: .5s; z-index: 0; padding: 16px 18px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 40%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 60px; width: 440px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 2; animation: cardFloat 5.5s ease-in-out infinite;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #000000;">Renewal playbook</h3>
+              <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; background: #EDE8DA; padding: 6px 10px; border-radius: 999px;">Stage 3 of 5</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Usage review sent</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Stakeholder map confirmed</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid #FFB900; border-radius: 12px; background: rgba(255,185,0,0.08);">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #171511;"></span>
+                <span style="font-size: 14px; color: #171511; font-weight: 500;">Draft renewal proposal</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px; opacity: .5;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #C9C4B4;"></span>
+                <span style="font-size: 14px; color: #171511;">Exec sign-off</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bubbleOriginA" style="position: absolute; right: 36px; top: 0px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; right: 0px; top: 0px; width: 150px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 3;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Owner</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Jordan Lee</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">JL</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One source of truth for every account ================= -->
+  <section style="padding: 96px var(--kz-gutter); overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneB" style="position: relative; width: 100%; max-width: 540px; height: 340px;">
+
+          <!-- BOLD themed decorative: glow behind the source-of-truth bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -30px; width: 280px; height: 220px; background: radial-gradient(circle, #1FA591 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: -40px; width: 160px; height: 115px; background: #1FA591; opacity: 0.88; border-radius: 26px 26px 26px 6px; box-shadow: 0 20px 36px rgba(31,165,145,.38); animation: bubbleFloat 5.2s ease-in-out infinite; z-index: 0; padding: 18px 20px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.88); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 42%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; left: 200px; top: -10px; width: 64px; height: 48px; background: #FFB900; opacity: 0.92; border-radius: 16px 16px 6px 16px; box-shadow: 0 16px 28px #FFB90066; animation: bubbleFloat 4.3s ease-in-out infinite; animation-delay: .4s; z-index: 0; padding: 8px 10px;">
+            <span style="display: block; height: 5px; width: 70%; border-radius: 999px; background: rgba(23,21,17,.45); margin-bottom: 6px;"></span>
+            <span style="display: block; height: 5px; width: 45%; border-radius: 999px; background: rgba(23,21,17,.3);"></span>
+          </div>
+
+          <div id="bubbleDestA" style="position: absolute; left: 10px; top: 10px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 10px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <div style="display: flex; height: 10px; width: 64px; border-radius: 999px; overflow: hidden;"><span style="flex: 1; background: #171511;"></span><span style="flex: 1.3; background: #E8432B;"></span><span style="flex: 0.7; background: #EADFB8;"></span></div>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Risk indicators</span>
+          </div>
+
+          <div id="bubbleOriginB" style="position: absolute; left: 20px; top: 90px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 80px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 140px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 85%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both;"></div>
+              <div style="width: 28px; height: 55%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .1s;"></div>
+              <div style="width: 28px; height: 70%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .2s;"></div>
+              <div style="width: 28px; height: 35%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .3s;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">Risk distribution</div>
+          </div>
+
+          <div style="position: absolute; right: 10px; top: 56px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Alerts for quiet stakeholders, dipping sentiment and single-threaded relationships</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Recommended next steps for each at-risk client</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A clear view of revenue at risk across your whole portfolio</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= Every action stays inside Kaizan ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Insight from every meeting, email and chat in one place</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">No spreadsheets, no guesswork, no relying on memory</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZone" style="position: relative; width: 100%; max-width: 600px; height: 540px;">
+
+          <!-- BOLD themed decorative: oversized chat bubbles -->
+          <div style="position: absolute; right: -30px; top: -20px; width: 320px; height: 260px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .22; z-index: 0;"></div>
+
+          <div id="bubbleOrigin" style="position: absolute; right: 150px; top: 40px; width: 1px; height: 1px;"></div>
+          <div id="bubbleDestB" style="position: absolute; right: 190px; top: 70px; width: 1px; height: 1px;"></div>
+
+          <div style="position: absolute; right: 120px; top: -10px; width: 190px; height: 118px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); animation: bigBob 4.2s ease-in-out infinite; --r: -6deg; z-index: 1; padding: 22px 26px;">
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.72); width: 76%; margin-top: 10px;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.55); width: 54%; margin-top: 10px;"></span>
+          </div>
+          <!-- next to the AI Actions card (right-hand gutter), not stacked on top of it or the assigned-to card -->
+          <div style="position: absolute; right: 14px; top: 240px; width: 110px; height: 128px; background: #E8432B; border-radius: 26px 26px 8px 26px; box-shadow: 0 22px 38px rgba(232,67,43,.32); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .5s; --r: 7deg; z-index: 2; padding: 18px 16px;">
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.65); width: 62%; margin-top: 9px;"></span>
+          </div>
+
+          <div style="position: absolute; right: 70px; top: 150px; width: 170px; height: 44px; background: radial-gradient(circle, #FFB900 0%, transparent 72%); opacity: .55; animation: glowPulse 2.2s ease-in-out infinite; z-index: 0;"></div>
+          <div style="position: absolute; right: 95px; top: 148px; width: 120px; height: 84px; background: #FFB900; border-radius: 30px 30px 30px 8px; box-shadow: 0 22px 38px rgba(23,21,17,.22); display: flex; align-items: center; justify-content: center; gap: 8px; z-index: 2;">
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: 0s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .15s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .3s;"></span>
+          </div>
+
+
+          <div style="position: absolute; left: 10px; bottom: 10px; width: 136px; height: 92px; background: #7C5CFC; border-radius: 8px 30px 30px 30px; box-shadow: 0 20px 34px rgba(124,92,252,.3); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .9s; --r: -4deg; z-index: 0; padding: 16px 20px;">
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.6); width: 58%; margin-top: 8px;"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 130px; width: 460px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 3;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 24px; font-weight: 600; color: #000000;">AI Actions</h3>
+              <button style="border: none; background: #FFB900; color: #171511; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; display: flex; align-items: center; gap: 6px; cursor: default;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#171511" stroke-width="1.8" stroke-linecap="round"></path></svg>New action</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Draft renewal proposal — Acme Creative</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 70%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #D8A678; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">AC</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Escalate CARE risk — Northwind</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 30%; height: 100%; background: #E8432B;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #2F5FE0; color: #FFFBF0; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">N</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Prep QBR deck — Stark Industries</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 45%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">SI</div></div>
+            </div>
+          </div>
+
+          <div style="position: absolute; right: 12px; top: 60px; width: 148px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 4;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Assigned to</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Priya Shah</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #FFB900; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">PS</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One view of every client relationship ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="revealZone" style="position: relative; width: 100%; max-width: 600px; height: 604px;">
+
+          <div id="bubbleDest" style="position: absolute; left: 110px; top: 60px; width: 1px; height: 1px;"></div>
+
+          <!-- BOLD themed decorative: arrival burst, confetti bubbles -->
+          <div style="position: absolute; left: -30px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #E8432B 0%, transparent 70%); opacity: .18; z-index: 0;"></div>
+
+          <div style="position: absolute; left: 10px; top: 0px; width: 210px; height: 128px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); z-index: 2; display: flex; align-items: center; justify-content: center;">
+            <svg width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M2 20L14 31L26 10" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 20L34 31L52 4" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+
+          <span style="animation: confetti1 1.8s ease-out infinite; animation-delay: .3s; position: absolute; left: 230px; top: 50px; width: 20px; height: 20px; border-radius: 999px; background: #E8432B; z-index: 2;"></span>
+          <span style="animation: confetti2 1.8s ease-out infinite; animation-delay: .6s; position: absolute; left: 240px; top: 100px; width: 16px; height: 16px; border-radius: 999px; background: #FFB900; z-index: 2;"></span>
+          <span style="animation: confetti3 1.8s ease-out infinite; animation-delay: .9s; position: absolute; left: 150px; top: 110px; width: 14px; height: 14px; border-radius: 999px; background: #2F5FE0; z-index: 2;"></span>
+
+          <div style="position: absolute; left: 330px; top: 60px; width: 92px; height: 58px; background: #1FA591; border-radius: 22px 22px 22px 6px; box-shadow: 0 14px 24px rgba(31,165,145,.3); display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 14px; z-index: 1;">
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.6); width: 60%;"></span>
+          </div>
+
+          <div style="position: absolute; left: 16px; top: 140px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7L4.5 10.5L9 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 7L11.5 10.5L16 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Signal received</span>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 184px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 150px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 70%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 100%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 55%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 40%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">CARE score by client</div>
+          </div>
+
+          <div style="position: absolute; right: -10px; top: 164px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 394px; width: 430px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 26px 26px 20px; z-index: 2;">
+            <div style="position: relative; height: 24px; margin-bottom: 10px;">
+              <div style="position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: #EADFB8;"></div>
+              <div style="position: absolute; left: 50%; top: 2px; width: 2px; height: 20px; background: #171511; opacity: 0.4;"></div>
+              <span style="position: absolute; left: 4%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 12%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 18%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 30%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 36%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 47%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 50%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 53%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 64%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 70%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 80%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 95%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #171511;"><div><div style="font-weight: 600;">0</div><div style="color: #8C8878; font-size: 11px;">Minimum</div></div><div style="text-align: center;"><div style="font-weight: 600;">6.8</div><div style="color: #8C8878; font-size: 11px;">Peer average</div></div><div style="text-align: right;"><div style="font-weight: 600;">10</div><div style="color: #8C8878; font-size: 11px;">Maximum</div></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Scoped pitches and proposals drafted for you</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Warm re-introductions to dormant contacts</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Expansion tracked against each client's goals</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+    </div>
+  </section>
+    </div>'''
+
+
+def stats_band_html() -> str:
+    """Ported black stats band (6 metrics) — no icons/'avg.', bold yellow
+    numbers, original-weight title. Inherits the site font."""
+    return '''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+  <section style="padding: 60px var(--kz-gutter); position: relative; z-index: 1;">
+    <div style="max-width: 1300px; margin: 0 auto; text-align: center;">
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+
+      <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px;">
+
+        <div>
+          <div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">21%</div></div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Average revenue increase per client</div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">5.4 hrs</div></div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Admin saved per person, every week</div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">45%</div></div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Of revenue at risk protected through early signals</div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">4.8%</div></div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Increase in the addressable upsell pool for existing clients</div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">23%</div></div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Lower cost to serve each client</div>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <div style="font-size: 62px; font-weight: 800; color: #FFB900;">11M+</div>
+            <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Client service data points behind every recommendation</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>'''
 
 
 def render_home() -> str:
@@ -1842,27 +2215,65 @@ def render_home() -> str:
     {nav_html(0, active='Home')}
 
     <!-- HERO -->
-    <section class="kz-hero kz-hero--trial kz-wash-gold-pale">
+    <section class="kz-hero kz-hero--trial">
       {trial_hero_copy_html(0)}
-      {trial_form_html(0)}
+      <div class="kz-trial-col">
+        <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
+        {trial_form_html(0)}
+      </div>
     </section>
 
     {marquee_html(CLIENT_LOGOS, depth=0)}
 
-    <!-- PRODUCT TOUR -->
-    <section class="kz-section-loose" data-tour>
-      <div class="kz-eyebrow">Product tour</div>
-      <h2 class="kz-h1" style="margin:12px 0 24px;font-size:clamp(36px,4.6vw,72px);">
-        AI Assistant &amp; Agents for elite client service
-      </h2>
-      <div class="kz-tour">
-        <div class="kz-tour-tabs">{tour_tabs}</div>
-        <div class="kz-tour-stage">
-          <div class="kz-tour-badge" data-tour-badge>LIVE · ACME CREATIVE</div>
-          {''.join(f'<div class="kz-tour-frame{" is-active" if i == 0 else ""}" data-scene="{i}">{render()}</div>' for i, render in enumerate(SCENES))}
+    <!-- HERO REEL -->
+    <section class="kz-reel-section">
+      <div class="kz-reel">
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- WHY KAIZAN -->
+    <section class="kz-why">
+      <div class="kz-why-inner">
+        <h2 class="kz-why-title">Why choose Kaizan&rsquo;s client intelligence?</h2>
+        <div class="kz-why-grid">
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#171511" stroke-width="2"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#171511" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Keep the clients you&rsquo;ve won</h3>
+            <p class="kz-why-card-desc">Early warning signals flag at-risk accounts while there&rsquo;s still time to act.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--blue">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2"></circle><path d="M12 7v5l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Get hours back every week</h3>
+            <p class="kz-why-card-desc">AI Helpers draft the follow-ups, update your systems and prep the QBRs for you.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--teal">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" stroke="#FFFFFF" stroke-width="2"></rect><circle cx="12" cy="12" r="3" stroke="#FFFFFF" stroke-width="2"></circle><path d="M6 9.5v5M18 9.5v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Unlock revenue hidden in your accounts</h3>
+            <p class="kz-why-card-desc">Upsell and cross-sell signals surface the moment a client mentions them.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--red">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">11M+ points of client service signals</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- PLAYBOOKS / RISK / ACTIONS / GROWTH (replaces product tour) -->
+    {playbooks_sections_html()}
 
     <!-- CARE -->
     <section class="kz-section">
@@ -1882,14 +2293,8 @@ def render_home() -> str:
       <div class="kz-personas-grid">{persona_pills}</div>
     </section>
 
-    <!-- IMPACT STATS -->
-    <section class="kz-stats">
-      <div class="kz-quotes-head">
-        <div class="kz-eyebrow">By the numbers</div>
-        <h2 class="kz-quotes-title">The impact on client teams</h2>
-      </div>
-      <div class="kz-stats-grid">{stats_cards}</div>
-    </section>
+    <!-- IMPACT STATS (ported black band) -->
+    {stats_band_html()}
 
     <!-- PROOF -->
     <!-- QUOTE CAROUSEL -->

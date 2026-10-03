@@ -411,11 +411,11 @@ button { font-family: inherit; }
 
 /* ── Home hero: copy + 14-day free trial form ─────────────────── */
 .kz-hero--trial {
-  grid-template-columns: minmax(0, 552px) minmax(400px, 1fr);
+  grid-template-columns: 1fr 1fr;
   column-gap: 44px;
-  align-items: start;
-  padding-top: 52px;
-  padding-bottom: 28px;
+  align-items: stretch;
+  padding-top: 80px;
+  padding-bottom: 12px;
 }
 .kz-hero-trial-h1 {
   font-family: var(--kz-display);
@@ -442,50 +442,205 @@ button { font-family: inherit; }
 .kz-hero--trial .kz-cta-headline { font-size: 21px; margin-top: 2px; }
 .kz-hero--trial .kz-cta-pill { padding: 11px 16px; font-size: 13.5px; gap: 8px; }
 
+/* ── Hero left — v2 (conversational headline + playful floaters) ──
+   Ported from the Hero design mockup; keeps the site's own fonts
+   (IBM Plex via --kz-display) rather than the mockup's Comfortaa. */
+.kz-hero-copy--v2 { padding: 24px 8px; overflow: visible; display: flex; flex-direction: column; }
+.kz-hero-copy-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; }
+.kz-hero-v2-h1 {
+  margin: 0; font-family: var(--kz-display);
+  font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
+  letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+}
+.kz-hero-v2-lede {
+  margin: 0; max-width: 44ch;
+  font-size: 20px; line-height: 1.55; font-weight: 500; color: #3F3B2F;
+}
+.kz-hero-v2-cta { align-self: center; margin-top: auto; padding-top: 20px; }
+.kz-hero-pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--kz-yellow); color: var(--kz-ink); font-size: 16px; font-weight: 700;
+  padding: 14px 26px; border-radius: 999px; text-decoration: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 10px 24px -8px rgba(255,185,0,.55);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.kz-hero-pill:hover { transform: translateY(-2px); background: var(--kz-yellow-deep); box-shadow: 0 16px 32px -12px rgba(255,185,0,.6); }
+
+/* decorative layer — floating message bubbles, confetti dots.
+   translateY compensates the hero's added top padding so the floaters stay put
+   when the hero content is nudged down toward the logo band. */
+.kz-hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; transform: translateY(-28px); }
+.kz-hero-bubble {
+  position: absolute; border-radius: 26px 26px 26px 6px; padding: 14px 16px;
+  animation: heroFloat 5s ease-in-out infinite;
+}
+.kz-hero-bubble span { display: block; height: 7px; border-radius: 999px; }
+.kz-hero-bubble span:first-child { width: 70%; margin-bottom: 9px; background: rgba(255,255,255,.88); }
+.kz-hero-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+.kz-hero-bubble--blue { left: -22px; top: -46px; width: 120px; height: 70px; background: #1FA591; box-shadow: 0 20px 34px rgba(31,165,145,.38); }
+.kz-hero-bubble--teal { right: 6px; bottom: 4px; width: 100px; height: 70px; background: #2F5FE0; box-shadow: 0 18px 30px rgba(47,95,224,.34); animation-delay: .6s; }
+.kz-hero-bubble--gold { right: 52px; top: -34px; width: 60px; height: 48px; background: var(--kz-yellow); box-shadow: 0 14px 24px rgba(255,185,0,.4); animation-delay: .3s; }
+.kz-hero-bubble--gold span:first-child { background: rgba(23,21,17,.45); height: 5px; }
+.kz-hero-bubble--gold span:last-child { background: rgba(23,21,17,.3); height: 5px; }
+.kz-hero-dot { position: absolute; border-radius: 999px; animation: heroFloat 4s ease-in-out infinite; }
+.kz-hero-dot--blue { left: -30px; top: 72px; width: 10px; height: 10px; background: #2F5FE0; }
+.kz-hero-dot--teal { right: -10px; top: 48px; width: 8px; height: 8px; background: #1FA591; animation-delay: .4s; }
+.kz-hero-dot--gold { right: 20px; bottom: 10px; width: 12px; height: 12px; background: var(--kz-yellow); animation-delay: .2s; }
+.kz-hero-dot--red { left: 2px; bottom: -10px; width: 9px; height: 9px; background: #E8432B; animation-delay: .7s; }
+.kz-hero-dot--purple { right: 112px; top: -24px; width: 7px; height: 7px; background: #7C5CFC; animation-delay: .5s; }
+.kz-hero-dot--sage { left: 60px; top: -30px; width: 6px; height: 6px; background: #7FB59E; animation-delay: .9s; }
+@keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+@media (prefers-reduced-motion: reduce) { .kz-hero-bubble, .kz-hero-dot, .kz-trial-bubble { animation: none; } }
+
+/* right column wrapper + purple message bubble peeking from the box's top-right corner */
+.kz-trial-col { position: relative; display: flex; flex-direction: column; }
+.kz-trial-col > .kz-trial { flex: 1; }
+.kz-trial-bubble {
+  position: absolute; top: -44px; right: -12px; z-index: 0;
+  width: 150px; height: 96px; padding: 18px 20px;
+  background: #7C5CFC; border-radius: 28px 28px 28px 6px;
+  box-shadow: 0 20px 34px rgba(124,92,252,.4);
+  animation: heroFloat 5s ease-in-out infinite; pointer-events: none;
+}
+.kz-trial-bubble span { display: block; height: 8px; border-radius: 999px; }
+.kz-trial-bubble span:first-child { width: 70%; margin-bottom: 12px; background: rgba(255,255,255,.85); }
+.kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+
+/* ── Hero reel — seamless product video below the logo band ──────────
+   Sized to fit within the viewport so the whole video is visible when you
+   scroll to it. 16:9 source. */
+.kz-reel-section { padding: 20px 24px 12px; }
+.kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
+.kz-reel-video {
+  display: inline-block; width: auto; height: auto;
+  max-width: 100%; max-height: 84vh;
+}
+@media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
+
+/* ── Why Kaizan — feature grid (ported design; site font) ────────── */
+.kz-why { padding: 84px var(--kz-gutter) 72px; }
+.kz-why-inner { max-width: 1280px; margin: 0 auto; }
+.kz-why-title {
+  margin: 0 0 56px; text-align: center; font-family: var(--kz-display);
+  font-size: clamp(36px, 4.4vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; color: #000;
+}
+/* four columns spread evenly across the page, divided by thin rules */
+.kz-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.kz-why-card {
+  padding: 6px 36px;
+  display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+  border-left: 1px solid var(--kz-line);
+}
+.kz-why-card:first-child { border-left: none; }
+.kz-why-icon {
+  width: 72px; height: 72px; border-radius: 20px; flex: none;
+  display: flex; align-items: center; justify-content: center;
+  animation: iconPop 3.4s ease-in-out infinite;
+}
+.kz-why-icon svg { width: 34px; height: 34px; }
+.kz-why-icon--gold { background: var(--kz-yellow); }
+.kz-why-icon--blue { background: #2F5FE0; animation-delay: .3s; }
+.kz-why-icon--teal { background: #1FA591; animation-delay: .6s; }
+.kz-why-icon--red  { background: #E8432B; animation-delay: .9s; }
+.kz-why-card-title { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.25; color: #000; }
+.kz-why-card-desc { margin: 0; font-size: 16px; line-height: 1.55; color: #4A4639; }
+@keyframes iconPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
+
+/* ── Stats band (ported black band; site font) ───────────────────── */
+.kz-statsband { font-family: var(--kz-sans); }
+@media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+
+/* ── Playbooks / risk / actions / growth — ported illustration section ── */
+.kz-pb { position: relative; overflow: hidden; }
+.kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
+/* bolder sub-section titles (mockup shipped them at weight 400) */
+.kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
+/* drop the inline yellow underline under the "Book a demo" links */
+.kz-pb a[href] { border-bottom: 0 !important; padding-bottom: 0 !important; }
+/* scroll-synced message bubbles that travel between the sub-sections */
+.bubbleTraveler {
+  position: absolute; left: 0; top: 0; width: 46px; height: 34px;
+  border-radius: 14px 14px 14px 5px; box-shadow: 0 10px 22px rgba(0,0,0,.28);
+  opacity: 0; will-change: offset-distance, opacity, transform;
+}
+.travelerLine { position: absolute; left: 7px; right: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.85); }
+@keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes bigBob { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-20px) rotate(var(--r, 0deg)); } }
+@keyframes typeDot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-8px); opacity: 1; } }
+@keyframes glowPulse { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.35); opacity: .9; } }
+@keyframes confetti1 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(-70px,-60px) scale(1.1); } }
+@keyframes confetti2 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(80px,-40px) scale(1.1); } }
+@keyframes confetti3 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(10px,-90px) scale(1.1); } }
+@media (prefers-reduced-motion: reduce) {
+  .kz-pb [style*="animation"] { animation: none !important; }
+}
+@media (max-width: 900px) {
+  .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+  .kz-why-card { border-left: none; }
+  .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+}
+@media (max-width: 560px) {
+  .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
+  .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
+  .kz-why-card:first-child { border-top: none; }
+}
+
 .kz-trial {
   position: relative; overflow: hidden; z-index: 1;
-  background: var(--kz-ink); color: var(--kz-paper);
-  border: 1px solid rgba(255,251,240,.22); border-radius: 14px;
-  padding: 34px 34px 28px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.4), 0 24px 64px rgba(0,0,0,.3);
+  display: flex; flex-direction: column;
+  background: linear-gradient(180deg, #FFCA33 0%, #FFB900 52%, #F0A800 100%);
+  color: var(--kz-ink);
+  border: 1px solid rgba(0,0,0,.14); border-radius: 16px;
+  padding: 30px 32px 28px;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.55),
+    inset 0 -4px 10px rgba(150,95,0,.22),
+    0 2px 4px rgba(40,30,15,.25),
+    0 14px 28px -8px rgba(255,185,0,.55),
+    0 34px 64px -22px rgba(40,30,15,.5);
 }
+.kz-trial-form { flex: 1; display: flex; flex-direction: column; }
 .kz-trial-art {
   position: absolute; top: -14px; right: -10px; width: 260px; height: 140px;
-  opacity: .9; color: var(--kz-paper); pointer-events: none;
+  opacity: .5; color: var(--kz-ink); pointer-events: none;
 }
 .kz-trial-form, .kz-trial-done { position: relative; }
 .kz-trial-badge {
   display: inline-flex; align-items: center; gap: 7px;
-  background: rgba(255,185,0,.18); color: var(--kz-yellow);
+  background: rgba(0,0,0,.08); color: var(--kz-ink);
   border-radius: 999px; padding: 6px 12px 6px 10px;
-  font-family: var(--kz-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .46px;
+  font-family: var(--kz-mono); font-size: 11.5px; font-weight: 600; letter-spacing: .46px;
 }
-.kz-trial-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--kz-yellow); }
+.kz-trial-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--kz-ink); }
 .kz-trial-title {
-  margin: 16px 0 0; font-size: 27px; font-weight: 600; letter-spacing: -.68px; line-height: 1.2;
-  color: var(--kz-paper);
+  margin: 0; font-size: 27px; font-weight: 700; letter-spacing: -.68px; line-height: 1.2;
+  color: var(--kz-ink);
 }
-.kz-trial-sub { margin: 8px 0 0; font-size: 14.5px; line-height: 1.5; color: rgba(255,251,240,.8); }
+.kz-trial-sub { margin: 10px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; color: rgba(0,0,0,.72); }
 .kz-trial-fields { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
 .kz-trial-row { display: flex; gap: 14px; }
 .kz-trial-row > * { flex: 1; min-width: 0; }
 .kz-trial-field label {
   display: block; margin-bottom: 7px;
-  font-family: var(--kz-mono); font-size: 11px; font-weight: 500; letter-spacing: .66px;
-  text-transform: uppercase; color: rgba(255,251,240,.76);
+  font-family: var(--kz-mono); font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+  text-transform: uppercase; color: rgba(0,0,0,.72);
 }
 .kz-trial-field input, .kz-trial-field select {
   box-sizing: border-box; width: 100%;
-  background: rgba(255,251,240,.05); color: var(--kz-paper);
-  border: 1px solid rgba(255,251,240,.22); border-radius: 8px;
-  font: inherit; font-size: 15px; padding: 13px 14px;
+  background: rgba(255,255,255,.72); color: var(--kz-ink);
+  border: 1px solid rgba(0,0,0,.18); border-radius: 8px;
+  font: inherit; font-size: 15.5px; font-weight: 500; padding: 13px 14px;
 }
-.kz-trial-field .req { color: #FF5A52; }
-.kz-trial-field input::placeholder { color: rgba(255,251,240,.4); }
-.kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-yellow); outline-offset: 1px; }
+.kz-trial-field .req { color: #C0341D; }
+.kz-trial-field input::placeholder { color: rgba(0,0,0,.42); }
+.kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-ink); outline-offset: 1px; }
 .kz-trial-field select {
   appearance: none; -webkit-appearance: none; padding-right: 40px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23FFFBF0' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23171511' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 14px center;
 }
 .kz-trial-field select option { color: var(--kz-ink); background: #fff; }
@@ -498,27 +653,30 @@ button { font-family: inherit; }
 .kz-trial.is-js .kz-trial-more:not(.is-open) { grid-template-rows: 0fr; margin-top: -14px; opacity: 0; }
 .kz-trial-more-inner { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 3px; margin: -3px; }
 .kz-trial-submit {
-  margin-top: 20px; width: 100%;
+  margin-top: auto; width: 100%;
   display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: var(--kz-yellow); color: var(--kz-ink);
+  background: var(--kz-ink); color: var(--kz-paper);
   border: none; border-radius: 999px; padding: 16px 22px; cursor: pointer;
   font: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.16px;
-  box-shadow: 0 2px 6px rgba(255,185,0,.28), 0 10px 28px rgba(255,185,0,.32);
-  transition: filter .2s ease;
+  box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
-.kz-trial-submit:hover { filter: brightness(.96); }
+.kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
 .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
-.kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #FFB4A8; }
+.kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
 .kz-trial-msg.is-shown { display: block; }
-.kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(255,251,240,.6); }
+.kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(0,0,0,.6); }
 .kz-trial.is-js .kz-trial-legal:not(.is-open) { display: none; }
-.kz-trial-legal a { color: var(--kz-yellow); text-decoration: underline; }
+.kz-trial-legal a { color: var(--kz-ink); text-decoration: underline; font-weight: 600; }
 @media (max-width: 1024px) {
   .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
   .kz-hero--trial .kz-trial { max-width: 640px; }
 }
 @media (max-width: 768px) {
   .kz-hero-trial-h1 { font-size: 32px; }
+  .kz-hero-v2-h1 { font-size: 34px; }
+  .kz-hero-v2-lede { font-size: 17px; }
+  .kz-hero-deco, .kz-trial-bubble { display: none; }
   .kz-trial { padding: 28px 22px 24px; }
   .kz-trial-art { width: 200px; height: 108px; opacity: .6; }
 }
@@ -526,10 +684,8 @@ button { font-family: inherit; }
 
 /* ── Marquee ──────────────────────────────────────────────────── */
 .kz-marquee {
-  overflow: hidden; padding: 28px 0; background: transparent;
-  border-top: 1px solid var(--kz-line);
-  border-bottom: 1px solid var(--kz-line);
-  margin-top: 40px;
+  overflow: hidden; padding: 20px 0; background: transparent;
+  margin-top: 14px;
   /* Full-bleed: the logo bar spans the whole viewport (and shows more logos)
      as the screen widens, even though the page is capped at 1600px. */
   width: 100vw;
@@ -542,7 +698,7 @@ button { font-family: inherit; }
      of the logos (not 50% of the viewport). Two copies + -50% = seamless loop
      through every logo. */
   width: max-content;
-  animation: kz-mq-move 66s linear infinite;
+  animation: kz-mq-move 84s linear infinite;
   color: rgba(10,10,10,.55); font-size: 20px; font-weight: 600; letter-spacing: -0.01em;
   align-items: center;
 }
