@@ -5471,6 +5471,35 @@ def render_demo_confirmed() -> str:
                      extra_head='<meta name="robots" content="noindex">') + body + page_foot()
 
 
+def render_white_paper_confirmation() -> str:
+    """/white-paper-confirmation/ — where the CARE white paper lead form
+    (assets/js/white-paper.js, on /white-paper/) sends the visitor after a
+    successful HubSpot submission, instead of showing the inline success
+    state on the form itself."""
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
+      <div style="max-width:520px;width:100%;text-align:center;">
+        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>On its way</div>
+        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks, check your inbox.</h1>
+        <p class="kz-lede" style="margin-top:16px;">
+          We&rsquo;ve sent the CARE white paper to your email address, it should land in
+          the next few minutes.
+        </p>
+        <div style="margin-top:28px;">
+          <a class="kz-btn kz-btn-yellow" href="/">Back to homepage</a>
+        </div>
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Thanks for downloading', 1,
+                     "The CARE white paper is on its way to your inbox.",
+                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
+
+
 # ─────────────────────────────────────────────────────────────────────
 # POLICIES — versioned legal documents (Privacy / Licence / Cookies).
 # Source of truth: content/policies/<slug>/<YYYY-MM-DD>.html, one file per
@@ -5851,6 +5880,7 @@ def main():
     write(ROOT / 'demo' / 'index.html',         render_demo())
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
+    write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
     write(ROOT / '404.html',                    render_404())
 
     # Marketing / campaign landing pages
