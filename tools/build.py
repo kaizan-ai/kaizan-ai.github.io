@@ -2694,9 +2694,9 @@ def render_customer_success_software() -> str:
           }
 
           /* ── "Let's talk" closer ─────────────────────────────── */
-          .cs-lets-talk { background: var(--kz-sand); }
+          .cs-lets-talk { background: var(--kz-sand); padding: 0 var(--kz-gutter); }
           .cs-lt-inner {
-            max-width: 1280px; margin: 0 auto; padding: 96px var(--kz-gutter);
+            max-width: 1280px; margin: 0 auto; padding: 96px 0;
             text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
           }
           .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
@@ -2712,8 +2712,8 @@ def render_customer_success_software() -> str:
           @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
 
           /* ── Modules carousel ────────────────────────────────── */
-          .cs-modules { background: var(--kz-yellow); }
-          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px var(--kz-gutter); }
+          .cs-modules { background: var(--kz-yellow); padding: 0 var(--kz-gutter); }
+          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 0; }
           .cs-modules-head { margin-bottom: 40px; }
           .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
           .cs-modules .kz-carousel { position: static; }
@@ -2733,8 +2733,8 @@ def render_customer_success_software() -> str:
           @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
 
           /* ── Integrations + FAQ ──────────────────────────────── */
-          .cs-integrations { background: var(--kz-paper); }
-          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px var(--kz-gutter) 0; text-align: center; }
+          .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
           .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
           .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
           .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
@@ -2746,7 +2746,7 @@ def render_customer_success_software() -> str:
           .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
           .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
           .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
-          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px var(--kz-gutter) 110px; }
+          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px 0 110px; }
           .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
           .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
           .cs-faq-item:last-of-type { border-bottom: none; }
