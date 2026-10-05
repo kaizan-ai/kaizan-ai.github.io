@@ -3260,6 +3260,27 @@ def render_july_offer() -> str:
                      extra_head=JULY_OFFER_STYLE) + body + page_foot()
 
 
+def render_client_health_playbook() -> str:
+    """Campaign landing page: /client-health/playbook/ — Client Health Playbook
+    lead magnet. Unlike the site's other pages, the markup + styles are a
+    bespoke one-off authored directly in content/client-health-playbook/index.html
+    (its own <html>/<head>, not the shared page_head()/page_foot() shell), so we
+    only substitute in the things it needs to match the rest of the site: the
+    shared nav, the shared footer, and the shared css/js includes, via the
+    KZ_NAV/KZ_FOOTER/KZ_HEAD placeholders left in that source file."""
+    depth = 2
+    p = relpath(depth)
+    src = (ROOT / 'content' / 'client-health-playbook' / 'index.html').read_text(encoding='utf-8')
+    head_extra = dedent(f'''\
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+        <link rel="stylesheet" href="{p}assets/css/tokens.css{asset_v('assets/css/tokens.css')}">
+        <link rel="stylesheet" href="{p}assets/css/site.css{asset_v('assets/css/site.css')}">
+        <script defer src="{p}assets/js/site.js{asset_v('assets/js/site.js')}"></script>''')
+    html = src.replace('<!--KZ_HEAD-->', head_extra)
+    html = html.replace('<!--KZ_NAV-->', nav_html(depth))
+    html = html.replace('<!--KZ_FOOTER-->', footer_html(depth))
+    return html
+
 
 def render_404() -> str:
     body = f'''
@@ -5480,6 +5501,7 @@ def main():
 
     # Marketing / campaign landing pages
     write(ROOT / 'marketing' / 'july-offer' / 'index.html', render_july_offer())
+    write(ROOT / 'client-health' / 'playbook' / 'index.html', render_client_health_playbook())
 
     # Persona pages
     for slug in PERSONAS:
