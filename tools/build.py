@@ -5451,6 +5451,1321 @@ def build_us_locale():
     print(f'  ({written} US locale page(s) written to /us/)')
 
 
+
+
+def playbooks_sections_html() -> str:
+    """Ported 'Playbooks / risk / actions / growth' section. Site font; scroll-synced
+    bubble-traveler connectors (assets/js/site.js: initPbConnectors)."""
+    return '''<div class="kz-pb" id="sceneRoot">
+  <!-- connector A travelers: Playbooks illustration -> One source of truth (left side) -->
+  <div class="bubbleTraveler connA" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #1FA591; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+
+  <!-- connector B travelers: One source of truth (left side) -> Every action stays inside Kaizan (right side) -->
+  <div class="bubbleTraveler connB" style="background: #1FA591; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #7C5CFC; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(124,92,252,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #E8432B; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 8px; background: rgba(255,255,255,.75);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(255,255,255,.55);"></span>
+  </div>
+
+  <!-- connector C travelers: Every action stays inside Kaizan -> One view of every client relationship -->
+  <div class="bubbleTraveler connC" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #E8432B; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+  <!-- ================= Playbooks that run themselves ================= -->
+  <section style="padding: 72px var(--kz-gutter) 96px; overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Follow-ups and replies drafted for your approval</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">CRM and project tools updated automatically</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">QBRs and account briefs ready before you ask</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneA" style="position: relative; width: 100%; max-width: 540px; height: 460px;">
+
+          <!-- BOLD themed decorative: glow behind the playbook bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: 10px; width: 170px; height: 120px; background: #2F5FE0; opacity: 0.88; border-radius: 26px 26px 6px 26px; box-shadow: 0 24px 40px rgba(47,95,224,.4); animation: cardFloat 5.5s ease-in-out infinite; z-index: 0; padding: 20px 22px;">
+            <span style="display: block; height: 8px; width: 70%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 12px;"></span>
+            <span style="display: block; height: 8px; width: 45%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; right: 10px; bottom: -10px; width: 130px; height: 95px; background: #E8432B; opacity: 0.88; border-radius: 24px 24px 24px 6px; box-shadow: 0 20px 34px rgba(232,67,43,.38); animation: cardFloat 4.8s ease-in-out infinite; animation-delay: .5s; z-index: 0; padding: 16px 18px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 40%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 60px; width: 440px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 2; animation: cardFloat 5.5s ease-in-out infinite;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #000000;">Renewal playbook</h3>
+              <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; background: #EDE8DA; padding: 6px 10px; border-radius: 999px;">Stage 3 of 5</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Usage review sent</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Stakeholder map confirmed</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid #FFB900; border-radius: 12px; background: rgba(255,185,0,0.08);">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #171511;"></span>
+                <span style="font-size: 14px; color: #171511; font-weight: 500;">Draft renewal proposal</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px; opacity: .5;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #C9C4B4;"></span>
+                <span style="font-size: 14px; color: #171511;">Exec sign-off</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bubbleOriginA" style="position: absolute; right: 36px; top: 0px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; right: 0px; top: 0px; width: 150px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 3;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Owner</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Jordan Lee</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">JL</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One source of truth for every account ================= -->
+  <section style="padding: 96px var(--kz-gutter); overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneB" style="position: relative; width: 100%; max-width: 540px; height: 340px;">
+
+          <!-- BOLD themed decorative: glow behind the source-of-truth bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -30px; width: 280px; height: 220px; background: radial-gradient(circle, #1FA591 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: -40px; width: 160px; height: 115px; background: #1FA591; opacity: 0.88; border-radius: 26px 26px 26px 6px; box-shadow: 0 20px 36px rgba(31,165,145,.38); animation: bubbleFloat 5.2s ease-in-out infinite; z-index: 0; padding: 18px 20px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.88); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 42%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; left: 200px; top: -10px; width: 64px; height: 48px; background: #FFB900; opacity: 0.92; border-radius: 16px 16px 6px 16px; box-shadow: 0 16px 28px #FFB90066; animation: bubbleFloat 4.3s ease-in-out infinite; animation-delay: .4s; z-index: 0; padding: 8px 10px;">
+            <span style="display: block; height: 5px; width: 70%; border-radius: 999px; background: rgba(23,21,17,.45); margin-bottom: 6px;"></span>
+            <span style="display: block; height: 5px; width: 45%; border-radius: 999px; background: rgba(23,21,17,.3);"></span>
+          </div>
+
+          <div id="bubbleDestA" style="position: absolute; left: 10px; top: 10px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 10px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <div style="display: flex; height: 10px; width: 64px; border-radius: 999px; overflow: hidden;"><span style="flex: 1; background: #171511;"></span><span style="flex: 1.3; background: #E8432B;"></span><span style="flex: 0.7; background: #EADFB8;"></span></div>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Risk indicators</span>
+          </div>
+
+          <div id="bubbleOriginB" style="position: absolute; left: 20px; top: 90px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 80px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 140px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 85%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both;"></div>
+              <div style="width: 28px; height: 55%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .1s;"></div>
+              <div style="width: 28px; height: 70%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .2s;"></div>
+              <div style="width: 28px; height: 35%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .3s;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">Risk distribution</div>
+          </div>
+
+          <div style="position: absolute; right: 10px; top: 56px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Alerts for quiet stakeholders, dipping sentiment and single-threaded relationships</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Recommended next steps for each at-risk client</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A clear view of revenue at risk across your whole portfolio</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= Every action stays inside Kaizan ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Insight from every meeting, email and chat in one place</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">No spreadsheets, no guesswork, no relying on memory</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZone" style="position: relative; width: 100%; max-width: 600px; height: 540px;">
+
+          <!-- BOLD themed decorative: oversized chat bubbles -->
+          <div style="position: absolute; right: -30px; top: -20px; width: 320px; height: 260px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .22; z-index: 0;"></div>
+
+          <div id="bubbleOrigin" style="position: absolute; right: 150px; top: 40px; width: 1px; height: 1px;"></div>
+          <div id="bubbleDestB" style="position: absolute; right: 190px; top: 70px; width: 1px; height: 1px;"></div>
+
+          <div style="position: absolute; right: 120px; top: -10px; width: 190px; height: 118px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); animation: bigBob 4.2s ease-in-out infinite; --r: -6deg; z-index: 1; padding: 22px 26px;">
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.72); width: 76%; margin-top: 10px;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.55); width: 54%; margin-top: 10px;"></span>
+          </div>
+          <!-- next to the AI Actions card (right-hand gutter), not stacked on top of it or the assigned-to card -->
+          <div style="position: absolute; right: 14px; top: 240px; width: 110px; height: 128px; background: #E8432B; border-radius: 26px 26px 8px 26px; box-shadow: 0 22px 38px rgba(232,67,43,.32); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .5s; --r: 7deg; z-index: 2; padding: 18px 16px;">
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.65); width: 62%; margin-top: 9px;"></span>
+          </div>
+
+          <div style="position: absolute; right: 70px; top: 150px; width: 170px; height: 44px; background: radial-gradient(circle, #FFB900 0%, transparent 72%); opacity: .55; animation: glowPulse 2.2s ease-in-out infinite; z-index: 0;"></div>
+          <div style="position: absolute; right: 95px; top: 148px; width: 120px; height: 84px; background: #FFB900; border-radius: 30px 30px 30px 8px; box-shadow: 0 22px 38px rgba(23,21,17,.22); display: flex; align-items: center; justify-content: center; gap: 8px; z-index: 2;">
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: 0s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .15s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .3s;"></span>
+          </div>
+
+
+          <div style="position: absolute; left: 10px; bottom: 10px; width: 136px; height: 92px; background: #7C5CFC; border-radius: 8px 30px 30px 30px; box-shadow: 0 20px 34px rgba(124,92,252,.3); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .9s; --r: -4deg; z-index: 0; padding: 16px 20px;">
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.6); width: 58%; margin-top: 8px;"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 130px; width: 460px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 3;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 24px; font-weight: 600; color: #000000;">AI Actions</h3>
+              <button style="border: none; background: #FFB900; color: #171511; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; display: flex; align-items: center; gap: 6px; cursor: default;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#171511" stroke-width="1.8" stroke-linecap="round"></path></svg>New action</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Draft renewal proposal — Acme Creative</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 70%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #D8A678; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">AC</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Escalate CARE risk — Northwind</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 30%; height: 100%; background: #E8432B;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #2F5FE0; color: #FFFBF0; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">N</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Prep QBR deck — Stark Industries</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 45%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">SI</div></div>
+            </div>
+          </div>
+
+          <div style="position: absolute; right: 12px; top: 60px; width: 148px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 4;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Assigned to</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Priya Shah</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #FFB900; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">PS</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One view of every client relationship ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="revealZone" style="position: relative; width: 100%; max-width: 600px; height: 604px;">
+
+          <div id="bubbleDest" style="position: absolute; left: 110px; top: 60px; width: 1px; height: 1px;"></div>
+
+          <!-- BOLD themed decorative: arrival burst, confetti bubbles -->
+          <div style="position: absolute; left: -30px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #E8432B 0%, transparent 70%); opacity: .18; z-index: 0;"></div>
+
+          <div style="position: absolute; left: 10px; top: 0px; width: 210px; height: 128px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); z-index: 2; display: flex; align-items: center; justify-content: center;">
+            <svg width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M2 20L14 31L26 10" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 20L34 31L52 4" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+
+          <span style="animation: confetti1 1.8s ease-out infinite; animation-delay: .3s; position: absolute; left: 230px; top: 50px; width: 20px; height: 20px; border-radius: 999px; background: #E8432B; z-index: 2;"></span>
+          <span style="animation: confetti2 1.8s ease-out infinite; animation-delay: .6s; position: absolute; left: 240px; top: 100px; width: 16px; height: 16px; border-radius: 999px; background: #FFB900; z-index: 2;"></span>
+          <span style="animation: confetti3 1.8s ease-out infinite; animation-delay: .9s; position: absolute; left: 150px; top: 110px; width: 14px; height: 14px; border-radius: 999px; background: #2F5FE0; z-index: 2;"></span>
+
+          <div style="position: absolute; left: 330px; top: 60px; width: 92px; height: 58px; background: #1FA591; border-radius: 22px 22px 22px 6px; box-shadow: 0 14px 24px rgba(31,165,145,.3); display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 14px; z-index: 1;">
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.6); width: 60%;"></span>
+          </div>
+
+          <div style="position: absolute; left: 16px; top: 140px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7L4.5 10.5L9 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 7L11.5 10.5L16 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Signal received</span>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 184px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 150px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 70%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 100%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 55%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 40%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">CARE score by client</div>
+          </div>
+
+          <div style="position: absolute; right: -10px; top: 164px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 394px; width: 430px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 26px 26px 20px; z-index: 2;">
+            <div style="position: relative; height: 24px; margin-bottom: 10px;">
+              <div style="position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: #EADFB8;"></div>
+              <div style="position: absolute; left: 50%; top: 2px; width: 2px; height: 20px; background: #171511; opacity: 0.4;"></div>
+              <span style="position: absolute; left: 4%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 12%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 18%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 30%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 36%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 47%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 50%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 53%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 64%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 70%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 80%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 95%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #171511;"><div><div style="font-weight: 600;">0</div><div style="color: #8C8878; font-size: 11px;">Minimum</div></div><div style="text-align: center;"><div style="font-weight: 600;">6.8</div><div style="color: #8C8878; font-size: 11px;">Peer average</div></div><div style="text-align: right;"><div style="font-weight: 600;">10</div><div style="color: #8C8878; font-size: 11px;">Maximum</div></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Scoped pitches and proposals drafted for you</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Warm re-introductions to dormant contacts</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Expansion tracked against each client's goals</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+    </div>
+  </section>
+    </div>'''
+
+
+
+def _cs_hero_copy_html(depth: int) -> str:
+    """Hero-v2 headline/lede/CTA for the standalone /customer-success-software/
+    landing page. Ported from the homepage-redesign branch's
+    trial_hero_copy_html() under a new name — kept separate (rather than
+    overwriting the shared trial_hero_copy_html(), which render_home() and
+    render_confirmation() still use) so the live homepage and its
+    /confirmation/ page are completely untouched by this page."""
+    p = relpath(depth)
+    return f'''<div class="kz-hero-copy kz-hero-copy--v2">
+        <div class="kz-hero-deco" aria-hidden="true">
+          <div class="kz-hero-bubble kz-hero-bubble--blue"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--teal"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--gold"><span></span><span></span></div>
+          <span class="kz-hero-dot kz-hero-dot--blue"></span>
+          <span class="kz-hero-dot kz-hero-dot--teal"></span>
+          <span class="kz-hero-dot kz-hero-dot--gold"></span>
+          <span class="kz-hero-dot kz-hero-dot--red"></span>
+          <span class="kz-hero-dot kz-hero-dot--purple"></span>
+          <span class="kz-hero-dot kz-hero-dot--sage"></span>
+        </div>
+        <div class="kz-hero-copy-inner">
+          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
+          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
+            best action so you keep every client and grow every account.</p>
+          <div class="kz-hero-v2-cta">
+            <a class="kz-hero-pill" href="{p}demo/">Book a demo</a>
+          </div>
+        </div>
+      </div>'''
+
+
+def _cs_trial_form_html(depth: int) -> str:
+    """Ported 14-day-trial form card (no TRIAL_SIGNAL_SVG/badge) for the
+    standalone landing page — see _cs_hero_copy_html() for why this is a
+    separate function rather than a change to the shared trial_form_html()."""
+    p = relpath(depth)
+    heard = '\n'.join(f'<option value="{E(o)}">{E(o)}</option>' for o in TRIAL_HEARD_OPTIONS)
+    utm = '\n'.join(f'<input type="hidden" name="{tag}" id="mce-{tag}" value="" data-utm="{param}">'
+                    for tag, param in TRIAL_UTM_FIELDS)
+    arrow = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+             '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
+    return f'''<div class="kz-trial" data-trial>
+        <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+              action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
+          <h2 class="kz-trial-title">Start your 14-day free trial</h2>
+          <p class="kz-trial-sub">Discover the risks and growth opportunities in your own client
+            conversations, benchmarked against best-in-class.</p>
+          <div class="kz-trial-fields">
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-PHONE" name="PHONE" type="tel" placeholder="07700 900000" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="kz-trial-more" data-trial-more>
+              <div class="kz-trial-more-inner">
+                <div class="kz-trial-row">
+                  <div class="kz-trial-field">
+                    <label for="mce-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+                  </div>
+                  <div class="kz-trial-field">
+                    <label for="mce-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+                  </div>
+                </div>
+                <div class="kz-trial-field">
+                  <label for="mce-MMERGE12">How did you hear about us?</label>
+                  <select id="mce-MMERGE12" name="MMERGE12">
+                    <option value="">Select an option</option>
+                    {heard}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
+          {utm}
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="{TRIAL_MC_TAGS}"></div>
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe" class="kz-trial-submit">Start my free trial {arrow}</button>
+          <p class="kz-trial-msg" data-trial-msg role="status" aria-live="polite"></p>
+          <p class="kz-trial-legal" data-trial-legal>
+            By submitting your details to Kaizan you are showing interest in our product and so we may
+            contact you from time to time about our product and services. You may unsubscribe from these
+            communications at any time. Please review our <a href="{p}privacy-policy/">Privacy Policy</a>
+            for information on how to unsubscribe and our privacy practices.
+          </p>
+        </form>
+      </div>'''
+
+
+def _cs_stats_band_html() -> str:
+    """Updated stats band (icon + 'avg.' label + white numbers) from the
+    design artifact's Section5-Stats — replaces stats_band_html()'s plain
+    bold-yellow-number version for this page only."""
+    stats = [
+        ('<rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>'
+         '<path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '21%', 'Average revenue increase per client'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '5.4 hrs', 'Admin saved per person, every week'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="5" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="1.4" fill="#FFB900"/>',
+         'avg.', '45%', 'Of revenue at risk protected through early signals'),
+        ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
+         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+        ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
+         'avg.', '23%', 'Lower cost to serve each client'),
+        ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
+         '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
+         None, '11M+', 'Client service data points behind every recommendation'),
+    ]
+
+    def _stat(icon, avg_label, num, desc):
+        avg_html = (f'<span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">{E(avg_label)}</span>'
+                    if avg_label else '')
+        return (f'<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" '
+                f'style="margin:0 auto 14px;">{icon}</svg>'
+                f'<div style="display:flex;align-items:baseline;justify-content:center;gap:6px;">'
+                f'{avg_html}<div style="font-size:46px;font-weight:700;color:#FFFFFF;">{E(num)}</div></div>'
+                f'<div style="font-size:17px;color:#ffffff;margin-top:6px;">{E(desc)}</div></div>')
+
+    grid = '\n'.join(_stat(*s) for s in stats)
+    return f'''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;">{grid}</div>
+    </div>
+  </section>
+</div>'''
+
+
+def _cs_lets_talk_html() -> str:
+    """'Let's talk' closer — 3 benefit cards + a Book a demo CTA."""
+    cards = [
+        ('var(--kz-yellow)', '#FFFFFF', 'Protects the revenue you already have'),
+        ('#7FB59E', '#FFFFFF', 'Gives your team their week back'),
+        ('#2F5FE0', '#FFFFFF', 'Unlocks growth inside existing accounts'),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-lt-card" style="background:{bg};color:{fg}">{E(text)}</div>'
+        for bg, fg, text in cards
+    )
+    arrow = ('<svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">'
+             '<path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    return f'''<section class="cs-lets-talk">
+      <div class="cs-lt-inner">
+        <h2 class="cs-lt-title">Let&rsquo;s talk</h2>
+        <p class="cs-lt-sub">3 ways Kaizan helps your client-facing team</p>
+        <div class="cs-lt-grid">{cards_html}</div>
+        <a class="kz-btn kz-btn-black cs-lt-cta" href="/demo/">Book a demo {arrow}</a>
+      </div>
+    </section>'''
+
+
+def _cs_modules_html() -> str:
+    """'Explore everything Kaizan does' module carousel. Reuses the site's
+    existing generic carousel engine (initQuoteCarousel in site.js runs
+    against any [data-carousel] root), so prev/next/dots/drag/auto-advance
+    all work with no extra JS."""
+    modules = [
+        ('AI Assistant', 'Joins every call and keeps your systems up to date', '''
+          <div style="width:100%;height:150px;background:#171511;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;">
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#D8D2BE;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">AC</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#7FB59E;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">N</div></div>
+            <div style="background:var(--kz-yellow);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 0 0 2px #FFFFFF inset;">
+              <img src="/assets/img/kaizan-icon.png" alt="" style="width:24px;height:24px;border-radius:6px;">
+              <span style="font-size:8px;font-weight:700;color:#171511;">Kaizan joined</span>
+            </div>
+          </div>'''),
+        ('AI Helpers', 'Specialist helpers working 24/7 on every client', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">Reply drafted &mdash; Acme Creative</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">QBR brief compiled &mdash; Northwind</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0012 3z" stroke="#8C8878" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span style="font-size:12px;color:#8C8878;">Suggested: re-engage Stark Industries</span></div>
+          </div>'''),
+        ('Client Health Score', 'Relationship health on every account', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px 18px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="align-self:flex-start;font-size:13px;font-weight:700;color:#171511;">Health Score</div>
+            <div style="width:88px;height:88px;border-radius:999px;background:conic-gradient(#1FA591 0% 84%,#E3EDE9 84% 100%);display:flex;align-items:center;justify-content:center;">
+              <div style="width:70px;height:70px;border-radius:999px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">
+                <div style="font-size:20px;font-weight:800;color:#171511;">8.4</div>
+                <div style="font-size:8px;font-weight:700;color:#1FA591;background:rgba(31,165,145,.15);padding:2px 7px;border-radius:999px;">THRIVING</div>
+              </div>
+            </div>
+          </div>'''),
+        ('Client News', 'Every conversation and commitment in one view', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Agenda drafted</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Metrics compiled</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;"></span><span style="font-size:13px;color:#8C8878;">Deck exported</span></div>
+          </div>'''),
+        ('Risk Watcher', "Early warnings before a client leaves", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Acme Creative &mdash; sentiment dropping</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#171511" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#171511" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Northwind &mdash; renewal in 14 days</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Stark Industries &mdash; champion left</span></div>
+          </div>'''),
+        ('Expansion Scout', 'Upsell signals the moment they land', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:70px;">
+              <div style="width:20px;height:35%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:50%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:68%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:100%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+            </div>
+            <div style="font-size:11px;background:rgba(127,181,158,.18);color:#171511;font-weight:600;padding:5px 9px;border-radius:999px;width:fit-content;">&#9650; +$42k opportunity flagged</div>
+          </div>'''),
+        ('Reply Drafter', 'Follow-ups written in your voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"><span style="width:20px;height:20px;border-radius:999px;background:#2F5FE0;color:#FFFBF0;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</span><span style="font-size:12px;font-weight:600;color:#171511;">Reply to Jordan Lee</span></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:95%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:80%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:60%;"></div>
+            <div style="font-size:11px;color:#2F5FE0;font-weight:600;margin-top:4px;">&check; Draft ready for review</div>
+          </div>'''),
+        ('QBR Builder', 'Review decks compiled from real conversations', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(-8deg);"></div>
+            <div style="width:58px;height:82px;background:#7C5CFC;border-radius:6px;box-shadow:0 10px 20px rgba(124,92,252,.3);display:flex;align-items:center;justify-content:center;z-index:1;"><svg width="26" height="20" viewBox="0 0 26 20" fill="none"><rect x="1" y="12" width="4" height="7" fill="#FFFFFF" opacity=".8"/><rect x="7" y="7" width="4" height="12" fill="#FFFFFF"/><rect x="13" y="10" width="4" height="9" fill="#FFFFFF" opacity=".8"/><rect x="19" y="3" width="4" height="16" fill="#FFFFFF"/></svg></div>
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(8deg);"></div>
+          </div>'''),
+        ('Stakeholder Map', "See who matters and who's gone quiet", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;gap:14px;align-items:center;">
+              <div style="width:36px;height:36px;border-radius:999px;background:#1FA591;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(31,165,145,.3);">JL</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">PS</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(47,95,224,.3);">AC</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">NW</div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">2 stakeholders gone quiet</div>
+          </div>'''),
+        ('Ask Kaizan', 'Ask anything about any client and get cited answers', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="align-self:flex-end;max-width:80%;background:#171511;color:#FFFBF0;font-size:11px;padding:7px 11px;border-radius:999px 999px 4px 999px;">Is Acme at risk?</div>
+            <div style="max-width:88%;background:#EDE4C6;color:#171511;font-size:11px;line-height:1.4;padding:7px 11px;border-radius:999px 999px 999px 4px;">Yes &mdash; sentiment dropped 18% <span style="color:#8C8878;">[Oct 3 call]</span></div>
+          </div>'''),
+        ('My Voice', 'Writes emails in your tone of voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;align-items:center;gap:4px;height:44px;">
+              <div style="width:4px;height:40%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:70%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:100%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:55%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:85%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:35%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:65%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:90%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:45%;background:#171511;border-radius:999px;"></div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">96% match to your tone</div>
+          </div>'''),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-modcard">{visual}'
+        f'<div class="cs-modcard-title">{E(title)}</div>'
+        f'<p class="cs-modcard-desc">{E(desc)}</p></div>'
+        for title, desc, visual in modules
+    )
+    dots_html = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show module {i + 1}"></button>'
+        for i in range(len(modules))
+    )
+    return f'''<section class="cs-modules">
+      <div class="cs-modules-inner">
+        <div class="cs-modules-head">
+          <h2 class="cs-modules-title">Explore everything Kaizan does</h2>
+        </div>
+        <div class="kz-carousel" data-carousel>
+          <button class="kz-carousel-arrow is-prev" data-carousel-prev type="button" aria-label="Previous module">&lsaquo;</button>
+          <div class="kz-carousel-viewport" data-carousel-viewport>{cards_html}</div>
+          <button class="kz-carousel-arrow is-next" data-carousel-next type="button" aria-label="Next module">&rsaquo;</button>
+        </div>
+        <div class="kz-carousel-dots" data-carousel-dots>{dots_html}</div>
+      </div>
+    </section>'''
+
+
+def _cs_integrations_faq_html() -> str:
+    """'Works with the tools you already use' icon grid + an FAQ accordion.
+    The accordion uses native <details>/<summary> — no JS needed."""
+    icons_html = '\n'.join(
+        f'<div class="cs-int-icon"><div class="cs-int-icon-box">{INT_LOGOS.get(i["k"], "")}</div>'
+        f'<div class="cs-int-icon-label">{E(i["name"])}</div></div>'
+        for i in INT_DATA
+    )
+    faqs = [
+        ('Is AI built into Kaizan, or is it an add-on?',
+         'AI is the core of Kaizan. Your Helpers work from day one, capturing '
+         'conversations, drafting follow-ups and flagging risk and opportunity '
+         'without any extra setup.'),
+        ('How does Kaizan help prevent client churn?',
+         "Kaizan scores the health of every relationship and watches for early "
+         "warning signs, like a quiet stakeholder or falling sentiment. You get "
+         "an alert and a recommended next step while there's still time to act."),
+        ('How much time will my team save?',
+         'On average, 5.4 hours per person per week. Kaizan handles meeting '
+         'notes, follow-ups, system updates and report prep, so your team can '
+         'spend that time with clients.'),
+        ('How does Kaizan find upsell opportunities?',
+         'It listens for buying signals across every meeting, email and chat, '
+         'such as a client asking "do you do analytics?". It then flags the '
+         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'increase in their addressable upsell pool.'),
+        ('What are the recommendations based on?',
+         "Kaizan's forecasts draw on over 11 million points of client service "
+         "data, benchmarked against best-in-class client teams, plus the "
+         "conversations from your own accounts."),
+    ]
+    plus = ('<svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">'
+            '<path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg>')
+    faq_html = '\n'.join(
+        f'<details class="cs-faq-item">'
+        f'<summary class="cs-faq-summary"><span>{E(q)}</span>{plus}</summary>'
+        f'<p class="cs-faq-body">{E(a)}</p>'
+        f'</details>'
+        for q, a in faqs
+    )
+    return f'''<section class="cs-integrations">
+      <div class="cs-int-inner">
+        <h2 class="cs-int-title">Works with the tools you already use</h2>
+        <div class="cs-int-grid">{icons_html}</div>
+      </div>
+      <div class="cs-faq-inner">
+        <h2 class="cs-faq-title">Frequently asked questions</h2>
+        {faq_html}
+      </div>
+    </section>'''
+
+
+
+
+def render_customer_success_software() -> str:
+    """Standalone SEO landing page at /customer-success-software/, targeting
+    the "customer success software" search term with the same hero-v2 /
+    playbooks / stats-band / testimonial design reviewed throughout this
+    project's homepage-redesign work (PR #85) — but built independently of
+    that still-WIP PR so it can ship on its own.
+
+    Everything the design needs (new hero/why/playbooks/trial-card CSS, the
+    two playbooks scroll-sync JS functions, the hero video) is ported in
+    here or inlined in this page's own <style>/<script>, rather than
+    touching the shared site.css/site.js/render_home() — so the live
+    homepage is completely unaffected by this page existing."""
+    p = relpath(0)
+
+    # ---- Quote carousel content (same testimonials as the redesign) ----
+    carousel_quotes = [
+        dict(q='Kaizan is helping us reduce the manual tasks, the ones that take a '
+               'long time but are less valuable, so we can focus on our clients.',
+             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
+             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
+        dict(q='This tool is an absolute game-changer. Don’t even question it. '
+               'It’s money very well spent. An invaluable customer tool.',
+             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
+             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
+        dict(q='We’ve had numerous occasions where we’ve been able to spot and '
+               'identify high-risk clients that potentially were going to leave.',
+             name='Brandon Smith', role='Managing Director', co='NP Digital',
+             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
+    ]
+    _persona_blog = {
+        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
+        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
+        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
+        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
+        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
+        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+    }
+    _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
+    for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
+               'Adam Hopkinson', 'Gabriella Krite', 'Alex Beddoe']:
+        _pp = _by_quote_name[_n]
+        carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
+                                    role=_pp['quote_role'], co=_pp['quote_co'],
+                                    blog=_persona_blog.get(_n)))
+    company_logo = {
+        'Gravity Global': 'gravity-global.svg', 'Searchlab': 'searchlab.png',
+        'NP Digital': 'np-digital.png', 'Tradedoubler': 'tradedoubler.png',
+        'Collective Content': 'collective-content.svg', 'Verkeer': 'verkeer.png',
+        'PASHN': 'pashn-media-agency.svg', 'The Kite Factory': 'the-kite-factory.png',
+        'Transmission': 'transmission.png',
+    }
+    logo_h = {
+        'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
+        'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
+        'The Kite Factory': 84, 'Transmission': 42,
+    }
+
+    def _qcard(cq):
+        logo = company_logo.get(cq['co'], '')
+        h = logo_h.get(cq['co'], 52)
+        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+                 f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
+            else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+                if cq.get('blog') else '')
+        return (f'<figure class="kz-qcard">'
+                f'{logo_html}'
+                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
+                f'<q>{E(cq["q"])}</q>'
+                f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
+                f'{more}'
+                f'</figure>')
+
+    carousel_cards = '\n'.join(_qcard(cq) for cq in carousel_quotes)
+    carousel_dots = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
+        for i in range(len(carousel_quotes))
+    )
+
+    body = f'''
+    {nav_html(0)}
+
+    <!-- HERO -->
+    <section class="kz-hero kz-hero--trial">
+      {_cs_hero_copy_html(0)}
+      <div class="kz-trial-col">
+        <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
+        {_cs_trial_form_html(0)}
+      </div>
+    </section>
+
+    {marquee_html(CLIENT_LOGOS, depth=0)}
+
+    <!-- HERO REEL -->
+    <section class="kz-reel-section">
+      <div class="kz-reel">
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- WHY KAIZAN -->
+    <section class="kz-why">
+      <div class="kz-why-inner">
+        <h2 class="kz-why-title">Why choose Kaizan&rsquo;s client intelligence?</h2>
+        <div class="kz-why-grid">
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#171511" stroke-width="2"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#171511" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Keep the clients you&rsquo;ve won</h3>
+            <p class="kz-why-card-desc">Early warning signals flag at-risk accounts while there&rsquo;s still time to act.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--blue">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2"></circle><path d="M12 7v5l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Get hours back every week</h3>
+            <p class="kz-why-card-desc">AI Helpers draft the follow-ups, update your systems and prep the QBRs for you.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--teal">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" stroke="#FFFFFF" stroke-width="2"></rect><circle cx="12" cy="12" r="3" stroke="#FFFFFF" stroke-width="2"></circle><path d="M6 9.5v5M18 9.5v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Unlock revenue hidden in your accounts</h3>
+            <p class="kz-why-card-desc">Upsell and cross-sell signals surface the moment a client mentions them.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--red">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">11M+ of client service signals</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYBOOKS / RISK / ACTIONS / GROWTH -->
+    {playbooks_sections_html()}
+
+    <!-- STATS -->
+    {_cs_stats_band_html()}
+
+    <!-- QUOTE CAROUSEL -->
+    <section class="kz-quotes">
+      <div class="kz-quotes-head">
+        <h2 class="kz-quotes-title">What our clients say</h2>
+      </div>
+      <div class="kz-carousel" data-carousel>
+        <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
+        <div class="kz-carousel-viewport" data-carousel-viewport>
+          {carousel_cards}
+        </div>
+        <button class="kz-carousel-arrow is-next" type="button" data-carousel-next aria-label="Next quote">&rsaquo;</button>
+      </div>
+      <div class="kz-carousel-dots" data-carousel-dots>{carousel_dots}</div>
+    </section>
+
+    <!-- LET'S TALK -->
+    {_cs_lets_talk_html()}
+
+    <!-- MODULES CAROUSEL -->
+    {_cs_modules_html()}
+
+    <!-- INTEGRATIONS + FAQ -->
+    {_cs_integrations_faq_html()}
+
+    {footer_html(0)}
+    '''
+
+    extra_head = dedent('''\
+        <script defer src="assets/js/trial-form.js''' + asset_v('assets/js/trial-form.js') + '''"></script>
+        <style>
+          /* ============================================================
+             Ported homepage-redesign look (hero-v2, Why Kaizan, Playbooks,
+             stats band font, restyled trial card, shrunk quote cards).
+             Inlined here rather than added to the shared site.css, so the
+             live homepage/site.css are completely unaffected by this page.
+             ============================================================ */
+          .kz-hero--trial {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 44px;
+            align-items: stretch;
+            padding-top: 80px;
+            padding-bottom: 12px;
+          }
+          .kz-hero-copy--v2 { padding: 24px 8px; overflow: visible; display: flex; flex-direction: column; }
+          .kz-hero-copy-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; }
+          .kz-hero-v2-h1 {
+            margin: 0; font-family: var(--kz-display);
+            font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
+            letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+          }
+          .kz-hero-v2-lede {
+            margin: 0; max-width: 44ch;
+            font-size: 20px; line-height: 1.55; font-weight: 500; color: #3F3B2F;
+          }
+          .kz-hero-v2-cta { align-self: flex-start; margin-top: 0; padding-top: 20px; }
+          .kz-hero-pill {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--kz-yellow); color: var(--kz-ink); font-size: 16px; font-weight: 700;
+            padding: 14px 26px; border-radius: 999px; text-decoration: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 10px 24px -8px rgba(255,185,0,.55);
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+          }
+          .kz-hero-pill:hover { transform: translateY(-2px); background: var(--kz-yellow-deep); box-shadow: 0 16px 32px -12px rgba(255,185,0,.6); }
+          .kz-hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; transform: translateY(-28px); }
+          .kz-hero-bubble {
+            position: absolute; border-radius: 26px 26px 26px 6px; padding: 14px 16px;
+            animation: heroFloat 5s ease-in-out infinite;
+          }
+          .kz-hero-bubble span { display: block; height: 7px; border-radius: 999px; }
+          .kz-hero-bubble span:first-child { width: 70%; margin-bottom: 9px; background: rgba(255,255,255,.88); }
+          .kz-hero-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+          .kz-hero-bubble--blue { left: -22px; top: -46px; width: 120px; height: 70px; background: #1FA591; box-shadow: 0 20px 34px rgba(31,165,145,.38); }
+          .kz-hero-bubble--teal { right: 6px; bottom: 4px; width: 100px; height: 70px; background: #2F5FE0; box-shadow: 0 18px 30px rgba(47,95,224,.34); animation-delay: .6s; }
+          .kz-hero-bubble--gold { right: 52px; top: -34px; width: 60px; height: 48px; background: #E8432B; box-shadow: 0 14px 24px rgba(232,67,43,.4); animation-delay: .3s; }
+          .kz-hero-bubble--gold span:first-child { background: rgba(255,255,255,.88); }
+          .kz-hero-bubble--gold span:last-child { background: rgba(255,255,255,.6); }
+          .kz-hero-dot { position: absolute; border-radius: 999px; animation: heroFloat 4s ease-in-out infinite; }
+          .kz-hero-dot--blue { left: -30px; top: 72px; width: 10px; height: 10px; background: #2F5FE0; }
+          .kz-hero-dot--teal { right: -10px; top: 48px; width: 8px; height: 8px; background: #1FA591; animation-delay: .4s; }
+          .kz-hero-dot--gold { right: 20px; bottom: 10px; width: 12px; height: 12px; background: var(--kz-yellow); animation-delay: .2s; }
+          .kz-hero-dot--red { left: 2px; bottom: -10px; width: 9px; height: 9px; background: #E8432B; animation-delay: .7s; }
+          .kz-hero-dot--purple { right: 112px; top: -24px; width: 7px; height: 7px; background: #7C5CFC; animation-delay: .5s; }
+          .kz-hero-dot--sage { left: 60px; top: -30px; width: 6px; height: 6px; background: #7FB59E; animation-delay: .9s; }
+          @keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+          @media (prefers-reduced-motion: reduce) { .kz-hero-bubble, .kz-hero-dot, .kz-trial-bubble { animation: none; } }
+          .kz-trial-col { position: relative; display: flex; flex-direction: column; }
+          .kz-trial-col > .kz-trial { flex: 1; }
+          .kz-trial-bubble {
+            position: absolute; top: -44px; right: -12px; z-index: 0;
+            width: 150px; height: 96px; padding: 18px 20px;
+            background: #7C5CFC; border-radius: 28px 28px 28px 6px;
+            box-shadow: 0 20px 34px rgba(124,92,252,.4);
+            animation: heroFloat 5s ease-in-out infinite; pointer-events: none;
+          }
+          .kz-trial-bubble span { display: block; height: 8px; border-radius: 999px; }
+          .kz-trial-bubble span:first-child { width: 70%; margin-bottom: 12px; background: rgba(255,255,255,.85); }
+          .kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+          .kz-reel-section { padding: 20px 24px 12px; }
+          .kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
+          .kz-reel-video { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 84vh; }
+          @media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
+          .kz-why { padding: 84px var(--kz-gutter) 72px; }
+          .kz-why-inner { max-width: 1280px; margin: 0 auto; }
+          .kz-why-title {
+            margin: 0 0 56px; text-align: center; font-family: var(--kz-display);
+            font-size: clamp(36px, 4.4vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; color: #000;
+          }
+          .kz-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+          .kz-why-card {
+            padding: 6px 36px;
+            display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+            border-left: 1px solid var(--kz-line);
+          }
+          .kz-why-card:first-child { border-left: none; }
+          .kz-why-icon {
+            width: 72px; height: 72px; border-radius: 20px; flex: none;
+            display: flex; align-items: center; justify-content: center;
+            animation: iconPop 3.4s ease-in-out infinite;
+          }
+          .kz-why-icon svg { width: 34px; height: 34px; }
+          .kz-why-icon--gold { background: var(--kz-yellow); }
+          .kz-why-icon--blue { background: #2F5FE0; animation-delay: .3s; }
+          .kz-why-icon--teal { background: #1FA591; animation-delay: .6s; }
+          .kz-why-icon--red  { background: #E8432B; animation-delay: .9s; }
+          .kz-why-card-title { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.25; color: #000; }
+          .kz-why-card-desc { margin: 0; font-size: 16px; line-height: 1.55; color: #4A4639; }
+          @keyframes iconPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+          @media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
+          .kz-statsband { font-family: var(--kz-sans); }
+          @media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
+          @media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+          .kz-pb { position: relative; overflow: hidden; }
+          .kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
+          .kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
+          .kz-pb a[href] { border-bottom: 0 !important; padding-bottom: 0 !important; }
+          .bubbleTraveler {
+            position: absolute; left: 0; top: 0; width: 46px; height: 34px;
+            border-radius: 14px 14px 14px 5px; box-shadow: 0 10px 22px rgba(0,0,0,.28);
+            opacity: 0; will-change: offset-distance, opacity, transform;
+          }
+          .travelerLine { position: absolute; left: 7px; right: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.85); }
+          @keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+          @keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+          @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+          @keyframes bigBob { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-20px) rotate(var(--r, 0deg)); } }
+          @keyframes typeDot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-8px); opacity: 1; } }
+          @keyframes glowPulse { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.35); opacity: .9; } }
+          @keyframes confetti1 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(-70px,-60px) scale(1.1); } }
+          @keyframes confetti2 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(80px,-40px) scale(1.1); } }
+          @keyframes confetti3 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(10px,-90px) scale(1.1); } }
+          @media (prefers-reduced-motion: reduce) { .kz-pb [style*="animation"] { animation: none !important; } }
+          @media (max-width: 900px) {
+            .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+            .kz-why-card { border-left: none; }
+            .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+          }
+          @media (max-width: 560px) {
+            .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
+            .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
+            .kz-why-card:first-child { border-top: none; }
+          }
+          .kz-trial {
+            position: relative; overflow: hidden; z-index: 1;
+            display: flex; flex-direction: column;
+            background: linear-gradient(180deg, #FFCA33 0%, #FFB900 52%, #F0A800 100%);
+            color: var(--kz-ink);
+            border: 1px solid rgba(0,0,0,.14); border-radius: 16px;
+            padding: 30px 32px 28px;
+            box-shadow:
+              inset 0 2px 0 rgba(255,255,255,.55),
+              inset 0 -4px 10px rgba(150,95,0,.22),
+              0 2px 4px rgba(40,30,15,.25),
+              0 14px 28px -8px rgba(255,185,0,.55),
+              0 34px 64px -22px rgba(40,30,15,.5);
+          }
+          .kz-trial-form { flex: 1; display: flex; flex-direction: column; }
+          .kz-trial-form, .kz-trial-done { position: relative; }
+          .kz-trial-title { margin: 0; font-size: 27px; font-weight: 700; letter-spacing: -.68px; line-height: 1.2; color: var(--kz-ink); }
+          .kz-trial-sub { margin: 10px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; color: rgba(0,0,0,.72); }
+          .kz-trial-fields { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+          .kz-trial-row { display: flex; gap: 14px; }
+          .kz-trial-row > * { flex: 1; min-width: 0; }
+          .kz-trial-field label {
+            display: block; margin-bottom: 7px;
+            font-family: var(--kz-mono); font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+            text-transform: uppercase; color: rgba(0,0,0,.72);
+          }
+          .kz-trial-field input, .kz-trial-field select {
+            box-sizing: border-box; width: 100%;
+            background: rgba(255,255,255,.72); color: var(--kz-ink);
+            border: 1px solid rgba(0,0,0,.18); border-radius: 8px;
+            font: inherit; font-size: 15.5px; font-weight: 500; padding: 13px 14px;
+          }
+          .kz-trial-field .req { color: #C0341D; }
+          .kz-trial-field input::placeholder { color: rgba(0,0,0,.42); }
+          .kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-ink); outline-offset: 1px; }
+          .kz-trial-field select {
+            appearance: none; -webkit-appearance: none; padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23171511' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center;
+          }
+          .kz-trial-field select option { color: var(--kz-ink); background: #fff; }
+          .kz-trial-more { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .35s ease, opacity .35s ease, margin-top .35s ease; }
+          .kz-trial.is-js .kz-trial-more:not(.is-open) { grid-template-rows: 0fr; margin-top: -14px; opacity: 0; }
+          .kz-trial-more-inner { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 3px; margin: -3px; }
+          .kz-trial-submit {
+            margin-top: auto; width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--kz-ink); color: var(--kz-paper);
+            border: none; border-radius: 999px; padding: 16px 22px; cursor: pointer;
+            font: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.16px;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
+            transition: transform .2s ease, box-shadow .2s ease;
+          }
+          .kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
+          .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
+          .kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
+          .kz-trial-msg.is-shown { display: block; }
+          .kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(0,0,0,.6); }
+          .kz-trial.is-js .kz-trial-legal:not(.is-open) { display: none; }
+          .kz-trial-legal a { color: var(--kz-ink); text-decoration: underline; font-weight: 600; }
+          @media (max-width: 1024px) {
+            .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
+            .kz-hero--trial .kz-trial { max-width: 640px; }
+          }
+          @media (max-width: 768px) {
+            .kz-hero-v2-h1 { font-size: 34px; }
+            .kz-hero-v2-lede { font-size: 17px; }
+            .kz-hero-deco, .kz-trial-bubble { display: none; }
+            .kz-trial { padding: 28px 22px 24px; }
+          }
+          @media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+          .kz-qcard {
+            flex: 0 0 300px; max-width: 84vw; margin: 0; scroll-snap-align: start;
+            background: #FCF6E2; border: 1px solid var(--kz-line); border-radius: 14px;
+            padding: 20px 20px; display: flex; flex-direction: column; align-items: center;
+            text-align: center; gap: 8px; position: relative; overflow: hidden;
+            box-shadow: 0 2px 6px rgba(40,30,15,.08), 0 14px 26px -10px rgba(40,30,15,.22), 0 32px 50px -20px rgba(40,30,15,.32);
+          }
+          .kz-qcard::before, .kz-qcard::after { content: ""; position: absolute; left: 0; right: 0; height: 6px; background: var(--kz-yellow); }
+          .kz-qcard::before { top: 0; }
+          .kz-qcard::after { bottom: 0; }
+          .kz-qcard-logobox { height: 42px; display: flex; align-items: center; justify-content: center; }
+          .kz-qcard-logo { height: 32px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(1) brightness(0) opacity(0.85); }
+          .kz-qcard-co { font-weight: 700; font-size: 13px; color: var(--kz-ink); }
+          .kz-qcard-mark { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 42px; line-height: 1; color: var(--kz-yellow); margin: -2px 0 -14px; user-select: none; }
+          .kz-qcard q {
+            font-family: var(--kz-display); font-size: 14.5px; font-weight: 600;
+            line-height: 1.4; color: var(--kz-ink); quotes: none; flex: 0 0 auto;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+          }
+          .kz-qcard q::before, .kz-qcard q::after { content: none; }
+          .kz-qcard figcaption { margin: 0; }
+          .kz-qcard .kz-portrait { flex-direction: column; gap: 5px; }
+          .kz-qcard .kz-portrait .meta { text-align: center; }
+          .kz-qcard .kz-portrait .name { font-weight: 700; font-size: 13.5px; color: var(--kz-ink); }
+          .kz-qcard .kz-portrait .role { font-size: 12px; color: rgba(0,0,0,.62); }
+          .kz-qcard .kz-portrait .avatar { width: 46px; height: 46px; font-size: 15px; box-shadow: 0 0 0 3px var(--kz-yellow); }
+          .kz-qcard-more {
+            align-self: center;
+            font-family: var(--kz-display); font-weight: 700; font-size: 12px;
+            color: var(--kz-ink); text-decoration: none; white-space: nowrap;
+            padding: 7px 15px; border-radius: 999px;
+            border: 1.5px solid var(--kz-yellow); background: var(--kz-yellow);
+            transition: filter .18s, box-shadow .18s;
+          }
+          .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
+
+          /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
+          :root {
+            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          }
+          .kz-nav-links, .kz-nav-toggle { display: none; }
+          .kz-nav-cta .kz-btn-ghost { display: none; }
+          .kz-quotes { position: relative; }
+          .kz-quotes .kz-carousel { position: static; }
+          .kz-quotes .kz-carousel-arrow {
+            display: flex; position: absolute; top: 48px;
+            width: 32px; height: 32px; font-size: 15px;
+          }
+          .kz-quotes .kz-carousel-arrow.is-prev { right: calc(var(--kz-gutter) + 40px); }
+          .kz-quotes .kz-carousel-arrow.is-next { right: var(--kz-gutter); }
+          @media (max-width: 900px) { .kz-quotes .kz-carousel-arrow { display: none; } }
+
+          .cs-lets-talk { background: var(--kz-sand); }
+          .cs-lt-inner {
+            max-width: 1280px; margin: 0 auto; padding: 96px var(--kz-gutter);
+            text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
+          }
+          .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-lt-sub { margin: 0; font-size: 22px; font-weight: 700; color: var(--kz-ink); max-width: 46ch; }
+          .cs-lt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; margin-top: 20px; }
+          .cs-lt-card {
+            min-height: 110px; border-radius: 26px 26px 26px 6px; display: flex;
+            align-items: center; justify-content: center; padding: 18px 20px;
+            font-size: 15px; font-weight: 600; text-align: center; line-height: 1.4;
+            box-shadow: 0 16px 30px rgba(23,21,17,.14);
+          }
+          .cs-lt-cta { margin-top: 12px; padding: 14px 26px; font-size: 15px; }
+          @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
+
+          .cs-modules { background: var(--kz-yellow); }
+          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px var(--kz-gutter); }
+          .cs-modules-head { margin-bottom: 40px; }
+          .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
+          .cs-modules .kz-carousel { position: static; }
+          .cs-modules .kz-carousel-arrow {
+            display: flex; position: absolute; top: 46px;
+            width: 44px; height: 44px; font-size: 22px; background: #FFFFFF;
+          }
+          .cs-modules .kz-carousel-arrow.is-prev { right: 60px; }
+          .cs-modules .kz-carousel-arrow.is-next { right: 0; }
+          .cs-modcard {
+            flex: 0 0 320px; scroll-snap-align: start; background: #000000;
+            border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
+          }
+          .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+          .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
+          .cs-modules .kz-carousel-dots { margin-top: 32px; }
+          @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
+
+          .cs-integrations { background: var(--kz-paper); }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px var(--kz-gutter) 0; text-align: center; }
+          .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+          .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
+          .cs-int-icon-box {
+            background: #FFFFFF; border-radius: 16px; width: 76px; height: 76px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 18px rgba(23,21,17,.07); transition: transform .2s ease;
+          }
+          .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
+          .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
+          .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
+          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px var(--kz-gutter) 110px; }
+          .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
+          .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
+          .cs-faq-item:last-of-type { border-bottom: none; }
+          .cs-faq-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 700; cursor: pointer; list-style: none; }
+          .cs-faq-summary::-webkit-details-marker { display: none; }
+          .cs-faq-plus { flex: none; transition: transform .25s ease; }
+          .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
+          .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
+        </style>
+        <script>
+        (function () {
+          function initReel() {
+            var vids = document.querySelectorAll('[data-play-inview]');
+            if (!vids.length) return;
+            if (!('IntersectionObserver' in window)) {
+              vids.forEach(function (v) { v.play().catch(function () {}); });
+              return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                var v = e.target;
+                if (e.isIntersecting) {
+                  try { v.currentTime = 0; } catch (err) {}
+                  v.play().catch(function () {});
+                } else {
+                  v.pause();
+                }
+              });
+            }, { threshold: 0.35 });
+            vids.forEach(function (v) { io.observe(v); });
+          }
+          function initPbConnectors() {
+            var root = document.getElementById('sceneRoot');
+            if (!root) return;
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            function applyRealPath(originId, destId, selector) {
+              try {
+                var origin = document.getElementById(originId);
+                var dest = document.getElementById(destId);
+                var travelers = document.querySelectorAll(selector);
+                if (!origin || !dest || !travelers.length) return;
+                var rRect = root.getBoundingClientRect();
+                var oRect = origin.getBoundingClientRect();
+                var dRect = dest.getBoundingClientRect();
+                var ox = oRect.left - rRect.left + oRect.width / 2;
+                var oy = oRect.top - rRect.top + oRect.height / 2;
+                var dx = dRect.left - rRect.left + dRect.width / 2;
+                var dy = dRect.top - rRect.top + dRect.height / 2;
+                var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
+                var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
+                var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
+                travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
+              } catch (e) {}
+            }
+            function applyAllPaths() {
+              applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
+              applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
+              applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
+            }
+            function trackProgress(trackId) {
+              var el = document.getElementById(trackId);
+              if (!el) return 0;
+              var rect = el.getBoundingClientRect();
+              var vh = window.innerHeight || document.documentElement.clientHeight;
+              var total = rect.height + vh;
+              if (total <= 0) return 0;
+              return Math.min(1, Math.max(0, (vh - rect.top) / total));
+            }
+            var legs = [
+              { track: 'launchZoneA', selector: '.connA' },
+              { track: 'launchZoneB', selector: '.connB' },
+              { track: 'launchZone',  selector: '.connC' }
+            ];
+            var state = {};
+            function tick() {
+              legs.forEach(function (leg) {
+                var master = trackProgress(leg.track);
+                var travelers = document.querySelectorAll(leg.selector);
+                travelers.forEach(function (el, i) {
+                  var stagger = i * 0.07;
+                  var target = Math.min(1, Math.max(0, master - stagger));
+                  var key = leg.selector + i;
+                  var cur = state[key] === undefined ? target : state[key];
+                  var next = cur + (target - cur) * 0.18;
+                  state[key] = next;
+                  var fadeIn = Math.min(1, next / 0.08);
+                  var fadeOut = Math.min(1, (1 - next) / 0.05);
+                  var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
+                  var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
+                  var rotate = -4 + 6 * next;
+                  el.style.offsetDistance = (next * 100) + '%';
+                  el.style.opacity = String(opacity);
+                  el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
+                });
+              });
+              requestAnimationFrame(tick);
+            }
+            function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
+            remeasure();
+            window.addEventListener('load', remeasure);
+            if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
+            var rt = null;
+            window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
+            requestAnimationFrame(tick);
+          }
+          document.addEventListener('DOMContentLoaded', function () {
+            initReel();
+            initPbConnectors();
+          });
+        })();
+        </script>''')
+
+    html = page_head('Customer Success Software', 0,
+                     'Kaizan is customer success software that turns every call, email '
+                     'and signal into the next best action, AI Helpers that work 24/7 to grow '
+                     'client ROI, satisfaction and revenue.',
+                     extra_head=extra_head) + body + page_foot()
+    # page_head(depth=0) writes every asset link (favicons, tokens.css,
+    # site.css, site.js) as root-relative ("assets/..."), which is only
+    # correct for a page living at the site root. This page is one folder
+    # down, so a <base> fixes every one of those links — it has to land
+    # before page_head()'s own asset links, which is earlier than extra_head
+    # gets injected, hence doing it here rather than via extra_head.
+    html = html.replace(
+        '<title>Customer Success Software · Kaizan</title>',
+        '<base href="/">\n        <title>Customer Success Software · Kaizan</title>',
+        1,
+    )
+    # Header logo (first occurrence only — not the footer's copy, further
+    # down the document) stops linking home on this page.
+    html = re.sub(
+        r'<a class="kz-nav-logo" href="/">(.*?)</a>',
+        r'<span class="kz-nav-logo">\1</span>',
+        html, count=1, flags=re.S,
+    )
+    return html
+
+
 def main():
     print(f'Building Kaizan site → {ROOT}')
 
@@ -5476,6 +6791,8 @@ def main():
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
     write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
+    write(ROOT / 'customer-success-software' / 'index.html',
+                                                 render_customer_success_software())
     write(ROOT / '404.html',                    render_404())
 
     # Marketing / campaign landing pages
