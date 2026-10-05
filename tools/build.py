@@ -2176,7 +2176,7 @@ def render_home() -> str:
     def _qcard(cq):
         logo = company_logo.get(cq['co'], '')
         h = logo_h.get(cq['co'], 52)
-        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+        inner = (f'<img class="kz-qcard-logo" '
                  f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
@@ -2184,7 +2184,6 @@ def render_home() -> str:
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
-                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
                 f'<q>{E(cq["q"])}</q>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
                 f'{more}'
