@@ -1701,9 +1701,8 @@ def trial_form_html(depth: int) -> str:
 
 
 def playbooks_sections_html() -> str:
-    """Ported 'Playbooks / risk / actions / growth' section (replaces the old
-    product tour). Inherits the site font (IBM Plex). Includes the scroll-synced
-    bubble-traveler connectors (wired up in assets/js/site.js: initPbConnectors)."""
+    """Ported 'Playbooks / risk / actions / growth' section. Site font; scroll-synced
+    bubble-traveler connectors (assets/js/site.js: initPbConnectors)."""
     return '''<div class="kz-pb" id="sceneRoot">
   <!-- connector A travelers: Playbooks illustration -> One source of truth (left side) -->
   <div class="bubbleTraveler connA" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
@@ -1852,8 +1851,8 @@ def playbooks_sections_html() -> str:
           </div>
 
           <div style="position: absolute; right: 10px; top: 56px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
-            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
-            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
           </div>
 
         </div>
@@ -1988,8 +1987,8 @@ def playbooks_sections_html() -> str:
           </div>
 
           <div style="position: absolute; right: -10px; top: 164px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
-            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
-            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
           </div>
 
           <div style="position: absolute; left: 10px; top: 394px; width: 430px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 26px 26px 20px; z-index: 2;">
