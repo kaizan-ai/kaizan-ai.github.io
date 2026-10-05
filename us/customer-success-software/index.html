@@ -1,0 +1,1382 @@
+        <!doctype html>
+        <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Consent Mode v2: deny non-essential storage until
+     consent.js reads the visitor's saved choice (or they make one). -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted'
+});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
+<!-- End Google Tag Manager -->
+
+        <base href="/us/">
+        <title>Customer Success Software · Kaizan</title>
+<link rel="alternate" hreflang="en-GB" href="https://kaizan.ai/customer-success-software/"><link rel="alternate" hreflang="en-US" href="https://kaizan.ai/us/customer-success-software/"><link rel="alternate" hreflang="x-default" href="https://kaizan.ai/customer-success-software/">
+        <meta name="description" content="Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=89c819ed">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=4c633a30">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
+        <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
+        <link rel="stylesheet" href="/assets/css/tokens.css?v=44c900be">
+        <link rel="stylesheet" href="/assets/css/site.css?v=0302c925">
+        <script defer src="/assets/js/site.js?v=721fcb42"></script>
+        <script defer src="/assets/js/trial-form.js?v=4029be61"></script>
+<style>
+  /* ============================================================
+     Ported homepage-redesign look (hero-v2, Why Kaizan, Playbooks,
+     stats band font, restyled trial card, shrunk quote cards).
+     Inlined here rather than added to the shared site.css, so the
+     live homepage/site.css are completely unaffected by this page.
+     ============================================================ */
+  .kz-hero--trial {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 44px;
+    align-items: stretch;
+    padding-top: 80px;
+    padding-bottom: 12px;
+  }
+  .kz-hero-copy--v2 { padding: 24px 8px; overflow: visible; display: flex; flex-direction: column; }
+  .kz-hero-copy-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; }
+  .kz-hero-v2-h1 {
+    margin: 0; font-family: var(--kz-display);
+    font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
+    letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+  }
+  .kz-hero-v2-lede {
+    margin: 0; max-width: 44ch;
+    font-size: 20px; line-height: 1.55; font-weight: 500; color: #3F3B2F;
+  }
+  .kz-hero-v2-cta { align-self: flex-start; margin-top: 0; padding-top: 20px; }
+  .kz-hero-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: var(--kz-yellow); color: var(--kz-ink); font-size: 16px; font-weight: 700;
+    padding: 14px 26px; border-radius: 999px; text-decoration: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 10px 24px -8px rgba(255,185,0,.55);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .kz-hero-pill:hover { transform: translateY(-2px); background: var(--kz-yellow-deep); box-shadow: 0 16px 32px -12px rgba(255,185,0,.6); }
+  .kz-hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; transform: translateY(-28px); }
+  .kz-hero-bubble {
+    position: absolute; border-radius: 26px 26px 26px 6px; padding: 14px 16px;
+    animation: heroFloat 5s ease-in-out infinite;
+  }
+  .kz-hero-bubble span { display: block; height: 7px; border-radius: 999px; }
+  .kz-hero-bubble span:first-child { width: 70%; margin-bottom: 9px; background: rgba(255,255,255,.88); }
+  .kz-hero-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+  .kz-hero-bubble--blue { left: -22px; top: -46px; width: 120px; height: 70px; background: #1FA591; box-shadow: 0 20px 34px rgba(31,165,145,.38); }
+  .kz-hero-bubble--teal { right: 6px; bottom: 4px; width: 100px; height: 70px; background: #2F5FE0; box-shadow: 0 18px 30px rgba(47,95,224,.34); animation-delay: .6s; }
+  .kz-hero-bubble--gold { right: 52px; top: -34px; width: 60px; height: 48px; background: #E8432B; box-shadow: 0 14px 24px rgba(232,67,43,.4); animation-delay: .3s; }
+  .kz-hero-bubble--gold span:first-child { background: rgba(255,255,255,.88); }
+  .kz-hero-bubble--gold span:last-child { background: rgba(255,255,255,.6); }
+  .kz-hero-dot { position: absolute; border-radius: 999px; animation: heroFloat 4s ease-in-out infinite; }
+  .kz-hero-dot--blue { left: -30px; top: 72px; width: 10px; height: 10px; background: #2F5FE0; }
+  .kz-hero-dot--teal { right: -10px; top: 48px; width: 8px; height: 8px; background: #1FA591; animation-delay: .4s; }
+  .kz-hero-dot--gold { right: 20px; bottom: 10px; width: 12px; height: 12px; background: var(--kz-yellow); animation-delay: .2s; }
+  .kz-hero-dot--red { left: 2px; bottom: -10px; width: 9px; height: 9px; background: #E8432B; animation-delay: .7s; }
+  .kz-hero-dot--purple { right: 112px; top: -24px; width: 7px; height: 7px; background: #7C5CFC; animation-delay: .5s; }
+  .kz-hero-dot--sage { left: 60px; top: -30px; width: 6px; height: 6px; background: #7FB59E; animation-delay: .9s; }
+  @keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @media (prefers-reduced-motion: reduce) { .kz-hero-bubble, .kz-hero-dot, .kz-trial-bubble { animation: none; } }
+  .kz-trial-col { position: relative; display: flex; flex-direction: column; }
+  .kz-trial-col > .kz-trial { flex: 1; }
+  .kz-trial-bubble {
+    position: absolute; top: -44px; right: -12px; z-index: 0;
+    width: 150px; height: 96px; padding: 18px 20px;
+    background: #7C5CFC; border-radius: 28px 28px 28px 6px;
+    box-shadow: 0 20px 34px rgba(124,92,252,.4);
+    animation: heroFloat 5s ease-in-out infinite; pointer-events: none;
+  }
+  .kz-trial-bubble span { display: block; height: 8px; border-radius: 999px; }
+  .kz-trial-bubble span:first-child { width: 70%; margin-bottom: 12px; background: rgba(255,255,255,.85); }
+  .kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+  .kz-reel-section { padding: 20px 24px 12px; }
+  .kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
+  .kz-reel-video { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 84vh; }
+  @media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
+  .kz-why { padding: 84px var(--kz-gutter) 72px; }
+  .kz-why-inner { max-width: 1280px; margin: 0 auto; }
+  .kz-why-title {
+    margin: 0 0 56px; text-align: center; font-family: var(--kz-display);
+    font-size: clamp(36px, 4.4vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; color: #000;
+  }
+  .kz-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .kz-why-card {
+    padding: 6px 36px;
+    display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+    border-left: 1px solid var(--kz-line);
+  }
+  .kz-why-card:first-child { border-left: none; }
+  .kz-why-icon {
+    width: 72px; height: 72px; border-radius: 20px; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    animation: iconPop 3.4s ease-in-out infinite;
+  }
+  .kz-why-icon svg { width: 34px; height: 34px; }
+  .kz-why-icon--gold { background: var(--kz-yellow); }
+  .kz-why-icon--blue { background: #2F5FE0; animation-delay: .3s; }
+  .kz-why-icon--teal { background: #1FA591; animation-delay: .6s; }
+  .kz-why-icon--red  { background: #E8432B; animation-delay: .9s; }
+  .kz-why-card-title { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.25; color: #000; }
+  .kz-why-card-desc { margin: 0; font-size: 16px; line-height: 1.55; color: #4A4639; }
+  @keyframes iconPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+  @media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
+  .kz-statsband { font-family: var(--kz-sans); }
+  @media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
+  @media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+  .kz-pb { position: relative; overflow: hidden; }
+  .kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
+  .kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
+  .kz-pb a[href] { border-bottom: 0 !important; padding-bottom: 0 !important; }
+  .bubbleTraveler {
+    position: absolute; left: 0; top: 0; width: 46px; height: 34px;
+    border-radius: 14px 14px 14px 5px; box-shadow: 0 10px 22px rgba(0,0,0,.28);
+    opacity: 0; will-change: offset-distance, opacity, transform;
+  }
+  .travelerLine { position: absolute; left: 7px; right: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.85); }
+  @keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes bigBob { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-20px) rotate(var(--r, 0deg)); } }
+  @keyframes typeDot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-8px); opacity: 1; } }
+  @keyframes glowPulse { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.35); opacity: .9; } }
+  @keyframes confetti1 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(-70px,-60px) scale(1.1); } }
+  @keyframes confetti2 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(80px,-40px) scale(1.1); } }
+  @keyframes confetti3 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(10px,-90px) scale(1.1); } }
+  @media (prefers-reduced-motion: reduce) { .kz-pb [style*="animation"] { animation: none !important; } }
+  @media (max-width: 900px) {
+    .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+    .kz-why-card { border-left: none; }
+    .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+  }
+  @media (max-width: 560px) {
+    .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
+    .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
+    .kz-why-card:first-child { border-top: none; }
+  }
+  .kz-trial {
+    position: relative; overflow: hidden; z-index: 1;
+    display: flex; flex-direction: column;
+    background: linear-gradient(180deg, #FFCA33 0%, #FFB900 52%, #F0A800 100%);
+    color: var(--kz-ink);
+    border: 1px solid rgba(0,0,0,.14); border-radius: 16px;
+    padding: 30px 32px 28px;
+    box-shadow:
+      inset 0 2px 0 rgba(255,255,255,.55),
+      inset 0 -4px 10px rgba(150,95,0,.22),
+      0 2px 4px rgba(40,30,15,.25),
+      0 14px 28px -8px rgba(255,185,0,.55),
+      0 34px 64px -22px rgba(40,30,15,.5);
+  }
+  .kz-trial-form { flex: 1; display: flex; flex-direction: column; }
+  .kz-trial-form, .kz-trial-done { position: relative; }
+  .kz-trial-title { margin: 0; font-size: 27px; font-weight: 700; letter-spacing: -.68px; line-height: 1.2; color: var(--kz-ink); }
+  .kz-trial-sub { margin: 10px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; color: rgba(0,0,0,.72); }
+  .kz-trial-fields { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+  .kz-trial-row { display: flex; gap: 14px; }
+  .kz-trial-row > * { flex: 1; min-width: 0; }
+  .kz-trial-field label {
+    display: block; margin-bottom: 7px;
+    font-family: var(--kz-mono); font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+    text-transform: uppercase; color: rgba(0,0,0,.72);
+  }
+  .kz-trial-field input, .kz-trial-field select {
+    box-sizing: border-box; width: 100%;
+    background: rgba(255,255,255,.72); color: var(--kz-ink);
+    border: 1px solid rgba(0,0,0,.18); border-radius: 8px;
+    font: inherit; font-size: 15.5px; font-weight: 500; padding: 13px 14px;
+  }
+  .kz-trial-field .req { color: #C0341D; }
+  .kz-trial-field input::placeholder { color: rgba(0,0,0,.42); }
+  .kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-ink); outline-offset: 1px; }
+  .kz-trial-field select {
+    appearance: none; -webkit-appearance: none; padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23171511' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+  }
+  .kz-trial-field select option { color: var(--kz-ink); background: #fff; }
+  .kz-trial-more { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .35s ease, opacity .35s ease, margin-top .35s ease; }
+  .kz-trial.is-js .kz-trial-more:not(.is-open) { grid-template-rows: 0fr; margin-top: -14px; opacity: 0; }
+  .kz-trial-more-inner { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 3px; margin: -3px; }
+  .kz-trial-submit {
+    margin-top: auto; width: 100%;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: var(--kz-ink); color: var(--kz-paper);
+    border: none; border-radius: 999px; padding: 16px 22px; cursor: pointer;
+    font: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.16px;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
+  .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
+  .kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
+  .kz-trial-msg.is-shown { display: block; }
+  .kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(0,0,0,.6); }
+  .kz-trial.is-js .kz-trial-legal:not(.is-open) { display: none; }
+  .kz-trial-legal a { color: var(--kz-ink); text-decoration: underline; font-weight: 600; }
+  @media (max-width: 1024px) {
+    .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
+    .kz-hero--trial .kz-trial { max-width: 640px; }
+  }
+  @media (max-width: 768px) {
+    .kz-hero-v2-h1 { font-size: 34px; }
+    .kz-hero-v2-lede { font-size: 17px; }
+    .kz-hero-deco, .kz-trial-bubble { display: none; }
+    .kz-trial { padding: 28px 22px 24px; }
+  }
+  @media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+  .kz-qcard {
+    flex: 0 0 300px; max-width: 84vw; margin: 0; scroll-snap-align: start;
+    background: #FCF6E2; border: 1px solid var(--kz-line); border-radius: 14px;
+    padding: 20px 20px; display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 8px; position: relative; overflow: hidden;
+    box-shadow: 0 2px 6px rgba(40,30,15,.08), 0 14px 26px -10px rgba(40,30,15,.22), 0 32px 50px -20px rgba(40,30,15,.32);
+  }
+  .kz-qcard::before, .kz-qcard::after { content: ""; position: absolute; left: 0; right: 0; height: 6px; background: var(--kz-yellow); }
+  .kz-qcard::before { top: 0; }
+  .kz-qcard::after { bottom: 0; }
+  .kz-qcard-logobox { height: 42px; display: flex; align-items: center; justify-content: center; }
+  .kz-qcard-logo { height: 32px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(1) brightness(0) opacity(0.85); }
+  .kz-qcard-co { font-weight: 700; font-size: 13px; color: var(--kz-ink); }
+  .kz-qcard-mark { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 42px; line-height: 1; color: var(--kz-yellow); margin: -2px 0 -14px; user-select: none; }
+  .kz-qcard q {
+    font-family: var(--kz-display); font-size: 14.5px; font-weight: 600;
+    line-height: 1.4; color: var(--kz-ink); quotes: none; flex: 0 0 auto;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+  }
+  .kz-qcard q::before, .kz-qcard q::after { content: none; }
+  .kz-qcard figcaption { margin: 0; }
+  .kz-qcard .kz-portrait { flex-direction: column; gap: 5px; }
+  .kz-qcard .kz-portrait .meta { text-align: center; }
+  .kz-qcard .kz-portrait .name { font-weight: 700; font-size: 13.5px; color: var(--kz-ink); }
+  .kz-qcard .kz-portrait .role { font-size: 12px; color: rgba(0,0,0,.62); }
+  .kz-qcard .kz-portrait .avatar { width: 46px; height: 46px; font-size: 15px; box-shadow: 0 0 0 3px var(--kz-yellow); }
+  .kz-qcard-more {
+    align-self: center;
+    font-family: var(--kz-display); font-weight: 700; font-size: 12px;
+    color: var(--kz-ink); text-decoration: none; white-space: nowrap;
+    padding: 7px 15px; border-radius: 999px;
+    border: 1.5px solid var(--kz-yellow); background: var(--kz-yellow);
+    transition: filter .18s, box-shadow .18s;
+  }
+  .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
+
+  /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
+  :root {
+    --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .kz-nav-links, .kz-nav-toggle { display: none; }
+  .kz-nav-cta .kz-btn-ghost { display: none; }
+  .kz-quotes { position: relative; }
+  .kz-quotes .kz-carousel { position: static; }
+  .kz-quotes .kz-carousel-arrow {
+    display: flex; position: absolute; top: 48px;
+    width: 32px; height: 32px; font-size: 15px;
+  }
+  .kz-quotes .kz-carousel-arrow.is-prev { right: calc(var(--kz-gutter) + 40px); }
+  .kz-quotes .kz-carousel-arrow.is-next { right: var(--kz-gutter); }
+  @media (max-width: 900px) { .kz-quotes .kz-carousel-arrow { display: none; } }
+
+  .cs-lets-talk { background: var(--kz-sand); }
+  .cs-lt-inner {
+    max-width: 1280px; margin: 0 auto; padding: 96px var(--kz-gutter);
+    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
+  }
+  .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+  .cs-lt-sub { margin: 0; font-size: 22px; font-weight: 700; color: var(--kz-ink); max-width: 46ch; }
+  .cs-lt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; margin-top: 20px; }
+  .cs-lt-card {
+    min-height: 110px; border-radius: 26px 26px 26px 6px; display: flex;
+    align-items: center; justify-content: center; padding: 18px 20px;
+    font-size: 15px; font-weight: 600; text-align: center; line-height: 1.4;
+    box-shadow: 0 16px 30px rgba(23,21,17,.14);
+  }
+  .cs-lt-cta { margin-top: 12px; padding: 14px 26px; font-size: 15px; }
+  @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
+
+  .cs-modules { background: var(--kz-yellow); }
+  .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px var(--kz-gutter); }
+  .cs-modules-head { margin-bottom: 40px; }
+  .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
+  .cs-modules .kz-carousel { position: static; }
+  .cs-modules .kz-carousel-arrow {
+    display: flex; position: absolute; top: 46px;
+    width: 44px; height: 44px; font-size: 22px; background: #FFFFFF;
+  }
+  .cs-modules .kz-carousel-arrow.is-prev { right: 60px; }
+  .cs-modules .kz-carousel-arrow.is-next { right: 0; }
+  .cs-modcard {
+    flex: 0 0 320px; scroll-snap-align: start; background: #000000;
+    border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
+  }
+  .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+  .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
+  .cs-modules .kz-carousel-dots { margin-top: 32px; }
+  @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
+
+  .cs-integrations { background: var(--kz-paper); }
+  .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px var(--kz-gutter) 0; text-align: center; }
+  .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+  .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+  .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
+  .cs-int-icon-box {
+    background: #FFFFFF; border-radius: 16px; width: 76px; height: 76px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 18px rgba(23,21,17,.07); transition: transform .2s ease;
+  }
+  .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
+  .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
+  .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
+  .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px var(--kz-gutter) 110px; }
+  .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
+  .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
+  .cs-faq-item:last-of-type { border-bottom: none; }
+  .cs-faq-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 700; cursor: pointer; list-style: none; }
+  .cs-faq-summary::-webkit-details-marker { display: none; }
+  .cs-faq-plus { flex: none; transition: transform .25s ease; }
+  .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
+  .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
+</style>
+<script>
+(function () {
+  function initReel() {
+    var vids = document.querySelectorAll('[data-play-inview]');
+    if (!vids.length) return;
+    if (!('IntersectionObserver' in window)) {
+      vids.forEach(function (v) { v.play().catch(function () {}); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          try { v.currentTime = 0; } catch (err) {}
+          v.play().catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+  function initPbConnectors() {
+    var root = document.getElementById('sceneRoot');
+    if (!root) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function applyRealPath(originId, destId, selector) {
+      try {
+        var origin = document.getElementById(originId);
+        var dest = document.getElementById(destId);
+        var travelers = document.querySelectorAll(selector);
+        if (!origin || !dest || !travelers.length) return;
+        var rRect = root.getBoundingClientRect();
+        var oRect = origin.getBoundingClientRect();
+        var dRect = dest.getBoundingClientRect();
+        var ox = oRect.left - rRect.left + oRect.width / 2;
+        var oy = oRect.top - rRect.top + oRect.height / 2;
+        var dx = dRect.left - rRect.left + dRect.width / 2;
+        var dy = dRect.top - rRect.top + dRect.height / 2;
+        var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
+        var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
+        var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
+        travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
+      } catch (e) {}
+    }
+    function applyAllPaths() {
+      applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
+      applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
+      applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
+    }
+    function trackProgress(trackId) {
+      var el = document.getElementById(trackId);
+      if (!el) return 0;
+      var rect = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var total = rect.height + vh;
+      if (total <= 0) return 0;
+      return Math.min(1, Math.max(0, (vh - rect.top) / total));
+    }
+    var legs = [
+      { track: 'launchZoneA', selector: '.connA' },
+      { track: 'launchZoneB', selector: '.connB' },
+      { track: 'launchZone',  selector: '.connC' }
+    ];
+    var state = {};
+    function tick() {
+      legs.forEach(function (leg) {
+        var master = trackProgress(leg.track);
+        var travelers = document.querySelectorAll(leg.selector);
+        travelers.forEach(function (el, i) {
+          var stagger = i * 0.07;
+          var target = Math.min(1, Math.max(0, master - stagger));
+          var key = leg.selector + i;
+          var cur = state[key] === undefined ? target : state[key];
+          var next = cur + (target - cur) * 0.18;
+          state[key] = next;
+          var fadeIn = Math.min(1, next / 0.08);
+          var fadeOut = Math.min(1, (1 - next) / 0.05);
+          var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
+          var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
+          var rotate = -4 + 6 * next;
+          el.style.offsetDistance = (next * 100) + '%';
+          el.style.opacity = String(opacity);
+          el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
+        });
+      });
+      requestAnimationFrame(tick);
+    }
+    function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
+    remeasure();
+    window.addEventListener('load', remeasure);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
+    var rt = null;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
+    requestAnimationFrame(tick);
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    initReel();
+    initPbConnectors();
+  });
+})();
+</script>
+        <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
+        <script defer src="/assets/js/calendly-utm.js?v=2ce26b8f"></script>
+        <!-- HubSpot's own direct tracking script loads only after cookie
+             consent for Marketing (see assets/js/consent.js), which also
+             sends Consent Mode updates for GTM's own tags. -->
+        <script defer src="/assets/js/consent.js?v=44a0659b"></script>
+        </head>
+        <body>
+        <div class="kz-page">
+        <main class="kz-main">
+
+    <header class="kz-nav" role="banner">
+      <span class="kz-nav-logo">
+        <img class="icon" src="/assets/img/kaizan-icon.png?v=36c55982" alt="">
+        <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+      </span>
+      <nav class="kz-nav-links" aria-label="Primary">
+        <a href="/us/">Home</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" href="product/" aria-expanded="false" aria-haspopup="true">
+                  Product <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="product/">Overview</a>
+<a class="kz-drop-link" href="integrations/">Integrations</a>
+                </div>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Personas <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/us/for/account-manager/">Client Service / Account Manager</a>
+<a class="kz-mega-link" href="/us/for/client-service-director/">Head of Client Services</a>
+<a class="kz-mega-link" href="/us/for/leadership/">Senior Leadership</a>
+<a class="kz-mega-link" href="/us/for/head-of-ai/">Head of AI / CTO</a>
+<a class="kz-mega-link" href="/us/for/project-manager/">Project Manager</a>
+<a class="kz-mega-link" href="/us/for/new-business/">New Business / Sales</a>
+<a class="kz-mega-link" href="/us/for/performance/">Performance / Operations</a>
+<a class="kz-mega-link" href="/us/for/strategy-creative-marketing/">Strategy, Creative, Marketing</a></div></span><a href="pricing/">Pricing</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
+                  Resources <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="blog/">Blog</a>
+<a class="kz-drop-link" href="knowledge-hub/">Knowledge Hub</a>
+<a class="kz-drop-link" href="faq/">FAQs</a>
+<a class="kz-drop-link" href="security/">Security</a>
+                </div>
+              </span><a href="about/">About</a><a href="referral-partners/">Become a partner</a>
+      </nav>
+      <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
+        <a class="kz-btn kz-btn-yellow" href="/us/demo/">Book a demo</a>
+        <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
+      </div>
+    </header>
+    
+
+    <!-- HERO -->
+    <section class="kz-hero kz-hero--trial">
+      <div class="kz-hero-copy kz-hero-copy--v2">
+        <div class="kz-hero-deco" aria-hidden="true">
+          <div class="kz-hero-bubble kz-hero-bubble--blue"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--teal"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--gold"><span></span><span></span></div>
+          <span class="kz-hero-dot kz-hero-dot--blue"></span>
+          <span class="kz-hero-dot kz-hero-dot--teal"></span>
+          <span class="kz-hero-dot kz-hero-dot--gold"></span>
+          <span class="kz-hero-dot kz-hero-dot--red"></span>
+          <span class="kz-hero-dot kz-hero-dot--purple"></span>
+          <span class="kz-hero-dot kz-hero-dot--sage"></span>
+        </div>
+        <div class="kz-hero-copy-inner">
+          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
+          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
+            best action so you keep every client and grow every account.</p>
+          <div class="kz-hero-v2-cta">
+            <a class="kz-hero-pill" href="demo/">Book a demo</a>
+          </div>
+        </div>
+      </div>
+      <div class="kz-trial-col">
+        <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
+        <div class="kz-trial" data-trial>
+        <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+              action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=001aefe5f0" data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=001aefe5f0" method="post" target="_blank">
+          <h2 class="kz-trial-title">Start your 14-day free trial</h2>
+          <p class="kz-trial-sub">Discover the risks and growth opportunities in your own client
+            conversations, benchmarked against best-in-class.</p>
+          <div class="kz-trial-fields">
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-PHONE" name="PHONE" type="tel" placeholder="07700 900000" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="kz-trial-more" data-trial-more>
+              <div class="kz-trial-more-inner">
+                <div class="kz-trial-row">
+                  <div class="kz-trial-field">
+                    <label for="mce-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+                  </div>
+                  <div class="kz-trial-field">
+                    <label for="mce-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+                  </div>
+                </div>
+                <div class="kz-trial-field">
+                  <label for="mce-MMERGE12">How did you hear about us?</label>
+                  <select id="mce-MMERGE12" name="MMERGE12">
+                    <option value="">Select an option</option>
+                    <option value="Google Search">Google Search</option>
+<option value="LinkedIn">LinkedIn</option>
+<option value="Social Media (Facebook/Instagram/TikTok/YouTube)">Social Media (Facebook/Instagram/TikTok/YouTube)</option>
+<option value="AI Tool (Chat GPT/Claude/Gemini)">AI Tool (Chat GPT/Claude/Gemini)</option>
+<option value="Referral (Friend/Colleague/Word of Mouth)">Referral (Friend/Colleague/Word of Mouth)</option>
+<option value="Email Newsletter">Email Newsletter</option>
+<option value="Event/Conference">Event/Conference</option>
+<option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
+          <input type="hidden" name="UTMSRC" id="mce-UTMSRC" value="" data-utm="utm_source">
+<input type="hidden" name="UTMMED" id="mce-UTMMED" value="" data-utm="utm_medium">
+<input type="hidden" name="UTMTRM" id="mce-UTMTRM" value="" data-utm="utm_term">
+<input type="hidden" name="UTMQRPLC" id="mce-UTMQRPLC" value="" data-utm="qr_placement">
+<input type="hidden" name="UTMCTA" id="mce-UTMCTA" value="" data-utm="utm_cta">
+<input type="hidden" name="UTMCAMP" id="mce-UTMCAMP" value="" data-utm="utm_campaign">
+<input type="hidden" name="UTMCONT" id="mce-UTMCONT" value="" data-utm="utm_content">
+<input type="hidden" name="UTMCOUNTRY" id="mce-UTMCOUNTRY" value="" data-utm="utm_country">
+<input type="hidden" name="UTMUSP" id="mce-UTMUSP" value="" data-utm="utm_usp">
+<input type="hidden" name="UTMANGL" id="mce-UTMANGL" value="" data-utm="utm_angle">
+<input type="hidden" name="UTMHOOK" id="mce-UTMHOOK" value="" data-utm="utm_hook">
+<input type="hidden" name="GCLID" id="mce-GCLID" value="" data-utm="gclid">
+<input type="hidden" name="UTMID" id="mce-UTMID" value="" data-utm="utm_id">
+<input type="hidden" name="UTMADGRP" id="mce-UTMADGRP" value="" data-utm="utm_adgroup">
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="3789537,3789536"></div>
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_1ea9163949" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe" class="kz-trial-submit">Start my free trial <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+          <p class="kz-trial-msg" data-trial-msg role="status" aria-live="polite"></p>
+          <p class="kz-trial-legal" data-trial-legal>
+            By submitting your details to Kaizan you are showing interest in our product and so we may
+            contact you from time to time about our product and services. You may unsubscribe from these
+            communications at any time. Please review our <a href="privacy-policy/">Privacy Policy</a>
+            for information on how to unsubscribe and our privacy practices.
+          </p>
+        </form>
+      </div>
+      </div>
+    </section>
+
+    <div class="kz-marquee" aria-hidden="true">
+      <div class="kz-marquee-track"><div class="kz-mq-run"><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:88px;transform:translateY(-8px)"><img class="kz-marquee-img" src="/assets/img/clients/the-kite-factory.png" alt="The Kite Factory" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/scale-digital.png" alt="Scale Digital" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:38px"><img class="kz-marquee-img" src="/assets/img/clients/tradedoubler.png" alt="Tradedoubler" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/open-partners.svg" alt="Open Partners" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/verkeer.png" alt="Verkeer" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/gravity-global.svg" alt="Gravity Global" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/transmission.png" alt="Transmission" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:58px"><img class="kz-marquee-img" src="/assets/img/clients/acceleration-partners.png" alt="Acceleration Partners" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/marketing-architects.png" alt="Marketing Architects" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/searchlab.png" alt="Searchlab" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/np-digital.png" alt="NP Digital" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/other.png" alt="Other." loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/the-gap-partnership.svg" alt="The Gap Partnership" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:74px"><img class="kz-marquee-img is-detail" src="/assets/img/clients/ams.png" alt="AMS" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:40px"><img class="kz-marquee-img" src="/assets/img/clients/assembly-global.svg" alt="Assembly Global" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/click-through-marketing.png" alt="Click Through Marketing" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/collective-content.svg" alt="Collective Content" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img is-soft" src="/assets/img/clients/gifta.png" alt="Gifta" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/kohort.png" alt="Kohort" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/medialab.png" alt="Medialab" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:40px"><img class="kz-marquee-img is-light" src="/assets/img/clients/pashn-media-agency.svg" alt="PASHN Media Agency" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/viola.png" alt="Viola" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:58px"><img class="kz-marquee-img" src="/assets/img/clients/webtopia.png" alt="Webtopia" loading="lazy"></span><span class="sep">✺</span></span></div><div class="kz-mq-run"><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:88px;transform:translateY(-8px)"><img class="kz-marquee-img" src="/assets/img/clients/the-kite-factory.png" alt="The Kite Factory" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/scale-digital.png" alt="Scale Digital" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:38px"><img class="kz-marquee-img" src="/assets/img/clients/tradedoubler.png" alt="Tradedoubler" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/open-partners.svg" alt="Open Partners" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/verkeer.png" alt="Verkeer" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/gravity-global.svg" alt="Gravity Global" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/transmission.png" alt="Transmission" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:58px"><img class="kz-marquee-img" src="/assets/img/clients/acceleration-partners.png" alt="Acceleration Partners" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/marketing-architects.png" alt="Marketing Architects" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/searchlab.png" alt="Searchlab" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/np-digital.png" alt="NP Digital" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/other.png" alt="Other." loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img" src="/assets/img/clients/the-gap-partnership.svg" alt="The Gap Partnership" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:74px"><img class="kz-marquee-img is-detail" src="/assets/img/clients/ams.png" alt="AMS" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:40px"><img class="kz-marquee-img" src="/assets/img/clients/assembly-global.svg" alt="Assembly Global" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/click-through-marketing.png" alt="Click Through Marketing" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/collective-content.svg" alt="Collective Content" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo kz-marquee-logo--lg"><img class="kz-marquee-img is-soft" src="/assets/img/clients/gifta.png" alt="Gifta" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/kohort.png" alt="Kohort" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/medialab.png" alt="Medialab" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:40px"><img class="kz-marquee-img is-light" src="/assets/img/clients/pashn-media-agency.svg" alt="PASHN Media Agency" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo"><img class="kz-marquee-img" src="/assets/img/clients/viola.png" alt="Viola" loading="lazy"></span><span class="sep">✺</span></span><span class="kz-marquee-item"><span class="kz-marquee-logo" style="height:58px"><img class="kz-marquee-img" src="/assets/img/clients/webtopia.png" alt="Webtopia" loading="lazy"></span><span class="sep">✺</span></span></div></div>
+    </div>
+
+    <!-- HERO REEL -->
+    <section class="kz-reel-section">
+      <div class="kz-reel">
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="/assets/video/hero-intro.mp4?v=81fca074" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- WHY KAIZAN -->
+    <section class="kz-why">
+      <div class="kz-why-inner">
+        <h2 class="kz-why-title">Why choose Kaizan&rsquo;s client intelligence?</h2>
+        <div class="kz-why-grid">
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#171511" stroke-width="2"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#171511" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Keep the clients you&rsquo;ve won</h3>
+            <p class="kz-why-card-desc">Early warning signals flag at-risk accounts while there&rsquo;s still time to act.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--blue">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2"></circle><path d="M12 7v5l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Get hours back every week</h3>
+            <p class="kz-why-card-desc">AI Helpers draft the follow-ups, update your systems and prep the QBRs for you.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--teal">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" stroke="#FFFFFF" stroke-width="2"></rect><circle cx="12" cy="12" r="3" stroke="#FFFFFF" stroke-width="2"></circle><path d="M6 9.5v5M18 9.5v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Unlock revenue hidden in your accounts</h3>
+            <p class="kz-why-card-desc">Upsell and cross-sell signals surface the moment a client mentions them.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--red">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">11M+ of client service signals</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYBOOKS / RISK / ACTIONS / GROWTH -->
+    <div class="kz-pb" id="sceneRoot">
+  <!-- connector A travelers: Playbooks illustration -> One source of truth (left side) -->
+  <div class="bubbleTraveler connA" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #1FA591; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+
+  <!-- connector B travelers: One source of truth (left side) -> Every action stays inside Kaizan (right side) -->
+  <div class="bubbleTraveler connB" style="background: #1FA591; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #7C5CFC; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(124,92,252,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #E8432B; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 8px; background: rgba(255,255,255,.75);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(255,255,255,.55);"></span>
+  </div>
+
+  <!-- connector C travelers: Every action stays inside Kaizan -> One view of every client relationship -->
+  <div class="bubbleTraveler connC" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #E8432B; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+  <!-- ================= Playbooks that run themselves ================= -->
+  <section style="padding: 72px var(--kz-gutter) 96px; overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarized</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Follow-ups and replies drafted for your approval</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">CRM and project tools updated automatically</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">QBRs and account briefs ready before you ask</span></div>
+        </div>
+        <a href="/us/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneA" style="position: relative; width: 100%; max-width: 540px; height: 460px;">
+
+          <!-- BOLD themed decorative: glow behind the playbook bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: 10px; width: 170px; height: 120px; background: #2F5FE0; opacity: 0.88; border-radius: 26px 26px 6px 26px; box-shadow: 0 24px 40px rgba(47,95,224,.4); animation: cardFloat 5.5s ease-in-out infinite; z-index: 0; padding: 20px 22px;">
+            <span style="display: block; height: 8px; width: 70%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 12px;"></span>
+            <span style="display: block; height: 8px; width: 45%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; right: 10px; bottom: -10px; width: 130px; height: 95px; background: #E8432B; opacity: 0.88; border-radius: 24px 24px 24px 6px; box-shadow: 0 20px 34px rgba(232,67,43,.38); animation: cardFloat 4.8s ease-in-out infinite; animation-delay: .5s; z-index: 0; padding: 16px 18px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 40%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 60px; width: 440px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 2; animation: cardFloat 5.5s ease-in-out infinite;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #000000;">Renewal playbook</h3>
+              <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; background: #EDE8DA; padding: 6px 10px; border-radius: 999px;">Stage 3 of 5</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Usage review sent</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Stakeholder map confirmed</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid #FFB900; border-radius: 12px; background: rgba(255,185,0,0.08);">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #171511;"></span>
+                <span style="font-size: 14px; color: #171511; font-weight: 500;">Draft renewal proposal</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px; opacity: .5;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #C9C4B4;"></span>
+                <span style="font-size: 14px; color: #171511;">Exec sign-off</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bubbleOriginA" style="position: absolute; right: 36px; top: 0px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; right: 0px; top: 0px; width: 150px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 3;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Owner</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Jordan Lee</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">JL</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One source of truth for every account ================= -->
+  <section style="padding: 96px var(--kz-gutter); overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneB" style="position: relative; width: 100%; max-width: 540px; height: 340px;">
+
+          <!-- BOLD themed decorative: glow behind the source-of-truth bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -30px; width: 280px; height: 220px; background: radial-gradient(circle, #1FA591 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: -40px; width: 160px; height: 115px; background: #1FA591; opacity: 0.88; border-radius: 26px 26px 26px 6px; box-shadow: 0 20px 36px rgba(31,165,145,.38); animation: bubbleFloat 5.2s ease-in-out infinite; z-index: 0; padding: 18px 20px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.88); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 42%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; left: 200px; top: -10px; width: 64px; height: 48px; background: #FFB900; opacity: 0.92; border-radius: 16px 16px 6px 16px; box-shadow: 0 16px 28px #FFB90066; animation: bubbleFloat 4.3s ease-in-out infinite; animation-delay: .4s; z-index: 0; padding: 8px 10px;">
+            <span style="display: block; height: 5px; width: 70%; border-radius: 999px; background: rgba(23,21,17,.45); margin-bottom: 6px;"></span>
+            <span style="display: block; height: 5px; width: 45%; border-radius: 999px; background: rgba(23,21,17,.3);"></span>
+          </div>
+
+          <div id="bubbleDestA" style="position: absolute; left: 10px; top: 10px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 10px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <div style="display: flex; height: 10px; width: 64px; border-radius: 999px; overflow: hidden;"><span style="flex: 1; background: #171511;"></span><span style="flex: 1.3; background: #E8432B;"></span><span style="flex: 0.7; background: #EADFB8;"></span></div>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Risk indicators</span>
+          </div>
+
+          <div id="bubbleOriginB" style="position: absolute; left: 20px; top: 90px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 80px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 140px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 85%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both;"></div>
+              <div style="width: 28px; height: 55%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .1s;"></div>
+              <div style="width: 28px; height: 70%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .2s;"></div>
+              <div style="width: 28px; height: 35%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .3s;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">Risk distribution</div>
+          </div>
+
+          <div style="position: absolute; right: 10px; top: 56px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Alerts for quiet stakeholders, dipping sentiment and single-threaded relationships</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Recommended next steps for each at-risk client</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A clear view of revenue at risk across your whole portfolio</span></div>
+        </div>
+        <a href="/us/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= Every action stays inside Kaizan ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Insight from every meeting, email and chat in one place</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">No spreadsheets, no guesswork, no relying on memory</span></div>
+        </div>
+        <a href="/us/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZone" style="position: relative; width: 100%; max-width: 600px; height: 540px;">
+
+          <!-- BOLD themed decorative: oversized chat bubbles -->
+          <div style="position: absolute; right: -30px; top: -20px; width: 320px; height: 260px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .22; z-index: 0;"></div>
+
+          <div id="bubbleOrigin" style="position: absolute; right: 150px; top: 40px; width: 1px; height: 1px;"></div>
+          <div id="bubbleDestB" style="position: absolute; right: 190px; top: 70px; width: 1px; height: 1px;"></div>
+
+          <div style="position: absolute; right: 120px; top: -10px; width: 190px; height: 118px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); animation: bigBob 4.2s ease-in-out infinite; --r: -6deg; z-index: 1; padding: 22px 26px;">
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.72); width: 76%; margin-top: 10px;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.55); width: 54%; margin-top: 10px;"></span>
+          </div>
+          <!-- next to the AI Actions card (right-hand gutter), not stacked on top of it or the assigned-to card -->
+          <div style="position: absolute; right: 14px; top: 240px; width: 110px; height: 128px; background: #E8432B; border-radius: 26px 26px 8px 26px; box-shadow: 0 22px 38px rgba(232,67,43,.32); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .5s; --r: 7deg; z-index: 2; padding: 18px 16px;">
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.65); width: 62%; margin-top: 9px;"></span>
+          </div>
+
+          <div style="position: absolute; right: 70px; top: 150px; width: 170px; height: 44px; background: radial-gradient(circle, #FFB900 0%, transparent 72%); opacity: .55; animation: glowPulse 2.2s ease-in-out infinite; z-index: 0;"></div>
+          <div style="position: absolute; right: 95px; top: 148px; width: 120px; height: 84px; background: #FFB900; border-radius: 30px 30px 30px 8px; box-shadow: 0 22px 38px rgba(23,21,17,.22); display: flex; align-items: center; justify-content: center; gap: 8px; z-index: 2;">
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: 0s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .15s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .3s;"></span>
+          </div>
+
+
+          <div style="position: absolute; left: 10px; bottom: 10px; width: 136px; height: 92px; background: #7C5CFC; border-radius: 8px 30px 30px 30px; box-shadow: 0 20px 34px rgba(124,92,252,.3); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .9s; --r: -4deg; z-index: 0; padding: 16px 20px;">
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.6); width: 58%; margin-top: 8px;"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 130px; width: 460px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 3;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 24px; font-weight: 600; color: #000000;">AI Actions</h3>
+              <button style="border: none; background: #FFB900; color: #171511; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; display: flex; align-items: center; gap: 6px; cursor: default;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#171511" stroke-width="1.8" stroke-linecap="round"></path></svg>New action</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Draft renewal proposal — Acme Creative</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 70%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #D8A678; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">AC</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Escalate CARE risk — Northwind</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 30%; height: 100%; background: #E8432B;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #2F5FE0; color: #FFFBF0; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">N</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Prep QBR deck — Stark Industries</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 45%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">SI</div></div>
+            </div>
+          </div>
+
+          <div style="position: absolute; right: 12px; top: 60px; width: 148px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 4;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Assigned to</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Priya Shah</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #FFB900; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">PS</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One view of every client relationship ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="revealZone" style="position: relative; width: 100%; max-width: 600px; height: 604px;">
+
+          <div id="bubbleDest" style="position: absolute; left: 110px; top: 60px; width: 1px; height: 1px;"></div>
+
+          <!-- BOLD themed decorative: arrival burst, confetti bubbles -->
+          <div style="position: absolute; left: -30px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #E8432B 0%, transparent 70%); opacity: .18; z-index: 0;"></div>
+
+          <div style="position: absolute; left: 10px; top: 0px; width: 210px; height: 128px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); z-index: 2; display: flex; align-items: center; justify-content: center;">
+            <svg width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M2 20L14 31L26 10" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 20L34 31L52 4" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+
+          <span style="animation: confetti1 1.8s ease-out infinite; animation-delay: .3s; position: absolute; left: 230px; top: 50px; width: 20px; height: 20px; border-radius: 999px; background: #E8432B; z-index: 2;"></span>
+          <span style="animation: confetti2 1.8s ease-out infinite; animation-delay: .6s; position: absolute; left: 240px; top: 100px; width: 16px; height: 16px; border-radius: 999px; background: #FFB900; z-index: 2;"></span>
+          <span style="animation: confetti3 1.8s ease-out infinite; animation-delay: .9s; position: absolute; left: 150px; top: 110px; width: 14px; height: 14px; border-radius: 999px; background: #2F5FE0; z-index: 2;"></span>
+
+          <div style="position: absolute; left: 330px; top: 60px; width: 92px; height: 58px; background: #1FA591; border-radius: 22px 22px 22px 6px; box-shadow: 0 14px 24px rgba(31,165,145,.3); display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 14px; z-index: 1;">
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.6); width: 60%;"></span>
+          </div>
+
+          <div style="position: absolute; left: 16px; top: 140px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7L4.5 10.5L9 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 7L11.5 10.5L16 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Signal received</span>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 184px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 150px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 70%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 100%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 55%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 40%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">CARE score by client</div>
+          </div>
+
+          <div style="position: absolute; right: -10px; top: 164px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 394px; width: 430px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 26px 26px 20px; z-index: 2;">
+            <div style="position: relative; height: 24px; margin-bottom: 10px;">
+              <div style="position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: #EADFB8;"></div>
+              <div style="position: absolute; left: 50%; top: 2px; width: 2px; height: 20px; background: #171511; opacity: 0.4;"></div>
+              <span style="position: absolute; left: 4%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 12%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 18%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 30%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 36%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 47%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 50%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 53%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 64%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 70%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 80%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 95%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #171511;"><div><div style="font-weight: 600;">0</div><div style="color: #8C8878; font-size: 11px;">Minimum</div></div><div style="text-align: center;"><div style="font-weight: 600;">6.8</div><div style="color: #8C8878; font-size: 11px;">Peer average</div></div><div style="text-align: right;"><div style="font-weight: 600;">10</div><div style="color: #8C8878; font-size: 11px;">Maximum</div></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Scoped pitches and proposals drafted for you</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Warm re-introductions to dormant contacts</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Expansion tracked against each client's goals</span></div>
+        </div>
+        <a href="/us/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+    </div>
+  </section>
+    </div>
+
+    <!-- STATS -->
+    <div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;"><div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/><path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/><path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">21%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Average revenue increase per client</div></div>
+<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/><path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">5.4 hrs</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Admin saved per person, every week</div></div>
+<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#FFB900" stroke-width="1.8"/><circle cx="12" cy="12" r="1.4" fill="#FFB900"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">45%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Of revenue at risk protected through early signals</div></div>
+<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/><path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">4.8%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Increase in the addressable upsell pool for existing clients</div></div>
+<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">23%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Lower cost to serve each client</div></div>
+<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/><path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><div style="font-size:46px;font-weight:700;color:#FFFFFF;">11M+</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Client service data points behind every recommendation</div></div></div>
+    </div>
+  </section>
+</div>
+
+    <!-- QUOTE CAROUSEL -->
+    <section class="kz-quotes">
+      <div class="kz-quotes-head">
+        <h2 class="kz-quotes-title">What our clients say</h2>
+      </div>
+      <div class="kz-carousel" data-carousel>
+        <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
+        <div class="kz-carousel-viewport" data-carousel-viewport>
+          <figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:52px" src="/assets/img/clients/gravity-global.svg" alt="Gravity Global"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>Kaizan is helping us reduce the manual tasks, the ones that take a long time but are less valuable, so we can focus on our clients.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/ada-cavalmoretti.png" alt="Ada Cavalmoretti" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Ada Cavalmoretti</div>
+        <div class="role">Group Account Director</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:44px" src="/assets/img/clients/searchlab.png" alt="Searchlab"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>This tool is an absolute game-changer. Don’t even question it. It’s money very well spent. An invaluable customer tool.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/greg-gifford.png" alt="Greg Gifford" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Greg Gifford</div>
+        <div class="role">Chief Operating Officer</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:52px" src="/assets/img/clients/np-digital.png" alt="NP Digital"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>We’ve had numerous occasions where we’ve been able to spot and identify high-risk clients that potentially were going to leave.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/brandon-smith.png" alt="Brandon Smith" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Brandon Smith</div>
+        <div class="role">Managing Director</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:42px" src="/assets/img/clients/tradedoubler.png" alt="Tradedoubler"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>We have a target of achieving 20% better efficiency across the business. 20% less time spent on administration. Kaizan has significantly helped us achieve that target.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/derek-grant.png" alt="Derek Grant" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Derek Grant</div>
+        <div class="role">VP Operations &amp; General Manager UK / US</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-tradedoubler-is-driving-20-greater-operational-efficiency-across/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:46px" src="/assets/img/clients/collective-content.svg" alt="Collective Content"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>The Client 360 gives us an at-a-glance view of what’s going on in our clients’ worlds. We can then come up with ideas off the back of that. Previously, we were having to do lots of desk research, and that took an awfully long time.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/fiona-skilton.png" alt="Fiona Skilton" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Fiona Skilton</div>
+        <div class="role">Client Services Director</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/from-reactive-to-proactive-how-great-client-teams-stay-ahead/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:42px" src="/assets/img/clients/tradedoubler.png" alt="Tradedoubler"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>We have this huge dataset now… we can start making not just client decisions, but product decisions.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/corin-ward.png" alt="Corin Ward" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Corin Ward</div>
+        <div class="role">Director of AI</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:52px" src="/assets/img/clients/verkeer.png" alt="Verkeer"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>A lot of CS teams try to run without too many processes as they put the human connection first. The processes are what help consistency across the client set - a balance where people get to be people, but they’re protected by checks that take out the guesswork.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/hannah-carthy.png" alt="Hannah Carthy" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Hannah Carthy</div>
+        <div class="role">Managing Partner</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/cs-leader-quick-fire-q-a-hannah-carthy-verkeer/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:35px" src="/assets/img/clients/pashn-media-agency.svg" alt="PASHN"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>The biggest impact of Kaizan is the time it gives us back. In meetings to be more present and engaged - and afterwards, a resource we can drop back into to make sure we’re doing the things we said we’d do.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/adam-hopkinson.png" alt="Adam Hopkinson" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Adam Hopkinson</div>
+        <div class="role">Agency Owner</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:84px" src="/assets/img/clients/the-kite-factory.png" alt="The Kite Factory"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>The level of information and the frequency of information is on a scale that we’ve never been able to achieve before.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/gabriella-krite.png" alt="Gabriella Krite" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Gabriella Krite</div>
+        <div class="role">Managing Partner of Operations</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/how-the-kite-factory-uses-ai-to-unify-client-data-and-improve/">Read more →</a></figure>
+<figure class="kz-qcard"><span class="kz-qcard-logobox"><img class="kz-qcard-logo" style="height:42px" src="/assets/img/clients/transmission.png" alt="Transmission"></span><span class="kz-qcard-mark" aria-hidden="true">“</span><q>Being across so many clients, I really struggled to make sure I had a good understanding across all of our different client interactions and touch points. Now I have much greater visibility into what’s going on day-to-day - without the subjectivity of what my teams or even our clients are telling me.</q><figcaption><div class="kz-portrait tone-warm has-photo">
+      <div class="avatar"><img src="/assets/img/people/alex-beddoe.png" alt="Alex Beddoe" loading="lazy"></div>
+      <div class="meta">
+        <div class="name">Alex Beddoe</div>
+        <div class="role">Head of Biddable Media</div>
+      </div>
+    </div></figcaption><a class="kz-qcard-more" href="blog/agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later/">Read more →</a></figure>
+        </div>
+        <button class="kz-carousel-arrow is-next" type="button" data-carousel-next aria-label="Next quote">&rsaquo;</button>
+      </div>
+      <div class="kz-carousel-dots" data-carousel-dots><button class="kz-carousel-dot" type="button" aria-label="Show quote 1"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 2"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 3"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 4"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 5"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 6"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 7"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 8"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 9"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show quote 10"></button></div>
+    </section>
+
+    <!-- LET'S TALK -->
+    <section class="cs-lets-talk">
+      <div class="cs-lt-inner">
+        <h2 class="cs-lt-title">Let&rsquo;s talk</h2>
+        <p class="cs-lt-sub">3 ways Kaizan helps your client-facing team</p>
+        <div class="cs-lt-grid"><div class="cs-lt-card" style="background:var(--kz-yellow);color:#FFFFFF">Protects the revenue you already have</div>
+<div class="cs-lt-card" style="background:#7FB59E;color:#FFFFFF">Gives your team their week back</div>
+<div class="cs-lt-card" style="background:#2F5FE0;color:#FFFFFF">Unlocks growth inside existing accounts</div></div>
+        <a class="kz-btn kz-btn-black cs-lt-cta" href="/us/demo/">Book a demo <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </section>
+
+    <!-- MODULES CAROUSEL -->
+    <section class="cs-modules">
+      <div class="cs-modules-inner">
+        <div class="cs-modules-head">
+          <h2 class="cs-modules-title">Explore everything Kaizan does</h2>
+        </div>
+        <div class="kz-carousel" data-carousel>
+          <button class="kz-carousel-arrow is-prev" data-carousel-prev type="button" aria-label="Previous module">&lsaquo;</button>
+          <div class="kz-carousel-viewport" data-carousel-viewport><div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#171511;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;">
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#D8D2BE;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">AC</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#7FB59E;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">N</div></div>
+            <div style="background:var(--kz-yellow);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 0 0 2px #FFFFFF inset;">
+              <img src="/assets/img/kaizan-icon.png" alt="" style="width:24px;height:24px;border-radius:6px;">
+              <span style="font-size:8px;font-weight:700;color:#171511;">Kaizan joined</span>
+            </div>
+          </div><div class="cs-modcard-title">AI Assistant</div><p class="cs-modcard-desc">Joins every call and keeps your systems up to date</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">Reply drafted &mdash; Acme Creative</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">QBR brief compiled &mdash; Northwind</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0012 3z" stroke="#8C8878" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span style="font-size:12px;color:#8C8878;">Suggested: re-engage Stark Industries</span></div>
+          </div><div class="cs-modcard-title">AI Helpers</div><p class="cs-modcard-desc">Specialist helpers working 24/7 on every client</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px 18px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="align-self:flex-start;font-size:13px;font-weight:700;color:#171511;">Health Score</div>
+            <div style="width:88px;height:88px;border-radius:999px;background:conic-gradient(#1FA591 0% 84%,#E3EDE9 84% 100%);display:flex;align-items:center;justify-content:center;">
+              <div style="width:70px;height:70px;border-radius:999px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">
+                <div style="font-size:20px;font-weight:800;color:#171511;">8.4</div>
+                <div style="font-size:8px;font-weight:700;color:#1FA591;background:rgba(31,165,145,.15);padding:2px 7px;border-radius:999px;">THRIVING</div>
+              </div>
+            </div>
+          </div><div class="cs-modcard-title">Client Health Score</div><p class="cs-modcard-desc">Relationship health on every account</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Agenda drafted</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Metrics compiled</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;"></span><span style="font-size:13px;color:#8C8878;">Deck exported</span></div>
+          </div><div class="cs-modcard-title">Client News</div><p class="cs-modcard-desc">Every conversation and commitment in one view</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Acme Creative &mdash; sentiment dropping</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#171511" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#171511" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Northwind &mdash; renewal in 14 days</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Stark Industries &mdash; champion left</span></div>
+          </div><div class="cs-modcard-title">Risk Watcher</div><p class="cs-modcard-desc">Early warnings before a client leaves</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:70px;">
+              <div style="width:20px;height:35%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:50%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:68%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:100%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+            </div>
+            <div style="font-size:11px;background:rgba(127,181,158,.18);color:#171511;font-weight:600;padding:5px 9px;border-radius:999px;width:fit-content;">&#9650; +$42k opportunity flagged</div>
+          </div><div class="cs-modcard-title">Expansion Scout</div><p class="cs-modcard-desc">Upsell signals the moment they land</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"><span style="width:20px;height:20px;border-radius:999px;background:#2F5FE0;color:#FFFBF0;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</span><span style="font-size:12px;font-weight:600;color:#171511;">Reply to Jordan Lee</span></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:95%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:80%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:60%;"></div>
+            <div style="font-size:11px;color:#2F5FE0;font-weight:600;margin-top:4px;">&check; Draft ready for review</div>
+          </div><div class="cs-modcard-title">Reply Drafter</div><p class="cs-modcard-desc">Follow-ups written in your voice</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(-8deg);"></div>
+            <div style="width:58px;height:82px;background:#7C5CFC;border-radius:6px;box-shadow:0 10px 20px rgba(124,92,252,.3);display:flex;align-items:center;justify-content:center;z-index:1;"><svg width="26" height="20" viewBox="0 0 26 20" fill="none"><rect x="1" y="12" width="4" height="7" fill="#FFFFFF" opacity=".8"/><rect x="7" y="7" width="4" height="12" fill="#FFFFFF"/><rect x="13" y="10" width="4" height="9" fill="#FFFFFF" opacity=".8"/><rect x="19" y="3" width="4" height="16" fill="#FFFFFF"/></svg></div>
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(8deg);"></div>
+          </div><div class="cs-modcard-title">QBR Builder</div><p class="cs-modcard-desc">Review decks compiled from real conversations</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;gap:14px;align-items:center;">
+              <div style="width:36px;height:36px;border-radius:999px;background:#1FA591;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(31,165,145,.3);">JL</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">PS</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(47,95,224,.3);">AC</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">NW</div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">2 stakeholders gone quiet</div>
+          </div><div class="cs-modcard-title">Stakeholder Map</div><p class="cs-modcard-desc">See who matters and who&#x27;s gone quiet</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="align-self:flex-end;max-width:80%;background:#171511;color:#FFFBF0;font-size:11px;padding:7px 11px;border-radius:999px 999px 4px 999px;">Is Acme at risk?</div>
+            <div style="max-width:88%;background:#EDE4C6;color:#171511;font-size:11px;line-height:1.4;padding:7px 11px;border-radius:999px 999px 999px 4px;">Yes &mdash; sentiment dropped 18% <span style="color:#8C8878;">[Oct 3 call]</span></div>
+          </div><div class="cs-modcard-title">Ask Kaizan</div><p class="cs-modcard-desc">Ask anything about any client and get cited answers</p></div>
+<div class="cs-modcard">
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;align-items:center;gap:4px;height:44px;">
+              <div style="width:4px;height:40%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:70%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:100%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:55%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:85%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:35%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:65%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:90%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:45%;background:#171511;border-radius:999px;"></div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">96% match to your tone</div>
+          </div><div class="cs-modcard-title">My Voice</div><p class="cs-modcard-desc">Writes emails in your tone of voice</p></div></div>
+          <button class="kz-carousel-arrow is-next" data-carousel-next type="button" aria-label="Next module">&rsaquo;</button>
+        </div>
+        <div class="kz-carousel-dots" data-carousel-dots><button class="kz-carousel-dot" type="button" aria-label="Show module 1"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 2"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 3"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 4"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 5"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 6"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 7"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 8"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 9"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 10"></button>
+<button class="kz-carousel-dot" type="button" aria-label="Show module 11"></button></div>
+      </div>
+    </section>
+
+    <!-- INTEGRATIONS + FAQ -->
+    <section class="cs-integrations">
+      <div class="cs-int-inner">
+        <h2 class="cs-int-title">Works with the tools you already use</h2>
+        <div class="cs-int-grid"><div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/teams.svg" alt="Microsoft Teams" loading="lazy"></div><div class="cs-int-icon-label">Microsoft Teams</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/claude.svg" alt="Claude" loading="lazy"></div><div class="cs-int-icon-label">Claude</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/slack.svg" alt="Slack" loading="lazy"></div><div class="cs-int-icon-label">Slack</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/hubspot.svg" alt="HubSpot" loading="lazy"></div><div class="cs-int-icon-label">HubSpot</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/salesforce.svg" alt="Salesforce" loading="lazy"></div><div class="cs-int-icon-label">Salesforce</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/gmeet.svg" alt="Google Meet" loading="lazy"></div><div class="cs-int-icon-label">Google Meet</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/gdrive.svg" alt="Google Drive" loading="lazy"></div><div class="cs-int-icon-label">Google Drive</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/monday.svg" alt="Monday" loading="lazy"></div><div class="cs-int-icon-label">Monday</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/sharepoint.svg" alt="SharePoint" loading="lazy"></div><div class="cs-int-icon-label">SharePoint</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/zoom.svg" alt="Zoom" loading="lazy"></div><div class="cs-int-icon-label">Zoom</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/wrike.svg" alt="Wrike" loading="lazy"></div><div class="cs-int-icon-label">Wrike</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/gmail.svg" alt="Gmail" loading="lazy"></div><div class="cs-int-icon-label">Gmail</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/outlook.svg" alt="Outlook" loading="lazy"></div><div class="cs-int-icon-label">Outlook</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/jira.svg" alt="Jira" loading="lazy"></div><div class="cs-int-icon-label">Jira</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/asana.svg" alt="Asana" loading="lazy"></div><div class="cs-int-icon-label">Asana</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/clickup.svg" alt="ClickUp" loading="lazy"></div><div class="cs-int-icon-label">ClickUp</div></div>
+<div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/notion.svg" alt="Notion" loading="lazy"></div><div class="cs-int-icon-label">Notion</div></div></div>
+      </div>
+      <div class="cs-faq-inner">
+        <h2 class="cs-faq-title">Frequently asked questions</h2>
+        <details class="cs-faq-item"><summary class="cs-faq-summary"><span>Is AI built into Kaizan, or is it an add-on?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">AI is the core of Kaizan. Your Helpers work from day one, capturing conversations, drafting follow-ups and flagging risk and opportunity without any extra setup.</p></details>
+<details class="cs-faq-item"><summary class="cs-faq-summary"><span>How does Kaizan help prevent client churn?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">Kaizan scores the health of every relationship and watches for early warning signs, like a quiet stakeholder or falling sentiment. You get an alert and a recommended next step while there&#x27;s still time to act.</p></details>
+<details class="cs-faq-item"><summary class="cs-faq-summary"><span>How much time will my team save?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">On average, 5.4 hours per person per week. Kaizan handles meeting notes, follow-ups, system updates and report prep, so your team can spend that time with clients.</p></details>
+<details class="cs-faq-item"><summary class="cs-faq-summary"><span>How does Kaizan find upsell opportunities?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">It listens for buying signals across every meeting, email and chat, such as a client asking &quot;do you do analytics?&quot;. It then flags the opportunity and drafts a scoped pitch. Teams see an average 4.8% increase in their addressable upsell pool.</p></details>
+<details class="cs-faq-item"><summary class="cs-faq-summary"><span>What are the recommendations based on?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">Kaizan&#x27;s forecasts draw on over 11 million points of client service data, benchmarked against best-in-class client teams, plus the conversations from your own accounts.</p></details>
+      </div>
+    </section>
+
+    <footer class="kz-footer">
+      <div class="kz-footer-grid">
+        <div class="kz-footer-brand logo-light">
+          <a class="kz-nav-logo" href="/us/">
+            <img class="icon" src="/assets/img/kaizan-icon.png?v=36c55982" alt="">
+            <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+          </a>
+          <p class="blurb">Client super intelligence for professional services firms.</p>
+          <p class="footer-address">Covent Garden, London · Madison Avenue, New York</p>
+        </div>
+        <div class="col"><h4>Product</h4><a href="product/">Overview</a>
+<a href="integrations/">Integrations</a>
+<a href="security/">Security</a></div><div class="col"><h4>For</h4><a href="for/account-manager/">Account Manager</a>
+<a href="for/project-manager/">Project Manager</a>
+<a href="for/leadership/">Leadership</a>
+<a href="for/new-business/">New Business</a></div><div class="col"><h4>Company</h4><a href="about/">About</a>
+<a href="security/">Security</a>
+<a href="faq/">FAQ</a></div><div class="col"><h4>Get in touch</h4><a href="/us/demo/">Book a demo</a>
+<a href="mailto:hello@kaizan.ai">Contact</a>
+<a href="https://www.linkedin.com/company/kaizan">LinkedIn</a></div>
+      </div>
+      <div class="kz-footer-bot">
+        <span>© 2026 Kaizan Inc. · <a class="kz-locale-switch" data-locale-switch href="#" hidden></a></span>
+        <span>
+          <a href="privacy-policy/">Privacy</a> ·
+          <a href="license-agreement/">Terms</a> ·
+          <a href="cookie-policy/">Cookies</a> ·
+          <a href="data-processing-agreement/">DPA</a> ·
+          <a href="#" data-cookie-settings>Cookie settings</a>
+        </span>
+      </div>
+    </footer>
+    </main>
+</div>
+
+<div class="cb-overlay" id="cb-overlay" hidden>
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
+    <div class="cb-head">
+      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
+    </div>
+
+    <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
+      <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
+      <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
+      <button class="cb-tab" role="tab" data-tab="about" aria-selected="false" tabindex="-1">About</button>
+    </div>
+
+    <div class="cb-body">
+      <section data-panel="consent" role="tabpanel">
+        <h2 id="cb-title">This website uses cookies</h2>
+        <p>We use cookies to keep the site working, to remember your preferences and to understand which pages are useful so we can improve them. You choose which types to allow. <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">Read our privacy policy.</a></p>
+      </section>
+
+      <section data-panel="details" role="tabpanel" hidden>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-necessary"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Necessary <span class="cb-count">12</span></button>
+            <label class="cb-switch"><input type="checkbox" checked disabled aria-label="Necessary cookies, always on"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-necessary">These cookies keep the site working, for example by remembering your consent choice and keeping forms secure. The site can't work properly without them.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-preferences"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Preferences <span class="cb-count">3</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="preferences" aria-label="Preferences cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-preferences">These remember choices you make, like your language or region, so the site feels familiar next time you visit.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-statistics"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Statistics <span class="cb-count">5</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="statistics" aria-label="Statistics cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-statistics">These collect anonymous information about how visitors use the site, so we can see what works and fix what doesn't.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-marketing"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Marketing <span class="cb-count">8</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="marketing" aria-label="Marketing cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-marketing">These measure how well our campaigns perform and show you relevant ads on other websites.</p>
+        </div>
+      </section>
+
+      <section data-panel="about" role="tabpanel" hidden>
+        <p>Cookies are small text files that websites store on your device. Some are essential; others help us remember your settings or understand how the site is used.</p>
+        <p>Your choice is remembered for this browser. You can change or withdraw it at any time using <strong>Cookie settings</strong> in the page footer.</p>
+        <p>For details on who we share data with and how long we keep it, see our <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+      </section>
+    </div>
+
+    <div class="cb-foot" data-foot="consent">
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+    </div>
+    <div class="cb-foot" data-foot="details" hidden>
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
+      <button class="cb-btn line" data-act="selection">Allow selection</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
