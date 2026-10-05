@@ -2331,6 +2331,466 @@ def render_home() -> str:
                      extra_head=extra_head) + body + page_foot()
 
 
+def _cs_stats_band_html() -> str:
+    """Updated stats band (icon + 'avg.' label + white numbers) from the
+    design artifact's Section5-Stats — replaces stats_band_html()'s plain
+    bold-yellow-number version for this page only."""
+    stats = [
+        ('<rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>'
+         '<path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '21%', 'Average revenue increase per client'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '5.4 hrs', 'Admin saved per person, every week'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="5" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="1.4" fill="#FFB900"/>',
+         'avg.', '45%', 'Of revenue at risk protected through early signals'),
+        ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
+         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+        ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
+         'avg.', '23%', 'Lower cost to serve each client'),
+        ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
+         '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
+         None, '11M+', 'Client service data points behind every recommendation'),
+    ]
+
+    def _stat(icon, avg_label, num, desc):
+        avg_html = (f'<span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">{E(avg_label)}</span>'
+                    if avg_label else '')
+        return (f'<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" '
+                f'style="margin:0 auto 14px;">{icon}</svg>'
+                f'<div style="display:flex;align-items:baseline;justify-content:center;gap:6px;">'
+                f'{avg_html}<div style="font-size:46px;font-weight:700;color:#FFFFFF;">{E(num)}</div></div>'
+                f'<div style="font-size:17px;color:#ffffff;margin-top:6px;">{E(desc)}</div></div>')
+
+    grid = '\n'.join(_stat(*s) for s in stats)
+    return f'''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;">{grid}</div>
+    </div>
+  </section>
+</div>'''
+
+
+def _cs_lets_talk_html() -> str:
+    """'Let's talk' closer — 3 benefit cards + a Book a demo CTA."""
+    cards = [
+        ('var(--kz-yellow)', '#FFFFFF', 'Protects the revenue you already have'),
+        ('#7FB59E', '#FFFFFF', 'Gives your team their week back'),
+        ('#2F5FE0', '#FFFFFF', 'Unlocks growth inside existing accounts'),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-lt-card" style="background:{bg};color:{fg}">{E(text)}</div>'
+        for bg, fg, text in cards
+    )
+    arrow = ('<svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">'
+             '<path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    return f'''<section class="cs-lets-talk">
+      <div class="cs-lt-inner">
+        <h2 class="cs-lt-title">Let&rsquo;s talk</h2>
+        <p class="cs-lt-sub">3 ways Kaizan helps your client-facing team</p>
+        <div class="cs-lt-grid">{cards_html}</div>
+        <a class="kz-btn kz-btn-black cs-lt-cta" href="/demo/">Book a demo {arrow}</a>
+      </div>
+    </section>'''
+
+
+def _cs_modules_html() -> str:
+    """'Explore everything Kaizan does' module carousel. Reuses the site's
+    existing generic carousel engine (initQuoteCarousel in site.js runs
+    against any [data-carousel] root), so prev/next/dots/drag/auto-advance
+    all work with no extra JS."""
+    modules = [
+        ('AI Assistant', 'Joins every call and keeps your systems up to date', '''
+          <div style="width:100%;height:150px;background:#171511;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;">
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#D8D2BE;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">AC</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#7FB59E;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">N</div></div>
+            <div style="background:var(--kz-yellow);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 0 0 2px #FFFFFF inset;">
+              <img src="/assets/img/kaizan-icon.png" alt="" style="width:24px;height:24px;border-radius:6px;">
+              <span style="font-size:8px;font-weight:700;color:#171511;">Kaizan joined</span>
+            </div>
+          </div>'''),
+        ('AI Helpers', 'Specialist helpers working 24/7 on every client', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">Reply drafted &mdash; Acme Creative</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">QBR brief compiled &mdash; Northwind</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0012 3z" stroke="#8C8878" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span style="font-size:12px;color:#8C8878;">Suggested: re-engage Stark Industries</span></div>
+          </div>'''),
+        ('Client Health Score', 'Relationship health on every account', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px 18px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="align-self:flex-start;font-size:13px;font-weight:700;color:#171511;">Health Score</div>
+            <div style="width:88px;height:88px;border-radius:999px;background:conic-gradient(#1FA591 0% 84%,#E3EDE9 84% 100%);display:flex;align-items:center;justify-content:center;">
+              <div style="width:70px;height:70px;border-radius:999px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">
+                <div style="font-size:20px;font-weight:800;color:#171511;">8.4</div>
+                <div style="font-size:8px;font-weight:700;color:#1FA591;background:rgba(31,165,145,.15);padding:2px 7px;border-radius:999px;">THRIVING</div>
+              </div>
+            </div>
+          </div>'''),
+        ('Client News', 'Every conversation and commitment in one view', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Agenda drafted</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Metrics compiled</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;"></span><span style="font-size:13px;color:#8C8878;">Deck exported</span></div>
+          </div>'''),
+        ('Risk Watcher', "Early warnings before a client leaves", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Acme Creative &mdash; sentiment dropping</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#171511" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#171511" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Northwind &mdash; renewal in 14 days</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Stark Industries &mdash; champion left</span></div>
+          </div>'''),
+        ('Expansion Scout', 'Upsell signals the moment they land', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:70px;">
+              <div style="width:20px;height:35%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:50%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:68%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:100%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+            </div>
+            <div style="font-size:11px;background:rgba(127,181,158,.18);color:#171511;font-weight:600;padding:5px 9px;border-radius:999px;width:fit-content;">&#9650; +$42k opportunity flagged</div>
+          </div>'''),
+        ('Reply Drafter', 'Follow-ups written in your voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"><span style="width:20px;height:20px;border-radius:999px;background:#2F5FE0;color:#FFFBF0;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</span><span style="font-size:12px;font-weight:600;color:#171511;">Reply to Jordan Lee</span></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:95%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:80%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:60%;"></div>
+            <div style="font-size:11px;color:#2F5FE0;font-weight:600;margin-top:4px;">&check; Draft ready for review</div>
+          </div>'''),
+        ('QBR Builder', 'Review decks compiled from real conversations', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(-8deg);"></div>
+            <div style="width:58px;height:82px;background:#7C5CFC;border-radius:6px;box-shadow:0 10px 20px rgba(124,92,252,.3);display:flex;align-items:center;justify-content:center;z-index:1;"><svg width="26" height="20" viewBox="0 0 26 20" fill="none"><rect x="1" y="12" width="4" height="7" fill="#FFFFFF" opacity=".8"/><rect x="7" y="7" width="4" height="12" fill="#FFFFFF"/><rect x="13" y="10" width="4" height="9" fill="#FFFFFF" opacity=".8"/><rect x="19" y="3" width="4" height="16" fill="#FFFFFF"/></svg></div>
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(8deg);"></div>
+          </div>'''),
+        ('Stakeholder Map', "See who matters and who's gone quiet", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;gap:14px;align-items:center;">
+              <div style="width:36px;height:36px;border-radius:999px;background:#1FA591;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(31,165,145,.3);">JL</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">PS</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(47,95,224,.3);">AC</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">NW</div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">2 stakeholders gone quiet</div>
+          </div>'''),
+        ('Ask Kaizan', 'Ask anything about any client and get cited answers', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="align-self:flex-end;max-width:80%;background:#171511;color:#FFFBF0;font-size:11px;padding:7px 11px;border-radius:999px 999px 4px 999px;">Is Acme at risk?</div>
+            <div style="max-width:88%;background:#EDE4C6;color:#171511;font-size:11px;line-height:1.4;padding:7px 11px;border-radius:999px 999px 999px 4px;">Yes &mdash; sentiment dropped 18% <span style="color:#8C8878;">[Oct 3 call]</span></div>
+          </div>'''),
+        ('My Voice', 'Writes emails in your tone of voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;align-items:center;gap:4px;height:44px;">
+              <div style="width:4px;height:40%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:70%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:100%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:55%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:85%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:35%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:65%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:90%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:45%;background:#171511;border-radius:999px;"></div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">96% match to your tone</div>
+          </div>'''),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-modcard">{visual}'
+        f'<div class="cs-modcard-title">{E(title)}</div>'
+        f'<p class="cs-modcard-desc">{E(desc)}</p></div>'
+        for title, desc, visual in modules
+    )
+    dots_html = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show module {i + 1}"></button>'
+        for i in range(len(modules))
+    )
+    return f'''<section class="cs-modules">
+      <div class="cs-modules-inner">
+        <div class="cs-modules-head">
+          <h2 class="cs-modules-title">Explore everything Kaizan does</h2>
+        </div>
+        <div class="kz-carousel" data-carousel>
+          <button class="kz-carousel-arrow is-prev" data-carousel-prev type="button" aria-label="Previous module">&lsaquo;</button>
+          <div class="kz-carousel-viewport" data-carousel-viewport>{cards_html}</div>
+          <button class="kz-carousel-arrow is-next" data-carousel-next type="button" aria-label="Next module">&rsaquo;</button>
+        </div>
+        <div class="kz-carousel-dots" data-carousel-dots>{dots_html}</div>
+      </div>
+    </section>'''
+
+
+def _cs_integrations_faq_html() -> str:
+    """'Works with the tools you already use' icon grid + an FAQ accordion.
+    The accordion uses native <details>/<summary> — no JS needed."""
+    icons_html = '\n'.join(
+        f'<div class="cs-int-icon"><div class="cs-int-icon-box">{INT_LOGOS.get(i["k"], "")}</div>'
+        f'<div class="cs-int-icon-label">{E(i["name"])}</div></div>'
+        for i in INT_DATA
+    )
+    faqs = [
+        ('Is AI built into Kaizan, or is it an add-on?',
+         'AI is the core of Kaizan. Your Helpers work from day one, capturing '
+         'conversations, drafting follow-ups and flagging risk and opportunity '
+         'without any extra setup.'),
+        ('How does Kaizan help prevent client churn?',
+         "Kaizan scores the health of every relationship and watches for early "
+         "warning signs, like a quiet stakeholder or falling sentiment. You get "
+         "an alert and a recommended next step while there's still time to act."),
+        ('How much time will my team save?',
+         'On average, 5.4 hours per person per week. Kaizan handles meeting '
+         'notes, follow-ups, system updates and report prep, so your team can '
+         'spend that time with clients.'),
+        ('How does Kaizan find upsell opportunities?',
+         'It listens for buying signals across every meeting, email and chat, '
+         'such as a client asking "do you do analytics?". It then flags the '
+         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'increase in their addressable upsell pool.'),
+        ('What are the recommendations based on?',
+         "Kaizan's forecasts draw on over 11 million points of client service "
+         "data, benchmarked against best-in-class client teams, plus the "
+         "conversations from your own accounts."),
+    ]
+    plus = ('<svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">'
+            '<path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg>')
+    faq_html = '\n'.join(
+        f'<details class="cs-faq-item">'
+        f'<summary class="cs-faq-summary"><span>{E(q)}</span>{plus}</summary>'
+        f'<p class="cs-faq-body">{E(a)}</p>'
+        f'</details>'
+        for q, a in faqs
+    )
+    return f'''<section class="cs-integrations">
+      <div class="cs-int-inner">
+        <h2 class="cs-int-title">Works with the tools you already use</h2>
+        <div class="cs-int-grid">{icons_html}</div>
+      </div>
+      <div class="cs-faq-inner">
+        <h2 class="cs-faq-title">Frequently asked questions</h2>
+        {faq_html}
+      </div>
+    </section>'''
+
+
+def render_customer_success_software() -> str:
+    """SEO landing page at /customer-success-software/ — a replica of the
+    homepage (render_home) targeting the 'customer success software' search
+    term. Same design/content throughout, minus the CARE, Personas and
+    closing-CTA sections (stripped below); only the <title> and meta
+    description otherwise differ, swapped in after the fact so the page can
+    never drift from the homepage it mirrors.
+
+    render_home()'s markup is written for a page living at the site root (its
+    asset/internal links are root-relative, e.g. "assets/...", "demo/"), but
+    this page is one folder down. A <base href="/"> makes every one of those
+    links resolve against the site root regardless, so the output needs no
+    further rewriting."""
+    html = render_home()
+    html = html.replace(
+        '<title>Client super intelligence for client service teams · Kaizan</title>',
+        '<base href="/">\n        <title>Customer Success Software · Kaizan</title>',
+        1,
+    )
+    html = html.replace(
+        'content="Kaizan is the AI platform for client service professionals, '
+        'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue."',
+        'content="Kaizan is customer success software that turns every call, email '
+        'and signal into the next best action, AI Helpers that work 24/7 to grow '
+        'client ROI, satisfaction and revenue."',
+        1,
+    )
+    # Drop the CARE, Personas and closing-CTA sections for this landing page —
+    # each <section> is self-contained (no nested <section> tags), so a
+    # non-greedy match up to the next </section> is safe.
+    for marker in ('<!-- CARE -->', '<!-- PERSONAS -->', '<!-- CTA -->'):
+        html = re.sub(
+            re.escape(marker) + r'\s*<section\b.*?</section>\s*',
+            '',
+            html,
+            count=1,
+            flags=re.S,
+        )
+    html = html.replace(
+        '<div class="kz-eyebrow">In their words</div>', '', 1,
+    )
+    # Swap the "64% Expansion rate" ring (Risk section) with the "82% Renewal
+    # confidence" ring (Growth section) — same card shell/position in each
+    # illustration, just the ring color+percentage and label change places.
+    risk_ring = (
+        '<div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; '
+        'background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; '
+        'align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; '
+        'border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; '
+        'justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>\n'
+        '            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; '
+        'color: #8C8878;">Expansion rate</div>'
+    )
+    growth_ring = (
+        '<div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; '
+        'background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; '
+        'align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; '
+        'border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; '
+        'justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>\n'
+        '            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; '
+        'color: #8C8878;">Renewal confidence</div>'
+    )
+    html = html.replace(risk_ring, '\0SWAP\0', 1)
+    html = html.replace(growth_ring, risk_ring, 1)
+    html = html.replace('\0SWAP\0', growth_ring, 1)
+    # Nav logo (header only — not the footer's copy, which comes later in the
+    # document) stops linking home on this page: swap the <a href="/"> for a
+    # plain <span> with the same class, so it keeps its look with no link.
+    html = re.sub(
+        r'<a class="kz-nav-logo" href="/">(.*?)</a>',
+        r'<span class="kz-nav-logo">\1</span>',
+        html, count=1, flags=re.S,
+    )
+    html = html.replace(
+        '11M+ points of client service signals',
+        '11M+ of client service signals',
+        1,
+    )
+    # Swap in the updated stats band (icons + "avg." labels, white numbers)
+    # from the design artifact's Section5-Stats, replacing the homepage's
+    # plain bold-yellow-number version for this page only.
+    html = re.sub(
+        r'<div class="kz-statsband".*?</section>\n</div>',
+        lambda _m: _cs_stats_band_html(),
+        html,
+        count=1,
+        flags=re.S,
+    )
+    # Page-only look: trim the nav down to logo + "Book a demo" (no link list,
+    # no mobile toggle, no "Client log in"), and bring back small prev/next
+    # arrows on the testimonial carousel, moved up into its top-right corner.
+    # Scoped to this page via an inline <style> (loads after site.css, so it
+    # wins on tied specificity without needing !important) — the shared
+    # homepage/site.css rules are untouched.
+    html = html.replace('</head>', dedent('''\
+        <style>
+          /* Page-wide font swap to Helvetica Neue. The site's type classes
+             all read from these custom properties (see tokens.css), so
+             redefining them here — rather than overriding font-family on
+             every individual selector — retargets every heading, button,
+             nav link, card and paragraph on the page in one place.
+             Helvetica Neue isn't a Google/web font, so no stylesheet link:
+             it renders wherever the visitor's OS ships it (most Apple
+             devices; Windows/Linux fall through to Arial). */
+          :root {
+            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          }
+          .kz-nav-links, .kz-nav-toggle { display: none; }
+          .kz-nav-cta .kz-btn-ghost { display: none; }
+          /* Hero's "Book a demo" pill defaults to align-self: center, which
+             centers it under the lede instead of lining up with the
+             left-aligned heading/lede above it. margin-top: auto (removed
+             below) pins it to the bottom of the hero row, so it drifts down
+             when the trial form on the right expands and grows taller —
+             a fixed margin keeps it right after the lede instead. */
+          .kz-hero-v2-cta { align-self: flex-start; margin-top: 0; }
+          /* Small yellow bubble in the hero's decorative cluster → red.
+             Its line color was overridden dark (for contrast on yellow);
+             put it back to the same white the other bubbles use. */
+          .kz-hero-bubble--gold {
+            background: #E8432B; box-shadow: 0 14px 24px rgba(232,67,43,.4);
+          }
+          .kz-hero-bubble--gold span:first-child { background: rgba(255,255,255,.88); }
+          .kz-hero-bubble--gold span:last-child { background: rgba(255,255,255,.6); }
+          .kz-quotes { position: relative; }
+          .kz-quotes .kz-carousel { position: static; }
+          .kz-quotes .kz-carousel-arrow {
+            display: flex; position: absolute; top: 48px;
+            width: 32px; height: 32px; font-size: 15px;
+          }
+          .kz-quotes .kz-carousel-arrow.is-prev { right: calc(var(--kz-gutter) + 40px); }
+          .kz-quotes .kz-carousel-arrow.is-next { right: var(--kz-gutter); }
+          @media (max-width: 900px) {
+            .kz-quotes .kz-carousel-arrow { display: none; }
+          }
+
+          /* ── "Let's talk" closer ─────────────────────────────── */
+          .cs-lets-talk { background: var(--kz-sand); }
+          .cs-lt-inner {
+            max-width: 1280px; margin: 0 auto; padding: 96px var(--kz-gutter);
+            text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
+          }
+          .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-lt-sub { margin: 0; font-size: 22px; font-weight: 700; color: var(--kz-ink); max-width: 46ch; }
+          .cs-lt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; margin-top: 20px; }
+          .cs-lt-card {
+            min-height: 110px; border-radius: 26px 26px 26px 6px; display: flex;
+            align-items: center; justify-content: center; padding: 18px 20px;
+            font-size: 15px; font-weight: 600; text-align: center; line-height: 1.4;
+            box-shadow: 0 16px 30px rgba(23,21,17,.14);
+          }
+          .cs-lt-cta { margin-top: 12px; padding: 14px 26px; font-size: 15px; }
+          @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
+
+          /* ── Modules carousel ────────────────────────────────── */
+          .cs-modules { background: var(--kz-yellow); }
+          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px var(--kz-gutter); }
+          .cs-modules-head { margin-bottom: 40px; }
+          .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
+          .cs-modules .kz-carousel { position: static; }
+          .cs-modules .kz-carousel-arrow {
+            display: flex; position: absolute; top: 46px;
+            width: 44px; height: 44px; font-size: 22px; background: #FFFFFF;
+          }
+          .cs-modules .kz-carousel-arrow.is-prev { right: 60px; }
+          .cs-modules .kz-carousel-arrow.is-next { right: 0; }
+          .cs-modcard {
+            flex: 0 0 320px; scroll-snap-align: start; background: #000000;
+            border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
+          }
+          .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+          .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
+          .cs-modules .kz-carousel-dots { margin-top: 32px; }
+          @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
+
+          /* ── Integrations + FAQ ──────────────────────────────── */
+          .cs-integrations { background: var(--kz-paper); }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px var(--kz-gutter) 0; text-align: center; }
+          .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+          .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
+          .cs-int-icon-box {
+            background: #FFFFFF; border-radius: 16px; width: 76px; height: 76px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 18px rgba(23,21,17,.07); transition: transform .2s ease;
+          }
+          .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
+          .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
+          .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
+          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px var(--kz-gutter) 110px; }
+          .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
+          .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
+          .cs-faq-item:last-of-type { border-bottom: none; }
+          .cs-faq-summary {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            font-size: 16px; font-weight: 700; cursor: pointer; list-style: none;
+          }
+          .cs-faq-summary::-webkit-details-marker { display: none; }
+          .cs-faq-plus { flex: none; transition: transform .25s ease; }
+          .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
+          .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
+        </style>
+        </head>'''), 1)
+    html = html.replace(
+        '<footer class="kz-footer">',
+        _cs_lets_talk_html() + '\n' + _cs_modules_html() + '\n' +
+        _cs_integrations_faq_html() + '\n    <footer class="kz-footer">',
+        1,
+    )
+    return html
+
+
 def render_confirmation() -> str:
     """/confirmation/ — where the 14-day trial form (home hero) sends the
     visitor after a successful signup, instead of swapping the card in place.
@@ -5881,6 +6341,8 @@ def main():
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
     write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
+    write(ROOT / 'customer-success-software' / 'index.html',
+                                                 render_customer_success_software())
     write(ROOT / '404.html',                    render_404())
 
     # Marketing / campaign landing pages
