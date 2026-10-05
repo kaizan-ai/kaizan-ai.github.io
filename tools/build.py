@@ -2617,30 +2617,9 @@ def render_customer_success_software() -> str:
     html = html.replace(
         '<div class="kz-eyebrow">In their words</div>', '', 1,
     )
-    # Swap the "64% Expansion rate" ring (Risk section) with the "82% Renewal
-    # confidence" ring (Growth section) — same card shell/position in each
-    # illustration, just the ring color+percentage and label change places.
-    risk_ring = (
-        '<div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; '
-        'background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; '
-        'align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; '
-        'border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; '
-        'justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>\n'
-        '            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; '
-        'color: #8C8878;">Expansion rate</div>'
-    )
-    growth_ring = (
-        '<div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; '
-        'background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; '
-        'align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; '
-        'border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; '
-        'justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>\n'
-        '            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; '
-        'color: #8C8878;">Renewal confidence</div>'
-    )
-    html = html.replace(risk_ring, '\0SWAP\0', 1)
-    html = html.replace(growth_ring, risk_ring, 1)
-    html = html.replace('\0SWAP\0', growth_ring, 1)
+    # (The Risk/Growth donut-ring swap that used to be hacked in here via
+    # string-replace is now native to playbooks_sections_html() itself, so
+    # every page — this one included — already gets it for free.)
     # Nav logo (header only — not the footer's copy, which comes later in the
     # document) stops linking home on this page: swap the <a href="/"> for a
     # plain <span> with the same class, so it keeps its look with no link.
