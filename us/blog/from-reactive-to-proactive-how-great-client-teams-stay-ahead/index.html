@@ -37,7 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
         <link rel="stylesheet" href="/assets/css/tokens.css?v=44c900be">
-        <link rel="stylesheet" href="/assets/css/site.css?v=0302c925">
+        <link rel="stylesheet" href="/assets/css/site.css?v=60c2881c">
         <script defer src="/assets/js/site.js?v=721fcb42"></script>
         <link rel="canonical" href="https://kaizan.ai/us/blog/from-reactive-to-proactive-how-great-client-teams-stay-ahead/">
         <meta property="og:type" content="article">
@@ -55,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
-        <script defer src="/assets/js/consent.js?v=44a0659b"></script>
+        <script defer src="/assets/js/consent.js?v=8a7c2548"></script>
         </head>
         <body>
         <div class="kz-page">
@@ -228,11 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <div class="cb-overlay" id="cb-overlay" hidden>
-  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
-    <div class="cb-head">
-      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
-    </div>
-
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
     <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
       <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
       <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
@@ -284,14 +280,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="cb-foot" data-foot="consent">
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
-      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
     <div class="cb-foot" data-foot="details" hidden>
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
       <button class="cb-btn line" data-act="selection">Allow selection</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
   </div>
 </div>
