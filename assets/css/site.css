@@ -3224,79 +3224,82 @@ button { font-family: inherit; }
 .kz-policy-pdf-link { font-weight: 400 !important; color: var(--kz-mute) !important; text-decoration: underline !important; text-underline-offset: 3px; font-size: 13px; }
 .kz-policy-pdf-link:hover { color: var(--kz-ink) !important; }
 
-/* Cookie consent modal (assets/js/consent.js) — tabbed dialog (Consent /
+/* Cookie consent card (assets/js/consent.js) — tabbed panel (Consent /
    Details / About) with per-category toggles. Markup is emitted by
-   page_foot() in tools/build.py on every page; kept in its own `cb-`
-   namespace since it's a self-contained overlay. Font is pinned to the
-   site's own type stack for visual consistency with the rest of the page. */
-:root {
-  --cb-primary: var(--kz-yellow); --cb-primary-ink: var(--kz-ink);
-  --cb-surface: #ffffff; --cb-text: #003e51; --cb-link: #1e50c8;
-  --cb-line: #d9dfe1; --cb-pill: #e3e8ea; --cb-overlay: rgba(0,0,0,.55);
-  --cb-font: var(--kz-sans);
-}
-
-.cb-overlay{position:fixed;inset:0;z-index:2147483000;background:var(--cb-overlay);display:flex;align-items:center;justify-content:center;
-  padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+   page_foot() in tools/build.py on every page. Sits as a non-blocking card
+   at the bottom of the viewport (no backdrop, page stays scrollable) and is
+   styled with the site's own tokens and .kz-btn look so it reads as part of
+   the page rather than a third-party widget. */
+.cb-overlay{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;display:flex;justify-content:center;pointer-events:none;
+  padding:0 max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .cb-overlay[hidden]{display:none}
-.cb-dialog{font:500 15px/1.5 var(--cb-font);color:var(--cb-text);background:var(--cb-surface);width:100%;max-width:900px;max-height:100%;
-  display:flex;flex-direction:column;border-radius:8px;box-shadow:0 32px 68px rgba(0,0,0,.3);overflow:hidden}
+.cb-dialog{pointer-events:auto;font:400 14px/1.6 var(--kz-sans);color:var(--kz-ink);background:var(--kz-paper);width:100%;max-width:760px;
+  max-height:min(560px,calc(100vh - 32px));max-height:min(560px,calc(100dvh - 32px));display:flex;flex-direction:column;
+  border:1px solid var(--kz-line);border-radius:14px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(40,30,15,.06),0 24px 60px -20px rgba(40,30,15,.35)}
 .cb-dialog *{box-sizing:border-box}
-.cb-overlay.cb-in .cb-dialog{animation:cb-pop .28s ease-out both}
-@keyframes cb-pop{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+.cb-dialog:focus{outline:none}
+.cb-overlay.cb-in .cb-dialog{animation:cb-rise .32s ease-out both}
+@keyframes cb-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.cb-overlay.cb-in .cb-dialog{animation:none}}
 
-.cb-head{padding:16px 22px 12px;display:flex;align-items:center;min-height:60px}
-.cb-logo{font:700 26px/1 var(--cb-font);letter-spacing:-.02em;display:inline-flex;align-items:center;gap:8px}
-.cb-logo svg{width:28px;height:28px;flex:none}
-.cb-logo-lockup{display:inline-flex;align-items:center;gap:10px}
-.cb-logo-icon{display:block;height:36px;width:36px;border-radius:8px;flex:none}
-.cb-logo-img{display:block;height:24px;width:auto;flex:none}
+.cb-tabs{display:flex;gap:4px;padding:0 20px;border-bottom:1px solid var(--kz-line)}
+.cb-tab{background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--kz-mute);
+  font:600 13px/1.2 var(--kz-sans);letter-spacing:-.005em;padding:14px 10px 12px;cursor:pointer;transition:color .2s ease,border-color .2s ease}
+.cb-tab:hover{color:var(--kz-ink)}
+.cb-tab[aria-selected="true"]{color:var(--kz-ink);border-bottom-color:var(--kz-yellow)}
 
-.cb-tabs{display:flex;border-bottom:1px solid var(--cb-line)}
-.cb-tab{flex:1;background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;color:var(--cb-text);
-  font:600 16px/1.2 var(--cb-font);padding:20px 8px;cursor:pointer}
-.cb-tab[aria-selected="true"]{color:var(--cb-link);border-bottom-color:var(--cb-link)}
-.cb-tab:hover{background:color-mix(in srgb,var(--cb-text) 5%,transparent)}
-
-.cb-body{flex:1;min-height:0;overflow-y:auto;padding:20px 22px}
+.cb-body{flex:1;min-height:0;overflow-y:auto;padding:18px 24px 6px}
 .cb-body [hidden]{display:none}
-.cb-body h2{font:600 15px/1.4 var(--cb-font);margin:0 0 10px}
-.cb-body p{margin:0 0 12px}
-.cb-body a{color:var(--cb-link);font-weight:700}
+.cb-body h2{font:600 17px/1.35 var(--kz-sans);letter-spacing:-.01em;margin:0 0 6px}
+.cb-body p{margin:0 0 12px;color:var(--kz-mute)}
+.cb-body a{color:var(--kz-ink);font-weight:500;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--kz-yellow)}
+.cb-body a:hover{text-decoration-color:var(--kz-ink)}
+.cb-body strong{color:var(--kz-ink);font-weight:600}
 
-.cb-cat{border-bottom:1px solid var(--cb-line);padding:14px 0}
+.cb-cat{border-bottom:1px solid var(--kz-line);padding:12px 0}
+.cb-cat:first-child{padding-top:0}
 .cb-cat:last-child{border-bottom:0}
 .cb-cat-top{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.cb-cat-toggle{display:flex;align-items:center;gap:12px;background:none;border:0;color:inherit;font:600 16px/1.3 var(--cb-font);cursor:pointer;padding:4px 0;text-align:left}
-.cb-cat-toggle svg{width:14px;height:14px;transition:transform .2s}
+.cb-cat-toggle{display:flex;align-items:center;gap:10px;background:none;border:0;color:var(--kz-ink);font:600 15px/1.3 var(--kz-sans);letter-spacing:-.005em;cursor:pointer;padding:4px 0;text-align:left}
+.cb-cat-toggle svg{width:12px;height:12px;color:var(--kz-mute);transition:transform .2s}
 .cb-cat-toggle[aria-expanded="false"] svg{transform:rotate(-90deg)}
-.cb-count{background:var(--cb-pill);border-radius:999px;font-size:12px;font-weight:600;padding:1px 8px}
-.cb-cat-desc{margin:8px 0 0 26px;max-width:70ch}
+.cb-count{background:var(--kz-sand);color:var(--kz-ink);border-radius:999px;font-size:11.5px;font-weight:600;padding:1px 8px}
+.cb-cat-desc{margin:6px 0 0 22px !important;max-width:70ch}
 .cb-cat-desc[hidden]{display:none}
 
-.cb-switch{position:relative;display:inline-block;width:52px;height:32px;flex:none}
+.cb-switch{position:relative;display:inline-block;width:40px;height:24px;flex:none}
 .cb-switch input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:1}
-.cb-switch span{position:absolute;inset:0;border-radius:32px;background:#8a9a9f;transition:background .2s}
-.cb-switch span::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .2s}
-.cb-switch input:checked + span{background:var(--cb-primary)}
-.cb-switch input:checked + span::after{background:#0a0a0a}
-.cb-switch input:checked + span::after{transform:translateX(20px)}
+.cb-switch span{position:absolute;inset:0;border-radius:24px;background:rgba(0,0,0,.18);transition:background .2s}
+.cb-switch span::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.2);transition:transform .2s}
+.cb-switch input:checked + span{background:var(--kz-yellow)}
+.cb-switch input:checked + span::after{transform:translateX(16px)}
 .cb-switch input:disabled{cursor:not-allowed}
-.cb-switch input:disabled + span{opacity:.6}
-.cb-switch input:focus-visible + span{outline:3px solid var(--cb-link);outline-offset:2px}
+.cb-switch input:disabled + span{opacity:.55}
+.cb-switch input:focus-visible + span{outline:2px solid var(--kz-ink);outline-offset:2px}
 
-.cb-foot{display:flex;gap:12px;justify-content:flex-end;padding:16px 22px 20px;border-top:1px solid var(--cb-line)}
+/* Buttons mirror .kz-btn / .kz-btn-yellow / .kz-btn-black / .kz-btn-ghost
+   in tokens.css. Reject and Accept get equal weight (black vs gold). */
+.cb-foot{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;align-items:center;padding:14px 24px 18px}
 .cb-foot[hidden]{display:none}
-.cb-btn{font:600 15px/1.2 var(--cb-font);padding:15px 22px;border-radius:4px;border:2px solid var(--cb-primary);cursor:pointer;min-width:0;flex:1 1 0;max-width:290px}
-.cb-btn.fill{background:var(--cb-primary);color:var(--cb-primary-ink)}
-.cb-btn.line{background:transparent;color:var(--cb-text);border-color:var(--cb-text)}
-.cb-btn:hover{filter:brightness(.94)}
-.cb-dialog :focus-visible{outline:3px solid var(--cb-link);outline-offset:2px}
+.cb-btn{display:inline-flex;align-items:center;justify-content:center;font:600 14px/1.2 var(--kz-sans);letter-spacing:-.005em;
+  padding:11px 20px;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:all .2s ease}
+.cb-btn.fill{background:var(--kz-yellow);color:var(--kz-ink);box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px -8px rgba(255,185,0,.45)}
+.cb-btn.fill:hover{background:var(--kz-yellow-deep);transform:translateY(-1px)}
+.cb-btn.dark{background:var(--kz-ink);color:#fff;box-shadow:0 1px 2px rgba(0,0,0,.1),0 8px 24px -10px rgba(0,0,0,.5)}
+.cb-btn.dark:hover{background:var(--kz-ink-2);transform:translateY(-1px)}
+.cb-btn.line{background:transparent;color:var(--kz-ink);border-color:rgba(0,0,0,.18);margin-right:auto}
+.cb-btn.line:hover{background:rgba(0,0,0,.04);border-color:rgba(0,0,0,.35)}
+.cb-dialog :focus-visible{outline:2px solid var(--kz-ink);outline-offset:2px}
 @media (max-width:640px){
-  .cb-foot{flex-direction:column-reverse}
-  .cb-btn{max-width:none;flex:none;width:100%}
-  .cb-tab{font-size:15px;padding:16px 4px}
+  .cb-overlay{padding-left:max(10px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px));padding-bottom:max(10px,env(safe-area-inset-bottom,0px))}
+  .cb-dialog{max-height:min(560px,calc(100dvh - 20px))}
+  .cb-tabs{padding:0 14px}
+  .cb-body{padding:16px 18px 4px}
+  .cb-foot{padding:12px 18px 16px}
+  .cb-btn{flex:1 1 calc(50% - 5px)}
+  .cb-btn.line{flex-basis:100%;order:3;margin-right:0}
 }
 
 /* Policy pages: labelled key/value blocks (DPA Schedule 1) */
