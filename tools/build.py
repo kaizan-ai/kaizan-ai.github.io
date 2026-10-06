@@ -96,7 +96,7 @@ CLIENT_LOGOS = [
     # A few clients lead in, then the US clients (US market push) land around the
     # middle — so US prospects catch familiar logos once they've scrolled to the
     # band, rather than the US set scrolling past before they get there.
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
+    dict(name='The Kite Factory',         file='the-kite-factory.png'),
     dict(name='Scale Digital',            file='scale-digital.png'),
     dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
     dict(name='Open Partners',            file='open-partners.svg'),
@@ -2184,7 +2184,7 @@ def render_home() -> str:
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
-                f'<q>{E(cq["q"])}</q>'
+                f'<div class="kz-qcard-body"><q>{E(cq["q"])}</q></div>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
                 f'{more}'
                 f'</figure>')

@@ -993,7 +993,7 @@ button { font-family: inherit; }
 }
 /* Company logo — dark, sized per-company so all read proportionate. */
 .kz-qcard-logo {
-  height: 26px; width: auto; max-width: 150px; object-fit: contain;
+  height: 26px; width: auto; max-width: 100%; object-fit: contain;
   filter: grayscale(1) brightness(0) opacity(0.85);
 }
 .kz-qcard-co { font-weight: 700; font-size: 13px; color: var(--kz-ink); }
@@ -1003,20 +1003,25 @@ button { font-family: inherit; }
   font-size: 42px; line-height: 1; color: var(--kz-yellow);
   margin: -2px 0 -14px; user-select: none;
 }
+/* Quote body fills the middle of the card and vertically centres the text,
+   so the byline + Read-more are pushed to the bottom and line up across cards. */
+.kz-qcard-body { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 0; }
 .kz-qcard q {
   font-family: var(--kz-display); font-size: 14.5px; font-weight: 600;
-  line-height: 1.4; color: var(--kz-ink); quotes: none; flex: 0 0 auto;
+  line-height: 1.4; color: var(--kz-ink); quotes: none;
   display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 6; overflow: hidden;
-  margin: 2px 0;
+  margin: 0;
 }
 .kz-qcard q::before, .kz-qcard q::after { content: none; }
 .kz-qcard figcaption { margin: 0; }
 /* Centred, stacked attribution inside the card. */
 /* Horizontal byline: avatar to the left of the name — frees vertical space for the quote. */
 .kz-qcard .kz-portrait { flex-direction: row; align-items: center; justify-content: center; gap: 10px; }
-.kz-qcard .kz-portrait .meta { text-align: left; }
-.kz-qcard .kz-portrait .name { font-weight: 700; font-size: 13px; line-height: 1.25; color: var(--kz-ink); }
-.kz-qcard .kz-portrait .role { font-size: 11.5px; line-height: 1.25; color: rgba(0,0,0,.62); }
+.kz-qcard .kz-portrait .meta { text-align: left; min-width: 0; }
+.kz-qcard .kz-portrait .name { font-weight: 700; font-size: 13px; line-height: 1.25; color: var(--kz-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kz-qcard .kz-portrait .role { font-size: 11.5px; line-height: 1.25; color: rgba(0,0,0,.62); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kz-qcard figcaption, .kz-qcard-more { flex: 0 0 auto; }
+.kz-qcard-more { margin-top: 2px; }
 .kz-qcard .kz-portrait .avatar { width: 40px; height: 40px; font-size: 13px; box-shadow: 0 0 0 3px var(--kz-yellow); }
 /* Read-more CTA — solid Kaizan yellow pill at the foot of the card. */
 .kz-qcard-more {
@@ -1030,15 +1035,18 @@ button { font-family: inherit; }
 .kz-qcard-more:hover,
 .kz-qcard-more:focus-visible { color: var(--kz-ink); }
 .kz-carousel-arrow {
-  flex: 0 0 auto; width: 46px; height: 46px; border-radius: 50%;
+  position: absolute; top: calc(50% - 30px); transform: translateY(-50%); z-index: 5;
+  width: 46px; height: 46px; border-radius: 50%;
   border: 1px solid var(--kz-line-strong); background: var(--kz-paper);
   color: var(--kz-ink); font-size: 24px; line-height: 1; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  transition: background .2s, border-color .2s, opacity .2s;
+  box-shadow: 0 4px 14px -4px rgba(40,30,15,.35);
+  transition: background .2s, border-color .2s, opacity .2s, box-shadow .2s;
 }
+.kz-carousel-arrow.is-prev { left: max(10px, calc(var(--kz-gutter) - 56px)); }
+.kz-carousel-arrow.is-next { right: max(10px, calc(var(--kz-gutter) - 56px)); }
 .kz-carousel-arrow:hover:not(:disabled) { background: var(--kz-yellow); border-color: var(--kz-yellow); }
 .kz-carousel-arrow:disabled { opacity: .3; cursor: default; }
-.kz-carousel-arrow { display: none; }  /* edge-to-edge carousel: fade + dots + swipe, no side arrows */
 .kz-carousel-dots { display: flex; justify-content: center; gap: 9px; margin-top: 8px; }
 .kz-carousel-dot {
   width: 8px; height: 8px; border-radius: 999px; border: none; padding: 0;
