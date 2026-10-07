@@ -504,11 +504,11 @@ Either way, the layer that is genuinely yours (your judgement about your clients
 
 ### You're building it
 
-Take the list. If you want a second opinion on sequencing, what to buy versus build, or the eval design that most teams get wrong, we will give you an hour with no pitch attached. We would rather the industry had more of these built well. [Talk it through →](https://kaizan.ai/)
+Take the list. If you want a second opinion on sequencing, what to buy versus build, or the eval design that most teams get wrong, we will give you an hour with no pitch attached. We would rather the industry had more of these built well. [Talk it through →](https://kaizan.ai/demo/)
 
 ### You'd rather plug it in
 
-All fourteen, running today, with an app and an API. Your data stays yours, the intelligence flows into the systems you already have, and your team gets the months back. [See Kaizan →](https://kaizan.ai/)
+All fourteen, running today, with an app and an API. Your data stays yours, the intelligence flows into the systems you already have, and your team gets the months back. [See Kaizan →](https://kaizan.ai/product/)
 
 Reach out if you want help thinking about any of this, or just plug Kaizan in and use our app and API. Both are a fine outcome from our side.
 
