@@ -199,6 +199,8 @@ PERSONAS = {
              'Your always-on associate. Drafts follow-ups before you’ve left the meeting, preps '
              'the next conversation while you’re in another, watches for client signals overnight.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Does it work with Zoom, Teams, and Google Meet?',
              "Kaizan joins meetings across Zoom, Teams and Google Meet automatically - "
@@ -222,9 +224,12 @@ PERSONAS = {
 
     'client-service-director': dict(
         eyebrow='FOR · CLIENT SERVICE DIRECTOR',
+        meta_title='AI Portfolio Risk Alerts for Service Directors',
+        meta_description='Spot client dissatisfaction before the renewal call, onboard new team members in days and see portfolio patterns no single account manager can.',
+        schema=True,
         role='client service directors',
         role_cap='Client Service Directors',
-        h1=('Run your portfolio with', 'eyes open.', ''),
+        h1=('Run Your Portfolio with', 'Eyes Open', ': Kaizan'),
         sub=("Onboard new team members in days. Catch dissatisfaction before the renewal call. "
              "See the patterns across your portfolio that no individual AM can spot alone."),
         quote_bg='radial-gradient(circle at 30% 30%, #B58A4F, #4A2A0E)',
@@ -239,32 +244,40 @@ PERSONAS = {
         quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-driving-20-greater-operational-efficiency-across-3-500-clients-5f99fd11d1a6',
         love=[
             ('Onboard new team members in days, not months.',
-             "Every client's history - meetings, decisions, stakeholders, context - searchable "
-             "from day one. New joiners are useful immediately instead of spending a quarter "
-             "getting up to speed."),
+             "Every client's history - meetings, decisions, stakeholders, context, and key client "
+             "relationship details - searchable from day one. New joiners are useful immediately "
+             "instead of spending a quarter getting up to speed, which helps client teams create "
+             "more value across the business."),
             ('Proactive risk alerts.',
              "Kaizan flags client dissatisfaction, slipping sentiment, and emerging issues across "
              "the portfolio - so you intervene before the conversation where they tell you it's "
-             "over."),
+             "over. That makes it easier to protect retention, keep stakeholders engaged, and "
+             "track client satisfaction before small issues turn into bigger ones."),
             ('Patterns across the portfolio.',
              "Pricing pushback on three clients, scope creep on four, the same stakeholder "
-             "concern in two - themes your team can't see one account at a time."),
+             "concern in two - themes your team can't see one account at a time, along with "
+             "growth opportunities across every client. One late reply or ignored message can "
+             "also reveal where relationships may need attention."),
             ('AI Helpers watching the portfolio while you sleep.',
              "Risk signals collected overnight, the morning briefing ready before standup, the "
              "team primed on what needs attention - without you having to assemble the meeting "
              "yourself."),
         ],
-        product_h2=('The whole portfolio on one page - ready for the conversation with your team, '
+        love_h2='The things Client Service Directors love for client satisfaction.',
+        product_h2=('The whole portfolio on one page - ready for the conversation with your client teams, '
                     'not over their shoulder.'),
+        faq_h2='The client relationship questions client service directors ask us.',
         products=[
             ('Portfolio dashboard',
-             "Every account in the team’s book, scored across CARE. Click any row for the "
-             "conversations, contacts and signals underneath."),
+             "Every account in the team’s book, scored across CARE so teams can measure "
+             "relationship health and make smarter decisions with a single source of truth. "
+             "Click any row for the conversations, contacts and signals underneath, including "
+             "emails, calls and inbox activity tied to delivery, services and revenue."),
             ('Risk and coverage',
              "Accounts where coverage has thinned, sentiment has shifted or expansion threads "
              "have gone cold - flagged before the QBR."),
             ('Shared client view',
-             "You and your AMs see the same picture of every account - same scores, same signals, "
+             "You and your AMs see the same picture of every relationship - same scores, same signals, "
              "same evidence. Standups stop being status theatre and start being decisions."),
         ],
         faqs=[
@@ -275,8 +288,8 @@ PERSONAS = {
             ('How does Kaizan know when a client is unhappy - what signals does it use?',
              "Kaizan reads across the full conversational record - meetings, email and chat - for "
              "sentiment shifts, escalation language, stakeholder withdrawal and slipping commitment "
-             "cadence. Risk signals surface on each client with the underlying evidence, so you "
-             "act on context rather than a score in isolation."),
+             "cadence. Risk signals surface on each client with the underlying evidence, giving "
+             "teams answers through analysis so you act on context rather than a score in isolation."),
             ('Can we tune what counts as a risk for our business?',
              "Risk thresholds, signals and weightings are configurable to your portfolio. We "
              "calibrate during rollout so alerts match how your team actually thinks about account "
@@ -292,9 +305,12 @@ PERSONAS = {
 
     'leadership': dict(
         eyebrow='FOR · SENIOR LEADERSHIP / DIRECTOR',
+        meta_title='AI Client Intelligence for Senior Leaders',
+        meta_description='See where each client can grow and catch risks early. Kaizan turns every meeting and signal into intelligence senior leaders use to plan growth and renewals.',
+        schema=True,
         role='senior leaders',
         role_cap='Senior Leaders',
-        h1=('See the path to', 'doubling revenue', ' on every client.'),
+        h1=('See the Path to', 'Doubling Revenue', ' on Every Client'),
         sub=("Kaizan turns every meeting, signal, and stakeholder into the intelligence you need "
              "to grow each client deliberately - and catch the risks that could cost you the "
              "relationship."),
@@ -312,27 +328,34 @@ PERSONAS = {
              "Kaizan surfaces where each relationship could grow - unmet needs, adjacent scope, "
              "stakeholders you don't yet know - so growth becomes a deliberate plan, not a hope."),
             ('Catch dissatisfaction before it costs you.',
-             "Every client risk surfaced early, with the context to act on it - so renewal "
-             "conversations are negotiations, not autopsies."),
+             "Every client risk surfaced early, with signals on client satisfaction and sentiment "
+             "plus the context to act on it - so renewal conversations are negotiations, not "
+             "autopsies."),
             ('Decisions on data, not anecdotes.',
              "Which clients are profitable, where the hours go, what's actually working across "
              "the portfolio - finally legible."),
             ('AI Helpers running in the background.',
-             "Weekly intelligence on every client delivered before Monday's exec meeting, "
-             "board-ready insights compiled automatically - the analysis layer working while you "
-             "focus on the decisions."),
+             "Weekly intelligence on every client delivered before Monday's exec meeting, with AI "
+             "Helpers supporting client service teams by turning communications into useful "
+             "information and handling follow ups or routine tasks in the background - the "
+             "analysis layer working while you focus on the decisions."),
         ],
-        product_h2='The forward view of the business - built from the team’s actual conversations.',
+        love_h2='The things Senior Leaders love about AI helpers.',
+        product_h2="The forward view of the business - built from client success teams' actual conversations.",
+        faq_h2='The questions senior leaders ask us.',
         products=[
             ('Executive briefing',
              'Monday morning: one page on revenue at risk, expansion in flight, and which Heads '
-             'need air cover this week.'),
+             'need air cover this week. It also highlights recent account activity and '
+             'recommended actions for the week.'),
             ('Renewal forecast',
              'Probability-weighted forecast for the next four quarters. Click any account to see '
-             'the evidence underneath the score.'),
+             'the evidence underneath the score, including health, engagement growth, and '
+             'relationship coverage.'),
             ('Board view',
              'Export-ready slides for the quarterly board pack: retention, coverage, '
-             'time-to-resolve, expansion pipeline.'),
+             'time-to-resolve, expansion pipeline, service performance, and continuous '
+             'improvement.'),
         ],
         faqs=[
             ('How does Kaizan identify growth opportunities on existing clients?',
@@ -346,14 +369,16 @@ PERSONAS = {
              "renewal and growth conversations Kaizan flagged early start closing differently."),
             ('Do we own our data, and can we get it all out if we leave?',
              "Your client data is yours. Full export is available at any time in standard formats, "
-             "and contract terms make that explicit rather than buried."),
+             "including the underlying information captured in Kaizan, and contract terms make "
+             "that explicit rather than buried."),
             ('What does rollout look like - weeks, months, what’s the lift on our side?',
-             "Weeks, not months. Your team's existing meetings, email, chat and tools connect "
-             "into Kaizan; there's no data migration project, no per-seat rollout, no quarter of "
+             "Weeks, not months. Your team's existing meetings, emails, chat and tools connect "
+             "into Kaizan, which can add value quickly for agencies and consultancies; there's no "
+             "data migration project, no per-seat rollout, no quarter of "
              "change management. Pricing is by portfolio size, so you don't ration access while "
              "you scale."),
         ],
-        cta='See Kaizan for senior leadership.',
+        cta='See Kaizan AI platform for senior leadership.',
     ),
 
     'head-of-ai': dict(
@@ -396,6 +421,8 @@ PERSONAS = {
              'Eval runs, prompt versions, redaction rules, access logs. Everything your security '
              'review will ask for, in one place.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Can I connect my own LLM via MCP, and what does the schema look like?',
              "Kaizan supports MCP natively - any LLM that speaks the protocol can query the "
@@ -423,9 +450,12 @@ PERSONAS = {
 
     'project-manager': dict(
         eyebrow='FOR · PROJECT MANAGER',
+        meta_title='AI Project Status and Scope Tracking for PMs',
+        meta_description='One always-current view of every project, status and commitment. Kaizan drafts status updates, flags scope drift and feeds a live risk register for PMs.',
+        schema=True,
         role='project managers',
         role_cap='Project Managers',
-        h1=('Run the work.', "Don't chase it.", ''),
+        h1=('Run the Work with Kaizan:', "Don't Chase It", ''),
         sub=("Every project, every status, every commitment - in one always-current place, with "
              "an AI Helper watching it all 24/7."),
         quote_bg='radial-gradient(circle at 30% 30%, #6F8474, #1F3025)',
@@ -441,58 +471,72 @@ PERSONAS = {
         quote_cta_href='https://blog.kaizan.ai/cs-leader-quick-fire-q-a-hannah-carthy-verkeer-5c7cd3eb6b75',
         love=[
             ('One unified place for every project.',
-             "Meetings, actions, decisions, commitments, status - across every client and every "
-             "team - in one always-current view. No more hunting through Slack, email, and three "
-             "project tools to find out what's actually going on."),
+             "Meetings, actions, decisions, commitments, status, and other client interactions and "
+             "communications - across every client and every team - in one always-current view. "
+             "No more hunting through Slack, emails, and three project tools to find out what's "
+             "actually going on."),
             ('Status reports write themselves.',
              "Every meeting's actions, decisions, and owners captured automatically - so Friday "
              "afternoons stop being eaten by retrospective documentation."),
             ('An AI Helper working on your projects 24/7.',
-             "Watching for slippage, drafting status updates before the standup, chasing actions "
-             "while you're in another meeting - your always-on associate."),
+             "Watching for slippage, drafting status updates before the standup, and supporting "
+             "follow ups while you're in another meeting - your always-on associate."),
         ],
-        product_h2='The PM’s leverage: less chasing, more steering.',
+        love_h2='The things Project Managers love about AI helpers.',
+        product_h2="The PM's leverage with an AI platform: less chasing, more steering.",
+        faq_h2='The questions project managers and client success teams ask us.',
         products=[
             ('Status drafter',
-             'A draft client update built from the week’s actual conversations, ready to edit - '
-             'every Friday, or every Monday.'),
+             'A draft client update built from the week’s actual conversations and account data, '
+             'ready to edit - every Friday, or every Monday, with usable intelligence for '
+             'project teams.'),
             ('Scope sentinel',
-             'Flag the moment client language drifts beyond the SOW. Optional auto-tag in the '
-             'project tracker.'),
+             'Flag the moment client language drifts beyond the SOW, helping teams catch risks '
+             'to the business early. Optional auto-tag in the project tracker.'),
             ('Live risk register',
-             'A risk register fed from conversations across the team. No more "we should’ve seen '
-             'that coming".'),
+             'A risk register fed from account activity and sentiment across the team, so issues '
+             'surface earlier. Kaizan also helps teams review relationship coverage and health '
+             'as signals.'),
         ],
         faqs=[
             ('Does it sync into Asana / Monday / ClickUp / Jira?',
              "Kaizan integrates with Asana, Monday, ClickUp and Jira, so actions, owners and "
-             "status flow both ways without manual re-entry. Anything not natively integrated is "
+             "status flow both ways without manual re-entry, giving connected teams better "
+             "visibility into growth opportunities. Anything not natively integrated is "
              "reachable via the API."),
             ('Can it tell the difference between an action item and general discussion?',
              "Kaizan separates actions, decisions and commitments from general discussion, "
              "attributes each one to the right owner, and links it back to the moment in the "
              "meeting it came from. You review and confirm - nothing routes downstream until you do."),
             ('What if a meeting happened offline - can I add decisions and actions manually?',
-             "Manual entry sits alongside automatic capture. Add or edit actions, decisions and "
+             "Manual entry sits alongside automatic capture from calls and emails. Add or edit actions, decisions and "
              "notes directly, and they're treated as first-class items - owned, tracked and "
              "followed up like anything Kaizan captured itself."),
             ('Can captured actions be assigned automatically based on who said what?',
              "Kaizan attributes actions to the person who took them on in the conversation, and "
              "routes them into your project tool of choice - with optional human review before "
-             "anything is auto-assigned, so the system never overrides judgement."),
+             "anything is auto-assigned, supporting engagement growth and revenue while ensuring "
+             "the system never overrides judgement."),
         ],
         cta='See Kaizan for project managers.',
     ),
 
     'new-business': dict(
         eyebrow='FOR · NEW BUSINESS / SALES',
+        meta_title='Pitch Prep and Account Growth for New Business',
+        meta_description='Prepare for pitches without hours of research. Kaizan surfaces stakeholder context, competitor signals and expansion opportunities for new business teams.',
+        schema=True,
         role='new business leaders',
         role_cap='New Business Leaders',
-        h1=('', 'Pitch warmer.', ' Grow existing clients deliberately.'),
-        sub=("Spend your prep time on the conversation, not the research - Kaizan surfaces the "
-             "intel, the moments, and the people that matter."),
+        h1=('Kaizan:', 'Pitch Warmer.', ' Grow Existing Clients Deliberately.'),
+        sub=("Kaizan is an AI-powered platform for new business leaders, account managers, client "
+             "service teams, and senior leaders who want to prepare better for pitches and grow "
+             "existing clients without losing hours to research. It surfaces the intel, key "
+             "moments, stakeholder context, market and competitor signals, and expansion "
+             "opportunities that matter most, so teams can spend prep time on the conversation, "
+             "not the digging, and show up better in every client meeting."),
         quote_bg='radial-gradient(circle at 35% 30%, #8AAEAE, #1F4040)',
-        quote_pull=('The biggest impact of Kaizan is the time it gives us back. In meetings to be '
+        quote_pull=('The biggest impact of Kaizan is the time it gives us back and the productivity that comes with it. In meetings to be '
                     'more present and engaged - and afterwards, a resource we can drop back into '
                     'to make sure we’re doing the things we said we’d do.'),
         quote_name='Adam Hopkinson',
@@ -508,53 +552,71 @@ PERSONAS = {
              "research."),
             ('See where existing clients are ready for more.',
              "New initiatives, leadership changes, unmet needs, frustrations with current scope - "
-             "Kaizan surfaces the moments worth a growth conversation, so you stop relying on AMs "
-             "to remember."),
+             "Kaizan surfaces growth opportunities and signals expansion potential in existing "
+             "accounts, so you stop relying on AMs to remember."),
             ('Know who actually decides.',
              "Stakeholder maps surface the real influencers - not just the people in the meeting "
-             "- so you spend your influence where it counts."),
-            ('An AI Helper prospecting while you sleep.',
+             "- so teams can better understand who shapes decisions and spend their influence "
+             "where it counts."),
+            ('AI Helpers prospecting while you sleep.',
              "Watching target accounts for leadership changes, funding rounds, and buying signals "
-             "- so you wake up to a tee'd-up day, not a cold start."),
+             "- and monitoring your inbox for timely cues - so they help build a better start to "
+             "the day, not a cold start."),
         ],
-        product_h2='Pitch from a position of knowing - not guessing.',
+        love_h2='The things New Business Leaders love about client relationships.',
+        product_h2='Pitch from a position of knowing with AI helpers - not guessing.',
+        faq_h2='The questions new business leaders ask us.',
         products=[
             ('Prospect dossier',
-             'Every chemistry meeting and call distilled into a one-page brief: priorities, '
-             'language, decision criteria, internal politics.'),
+             'Every chemistry meeting and call distilled into a one-page brief to help you '
+             'measure what matters in prospect interactions and pull a reliable source of '
+             'account intelligence: priorities, language, decision criteria, internal politics.'),
             ('Shortlist intel',
-             'When prospects mention competitors, you see it - with the rebuttal slide ready '
-             'before they ask the question.'),
+             'When prospects mention competitors, you see it - so your team can act directly, '
+             'with better answers and the rebuttal slide ready before they ask the question.'),
             ('Pitch tailoring',
-             "Pre-pitch checklist: have we addressed what they actually said matters? What’s "
-             "missing from this deck?"),
+             "Pre-pitch checklist: have we addressed what they actually said matters, and what "
+             "steps are needed to close gaps in this deck and improve the final result?"),
         ],
         faqs=[
             ('Can I use it on prospects, or only on existing clients?',
              "Both. Kaizan runs on prospects and on the existing portfolio, which is the point - "
-             "your pitch motion and your growth motion run off the same intelligence layer, not "
-             "two disconnected stacks."),
+             "your pitch motion and your growth motion run off the same intelligence layer for "
+             "more value across the portfolio, not two disconnected stacks. Teams also assess "
+             "account health on existing clients through continuous measurement."),
             ('Where does market and competitor intel come from, and how current is it?',
-             "Intel is pulled from the conversations Kaizan captures across your accounts and "
-             "target list, plus the external sources it monitors - and refreshed automatically so "
-             "what you walk into a pitch with is current, not a stale dossier."),
+             "Intel is pulled from the client conversations Kaizan captures across your accounts "
+             "and target list - including calls, email, and each message as part of wider "
+             "communications - plus the external sources it monitors, giving teams a reliable "
+             "source of truth that is refreshed automatically so what you walk into a pitch with "
+             "is current, not a stale dossier. CARE scores 24 relationship signals continuously "
+             "across interactions and replaces a quarterly CSAT snapshot with a live score. CARE "
+             "measures Client Satisfaction, Activity, Relationship, and Expansion in one score."),
             ('Can I export a briefing pack for a pitch in one click?',
              "One click. Kaizan compiles a pitch-ready briefing on demand: stakeholders, decision "
              "criteria, recent activity, competitor positioning and the talking points worth "
-             "opening with - exported in the format your team uses for pre-reads."),
+             "opening with - helping the team act faster on what just changed, exported in the "
+             "format your team uses for pre-reads. AI Helpers automate follow-ups, save teams "
+             "hours each week, and identify risk from recent interaction patterns. For example, "
+             "Kaizan can flag a change in sentiment and activity before it becomes a wider issue."),
             ('Does it work alongside our prospecting tools (LinkedIn Sales Nav, Apollo, etc.)?',
              "Kaizan sits alongside your prospecting stack, not on top of it. It reads from the "
              "same activity layer your team already works in and feeds the intelligence your "
-             "sellers use to prepare, pitch and follow up."),
+             "sellers use to prepare, pitch, follow up, serve prospects more effectively, and "
+             "reduce prep friction. Those proactive actions help drive a 21% average revenue "
+             "increase per client and protect 45% of at-risk revenue before issues arise."),
         ],
-        cta='See Kaizan for new business.',
+        cta='See Kaizan for every client and new business.',
     ),
 
     'performance': dict(
         eyebrow='FOR · PERFORMANCE / OPERATIONS',
+        meta_title='Client Interaction Data for Operations Leaders',
+        meta_description='See where the hours go, which processes are landing and how client sentiment is trending, with data that flows into the BI tools your team already uses.',
+        schema=True,
         role='performance and operations leaders',
         role_cap='Performance and Operations Leaders',
-        h1=('Turn every client interaction into', 'operational data.', ''),
+        h1=('Turn Every Client Interaction into', 'Operational Data', ''),
         sub=("See where the hours go, which processes are landing, and how sentiment is trending "
              "- all flowing into the BI tools you already use."),
         quote_bg='radial-gradient(circle at 35% 30%, #708FAA, #1F3A50)',
@@ -572,45 +634,52 @@ PERSONAS = {
              "profitability conversations happen on data, not feel."),
             ('Process compliance, finally visible.',
              "Are weekly status meetings happening? QBRs on cadence? Senior reviews on the right "
-             "clients? Stop asking, start seeing."),
+             "clients? Stop asking, start seeing - and use that visibility for continuous "
+             "improvement."),
             ('Client sentiment trended over time.',
-             "Not a snapshot - a trajectory you can correlate with the levers your team is pulling."),
-            ('AI Helpers running the reports overnight.',
-             "Anomalies, outliers, and exceptions surfaced before the day starts - so you act on "
-             "what happened yesterday, not what surfaces a week later."),
+             "Not a snapshot - a trajectory you can correlate with the levers your team is "
+             "pulling to improve client satisfaction and strengthen relationships."),
+            ('AI agents running the reports overnight.',
+             "Anomalies, outliers, and exceptions surfaced before the day starts - so these "
+             "agents surface insights, help teams respond faster, and you act on what happened "
+             "yesterday, not what surfaces a week later."),
         ],
-        product_h2='Operational reporting that finally maps to what the client is actually thinking.',
+        love_h2='The things Performance and Operations Leaders and client service teams love.',
+        product_h2='Operational reporting that finally maps to what the client is actually thinking and improves client satisfaction.',
+        faq_h2='The questions performance and operations leaders ask us.',
         products=[
             ('Expectation map',
              'For every client, what they say they care about, ranked by how often they raise it '
-             'in conversation. Updated weekly.'),
+             'in conversation. Updated weekly to support continuous improvement.'),
             ('Drift alerts',
              "When the client’s language about success changes - different metrics, different "
-             "timeframes, different competitors - you get the alert."),
+             "timeframes, different competitors - the alert helps client service teams identify "
+             "risks."),
             ('Auto-drafted weekly',
-             'The Friday client update, drafted in your voice, around the metrics this client '
-             'actually grades you on.'),
+             'The Friday client update, drafted in your voice by AI agents around the metrics '
+             'this client actually grades you on, so they can also respond to routine follow-up '
+             'needs.'),
         ],
         faqs=[
             ('Can I export raw data into our warehouse / BI tool?',
              "Raw data exports into the warehouse and BI tools your team already runs, so client "
              "interaction data sits next to your other operational metrics rather than in a "
-             "separate silo. The API is on every tier from Team upwards if your stack needs "
-             "something native."),
+             "separate silo. The API is available from the Growth tier upwards if your stack "
+             "needs something native."),
             ('What does Kaizan track out of the box vs. what we’d need to configure?',
-             "Out of the box: time across calls, comms and meetings; sentiment and stakeholder "
+             "Out of the box: time across calls, comms, meetings and notes; sentiment and stakeholder "
              "coverage; process adherence (QBR cadence, senior reviews, status meetings); "
              "commitments and slippage. Custom metrics, thresholds and definitions are configured "
              "to your operating model during rollout."),
             ('Can we build custom reports, or are we tied to your dashboards?',
              "Both. Kaizan ships dashboards out of the box and exposes the underlying data "
              "through the API, so your team builds whatever custom reporting your operation "
-             "actually runs on."),
+             "actually runs on, with actionable insights."),
             ('How does sentiment tracking work, and how reliable is it?',
              "Sentiment is derived from the language and behaviour across client conversations "
              "and calibrated to your portfolio during rollout. It's a trajectory signal - most "
-             "useful as a trend correlated against the levers your team is pulling, not a single "
-             "number lifted out of context."),
+             "useful as a trend correlated against the levers your team is pulling and client "
+             "satisfaction, not a single number lifted out of context."),
         ],
         cta='See Kaizan for performance and operations.',
     ),
@@ -660,6 +729,8 @@ PERSONAS = {
              'Every flattering thing a client said about working with you - surfaced, attributed, '
              'ready for sign-off and the next case study.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Can I search across every meeting, brief, and document for a given client?',
              "Every meeting, brief, email and chat on a client is searchable in one place. You "
@@ -898,6 +969,99 @@ def gtm_head_snippet() -> str:
         ''')
 
 
+# ── Structured data (JSON-LD) ──────────────────────────────────────────
+# Page-level URLs/language use tokens so the UK page and its /us/ mirror each
+# resolve to their own URL (see _resolve_ld_tokens / build_us_locale).
+LD_PAGE = '@@PAGE@@'
+LD_LANG = '@@LANG@@'
+LD_MODIFIED = '2026-10-09'
+LD_ORG_ID = 'https://kaizan.ai/#organization'
+LD_LOGO = 'https://kaizan.ai/assets/img/kaizan-schema-logo.png'
+LD_SAMEAS = [
+    'https://x.com/Kaizan_ai',
+    'https://www.facebook.com/KaizanApp/',
+    'https://www.instagram.com/kaizan_ai/',
+    'https://www.youtube.com/@kaizan-ai',
+    'https://www.linkedin.com/company/70937532/',
+]
+
+
+def ld_organization() -> dict:
+    return {
+        '@type': 'Organization',
+        '@id': LD_ORG_ID,
+        'name': 'Kaizan',
+        'url': 'https://kaizan.ai/',
+        'logo': {'@type': 'ImageObject', 'url': LD_LOGO, 'width': 1200, 'height': 1200},
+        'foundingDate': '2021',
+        'foundingLocation': {'@type': 'Place', 'address': {
+            '@type': 'PostalAddress', 'addressLocality': 'London', 'addressCountry': 'GB'}},
+        'founder': [{'@type': 'Person', 'name': 'Glen Calvert'},
+                    {'@type': 'Person', 'name': 'Pravin Paratey'}],
+        'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@kaizan.ai',
+                         'contactType': 'customer support'},
+        'sameAs': LD_SAMEAS,
+    }
+
+
+def ld_website() -> dict:
+    return {'@type': 'WebSite', '@id': 'https://kaizan.ai/#website', 'name': 'Kaizan',
+            'url': 'https://kaizan.ai/', 'inLanguage': LD_LANG,
+            'publisher': {'@id': LD_ORG_ID}}
+
+
+def ld_software(description: str, offers: list | None = None) -> dict:
+    node = {'@type': 'SoftwareApplication', '@id': 'https://kaizan.ai/#software',
+            'name': 'Kaizan', 'applicationCategory': 'BusinessApplication',
+            'operatingSystem': 'Web', 'description': description,
+            'url': 'https://kaizan.ai/product/', 'publisher': {'@id': LD_ORG_ID}}
+    if offers:
+        node['offers'] = offers
+    return node
+
+
+def ld_webpage(name: str, description: str, kind: str = 'WebPage', **extra) -> dict:
+    node = {'@type': kind, '@id': LD_PAGE + '#webpage', 'url': LD_PAGE, 'name': name,
+            'description': description, 'inLanguage': LD_LANG,
+            'isPartOf': {'@id': 'https://kaizan.ai/#website'},
+            'publisher': {'@id': LD_ORG_ID}, 'dateModified': LD_MODIFIED}
+    node.update(extra)
+    if node.get('dateModified') is None:   # pages with no known publish date
+        node.pop('dateModified', None)
+    return node
+
+
+def ld_faq_entities(qa_pairs) -> list:
+    return [{'@type': 'Question', 'name': q,
+             'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in qa_pairs]
+
+
+def ld_blogposting(post: dict) -> dict:
+    node = {'@type': 'BlogPosting', '@id': LD_PAGE + '#article', 'url': LD_PAGE,
+            'mainEntityOfPage': {'@type': 'WebPage', '@id': LD_PAGE},
+            'headline': post['title'], 'description': post.get('meta_description') or post.get('excerpt', ''),
+            'inLanguage': LD_LANG, 'datePublished': post['iso_date'],
+            'dateModified': post.get('date_modified') or post['iso_date'],
+            'author': {'@type': 'Person', 'name': 'Lia Grant'},
+            'publisher': {'@id': LD_ORG_ID}, 'isPartOf': {'@id': 'https://kaizan.ai/blog/'}}
+    if post.get('cover_asset'):
+        node['image'] = f"https://kaizan.ai/assets/img/{post['cover_asset']}"
+    if post.get('tags'):
+        node['keywords'] = ', '.join(str(t) for t in post['tags'])
+    return node
+
+
+def ld_script(nodes: list, ident: str = '') -> str:
+    """One <script type="application/ld+json"> carrying an @graph. The Organization
+    node is always included so every @id reference resolves within the page."""
+    graph = [ld_organization()] + [n for n in nodes if n]
+    if not any(n.get('@type') == 'WebSite' for n in graph):
+        graph.insert(1, ld_website())
+    data = {'@context': 'https://schema.org', '@graph': graph}
+    attr = f' data-kz-ld="{ident}"' if ident else ''
+    return f'<script type="application/ld+json"{attr}>{json.dumps(data, ensure_ascii=False)}</script>'
+
+
 def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
     p = relpath(depth)
     desc = description or 'Kaizan: client super intelligence for professional services firms.'
@@ -943,17 +1107,13 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
 
 
 def cookie_consent_html() -> str:
-    """Cookie consent dialog markup (Consent / Details / About tabs, per-
-    category toggles). Behavior lives in assets/js/consent.js, styles in
+    """Cookie consent card markup (Consent / Details / About tabs, per-
+    category toggles), docked non-modally to the bottom of the viewport. Behavior lives in assets/js/consent.js, styles in
     assets/css/site.css (.cb-* rules) — both loaded by page_head() on every
     page, so this only needs to emit the dialog itself."""
     return '''
 <div class="cb-overlay" id="cb-overlay" hidden>
-  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
-    <div class="cb-head">
-      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
-    </div>
-
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
     <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
       <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
       <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
@@ -1005,14 +1165,14 @@ def cookie_consent_html() -> str:
     </div>
 
     <div class="cb-foot" data-foot="consent">
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
-      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
     <div class="cb-foot" data-foot="details" hidden>
-      <button class="cb-btn fill" data-act="reject">Reject all</button>
       <button class="cb-btn line" data-act="selection">Allow selection</button>
-      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
     </div>
   </div>
 </div>
@@ -2105,7 +2265,7 @@ def render_home() -> str:
         ('C', 'Client satisfaction',
          "Sentiment on every stakeholder and thread. Not RAG guesses: evidence pulled from the source conversations."),
         ('A', 'Activity with stakeholders',
-         'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically.'),
+         'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically for agencies and consultancies.'),
         ('R', 'Relationship strength',
          'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros, handled before you ask.'),
         ('E', 'Expansion opportunities',
@@ -2322,11 +2482,16 @@ def render_home() -> str:
 
     {footer_html(0)}
     '''
+    _home_desc = ('Kaizan is an AI platform that unifies client meetings, emails and chats to score '
+                  'client health, flag risk early and surface expansion opportunities.')
     extra_head = (f'<script defer src="assets/js/trial-form.js'
-                  f'{asset_v("assets/js/trial-form.js")}"></script>')
-    return page_head('Client super intelligence for client service teams', 0,
-                     'Kaizan is the AI platform for client service professionals, '
-                     'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.',
+                  f'{asset_v("assets/js/trial-form.js")}"></script>') + ld_script([
+        ld_webpage('Kaizan: Grow Your Existing Clients, Spot Risks Before They Leave', _home_desc),
+        ld_software('AI-powered client service and account management platform that unifies client '
+                    'meetings, emails and chats, integrates with CRMs and other business systems, and '
+                    'provides real-time client health scoring and insights to recommend next steps.'),
+    ], ident='home')
+    return page_head('Grow Existing Clients, Spot Risks Early', 0, _home_desc,
                      extra_head=extra_head) + body + page_foot()
 
 
@@ -2576,205 +2741,6 @@ def _cs_integrations_faq_html() -> str:
     </section>'''
 
 
-def render_customer_success_software(keep_nav: bool = False) -> str:
-    """SEO landing page at /customer-success-software/ — a replica of the
-    homepage (render_home) targeting the 'customer success software' search
-    term. Same design/content throughout, minus the CARE, Personas and
-    closing-CTA sections (stripped below); only the <title> and meta
-    description otherwise differ, swapped in after the fact so the page can
-    never drift from the homepage it mirrors.
-
-    keep_nav=True (used for the real homepage) leaves the full nav menu and the
-    home-linked logo intact instead of trimming them to logo + "Book a demo".
-
-    render_home()'s markup is written for a page living at the site root (its
-    asset/internal links are root-relative, e.g. "assets/...", "demo/"), but
-    this page is one folder down. A <base href="/"> makes every one of those
-    links resolve against the site root regardless, so the output needs no
-    further rewriting."""
-    html = render_home()
-    html = html.replace(
-        '<title>Client super intelligence for client service teams · Kaizan</title>',
-        '<base href="/">\n        <title>Customer Success Software · Kaizan</title>',
-        1,
-    )
-    html = html.replace(
-        'content="Kaizan is the AI platform for client service professionals, '
-        'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue."',
-        'content="Kaizan is customer success software that turns every call, email '
-        'and signal into the next best action, AI Helpers that work 24/7 to grow '
-        'client ROI, satisfaction and revenue."',
-        1,
-    )
-    # Drop the CARE, Personas and closing-CTA sections for this landing page —
-    # each <section> is self-contained (no nested <section> tags), so a
-    # non-greedy match up to the next </section> is safe.
-    for marker in ('<!-- CARE -->', '<!-- PERSONAS -->', '<!-- CTA -->'):
-        html = re.sub(
-            re.escape(marker) + r'\s*<section\b.*?</section>\s*',
-            '',
-            html,
-            count=1,
-            flags=re.S,
-        )
-    html = html.replace(
-        '<div class="kz-eyebrow">In their words</div>', '', 1,
-    )
-    # (The Risk/Growth donut-ring swap that used to be hacked in here via
-    # string-replace is now native to playbooks_sections_html() itself, so
-    # every page — this one included — already gets it for free.)
-    # Nav logo (header only — not the footer's copy, which comes later in the
-    # document) stops linking home on this page: swap the <a href="/"> for a
-    # plain <span> with the same class, so it keeps its look with no link.
-    if not keep_nav:
-        html = re.sub(
-            r'<a class="kz-nav-logo" href="/">(.*?)</a>',
-            r'<span class="kz-nav-logo">\1</span>',
-            html, count=1, flags=re.S,
-        )
-    html = html.replace(
-        '11M+ points of client service signals',
-        '11M+ of client service signals',
-        1,
-    )
-    # Swap in the updated stats band (icons + "avg." labels, white numbers)
-    # from the design artifact's Section5-Stats, replacing the homepage's
-    # plain bold-yellow-number version for this page only.
-    html = re.sub(
-        r'<div class="kz-statsband".*?</section>\n</div>',
-        lambda _m: _cs_stats_band_html(),
-        html,
-        count=1,
-        flags=re.S,
-    )
-    # Page-only look: trim the nav down to logo + "Book a demo" (no link list,
-    # no mobile toggle, no "Client log in"), and bring back small prev/next
-    # arrows on the testimonial carousel, moved up into its top-right corner.
-    # Scoped to this page via an inline <style> (loads after site.css, so it
-    # wins on tied specificity without needing !important) — the shared
-    # homepage/site.css rules are untouched.
-    html = html.replace('</head>', dedent('''\
-        <style>
-          /* Page-wide font swap to Helvetica Neue. The site's type classes
-             all read from these custom properties (see tokens.css), so
-             redefining them here — rather than overriding font-family on
-             every individual selector — retargets every heading, button,
-             nav link, card and paragraph on the page in one place.
-             Helvetica Neue isn't a Google/web font, so no stylesheet link:
-             it renders wherever the visitor's OS ships it (most Apple
-             devices; Windows/Linux fall through to Arial). */
-          :root {
-            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          }
-          __NAVHIDE__
-          /* Hero's "Book a demo" pill defaults to align-self: center, which
-             centers it under the lede instead of lining up with the
-             left-aligned heading/lede above it. margin-top: auto (removed
-             below) pins it to the bottom of the hero row, so it drifts down
-             when the trial form on the right expands and grows taller —
-             a fixed margin keeps it right after the lede instead. */
-          .kz-hero-v2-cta { align-self: flex-start; margin-top: 0; }
-          /* Small yellow bubble in the hero's decorative cluster → red.
-             Its line color was overridden dark (for contrast on yellow);
-             put it back to the same white the other bubbles use. */
-          .kz-hero-bubble--gold {
-            background: #E8432B; box-shadow: 0 14px 24px rgba(232,67,43,.4);
-          }
-          .kz-hero-bubble--gold span:first-child { background: rgba(255,255,255,.88); }
-          .kz-hero-bubble--gold span:last-child { background: rgba(255,255,255,.6); }
-          .kz-quotes { position: relative; }
-          .kz-quotes .kz-carousel { position: static; }
-          .kz-quotes .kz-carousel-arrow {
-            display: flex; position: absolute; top: 48px;
-            width: 32px; height: 32px; font-size: 15px;
-          }
-          .kz-quotes .kz-carousel-arrow.is-prev { right: calc(var(--kz-gutter) + 40px); }
-          .kz-quotes .kz-carousel-arrow.is-next { right: var(--kz-gutter); }
-          @media (max-width: 900px) {
-            .kz-quotes .kz-carousel-arrow { display: none; }
-          }
-
-          /* ── "Let's talk" closer ─────────────────────────────── */
-          .cs-lets-talk { background: var(--kz-sand); padding: 0 var(--kz-gutter); }
-          .cs-lt-inner {
-            max-width: 1280px; margin: 0 auto; padding: 96px 0;
-            text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
-          }
-          .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
-          .cs-lt-sub { margin: 0; font-size: 22px; font-weight: 700; color: var(--kz-ink); max-width: 46ch; }
-          .cs-lt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; margin-top: 20px; }
-          .cs-lt-card {
-            min-height: 110px; border-radius: 26px 26px 26px 6px; display: flex;
-            align-items: center; justify-content: center; padding: 18px 20px;
-            font-size: 15px; font-weight: 600; text-align: center; line-height: 1.4;
-            box-shadow: 0 16px 30px rgba(23,21,17,.14);
-          }
-          .cs-lt-cta { margin-top: 12px; padding: 14px 26px; font-size: 15px; }
-          @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
-
-          /* ── Modules carousel ────────────────────────────────── */
-          .cs-modules { background: var(--kz-yellow); padding: 0 var(--kz-gutter); }
-          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 0; }
-          .cs-modules-head { margin-bottom: 40px; }
-          .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
-          .cs-modules .kz-carousel { position: static; }
-          .cs-modules .kz-carousel-arrow {
-            display: flex; position: absolute; top: 46px;
-            width: 44px; height: 44px; font-size: 22px; background: #FFFFFF;
-          }
-          .cs-modules .kz-carousel-arrow.is-prev { right: 60px; }
-          .cs-modules .kz-carousel-arrow.is-next { right: 0; }
-          .cs-modcard {
-            flex: 0 0 320px; scroll-snap-align: start; background: #000000;
-            border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
-          }
-          .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
-          .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
-          .cs-modules .kz-carousel-dots { margin-top: 32px; }
-          @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
-
-          /* ── Integrations + FAQ ──────────────────────────────── */
-          .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
-          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
-          .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
-          .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-          .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
-          .cs-int-icon-box {
-            background: #FFFFFF; border-radius: 16px; width: 76px; height: 76px;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 18px rgba(23,21,17,.07); transition: transform .2s ease;
-          }
-          .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
-          .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
-          .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
-          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px 0 110px; }
-          .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
-          .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
-          .cs-faq-item:last-of-type { border-bottom: none; }
-          .cs-faq-summary {
-            display: flex; align-items: center; justify-content: space-between; gap: 16px;
-            font-size: 16px; font-weight: 700; cursor: pointer; list-style: none;
-          }
-          .cs-faq-summary::-webkit-details-marker { display: none; }
-          .cs-faq-plus { flex: none; transition: transform .25s ease; }
-          .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
-          .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
-        </style>
-        </head>'''), 1)
-    html = html.replace('__NAVHIDE__', '' if keep_nav else (
-        '.kz-nav-links, .kz-nav-toggle { display: none; }\n'
-        '          .kz-nav-cta .kz-btn-ghost { display: none; }'), 1)
-    html = html.replace(
-        '<footer class="kz-footer">',
-        _cs_lets_talk_html() + '\n' + _cs_modules_html() + '\n' +
-        _cs_integrations_faq_html() + '\n    <footer class="kz-footer">',
-        1,
-    )
-    return html
-
-
 def render_confirmation() -> str:
     """/confirmation/ — where the 14-day trial form (home hero) sends the
     visitor after a successful signup, instead of swapping the card in place.
@@ -2865,10 +2831,10 @@ def render_product() -> str:
     )
 
     asst_features = [
-        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads.'),
+        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads — joins every call, including uploaded calls.'),
         ('Decisions, not transcripts', 'Action items, owners and dates. The shape of work.'),
         ('Does the work',
-         'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs. Humans approve what matters; the rest just gets done.'),
+         'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs, and delivery. Humans approve what matters; the rest just gets done.'),
         ('Sounds like you',
          "Reads every doc, deck and Slack thread for that client, so a draft for Acme actually sounds like Acme, not a template."),
     ]
@@ -2974,9 +2940,9 @@ def render_product() -> str:
 
     pipeline_steps = [
         ('01','Ingest','Gmail, Outlook, Teams, Zoom, Slack, HubSpot, Salesforce. Zero-retention by default.'),
-        ('02','Analyse','Client health scoring runs continuously. Sentiment, activity, coverage, growth.'),
+        ('02','Analyse','Client health scoring runs continuously. Sentiment, activity, coverage, growth, and the number behind each signal.'),
         ('03','Act','Helpers draft, chase, schedule, summarise. Humans approve what matters.'),
-        ('04','Learn','Outcomes feed back: what predicts a healthy engagement, per segment, per team.'),
+        ('04','Learn','Outcomes feed back: what predicts a healthy engagement, per segment, per team, helping teams build smarter processes directly from what was delivered.'),
     ]
     pipeline_html = '\n'.join(
         f'<div class="kz-pipeline-cell"><div class="num">{E(n)}</div>'
@@ -2989,8 +2955,8 @@ def render_product() -> str:
         ('Zero retention', 'Your conversations never train foundation models.'),
         ('EU + US residency', 'Pick your region. Data stays where you need it.'),
         ('MCP + REST API', 'Wire Kaizan into your own agents and tools.'),
-        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning.'),
-        ('Per-role access', 'Scoped by account, team or client. Never leaky.'),
+        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning for employees.'),
+        ('Per-role access', 'Scoped by account, team or client, so the right engaged account teams get access without leakage. Never leaky.'),
     ]
     trust_html = '\n'.join(
         f'<div class="kz-trust-card"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
@@ -3006,8 +2972,8 @@ def render_product() -> str:
     <section class="kz-section-tight" id="product-hero">
       <div class="kz-eyebrow">PRODUCT · CLIENT SUPER INTELLIGENCE</div>
       <h1 class="kz-h1 kz-h1-xl" style="margin-top:20px;max-width:1180px;">
-        One platform for <span class="kz-mark">AI-first</span><br>
-        client service teams.
+        Kaizan: One Platform for <span class="kz-mark">AI-First</span><br>
+        Client Service Teams
       </h1>
       <div class="kz-product-hero-row">
         <p class="kz-lede" style="font-size:19px;max-width:640px;">
@@ -3037,10 +3003,12 @@ def render_product() -> str:
       <div class="kz-dark-grid">
         <div>
           <p class="copy">
-            The AI Assistant joins every call (Teams, Zoom, Google Meet) and turns it into structured,
-            searchable memory by client automatically. Decisions, owners, deadlines, sentiment. A living
+            The AI Assistant joins every call (Teams, Zoom, Google Meet) and captures client conversations
+            across calls, email, chat, and each message stream, turning them into structured, searchable
+            memory by client automatically. Decisions, owners, deadlines, sentiment, and signals. A living
             personalised memory of every client. Then it ships the work behind the meeting: recaps,
-            follow-ups, status notes, CRM hygiene. Humans approve what matters; the rest just gets done.
+            follow-ups, status notes, CRM hygiene. Humans approve what matters; the automation is designed
+            to increase efficiency and reduce manual admin.
           </p>
           <div class="kz-dark-features">{asst_html}</div>
         </div>
@@ -3060,9 +3028,11 @@ def render_product() -> str:
         <div class="kz-eyebrow">02 · AI Helpers</div>
         <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;">Helpers built for client growth. Acting around the clock.</h2>
         <p class="kz-lede" style="font-size:18px;margin-top:18px;max-width:720px;">
-          Three packs of AI Helpers, plus your own. Every helper is grounded in your company data:
+          Three packs of AI Helpers, plus your own, built to serve client growth and spot expansion
+          opportunities. Every helper is grounded in your company data:
           docs, decks, transcripts, Slack, CRM, email. They keep learning from every new conversation,
-          so the output gets more personal to each client&rsquo;s objectives the longer you run them.
+          so teams understand what to do next for each client more clearly over time and the output gets
+          more personal to each client&rsquo;s objectives the longer you run them.
         </p>
       </div>
       <div class="kz-helpers-tabs">{helpers_tabs}</div>
@@ -3075,12 +3045,14 @@ def render_product() -> str:
         <div>
           <div class="kz-eyebrow">03 · CARE Client Health Model</div>
           <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;max-width:520px;">
-            A self-learning relationship score, grounded in your data.
+            A self-learning client relationships score, grounded in your data.
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:520px;">
-            The unifying score across every Helper. It learns from your won pitches, kept clients and
-            lost briefs: what predicts a healthy engagement in your company, not the average of someone
-            else&rsquo;s. Not a biased RAG status. Re-tuned weekly against your data.
+            The unifying score across every Helper. It uses your data to measure relationship health and
+            client satisfaction, not someone else&rsquo;s benchmark. It learns from your won pitches, kept
+            clients and lost briefs: what predicts a healthy engagement in your company, and the result the
+            model is trained to predict. Not a biased RAG status. Re-tuned weekly against your data to help
+            teams achieve a more reliable view of account health.
           </p>
           <div style="margin-top:26px;padding:18px 22px;background:var(--kz-paper);border:1px solid var(--kz-line);border-radius:12px;max-width:520px;">
             <div class="kz-eyebrow" style="margin-bottom:10px;">Trained on you</div>
@@ -3116,15 +3088,16 @@ def render_product() -> str:
             Market research on every client. Always-on context for every Helper.
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:560px;">
-            Client 360 continuously researches every account (funding, hiring, exec moves, competitor noise,
-            earnings tone, product launches) and feeds it into the Helpers as live ground truth. So when CARE drops,
-            you don&rsquo;t just know <em>that</em> something changed: you know <em>what</em>.
+            Client 360 continuously researches every account for your business (funding, hiring, exec moves,
+            competitor noise, earnings tone, product launches) and feeds it into the Helpers as always-on
+            ground truth. So when CARE drops, the research helps you spot opportunities and risk, not just
+            see what changed.
           </p>
           <div class="kz-dark-features" style="margin-top:28px;color:var(--kz-ink);max-width:560px;">
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Always-on research</h4><p style="color:var(--kz-mute);">Re-checks every client every day. No briefs to commission.</p></div>
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Routed to Helpers</h4><p style="color:var(--kz-mute);">Context lands in the right Helper, not in a buried report.</p></div>
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Source-backed</h4><p style="color:var(--kz-mute);">Every claim links to the article, filing or post it came from.</p></div>
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Your watch-list</h4><p style="color:var(--kz-mute);">Tag what matters per account: comp moves, hiring, M&amp;A.</p></div>
+            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Your watch-list</h4><p style="color:var(--kz-mute);">Tag what matters per account, including the stakeholders that matter: comp moves, hiring, M&amp;A.</p></div>
           </div>
         </div>
         <div class="kz-c360-feed">
@@ -3161,7 +3134,7 @@ def render_product() -> str:
         Native connectors for the tools your team already lives in.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else.
+        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else&mdash;covering the inbox, calendar, meetings, and the services your team already uses.
       </p>
     </section>
 
@@ -3172,7 +3145,7 @@ def render_product() -> str:
         Common questions, ranked by how often a security review asks them.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Answers ship with our security review pack. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
+        Answers ship with our security review pack. It helps the CEO or account manager get answers quickly in review cycles. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
       </p>
     </section>
 
@@ -3180,10 +3153,12 @@ def render_product() -> str:
     <section class="kz-section-tight" id="pricing">
       <div class="kz-eyebrow">Pricing</div>
       <h2 class="kz-h3" style="margin-top:10px;font-size:24px;max-width:820px;">
-        Tiered by seats and integration depth.
+        Priced by number of clients, with unlimited users.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Detailed pricing is shared in the demo. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
+        Pricing is public and set by the number of clients you cover: per client per month on an annual
+        contract, with unlimited users on every tier and a free 14-day pilot first. Book a demo to plan for
+        the next quarter, align to revenue goals, and improve cost-to-serve efficiency. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
       </p>
     </section>
 
@@ -3199,7 +3174,7 @@ def render_product() -> str:
 
     <!-- CTA -->
     <section class="kz-cta-band kz-cta-band-md">
-      <h2 class="head">Put the helpers to work.</h2>
+      <h2 class="head">Put the AI helpers to work.</h2>
       <div class="actions">
         <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
       </div>
@@ -3207,9 +3182,11 @@ def render_product() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('Product', 1,
-                     'AI Assistant, AI Helpers, the Client Health Model and Client 360, '
-                     'one platform for AI-first client service teams.') + body + page_foot()
+    prod_desc = ('AI Assistant, AI Helpers, the CARE Client Health Model and Client 360 in one platform '
+                 'that captures meetings, scores relationships and acts for client teams.')
+    prod_ld = ld_script([ld_webpage('Product', prod_desc), ld_software(prod_desc)], ident='product')
+    return page_head('One AI Platform for Client Service Teams', 1, prod_desc,
+                     extra_head=prod_ld) + body + page_foot()
 
 
 def render_persona(slug: str) -> str:
@@ -3349,7 +3326,7 @@ def render_persona(slug: str) -> str:
     <!-- WHY {E(p['role_cap']).upper()} LOVE KAIZAN -->
     <section class="kz-section" style="border-top:1px solid var(--kz-line);">
       <div class="kz-eyebrow">Why {E(p['role'])} love Kaizan</div>
-      <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">The things {E(p['role_cap'])} love.</h2>
+      <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">{E(p.get('love_h2') or f"The things {p['role_cap']} love.")}</h2>
       <div class="kz-love-grid{love_cols_cls}">{love_html}</div>
     </section>
 
@@ -3364,7 +3341,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-section">
       <div class="kz-eyebrow">FAQs</div>
       <h2 class="kz-h2" style="margin-top:10px;margin-bottom:32px;">
-        The questions {E(p['role'])} ask us.
+        {E(p.get('faq_h2') or f"The questions {p['role']} ask us.")}
       </h2>
       <div class="kz-objections">{faqs_html}</div>
     </section>
@@ -3387,7 +3364,15 @@ def render_persona(slug: str) -> str:
     {footer_html(2)}
     '''
     label = next((n for k, n in PERSONA_LIST if k == slug), slug.replace('-', ' ').title())
-    return page_head(f'For {label}', 2, p['sub']) + body + page_foot()
+    title = p.get('meta_title') or f'For {label}'
+    desc = p.get('meta_description') or p['sub']
+    extra = ''
+    if p.get('schema'):
+        extra = ld_script([
+            ld_webpage(title, desc, dateModified=None if p.get('ld_undated') else LD_MODIFIED),
+            {'@type': 'FAQPage', '@id': LD_PAGE + '#faq', 'mainEntity': ld_faq_entities(p['faqs'])},
+        ])
+    return page_head(title, 2, desc, extra_head=extra) + body + page_foot()
 
 
 def render_customers() -> str:
@@ -3623,11 +3608,11 @@ def og_tags(post: dict) -> str:
         f'<link rel="canonical" href="{E(canon)}">',
         '<meta property="og:type" content="article">',
         f'<meta property="og:title" content="{E(post["title"])}">',
-        f'<meta property="og:description" content="{E(post.get("excerpt", ""))}">',
+        f'<meta property="og:description" content="{E(post.get("meta_description") or post.get("excerpt", ""))}">',
         f'<meta property="og:url" content="{E(url)}">',
         '<meta name="twitter:card" content="summary_large_image">',
         f'<meta name="twitter:title" content="{E(post["title"])}">',
-        f'<meta name="twitter:description" content="{E(post.get("excerpt", ""))}">',
+        f'<meta name="twitter:description" content="{E(post.get("meta_description") or post.get("excerpt", ""))}">',
     ]
     if img:
         t.append(f'<meta property="og:image" content="{E(img)}">')
@@ -3672,9 +3657,12 @@ def render_blog_index(posts: list) -> str:
     {grid}
     {footer_html(1)}
     '''
+    # The blog landing page is kept out of the index (noindex, follow): the posts
+    # stay crawlable through its links and the sitemap, and rank on their own.
     return page_head('Blog', 1,
                      'Field notes, product updates and research on client relationships from the '
-                     'Kaizan team.') + body + page_foot()
+                     'Kaizan team.',
+                     extra_head='<meta name="robots" content="noindex, follow">') + body + page_foot()
 
 
 def render_blog_post(post: dict) -> str:
@@ -3685,7 +3673,6 @@ def render_blog_post(post: dict) -> str:
     {nav_html(2, active='Blog')}
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
-        <div class="kz-eyebrow">{E(post.get('date', ''))}</div>
         <h1 class="kz-post-title">{E(post['title'])}</h1>
         {hero}
         {post.get('body', '<p>(empty)</p>')}
@@ -3694,8 +3681,12 @@ def render_blog_post(post: dict) -> str:
     </article>
     {footer_html(2)}
     '''
-    return page_head(post['title'], 2, post.get('excerpt', ''),
-                     extra_head=og_tags(post)) + body + page_foot()
+    extra = og_tags(post)
+    if post.get('schema'):
+        extra += '\n        ' + ld_script([ld_blogposting(post)])
+    return page_head(post.get('meta_title') or post['title'], 2,
+                     post.get('meta_description') or post.get('excerpt', ''),
+                     extra_head=extra) + body + page_foot()
 
 
 def render_about() -> str:
@@ -3706,7 +3697,7 @@ def render_about() -> str:
     <section class="kz-about-hero">
       <div class="kz-eyebrow">Founder&rsquo;s Letter · Kaizan</div>
       <h1 class="kz-h1" style="margin:22px 0 0;max-width:1200px;">
-        A proactive system of <span class="kz-mark">intelligence</span> for client service.
+        Kaizan: A Proactive System of <span class="kz-mark">Intelligence</span> for Client Service
       </h1>
     </section>
 
@@ -3747,11 +3738,11 @@ def render_about() -> str:
           The same director, on Kaizan, has her AI Assistant throughout the day taking care of the admin,
           updating systems and notifying her to info she needs to know about. With AI Helpers working on
           every account 24/7 &mdash; suggesting ways to improve campaigns, tending to relationships that
-          have gone quiet, and hunting for growth opportunities buried in signals from calls she wasn&rsquo;t on.
+          have gone quiet, and improving efficiency by cutting the manual chasing and synthesis work buried in signals from calls she wasn&rsquo;t on.
           By 7:30am her phone has a brief on every account and a pre-brief for the CMO call. Market intel
           is drafted and sent directly to her. She is, finally, the domain expert she was hired to be, across
           every account globally, in real time. The 35 hours she gets back go to strategy, interacting with
-          her AI Helpers as a thought partner, and the relationships that decide whether the account grows or not.
+          her AI Helpers as a thought partner, using that time to grow the account, and the relationships that decide whether the account grows or not.
         </p>
 
         <p>
@@ -3797,50 +3788,52 @@ def render_about() -> str:
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">01</span><h3>Collective intelligence, always on.</h3></div>
+          <div class="row"><span class="num">01</span><h3>Collective intelligence and AI helpers, always on.</h3></div>
           <p>
             Every CRM in the world was built to be a passive filing cabinet in a UI built for humans to use
             as the system for sales and marketing. And retro fitted for CS. What you put in is what you get
             out, and none of it learns. Kaizan inverts this. Because the brain observes every interaction
             and every deliverable across every client, it builds a continuously updating model of what great
-            client service actually looks like inside that business &mdash; which patterns of engagement
+            client service actually looks like inside that business, improving processes as it learns which patterns of engagement
             predict renewal, which stakeholders matter, which interventions move accounts from amber to green,
             which campaigns turn ordinary relationships into expansion.
           </p>
           <p>
             For the first time, a team can benchmark its own work across every client, every project, and
-            every stakeholder. And put a number on the value of client service it has never been able to
+            every stakeholder. And put a number on the value of client service and productivity it has never been able to
             quantify before. Every meeting, every email, every outcome makes the brain sharper, not just
-            for the account it came from, but for every account the company runs.
+            for the account it came from, but for every account the company runs. This helps teams achieve better
+            outcomes. It also gives client teams a reliable source of truth.
           </p>
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">02</span><h3>Semantic understanding of the relationship.</h3></div>
+          <div class="row"><span class="num">02</span><h3>Semantic understanding of the client relationship.</h3></div>
           <p>
-            Kaizan unlocks the value in your most valuable data set, every interaction with clients, vendors,
+            Kaizan unlocks the value in your most valuable data set, every conversation with clients, vendors,
             partners and internally. To Kaizan, those are the raw materials of something alive: a relationship,
             with history, mood, sentiment, stakeholders, and silences that say more than any reply. The brain
-            has memory, and understands that the procurement lead who went quiet on Slack is the same person
+            has memory, and can spot a problem early from a single message or a change in tone: the procurement lead who went quiet on Slack is the same person
             who pushed back on pricing three quarters ago and the same person whose boss just changed on LinkedIn.
             It sees the shape of the account across
             <strong>Client Satisfaction on the work being done, Activity with stakeholders, Relationship strength,
             and Expansion opportunities &mdash; the CARE framework</strong> &mdash; which updates every second
-            and gives Agents context in which to act.
+            and gives Agents better answers and context in which to act, whether that is between meetings or in each
+            quarter&rsquo;s review and planning cycle.
           </p>
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">03</span><h3>Agentic execution.</h3></div>
+          <div class="row"><span class="num">03</span><h3>Agentic execution for the account manager.</h3></div>
           <p>
             People pointing and clicking UIs is evolving. The best account manager in any firm has never
             been the one with the best dashboard. The future is interacting with AI Helpers conversationally
             as they go off and complete tasks with context beyond what the person has ever had available to them.
             Kaizan&rsquo;s AI Helpers don&rsquo;t just observe and report &mdash; they act and do the work.
-            They surface a stakeholder gap and draft the outreach. They prep the brief before the meeting and
-            write the follow-up after it. They flag the account at risk and propose the intervention.
+            They surface a stakeholder gap, keep the stakeholder engaged, and draft the outreach. They prep the brief before the meeting and
+            write the follow-up after it. They flag the account at risk, propose the intervention, and suggest practical steps to reduce that risk.
             <strong>Signal → Work → Completion</strong>, run continuously, so that human judgement is spent
-            where it matters and everything else gets handled.
+            where it matters and everything else gets handled. This can increase revenue on existing accounts.
           </p>
         </div>
 
@@ -3902,8 +3895,13 @@ def render_about() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('About', 1,
-                     'Founder’s Letter from Glen Calvert, Co-founder & CEO of Kaizan. A proactive system of intelligence for client service.') + body + page_foot()
+    return page_head('Our Story: Intelligence for Client Service', 1,
+                     'Why Glen Calvert and Pravin Paratey founded Kaizan in London: a proactive system of intelligence for client service and account management teams.',
+                     extra_head=ld_script([
+                         ld_webpage('About Kaizan',
+                                    'Why Kaizan was founded: a proactive system of intelligence for client service and account management teams.',
+                                    kind='AboutPage', about={'@id': LD_ORG_ID}),
+                     ], ident='about')) + body + page_foot()
 
 
 # Mailchimp embedded-form endpoints for the July free-coffee campaign.
@@ -4194,9 +4192,9 @@ def render_integrations() -> str:
     custom_cards = '\n'.join(
         f'<div class="kz-int-custom-card"><div class="lbl">{E(t)}</div><div class="d">{E(d)}</div></div>'
         for t, d in [
-            ('CLIENT INTELLIGENCE', 'Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine.'),
-            ('WORKFLOW AUTOMATION', 'Trigger downstream actions in your delivery, billing and resourcing systems.'),
-            ('AUTONOMOUS GROWTH', 'Connect agents to your account-planning, forecasting and outbound playbooks.'),
+            ('CLIENT INTELLIGENCE', 'Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine to surface signals across client relationships, including client sentiment and stakeholder sentiment, alongside early risks, expansion opportunities, and revenue impact.'),
+            ('WORKFLOW AUTOMATION', 'Trigger downstream actions in your delivery, billing and resourcing systems, automating follow-up, capturing next steps, handling routine steps, and cutting the time spent each day on manual work.'),
+            ('AUTONOMOUS GROWTH', 'Connect agents to your account-planning, forecasting and outbound playbooks to spot where to grow, guide teams toward the right actions, and help them achieve better outcomes.'),
             ('INTERNAL AI', 'Embed Kaizan inside the AI platforms and copilots your team already uses.'),
         ]
     )
@@ -4208,14 +4206,15 @@ def render_integrations() -> str:
     <section class="kz-section-tight" style="padding-top:60px;">
       <div class="kz-eyebrow">Integrations</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
-        The tools your client teams already use - unify your data.
+        Kaizan.ai: The Tools Your Client Teams Already Use &ndash; Unify Your Data
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">
         Kaizan builds a continuous memory on every client by automatically capturing every meeting,
         message, doc and report. <strong style="color:var(--kz-ink);font-weight:600;">All standard
-        integrations are free.</strong> All client and communication data assigned to the right
-        client, the right stakeholders, with the right access rights. Unify your most precious
-        asset for your team and their AI Helpers.
+        integrations are free.</strong>&nbsp;All client and communication data is assigned to the right
+        client, the right stakeholders, with the right access rights, giving teams better visibility
+        into their clients and the information tied to each relationship. Unify your most precious
+        asset for your team and their AI Helpers, improving efficiency and helping them act with confidence.
       </p>
       <div class="kz-int-meta">
         <span><span class="kz-dot"></span> <strong>2-way sync</strong></span>
@@ -4227,7 +4226,7 @@ def render_integrations() -> str:
     <!-- STANDARD GRID -->
     <section class="kz-int-grid-section">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Standard</h2>
+        <h2 class="kz-h2" style="font-size:32px;">Standard client intelligence platform</h2>
       </div>
       <div class="kz-int-grid">{tiles}</div>
     </section>
@@ -4235,7 +4234,7 @@ def render_integrations() -> str:
     <!-- KAIZAN API FEATURED -->
     <section class="kz-int-grid-section">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Featured</h2>
+        <h2 class="kz-h2" style="font-size:32px;">Featured for client success teams</h2>
         <span class="kz-eyebrow">BUILD YOUR OWN</span>
       </div>
       <div class="kz-int-api">
@@ -4244,14 +4243,15 @@ def render_integrations() -> str:
           <div class="kz-eyebrow" style="color:var(--kz-yellow);">BUILD YOUR OWN SOLUTIONS</div>
           <h3 class="head">Kaizan API</h3>
           <p class="lede">Leverage all your unified client intelligence (every meeting, every signal,
-            every score) in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
+            every score) in your own systems, AI tools, and AI agents. SOC 2 logged, two-way sync, scoped per tenant, with a clear
+            commitment to secure handling of the client data Kaizan may hold on record.</p>
         </div>
         <div class="actions">
           <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="/demo/">Talk to us</a>
         </div>
       </div>
       <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
-        Contact Kaizan to understand the full suite of integrations available.
+        Contact Kaizan to understand the full suite of client relationships integrations available.
       </h3>
     </section>
 
@@ -4261,12 +4261,13 @@ def render_integrations() -> str:
         <div class="left">
           <div class="kz-eyebrow">Forward-deployed engineering</div>
           <h2 class="kz-h2" style="font-size:44px;margin:12px 0 18px;line-height:1.05;">
-            Custom <span class="kz-mark kz-mark-tight">integrations</span>
+            Custom client service <span class="kz-mark kz-mark-tight">integrations</span>
           </h2>
           <p class="kz-lede" style="font-size:16px;max-width:560px;">
             Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
-            with your internal systems, for more client intelligence, workflow automation and autonomous
-            client growth.
+            with your internal systems for client service teams and account managers, with a clear focus on
+            workflow automation, more client intelligence, and autonomous client growth. These custom
+            integrations are purpose-built to support those workflows and make connected data more valuable.
           </p>
           <div class="kz-flex" style="margin-top:26px;">
             <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="/demo/">Book demo →</a>
@@ -4282,8 +4283,9 @@ def render_integrations() -> str:
         <div>
           <div class="kz-eyebrow" style="color:rgba(10,10,10,.6);">DON&rsquo;T SEE YOUR TOOL?</div>
           <h3 class="head">We&rsquo;ll build it for design partners.</h3>
-          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet, tell us.
-            We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
+          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet, tell us&mdash;we can support the way your company does its work,
+            including needs tied to a specific role or edge cases. We&rsquo;ve shipped two new connectors per quarter
+            for the last year, a steady pace sustained over a long period.</p>
         </div>
         <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="/demo/">
           Request an integration →
@@ -4293,9 +4295,20 @@ def render_integrations() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('Integrations', 1,
-                     'Native connectors for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet '
-                     'and more, plus the Kaizan API.') + body + page_foot()
+    ld = ld_script([
+        ld_webpage('Kaizan integrations',
+                   'Standard integrations for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet and more, '
+                   'plus the Kaizan API and custom client service integrations.',
+                   mainEntity={'@id': LD_PAGE + '#integrations'}),
+        {'@type': 'ItemList', '@id': LD_PAGE + '#integrations', 'name': 'Kaizan standard integrations',
+         'numberOfItems': len(INT_DATA),
+         'itemListElement': [{'@type': 'ListItem', 'position': n, 'name': i['name'], 'description': i['why']}
+                             for n, i in enumerate(INT_DATA, 1)]},
+    ])
+    return page_head('Client Tool Integrations: Free Standard Set', 1,
+                     'All standard Kaizan integrations are free: Teams, Slack, HubSpot, Salesforce, Google Meet and more '
+                     'unify client data, plus the Kaizan API and custom builds.',
+                     extra_head=ld) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -4305,7 +4318,7 @@ def render_integrations() -> str:
 PRICING_TIERS = [
     dict(name='Pilot', clients_pre='Full access for ', clients_bold='14 days',
          price='Free', per='No card, no commitment',
-         plan='Speak to a Kaizan Account Executive to get set up',
+         plan='Contact a Kaizan Account Executive to get set up',
          cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
          cta_style='primary', ribbon='Start here', card='hero',
          features=['Full platform for 14 days',
@@ -4333,7 +4346,7 @@ PRICING_TIERS = [
                    'Guided onboarding and AI maturity framework assessment',
                    'API access',
                    'Priority support']),
-    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='for enterprises and custom work',
          price='Custom', per='Per client rate negotiated to your portfolio',
          plan='Scoped with you, billed as one flat monthly plan',
          cta='Talk to us', cta_note='', cta_style='dark',
@@ -4384,7 +4397,7 @@ def tier_card(t: dict, p: str = '', demo_href: str = '/demo/') -> str:
 PRICING_TIERS_US = [
     dict(name='Pilot', clients_pre='14 days of ', clients_bold='full access',
          price='Free', per='No card, no commitment',
-         plan='Speak to a Kaizan Account Executive to get set up',
+         plan='Contact a Kaizan Account Executive to get set up',
          cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
          cta_style='primary', ribbon='Start here', card='hero',
          features=['Full platform for 14 days',
@@ -4410,7 +4423,7 @@ PRICING_TIERS_US = [
          features=['Everything in Starter',
                    'Bigger portfolio, up to 49 accounts',
                    'Guided onboarding with CARE calibration']),
-    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='for enterprises and custom work',
          price='Custom', per='Per client rate negotiated to your portfolio',
          plan='Scoped with you, billed as one flat monthly plan',
          cta='Talk to us', cta_note='', cta_style='dark', price_small=True,
@@ -4432,15 +4445,54 @@ def us_pricing_section() -> str:
     return f'''<section class="kzp">
       <div class="kzp-wrap">
         <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
         <div class="kzp-badges">
           <span class="kzp-tag">✓ New: 14-day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
         <div class="kzp-grid">{tiers_html}</div>
-        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
+        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier for a range of company sizes. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
       </div>
     </section>'''
+
+
+PRICING_DESC = ('Pricing is set by how many clients you cover, per client per month, '
+                'with unlimited users on every tier. Every engagement starts with a free 14 day pilot.')
+
+
+def pricing_offers(tiers: list, currency: str) -> list:
+    """schema.org Offers from a PRICING_TIERS-shaped list (GBP or USD). Prices and
+    client bands are parsed from the same fields the tier cards render."""
+    offers = []
+    for t in tiers:
+        offer = {'@type': 'Offer', 'name': t['name'], 'url': LD_PAGE, 'priceCurrency': currency,
+                 'description': 'Unlimited users.'}
+        digits = re.sub(r'[^\d.]', '', t['price'])
+        if t['name'] == 'Pilot':
+            offer['price'] = '0'
+            offer['description'] = ('Free 14 day pilot on your own data. No card, no commitment. '
+                                    'Unlimited users.')
+        elif digits:
+            offer['price'] = digits
+            qty = {'@type': 'QuantitativeValue', 'unitText': 'clients'}
+            band = re.search(r'(\d+) to (\d+)', t['clients_pre'] + t['clients_bold'])
+            if band:
+                qty['minValue'], qty['maxValue'] = int(band.group(1)), int(band.group(2))
+            elif t['clients_pre'].startswith('Minimum'):
+                qty['minValue'] = int(re.search(r'\d+', t['clients_bold']).group())
+            elif t['clients_pre'].startswith('Up to'):
+                qty['maxValue'] = int(re.search(r'\d+', t['clients_bold']).group())
+            offer['priceSpecification'] = {
+                '@type': 'UnitPriceSpecification', 'price': digits, 'priceCurrency': currency,
+                'unitText': 'per client / month',
+                'eligibleQuantity': qty}
+            offer['description'] = (f"{t['clients_pre']}{t['clients_bold']}, per client per month, annual contract. "
+                                    'Unlimited users.')
+        else:
+            offer['description'] = ('Custom per client rate negotiated to your portfolio, annual contract. '
+                                    'Unlimited users.')
+        offers.append(offer)
+    return offers
 
 
 PRICING_HELPERS = [
@@ -4531,7 +4583,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
             <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Total company headcount">+</button>
           </div>
-          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users: finance, ops and leadership can all use it at no extra cost.</div>
+          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users: it supports business needs across finance, ops and leadership at no extra cost.</div>
         </div>
 
         <div class="kzroi-num" data-key="team" data-min="1" data-max="500" data-step="1">
@@ -4584,7 +4636,7 @@ ROI_CALCULATOR_SECTION = '''
             <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals: <span data-roi="m-churn">45</span>% in <span data-roi="m-mode">Expected</span> mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
             <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count <span data-roi="m-upsell">60</span>%: opportunities surfaced from clients you already have.</p>
             <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which <span data-roi="m-capacity">60</span>% is handed back, across 46 working weeks. Valued at £30/hr loaded cost: UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
-            <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count; users are unlimited.</p>
+            <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count so you can compare the return against your needs; users are unlimited.</p>
           </div>
         </details>
       </div>
@@ -4629,7 +4681,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-card-title">Capacity recovered from admin</div>
             <div class="kzroi-card-bullets">
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span><span data-roi="admin-hours">0</span> admin hours sit across your team each year</span></div>
-              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Notes, follow-ups and CRM updates handled automatically</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Notes, follow-ups and CRM updates handled automatically through operational features</span></div>
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Time goes straight back into client-facing work</span></div>
             </div>
           </div>
@@ -4663,7 +4715,7 @@ ROI_CALCULATOR_SECTION = '''
 
     <!-- closing CTA band -->
     <div class="kzroi-cta-band">
-      <h3>See your clients, clearly.</h3>
+      <h3>See your team and clients, clearly.</h3>
       <p>Take the full breakdown with you (your numbers, the workings, and what comparable Kaizan clients see) or jump straight to a demo.</p>
       <div class="kzroi-cta-actions">
         <a href="/demo/" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
@@ -4710,13 +4762,13 @@ def render_pricing() -> str:
     <section class="kzp">
       <div class="kzp-wrap">
         <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
         <div class="kzp-badges">
           <span class="kzp-tag">✓ New: 14 day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
         <div class="kzp-grid">{tiers_html}</div>
-        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
+        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier for a range of company sizes. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
       </div>
     </section>'''
     chevron = ('<svg class="kzacc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -4738,10 +4790,12 @@ def render_pricing() -> str:
       </details>
     </section>'''
     body = nav_html(1, active='Pricing') + pricing_section + accordion + footer_html(1)
-    return page_head('Pricing', 1,
-                     'Kaizan pricing: priced by the size of the client portfolio we help you grow. '
-                     'Free 14 day pilot, then per client per month. Unlimited users on every tier.',
-                     extra_head=extra_head) + body + page_foot()
+    price_desc = PRICING_DESC
+    price_ld = ld_script([ld_webpage('Pricing', price_desc),
+                          ld_software(price_desc, offers=pricing_offers(PRICING_TIERS, 'GBP'))],
+                         ident='pricing')
+    return page_head('Pricing by Client Count, Free 14 Day Pilot', 1, price_desc,
+                     extra_head=extra_head + '\n        ' + price_ld) + body + page_foot()
 
 
 
@@ -5161,11 +5215,11 @@ def render_careers() -> str:
 FAQ_DATA = [
     ('About Kaizan', [
         ('What is Kaizan?',
-         'Kaizan is an AI platform built for Client Service teams and their AI Agents. It unifies all client data, captures every client meeting, email and message, scores the health of each relationship, surfaces risks before they become issues, and drafts the follow-ups, updates market intelligence and expansion plays that account managers spend most of their time doing. Kaizan is used by client-services teams globally obsessed with delivering elite client service.'),
+         'Kaizan is an AI platform created for Client Service teams and their AI Agents. It unifies all client data, captures every client meeting, email, message, client interactions and communications, scores the health of each relationship, surfaces risks before they become issues, and drafts the follow-ups, actions, market intelligence updates and expansion plays that account managers spend most of their time doing. Kaizan is used by client-services teams globally obsessed with delivering elite client service.'),
         ('Who built Kaizan and where is the company based?',
          'Kaizan was founded by Glen Calvert and Pravin Paratey and is headquartered in London, UK.'),
         ('What does the name "Kaizan" mean?',
-         'Kaizan is taken from the Japanese word kaizen (改善), meaning continuous improvement. The product is designed around the same idea: client relationships compound, and small, consistent improvements in how an account manager listens, follows up and reports compound into materially better retention and expansion outcomes.'),
+         'Kaizan is taken from the Japanese word kaizen (改善), which means continuous improvement. The product is designed around the same idea: client relationships compound, and small, consistent improvements in how an account manager listens, follows up and reports improve client relationships now and in the future, compounding into materially better retention and expansion outcomes.'),
     ]),
     ('Who Kaizan is for', [
         ('Who is Kaizan designed for?',
@@ -5173,15 +5227,15 @@ FAQ_DATA = [
         ('How big does my team need to be to get value from Kaizan?',
          'Kaizan is most useful for teams of 10 to 500 client-facing people. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',
-         'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work.'),
+         'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, turns that data into structured information, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks, and account activity updates) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work. It helps teams add context from live client work into the CRM.'),
     ]),
     ('How Kaizan works', [
         ('How does Kaizan listen to client conversations?',
          'Kaizan ingests three sources: meeting transcripts (from Zoom, Google Meet, Microsoft Teams, Gong and Chorus), email threads (from Gmail and Outlook / Microsoft 365), and chat (from Slack and Microsoft Teams chat). Audio is transcribed by a speech-to-text model with speaker diarisation. Text is parsed for participants, topics, commitments, risks, sentiment and questions.'),
         ('What does Kaizan actually output?',
-         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, Activity, Relationship, Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise to improve client ROI, satisfaction and revenue.'),
+         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, account activity, relationship coverage, and Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
         ('What is the CARE model?',
-         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures the cadence and quality of touchpoints with stakeholders. Relationship measures sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained.'),
+         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship measures relationship coverage alongside sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained, while also considering engagement growth over time when evaluating account health.'),
         ('How accurate is Kaizan’s sentiment analysis?',
          'Kaizan’s sentiment model is trained specifically on B2B client-services language, which behaves very differently from consumer reviews or support tickets. Internal benchmarks across 4.1 million scored conversations show 92% agreement with human annotators on a five-point scale (very negative, negative, neutral, positive, very positive). Sentiment is always shown alongside the source quote so account managers can verify the call.'),
         ('How long does it take to set up Kaizan?',
@@ -5197,15 +5251,15 @@ FAQ_DATA = [
         ('How is Kaizan priced?',
          'Kaizan is priced based on the number of clients you have, there are no limits to the number of seats or users. List pricing and a calculator are at kaizan.ai/pricing.'),
         ('Is there a free trial?',
-         'No, we do paid pilots so you can assess the ROI and value received.'),
+         'Yes. Every engagement starts with a free 14-day pilot on your own client data, with no card and no commitment, so you can assess the ROI and value received.'),
         ('What is the typical contract length?',
-         'Standard contracts are 12 months, billed annually, with quarterly business reviews. Multi-year contracts (24 and 36 months) carry a discount and are common for enterprise clients. Month-to-month is available on Starter for teams piloting Kaizan before formal procurement.'),
+         'Contracts are annual (12 months), with quarterly business reviews. Multi-year contracts (24 and 36 months) carry a discount and are common for enterprise clients. Pricing is per client per month, billed as one flat monthly plan, and there is no month-to-month option.'),
     ]),
     ('Outcomes and benchmarks', [
         ('What kind of results do Kaizan clients see?',
          'Across the active client base, Kaizan clients report a median 146% net dollar retention versus a sector benchmark of approximately 105% to 115%. Account managers report saving an average of 3.2 hours per week on reporting and follow-up work. Quarterly business review preparation drops from a typical 4 to 6 hours per account to 30 to 60 minutes. Client satisfaction scores (CSAT) typically move 12 to 20 points within the first two quarters of rollout.'),
         ('What does a successful Kaizan rollout look like in the first 90 days?',
-         'Day 1–14: integrations connected, last 90 days of history backfilled, CARE scores live for every account. Day 15–45: account managers using drafted recaps and follow-ups daily; first risks caught and saved. Day 46–90: first QBR cycle run inside Kaizan; usage benchmarks and account-level outcomes reviewed with the Kaizan customer success team and a written 90-day report delivered.'),
+         'Day 1–14: integrations connected, last 90 days of history backfilled, CARE scores live for every account. Day 15–45: account managers using drafted recaps and follow-ups daily; first risks caught and saved, with AI Helpers taking actions automatically on follow-ups. Day 46–90: first QBR cycle run inside Kaizan; usage benchmarks and account-level outcomes, including engagement growth, reviewed with the Kaizan customer success team and a written 90-day report delivered.'),
     ]),
     ('Comparisons', [
         ('How is Kaizan different from a generic AI note-taker like Otter, Fireflies, or Granola?',
@@ -5299,8 +5353,17 @@ def render_faq() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('FAQs', 1,
-                     'Plain-text answers about Kaizan: designed for people and language models.') + body + page_foot()
+    ld = ld_script([
+        ld_webpage('Frequently asked questions about Kaizan',
+                   'Plain-text answers about Kaizan: what it is, how it works, integrations, pricing and contracts, '
+                   'outcomes, comparisons and working with the team.',
+                   kind='FAQPage',
+                   mainEntity=ld_faq_entities([qa for _, qs in FAQ_DATA for qa in qs])),
+    ])
+    return page_head('Kaizan FAQs: Pricing, Integrations, Setup', 1,
+                     'Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual '
+                     'contracts, outcomes, comparisons and how to work with us.',
+                     extra_head=ld) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5882,9 +5945,11 @@ def render_demo() -> str:
 
     {footer_html(1)}
     '''
+    # Booking interstitial kept out of the index (noindex, follow); the UK and /us/
+    # versions both inherit this through the /us/ mirror.
     return page_head('Book a demo', 1,
                      "Confirm you're human, then book a 30-minute live demo of Kaizan.",
-                     extra_head=extra_head) + body + page_foot()
+                     extra_head='<meta name="robots" content="noindex, follow">\n        ' + extra_head) + body + page_foot()
 
 
 def render_demo_confirmed() -> str:
@@ -6159,6 +6224,13 @@ US_SPELLING = {
     'labelled': 'labeled', 'labelling': 'labeling',
     'grey': 'gray', 'whilst': 'while', 'amongst': 'among',
     'judgement': 'judgment', 'acknowledgement': 'acknowledgment',
+    'anonymised': 'anonymized', 'prioritisation': 'prioritization', 'prioritises': 'prioritizes',
+    'categorising': 'categorizing', 'categorisation': 'categorization',
+    'commoditised': 'commoditized', 'monetised': 'monetized', 'monetisation': 'monetization',
+    'diarisation': 'diarization', 'decentralised': 'decentralized', 'globalisation': 'globalization',
+    'strategising': 'strategizing', 'humanise': 'humanize', 'practising': 'practicing',
+    'contextualise': 'contextualize', 'rationalise': 'rationalize', 'materialised': 'materialized',
+    'revolutionised': 'revolutionized', 'revolutionise': 'revolutionize', 'familiarise': 'familiarize',
 }
 _US_SPELL_RE = re.compile(r'\b(' + '|'.join(sorted(US_SPELLING, key=len, reverse=True)) + r')\b', re.I)
 
@@ -6182,8 +6254,10 @@ def _spell_text_nodes(html: str) -> str:
     parts_joined = ''.join(parts)
     parts_joined = re.sub(r'(name="description" content=")([^"]*)(")',
                           lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
-    parts_joined = re.sub(r'(property="og:description" content=")([^"]*)(")',
-                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    for attr in ('property="og:description"', 'property="og:title"',
+                 'name="twitter:description"', 'name="twitter:title"'):
+        parts_joined = re.sub(r'(' + attr + r' content=")([^"]*)(")',
+                              lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
     return parts_joined
 
 
@@ -6191,6 +6265,133 @@ def _hreflang_block(path: str) -> str:
     return (f'<link rel="alternate" hreflang="en-GB" href="{SITE_ORIGIN}{path}">'
             f'<link rel="alternate" hreflang="en-US" href="{SITE_ORIGIN}/us{path if path != "/" else "/"}">'
             f'<link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}{path}">')
+
+
+_LD_KINDS = {'/customers/': 'CollectionPage', '/research/': 'CollectionPage',
+             '/knowledge-hub/': 'CollectionPage'}
+
+
+def _inject_default_schema(html: str, path: str) -> str:
+    """JSON-LD for indexable pages that don't build their own: a WebPage (or
+    CollectionPage) node, plus SoftwareApplication on the product landing page.
+    Pages with no publish date carry no dateModified; policies carry their
+    'Last updated' date."""
+    if not _indexable(html, path) or 'application/ld+json' in html:
+        return html
+    m = re.search(r'rel="canonical" href="([^"]+)"', html)
+    if not m or m.group(1) != f'{SITE_ORIGIN}{path}':
+        return html
+    t = re.search(r'<title>(.*?)</title>', html, re.S)
+    d = re.search(r'name="description" content="([^"]*)"', html)
+    from html import unescape
+    name = re.sub(r'\s*·\s*Kaizan\s*$', '', unescape(t.group(1)).strip()) if t else 'Kaizan'
+    desc = unescape(d.group(1)) if d else ''
+    tm = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', html) if 'kz-policy' in html else None
+    nodes = [ld_webpage(name, desc, _LD_KINDS.get(path, 'WebPage'),
+                        dateModified=tm.group(1) if tm else None)]
+    if path == '/customer-success-software/':
+        nodes.append(ld_software(desc))
+    return html.replace('</head>', ld_script(nodes) + '\n</head>', 1)
+
+
+def write_sitemap():
+    """sitemap.xml: every indexable, self-canonical page (UK + /us/), with
+    hreflang alternates and a lastmod where the page carries a date."""
+    from html import escape as esc
+    skip = {'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
+    entries = []
+    for f in sorted(ROOT.rglob('*.html')):
+        rel = f.relative_to(ROOT)
+        if rel.parts[0] in skip or not all(re.fullmatch(r'[A-Za-z0-9._-]+', x) for x in rel.parts):
+            continue
+        path = '/' + (str(rel.parent) + '/' if rel.name == 'index.html' and str(rel.parent) != '.'
+                      else '' if rel.name == 'index.html' else str(rel))
+        html = f.read_text(encoding='utf-8')
+        us = path.startswith('/us/') or path == '/us/'
+        base = path[3:] if us else path
+        if not _indexable(html, base or '/'):
+            continue
+        m = re.search(r'rel="canonical" href="([^"]+)"', html)
+        if not m or m.group(1) != f'{SITE_ORIGIN}{path}':
+            continue
+        lm = re.search(r'"dateModified": ?"(\d{4}-\d{2}-\d{2})"', html)
+        alts = ''
+        if 'hreflang=' in html:
+            uk_url, us_url = SITE_ORIGIN + (base or '/'), SITE_ORIGIN + '/us' + (base or '/')
+            alts = (f'<xhtml:link rel="alternate" hreflang="en-GB" href="{esc(uk_url)}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="en-US" href="{esc(us_url)}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(uk_url)}"/>')
+        entries.append(f'<url><loc>{esc(SITE_ORIGIN + path)}</loc>'
+                       + (f'<lastmod>{lm.group(1)}</lastmod>' if lm else '') + alts + '</url>')
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+           'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(entries) + '\n</urlset>\n')
+    (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    print(f'  (sitemap.xml: {len(entries)} URLs)')
+
+
+# Page-specific US variants of a JSON-LD block (keyed by the script's data-kz-ld
+# id), for schema that carries locale-specific facts such as USD prices.
+US_LD_BUILDERS: dict = {}
+US_LD_BUILDERS['pricing'] = lambda: ld_script(
+    [ld_webpage('Pricing', PRICING_DESC), ld_software(PRICING_DESC, offers=pricing_offers(PRICING_TIERS_US, 'USD'))],
+    ident='pricing')
+_LD_RE = re.compile(r'<script type="application/ld\+json"(?: data-kz-ld="(\w+)")?>(.*?)</script>', re.S)
+
+
+def _indexable(html: str, path: str) -> bool:
+    """True for pages that should carry canonical + hreflang: not noindex,
+    not a redirect stub, not the 404."""
+    if path == '/404.html' or 'http-equiv="refresh"' in html:
+        return False
+    return not re.search(r'<meta name="robots" content="[^"]*noindex', html)
+
+
+def _inject_seo_head(html: str, path: str) -> str:
+    """Idempotently give every indexable page a self-canonical and the en-GB /
+    en-US / x-default hreflang set. A page whose canonical points elsewhere
+    (e.g. a Medium import) is left without hreflang, since search engines
+    ignore hreflang on non-self-canonical pages."""
+    if not _indexable(html, path):
+        return html
+    self_url = f'{SITE_ORIGIN}{path}'
+    m = re.search(r'rel="canonical" href="([^"]+)"', html)
+    if m:
+        canon = m.group(1)
+    else:
+        canon = self_url
+        html = html.replace('</title>', f'</title>\n<link rel="canonical" href="{E(self_url)}">', 1)
+    if canon == self_url and 'hreflang=' not in html:
+        html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
+    return html
+
+
+def _ld_us_spell(node):
+    if isinstance(node, dict):
+        return {k: _ld_us_spell(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [_ld_us_spell(v) for v in node]
+    if isinstance(node, str) and not node.startswith(('http', '@@')):
+        return us_spell(node)
+    return node
+
+
+def _resolve_ld(html: str, path: str, locale: str) -> str:
+    """Fill the page-URL / language tokens in JSON-LD for one locale; for /us/ also
+    swap in any US-specific builder and apply US spelling to the string values."""
+    us = locale == 'us'
+    page_url = f'{SITE_ORIGIN}/us{path}' if us else f'{SITE_ORIGIN}{path}'
+
+    def sub(m):
+        ident, body = m.group(1), m.group(2)
+        if us and ident in US_LD_BUILDERS:
+            return US_LD_BUILDERS[ident]().replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US')
+        body = body.replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US' if us else 'en-GB')
+        if us:
+            body = json.dumps(_ld_us_spell(json.loads(body)), ensure_ascii=False)
+        attr = f' data-kz-ld="{ident}"' if ident else ''
+        return f'<script type="application/ld+json"{attr}>{body}</script>'
+    return _LD_RE.sub(sub, html)
 
 
 def build_us_locale():
@@ -6206,7 +6407,7 @@ def build_us_locale():
     uk_cal_b64 = base64.b64encode(CALENDAR_URL.encode()).decode()
     us_cal_b64 = base64.b64encode(US_CALENDAR_URL.encode()).decode()
 
-    skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github'}
+    skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
 
     def _safe(rel: Path) -> bool:
         # Only real page paths — guards against stray/garbage files in the tree.
@@ -6226,13 +6427,15 @@ def build_us_locale():
 
         html = f.read_text(encoding='utf-8')
 
-        # 1. Inject hreflang into the UK page (idempotent) and write it back.
-        if 'hreflang=' not in html:
-            html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
-            f.write_text(html, encoding='utf-8')
+        # 1. Self-canonical + hreflang on every indexable UK page (idempotent),
+        #    and resolve the JSON-LD URL/language tokens for the UK page itself.
+        html = _inject_default_schema(_inject_seo_head(html, path), path)
+        uk_html = _resolve_ld(html, path, 'uk')
+        if uk_html != f.read_text(encoding='utf-8'):
+            f.write_text(uk_html, encoding='utf-8')
 
-        # 2. Build the US version.
-        us = html
+        # 2. Build the US version (from the token-bearing html, not the UK-resolved one).
+        us = _resolve_ld(html, path, 'us')
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
         # calendly-utm.js (from page_head()) is kept as-is — /us/ also books
@@ -6298,6 +6501,1326 @@ def build_us_locale():
         shutil.copy2(pdf, dest)
 
     print(f'  ({written} US locale page(s) written to /us/)')
+
+
+
+
+def playbooks_sections_html() -> str:
+    """Ported 'Playbooks / risk / actions / growth' section. Site font; scroll-synced
+    bubble-traveler connectors (assets/js/site.js: initPbConnectors)."""
+    return '''<div class="kz-pb" id="sceneRoot">
+  <!-- connector A travelers: Playbooks illustration -> One source of truth (left side) -->
+  <div class="bubbleTraveler connA" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #1FA591; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connA" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+
+  <!-- connector B travelers: One source of truth (left side) -> Every action stays inside Kaizan (right side) -->
+  <div class="bubbleTraveler connB" style="background: #1FA591; z-index: 1; box-shadow: 0 10px 24px rgba(31,165,145,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #7C5CFC; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(124,92,252,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connB" style="background: #E8432B; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 8px; background: rgba(255,255,255,.75);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(255,255,255,.55);"></span>
+  </div>
+
+  <!-- connector C travelers: Every action stays inside Kaizan -> One view of every client relationship -->
+  <div class="bubbleTraveler connC" style="background: #2F5FE0; z-index: 1; box-shadow: 0 10px 26px rgba(47,95,224,.4);">
+    <span class="travelerLine" style="top: 10px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 18px; right: 16px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #E8432B; width: 40px; height: 30px; z-index: 1; box-shadow: 0 10px 24px rgba(232,67,43,.4);">
+    <span class="travelerLine" style="top: 9px; background: rgba(255,255,255,.9);"></span>
+    <span class="travelerLine" style="top: 16px; right: 14px; background: rgba(255,255,255,.65);"></span>
+  </div>
+  <div class="bubbleTraveler connC" style="background: #FFB900; width: 36px; height: 27px; z-index: 1; box-shadow: 0 10px 22px #FFB90066;">
+    <span class="travelerLine" style="top: 8px; background: rgba(23,21,17,.55);"></span>
+    <span class="travelerLine" style="top: 14px; right: 13px; background: rgba(23,21,17,.4);"></span>
+  </div>
+  <!-- ================= Playbooks that run themselves ================= -->
+  <section style="padding: 72px var(--kz-gutter) 96px; overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Follow-ups and replies drafted for your approval</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">CRM and project tools updated automatically</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">QBRs and account briefs ready before you ask</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneA" style="position: relative; width: 100%; max-width: 540px; height: 460px;">
+
+          <!-- BOLD themed decorative: glow behind the playbook bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: 10px; width: 170px; height: 120px; background: #2F5FE0; opacity: 0.88; border-radius: 26px 26px 6px 26px; box-shadow: 0 24px 40px rgba(47,95,224,.4); animation: cardFloat 5.5s ease-in-out infinite; z-index: 0; padding: 20px 22px;">
+            <span style="display: block; height: 8px; width: 70%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 12px;"></span>
+            <span style="display: block; height: 8px; width: 45%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; right: 10px; bottom: -10px; width: 130px; height: 95px; background: #E8432B; opacity: 0.88; border-radius: 24px 24px 24px 6px; box-shadow: 0 20px 34px rgba(232,67,43,.38); animation: cardFloat 4.8s ease-in-out infinite; animation-delay: .5s; z-index: 0; padding: 16px 18px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.85); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 40%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 60px; width: 440px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 2; animation: cardFloat 5.5s ease-in-out infinite;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 22px; font-weight: 600; color: #000000;">Renewal playbook</h3>
+              <span style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; background: #EDE8DA; padding: 6px 10px; border-radius: 999px;">Stage 3 of 5</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Usage review sent</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; background: #FFB900; display: flex; align-items: center; justify-content: center;"><svg width="10" height="8" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                <span style="font-size: 14px; color: #171511; text-decoration: line-through; opacity: .6;">Stakeholder map confirmed</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1.5px solid #FFB900; border-radius: 12px; background: rgba(255,185,0,0.08);">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #171511;"></span>
+                <span style="font-size: 14px; color: #171511; font-weight: 500;">Draft renewal proposal</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px; opacity: .5;">
+                <span style="flex: none; width: 18px; height: 18px; border-radius: 6px; border: 2px solid #C9C4B4;"></span>
+                <span style="font-size: 14px; color: #171511;">Exec sign-off</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bubbleOriginA" style="position: absolute; right: 36px; top: 0px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; right: 0px; top: 0px; width: 150px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 3;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Owner</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Jordan Lee</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">JL</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One source of truth for every account ================= -->
+  <section style="padding: 96px var(--kz-gutter); overflow: hidden; position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZoneB" style="position: relative; width: 100%; max-width: 540px; height: 340px;">
+
+          <!-- BOLD themed decorative: glow behind the source-of-truth bubble cluster -->
+          <div style="position: absolute; left: -40px; top: -30px; width: 280px; height: 220px; background: radial-gradient(circle, #1FA591 0%, transparent 70%); opacity: .2; z-index: 0;"></div>
+
+          <div style="position: absolute; left: -10px; top: -40px; width: 160px; height: 115px; background: #1FA591; opacity: 0.88; border-radius: 26px 26px 26px 6px; box-shadow: 0 20px 36px rgba(31,165,145,.38); animation: bubbleFloat 5.2s ease-in-out infinite; z-index: 0; padding: 18px 20px;">
+            <span style="display: block; height: 7px; width: 65%; border-radius: 999px; background: rgba(255,255,255,.88); margin-bottom: 10px;"></span>
+            <span style="display: block; height: 7px; width: 42%; border-radius: 999px; background: rgba(255,255,255,.6);"></span>
+          </div>
+          <div style="position: absolute; left: 200px; top: -10px; width: 64px; height: 48px; background: #FFB900; opacity: 0.92; border-radius: 16px 16px 6px 16px; box-shadow: 0 16px 28px #FFB90066; animation: bubbleFloat 4.3s ease-in-out infinite; animation-delay: .4s; z-index: 0; padding: 8px 10px;">
+            <span style="display: block; height: 5px; width: 70%; border-radius: 999px; background: rgba(23,21,17,.45); margin-bottom: 6px;"></span>
+            <span style="display: block; height: 5px; width: 45%; border-radius: 999px; background: rgba(23,21,17,.3);"></span>
+          </div>
+
+          <div id="bubbleDestA" style="position: absolute; left: 10px; top: 10px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 10px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <div style="display: flex; height: 10px; width: 64px; border-radius: 999px; overflow: hidden;"><span style="flex: 1; background: #171511;"></span><span style="flex: 1.3; background: #E8432B;"></span><span style="flex: 0.7; background: #EADFB8;"></span></div>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Risk indicators</span>
+          </div>
+
+          <div id="bubbleOriginB" style="position: absolute; left: 20px; top: 90px; width: 1px; height: 1px;"></div>
+          <div style="position: absolute; left: 0px; top: 80px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 140px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 85%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both;"></div>
+              <div style="width: 28px; height: 55%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .1s;"></div>
+              <div style="width: 28px; height: 70%; background: #E8432B; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .2s;"></div>
+              <div style="width: 28px; height: 35%; background: #FFB900; border-radius: 6px 6px 0 0; transform-origin: bottom; animation: barGrow .9s ease-out both; animation-delay: .3s;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">Risk distribution</div>
+          </div>
+
+          <div style="position: absolute; right: 10px; top: 56px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#7FB59E 0% 82%, #EDE4C6 82% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">82%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Renewal confidence</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Alerts for quiet stakeholders, dipping sentiment and single-threaded relationships</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Recommended next steps for each at-risk client</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A clear view of revenue at risk across your whole portfolio</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= Every action stays inside Kaizan ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Insight from every meeting, email and chat in one place</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">No spreadsheets, no guesswork, no relying on memory</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="launchZone" style="position: relative; width: 100%; max-width: 600px; height: 540px;">
+
+          <!-- BOLD themed decorative: oversized chat bubbles -->
+          <div style="position: absolute; right: -30px; top: -20px; width: 320px; height: 260px; background: radial-gradient(circle, #2F5FE0 0%, transparent 70%); opacity: .22; z-index: 0;"></div>
+
+          <div id="bubbleOrigin" style="position: absolute; right: 150px; top: 40px; width: 1px; height: 1px;"></div>
+          <div id="bubbleDestB" style="position: absolute; right: 190px; top: 70px; width: 1px; height: 1px;"></div>
+
+          <div style="position: absolute; right: 120px; top: -10px; width: 190px; height: 118px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); animation: bigBob 4.2s ease-in-out infinite; --r: -6deg; z-index: 1; padding: 22px 26px;">
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.72); width: 76%; margin-top: 10px;"></span>
+            <span style="display: block; height: 11px; border-radius: 6px; background: rgba(255,255,255,.55); width: 54%; margin-top: 10px;"></span>
+          </div>
+          <!-- next to the AI Actions card (right-hand gutter), not stacked on top of it or the assigned-to card -->
+          <div style="position: absolute; right: 14px; top: 240px; width: 110px; height: 128px; background: #E8432B; border-radius: 26px 26px 8px 26px; box-shadow: 0 22px 38px rgba(232,67,43,.32); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .5s; --r: 7deg; z-index: 2; padding: 18px 16px;">
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.92); width: 100%;"></span>
+            <span style="display: block; height: 10px; border-radius: 6px; background: rgba(255,255,255,.65); width: 62%; margin-top: 9px;"></span>
+          </div>
+
+          <div style="position: absolute; right: 70px; top: 150px; width: 170px; height: 44px; background: radial-gradient(circle, #FFB900 0%, transparent 72%); opacity: .55; animation: glowPulse 2.2s ease-in-out infinite; z-index: 0;"></div>
+          <div style="position: absolute; right: 95px; top: 148px; width: 120px; height: 84px; background: #FFB900; border-radius: 30px 30px 30px 8px; box-shadow: 0 22px 38px rgba(23,21,17,.22); display: flex; align-items: center; justify-content: center; gap: 8px; z-index: 2;">
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: 0s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .15s;"></span>
+            <span style="width: 12px; height: 12px; border-radius: 999px; background: #171511; animation: typeDot 1.1s infinite; animation-delay: .3s;"></span>
+          </div>
+
+
+          <div style="position: absolute; left: 10px; bottom: 10px; width: 136px; height: 92px; background: #7C5CFC; border-radius: 8px 30px 30px 30px; box-shadow: 0 20px 34px rgba(124,92,252,.3); animation: bigBob 4.2s ease-in-out infinite; animation-delay: .9s; --r: -4deg; z-index: 0; padding: 16px 20px;">
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 9px; border-radius: 5px; background: rgba(255,255,255,.6); width: 58%; margin-top: 8px;"></span>
+          </div>
+
+          <div style="position: absolute; left: 0; top: 130px; width: 460px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 24px 48px rgba(23,21,17,0.12); padding: 28px; z-index: 3;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <h3 style="margin: 0; font-size: 24px; font-weight: 600; color: #000000;">AI Actions</h3>
+              <button style="border: none; background: #FFB900; color: #171511; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; display: flex; align-items: center; gap: 6px; cursor: default;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#171511" stroke-width="1.8" stroke-linecap="round"></path></svg>New action</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Draft renewal proposal — Acme Creative</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 70%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #D8A678; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">AC</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Escalate CARE risk — Northwind</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 30%; height: 100%; background: #E8432B;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #2F5FE0; color: #FFFBF0; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">N</div></div>
+              <div style="display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid rgba(23,21,17,0.08); border-radius: 12px;"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" style="flex: none;"><circle cx="2" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="2" cy="14" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="2" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="8" r="1.4" fill="#C9C4B4"></circle><circle cx="8" cy="14" r="1.4" fill="#C9C4B4"></circle></svg><div style="flex: 1; min-width: 0;"><div style="font-size: 14px; font-weight: 500; color: #171511; margin-bottom: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Prep QBR deck — Stark Industries</div><div style="height: 6px; border-radius: 999px; background: #EDE8DA; overflow: hidden;"><div style="width: 45%; height: 100%; background: #FFB900;"></div></div></div><div style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #7FB59E; color: #171511; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center;">SI</div></div>
+            </div>
+          </div>
+
+          <div style="position: absolute; right: 12px; top: 60px; width: 148px; background: #FFFFFF; border-radius: 14px; box-shadow: 0 16px 32px rgba(23,21,17,0.14); padding: 16px 16px 20px; text-align: center; z-index: 4;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); width: 28px; height: 28px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(23,21,17,0.18);"><svg width="14" height="12" viewBox="0 0 14 12" fill="none"><path d="M1.5 6.2L5 9.7L12.5 1.5" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></div>
+            <div style="font-size: 10px; letter-spacing: 0.04em; text-transform: uppercase; color: #8C8878; margin: 6px 0 6px;">Assigned to</div>
+            <div style="font-size: 14px; font-weight: 600; color: #000000; margin-bottom: 12px;">Priya Shah</div>
+            <div style="width: 56px; height: 56px; margin: 0 auto; border-radius: 999px; background: #FFB900; color: #171511; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center;">PS</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= One view of every client relationship ================= -->
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 2;">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap-reverse; align-items: center; gap: 72px;">
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; justify-content: center;">
+        <div id="revealZone" style="position: relative; width: 100%; max-width: 600px; height: 604px;">
+
+          <div id="bubbleDest" style="position: absolute; left: 110px; top: 60px; width: 1px; height: 1px;"></div>
+
+          <!-- BOLD themed decorative: arrival burst, confetti bubbles -->
+          <div style="position: absolute; left: -30px; top: -10px; width: 300px; height: 240px; background: radial-gradient(circle, #E8432B 0%, transparent 70%); opacity: .18; z-index: 0;"></div>
+
+          <div style="position: absolute; left: 10px; top: 0px; width: 210px; height: 128px; background: #2F5FE0; border-radius: 30px 30px 30px 8px; box-shadow: 0 26px 44px rgba(47,95,224,.35); z-index: 2; display: flex; align-items: center; justify-content: center;">
+            <svg width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M2 20L14 31L26 10" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 20L34 31L52 4" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+
+          <span style="animation: confetti1 1.8s ease-out infinite; animation-delay: .3s; position: absolute; left: 230px; top: 50px; width: 20px; height: 20px; border-radius: 999px; background: #E8432B; z-index: 2;"></span>
+          <span style="animation: confetti2 1.8s ease-out infinite; animation-delay: .6s; position: absolute; left: 240px; top: 100px; width: 16px; height: 16px; border-radius: 999px; background: #FFB900; z-index: 2;"></span>
+          <span style="animation: confetti3 1.8s ease-out infinite; animation-delay: .9s; position: absolute; left: 150px; top: 110px; width: 14px; height: 14px; border-radius: 999px; background: #2F5FE0; z-index: 2;"></span>
+
+          <div style="position: absolute; left: 330px; top: 60px; width: 92px; height: 58px; background: #1FA591; border-radius: 22px 22px 22px 6px; box-shadow: 0 14px 24px rgba(31,165,145,.3); display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 14px; z-index: 1;">
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.9); width: 100%;"></span>
+            <span style="display: block; height: 7px; border-radius: 4px; background: rgba(255,255,255,.6); width: 60%;"></span>
+          </div>
+
+          <div style="position: absolute; left: 16px; top: 140px; display: flex; align-items: center; gap: 10px; background: #FFFFFF; border-radius: 999px; padding: 10px 16px; box-shadow: 0 10px 22px rgba(23,21,17,0.1); z-index: 3;">
+            <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M1 7L4.5 10.5L9 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 7L11.5 10.5L16 3" stroke="#2F5FE0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <span style="font-size: 13px; font-weight: 500; color: #171511; white-space: nowrap;">Signal received</span>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 184px; width: 270px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 24px; z-index: 2;">
+            <div style="display: flex; align-items: flex-end; gap: 14px; height: 150px; margin-bottom: 16px;">
+              <div style="width: 28px; height: 70%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 100%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 55%; background: #171511; border-radius: 6px 6px 0 0;"></div>
+              <div style="width: 28px; height: 40%; background: #FFB900; border-radius: 6px 6px 0 0;"></div>
+            </div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878; text-align: center;">CARE score by client</div>
+          </div>
+
+          <div style="position: absolute; right: -10px; top: 164px; width: 170px; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 22px; z-index: 2; text-align: center;">
+            <div style="width: 110px; height: 110px; margin: 0 auto 14px; border-radius: 999px; background: conic-gradient(#2F5FE0 0% 64%, #EDE4C6 64% 100%); display: flex; align-items: center; justify-content: center;"><div style="width: 78px; height: 78px; border-radius: 999px; background: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; color: #000000;">64%</div></div>
+            <div style="font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #8C8878;">Expansion rate</div>
+          </div>
+
+          <div style="position: absolute; left: 10px; top: 394px; width: 430px; max-width: 100%; background: #FFFFFF; border-radius: 16px; box-shadow: 0 20px 40px rgba(23,21,17,0.12); padding: 26px 26px 20px; z-index: 2;">
+            <div style="position: relative; height: 24px; margin-bottom: 10px;">
+              <div style="position: absolute; left: 0; right: 0; top: 11px; height: 2px; background: #EADFB8;"></div>
+              <div style="position: absolute; left: 50%; top: 2px; width: 2px; height: 20px; background: #171511; opacity: 0.4;"></div>
+              <span style="position: absolute; left: 4%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 12%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 18%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 30%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 36%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 47%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 50%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 53%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 64%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 70%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+              <span style="position: absolute; left: 80%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #FFB900;"></span>
+              <span style="position: absolute; left: 95%; top: 2px; width: 9px; height: 9px; border-radius: 999px; background: #171511;"></span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 12px; color: #171511;"><div><div style="font-weight: 600;">0</div><div style="color: #8C8878; font-size: 11px;">Minimum</div></div><div style="text-align: center;"><div style="font-weight: 600;">6.8</div><div style="color: #8C8878; font-size: 11px;">Peer average</div></div><div style="text-align: right;"><div style="font-weight: 600;">10</div><div style="color: #8C8878; font-size: 11px;">Maximum</div></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Scoped pitches and proposals drafted for you</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Warm re-introductions to dormant contacts</span></div>
+          <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Expansion tracked against each client's goals</span></div>
+        </div>
+        <a href="/demo/" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 16px; font-weight: 600; color: #171511; border-bottom: 2px solid #FFB900; width: fit-content; padding-bottom: 2px;">Book a demo<svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="#171511" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+      </div>
+    </div>
+  </section>
+    </div>'''
+
+
+
+def _cs_hero_copy_html(depth: int) -> str:
+    """Hero-v2 headline/lede/CTA for the standalone /customer-success-software/
+    landing page. Ported from the homepage-redesign branch's
+    trial_hero_copy_html() under a new name — kept separate (rather than
+    overwriting the shared trial_hero_copy_html(), which render_home() and
+    render_confirmation() still use) so the live homepage and its
+    /confirmation/ page are completely untouched by this page."""
+    p = relpath(depth)
+    return f'''<div class="kz-hero-copy kz-hero-copy--v2">
+        <div class="kz-hero-deco" aria-hidden="true">
+          <div class="kz-hero-bubble kz-hero-bubble--blue"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--teal"><span></span><span></span></div>
+          <div class="kz-hero-bubble kz-hero-bubble--gold"><span></span><span></span></div>
+          <span class="kz-hero-dot kz-hero-dot--blue"></span>
+          <span class="kz-hero-dot kz-hero-dot--teal"></span>
+          <span class="kz-hero-dot kz-hero-dot--gold"></span>
+          <span class="kz-hero-dot kz-hero-dot--red"></span>
+          <span class="kz-hero-dot kz-hero-dot--purple"></span>
+          <span class="kz-hero-dot kz-hero-dot--sage"></span>
+        </div>
+        <div class="kz-hero-copy-inner">
+          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
+          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
+            best action so you keep every client and grow every account.</p>
+          <div class="kz-hero-v2-cta">
+            <a class="kz-hero-pill" href="{p}demo/">Book a demo</a>
+          </div>
+        </div>
+      </div>'''
+
+
+def _cs_trial_form_html(depth: int) -> str:
+    """Ported 14-day-trial form card (no TRIAL_SIGNAL_SVG/badge) for the
+    standalone landing page — see _cs_hero_copy_html() for why this is a
+    separate function rather than a change to the shared trial_form_html()."""
+    p = relpath(depth)
+    heard = '\n'.join(f'<option value="{E(o)}">{E(o)}</option>' for o in TRIAL_HEARD_OPTIONS)
+    utm = '\n'.join(f'<input type="hidden" name="{tag}" id="mce-{tag}" value="" data-utm="{param}">'
+                    for tag, param in TRIAL_UTM_FIELDS)
+    arrow = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+             '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
+    return f'''<div class="kz-trial" data-trial>
+        <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+              action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
+          <h2 class="kz-trial-title">Start your 14-day free trial</h2>
+          <p class="kz-trial-sub">Discover the risks and growth opportunities in your own client
+            conversations, benchmarked against best-in-class.</p>
+          <div class="kz-trial-fields">
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+              </div>
+            </div>
+            <div class="kz-trial-row">
+              <div class="kz-trial-field">
+                <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+              <div class="kz-trial-field">
+                <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+                <input id="mce-PHONE" name="PHONE" type="tel" placeholder="07700 900000" autocomplete="tel" required>
+              </div>
+            </div>
+            <div class="kz-trial-more" data-trial-more>
+              <div class="kz-trial-more-inner">
+                <div class="kz-trial-row">
+                  <div class="kz-trial-field">
+                    <label for="mce-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+                  </div>
+                  <div class="kz-trial-field">
+                    <label for="mce-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+                    <input id="mce-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+                  </div>
+                </div>
+                <div class="kz-trial-field">
+                  <label for="mce-MMERGE12">How did you hear about us?</label>
+                  <select id="mce-MMERGE12" name="MMERGE12">
+                    <option value="">Select an option</option>
+                    {heard}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Attribution: filled from the page URL's UTM parameters by trial-form.js -->
+          {utm}
+          <!-- Tags Mailchimp applies automatically to every signup from this form -->
+          <div hidden><input type="hidden" name="tags" value="{TRIAL_MC_TAGS}"></div>
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
+          </div>
+          <button type="submit" name="subscribe" class="kz-trial-submit">Start my free trial {arrow}</button>
+          <p class="kz-trial-msg" data-trial-msg role="status" aria-live="polite"></p>
+          <p class="kz-trial-legal" data-trial-legal>
+            By submitting your details to Kaizan you are showing interest in our product and so we may
+            contact you from time to time about our product and services. You may unsubscribe from these
+            communications at any time. Please review our <a href="{p}privacy-policy/">Privacy Policy</a>
+            for information on how to unsubscribe and our privacy practices.
+          </p>
+        </form>
+      </div>'''
+
+
+def _cs_stats_band_html() -> str:
+    """Updated stats band (icon + 'avg.' label + white numbers) from the
+    design artifact's Section5-Stats — replaces stats_band_html()'s plain
+    bold-yellow-number version for this page only."""
+    stats = [
+        ('<rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>'
+         '<path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '21%', 'Average revenue increase per client'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
+         'avg.', '5.4 hrs', 'Admin saved per person, every week'),
+        ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="5" stroke="#FFB900" stroke-width="1.8"/>'
+         '<circle cx="12" cy="12" r="1.4" fill="#FFB900"/>',
+         'avg.', '45%', 'Of revenue at risk protected through early signals'),
+        ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
+         '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
+         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+        ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
+         'avg.', '23%', 'Lower cost to serve each client'),
+        ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
+         '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
+         None, '11M+', 'Client service data points behind every recommendation'),
+    ]
+
+    def _stat(icon, avg_label, num, desc):
+        avg_html = (f'<span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">{E(avg_label)}</span>'
+                    if avg_label else '')
+        return (f'<div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" '
+                f'style="margin:0 auto 14px;">{icon}</svg>'
+                f'<div style="display:flex;align-items:baseline;justify-content:center;gap:6px;">'
+                f'{avg_html}<div style="font-size:46px;font-weight:700;color:#FFFFFF;">{E(num)}</div></div>'
+                f'<div style="font-size:17px;color:#ffffff;margin-top:6px;">{E(desc)}</div></div>')
+
+    grid = '\n'.join(_stat(*s) for s in stats)
+    return f'''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
+  <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;">{grid}</div>
+    </div>
+  </section>
+</div>'''
+
+
+def _cs_lets_talk_html() -> str:
+    """'Let's talk' closer — 3 benefit cards + a Book a demo CTA."""
+    cards = [
+        ('var(--kz-yellow)', '#FFFFFF', 'Protects the revenue you already have'),
+        ('#7FB59E', '#FFFFFF', 'Gives your team their week back'),
+        ('#2F5FE0', '#FFFFFF', 'Unlocks growth inside existing accounts'),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-lt-card" style="background:{bg};color:{fg}">{E(text)}</div>'
+        for bg, fg, text in cards
+    )
+    arrow = ('<svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">'
+             '<path d="M1 6H15M15 6L10 1M15 6L10 11" stroke="currentColor" stroke-width="1.6" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    return f'''<section class="cs-lets-talk">
+      <div class="cs-lt-inner">
+        <h2 class="cs-lt-title">Let&rsquo;s talk</h2>
+        <p class="cs-lt-sub">3 ways Kaizan helps your client-facing team</p>
+        <div class="cs-lt-grid">{cards_html}</div>
+        <a class="kz-btn kz-btn-black cs-lt-cta" href="/demo/">Book a demo {arrow}</a>
+      </div>
+    </section>'''
+
+
+def _cs_modules_html() -> str:
+    """'Explore everything Kaizan does' module carousel. Reuses the site's
+    existing generic carousel engine (initQuoteCarousel in site.js runs
+    against any [data-carousel] root), so prev/next/dots/drag/auto-advance
+    all work with no extra JS."""
+    modules = [
+        ('AI Assistant', 'Joins every call and keeps your systems up to date', '''
+          <div style="width:100%;height:150px;background:#171511;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;">
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#D8D2BE;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">AC</div></div>
+            <div style="background:#2A2620;border-radius:8px;display:flex;align-items:center;justify-content:center;"><div style="width:30px;height:30px;border-radius:999px;background:#7FB59E;color:#171511;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;">N</div></div>
+            <div style="background:var(--kz-yellow);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;box-shadow:0 0 0 2px #FFFFFF inset;">
+              <img src="/assets/img/kaizan-icon.png" alt="" style="width:24px;height:24px;border-radius:6px;">
+              <span style="font-size:8px;font-weight:700;color:#171511;">Kaizan joined</span>
+            </div>
+          </div>'''),
+        ('AI Helpers', 'Specialist helpers working 24/7 on every client', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">Reply drafted &mdash; Acme Creative</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:12px;">QBR brief compiled &mdash; Northwind</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;display:flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0012 3z" stroke="#8C8878" stroke-width="1.8" stroke-linejoin="round"/></svg></span><span style="font-size:12px;color:#8C8878;">Suggested: re-engage Stark Industries</span></div>
+          </div>'''),
+        ('Client Health Score', 'Relationship health on every account', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:14px 18px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="align-self:flex-start;font-size:13px;font-weight:700;color:#171511;">Health Score</div>
+            <div style="width:88px;height:88px;border-radius:999px;background:conic-gradient(#1FA591 0% 84%,#E3EDE9 84% 100%);display:flex;align-items:center;justify-content:center;">
+              <div style="width:70px;height:70px;border-radius:999px;background:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;">
+                <div style="font-size:20px;font-weight:800;color:#171511;">8.4</div>
+                <div style="font-size:8px;font-weight:700;color:#1FA591;background:rgba(31,165,145,.15);padding:2px 7px;border-radius:999px;">THRIVING</div>
+              </div>
+            </div>
+          </div>'''),
+        ('Client News', 'Every conversation and commitment in one view', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Agenda drafted</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span style="font-size:13px;">Metrics compiled</span></div>
+            <div style="display:flex;align-items:center;gap:10px;"><span style="width:24px;height:24px;border-radius:999px;background:#EDE4C6;"></span><span style="font-size:13px;color:#8C8878;">Deck exported</span></div>
+          </div>'''),
+        ('Risk Watcher', "Early warnings before a client leaves", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:10px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Acme Creative &mdash; sentiment dropping</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:var(--kz-yellow);display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#171511" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#171511" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Northwind &mdash; renewal in 14 days</span></div>
+            <div style="display:flex;align-items:center;gap:8px;"><span style="width:20px;height:20px;border-radius:999px;background:#E8432B;display:flex;align-items:center;justify-content:center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 3L2 20h20L12 3z" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/><path d="M12 9v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/></svg></span><span style="font-size:12px;color:#171511;">Stark Industries &mdash; champion left</span></div>
+          </div>'''),
+        ('Expansion Scout', 'Upsell signals the moment they land', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;justify-content:center;gap:10px;">
+            <div style="display:flex;align-items:flex-end;gap:8px;height:70px;">
+              <div style="width:20px;height:35%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:50%;background:#EDE4C6;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:68%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+              <div style="width:20px;height:100%;background:#7FB59E;border-radius:4px 4px 0 0;"></div>
+            </div>
+            <div style="font-size:11px;background:rgba(127,181,158,.18);color:#171511;font-weight:600;padding:5px 9px;border-radius:999px;width:fit-content;">&#9650; +$42k opportunity flagged</div>
+          </div>'''),
+        ('Reply Drafter', 'Follow-ups written in your voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:2px;"><span style="width:20px;height:20px;border-radius:999px;background:#2F5FE0;color:#FFFBF0;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;">JL</span><span style="font-size:12px;font-weight:600;color:#171511;">Reply to Jordan Lee</span></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:95%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:80%;"></div>
+            <div style="height:6px;border-radius:999px;background:#EDE4C6;width:60%;"></div>
+            <div style="font-size:11px;color:#2F5FE0;font-weight:600;margin-top:4px;">&check; Draft ready for review</div>
+          </div>'''),
+        ('QBR Builder', 'Review decks compiled from real conversations', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(-8deg);"></div>
+            <div style="width:58px;height:82px;background:#7C5CFC;border-radius:6px;box-shadow:0 10px 20px rgba(124,92,252,.3);display:flex;align-items:center;justify-content:center;z-index:1;"><svg width="26" height="20" viewBox="0 0 26 20" fill="none"><rect x="1" y="12" width="4" height="7" fill="#FFFFFF" opacity=".8"/><rect x="7" y="7" width="4" height="12" fill="#FFFFFF"/><rect x="13" y="10" width="4" height="9" fill="#FFFFFF" opacity=".8"/><rect x="19" y="3" width="4" height="16" fill="#FFFFFF"/></svg></div>
+            <div style="width:54px;height:76px;background:#EDE4C6;border-radius:6px;transform:rotate(8deg);"></div>
+          </div>'''),
+        ('Stakeholder Map', "See who matters and who's gone quiet", '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;gap:14px;align-items:center;">
+              <div style="width:36px;height:36px;border-radius:999px;background:#1FA591;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(31,165,145,.3);">JL</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">PS</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#2F5FE0;color:#FFFFFF;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px rgba(47,95,224,.3);">AC</div>
+              <div style="width:36px;height:36px;border-radius:999px;background:#D8D2BE;color:#8C8878;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">NW</div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">2 stakeholders gone quiet</div>
+          </div>'''),
+        ('Ask Kaizan', 'Ask anything about any client and get cited answers', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;gap:8px;justify-content:center;">
+            <div style="align-self:flex-end;max-width:80%;background:#171511;color:#FFFBF0;font-size:11px;padding:7px 11px;border-radius:999px 999px 4px 999px;">Is Acme at risk?</div>
+            <div style="max-width:88%;background:#EDE4C6;color:#171511;font-size:11px;line-height:1.4;padding:7px 11px;border-radius:999px 999px 999px 4px;">Yes &mdash; sentiment dropped 18% <span style="color:#8C8878;">[Oct 3 call]</span></div>
+          </div>'''),
+        ('My Voice', 'Writes emails in your tone of voice', '''
+          <div style="width:100%;height:150px;background:#FFFFFF;border-radius:12px;box-shadow:0 16px 32px rgba(23,21,17,.1);padding:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;">
+            <div style="display:flex;align-items:center;gap:4px;height:44px;">
+              <div style="width:4px;height:40%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:70%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:100%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:55%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:85%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:35%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:65%;background:#171511;border-radius:999px;"></div>
+              <div style="width:4px;height:90%;background:var(--kz-yellow);border-radius:999px;"></div>
+              <div style="width:4px;height:45%;background:#171511;border-radius:999px;"></div>
+            </div>
+            <div style="font-size:11px;color:#8C8878;">96% match to your tone</div>
+          </div>'''),
+    ]
+    cards_html = '\n'.join(
+        f'<div class="cs-modcard">{visual}'
+        f'<div class="cs-modcard-title">{E(title)}</div>'
+        f'<p class="cs-modcard-desc">{E(desc)}</p></div>'
+        for title, desc, visual in modules
+    )
+    dots_html = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show module {i + 1}"></button>'
+        for i in range(len(modules))
+    )
+    return f'''<section class="cs-modules">
+      <div class="cs-modules-inner">
+        <div class="cs-modules-head">
+          <h2 class="cs-modules-title">Explore everything Kaizan does</h2>
+        </div>
+        <div class="kz-carousel" data-carousel>
+          <button class="kz-carousel-arrow is-prev" data-carousel-prev type="button" aria-label="Previous module">&lsaquo;</button>
+          <div class="kz-carousel-viewport" data-carousel-viewport>{cards_html}</div>
+          <button class="kz-carousel-arrow is-next" data-carousel-next type="button" aria-label="Next module">&rsaquo;</button>
+        </div>
+        <div class="kz-carousel-dots" data-carousel-dots>{dots_html}</div>
+      </div>
+    </section>'''
+
+
+def _cs_integrations_faq_html() -> str:
+    """'Works with the tools you already use' icon grid + an FAQ accordion.
+    The accordion uses native <details>/<summary> — no JS needed."""
+    icons_html = '\n'.join(
+        f'<div class="cs-int-icon"><div class="cs-int-icon-box">{INT_LOGOS.get(i["k"], "")}</div>'
+        f'<div class="cs-int-icon-label">{E(i["name"])}</div></div>'
+        for i in INT_DATA
+    )
+    faqs = [
+        ('Is AI built into Kaizan, or is it an add-on?',
+         'AI is the core of Kaizan. Your Helpers work from day one, capturing '
+         'conversations, drafting follow-ups and flagging risk and opportunity '
+         'without any extra setup.'),
+        ('How does Kaizan help prevent client churn?',
+         "Kaizan scores the health of every relationship and watches for early "
+         "warning signs, like a quiet stakeholder or falling sentiment. You get "
+         "an alert and a recommended next step while there's still time to act."),
+        ('How much time will my team save?',
+         'On average, 5.4 hours per person per week. Kaizan handles meeting '
+         'notes, follow-ups, system updates and report prep, so your team can '
+         'spend that time with clients.'),
+        ('How does Kaizan find upsell opportunities?',
+         'It listens for buying signals across every meeting, email and chat, '
+         'such as a client asking "do you do analytics?". It then flags the '
+         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'increase in their addressable upsell pool.'),
+        ('What are the recommendations based on?',
+         "Kaizan's forecasts draw on over 11 million points of client service "
+         "data, benchmarked against best-in-class client teams, plus the "
+         "conversations from your own accounts."),
+    ]
+    plus = ('<svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">'
+            '<path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg>')
+    faq_html = '\n'.join(
+        f'<details class="cs-faq-item">'
+        f'<summary class="cs-faq-summary"><span>{E(q)}</span>{plus}</summary>'
+        f'<p class="cs-faq-body">{E(a)}</p>'
+        f'</details>'
+        for q, a in faqs
+    )
+    return f'''<section class="cs-integrations">
+      <div class="cs-int-inner">
+        <h2 class="cs-int-title">Works with the tools you already use</h2>
+        <div class="cs-int-grid">{icons_html}</div>
+      </div>
+      <div class="cs-faq-inner">
+        <h2 class="cs-faq-title">Frequently asked questions</h2>
+        {faq_html}
+      </div>
+    </section>'''
+
+
+
+
+def render_customer_success_software(keep_nav: bool = False) -> str:
+    """Standalone SEO landing page at /customer-success-software/, targeting
+    the "customer success software" search term with the same hero-v2 /
+    playbooks / stats-band / testimonial design reviewed throughout this
+    project's homepage-redesign work (PR #85) — but built independently of
+    that still-WIP PR so it can ship on its own.
+
+    Everything the design needs (new hero/why/playbooks/trial-card CSS, the
+    two playbooks scroll-sync JS functions, the hero video) is ported in
+    here or inlined in this page's own <style>/<script>, rather than
+    touching the shared site.css/site.js/render_home().
+
+    keep_nav=True (used for the real homepage, see main()) keeps the full nav
+    menu and the home-linked logo instead of trimming to logo + "Book a demo"."""
+    p = relpath(0)
+
+    # ---- Quote carousel content (same testimonials as the redesign) ----
+    carousel_quotes = [
+        dict(q='Kaizan is helping us reduce the manual tasks, the ones that take a '
+               'long time but are less valuable, so we can focus on our clients.',
+             name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
+             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
+        dict(q='This tool is an absolute game-changer. Don’t even question it. '
+               'It’s money very well spent. An invaluable customer tool.',
+             name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
+             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
+        dict(q='We’ve had numerous occasions where we’ve been able to spot and '
+               'identify high-risk clients that potentially were going to leave.',
+             name='Brandon Smith', role='Managing Director', co='NP Digital',
+             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
+    ]
+    _persona_blog = {
+        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
+        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
+        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
+        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
+        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
+        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+    }
+    _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
+    for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
+               'Adam Hopkinson', 'Gabriella Krite', 'Alex Beddoe']:
+        _pp = _by_quote_name[_n]
+        carousel_quotes.append(dict(q=_pp['quote_pull'], name=_n,
+                                    role=_pp['quote_role'], co=_pp['quote_co'],
+                                    blog=_persona_blog.get(_n)))
+    company_logo = {
+        'Gravity Global': 'gravity-global.svg', 'Searchlab': 'searchlab.png',
+        'NP Digital': 'np-digital.png', 'Tradedoubler': 'tradedoubler.png',
+        'Collective Content': 'collective-content.svg', 'Verkeer': 'verkeer.png',
+        'PASHN': 'pashn-media-agency.svg', 'The Kite Factory': 'the-kite-factory.png',
+        'Transmission': 'transmission.png',
+    }
+    logo_h = {
+        'Gravity Global': 52, 'Searchlab': 44, 'NP Digital': 52, 'Tradedoubler': 42,
+        'Collective Content': 46, 'Verkeer': 52, 'PASHN': 35,
+        'The Kite Factory': 84, 'Transmission': 42,
+    }
+
+    def _qcard(cq):
+        logo = company_logo.get(cq['co'], '')
+        h = logo_h.get(cq['co'], 52)
+        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+                 f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
+            else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
+        logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+                if cq.get('blog') else '')
+        return (f'<figure class="kz-qcard">'
+                f'{logo_html}'
+                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
+                f'<q>{E(cq["q"])}</q>'
+                f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
+                f'{more}'
+                f'</figure>')
+
+    carousel_cards = '\n'.join(_qcard(cq) for cq in carousel_quotes)
+    carousel_dots = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
+        for i in range(len(carousel_quotes))
+    )
+
+    body = f'''
+    {nav_html(0)}
+
+    <!-- HERO -->
+    <section class="kz-hero kz-hero--trial">
+      {_cs_hero_copy_html(0)}
+      <div class="kz-trial-col">
+        <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
+        {_cs_trial_form_html(0)}
+      </div>
+    </section>
+
+    {marquee_html(CLIENT_LOGOS, depth=0)}
+
+    <!-- HERO REEL -->
+    <section class="kz-reel-section">
+      <div class="kz-reel">
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <!-- WHY KAIZAN -->
+    <section class="kz-why">
+      <div class="kz-why-inner">
+        <h2 class="kz-why-title">Why choose Kaizan&rsquo;s client intelligence?</h2>
+        <div class="kz-why-grid">
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--gold">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="#171511" stroke-width="2"></circle><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#171511" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Keep the clients you&rsquo;ve won</h3>
+            <p class="kz-why-card-desc">Early warning signals flag at-risk accounts while there&rsquo;s still time to act.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--blue">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#FFFFFF" stroke-width="2"></circle><path d="M12 7v5l4 2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Get hours back every week</h3>
+            <p class="kz-why-card-desc">AI Helpers draft the follow-ups, update your systems and prep the QBRs for you.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--teal">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2" stroke="#FFFFFF" stroke-width="2"></rect><circle cx="12" cy="12" r="3" stroke="#FFFFFF" stroke-width="2"></circle><path d="M6 9.5v5M18 9.5v5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">Unlock revenue hidden in your accounts</h3>
+            <p class="kz-why-card-desc">Upsell and cross-sell signals surface the moment a client mentions them.</p>
+          </div>
+          <div class="kz-why-card">
+            <div class="kz-why-icon kz-why-icon--red">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
+            </div>
+            <h3 class="kz-why-card-title">11M+ of client service signals</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYBOOKS / RISK / ACTIONS / GROWTH -->
+    {playbooks_sections_html()}
+
+    <!-- STATS -->
+    {_cs_stats_band_html()}
+
+    <!-- QUOTE CAROUSEL -->
+    <section class="kz-quotes">
+      <div class="kz-quotes-head">
+        <h2 class="kz-quotes-title">What our clients say</h2>
+      </div>
+      <div class="kz-carousel" data-carousel>
+        <button class="kz-carousel-arrow is-prev" type="button" data-carousel-prev aria-label="Previous quote">&lsaquo;</button>
+        <div class="kz-carousel-viewport" data-carousel-viewport>
+          {carousel_cards}
+        </div>
+        <button class="kz-carousel-arrow is-next" type="button" data-carousel-next aria-label="Next quote">&rsaquo;</button>
+      </div>
+      <div class="kz-carousel-dots" data-carousel-dots>{carousel_dots}</div>
+    </section>
+
+    <!-- LET'S TALK -->
+    {_cs_lets_talk_html()}
+
+    <!-- MODULES CAROUSEL -->
+    {_cs_modules_html()}
+
+    <!-- INTEGRATIONS + FAQ -->
+    {_cs_integrations_faq_html()}
+
+    {footer_html(0)}
+    '''
+
+    extra_head = dedent('''\
+        <script defer src="assets/js/trial-form.js''' + asset_v('assets/js/trial-form.js') + '''"></script>
+        <style>
+          /* ============================================================
+             Ported homepage-redesign look (hero-v2, Why Kaizan, Playbooks,
+             stats band font, restyled trial card, shrunk quote cards).
+             Inlined here rather than added to the shared site.css, so the
+             live homepage/site.css are completely unaffected by this page.
+             ============================================================ */
+          .kz-hero--trial {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 44px;
+            align-items: stretch;
+            padding-top: 80px;
+            padding-bottom: 12px;
+          }
+          .kz-hero-copy--v2 { padding: 24px 8px; overflow: visible; display: flex; flex-direction: column; }
+          .kz-hero-copy-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; }
+          .kz-hero-v2-h1 {
+            margin: 0; font-family: var(--kz-display);
+            font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
+            letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+          }
+          .kz-hero-v2-lede {
+            margin: 0; max-width: 44ch;
+            font-size: 20px; line-height: 1.55; font-weight: 500; color: #3F3B2F;
+          }
+          .kz-hero-v2-cta { align-self: flex-start; margin-top: 0; padding-top: 20px; }
+          .kz-hero-pill {
+            display: inline-flex; align-items: center; justify-content: center;
+            background: var(--kz-yellow); color: var(--kz-ink); font-size: 16px; font-weight: 700;
+            padding: 14px 26px; border-radius: 999px; text-decoration: none;
+            box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 10px 24px -8px rgba(255,185,0,.55);
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+          }
+          .kz-hero-pill:hover { transform: translateY(-2px); background: var(--kz-yellow-deep); box-shadow: 0 16px 32px -12px rgba(255,185,0,.6); }
+          .kz-hero-deco { position: absolute; inset: 0; z-index: 0; pointer-events: none; transform: translateY(-28px); }
+          .kz-hero-bubble {
+            position: absolute; border-radius: 26px 26px 26px 6px; padding: 14px 16px;
+            animation: heroFloat 5s ease-in-out infinite;
+          }
+          .kz-hero-bubble span { display: block; height: 7px; border-radius: 999px; }
+          .kz-hero-bubble span:first-child { width: 70%; margin-bottom: 9px; background: rgba(255,255,255,.88); }
+          .kz-hero-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+          .kz-hero-bubble--blue { left: -22px; top: -46px; width: 120px; height: 70px; background: #1FA591; box-shadow: 0 20px 34px rgba(31,165,145,.38); }
+          .kz-hero-bubble--teal { right: 6px; bottom: 4px; width: 100px; height: 70px; background: #2F5FE0; box-shadow: 0 18px 30px rgba(47,95,224,.34); animation-delay: .6s; }
+          .kz-hero-bubble--gold { right: 52px; top: -34px; width: 60px; height: 48px; background: #E8432B; box-shadow: 0 14px 24px rgba(232,67,43,.4); animation-delay: .3s; }
+          .kz-hero-bubble--gold span:first-child { background: rgba(255,255,255,.88); }
+          .kz-hero-bubble--gold span:last-child { background: rgba(255,255,255,.6); }
+          .kz-hero-dot { position: absolute; border-radius: 999px; animation: heroFloat 4s ease-in-out infinite; }
+          .kz-hero-dot--blue { left: -30px; top: 72px; width: 10px; height: 10px; background: #2F5FE0; }
+          .kz-hero-dot--teal { right: -10px; top: 48px; width: 8px; height: 8px; background: #1FA591; animation-delay: .4s; }
+          .kz-hero-dot--gold { right: 20px; bottom: 10px; width: 12px; height: 12px; background: var(--kz-yellow); animation-delay: .2s; }
+          .kz-hero-dot--red { left: 2px; bottom: -10px; width: 9px; height: 9px; background: #E8432B; animation-delay: .7s; }
+          .kz-hero-dot--purple { right: 112px; top: -24px; width: 7px; height: 7px; background: #7C5CFC; animation-delay: .5s; }
+          .kz-hero-dot--sage { left: 60px; top: -30px; width: 6px; height: 6px; background: #7FB59E; animation-delay: .9s; }
+          @keyframes heroFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+          @media (prefers-reduced-motion: reduce) { .kz-hero-bubble, .kz-hero-dot, .kz-trial-bubble { animation: none; } }
+          .kz-trial-col { position: relative; display: flex; flex-direction: column; }
+          .kz-trial-col > .kz-trial { flex: 1; }
+          .kz-trial-bubble {
+            position: absolute; top: -44px; right: -12px; z-index: 0;
+            width: 150px; height: 96px; padding: 18px 20px;
+            background: #7C5CFC; border-radius: 28px 28px 28px 6px;
+            box-shadow: 0 20px 34px rgba(124,92,252,.4);
+            animation: heroFloat 5s ease-in-out infinite; pointer-events: none;
+          }
+          .kz-trial-bubble span { display: block; height: 8px; border-radius: 999px; }
+          .kz-trial-bubble span:first-child { width: 70%; margin-bottom: 12px; background: rgba(255,255,255,.85); }
+          .kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
+          .kz-reel-section { padding: 20px 24px 12px; }
+          .kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
+          .kz-reel-video { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 84vh; }
+          @media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
+          .kz-why { padding: 84px var(--kz-gutter) 72px; }
+          .kz-why-inner { max-width: 1280px; margin: 0 auto; }
+          .kz-why-title {
+            margin: 0 0 56px; text-align: center; font-family: var(--kz-display);
+            font-size: clamp(36px, 4.4vw, 54px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; color: #000;
+          }
+          .kz-why-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+          .kz-why-card {
+            padding: 6px 36px;
+            display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center;
+            border-left: 1px solid var(--kz-line);
+          }
+          .kz-why-card:first-child { border-left: none; }
+          .kz-why-icon {
+            width: 72px; height: 72px; border-radius: 20px; flex: none;
+            display: flex; align-items: center; justify-content: center;
+            animation: iconPop 3.4s ease-in-out infinite;
+          }
+          .kz-why-icon svg { width: 34px; height: 34px; }
+          .kz-why-icon--gold { background: var(--kz-yellow); }
+          .kz-why-icon--blue { background: #2F5FE0; animation-delay: .3s; }
+          .kz-why-icon--teal { background: #1FA591; animation-delay: .6s; }
+          .kz-why-icon--red  { background: #E8432B; animation-delay: .9s; }
+          .kz-why-card-title { margin: 0; font-size: 21px; font-weight: 700; line-height: 1.25; color: #000; }
+          .kz-why-card-desc { margin: 0; font-size: 16px; line-height: 1.55; color: #4A4639; }
+          @keyframes iconPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+          @media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
+          .kz-statsband { font-family: var(--kz-sans); }
+          @media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
+          @media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+          .kz-pb { position: relative; overflow: hidden; }
+          .kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
+          .kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
+          .kz-pb a[href] { border-bottom: 0 !important; padding-bottom: 0 !important; }
+          .bubbleTraveler {
+            position: absolute; left: 0; top: 0; width: 46px; height: 34px;
+            border-radius: 14px 14px 14px 5px; box-shadow: 0 10px 22px rgba(0,0,0,.28);
+            opacity: 0; will-change: offset-distance, opacity, transform;
+          }
+          .travelerLine { position: absolute; left: 7px; right: 9px; height: 3px; border-radius: 2px; background: rgba(255,255,255,.85); }
+          @keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+          @keyframes bubbleFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+          @keyframes barGrow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+          @keyframes bigBob { 0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); } 50% { transform: translateY(-20px) rotate(var(--r, 0deg)); } }
+          @keyframes typeDot { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-8px); opacity: 1; } }
+          @keyframes glowPulse { 0%, 100% { transform: scale(1); opacity: .55; } 50% { transform: scale(1.35); opacity: .9; } }
+          @keyframes confetti1 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(-70px,-60px) scale(1.1); } }
+          @keyframes confetti2 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(80px,-40px) scale(1.1); } }
+          @keyframes confetti3 { from { opacity: 0; transform: translate(0,0) scale(.4); } 50% { opacity: 1; } to { opacity: 0; transform: translate(10px,-90px) scale(1.1); } }
+          @media (prefers-reduced-motion: reduce) { .kz-pb [style*="animation"] { animation: none !important; } }
+          @media (max-width: 900px) {
+            .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+            .kz-why-card { border-left: none; }
+            .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+          }
+          @media (max-width: 560px) {
+            .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
+            .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
+            .kz-why-card:first-child { border-top: none; }
+          }
+          .kz-trial {
+            position: relative; overflow: hidden; z-index: 1;
+            display: flex; flex-direction: column;
+            background: linear-gradient(180deg, #FFCA33 0%, #FFB900 52%, #F0A800 100%);
+            color: var(--kz-ink);
+            border: 1px solid rgba(0,0,0,.14); border-radius: 16px;
+            padding: 30px 32px 28px;
+            box-shadow:
+              inset 0 2px 0 rgba(255,255,255,.55),
+              inset 0 -4px 10px rgba(150,95,0,.22),
+              0 2px 4px rgba(40,30,15,.25),
+              0 14px 28px -8px rgba(255,185,0,.55),
+              0 34px 64px -22px rgba(40,30,15,.5);
+          }
+          .kz-trial-form { flex: 1; display: flex; flex-direction: column; }
+          .kz-trial-form, .kz-trial-done { position: relative; }
+          .kz-trial-title { margin: 0; font-size: 27px; font-weight: 700; letter-spacing: -.68px; line-height: 1.2; color: var(--kz-ink); }
+          .kz-trial-sub { margin: 10px 0 0; font-size: 16px; font-weight: 500; line-height: 1.55; color: rgba(0,0,0,.72); }
+          .kz-trial-fields { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+          .kz-trial-row { display: flex; gap: 14px; }
+          .kz-trial-row > * { flex: 1; min-width: 0; }
+          .kz-trial-field label {
+            display: block; margin-bottom: 7px;
+            font-family: var(--kz-mono); font-size: 12.5px; font-weight: 700; letter-spacing: .3px;
+            text-transform: uppercase; color: rgba(0,0,0,.72);
+          }
+          .kz-trial-field input, .kz-trial-field select {
+            box-sizing: border-box; width: 100%;
+            background: rgba(255,255,255,.72); color: var(--kz-ink);
+            border: 1px solid rgba(0,0,0,.18); border-radius: 8px;
+            font: inherit; font-size: 15.5px; font-weight: 500; padding: 13px 14px;
+          }
+          .kz-trial-field .req { color: #C0341D; }
+          .kz-trial-field input::placeholder { color: rgba(0,0,0,.42); }
+          .kz-trial-field input:focus, .kz-trial-field select:focus { outline: 2px solid var(--kz-ink); outline-offset: 1px; }
+          .kz-trial-field select {
+            appearance: none; -webkit-appearance: none; padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23171511' stroke-opacity='0.6' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 14px center;
+          }
+          .kz-trial-field select option { color: var(--kz-ink); background: #fff; }
+          .kz-trial-more { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .35s ease, opacity .35s ease, margin-top .35s ease; }
+          .kz-trial.is-js .kz-trial-more:not(.is-open) { grid-template-rows: 0fr; margin-top: -14px; opacity: 0; }
+          .kz-trial-more-inner { min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 14px; padding: 3px; margin: -3px; }
+          .kz-trial-submit {
+            margin-top: auto; width: 100%;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: var(--kz-ink); color: var(--kz-paper);
+            border: none; border-radius: 999px; padding: 16px 22px; cursor: pointer;
+            font: inherit; font-size: 16px; font-weight: 600; letter-spacing: -.16px;
+            box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
+            transition: transform .2s ease, box-shadow .2s ease;
+          }
+          .kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
+          .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
+          .kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
+          .kz-trial-msg.is-shown { display: block; }
+          .kz-trial-legal { margin: 16px 0 0; font-size: 12px; line-height: 1.55; color: rgba(0,0,0,.6); }
+          .kz-trial.is-js .kz-trial-legal:not(.is-open) { display: none; }
+          .kz-trial-legal a { color: var(--kz-ink); text-decoration: underline; font-weight: 600; }
+          @media (max-width: 1024px) {
+            .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
+            .kz-hero--trial .kz-trial { max-width: 640px; }
+          }
+          @media (max-width: 768px) {
+            .kz-hero-v2-h1 { font-size: 34px; }
+            .kz-hero-v2-lede { font-size: 17px; }
+            .kz-hero-deco, .kz-trial-bubble { display: none; }
+            .kz-trial { padding: 28px 22px 24px; }
+          }
+          @media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+          .kz-qcard {
+            flex: 0 0 300px; max-width: 84vw; margin: 0; scroll-snap-align: start;
+            background: #FCF6E2; border: 1px solid var(--kz-line); border-radius: 14px;
+            padding: 20px 20px; display: flex; flex-direction: column; align-items: center;
+            text-align: center; gap: 8px; position: relative; overflow: hidden;
+            box-shadow: 0 2px 6px rgba(40,30,15,.08), 0 14px 26px -10px rgba(40,30,15,.22), 0 32px 50px -20px rgba(40,30,15,.32);
+          }
+          .kz-qcard::before, .kz-qcard::after { content: ""; position: absolute; left: 0; right: 0; height: 6px; background: var(--kz-yellow); }
+          .kz-qcard::before { top: 0; }
+          .kz-qcard::after { bottom: 0; }
+          .kz-qcard-logobox { height: 42px; display: flex; align-items: center; justify-content: center; }
+          .kz-qcard-logo { height: 32px; width: auto; max-width: 160px; object-fit: contain; filter: grayscale(1) brightness(0) opacity(0.85); }
+          .kz-qcard-co { font-weight: 700; font-size: 13px; color: var(--kz-ink); }
+          .kz-qcard-mark { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 42px; line-height: 1; color: var(--kz-yellow); margin: -2px 0 -14px; user-select: none; }
+          .kz-qcard q {
+            font-family: var(--kz-display); font-size: 14.5px; font-weight: 600;
+            line-height: 1.4; color: var(--kz-ink); quotes: none; flex: 0 0 auto;
+            display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+          }
+          .kz-qcard q::before, .kz-qcard q::after { content: none; }
+          .kz-qcard figcaption { margin: 0; }
+          .kz-qcard .kz-portrait { flex-direction: column; gap: 5px; }
+          .kz-qcard .kz-portrait .meta { text-align: center; }
+          .kz-qcard .kz-portrait .name { font-weight: 700; font-size: 13.5px; color: var(--kz-ink); }
+          .kz-qcard .kz-portrait .role { font-size: 12px; color: rgba(0,0,0,.62); }
+          .kz-qcard .kz-portrait .avatar { width: 46px; height: 46px; font-size: 15px; box-shadow: 0 0 0 3px var(--kz-yellow); }
+          .kz-qcard-more {
+            align-self: center;
+            font-family: var(--kz-display); font-weight: 700; font-size: 12px;
+            color: var(--kz-ink); text-decoration: none; white-space: nowrap;
+            padding: 7px 15px; border-radius: 999px;
+            border: 1.5px solid var(--kz-yellow); background: var(--kz-yellow);
+            transition: filter .18s, box-shadow .18s;
+          }
+          .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
+
+          /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
+          :root {
+            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          }
+          __NAVHIDE__
+          .kz-quotes { position: relative; }
+          .kz-quotes .kz-carousel { position: static; }
+          .kz-quotes .kz-carousel-arrow {
+            display: flex; position: absolute; top: 48px;
+            width: 32px; height: 32px; font-size: 15px;
+          }
+          .kz-quotes .kz-carousel-arrow.is-prev { right: calc(var(--kz-gutter) + 40px); }
+          .kz-quotes .kz-carousel-arrow.is-next { right: var(--kz-gutter); }
+          @media (max-width: 900px) { .kz-quotes .kz-carousel-arrow { display: none; } }
+
+          .cs-lets-talk { background: var(--kz-sand); padding: 0 var(--kz-gutter); }
+          .cs-lt-inner {
+            max-width: 1280px; margin: 0 auto; padding: 96px 0;
+            text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;
+          }
+          .cs-lt-title { margin: 0; font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-lt-sub { margin: 0; font-size: 22px; font-weight: 700; color: var(--kz-ink); max-width: 46ch; }
+          .cs-lt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; margin-top: 20px; }
+          .cs-lt-card {
+            min-height: 110px; border-radius: 26px 26px 26px 6px; display: flex;
+            align-items: center; justify-content: center; padding: 18px 20px;
+            font-size: 15px; font-weight: 600; text-align: center; line-height: 1.4;
+            box-shadow: 0 16px 30px rgba(23,21,17,.14);
+          }
+          .cs-lt-cta { margin-top: 12px; padding: 14px 26px; font-size: 15px; }
+          @media (max-width: 760px) { .cs-lt-grid { grid-template-columns: 1fr; } }
+
+          .cs-modules { background: var(--kz-yellow); padding: 0 var(--kz-gutter); }
+          .cs-modules-inner { position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 0; }
+          .cs-modules-head { margin-bottom: 40px; }
+          .cs-modules-title { margin: 0; font-size: 36px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: calc(100% - 160px); }
+          .cs-modules .kz-carousel { position: static; }
+          .cs-modules .kz-carousel-arrow {
+            display: flex; position: absolute; top: 46px;
+            width: 44px; height: 44px; font-size: 22px; background: #FFFFFF;
+          }
+          .cs-modules .kz-carousel-arrow.is-prev { right: 60px; }
+          .cs-modules .kz-carousel-arrow.is-next { right: 0; }
+          .cs-modcard {
+            flex: 0 0 320px; scroll-snap-align: start; background: #000000;
+            border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 16px;
+          }
+          .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
+          .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
+          .cs-modules .kz-carousel-dots { margin-top: 32px; }
+          @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
+
+          .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
+          .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+          .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+          .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
+          .cs-int-icon-box {
+            background: #FFFFFF; border-radius: 16px; width: 76px; height: 76px;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 18px rgba(23,21,17,.07); transition: transform .2s ease;
+          }
+          .cs-int-icon:hover .cs-int-icon-box { transform: translateY(-3px); }
+          .cs-int-icon-box img { width: 30px; height: 30px; object-fit: contain; }
+          .cs-int-icon-label { font-size: 12px; font-weight: 600; text-align: center; }
+          .cs-faq-inner { max-width: 1280px; margin: 0 auto; padding: 56px 0 110px; }
+          .cs-faq-title { margin: 0 0 32px; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; text-align: center; }
+          .cs-faq-item { border-bottom: 1px solid var(--kz-line); padding: 22px 4px; }
+          .cs-faq-item:last-of-type { border-bottom: none; }
+          .cs-faq-summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 16px; font-weight: 700; cursor: pointer; list-style: none; }
+          .cs-faq-summary::-webkit-details-marker { display: none; }
+          .cs-faq-plus { flex: none; transition: transform .25s ease; }
+          .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
+          .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
+        </style>
+        <script>
+        (function () {
+          function initReel() {
+            var vids = document.querySelectorAll('[data-play-inview]');
+            if (!vids.length) return;
+            if (!('IntersectionObserver' in window)) {
+              vids.forEach(function (v) { v.play().catch(function () {}); });
+              return;
+            }
+            var io = new IntersectionObserver(function (entries) {
+              entries.forEach(function (e) {
+                var v = e.target;
+                if (e.isIntersecting) {
+                  try { v.currentTime = 0; } catch (err) {}
+                  v.play().catch(function () {});
+                } else {
+                  v.pause();
+                }
+              });
+            }, { threshold: 0.35 });
+            vids.forEach(function (v) { io.observe(v); });
+          }
+          function initPbConnectors() {
+            var root = document.getElementById('sceneRoot');
+            if (!root) return;
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            function applyRealPath(originId, destId, selector) {
+              try {
+                var origin = document.getElementById(originId);
+                var dest = document.getElementById(destId);
+                var travelers = document.querySelectorAll(selector);
+                if (!origin || !dest || !travelers.length) return;
+                var rRect = root.getBoundingClientRect();
+                var oRect = origin.getBoundingClientRect();
+                var dRect = dest.getBoundingClientRect();
+                var ox = oRect.left - rRect.left + oRect.width / 2;
+                var oy = oRect.top - rRect.top + oRect.height / 2;
+                var dx = dRect.left - rRect.left + dRect.width / 2;
+                var dy = dRect.top - rRect.top + dRect.height / 2;
+                var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
+                var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
+                var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
+                travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
+              } catch (e) {}
+            }
+            function applyAllPaths() {
+              applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
+              applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
+              applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
+            }
+            function trackProgress(trackId) {
+              var el = document.getElementById(trackId);
+              if (!el) return 0;
+              var rect = el.getBoundingClientRect();
+              var vh = window.innerHeight || document.documentElement.clientHeight;
+              var total = rect.height + vh;
+              if (total <= 0) return 0;
+              return Math.min(1, Math.max(0, (vh - rect.top) / total));
+            }
+            var legs = [
+              { track: 'launchZoneA', selector: '.connA' },
+              { track: 'launchZoneB', selector: '.connB' },
+              { track: 'launchZone',  selector: '.connC' }
+            ];
+            var state = {};
+            function tick() {
+              legs.forEach(function (leg) {
+                var master = trackProgress(leg.track);
+                var travelers = document.querySelectorAll(leg.selector);
+                travelers.forEach(function (el, i) {
+                  var stagger = i * 0.07;
+                  var target = Math.min(1, Math.max(0, master - stagger));
+                  var key = leg.selector + i;
+                  var cur = state[key] === undefined ? target : state[key];
+                  var next = cur + (target - cur) * 0.18;
+                  state[key] = next;
+                  var fadeIn = Math.min(1, next / 0.08);
+                  var fadeOut = Math.min(1, (1 - next) / 0.05);
+                  var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
+                  var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
+                  var rotate = -4 + 6 * next;
+                  el.style.offsetDistance = (next * 100) + '%';
+                  el.style.opacity = String(opacity);
+                  el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
+                });
+              });
+              requestAnimationFrame(tick);
+            }
+            function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
+            remeasure();
+            window.addEventListener('load', remeasure);
+            if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
+            var rt = null;
+            window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
+            requestAnimationFrame(tick);
+          }
+          document.addEventListener('DOMContentLoaded', function () {
+            initReel();
+            initPbConnectors();
+          });
+        })();
+        </script>''')
+
+    html = page_head('Customer Success Software', 0,
+                     'Kaizan is customer success software that turns every call, email '
+                     'and signal into the next best action, AI Helpers that work 24/7 to grow '
+                     'client ROI, satisfaction and revenue.',
+                     extra_head=extra_head) + body + page_foot()
+    # page_head(depth=0) writes every asset link (favicons, tokens.css,
+    # site.css, site.js) as root-relative ("assets/..."), which is only
+    # correct for a page living at the site root. This page is one folder
+    # down, so a <base> fixes every one of those links — it has to land
+    # before page_head()'s own asset links, which is earlier than extra_head
+    # gets injected, hence doing it here rather than via extra_head.
+    html = html.replace(
+        '<title>Customer Success Software · Kaizan</title>',
+        '<base href="/">\n        <title>Customer Success Software · Kaizan</title>',
+        1,
+    )
+    # Header logo (first occurrence only — not the footer's copy, further
+    # down the document) stops linking home on this page.
+    if not keep_nav:
+        html = re.sub(
+            r'<a class="kz-nav-logo" href="/">(.*?)</a>',
+            r'<span class="kz-nav-logo">\1</span>',
+            html, count=1, flags=re.S,
+        )
+    html = html.replace('__NAVHIDE__', '' if keep_nav else (
+        '.kz-nav-links, .kz-nav-toggle { display: none; }\n'
+        '          .kz-nav-cta .kz-btn-ghost { display: none; }'), 1)
+    return html
 
 
 def main():
@@ -6395,12 +7918,18 @@ def main():
                # UK "Book a call" CTAs point to the UK partner calendar.
                .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7',
                         'https://calendar.app.google/eWwFxNXq3mCZqw7HA'))
+    ref_gbp = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_gbp, '/referral-partners/'),
+                                                 '/referral-partners/'), '/referral-partners/', 'uk')
+    ref_usd = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_usd, '/referral-partners/'),
+                                                 '/referral-partners/'), '/referral-partners/', 'us').replace(
+        f'rel="canonical" href="{SITE_ORIGIN}/referral', f'rel="canonical" href="{SITE_ORIGIN}/us/referral')
     for path_rel, html in ((ROOT / 'referral-partners' / 'index.html', ref_gbp),
                            (ROOT / 'us' / 'referral-partners' / 'index.html', ref_usd)):
         path_rel.parent.mkdir(parents=True, exist_ok=True)
         path_rel.write_text(html, encoding='utf-8')
     print('  (referral partner page → /referral-partners/ [GBP] + /us/referral-partners/ [USD])')
 
+    write_sitemap()
     print('Done.')
 
 
