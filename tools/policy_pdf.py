@@ -7,9 +7,17 @@ committed alongside the HTML source; tools/build.py just copies it.
 
 Run: python3 tools/policy_pdf.py            (from the repo root)
 Skips versions that already have a PDF; --force regenerates everything.
-Requires Google Chrome (any recent version) for --print-to-pdf.
+
+Requires a Chrome or Chromium binary for --print-to-pdf. The usual install
+locations are searched automatically; set CHROME to use one that isn't in
+them, which is how to run this on a Linux machine whose only Chromium came
+from Playwright:
+
+    CHROME=~/.cache/ms-playwright/chromium-*/chrome-linux/chrome \
+        python3 tools/policy_pdf.py
 """
 import base64
+import os
 import subprocess
 import sys
 import tempfile
@@ -18,14 +26,41 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = Path(tempfile.mkdtemp(prefix='kaizan-policy-pdf-'))
-CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
-if not Path(CHROME).exists():
-    for cand in ('/usr/bin/google-chrome', '/usr/bin/chromium-browser', '/usr/bin/chromium'):
+
+CHROME_CANDIDATES = (
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/usr/bin/google-chrome',
+    '/usr/bin/chromium-browser',
+    '/usr/bin/chromium',
+)
+
+
+def _find_chrome() -> str:
+    """The Chrome/Chromium binary to render with.
+
+    ``CHROME`` wins when set, so a machine with no system Chrome can point at
+    one it already has (a Playwright download, a Flatpak, a Nix store path).
+    An explicitly-set ``CHROME`` that does not exist is an error rather than a
+    silent fallback: it means the operator intended a specific binary.
+    """
+    override = os.environ.get('CHROME')
+    if override:
+        path = Path(override).expanduser()
+        if not path.exists():
+            sys.exit(f'CHROME is set to {override!r}, which does not exist.')
+        return str(path)
+
+    for cand in CHROME_CANDIDATES:
         if Path(cand).exists():
-            CHROME = cand
-            break
-    else:
-        sys.exit('Google Chrome not found — needed for --print-to-pdf.')
+            return cand
+
+    sys.exit(
+        'No Chrome or Chromium found — needed for --print-to-pdf. Set CHROME '
+        'to a binary, e.g. a Playwright one under ~/.cache/ms-playwright/.'
+    )
+
+
+CHROME = _find_chrome()
 
 POLICIES = [
     ('privacy-policy', 'Privacy Policy'),
