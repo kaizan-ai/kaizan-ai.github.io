@@ -2576,13 +2576,16 @@ def _cs_integrations_faq_html() -> str:
     </section>'''
 
 
-def render_customer_success_software() -> str:
+def render_customer_success_software(keep_nav: bool = False) -> str:
     """SEO landing page at /customer-success-software/ — a replica of the
     homepage (render_home) targeting the 'customer success software' search
     term. Same design/content throughout, minus the CARE, Personas and
     closing-CTA sections (stripped below); only the <title> and meta
     description otherwise differ, swapped in after the fact so the page can
     never drift from the homepage it mirrors.
+
+    keep_nav=True (used for the real homepage) leaves the full nav menu and the
+    home-linked logo intact instead of trimming them to logo + "Book a demo".
 
     render_home()'s markup is written for a page living at the site root (its
     asset/internal links are root-relative, e.g. "assets/...", "demo/"), but
@@ -2623,11 +2626,12 @@ def render_customer_success_software() -> str:
     # Nav logo (header only — not the footer's copy, which comes later in the
     # document) stops linking home on this page: swap the <a href="/"> for a
     # plain <span> with the same class, so it keeps its look with no link.
-    html = re.sub(
-        r'<a class="kz-nav-logo" href="/">(.*?)</a>',
-        r'<span class="kz-nav-logo">\1</span>',
-        html, count=1, flags=re.S,
-    )
+    if not keep_nav:
+        html = re.sub(
+            r'<a class="kz-nav-logo" href="/">(.*?)</a>',
+            r'<span class="kz-nav-logo">\1</span>',
+            html, count=1, flags=re.S,
+        )
     html = html.replace(
         '11M+ points of client service signals',
         '11M+ of client service signals',
@@ -2664,8 +2668,7 @@ def render_customer_success_software() -> str:
             --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
           }
-          .kz-nav-links, .kz-nav-toggle { display: none; }
-          .kz-nav-cta .kz-btn-ghost { display: none; }
+          __NAVHIDE__
           /* Hero's "Book a demo" pill defaults to align-self: center, which
              centers it under the lede instead of lining up with the
              left-aligned heading/lede above it. margin-top: auto (removed
@@ -2760,6 +2763,9 @@ def render_customer_success_software() -> str:
           .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
         </style>
         </head>'''), 1)
+    html = html.replace('__NAVHIDE__', '' if keep_nav else (
+        '.kz-nav-links, .kz-nav-toggle { display: none; }\n'
+        '          .kz-nav-cta .kz-btn-ghost { display: none; }'), 1)
     html = html.replace(
         '<footer class="kz-footer">',
         _cs_lets_talk_html() + '\n' + _cs_modules_html() + '\n' +
@@ -6298,7 +6304,8 @@ def main():
     print(f'Building Kaizan site → {ROOT}')
 
     # Top-level pages
-    write(ROOT / 'index.html',                  render_home())
+    # Homepage is a replica of the /customer-success-software/ landing page.
+    write(ROOT / 'index.html',                  render_customer_success_software(keep_nav=True))
     write(ROOT / 'product' / 'index.html',      render_product())
     write(ROOT / 'integrations' / 'index.html', render_integrations())
     write(ROOT / 'pricing' / 'index.html',      render_pricing())
