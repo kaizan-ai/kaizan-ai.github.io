@@ -199,6 +199,8 @@ PERSONAS = {
              'Your always-on associate. Drafts follow-ups before you’ve left the meeting, preps '
              'the next conversation while you’re in another, watches for client signals overnight.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Does it work with Zoom, Teams, and Google Meet?',
              "Kaizan joins meetings across Zoom, Teams and Google Meet automatically - "
@@ -222,9 +224,12 @@ PERSONAS = {
 
     'client-service-director': dict(
         eyebrow='FOR · CLIENT SERVICE DIRECTOR',
+        meta_title='AI Portfolio Risk Alerts for Service Directors',
+        meta_description='Spot client dissatisfaction before the renewal call, onboard new team members in days and see portfolio patterns no single account manager can.',
+        schema=True,
         role='client service directors',
         role_cap='Client Service Directors',
-        h1=('Run your portfolio with', 'eyes open.', ''),
+        h1=('Run Your Portfolio with', 'Eyes Open', ': Kaizan'),
         sub=("Onboard new team members in days. Catch dissatisfaction before the renewal call. "
              "See the patterns across your portfolio that no individual AM can spot alone."),
         quote_bg='radial-gradient(circle at 30% 30%, #B58A4F, #4A2A0E)',
@@ -239,32 +244,40 @@ PERSONAS = {
         quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-driving-20-greater-operational-efficiency-across-3-500-clients-5f99fd11d1a6',
         love=[
             ('Onboard new team members in days, not months.',
-             "Every client's history - meetings, decisions, stakeholders, context - searchable "
-             "from day one. New joiners are useful immediately instead of spending a quarter "
-             "getting up to speed."),
+             "Every client's history - meetings, decisions, stakeholders, context, and key client "
+             "relationship details - searchable from day one. New joiners are useful immediately "
+             "instead of spending a quarter getting up to speed, which helps client teams create "
+             "more value across the business."),
             ('Proactive risk alerts.',
              "Kaizan flags client dissatisfaction, slipping sentiment, and emerging issues across "
              "the portfolio - so you intervene before the conversation where they tell you it's "
-             "over."),
+             "over. That makes it easier to protect retention, keep stakeholders engaged, and "
+             "track client satisfaction before small issues turn into bigger ones."),
             ('Patterns across the portfolio.',
              "Pricing pushback on three clients, scope creep on four, the same stakeholder "
-             "concern in two - themes your team can't see one account at a time."),
+             "concern in two - themes your team can't see one account at a time, along with "
+             "growth opportunities across every client. One late reply or ignored message can "
+             "also reveal where relationships may need attention."),
             ('AI Helpers watching the portfolio while you sleep.',
              "Risk signals collected overnight, the morning briefing ready before standup, the "
              "team primed on what needs attention - without you having to assemble the meeting "
              "yourself."),
         ],
-        product_h2=('The whole portfolio on one page - ready for the conversation with your team, '
+        love_h2='The things Client Service Directors love for client satisfaction.',
+        product_h2=('The whole portfolio on one page - ready for the conversation with your client teams, '
                     'not over their shoulder.'),
+        faq_h2='The client relationship questions client service directors ask us.',
         products=[
             ('Portfolio dashboard',
-             "Every account in the team’s book, scored across CARE. Click any row for the "
-             "conversations, contacts and signals underneath."),
+             "Every account in the team’s book, scored across CARE so teams can measure "
+             "relationship health and make smarter decisions with a single source of truth. "
+             "Click any row for the conversations, contacts and signals underneath, including "
+             "emails, calls and inbox activity tied to delivery, services and revenue."),
             ('Risk and coverage',
              "Accounts where coverage has thinned, sentiment has shifted or expansion threads "
              "have gone cold - flagged before the QBR."),
             ('Shared client view',
-             "You and your AMs see the same picture of every account - same scores, same signals, "
+             "You and your AMs see the same picture of every relationship - same scores, same signals, "
              "same evidence. Standups stop being status theatre and start being decisions."),
         ],
         faqs=[
@@ -275,8 +288,8 @@ PERSONAS = {
             ('How does Kaizan know when a client is unhappy - what signals does it use?',
              "Kaizan reads across the full conversational record - meetings, email and chat - for "
              "sentiment shifts, escalation language, stakeholder withdrawal and slipping commitment "
-             "cadence. Risk signals surface on each client with the underlying evidence, so you "
-             "act on context rather than a score in isolation."),
+             "cadence. Risk signals surface on each client with the underlying evidence, giving "
+             "teams answers through analysis so you act on context rather than a score in isolation."),
             ('Can we tune what counts as a risk for our business?',
              "Risk thresholds, signals and weightings are configurable to your portfolio. We "
              "calibrate during rollout so alerts match how your team actually thinks about account "
@@ -292,9 +305,12 @@ PERSONAS = {
 
     'leadership': dict(
         eyebrow='FOR · SENIOR LEADERSHIP / DIRECTOR',
+        meta_title='AI Client Intelligence for Senior Leaders',
+        meta_description='See where each client can grow and catch risks early. Kaizan turns every meeting and signal into intelligence senior leaders use to plan growth and renewals.',
+        schema=True,
         role='senior leaders',
         role_cap='Senior Leaders',
-        h1=('See the path to', 'doubling revenue', ' on every client.'),
+        h1=('See the Path to', 'Doubling Revenue', ' on Every Client'),
         sub=("Kaizan turns every meeting, signal, and stakeholder into the intelligence you need "
              "to grow each client deliberately - and catch the risks that could cost you the "
              "relationship."),
@@ -312,27 +328,34 @@ PERSONAS = {
              "Kaizan surfaces where each relationship could grow - unmet needs, adjacent scope, "
              "stakeholders you don't yet know - so growth becomes a deliberate plan, not a hope."),
             ('Catch dissatisfaction before it costs you.',
-             "Every client risk surfaced early, with the context to act on it - so renewal "
-             "conversations are negotiations, not autopsies."),
+             "Every client risk surfaced early, with signals on client satisfaction and sentiment "
+             "plus the context to act on it - so renewal conversations are negotiations, not "
+             "autopsies."),
             ('Decisions on data, not anecdotes.',
              "Which clients are profitable, where the hours go, what's actually working across "
              "the portfolio - finally legible."),
             ('AI Helpers running in the background.',
-             "Weekly intelligence on every client delivered before Monday's exec meeting, "
-             "board-ready insights compiled automatically - the analysis layer working while you "
-             "focus on the decisions."),
+             "Weekly intelligence on every client delivered before Monday's exec meeting, with AI "
+             "Helpers supporting client service teams by turning communications into useful "
+             "information and handling follow ups or routine tasks in the background - the "
+             "analysis layer working while you focus on the decisions."),
         ],
-        product_h2='The forward view of the business - built from the team’s actual conversations.',
+        love_h2='The things Senior Leaders love about AI helpers.',
+        product_h2="The forward view of the business - built from client success teams' actual conversations.",
+        faq_h2='The questions senior leaders ask us.',
         products=[
             ('Executive briefing',
              'Monday morning: one page on revenue at risk, expansion in flight, and which Heads '
-             'need air cover this week.'),
+             'need air cover this week. It also highlights recent account activity and '
+             'recommended actions for the week.'),
             ('Renewal forecast',
              'Probability-weighted forecast for the next four quarters. Click any account to see '
-             'the evidence underneath the score.'),
+             'the evidence underneath the score, including health, engagement growth, and '
+             'relationship coverage.'),
             ('Board view',
              'Export-ready slides for the quarterly board pack: retention, coverage, '
-             'time-to-resolve, expansion pipeline.'),
+             'time-to-resolve, expansion pipeline, service performance, and continuous '
+             'improvement.'),
         ],
         faqs=[
             ('How does Kaizan identify growth opportunities on existing clients?',
@@ -346,14 +369,16 @@ PERSONAS = {
              "renewal and growth conversations Kaizan flagged early start closing differently."),
             ('Do we own our data, and can we get it all out if we leave?',
              "Your client data is yours. Full export is available at any time in standard formats, "
-             "and contract terms make that explicit rather than buried."),
+             "including the underlying information captured in Kaizan, and contract terms make "
+             "that explicit rather than buried."),
             ('What does rollout look like - weeks, months, what’s the lift on our side?',
-             "Weeks, not months. Your team's existing meetings, email, chat and tools connect "
-             "into Kaizan; there's no data migration project, no per-seat rollout, no quarter of "
+             "Weeks, not months. Your team's existing meetings, emails, chat and tools connect "
+             "into Kaizan, which can add value quickly for agencies and consultancies; there's no "
+             "data migration project, no per-seat rollout, no quarter of "
              "change management. Pricing is by portfolio size, so you don't ration access while "
              "you scale."),
         ],
-        cta='See Kaizan for senior leadership.',
+        cta='See Kaizan AI platform for senior leadership.',
     ),
 
     'head-of-ai': dict(
@@ -396,6 +421,8 @@ PERSONAS = {
              'Eval runs, prompt versions, redaction rules, access logs. Everything your security '
              'review will ask for, in one place.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Can I connect my own LLM via MCP, and what does the schema look like?',
              "Kaizan supports MCP natively - any LLM that speaks the protocol can query the "
@@ -423,9 +450,12 @@ PERSONAS = {
 
     'project-manager': dict(
         eyebrow='FOR · PROJECT MANAGER',
+        meta_title='AI Project Status and Scope Tracking for PMs',
+        meta_description='One always-current view of every project, status and commitment. Kaizan drafts status updates, flags scope drift and feeds a live risk register for PMs.',
+        schema=True,
         role='project managers',
         role_cap='Project Managers',
-        h1=('Run the work.', "Don't chase it.", ''),
+        h1=('Run the Work with Kaizan:', "Don't Chase It", ''),
         sub=("Every project, every status, every commitment - in one always-current place, with "
              "an AI Helper watching it all 24/7."),
         quote_bg='radial-gradient(circle at 30% 30%, #6F8474, #1F3025)',
@@ -441,58 +471,72 @@ PERSONAS = {
         quote_cta_href='https://blog.kaizan.ai/cs-leader-quick-fire-q-a-hannah-carthy-verkeer-5c7cd3eb6b75',
         love=[
             ('One unified place for every project.',
-             "Meetings, actions, decisions, commitments, status - across every client and every "
-             "team - in one always-current view. No more hunting through Slack, email, and three "
-             "project tools to find out what's actually going on."),
+             "Meetings, actions, decisions, commitments, status, and other client interactions and "
+             "communications - across every client and every team - in one always-current view. "
+             "No more hunting through Slack, emails, and three project tools to find out what's "
+             "actually going on."),
             ('Status reports write themselves.',
              "Every meeting's actions, decisions, and owners captured automatically - so Friday "
              "afternoons stop being eaten by retrospective documentation."),
             ('An AI Helper working on your projects 24/7.',
-             "Watching for slippage, drafting status updates before the standup, chasing actions "
-             "while you're in another meeting - your always-on associate."),
+             "Watching for slippage, drafting status updates before the standup, and supporting "
+             "follow ups while you're in another meeting - your always-on associate."),
         ],
-        product_h2='The PM’s leverage: less chasing, more steering.',
+        love_h2='The things Project Managers love about AI helpers.',
+        product_h2="The PM's leverage with an AI platform: less chasing, more steering.",
+        faq_h2='The questions project managers and client success teams ask us.',
         products=[
             ('Status drafter',
-             'A draft client update built from the week’s actual conversations, ready to edit - '
-             'every Friday, or every Monday.'),
+             'A draft client update built from the week’s actual conversations and account data, '
+             'ready to edit - every Friday, or every Monday, with usable intelligence for '
+             'project teams.'),
             ('Scope sentinel',
-             'Flag the moment client language drifts beyond the SOW. Optional auto-tag in the '
-             'project tracker.'),
+             'Flag the moment client language drifts beyond the SOW, helping teams catch risks '
+             'to the business early. Optional auto-tag in the project tracker.'),
             ('Live risk register',
-             'A risk register fed from conversations across the team. No more "we should’ve seen '
-             'that coming".'),
+             'A risk register fed from account activity and sentiment across the team, so issues '
+             'surface earlier. Kaizan also helps teams review relationship coverage and health '
+             'as signals.'),
         ],
         faqs=[
             ('Does it sync into Asana / Monday / ClickUp / Jira?',
              "Kaizan integrates with Asana, Monday, ClickUp and Jira, so actions, owners and "
-             "status flow both ways without manual re-entry. Anything not natively integrated is "
+             "status flow both ways without manual re-entry, giving connected teams better "
+             "visibility into growth opportunities. Anything not natively integrated is "
              "reachable via the API."),
             ('Can it tell the difference between an action item and general discussion?',
              "Kaizan separates actions, decisions and commitments from general discussion, "
              "attributes each one to the right owner, and links it back to the moment in the "
              "meeting it came from. You review and confirm - nothing routes downstream until you do."),
             ('What if a meeting happened offline - can I add decisions and actions manually?',
-             "Manual entry sits alongside automatic capture. Add or edit actions, decisions and "
+             "Manual entry sits alongside automatic capture from calls and emails. Add or edit actions, decisions and "
              "notes directly, and they're treated as first-class items - owned, tracked and "
              "followed up like anything Kaizan captured itself."),
             ('Can captured actions be assigned automatically based on who said what?',
              "Kaizan attributes actions to the person who took them on in the conversation, and "
              "routes them into your project tool of choice - with optional human review before "
-             "anything is auto-assigned, so the system never overrides judgement."),
+             "anything is auto-assigned, supporting engagement growth and revenue while ensuring "
+             "the system never overrides judgement."),
         ],
         cta='See Kaizan for project managers.',
     ),
 
     'new-business': dict(
         eyebrow='FOR · NEW BUSINESS / SALES',
+        meta_title='Pitch Prep and Account Growth for New Business',
+        meta_description='Prepare for pitches without hours of research. Kaizan surfaces stakeholder context, competitor signals and expansion opportunities for new business teams.',
+        schema=True,
         role='new business leaders',
         role_cap='New Business Leaders',
-        h1=('', 'Pitch warmer.', ' Grow existing clients deliberately.'),
-        sub=("Spend your prep time on the conversation, not the research - Kaizan surfaces the "
-             "intel, the moments, and the people that matter."),
+        h1=('Kaizan:', 'Pitch Warmer.', ' Grow Existing Clients Deliberately.'),
+        sub=("Kaizan is an AI-powered platform for new business leaders, account managers, client "
+             "service teams, and senior leaders who want to prepare better for pitches and grow "
+             "existing clients without losing hours to research. It surfaces the intel, key "
+             "moments, stakeholder context, market and competitor signals, and expansion "
+             "opportunities that matter most, so teams can spend prep time on the conversation, "
+             "not the digging, and show up better in every client meeting."),
         quote_bg='radial-gradient(circle at 35% 30%, #8AAEAE, #1F4040)',
-        quote_pull=('The biggest impact of Kaizan is the time it gives us back. In meetings to be '
+        quote_pull=('The biggest impact of Kaizan is the time it gives us back and the productivity that comes with it. In meetings to be '
                     'more present and engaged - and afterwards, a resource we can drop back into '
                     'to make sure we’re doing the things we said we’d do.'),
         quote_name='Adam Hopkinson',
@@ -508,53 +552,71 @@ PERSONAS = {
              "research."),
             ('See where existing clients are ready for more.',
              "New initiatives, leadership changes, unmet needs, frustrations with current scope - "
-             "Kaizan surfaces the moments worth a growth conversation, so you stop relying on AMs "
-             "to remember."),
+             "Kaizan surfaces growth opportunities and signals expansion potential in existing "
+             "accounts, so you stop relying on AMs to remember."),
             ('Know who actually decides.',
              "Stakeholder maps surface the real influencers - not just the people in the meeting "
-             "- so you spend your influence where it counts."),
-            ('An AI Helper prospecting while you sleep.',
+             "- so teams can better understand who shapes decisions and spend their influence "
+             "where it counts."),
+            ('AI Helpers prospecting while you sleep.',
              "Watching target accounts for leadership changes, funding rounds, and buying signals "
-             "- so you wake up to a tee'd-up day, not a cold start."),
+             "- and monitoring your inbox for timely cues - so they help build a better start to "
+             "the day, not a cold start."),
         ],
-        product_h2='Pitch from a position of knowing - not guessing.',
+        love_h2='The things New Business Leaders love about client relationships.',
+        product_h2='Pitch from a position of knowing with AI helpers - not guessing.',
+        faq_h2='The questions new business leaders ask us.',
         products=[
             ('Prospect dossier',
-             'Every chemistry meeting and call distilled into a one-page brief: priorities, '
-             'language, decision criteria, internal politics.'),
+             'Every chemistry meeting and call distilled into a one-page brief to help you '
+             'measure what matters in prospect interactions and pull a reliable source of '
+             'account intelligence: priorities, language, decision criteria, internal politics.'),
             ('Shortlist intel',
-             'When prospects mention competitors, you see it - with the rebuttal slide ready '
-             'before they ask the question.'),
+             'When prospects mention competitors, you see it - so your team can act directly, '
+             'with better answers and the rebuttal slide ready before they ask the question.'),
             ('Pitch tailoring',
-             "Pre-pitch checklist: have we addressed what they actually said matters? What’s "
-             "missing from this deck?"),
+             "Pre-pitch checklist: have we addressed what they actually said matters, and what "
+             "steps are needed to close gaps in this deck and improve the final result?"),
         ],
         faqs=[
             ('Can I use it on prospects, or only on existing clients?',
              "Both. Kaizan runs on prospects and on the existing portfolio, which is the point - "
-             "your pitch motion and your growth motion run off the same intelligence layer, not "
-             "two disconnected stacks."),
+             "your pitch motion and your growth motion run off the same intelligence layer for "
+             "more value across the portfolio, not two disconnected stacks. Teams also assess "
+             "account health on existing clients through continuous measurement."),
             ('Where does market and competitor intel come from, and how current is it?',
-             "Intel is pulled from the conversations Kaizan captures across your accounts and "
-             "target list, plus the external sources it monitors - and refreshed automatically so "
-             "what you walk into a pitch with is current, not a stale dossier."),
+             "Intel is pulled from the client conversations Kaizan captures across your accounts "
+             "and target list - including calls, email, and each message as part of wider "
+             "communications - plus the external sources it monitors, giving teams a reliable "
+             "source of truth that is refreshed automatically so what you walk into a pitch with "
+             "is current, not a stale dossier. CARE scores 24 relationship signals continuously "
+             "across interactions and replaces a quarterly CSAT snapshot with a live score. CARE "
+             "measures Client Satisfaction, Activity, Relationship, and Expansion in one score."),
             ('Can I export a briefing pack for a pitch in one click?',
              "One click. Kaizan compiles a pitch-ready briefing on demand: stakeholders, decision "
              "criteria, recent activity, competitor positioning and the talking points worth "
-             "opening with - exported in the format your team uses for pre-reads."),
+             "opening with - helping the team act faster on what just changed, exported in the "
+             "format your team uses for pre-reads. AI Helpers automate follow-ups, save teams "
+             "hours each week, and identify risk from recent interaction patterns. For example, "
+             "Kaizan can flag a change in sentiment and activity before it becomes a wider issue."),
             ('Does it work alongside our prospecting tools (LinkedIn Sales Nav, Apollo, etc.)?',
              "Kaizan sits alongside your prospecting stack, not on top of it. It reads from the "
              "same activity layer your team already works in and feeds the intelligence your "
-             "sellers use to prepare, pitch and follow up."),
+             "sellers use to prepare, pitch, follow up, serve prospects more effectively, and "
+             "reduce prep friction. Those proactive actions help drive a 21% average revenue "
+             "increase per client and protect 45% of at-risk revenue before issues arise."),
         ],
-        cta='See Kaizan for new business.',
+        cta='See Kaizan for every client and new business.',
     ),
 
     'performance': dict(
         eyebrow='FOR · PERFORMANCE / OPERATIONS',
+        meta_title='Client Interaction Data for Operations Leaders',
+        meta_description='See where the hours go, which processes are landing and how client sentiment is trending, with data that flows into the BI tools your team already uses.',
+        schema=True,
         role='performance and operations leaders',
         role_cap='Performance and Operations Leaders',
-        h1=('Turn every client interaction into', 'operational data.', ''),
+        h1=('Turn Every Client Interaction into', 'Operational Data', ''),
         sub=("See where the hours go, which processes are landing, and how sentiment is trending "
              "- all flowing into the BI tools you already use."),
         quote_bg='radial-gradient(circle at 35% 30%, #708FAA, #1F3A50)',
@@ -572,45 +634,52 @@ PERSONAS = {
              "profitability conversations happen on data, not feel."),
             ('Process compliance, finally visible.',
              "Are weekly status meetings happening? QBRs on cadence? Senior reviews on the right "
-             "clients? Stop asking, start seeing."),
+             "clients? Stop asking, start seeing - and use that visibility for continuous "
+             "improvement."),
             ('Client sentiment trended over time.',
-             "Not a snapshot - a trajectory you can correlate with the levers your team is pulling."),
-            ('AI Helpers running the reports overnight.',
-             "Anomalies, outliers, and exceptions surfaced before the day starts - so you act on "
-             "what happened yesterday, not what surfaces a week later."),
+             "Not a snapshot - a trajectory you can correlate with the levers your team is "
+             "pulling to improve client satisfaction and strengthen relationships."),
+            ('AI agents running the reports overnight.',
+             "Anomalies, outliers, and exceptions surfaced before the day starts - so these "
+             "agents surface insights, help teams respond faster, and you act on what happened "
+             "yesterday, not what surfaces a week later."),
         ],
-        product_h2='Operational reporting that finally maps to what the client is actually thinking.',
+        love_h2='The things Performance and Operations Leaders and client service teams love.',
+        product_h2='Operational reporting that finally maps to what the client is actually thinking and improves client satisfaction.',
+        faq_h2='The questions performance and operations leaders ask us.',
         products=[
             ('Expectation map',
              'For every client, what they say they care about, ranked by how often they raise it '
-             'in conversation. Updated weekly.'),
+             'in conversation. Updated weekly to support continuous improvement.'),
             ('Drift alerts',
              "When the client’s language about success changes - different metrics, different "
-             "timeframes, different competitors - you get the alert."),
+             "timeframes, different competitors - the alert helps client service teams identify "
+             "risks."),
             ('Auto-drafted weekly',
-             'The Friday client update, drafted in your voice, around the metrics this client '
-             'actually grades you on.'),
+             'The Friday client update, drafted in your voice by AI agents around the metrics '
+             'this client actually grades you on, so they can also respond to routine follow-up '
+             'needs.'),
         ],
         faqs=[
             ('Can I export raw data into our warehouse / BI tool?',
              "Raw data exports into the warehouse and BI tools your team already runs, so client "
              "interaction data sits next to your other operational metrics rather than in a "
-             "separate silo. The API is on every tier from Team upwards if your stack needs "
-             "something native."),
+             "separate silo. The API is available from the Growth tier upwards if your stack "
+             "needs something native."),
             ('What does Kaizan track out of the box vs. what we’d need to configure?',
-             "Out of the box: time across calls, comms and meetings; sentiment and stakeholder "
+             "Out of the box: time across calls, comms, meetings and notes; sentiment and stakeholder "
              "coverage; process adherence (QBR cadence, senior reviews, status meetings); "
              "commitments and slippage. Custom metrics, thresholds and definitions are configured "
              "to your operating model during rollout."),
             ('Can we build custom reports, or are we tied to your dashboards?',
              "Both. Kaizan ships dashboards out of the box and exposes the underlying data "
              "through the API, so your team builds whatever custom reporting your operation "
-             "actually runs on."),
+             "actually runs on, with actionable insights."),
             ('How does sentiment tracking work, and how reliable is it?',
              "Sentiment is derived from the language and behaviour across client conversations "
              "and calibrated to your portfolio during rollout. It's a trajectory signal - most "
-             "useful as a trend correlated against the levers your team is pulling, not a single "
-             "number lifted out of context."),
+             "useful as a trend correlated against the levers your team is pulling and client "
+             "satisfaction, not a single number lifted out of context."),
         ],
         cta='See Kaizan for performance and operations.',
     ),
@@ -660,6 +729,8 @@ PERSONAS = {
              'Every flattering thing a client said about working with you - surfaced, attributed, '
              'ready for sign-off and the next case study.'),
         ],
+        schema=True,
+        ld_undated=True,
         faqs=[
             ('Can I search across every meeting, brief, and document for a given client?',
              "Every meeting, brief, email and chat on a client is searchable in one place. You "
@@ -896,6 +967,99 @@ def gtm_head_snippet() -> str:
         })(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
         <!-- End Google Tag Manager -->
         ''')
+
+
+# ── Structured data (JSON-LD) ──────────────────────────────────────────
+# Page-level URLs/language use tokens so the UK page and its /us/ mirror each
+# resolve to their own URL (see _resolve_ld_tokens / build_us_locale).
+LD_PAGE = '@@PAGE@@'
+LD_LANG = '@@LANG@@'
+LD_MODIFIED = '2026-10-09'
+LD_ORG_ID = 'https://kaizan.ai/#organization'
+LD_LOGO = 'https://kaizan.ai/assets/img/kaizan-schema-logo.png'
+LD_SAMEAS = [
+    'https://x.com/Kaizan_ai',
+    'https://www.facebook.com/KaizanApp/',
+    'https://www.instagram.com/kaizan_ai/',
+    'https://www.youtube.com/@kaizan-ai',
+    'https://www.linkedin.com/company/70937532/',
+]
+
+
+def ld_organization() -> dict:
+    return {
+        '@type': 'Organization',
+        '@id': LD_ORG_ID,
+        'name': 'Kaizan',
+        'url': 'https://kaizan.ai/',
+        'logo': {'@type': 'ImageObject', 'url': LD_LOGO, 'width': 1200, 'height': 1200},
+        'foundingDate': '2021',
+        'foundingLocation': {'@type': 'Place', 'address': {
+            '@type': 'PostalAddress', 'addressLocality': 'London', 'addressCountry': 'GB'}},
+        'founder': [{'@type': 'Person', 'name': 'Glen Calvert'},
+                    {'@type': 'Person', 'name': 'Pravin Paratey'}],
+        'contactPoint': {'@type': 'ContactPoint', 'email': 'hello@kaizan.ai',
+                         'contactType': 'customer support'},
+        'sameAs': LD_SAMEAS,
+    }
+
+
+def ld_website() -> dict:
+    return {'@type': 'WebSite', '@id': 'https://kaizan.ai/#website', 'name': 'Kaizan',
+            'url': 'https://kaizan.ai/', 'inLanguage': LD_LANG,
+            'publisher': {'@id': LD_ORG_ID}}
+
+
+def ld_software(description: str, offers: list | None = None) -> dict:
+    node = {'@type': 'SoftwareApplication', '@id': 'https://kaizan.ai/#software',
+            'name': 'Kaizan', 'applicationCategory': 'BusinessApplication',
+            'operatingSystem': 'Web', 'description': description,
+            'url': 'https://kaizan.ai/product/', 'publisher': {'@id': LD_ORG_ID}}
+    if offers:
+        node['offers'] = offers
+    return node
+
+
+def ld_webpage(name: str, description: str, kind: str = 'WebPage', **extra) -> dict:
+    node = {'@type': kind, '@id': LD_PAGE + '#webpage', 'url': LD_PAGE, 'name': name,
+            'description': description, 'inLanguage': LD_LANG,
+            'isPartOf': {'@id': 'https://kaizan.ai/#website'},
+            'publisher': {'@id': LD_ORG_ID}, 'dateModified': LD_MODIFIED}
+    node.update(extra)
+    if node.get('dateModified') is None:   # pages with no known publish date
+        node.pop('dateModified', None)
+    return node
+
+
+def ld_faq_entities(qa_pairs) -> list:
+    return [{'@type': 'Question', 'name': q,
+             'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in qa_pairs]
+
+
+def ld_blogposting(post: dict) -> dict:
+    node = {'@type': 'BlogPosting', '@id': LD_PAGE + '#article', 'url': LD_PAGE,
+            'mainEntityOfPage': {'@type': 'WebPage', '@id': LD_PAGE},
+            'headline': post['title'], 'description': post.get('meta_description') or post.get('excerpt', ''),
+            'inLanguage': LD_LANG, 'datePublished': post['iso_date'],
+            'dateModified': post.get('date_modified') or post['iso_date'],
+            'author': {'@type': 'Person', 'name': 'Lia Grant'},
+            'publisher': {'@id': LD_ORG_ID}, 'isPartOf': {'@id': 'https://kaizan.ai/blog/'}}
+    if post.get('cover_asset'):
+        node['image'] = f"https://kaizan.ai/assets/img/{post['cover_asset']}"
+    if post.get('tags'):
+        node['keywords'] = ', '.join(str(t) for t in post['tags'])
+    return node
+
+
+def ld_script(nodes: list, ident: str = '') -> str:
+    """One <script type="application/ld+json"> carrying an @graph. The Organization
+    node is always included so every @id reference resolves within the page."""
+    graph = [ld_organization()] + [n for n in nodes if n]
+    if not any(n.get('@type') == 'WebSite' for n in graph):
+        graph.insert(1, ld_website())
+    data = {'@context': 'https://schema.org', '@graph': graph}
+    attr = f' data-kz-ld="{ident}"' if ident else ''
+    return f'<script type="application/ld+json"{attr}>{json.dumps(data, ensure_ascii=False)}</script>'
 
 
 def page_head(title: str, depth: int, description: str = '', extra_head: str = '') -> str:
@@ -1591,17 +1755,22 @@ def trial_hero_copy_html(depth: int) -> str:
         for t in (
             'Find growth opportunities hidden in everyday client conversations.',
             "Catch engagement risks early so your team can act before it's too late.",
-            'Improve account efficiency with AI Helpers that take care of admin for the team.',
+            'Improve account efficiency with AI Helpers that take care of admin for the team, including follow ups.',
             'See every client clearly by unifying every conversation, commitment and '
             'deliverable into one source of truth.',
         ))
     return f'''<div class="kz-hero-copy">
         <h1 class="kz-hero-trial-h1">
-          Grow your existing clients. <span class="kz-mark">Spot risks</span> before they leave.
+          Kaizan: Grow Your Existing Clients, <span class="kz-mark">Spot Risks</span> Before They Leave
         </h1>
         <p class="kz-hero-trial-lede">
-          Kaizan unifies all client meetings, emails &amp; chats to recommend next steps. Proactively
-          protecting revenue, uncovering opportunities and saving your team hours.
+          Kaizan is an AI-powered client service and account management platform, founded in 2021 in
+          London, UK, that unifies all client meetings, emails &amp; chats, integrates with CRMs and other
+          business systems, and provides real-time client health scoring and insights to recommend next
+          steps; its name means continuous improvement. Built for agencies, consultancies and SaaS customer
+          success teams that need to protect revenue, grow accounts and improve client service, it helps
+          account managers, customer success managers and client service leaders spot risk early, uncover
+          expansion opportunities and save hours of admin.
         </p>
         <ul class="kz-hero-checks">{hero_checks}</ul>
         <div class="kz-hero-cta-stack">
@@ -1729,7 +1898,7 @@ def render_home() -> str:
         ('C', 'Client satisfaction',
          "Sentiment on every stakeholder and thread. Not RAG guesses: evidence pulled from the source conversations."),
         ('A', 'Activity with stakeholders',
-         'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically.'),
+         'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically for agencies and consultancies.'),
         ('R', 'Relationship strength',
          'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros, handled before you ask.'),
         ('E', 'Expansion opportunities',
@@ -1914,11 +2083,16 @@ def render_home() -> str:
 
     {footer_html(0)}
     '''
+    _home_desc = ('Kaizan is an AI platform that unifies client meetings, emails and chats to score '
+                  'client health, flag risk early and surface expansion opportunities.')
     extra_head = (f'<script defer src="assets/js/trial-form.js'
-                  f'{asset_v("assets/js/trial-form.js")}"></script>')
-    return page_head('Client super intelligence for client service teams', 0,
-                     'Kaizan is the AI platform for client service professionals, '
-                     'AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.',
+                  f'{asset_v("assets/js/trial-form.js")}"></script>') + ld_script([
+        ld_webpage('Kaizan: Grow Your Existing Clients, Spot Risks Before They Leave', _home_desc),
+        ld_software('AI-powered client service and account management platform that unifies client '
+                    'meetings, emails and chats, integrates with CRMs and other business systems, and '
+                    'provides real-time client health scoring and insights to recommend next steps.'),
+    ], ident='home')
+    return page_head('Grow Existing Clients, Spot Risks Early', 0, _home_desc,
                      extra_head=extra_head) + body + page_foot()
 
 
@@ -2012,10 +2186,10 @@ def render_product() -> str:
     )
 
     asst_features = [
-        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads.'),
+        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads — joins every call, including uploaded calls.'),
         ('Decisions, not transcripts', 'Action items, owners and dates. The shape of work.'),
         ('Does the work',
-         'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs. Humans approve what matters; the rest just gets done.'),
+         'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs, and delivery. Humans approve what matters; the rest just gets done.'),
         ('Sounds like you',
          "Reads every doc, deck and Slack thread for that client, so a draft for Acme actually sounds like Acme, not a template."),
     ]
@@ -2121,9 +2295,9 @@ def render_product() -> str:
 
     pipeline_steps = [
         ('01','Ingest','Gmail, Outlook, Teams, Zoom, Slack, HubSpot, Salesforce. Zero-retention by default.'),
-        ('02','Analyse','Client health scoring runs continuously. Sentiment, activity, coverage, growth.'),
+        ('02','Analyse','Client health scoring runs continuously. Sentiment, activity, coverage, growth, and the number behind each signal.'),
         ('03','Act','Helpers draft, chase, schedule, summarise. Humans approve what matters.'),
-        ('04','Learn','Outcomes feed back: what predicts a healthy engagement, per segment, per team.'),
+        ('04','Learn','Outcomes feed back: what predicts a healthy engagement, per segment, per team, helping teams build smarter processes directly from what was delivered.'),
     ]
     pipeline_html = '\n'.join(
         f'<div class="kz-pipeline-cell"><div class="num">{E(n)}</div>'
@@ -2136,8 +2310,8 @@ def render_product() -> str:
         ('Zero retention', 'Your conversations never train foundation models.'),
         ('EU + US residency', 'Pick your region. Data stays where you need it.'),
         ('MCP + REST API', 'Wire Kaizan into your own agents and tools.'),
-        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning.'),
-        ('Per-role access', 'Scoped by account, team or client. Never leaky.'),
+        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning for employees.'),
+        ('Per-role access', 'Scoped by account, team or client, so the right engaged account teams get access without leakage. Never leaky.'),
     ]
     trust_html = '\n'.join(
         f'<div class="kz-trust-card"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
@@ -2153,8 +2327,8 @@ def render_product() -> str:
     <section class="kz-section-tight" id="product-hero">
       <div class="kz-eyebrow">PRODUCT · CLIENT SUPER INTELLIGENCE</div>
       <h1 class="kz-h1 kz-h1-xl" style="margin-top:20px;max-width:1180px;">
-        One platform for <span class="kz-mark">AI-first</span><br>
-        client service teams.
+        Kaizan: One Platform for <span class="kz-mark">AI-First</span><br>
+        Client Service Teams
       </h1>
       <div class="kz-product-hero-row">
         <p class="kz-lede" style="font-size:19px;max-width:640px;">
@@ -2184,10 +2358,12 @@ def render_product() -> str:
       <div class="kz-dark-grid">
         <div>
           <p class="copy">
-            The AI Assistant joins every call (Teams, Zoom, Google Meet) and turns it into structured,
-            searchable memory by client automatically. Decisions, owners, deadlines, sentiment. A living
+            The AI Assistant joins every call (Teams, Zoom, Google Meet) and captures client conversations
+            across calls, email, chat, and each message stream, turning them into structured, searchable
+            memory by client automatically. Decisions, owners, deadlines, sentiment, and signals. A living
             personalised memory of every client. Then it ships the work behind the meeting: recaps,
-            follow-ups, status notes, CRM hygiene. Humans approve what matters; the rest just gets done.
+            follow-ups, status notes, CRM hygiene. Humans approve what matters; the automation is designed
+            to increase efficiency and reduce manual admin.
           </p>
           <div class="kz-dark-features">{asst_html}</div>
         </div>
@@ -2207,9 +2383,11 @@ def render_product() -> str:
         <div class="kz-eyebrow">02 · AI Helpers</div>
         <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;">Helpers built for client growth. Acting around the clock.</h2>
         <p class="kz-lede" style="font-size:18px;margin-top:18px;max-width:720px;">
-          Three packs of AI Helpers, plus your own. Every helper is grounded in your company data:
+          Three packs of AI Helpers, plus your own, built to serve client growth and spot expansion
+          opportunities. Every helper is grounded in your company data:
           docs, decks, transcripts, Slack, CRM, email. They keep learning from every new conversation,
-          so the output gets more personal to each client&rsquo;s objectives the longer you run them.
+          so teams understand what to do next for each client more clearly over time and the output gets
+          more personal to each client&rsquo;s objectives the longer you run them.
         </p>
       </div>
       <div class="kz-helpers-tabs">{helpers_tabs}</div>
@@ -2222,12 +2400,14 @@ def render_product() -> str:
         <div>
           <div class="kz-eyebrow">03 · CARE Client Health Model</div>
           <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;max-width:520px;">
-            A self-learning relationship score, grounded in your data.
+            A self-learning client relationships score, grounded in your data.
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:520px;">
-            The unifying score across every Helper. It learns from your won pitches, kept clients and
-            lost briefs: what predicts a healthy engagement in your company, not the average of someone
-            else&rsquo;s. Not a biased RAG status. Re-tuned weekly against your data.
+            The unifying score across every Helper. It uses your data to measure relationship health and
+            client satisfaction, not someone else&rsquo;s benchmark. It learns from your won pitches, kept
+            clients and lost briefs: what predicts a healthy engagement in your company, and the result the
+            model is trained to predict. Not a biased RAG status. Re-tuned weekly against your data to help
+            teams achieve a more reliable view of account health.
           </p>
           <div style="margin-top:26px;padding:18px 22px;background:var(--kz-paper);border:1px solid var(--kz-line);border-radius:12px;max-width:520px;">
             <div class="kz-eyebrow" style="margin-bottom:10px;">Trained on you</div>
@@ -2263,15 +2443,16 @@ def render_product() -> str:
             Market research on every client. Always-on context for every Helper.
           </h2>
           <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:560px;">
-            Client 360 continuously researches every account (funding, hiring, exec moves, competitor noise,
-            earnings tone, product launches) and feeds it into the Helpers as live ground truth. So when CARE drops,
-            you don&rsquo;t just know <em>that</em> something changed: you know <em>what</em>.
+            Client 360 continuously researches every account for your business (funding, hiring, exec moves,
+            competitor noise, earnings tone, product launches) and feeds it into the Helpers as always-on
+            ground truth. So when CARE drops, the research helps you spot opportunities and risk, not just
+            see what changed.
           </p>
           <div class="kz-dark-features" style="margin-top:28px;color:var(--kz-ink);max-width:560px;">
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Always-on research</h4><p style="color:var(--kz-mute);">Re-checks every client every day. No briefs to commission.</p></div>
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Routed to Helpers</h4><p style="color:var(--kz-mute);">Context lands in the right Helper, not in a buried report.</p></div>
             <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Source-backed</h4><p style="color:var(--kz-mute);">Every claim links to the article, filing or post it came from.</p></div>
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Your watch-list</h4><p style="color:var(--kz-mute);">Tag what matters per account: comp moves, hiring, M&amp;A.</p></div>
+            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Your watch-list</h4><p style="color:var(--kz-mute);">Tag what matters per account, including the stakeholders that matter: comp moves, hiring, M&amp;A.</p></div>
           </div>
         </div>
         <div class="kz-c360-feed">
@@ -2308,7 +2489,7 @@ def render_product() -> str:
         Native connectors for the tools your team already lives in.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else.
+        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else&mdash;covering the inbox, calendar, meetings, and the services your team already uses.
       </p>
     </section>
 
@@ -2319,7 +2500,7 @@ def render_product() -> str:
         Common questions, ranked by how often a security review asks them.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Answers ship with our security review pack. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
+        Answers ship with our security review pack. It helps the CEO or account manager get answers quickly in review cycles. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
       </p>
     </section>
 
@@ -2327,10 +2508,12 @@ def render_product() -> str:
     <section class="kz-section-tight" id="pricing">
       <div class="kz-eyebrow">Pricing</div>
       <h2 class="kz-h3" style="margin-top:10px;font-size:24px;max-width:820px;">
-        Tiered by seats and integration depth.
+        Priced by number of clients, with unlimited users.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Detailed pricing is shared in the demo. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
+        Pricing is public and set by the number of clients you cover: per client per month on an annual
+        contract, with unlimited users on every tier and a free 14-day pilot first. Book a demo to plan for
+        the next quarter, align to revenue goals, and improve cost-to-serve efficiency. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
       </p>
     </section>
 
@@ -2346,7 +2529,7 @@ def render_product() -> str:
 
     <!-- CTA -->
     <section class="kz-cta-band kz-cta-band-md">
-      <h2 class="head">Put the helpers to work.</h2>
+      <h2 class="head">Put the AI helpers to work.</h2>
       <div class="actions">
         <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
       </div>
@@ -2354,9 +2537,11 @@ def render_product() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('Product', 1,
-                     'AI Assistant, AI Helpers, the Client Health Model and Client 360, '
-                     'one platform for AI-first client service teams.') + body + page_foot()
+    prod_desc = ('AI Assistant, AI Helpers, the CARE Client Health Model and Client 360 in one platform '
+                 'that captures meetings, scores relationships and acts for client teams.')
+    prod_ld = ld_script([ld_webpage('Product', prod_desc), ld_software(prod_desc)], ident='product')
+    return page_head('One AI Platform for Client Service Teams', 1, prod_desc,
+                     extra_head=prod_ld) + body + page_foot()
 
 
 def render_persona(slug: str) -> str:
@@ -2496,7 +2681,7 @@ def render_persona(slug: str) -> str:
     <!-- WHY {E(p['role_cap']).upper()} LOVE KAIZAN -->
     <section class="kz-section" style="border-top:1px solid var(--kz-line);">
       <div class="kz-eyebrow">Why {E(p['role'])} love Kaizan</div>
-      <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">The things {E(p['role_cap'])} love.</h2>
+      <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">{E(p.get('love_h2') or f"The things {p['role_cap']} love.")}</h2>
       <div class="kz-love-grid{love_cols_cls}">{love_html}</div>
     </section>
 
@@ -2511,7 +2696,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-section">
       <div class="kz-eyebrow">FAQs</div>
       <h2 class="kz-h2" style="margin-top:10px;margin-bottom:32px;">
-        The questions {E(p['role'])} ask us.
+        {E(p.get('faq_h2') or f"The questions {p['role']} ask us.")}
       </h2>
       <div class="kz-objections">{faqs_html}</div>
     </section>
@@ -2534,7 +2719,15 @@ def render_persona(slug: str) -> str:
     {footer_html(2)}
     '''
     label = next((n for k, n in PERSONA_LIST if k == slug), slug.replace('-', ' ').title())
-    return page_head(f'For {label}', 2, p['sub']) + body + page_foot()
+    title = p.get('meta_title') or f'For {label}'
+    desc = p.get('meta_description') or p['sub']
+    extra = ''
+    if p.get('schema'):
+        extra = ld_script([
+            ld_webpage(title, desc, dateModified=None if p.get('ld_undated') else LD_MODIFIED),
+            {'@type': 'FAQPage', '@id': LD_PAGE + '#faq', 'mainEntity': ld_faq_entities(p['faqs'])},
+        ])
+    return page_head(title, 2, desc, extra_head=extra) + body + page_foot()
 
 
 def render_customers() -> str:
@@ -2770,11 +2963,11 @@ def og_tags(post: dict) -> str:
         f'<link rel="canonical" href="{E(canon)}">',
         '<meta property="og:type" content="article">',
         f'<meta property="og:title" content="{E(post["title"])}">',
-        f'<meta property="og:description" content="{E(post.get("excerpt", ""))}">',
+        f'<meta property="og:description" content="{E(post.get("meta_description") or post.get("excerpt", ""))}">',
         f'<meta property="og:url" content="{E(url)}">',
         '<meta name="twitter:card" content="summary_large_image">',
         f'<meta name="twitter:title" content="{E(post["title"])}">',
-        f'<meta name="twitter:description" content="{E(post.get("excerpt", ""))}">',
+        f'<meta name="twitter:description" content="{E(post.get("meta_description") or post.get("excerpt", ""))}">',
     ]
     if img:
         t.append(f'<meta property="og:image" content="{E(img)}">')
@@ -2819,9 +3012,12 @@ def render_blog_index(posts: list) -> str:
     {grid}
     {footer_html(1)}
     '''
+    # The blog landing page is kept out of the index (noindex, follow): the posts
+    # stay crawlable through its links and the sitemap, and rank on their own.
     return page_head('Blog', 1,
                      'Field notes, product updates and research on client relationships from the '
-                     'Kaizan team.') + body + page_foot()
+                     'Kaizan team.',
+                     extra_head='<meta name="robots" content="noindex, follow">') + body + page_foot()
 
 
 def render_blog_post(post: dict) -> str:
@@ -2832,7 +3028,6 @@ def render_blog_post(post: dict) -> str:
     {nav_html(2, active='Blog')}
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
-        <div class="kz-eyebrow">{E(post.get('date', ''))}</div>
         <h1 class="kz-post-title">{E(post['title'])}</h1>
         {hero}
         {post.get('body', '<p>(empty)</p>')}
@@ -2841,8 +3036,12 @@ def render_blog_post(post: dict) -> str:
     </article>
     {footer_html(2)}
     '''
-    return page_head(post['title'], 2, post.get('excerpt', ''),
-                     extra_head=og_tags(post)) + body + page_foot()
+    extra = og_tags(post)
+    if post.get('schema'):
+        extra += '\n        ' + ld_script([ld_blogposting(post)])
+    return page_head(post.get('meta_title') or post['title'], 2,
+                     post.get('meta_description') or post.get('excerpt', ''),
+                     extra_head=extra) + body + page_foot()
 
 
 def render_about() -> str:
@@ -2853,7 +3052,7 @@ def render_about() -> str:
     <section class="kz-about-hero">
       <div class="kz-eyebrow">Founder&rsquo;s Letter · Kaizan</div>
       <h1 class="kz-h1" style="margin:22px 0 0;max-width:1200px;">
-        A proactive system of <span class="kz-mark">intelligence</span> for client service.
+        Kaizan: A Proactive System of <span class="kz-mark">Intelligence</span> for Client Service
       </h1>
     </section>
 
@@ -2894,11 +3093,11 @@ def render_about() -> str:
           The same director, on Kaizan, has her AI Assistant throughout the day taking care of the admin,
           updating systems and notifying her to info she needs to know about. With AI Helpers working on
           every account 24/7 &mdash; suggesting ways to improve campaigns, tending to relationships that
-          have gone quiet, and hunting for growth opportunities buried in signals from calls she wasn&rsquo;t on.
+          have gone quiet, and improving efficiency by cutting the manual chasing and synthesis work buried in signals from calls she wasn&rsquo;t on.
           By 7:30am her phone has a brief on every account and a pre-brief for the CMO call. Market intel
           is drafted and sent directly to her. She is, finally, the domain expert she was hired to be, across
           every account globally, in real time. The 35 hours she gets back go to strategy, interacting with
-          her AI Helpers as a thought partner, and the relationships that decide whether the account grows or not.
+          her AI Helpers as a thought partner, using that time to grow the account, and the relationships that decide whether the account grows or not.
         </p>
 
         <p>
@@ -2944,50 +3143,52 @@ def render_about() -> str:
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">01</span><h3>Collective intelligence, always on.</h3></div>
+          <div class="row"><span class="num">01</span><h3>Collective intelligence and AI helpers, always on.</h3></div>
           <p>
             Every CRM in the world was built to be a passive filing cabinet in a UI built for humans to use
             as the system for sales and marketing. And retro fitted for CS. What you put in is what you get
             out, and none of it learns. Kaizan inverts this. Because the brain observes every interaction
             and every deliverable across every client, it builds a continuously updating model of what great
-            client service actually looks like inside that business &mdash; which patterns of engagement
+            client service actually looks like inside that business, improving processes as it learns which patterns of engagement
             predict renewal, which stakeholders matter, which interventions move accounts from amber to green,
             which campaigns turn ordinary relationships into expansion.
           </p>
           <p>
             For the first time, a team can benchmark its own work across every client, every project, and
-            every stakeholder. And put a number on the value of client service it has never been able to
+            every stakeholder. And put a number on the value of client service and productivity it has never been able to
             quantify before. Every meeting, every email, every outcome makes the brain sharper, not just
-            for the account it came from, but for every account the company runs.
+            for the account it came from, but for every account the company runs. This helps teams achieve better
+            outcomes. It also gives client teams a reliable source of truth.
           </p>
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">02</span><h3>Semantic understanding of the relationship.</h3></div>
+          <div class="row"><span class="num">02</span><h3>Semantic understanding of the client relationship.</h3></div>
           <p>
-            Kaizan unlocks the value in your most valuable data set, every interaction with clients, vendors,
+            Kaizan unlocks the value in your most valuable data set, every conversation with clients, vendors,
             partners and internally. To Kaizan, those are the raw materials of something alive: a relationship,
             with history, mood, sentiment, stakeholders, and silences that say more than any reply. The brain
-            has memory, and understands that the procurement lead who went quiet on Slack is the same person
+            has memory, and can spot a problem early from a single message or a change in tone: the procurement lead who went quiet on Slack is the same person
             who pushed back on pricing three quarters ago and the same person whose boss just changed on LinkedIn.
             It sees the shape of the account across
             <strong>Client Satisfaction on the work being done, Activity with stakeholders, Relationship strength,
             and Expansion opportunities &mdash; the CARE framework</strong> &mdash; which updates every second
-            and gives Agents context in which to act.
+            and gives Agents better answers and context in which to act, whether that is between meetings or in each
+            quarter&rsquo;s review and planning cycle.
           </p>
         </div>
 
         <div class="kz-essay-tech">
-          <div class="row"><span class="num">03</span><h3>Agentic execution.</h3></div>
+          <div class="row"><span class="num">03</span><h3>Agentic execution for the account manager.</h3></div>
           <p>
             People pointing and clicking UIs is evolving. The best account manager in any firm has never
             been the one with the best dashboard. The future is interacting with AI Helpers conversationally
             as they go off and complete tasks with context beyond what the person has ever had available to them.
             Kaizan&rsquo;s AI Helpers don&rsquo;t just observe and report &mdash; they act and do the work.
-            They surface a stakeholder gap and draft the outreach. They prep the brief before the meeting and
-            write the follow-up after it. They flag the account at risk and propose the intervention.
+            They surface a stakeholder gap, keep the stakeholder engaged, and draft the outreach. They prep the brief before the meeting and
+            write the follow-up after it. They flag the account at risk, propose the intervention, and suggest practical steps to reduce that risk.
             <strong>Signal → Work → Completion</strong>, run continuously, so that human judgement is spent
-            where it matters and everything else gets handled.
+            where it matters and everything else gets handled. This can increase revenue on existing accounts.
           </p>
         </div>
 
@@ -3049,8 +3250,13 @@ def render_about() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('About', 1,
-                     'Founder’s Letter from Glen Calvert, Co-founder & CEO of Kaizan. A proactive system of intelligence for client service.') + body + page_foot()
+    return page_head('Our Story: Intelligence for Client Service', 1,
+                     'Why Glen Calvert and Pravin Paratey founded Kaizan in London: a proactive system of intelligence for client service and account management teams.',
+                     extra_head=ld_script([
+                         ld_webpage('About Kaizan',
+                                    'Why Kaizan was founded: a proactive system of intelligence for client service and account management teams.',
+                                    kind='AboutPage', about={'@id': LD_ORG_ID}),
+                     ], ident='about')) + body + page_foot()
 
 
 # Mailchimp embedded-form endpoints for the July free-coffee campaign.
@@ -3341,9 +3547,9 @@ def render_integrations() -> str:
     custom_cards = '\n'.join(
         f'<div class="kz-int-custom-card"><div class="lbl">{E(t)}</div><div class="d">{E(d)}</div></div>'
         for t, d in [
-            ('CLIENT INTELLIGENCE', 'Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine.'),
-            ('WORKFLOW AUTOMATION', 'Trigger downstream actions in your delivery, billing and resourcing systems.'),
-            ('AUTONOMOUS GROWTH', 'Connect agents to your account-planning, forecasting and outbound playbooks.'),
+            ('CLIENT INTELLIGENCE', 'Pipe your data warehouse, BI stack and proprietary scoring into the CARE engine to surface signals across client relationships, including client sentiment and stakeholder sentiment, alongside early risks, expansion opportunities, and revenue impact.'),
+            ('WORKFLOW AUTOMATION', 'Trigger downstream actions in your delivery, billing and resourcing systems, automating follow-up, capturing next steps, handling routine steps, and cutting the time spent each day on manual work.'),
+            ('AUTONOMOUS GROWTH', 'Connect agents to your account-planning, forecasting and outbound playbooks to spot where to grow, guide teams toward the right actions, and help them achieve better outcomes.'),
             ('INTERNAL AI', 'Embed Kaizan inside the AI platforms and copilots your team already uses.'),
         ]
     )
@@ -3355,14 +3561,15 @@ def render_integrations() -> str:
     <section class="kz-section-tight" style="padding-top:60px;">
       <div class="kz-eyebrow">Integrations</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
-        The tools your client teams already use - unify your data.
+        Kaizan.ai: The Tools Your Client Teams Already Use &ndash; Unify Your Data
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">
         Kaizan builds a continuous memory on every client by automatically capturing every meeting,
         message, doc and report. <strong style="color:var(--kz-ink);font-weight:600;">All standard
-        integrations are free.</strong> All client and communication data assigned to the right
-        client, the right stakeholders, with the right access rights. Unify your most precious
-        asset for your team and their AI Helpers.
+        integrations are free.</strong>&nbsp;All client and communication data is assigned to the right
+        client, the right stakeholders, with the right access rights, giving teams better visibility
+        into their clients and the information tied to each relationship. Unify your most precious
+        asset for your team and their AI Helpers, improving efficiency and helping them act with confidence.
       </p>
       <div class="kz-int-meta">
         <span><span class="kz-dot"></span> <strong>2-way sync</strong></span>
@@ -3374,7 +3581,7 @@ def render_integrations() -> str:
     <!-- STANDARD GRID -->
     <section class="kz-int-grid-section">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Standard</h2>
+        <h2 class="kz-h2" style="font-size:32px;">Standard client intelligence platform</h2>
       </div>
       <div class="kz-int-grid">{tiles}</div>
     </section>
@@ -3382,7 +3589,7 @@ def render_integrations() -> str:
     <!-- KAIZAN API FEATURED -->
     <section class="kz-int-grid-section">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Featured</h2>
+        <h2 class="kz-h2" style="font-size:32px;">Featured for client success teams</h2>
         <span class="kz-eyebrow">BUILD YOUR OWN</span>
       </div>
       <div class="kz-int-api">
@@ -3391,14 +3598,15 @@ def render_integrations() -> str:
           <div class="kz-eyebrow" style="color:var(--kz-yellow);">BUILD YOUR OWN SOLUTIONS</div>
           <h3 class="head">Kaizan API</h3>
           <p class="lede">Leverage all your unified client intelligence (every meeting, every signal,
-            every score) in your own systems and agents. SOC 2 logged, two-way sync, scoped per tenant.</p>
+            every score) in your own systems, AI tools, and AI agents. SOC 2 logged, two-way sync, scoped per tenant, with a clear
+            commitment to secure handling of the client data Kaizan may hold on record.</p>
         </div>
         <div class="actions">
           <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="/demo/">Talk to us</a>
         </div>
       </div>
       <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
-        Contact Kaizan to understand the full suite of integrations available.
+        Contact Kaizan to understand the full suite of client relationships integrations available.
       </h3>
     </section>
 
@@ -3408,12 +3616,13 @@ def render_integrations() -> str:
         <div class="left">
           <div class="kz-eyebrow">Forward-deployed engineering</div>
           <h2 class="kz-h2" style="font-size:44px;margin:12px 0 18px;line-height:1.05;">
-            Custom <span class="kz-mark kz-mark-tight">integrations</span>
+            Custom client service <span class="kz-mark kz-mark-tight">integrations</span>
           </h2>
           <p class="kz-lede" style="font-size:16px;max-width:560px;">
             Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
-            with your internal systems, for more client intelligence, workflow automation and autonomous
-            client growth.
+            with your internal systems for client service teams and account managers, with a clear focus on
+            workflow automation, more client intelligence, and autonomous client growth. These custom
+            integrations are purpose-built to support those workflows and make connected data more valuable.
           </p>
           <div class="kz-flex" style="margin-top:26px;">
             <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;font-size:14px;" href="/demo/">Book demo →</a>
@@ -3429,8 +3638,9 @@ def render_integrations() -> str:
         <div>
           <div class="kz-eyebrow" style="color:rgba(10,10,10,.6);">DON&rsquo;T SEE YOUR TOOL?</div>
           <h3 class="head">We&rsquo;ll build it for design partners.</h3>
-          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet, tell us.
-            We&rsquo;ve shipped two new connectors per quarter for the last year.</p>
+          <p>If you&rsquo;re an enterprise and your stack includes a tool we don&rsquo;t support yet, tell us&mdash;we can support the way your company does its work,
+            including needs tied to a specific role or edge cases. We&rsquo;ve shipped two new connectors per quarter
+            for the last year, a steady pace sustained over a long period.</p>
         </div>
         <a class="kz-btn kz-btn-black" style="padding:16px 26px;font-size:15px;white-space:nowrap;" href="/demo/">
           Request an integration →
@@ -3440,9 +3650,20 @@ def render_integrations() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('Integrations', 1,
-                     'Native connectors for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet '
-                     'and more, plus the Kaizan API.') + body + page_foot()
+    ld = ld_script([
+        ld_webpage('Kaizan integrations',
+                   'Standard integrations for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet and more, '
+                   'plus the Kaizan API and custom client service integrations.',
+                   mainEntity={'@id': LD_PAGE + '#integrations'}),
+        {'@type': 'ItemList', '@id': LD_PAGE + '#integrations', 'name': 'Kaizan standard integrations',
+         'numberOfItems': len(INT_DATA),
+         'itemListElement': [{'@type': 'ListItem', 'position': n, 'name': i['name'], 'description': i['why']}
+                             for n, i in enumerate(INT_DATA, 1)]},
+    ])
+    return page_head('Client Tool Integrations: Free Standard Set', 1,
+                     'All standard Kaizan integrations are free: Teams, Slack, HubSpot, Salesforce, Google Meet and more '
+                     'unify client data, plus the Kaizan API and custom builds.',
+                     extra_head=ld) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -3452,7 +3673,7 @@ def render_integrations() -> str:
 PRICING_TIERS = [
     dict(name='Pilot', clients_pre='Full access for ', clients_bold='14 days',
          price='Free', per='No card, no commitment',
-         plan='Speak to a Kaizan Account Executive to get set up',
+         plan='Contact a Kaizan Account Executive to get set up',
          cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
          cta_style='primary', ribbon='Start here', card='hero',
          features=['Full platform for 14 days',
@@ -3480,7 +3701,7 @@ PRICING_TIERS = [
                    'Guided onboarding and AI maturity framework assessment',
                    'API access',
                    'Priority support']),
-    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='for enterprises and custom work',
          price='Custom', per='Per client rate negotiated to your portfolio',
          plan='Scoped with you, billed as one flat monthly plan',
          cta='Talk to us', cta_note='', cta_style='dark',
@@ -3531,7 +3752,7 @@ def tier_card(t: dict, p: str = '', demo_href: str = '/demo/') -> str:
 PRICING_TIERS_US = [
     dict(name='Pilot', clients_pre='14 days of ', clients_bold='full access',
          price='Free', per='No card, no commitment',
-         plan='Speak to a Kaizan Account Executive to get set up',
+         plan='Contact a Kaizan Account Executive to get set up',
          cta='Book a kickoff call', cta_note='Live the same day, connect by OAuth',
          cta_style='primary', ribbon='Start here', card='hero',
          features=['Full platform for 14 days',
@@ -3557,7 +3778,7 @@ PRICING_TIERS_US = [
          features=['Everything in Starter',
                    'Bigger portfolio, up to 49 accounts',
                    'Guided onboarding with CARE calibration']),
-    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='and custom work',
+    dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='for enterprises and custom work',
          price='Custom', per='Per client rate negotiated to your portfolio',
          plan='Scoped with you, billed as one flat monthly plan',
          cta='Talk to us', cta_note='', cta_style='dark', price_small=True,
@@ -3579,15 +3800,54 @@ def us_pricing_section() -> str:
     return f'''<section class="kzp">
       <div class="kzp-wrap">
         <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
         <div class="kzp-badges">
           <span class="kzp-tag">✓ New: 14-day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
         <div class="kzp-grid">{tiers_html}</div>
-        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
+        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier for a range of company sizes. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
       </div>
     </section>'''
+
+
+PRICING_DESC = ('Pricing is set by how many clients you cover, per client per month, '
+                'with unlimited users on every tier. Every engagement starts with a free 14 day pilot.')
+
+
+def pricing_offers(tiers: list, currency: str) -> list:
+    """schema.org Offers from a PRICING_TIERS-shaped list (GBP or USD). Prices and
+    client bands are parsed from the same fields the tier cards render."""
+    offers = []
+    for t in tiers:
+        offer = {'@type': 'Offer', 'name': t['name'], 'url': LD_PAGE, 'priceCurrency': currency,
+                 'description': 'Unlimited users.'}
+        digits = re.sub(r'[^\d.]', '', t['price'])
+        if t['name'] == 'Pilot':
+            offer['price'] = '0'
+            offer['description'] = ('Free 14 day pilot on your own data. No card, no commitment. '
+                                    'Unlimited users.')
+        elif digits:
+            offer['price'] = digits
+            qty = {'@type': 'QuantitativeValue', 'unitText': 'clients'}
+            band = re.search(r'(\d+) to (\d+)', t['clients_pre'] + t['clients_bold'])
+            if band:
+                qty['minValue'], qty['maxValue'] = int(band.group(1)), int(band.group(2))
+            elif t['clients_pre'].startswith('Minimum'):
+                qty['minValue'] = int(re.search(r'\d+', t['clients_bold']).group())
+            elif t['clients_pre'].startswith('Up to'):
+                qty['maxValue'] = int(re.search(r'\d+', t['clients_bold']).group())
+            offer['priceSpecification'] = {
+                '@type': 'UnitPriceSpecification', 'price': digits, 'priceCurrency': currency,
+                'unitText': 'per client / month',
+                'eligibleQuantity': qty}
+            offer['description'] = (f"{t['clients_pre']}{t['clients_bold']}, per client per month, annual contract. "
+                                    'Unlimited users.')
+        else:
+            offer['description'] = ('Custom per client rate negotiated to your portfolio, annual contract. '
+                                    'Unlimited users.')
+        offers.append(offer)
+    return offers
 
 
 PRICING_HELPERS = [
@@ -3678,7 +3938,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-field"><input type="text" inputmode="numeric"></div>
             <button type="button" class="kzroi-step" data-act="inc" aria-label="Increase Total company headcount">+</button>
           </div>
-          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users: finance, ops and leadership can all use it at no extra cost.</div>
+          <div class="kzroi-num-help">Everyone at your company. Kaizan is unlimited users: it supports business needs across finance, ops and leadership at no extra cost.</div>
         </div>
 
         <div class="kzroi-num" data-key="team" data-min="1" data-max="500" data-step="1">
@@ -3731,7 +3991,7 @@ ROI_CALCULATOR_SECTION = '''
             <p><strong>Retention.</strong> Your attrition × portfolio value is the revenue at risk each year. We credit Kaizan with the share it protects via early CARE signals: <span data-roi="m-churn">45</span>% in <span data-roi="m-mode">Expected</span> mode (saves, scope recovered, cycles extended). We never count more than your actual attrition.</p>
             <p><strong>White space.</strong> Upsell is modelled on an 8% addressable pool of your portfolio, of which we count <span data-roi="m-upsell">60</span>%: opportunities surfaced from clients you already have.</p>
             <p><strong>Capacity.</strong> 9 admin hrs/week per client-facing person (UK companies report ~13 non-billable hrs), of which <span data-roi="m-capacity">60</span>% is handed back, across 46 working weeks. Valued at £30/hr loaded cost: UK client-service salary ~£40k × ~1.3 overhead ÷ 1,725 FTE hrs.</p>
-            <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count; users are unlimited.</p>
+            <p><strong>Satisfaction</strong> is shown directionally and never monetised. <strong>Pricing</strong> is set automatically from your client count so you can compare the return against your needs; users are unlimited.</p>
           </div>
         </details>
       </div>
@@ -3776,7 +4036,7 @@ ROI_CALCULATOR_SECTION = '''
             <div class="kzroi-card-title">Capacity recovered from admin</div>
             <div class="kzroi-card-bullets">
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span><span data-roi="admin-hours">0</span> admin hours sit across your team each year</span></div>
-              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Notes, follow-ups and CRM updates handled automatically</span></div>
+              <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Notes, follow-ups and CRM updates handled automatically through operational features</span></div>
               <div class="kzroi-bullet"><span class="arrow" aria-hidden="true">→</span><span>Time goes straight back into client-facing work</span></div>
             </div>
           </div>
@@ -3810,7 +4070,7 @@ ROI_CALCULATOR_SECTION = '''
 
     <!-- closing CTA band -->
     <div class="kzroi-cta-band">
-      <h3>See your clients, clearly.</h3>
+      <h3>See your team and clients, clearly.</h3>
       <p>Take the full breakdown with you (your numbers, the workings, and what comparable Kaizan clients see) or jump straight to a demo.</p>
       <div class="kzroi-cta-actions">
         <a href="/demo/" target="_blank" rel="noopener" class="kzroi-pill kzroi-pill-gold">Book a demo →</a>
@@ -3857,13 +4117,13 @@ def render_pricing() -> str:
     <section class="kzp">
       <div class="kzp-wrap">
         <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover. Unlimited users on every tier.</p>
+        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
         <div class="kzp-badges">
           <span class="kzp-tag">✓ New: 14 day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
         <div class="kzp-grid">{tiers_html}</div>
-        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
+        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier for a range of company sizes. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
       </div>
     </section>'''
     chevron = ('<svg class="kzacc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
@@ -3885,10 +4145,12 @@ def render_pricing() -> str:
       </details>
     </section>'''
     body = nav_html(1, active='Pricing') + pricing_section + accordion + footer_html(1)
-    return page_head('Pricing', 1,
-                     'Kaizan pricing: priced by the size of the client portfolio we help you grow. '
-                     'Free 14 day pilot, then per client per month. Unlimited users on every tier.',
-                     extra_head=extra_head) + body + page_foot()
+    price_desc = PRICING_DESC
+    price_ld = ld_script([ld_webpage('Pricing', price_desc),
+                          ld_software(price_desc, offers=pricing_offers(PRICING_TIERS, 'GBP'))],
+                         ident='pricing')
+    return page_head('Pricing by Client Count, Free 14 Day Pilot', 1, price_desc,
+                     extra_head=extra_head + '\n        ' + price_ld) + body + page_foot()
 
 
 
@@ -4308,11 +4570,11 @@ def render_careers() -> str:
 FAQ_DATA = [
     ('About Kaizan', [
         ('What is Kaizan?',
-         'Kaizan is an AI platform built for Client Service teams and their AI Agents. It unifies all client data, captures every client meeting, email and message, scores the health of each relationship, surfaces risks before they become issues, and drafts the follow-ups, updates market intelligence and expansion plays that account managers spend most of their time doing. Kaizan is used by client-services teams globally obsessed with delivering elite client service.'),
+         'Kaizan is an AI platform created for Client Service teams and their AI Agents. It unifies all client data, captures every client meeting, email, message, client interactions and communications, scores the health of each relationship, surfaces risks before they become issues, and drafts the follow-ups, actions, market intelligence updates and expansion plays that account managers spend most of their time doing. Kaizan is used by client-services teams globally obsessed with delivering elite client service.'),
         ('Who built Kaizan and where is the company based?',
          'Kaizan was founded by Glen Calvert and Pravin Paratey and is headquartered in London, UK.'),
         ('What does the name "Kaizan" mean?',
-         'Kaizan is taken from the Japanese word kaizen (改善), meaning continuous improvement. The product is designed around the same idea: client relationships compound, and small, consistent improvements in how an account manager listens, follows up and reports compound into materially better retention and expansion outcomes.'),
+         'Kaizan is taken from the Japanese word kaizen (改善), which means continuous improvement. The product is designed around the same idea: client relationships compound, and small, consistent improvements in how an account manager listens, follows up and reports improve client relationships now and in the future, compounding into materially better retention and expansion outcomes.'),
     ]),
     ('Who Kaizan is for', [
         ('Who is Kaizan designed for?',
@@ -4320,15 +4582,15 @@ FAQ_DATA = [
         ('How big does my team need to be to get value from Kaizan?',
          'Kaizan is most useful for teams of 10 to 500 client-facing people. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',
-         'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work.'),
+         'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, turns that data into structured information, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks, and account activity updates) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work. It helps teams add context from live client work into the CRM.'),
     ]),
     ('How Kaizan works', [
         ('How does Kaizan listen to client conversations?',
          'Kaizan ingests three sources: meeting transcripts (from Zoom, Google Meet, Microsoft Teams, Gong and Chorus), email threads (from Gmail and Outlook / Microsoft 365), and chat (from Slack and Microsoft Teams chat). Audio is transcribed by a speech-to-text model with speaker diarisation. Text is parsed for participants, topics, commitments, risks, sentiment and questions.'),
         ('What does Kaizan actually output?',
-         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, Activity, Relationship, Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise to improve client ROI, satisfaction and revenue.'),
+         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, account activity, relationship coverage, and Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
         ('What is the CARE model?',
-         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures the cadence and quality of touchpoints with stakeholders. Relationship measures sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained.'),
+         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship measures relationship coverage alongside sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained, while also considering engagement growth over time when evaluating account health.'),
         ('How accurate is Kaizan’s sentiment analysis?',
          'Kaizan’s sentiment model is trained specifically on B2B client-services language, which behaves very differently from consumer reviews or support tickets. Internal benchmarks across 4.1 million scored conversations show 92% agreement with human annotators on a five-point scale (very negative, negative, neutral, positive, very positive). Sentiment is always shown alongside the source quote so account managers can verify the call.'),
         ('How long does it take to set up Kaizan?',
@@ -4344,15 +4606,15 @@ FAQ_DATA = [
         ('How is Kaizan priced?',
          'Kaizan is priced based on the number of clients you have, there are no limits to the number of seats or users. List pricing and a calculator are at kaizan.ai/pricing.'),
         ('Is there a free trial?',
-         'No, we do paid pilots so you can assess the ROI and value received.'),
+         'Yes. Every engagement starts with a free 14-day pilot on your own client data, with no card and no commitment, so you can assess the ROI and value received.'),
         ('What is the typical contract length?',
-         'Standard contracts are 12 months, billed annually, with quarterly business reviews. Multi-year contracts (24 and 36 months) carry a discount and are common for enterprise clients. Month-to-month is available on Starter for teams piloting Kaizan before formal procurement.'),
+         'Contracts are annual (12 months), with quarterly business reviews. Multi-year contracts (24 and 36 months) carry a discount and are common for enterprise clients. Pricing is per client per month, billed as one flat monthly plan, and there is no month-to-month option.'),
     ]),
     ('Outcomes and benchmarks', [
         ('What kind of results do Kaizan clients see?',
          'Across the active client base, Kaizan clients report a median 146% net dollar retention versus a sector benchmark of approximately 105% to 115%. Account managers report saving an average of 3.2 hours per week on reporting and follow-up work. Quarterly business review preparation drops from a typical 4 to 6 hours per account to 30 to 60 minutes. Client satisfaction scores (CSAT) typically move 12 to 20 points within the first two quarters of rollout.'),
         ('What does a successful Kaizan rollout look like in the first 90 days?',
-         'Day 1–14: integrations connected, last 90 days of history backfilled, CARE scores live for every account. Day 15–45: account managers using drafted recaps and follow-ups daily; first risks caught and saved. Day 46–90: first QBR cycle run inside Kaizan; usage benchmarks and account-level outcomes reviewed with the Kaizan customer success team and a written 90-day report delivered.'),
+         'Day 1–14: integrations connected, last 90 days of history backfilled, CARE scores live for every account. Day 15–45: account managers using drafted recaps and follow-ups daily; first risks caught and saved, with AI Helpers taking actions automatically on follow-ups. Day 46–90: first QBR cycle run inside Kaizan; usage benchmarks and account-level outcomes, including engagement growth, reviewed with the Kaizan customer success team and a written 90-day report delivered.'),
     ]),
     ('Comparisons', [
         ('How is Kaizan different from a generic AI note-taker like Otter, Fireflies, or Granola?',
@@ -4446,8 +4708,17 @@ def render_faq() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('FAQs', 1,
-                     'Plain-text answers about Kaizan: designed for people and language models.') + body + page_foot()
+    ld = ld_script([
+        ld_webpage('Frequently asked questions about Kaizan',
+                   'Plain-text answers about Kaizan: what it is, how it works, integrations, pricing and contracts, '
+                   'outcomes, comparisons and working with the team.',
+                   kind='FAQPage',
+                   mainEntity=ld_faq_entities([qa for _, qs in FAQ_DATA for qa in qs])),
+    ])
+    return page_head('Kaizan FAQs: Pricing, Integrations, Setup', 1,
+                     'Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual '
+                     'contracts, outcomes, comparisons and how to work with us.',
+                     extra_head=ld) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5029,9 +5300,11 @@ def render_demo() -> str:
 
     {footer_html(1)}
     '''
+    # Booking interstitial kept out of the index (noindex, follow); the UK and /us/
+    # versions both inherit this through the /us/ mirror.
     return page_head('Book a demo', 1,
                      "Confirm you're human, then book a 30-minute live demo of Kaizan.",
-                     extra_head=extra_head) + body + page_foot()
+                     extra_head='<meta name="robots" content="noindex, follow">\n        ' + extra_head) + body + page_foot()
 
 
 def render_demo_confirmed() -> str:
@@ -5306,6 +5579,13 @@ US_SPELLING = {
     'labelled': 'labeled', 'labelling': 'labeling',
     'grey': 'gray', 'whilst': 'while', 'amongst': 'among',
     'judgement': 'judgment', 'acknowledgement': 'acknowledgment',
+    'anonymised': 'anonymized', 'prioritisation': 'prioritization', 'prioritises': 'prioritizes',
+    'categorising': 'categorizing', 'categorisation': 'categorization',
+    'commoditised': 'commoditized', 'monetised': 'monetized', 'monetisation': 'monetization',
+    'diarisation': 'diarization', 'decentralised': 'decentralized', 'globalisation': 'globalization',
+    'strategising': 'strategizing', 'humanise': 'humanize', 'practising': 'practicing',
+    'contextualise': 'contextualize', 'rationalise': 'rationalize', 'materialised': 'materialized',
+    'revolutionised': 'revolutionized', 'revolutionise': 'revolutionize', 'familiarise': 'familiarize',
 }
 _US_SPELL_RE = re.compile(r'\b(' + '|'.join(sorted(US_SPELLING, key=len, reverse=True)) + r')\b', re.I)
 
@@ -5329,8 +5609,10 @@ def _spell_text_nodes(html: str) -> str:
     parts_joined = ''.join(parts)
     parts_joined = re.sub(r'(name="description" content=")([^"]*)(")',
                           lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
-    parts_joined = re.sub(r'(property="og:description" content=")([^"]*)(")',
-                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    for attr in ('property="og:description"', 'property="og:title"',
+                 'name="twitter:description"', 'name="twitter:title"'):
+        parts_joined = re.sub(r'(' + attr + r' content=")([^"]*)(")',
+                              lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
     return parts_joined
 
 
@@ -5338,6 +5620,133 @@ def _hreflang_block(path: str) -> str:
     return (f'<link rel="alternate" hreflang="en-GB" href="{SITE_ORIGIN}{path}">'
             f'<link rel="alternate" hreflang="en-US" href="{SITE_ORIGIN}/us{path if path != "/" else "/"}">'
             f'<link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}{path}">')
+
+
+_LD_KINDS = {'/customers/': 'CollectionPage', '/research/': 'CollectionPage',
+             '/knowledge-hub/': 'CollectionPage'}
+
+
+def _inject_default_schema(html: str, path: str) -> str:
+    """JSON-LD for indexable pages that don't build their own: a WebPage (or
+    CollectionPage) node, plus SoftwareApplication on the product landing page.
+    Pages with no publish date carry no dateModified; policies carry their
+    'Last updated' date."""
+    if not _indexable(html, path) or 'application/ld+json' in html:
+        return html
+    m = re.search(r'rel="canonical" href="([^"]+)"', html)
+    if not m or m.group(1) != f'{SITE_ORIGIN}{path}':
+        return html
+    t = re.search(r'<title>(.*?)</title>', html, re.S)
+    d = re.search(r'name="description" content="([^"]*)"', html)
+    from html import unescape
+    name = re.sub(r'\s*·\s*Kaizan\s*$', '', unescape(t.group(1)).strip()) if t else 'Kaizan'
+    desc = unescape(d.group(1)) if d else ''
+    tm = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', html) if 'kz-policy' in html else None
+    nodes = [ld_webpage(name, desc, _LD_KINDS.get(path, 'WebPage'),
+                        dateModified=tm.group(1) if tm else None)]
+    if path == '/customer-success-software/':
+        nodes.append(ld_software(desc))
+    return html.replace('</head>', ld_script(nodes) + '\n</head>', 1)
+
+
+def write_sitemap():
+    """sitemap.xml: every indexable, self-canonical page (UK + /us/), with
+    hreflang alternates and a lastmod where the page carries a date."""
+    from html import escape as esc
+    skip = {'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
+    entries = []
+    for f in sorted(ROOT.rglob('*.html')):
+        rel = f.relative_to(ROOT)
+        if rel.parts[0] in skip or not all(re.fullmatch(r'[A-Za-z0-9._-]+', x) for x in rel.parts):
+            continue
+        path = '/' + (str(rel.parent) + '/' if rel.name == 'index.html' and str(rel.parent) != '.'
+                      else '' if rel.name == 'index.html' else str(rel))
+        html = f.read_text(encoding='utf-8')
+        us = path.startswith('/us/') or path == '/us/'
+        base = path[3:] if us else path
+        if not _indexable(html, base or '/'):
+            continue
+        m = re.search(r'rel="canonical" href="([^"]+)"', html)
+        if not m or m.group(1) != f'{SITE_ORIGIN}{path}':
+            continue
+        lm = re.search(r'"dateModified": ?"(\d{4}-\d{2}-\d{2})"', html)
+        alts = ''
+        if 'hreflang=' in html:
+            uk_url, us_url = SITE_ORIGIN + (base or '/'), SITE_ORIGIN + '/us' + (base or '/')
+            alts = (f'<xhtml:link rel="alternate" hreflang="en-GB" href="{esc(uk_url)}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="en-US" href="{esc(us_url)}"/>'
+                    f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(uk_url)}"/>')
+        entries.append(f'<url><loc>{esc(SITE_ORIGIN + path)}</loc>'
+                       + (f'<lastmod>{lm.group(1)}</lastmod>' if lm else '') + alts + '</url>')
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+           'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(entries) + '\n</urlset>\n')
+    (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    print(f'  (sitemap.xml: {len(entries)} URLs)')
+
+
+# Page-specific US variants of a JSON-LD block (keyed by the script's data-kz-ld
+# id), for schema that carries locale-specific facts such as USD prices.
+US_LD_BUILDERS: dict = {}
+US_LD_BUILDERS['pricing'] = lambda: ld_script(
+    [ld_webpage('Pricing', PRICING_DESC), ld_software(PRICING_DESC, offers=pricing_offers(PRICING_TIERS_US, 'USD'))],
+    ident='pricing')
+_LD_RE = re.compile(r'<script type="application/ld\+json"(?: data-kz-ld="(\w+)")?>(.*?)</script>', re.S)
+
+
+def _indexable(html: str, path: str) -> bool:
+    """True for pages that should carry canonical + hreflang: not noindex,
+    not a redirect stub, not the 404."""
+    if path == '/404.html' or 'http-equiv="refresh"' in html:
+        return False
+    return not re.search(r'<meta name="robots" content="[^"]*noindex', html)
+
+
+def _inject_seo_head(html: str, path: str) -> str:
+    """Idempotently give every indexable page a self-canonical and the en-GB /
+    en-US / x-default hreflang set. A page whose canonical points elsewhere
+    (e.g. a Medium import) is left without hreflang, since search engines
+    ignore hreflang on non-self-canonical pages."""
+    if not _indexable(html, path):
+        return html
+    self_url = f'{SITE_ORIGIN}{path}'
+    m = re.search(r'rel="canonical" href="([^"]+)"', html)
+    if m:
+        canon = m.group(1)
+    else:
+        canon = self_url
+        html = html.replace('</title>', f'</title>\n<link rel="canonical" href="{E(self_url)}">', 1)
+    if canon == self_url and 'hreflang=' not in html:
+        html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
+    return html
+
+
+def _ld_us_spell(node):
+    if isinstance(node, dict):
+        return {k: _ld_us_spell(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [_ld_us_spell(v) for v in node]
+    if isinstance(node, str) and not node.startswith(('http', '@@')):
+        return us_spell(node)
+    return node
+
+
+def _resolve_ld(html: str, path: str, locale: str) -> str:
+    """Fill the page-URL / language tokens in JSON-LD for one locale; for /us/ also
+    swap in any US-specific builder and apply US spelling to the string values."""
+    us = locale == 'us'
+    page_url = f'{SITE_ORIGIN}/us{path}' if us else f'{SITE_ORIGIN}{path}'
+
+    def sub(m):
+        ident, body = m.group(1), m.group(2)
+        if us and ident in US_LD_BUILDERS:
+            return US_LD_BUILDERS[ident]().replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US')
+        body = body.replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US' if us else 'en-GB')
+        if us:
+            body = json.dumps(_ld_us_spell(json.loads(body)), ensure_ascii=False)
+        attr = f' data-kz-ld="{ident}"' if ident else ''
+        return f'<script type="application/ld+json"{attr}>{body}</script>'
+    return _LD_RE.sub(sub, html)
 
 
 def build_us_locale():
@@ -5353,7 +5762,7 @@ def build_us_locale():
     uk_cal_b64 = base64.b64encode(CALENDAR_URL.encode()).decode()
     us_cal_b64 = base64.b64encode(US_CALENDAR_URL.encode()).decode()
 
-    skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github'}
+    skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
 
     def _safe(rel: Path) -> bool:
         # Only real page paths — guards against stray/garbage files in the tree.
@@ -5373,13 +5782,15 @@ def build_us_locale():
 
         html = f.read_text(encoding='utf-8')
 
-        # 1. Inject hreflang into the UK page (idempotent) and write it back.
-        if 'hreflang=' not in html:
-            html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
-            f.write_text(html, encoding='utf-8')
+        # 1. Self-canonical + hreflang on every indexable UK page (idempotent),
+        #    and resolve the JSON-LD URL/language tokens for the UK page itself.
+        html = _inject_default_schema(_inject_seo_head(html, path), path)
+        uk_html = _resolve_ld(html, path, 'uk')
+        if uk_html != f.read_text(encoding='utf-8'):
+            f.write_text(uk_html, encoding='utf-8')
 
-        # 2. Build the US version.
-        us = html
+        # 2. Build the US version (from the token-bearing html, not the UK-resolved one).
+        us = _resolve_ld(html, path, 'us')
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
         # calendly-utm.js (from page_head()) is kept as-is — /us/ also books
@@ -6856,12 +7267,18 @@ def main():
                # UK "Book a call" CTAs point to the UK partner calendar.
                .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7',
                         'https://calendar.app.google/eWwFxNXq3mCZqw7HA'))
+    ref_gbp = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_gbp, '/referral-partners/'),
+                                                 '/referral-partners/'), '/referral-partners/', 'uk')
+    ref_usd = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_usd, '/referral-partners/'),
+                                                 '/referral-partners/'), '/referral-partners/', 'us').replace(
+        f'rel="canonical" href="{SITE_ORIGIN}/referral', f'rel="canonical" href="{SITE_ORIGIN}/us/referral')
     for path_rel, html in ((ROOT / 'referral-partners' / 'index.html', ref_gbp),
                            (ROOT / 'us' / 'referral-partners' / 'index.html', ref_usd)):
         path_rel.parent.mkdir(parents=True, exist_ok=True)
         path_rel.write_text(html, encoding='utf-8')
     print('  (referral partner page → /referral-partners/ [GBP] + /us/referral-partners/ [USD])')
 
+    write_sitemap()
     print('Done.')
 
 

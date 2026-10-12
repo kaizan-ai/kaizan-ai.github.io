@@ -1,11 +1,15 @@
 ---
 title: "Lean, Mean, and Client-Obsessed: What AI Is Really Changing Inside Agencies"
 date: 2026-07-13
-author: Lia
+author: Lia Grant
 category: POV
 excerpt: Greg Gifford, COO of Searchlab, on where AI genuinely helps agencies, where it's overhyped, and why understanding the client relationship is the real win.
 cover: cover.png
 draft: false
+meta_title: "AI in Agencies: Lean, Mean and Client-Obsessed"
+meta_description: "Searchlab COO Greg Gifford on where AI helps agencies, where it's overhyped, and how understanding the client relationship is the real win."
+schema: true
+date_modified: 2026-10-09
 tags: [client-relationship, artificial-intelligence, agency, digital-marketing, client-services]
 ---
 
@@ -43,29 +47,31 @@ On local search specifically, his verdict was that AI has done "nothing helpful,
 
 > "AI models just don't understand what local is. AI hasn't affected local search as much as it has affected traditional search."
 
-What has changed is how the platforms are behaving. He's watching Google push AI-style results into local territory: AI map packs appearing in categories like home services and legal, and, in some cases, the familiar call button disappearing from the traditional organic map pack. The effect, in his view, is friction:
+What has changed is how the platforms are behaving. He's watching Google push AI-style results into local territory across different devices: AI map packs appearing in categories like home services and legal, and, in some cases, the familiar call button disappearing from the traditional organic map pack. The effect, in his view, is friction:
 
 > "It's harder for people to reach the businesses they want to reach, because a lot of people are just skipping the AI results and then you have to work a little harder to contact that business."
 
-His read on the future is measured rather than breathless. As the models "figure out what local is a little bit more and get better at serving local results without hallucination, it's just going to be easier." That's the posture more agency leaders should take: not every AI headline is a five-alarm fire, and knowing which shifts actually affect your clients is its own competitive advantage.
+For consumers, that means extra steps at the exact moment they're trying to contact a business.
+
+His read on the future is measured rather than breathless. As the models "figure out what local is a little bit more and get better at serving local results without hallucination, it's just going to be easier." That's the posture more agency leaders should take: not every AI headline is a five-alarm fire, and knowing which shifts actually affect your clients is its own competitive advantage over competitors who overreact to every headline.
 
 ## The real AI win: understanding the client relationship
 
-Here's where the conversation got specific. When we asked where AI has delivered the biggest boost, the answer wasn't content generation or automated reporting. It was client understanding, and it came through Kaizan.
+Here's where the conversation got specific. When we asked where AI has delivered the biggest boost, the answer wasn't content generation or automated reporting. It was client understanding, and it came through Kaizan by giving the team more transparency into the client relationship.
 
 > "The biggest boost from AI and client understanding has come from Kaizan. Just having the insight of being attached to all client communication, having those watchwords to look for, either positive things or negative things, having the customer sentiment, having the alerts of, 'Hey, this person hasn't been on a call and you marked that you wanted them on a call once a quarter.' The level of detail we can get around the client relationship is just unbelievable. I would never even have thought this was possible five or six years ago."
 
-To appreciate why that lands so hard, you have to understand what came before it.
+Those insights help the team prove when a relationship is healthy and when it's starting to drift. To appreciate why that lands so hard, you have to understand what came before it.
 
 ## Life before: the client health sheet nobody filled out
 
-"It was very difficult before Kaizan," he admitted. Their system was a Google Sheet, a "client health sheet," sitting in the root of every client folder. After every email, phone call, or meeting, the consultant was supposed to update it with the client's level of happiness, scored on a couple of scales.
+"It was very difficult before Kaizan," he admitted. Their system was a Google Sheet, a "client health sheet," sitting in the root of every client folder. After every email, phone call, or meeting, the consultant was supposed to update it with the client's level of happiness, scored on a couple of scales, but it often wasn't set up as a reliable process.
 
 You can already guess how that went.
 
-> "That manual process obviously introduced a lot of error, and you'd have people who would just forget to do it. All of a sudden a client would cancel, and we'd say, 'Why wasn't this on our radar?' You'd go look at the sheet, and they hadn't filled it out in six months."
+> "That manual process obviously introduced a lot of error, and you'd have people who would just forget to do it. All of a sudden a client would cancel, and we'd say, 'Why wasn't this on our radar?' You'd go look at the sheet, and they hadn't filled it out in six months"—the kind of drift that can build month after month before anyone notices.
 
-The backup plan was worse. Managers would record client calls and then "randomly pick a call and watch the recording on double speed to see what was said, to try to figure things out. It was just so inefficient." His most honest line of the whole conversation:
+The backup plan was worse. Managers would record client calls and then "randomly pick a call and watch the recording on double speed to see what was said, to try to figure things out," which also created revenue risk when warning signs were missed. It was just so inefficient. His most honest line of the whole conversation:
 
 > "I almost feel like we just weren't doing it. We were making an effort, but I don't think we were doing a great job of it."
 
@@ -117,6 +123,6 @@ It's a thoughtful counterweight to the efficiency story, and a reminder that "le
 
 ## The takeaway for agency leaders
 
-The pattern here is worth internalizing. AI isn't uniformly transformative. It's barely moved the needle on local search, and it won't replace the strategic thinking that makes an agency worth hiring. Where it's delivering outsized value is in the unglamorous, high-stakes work of understanding your clients: catching sentiment shifts early, surfacing the details that used to live in someone's memory or a half-filled spreadsheet, and making sure a cancellation never blindsides you again.
+The pattern here is worth internalizing. AI hasn't transformed every case in the same way, especially in local search, and it won't replace the strategic thinking that makes an agency worth hiring. Where it's delivering outsized value is in the unglamorous, high-stakes work of understanding your clients: catching sentiment shifts early, supporting investigation of risk before a client cancellation is even on your radar, surfacing the details that used to live in someone's memory or a half-filled spreadsheet, and making sure a cancellation never blindsides you again.
 
-The agencies that thrive in the next few years will be leaner, more strategic, and relentlessly focused on outcomes over activity. The ones that also solve for client understanding, instead of hoping someone remembers to update the health sheet, will be the ones clients don't want to leave.
+The agencies that thrive in the next few years will be leaner, more strategic, and relentlessly focused on outcomes over activity. The ones that also solve for client understanding, instead of hoping someone remembers to update the health sheet, will be in a stronger competitive position than the rest.
