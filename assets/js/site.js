@@ -318,6 +318,105 @@
     });
   }
 
+  // ── Hero reel: play when scrolled into view, pause when out ───────
+  function initReel() {
+    var vids = document.querySelectorAll('[data-play-inview]');
+    if (!vids.length) return;
+    if (!('IntersectionObserver' in window)) {
+      vids.forEach(function (v) { v.play().catch(function () {}); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          try { v.currentTime = 0; } catch (err) {}  // restart from the beginning each time it scrolls into view
+          v.play().catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.35 });
+    vids.forEach(function (v) { io.observe(v); });
+  }
+
+  // ── Playbooks section: bubbles travel between sub-sections on scroll ──
+  function initPbConnectors() {
+    var root = document.getElementById('sceneRoot');
+    if (!root) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    function applyRealPath(originId, destId, selector) {
+      try {
+        var origin = document.getElementById(originId);
+        var dest = document.getElementById(destId);
+        var travelers = document.querySelectorAll(selector);
+        if (!origin || !dest || !travelers.length) return;
+        var rRect = root.getBoundingClientRect();
+        var oRect = origin.getBoundingClientRect();
+        var dRect = dest.getBoundingClientRect();
+        var ox = oRect.left - rRect.left + oRect.width / 2;
+        var oy = oRect.top - rRect.top + oRect.height / 2;
+        var dx = dRect.left - rRect.left + dRect.width / 2;
+        var dy = dRect.top - rRect.top + dRect.height / 2;
+        var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
+        var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
+        var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
+        travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
+      } catch (e) { /* keep fallback */ }
+    }
+    function applyAllPaths() {
+      applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
+      applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
+      applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
+    }
+    function trackProgress(trackId) {
+      var el = document.getElementById(trackId);
+      if (!el) return 0;
+      var rect = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var total = rect.height + vh;
+      if (total <= 0) return 0;
+      return Math.min(1, Math.max(0, (vh - rect.top) / total));
+    }
+    var legs = [
+      { track: 'launchZoneA', selector: '.connA' },
+      { track: 'launchZoneB', selector: '.connB' },
+      { track: 'launchZone',  selector: '.connC' }
+    ];
+    var state = {};
+    function tick() {
+      legs.forEach(function (leg) {
+        var master = trackProgress(leg.track);
+        var travelers = document.querySelectorAll(leg.selector);
+        travelers.forEach(function (el, i) {
+          var stagger = i * 0.07;
+          var target = Math.min(1, Math.max(0, master - stagger));
+          var key = leg.selector + i;
+          var cur = state[key] === undefined ? target : state[key];
+          var next = cur + (target - cur) * 0.18;
+          state[key] = next;
+          var fadeIn = Math.min(1, next / 0.08);
+          var fadeOut = Math.min(1, (1 - next) / 0.05);
+          var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
+          var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
+          var rotate = -4 + 6 * next;
+          el.style.offsetDistance = (next * 100) + '%';
+          el.style.opacity = String(opacity);
+          el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
+        });
+      });
+      requestAnimationFrame(tick);
+    }
+    function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
+    remeasure();
+    window.addEventListener('load', remeasure);
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
+    var rt = null;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
+    requestAnimationFrame(tick);
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
@@ -327,6 +426,8 @@
     initLocale();
     initHelpers();
     initHeroVideo();
+    initReel();
+    initPbConnectors();
     initSecurityTabs();
     initVideoLightbox();
   }
