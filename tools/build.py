@@ -5685,6 +5685,31 @@ def write_sitemap():
     print(f'  (sitemap.xml: {len(entries)} URLs)')
 
 
+def write_llms_txt():
+    """llms.txt: a plain-text map of the site for AI search/answer engines
+    (llmstxt.org format). Built from the sitemap so it never drifts; UK pages only."""
+    from html import unescape
+    urls = re.findall(r'<loc>([^<]+)</loc>', (ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
+    pages, posts = [], []
+    for u in urls:
+        path = u[len(SITE_ORIGIN):]
+        if path.startswith('/us/') or path == '/us/':
+            continue
+        f = ROOT / path.strip('/') / 'index.html' if path != '/' else ROOT / 'index.html'
+        html = f.read_text(encoding='utf-8')
+        t = re.search(r'<title>(.*?)</title>', html, re.S)
+        d = re.search(r'<meta name="description" content="([^"]*)"', html)
+        title = unescape(t.group(1)).replace(' · Kaizan', '') if t else path
+        line = f'- [{title}]({u})' + (f': {unescape(d.group(1))}' if d else '')
+        (posts if path.startswith('/blog/') and path != '/blog/' else pages).append(line)
+    out = ['# Kaizan', '',
+           '> Kaizan is client super intelligence for professional services firms: AI that turns client '
+           'conversations and data into early warnings on relationship health, churn risk and growth opportunities.',
+           '', '## Key pages', '', *pages, '', '## Blog', '', *posts, '']
+    (ROOT / 'llms.txt').write_text('\n'.join(out), encoding='utf-8')
+    print(f'  (llms.txt: {len(pages)} pages, {len(posts)} posts)')
+
+
 # Page-specific US variants of a JSON-LD block (keyed by the script's data-kz-ld
 # id), for schema that carries locale-specific facts such as USD prices.
 US_LD_BUILDERS: dict = {}
@@ -7279,6 +7304,7 @@ def main():
     print('  (referral partner page → /referral-partners/ [GBP] + /us/referral-partners/ [USD])')
 
     write_sitemap()
+    write_llms_txt()
     print('Done.')
 
 

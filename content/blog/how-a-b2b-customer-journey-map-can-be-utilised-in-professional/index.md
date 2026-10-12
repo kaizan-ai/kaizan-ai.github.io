@@ -1,5 +1,6 @@
 ---
 title: How a B2B Customer Journey Map can be utilised in Professional Services
+meta_title: B2B Customer Journey Maps for Professional Services
 date: 2023-06-29
 category: POV
 excerpt: A customer journey map is a powerful tool for understanding your clients’ experiences. By visualising the steps that a client takes when interacting with your company…

@@ -1,5 +1,6 @@
 ---
 title: "From Reactive to Proactive: How Great Client Teams Stay Ahead"
+meta_title: Reactive to Proactive: Great Client Teams
 date: 2026-05-21
 author: Lia
 category: POV

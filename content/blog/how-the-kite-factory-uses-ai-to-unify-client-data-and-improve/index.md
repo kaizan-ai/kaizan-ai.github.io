@@ -1,5 +1,6 @@
 ---
 title: How The Kite Factory Uses AI to Unify Client Data and Improve Operational Visibility
+meta_title: The Kite Factory: Unifying Client Data with AI
 date: 2026-05-18
 author: Lia
 category: POV

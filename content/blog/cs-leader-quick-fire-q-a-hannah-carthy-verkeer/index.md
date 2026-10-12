@@ -1,5 +1,6 @@
 ---
 title: "CS Leader Quick Fire Q&A: Hannah Carthy @ Verkeer"
+meta_title: CS Leader Q&A: Hannah Carthy, Verkeer
 date: 2026-05-18
 category: POV
 excerpt: Managing Director at Verkeer, an integrated digital marketing agency. I’m responsible for making sure everything runs to plan across the business; including client…

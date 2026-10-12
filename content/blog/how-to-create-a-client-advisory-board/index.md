@@ -139,7 +139,7 @@ Also send out agendas in advance. All board members know what to expect and can 
 
 ## Taking Minutes
 
-Make sure that someone has responsibility for taking minutes during the meeting and distributing them afterwards. If the meeting takes place online then it may be possible to record it using a tool such as [Kaizan ](http://Kaizan.ai)which can record and summarise a call transcript. These types of technology can also ensure accurate minutes are captured during a meeting and a follow-up summary with action items is created ready to send to participants. Minutes are invaluable as a record of any decisions made and a reference to look back on before the next meeting.
+Make sure that someone has responsibility for taking minutes during the meeting and distributing them afterwards. If the meeting takes place online then it may be possible to record it using a tool such as [Kaizan ](https://kaizan.ai)which can record and summarise a call transcript. These types of technology can also ensure accurate minutes are captured during a meeting and a follow-up summary with action items is created ready to send to participants. Minutes are invaluable as a record of any decisions made and a reference to look back on before the next meeting.
 
 ## Following Up
 

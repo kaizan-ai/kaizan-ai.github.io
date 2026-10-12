@@ -1,5 +1,6 @@
 ---
 title: How Tradedoubler Is Driving 20% Greater Operational Efficiency Across 3,500 Clients
+meta_title: Tradedoubler: 20% Operational Efficiency Gain
 date: 2026-05-21
 author: Lia
 category: POV

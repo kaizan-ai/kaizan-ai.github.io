@@ -1,5 +1,6 @@
 ---
 title: "Client Experience Touchpoints: What Are They and How Can You Optimise Them?"
+meta_title: Client Experience Touchpoints: How to Improve Them
 date: 2023-07-04
 category: POV
 excerpt: The concept of a touchpoint comes up so often in client success that it can easily be taken for granted. But it’s an important area to get right and it’s vital for a…

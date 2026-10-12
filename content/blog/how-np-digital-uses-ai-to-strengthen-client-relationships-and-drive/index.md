@@ -1,5 +1,6 @@
 ---
 title: How NP Digital Uses AI to Strengthen Client Relationships and Drive Retention
+meta_title: NP Digital: AI for Stronger Client Relationships
 date: 2026-05-26
 author: Lia
 category: POV
