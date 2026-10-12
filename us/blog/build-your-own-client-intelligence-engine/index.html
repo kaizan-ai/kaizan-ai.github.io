@@ -50,6 +50,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta property="og:image" content="https://kaizan.ai/assets/img/blog/build-your-own-client-intelligence-engine/cover.png">
         <meta name="twitter:image" content="https://kaizan.ai/assets/img/blog/build-your-own-client-intelligence-engine/cover.png">
         <meta property="article:published_time" content="2026-10-06">
+        <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-US", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/us/blog/build-your-own-client-intelligence-engine/#article", "url": "https://kaizan.ai/us/blog/build-your-own-client-intelligence-engine/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/us/blog/build-your-own-client-intelligence-engine/"}, "headline": "How to build your own client intelligence engine", "description": "The whole build, in the open. Fourteen systems, the order to build them in, and the failure mode of each one, for the head of AI who has just been asked \"can we build this?\"", "inLanguage": "en-US", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/build-your-own-client-intelligence-engine/cover.png", "keywords": "client intelligence, build vs buy, ai engineering, evaluation, open spec"}]}</script>
         <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
         <script defer src="/assets/js/calendly-utm.js?v=2ce26b8f"></script>
         <!-- HubSpot's own direct tracking script loads only after cookie
@@ -105,7 +106,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
-        <div class="kz-eyebrow">6 October 2026</div>
         <h1 class="kz-post-title">How to build your own client intelligence engine</h1>
         <img class="kz-post-hero" src="/assets/img/blog/build-your-own-client-intelligence-engine/cover.png" alt="How to build your own client intelligence engine" decoding="async">
         <p>We exist to empower client service and delivery professionals everywhere. That mission is bigger than our product. So if you have looked at Kaizan and concluded you would rather build it yourself: <strong>good. Go and build it.</strong> Here is the whole thing: fourteen systems, the order to build them in, and the failure mode of each one. No sales gate, no redactions. We would rather you succeeded with your own engine than bought ours for the wrong reasons.</p>
@@ -260,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h4>How to approach it</h4>
 
 <ul>
-<li><strong>Separate speech-to-text from diarisation.</strong> Evaluate them independently on your own calls, not vendor samples. Word error rate on a clean podcast tells you nothing about a nine-person review with two dial-ins.</li>
+<li><strong>Separate speech-to-text from diarization.</strong> Evaluate them independently on your own calls, not vendor samples. Word error rate on a clean podcast tells you nothing about a nine-person review with two dial-ins.</li>
 <li><strong>Resolve speakers to identities, not labels.</strong> "Speaker 2" is useless. Match voices to calendar attendees, join names and prior voiceprints so the transcript says who actually spoke.</li>
 <li><strong>Build per-client custom vocabularies</strong> from CRM data, email signatures and document names, and refresh them automatically. Brand names, campaign names and acronyms are where trust is lost.</li>
 <li><strong>Run redaction before storage.</strong> PII, payment details and anything your DPA says shouldn't persist.</li>
@@ -271,7 +271,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <ul>
 <li><em>Speech-to-text:</em> Deepgram, AssemblyAI, self-hosted Whisper variants</li>
-<li><em>Diarisation:</em> pyannote, or vendor-native speaker separation</li>
+<li><em>Diarization:</em> pyannote, or vendor-native speaker separation</li>
 <li><em>Method:</em> test all of them on your worst audio, not your best</li>
 </ul>
 
@@ -455,7 +455,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <ul>
 <li><strong>Honestly, you can't.</strong> Your data is your data. A benchmark against your own portfolio is useful, but it is a sample of one firm's way of working. We are not going to pretend otherwise in a document whose whole point is to tell you the truth.</li>
-<li><strong>If you want cross-firm intelligence</strong>, you need a partner with a network and a privacy architecture that separates anonymised patterns from identifiable client data. Build the interface for it even if you don't have the data yet, so the seam is in the right place when you do.</li>
+<li><strong>If you want cross-firm intelligence</strong>, you need a partner with a network and a privacy architecture that separates anonymized patterns from identifiable client data. Build the interface for it even if you don't have the data yet, so the seam is in the right place when you do.</li>
 </ul>
 
 <h4>Watch out for</h4>
@@ -654,7 +654,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <tr>
   <td>§2, 4</td>
   <td><strong>Speech and retrieval</strong></td>
-  <td>Diarisation, vocabulary tuning, vector, relational and graph stores. People who have run search and memory systems in production.</td>
+  <td>Diarization, vocabulary tuning, vector, relational and graph stores. People who have run search and memory systems in production.</td>
 </tr>
 <tr>
   <td>§5–6, 8</td>
@@ -718,14 +718,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2>Conclusion</h2>
 
 <blockquote>
-  <p>Your advantage is not a diarisation pipeline or a consent flow. It is what your people do with the truth about the client portfolio once they have it.</p>
+  <p>Your advantage is not a diarization pipeline or a consent flow. It is what your people do with the truth about the client portfolio once they have it.</p>
 </blockquote>
 
 <p>So here is the honest version, and it is the reason we published this rather than a comparison page.</p>
 
 <p><strong>If client intelligence is your product, build all fourteen.</strong> Genuinely. You have the domain knowledge, you have the data, and there is no moat in this document that a serious team can't cross. It will take longer than your plan says, the eval work will be the part that surprises you, and the two layers that end programs are the two with no visible features. But it is a build, not a miracle. Take this list, argue with it, sequence it, and go.</p>
 
-<p><strong>If it isn't your product, don't.</strong> Take it through an API, feed it into the ecosystem you are already building, and put your head of AI on the problems only your firm can solve. The fourteen systems above are table stakes for us and a two-year detour for you. Nobody has ever won a client because their diarisation was excellent.</p>
+<p><strong>If it isn't your product, don't.</strong> Take it through an API, feed it into the ecosystem you are already building, and put your head of AI on the problems only your firm can solve. The fourteen systems above are table stakes for us and a two-year detour for you. Nobody has ever won a client because their diarization was excellent.</p>
 
 <p>Either way, the layer that is genuinely yours (your judgment about your clients, encoded) is the one worth your best engineers. Build that one.</p>
 
