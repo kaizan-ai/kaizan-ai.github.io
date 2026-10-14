@@ -268,10 +268,15 @@
 .kz-trust-card h4 { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; }
 .kz-trust-card p { font-size: 13.5px; color: var(--kz-mute); line-height: 1.55; font-weight: 500; }
 
-/* ── AI Assistant features: dropdown list (<details name>) ──────────────
+/* ── AI Assistant features: 2x2 dropdowns (<details name>) ─────────────
    Titles stay visible; one description open at a time, so the section reads
    as four clear points instead of a wall of copy. */
-.kz-prod-drops { margin-top: 26px; display: flex; flex-direction: column; gap: 10px; max-width: 540px; }
+/* Two per row; each card sizes to its own content when opened. */
+.kz-prod-drops {
+  margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  align-items: start; max-width: 560px;
+}
+@media (max-width: 560px) { .kz-prod-drops { grid-template-columns: 1fr; } }
 .kz-prod-drop {
   background: #FFFFFF; border: 1px solid rgba(10,10,10,.1); border-radius: 14px;
   box-shadow: 0 1px 2px rgba(40,30,15,.04);
@@ -282,25 +287,25 @@
 .kz-prod-drop[open] { border-color: var(--kz-yellow); box-shadow: 0 0 0 2px var(--kz-yellow), 0 14px 28px -18px rgba(40,30,15,.35); }
 .kz-prod-drop summary {
   list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  padding: 14px 16px 14px 18px;
+  padding: 11px 12px 11px 14px;
 }
 .kz-prod-drop summary::-webkit-details-marker { display: none; }
 .kz-prod-drop summary::marker { content: ''; }
 .kz-prod-drop summary:focus-visible { outline: 3px solid var(--kz-yellow); outline-offset: 2px; border-radius: 12px; }
-.kz-prod-drop .t { font-size: 16px; font-weight: 700; letter-spacing: -0.015em; }
+.kz-prod-drop .t { font-size: 15px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.25; }
 /* Chevron in a yellow disc; turns black and flips when open. */
 .kz-prod-drop .tg {
-  position: relative; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  position: relative; flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
   background: var(--kz-yellow); transition: background .2s ease, transform .25s ease;
 }
 .kz-prod-drop .tg::before {
-  content: ""; position: absolute; left: 50%; top: 45%; width: 8px; height: 8px;
-  border-right: 2.5px solid #0A0A0A; border-bottom: 2.5px solid #0A0A0A;
+  content: ""; position: absolute; left: 50%; top: 42%; width: 5px; height: 5px;
+  border-right: 2px solid #0A0A0A; border-bottom: 2px solid #0A0A0A;
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .kz-prod-drop[open] .tg { background: #0A0A0A; transform: rotate(180deg); }
 .kz-prod-drop[open] .tg::before { border-color: var(--kz-yellow); }
-.kz-prod-drop p { margin: 0; padding: 0 18px 16px; font-size: 15px; line-height: 1.55; font-weight: 500; color: var(--kz-mute); }
+.kz-prod-drop p { margin: 0; padding: 0 14px 13px; font-size: 14px; line-height: 1.55; font-weight: 500; color: var(--kz-mute); }
 .kz-prod-drop::details-content {
   block-size: 0; overflow: hidden;
   transition: block-size .3s ease, content-visibility .3s allow-discrete;
