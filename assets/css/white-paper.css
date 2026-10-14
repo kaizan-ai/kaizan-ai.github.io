@@ -406,7 +406,7 @@ i.display-i, em.display-i {
   max-width: 40ch;
   text-wrap: pretty;
   margin: 0 0 36px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .hero__h2 {
@@ -436,7 +436,7 @@ i.display-i, em.display-i {
   gap: 12px;
   font-size: 16px;
   color: var(--ink-soft);
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .checklist .tick {
@@ -1818,7 +1818,7 @@ i.display-i, em.display-i {
   color: rgba(0, 0, 0, 0.78);
   max-width: 40ch;
   margin: 0 0 32px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* form card on gold uses dark variant for contrast */

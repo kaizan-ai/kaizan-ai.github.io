@@ -38,7 +38,7 @@ NAV = [
     # (Integrations lives under it, so it has no top-level nav item).
     ('Product',      'product/'),
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
-    ('Personas',     '__personas_dropdown__'),
+    ('By role',      '__personas_dropdown__'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -229,7 +229,7 @@ PERSONAS = {
         schema=True,
         role='client service directors',
         role_cap='Client Service Directors',
-        h1=('Run Your Portfolio with', 'Eyes Open', ': Kaizan'),
+        h1=('Run Your Portfolio with', 'Eyes Open', '.'),
         sub=("Onboard new team members in days. Catch dissatisfaction before the renewal call. "
              "See the patterns across your portfolio that no individual AM can spot alone."),
         quote_bg='radial-gradient(circle at 30% 30%, #B58A4F, #4A2A0E)',
@@ -455,7 +455,7 @@ PERSONAS = {
         schema=True,
         role='project managers',
         role_cap='Project Managers',
-        h1=('Run the Work with Kaizan:', "Don't Chase It", ''),
+        h1=('Run the Work.', "Don't Chase It.", ''),
         sub=("Every project, every status, every commitment - in one always-current place, with "
              "an AI Helper watching it all 24/7."),
         quote_bg='radial-gradient(circle at 30% 30%, #6F8474, #1F3025)',
@@ -528,7 +528,7 @@ PERSONAS = {
         schema=True,
         role='new business leaders',
         role_cap='New Business Leaders',
-        h1=('Kaizan:', 'Pitch Warmer.', ' Grow Existing Clients Deliberately.'),
+        h1=('', 'Pitch Warmer.', ' Grow Existing Clients Deliberately.'),
         sub=("Kaizan is an AI-powered platform for new business leaders, account managers, client "
              "service teams, and senior leaders who want to prepare better for pitches and grow "
              "existing clients without losing hours to research. It surfaces the intel, key "
@@ -1201,7 +1201,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
                 '<span class="kz-mega-wrap" data-mega-menu '
                 'style="position:relative;display:inline-block;">'
                 '<a class="kz-mega-trigger" aria-expanded="false">'
-                'Personas <span class="kz-mega-caret">▾</span></a>'
+                f'{E(label)} <span class="kz-mega-caret">▾</span></a>'
                 '<div class="kz-mega-panel kz-mega-panel--simple" role="menu">'
                 f'{persona_links}'
                 '</div></span>'
@@ -1281,7 +1281,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
                 for lbl, tgt, gl in RESOURCES_MENU
             )
             trigger_cls = 'kz-mega-trigger is-active' if active == label else 'kz-mega-trigger'
-            # No href: the trigger only opens the dropdown (matches Personas).
+            # No href: the trigger only opens the dropdown (matches By role).
             items_html.append(f'''
               <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
                 <a class="{trigger_cls}" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
@@ -1906,7 +1906,7 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
@@ -2015,7 +2015,7 @@ def playbooks_sections_html() -> str:
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
@@ -2034,7 +2034,7 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
@@ -2171,7 +2171,7 @@ def playbooks_sections_html() -> str:
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
@@ -2192,7 +2192,7 @@ def stats_band_html() -> str:
     return '''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
   <section style="padding: 60px var(--kz-gutter); position: relative; z-index: 1;">
     <div style="max-width: 1300px; margin: 0 auto; text-align: center;">
-      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 500; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
 
       <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 40px;">
 
@@ -2536,7 +2536,7 @@ def _cs_stats_band_html() -> str:
     return f'''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
   <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
     <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 500; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
       <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;">{grid}</div>
     </div>
   </section>
@@ -2835,6 +2835,16 @@ def render_product() -> str:
             for t, d in items
         )
 
+    def _feats_dropdown(items, group: str) -> str:
+        """Features as an exclusive accordion (<details name>): titles show,
+        each description drops down on click; first one open."""
+        return '\n'.join(
+            f'<details class="kz-prod-drop" name="{group}"{" open" if i == 0 else ""}>'
+            f'<summary><span class="t">{E(t)}</span><span class="tg" aria-hidden="true"></span></summary>'
+            f'<p>{E(d)}</p></details>'
+            for i, (t, d) in enumerate(items)
+        )
+
     def _pillar(num, pid, eyebrow, h2_html, copy, feats, media, reverse=False) -> str:
         rev = ' is-reverse' if reverse else ''
         return f'''
@@ -2843,7 +2853,7 @@ def render_product() -> str:
         <div class="kz-eyebrow">{num} · {E(eyebrow)}</div>
         <h2 class="kz-h2 kz-h2-lg">{h2_html}</h2>
         <p class="kz-lede">{copy}</p>
-        <div class="kz-prod-feats">{_feats(feats)}</div>
+        <div class="kz-prod-drops">{_feats_dropdown(feats, pid + '-feats')}</div>
       </div>
       {media}
     </section>'''
@@ -3138,7 +3148,7 @@ def render_product() -> str:
           <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
         </div>
       </div>
-      <div class="kz-pillar-bubbles">
+      <div class="kz-pillar-bubbles kz-reveal-row" data-reveal-row>
         {pillar_nav_html}
       </div>
     </section>
@@ -3212,14 +3222,6 @@ def render_product() -> str:
       </p>
     </section>
 
-    <!-- QUOTE -->
-    <section class="kz-section" style="border-top:1px solid var(--kz-line);">
-      <div class="kz-product-quote-row">
-        {portrait('Stephen Kerin', 'Director', 'Scale Digital', 'gold', size='xl', depth=1, photo='stephen-kerin-product.png')}
-        <div class="quote">&ldquo;Kaizan is now fundamental to the team and managing client relationships.&rdquo;</div>
-      </div>
-    </section>
-
     <!-- CTA -->
     <section class="kz-cta-band kz-cta-band-md">
       <h2 class="head">Put the helpers to work.</h2>
@@ -3259,8 +3261,22 @@ def render_persona(slug: str) -> str:
         initials = ''.join(part[0] for part in p['quote_name'].split()[:2]).upper()
         photo_html = f'<div class="photo is-placeholder">{E(initials)}</div>'
 
-    # Company name in the quote attribution — hyperlinked when quote_co_url is set.
-    co_html = E(p['quote_co'])
+    # Company logo in the quote attribution (falls back to the name when no logo
+    # file exists) — hyperlinked when quote_co_url is set. Heights mirror the
+    # home quote cards so every mark reads at a proportionate size.
+    co_logo = {c['name']: c['file'] for c in CLIENT_LOGOS}
+    co_logo['PASHN'] = co_logo['PASHN Media Agency']
+    co_logo_h = {
+        'Collective Content': 36, 'Tradedoubler': 32, 'NP Digital': 40, 'Verkeer': 40,
+        'PASHN': 28, 'The Kite Factory': 64, 'Transmission': 32,
+    }
+    co_file = co_logo.get(p['quote_co'])
+    # White-only logo files (made for dark backgrounds) are darkened to show on the white card.
+    co_logo_dark = {'Collective Content'}
+    co_cls = 'co-logo is-dark' if p['quote_co'] in co_logo_dark else 'co-logo'
+    co_html = (f'<img class="{co_cls}" src="../../assets/img/clients/{E(co_file)}" '
+               f'alt="{E(p["quote_co"])}" style="height:{co_logo_h.get(p["quote_co"], 36)}px">'
+               if co_file else E(p['quote_co']))
     if p.get('quote_co_url'):
         co_html = f'<a href="{E(p["quote_co_url"])}">{co_html}</a>'
 
@@ -3313,14 +3329,30 @@ def render_persona(slug: str) -> str:
                         f'alt="{E(name)} product loop" loading="lazy">')
         return '<div class="frame-fill">GIF · product loop</div>'
 
-    products_html = '\n'.join(
-        f'''<div class="kz-product-row">
-          <div class="n">0{i+1}</div>
-          <div><div class="t">{E(name)}</div><div class="d">{E(desc)}</div></div>
-          <div class="frame">
-            {_product_media(i, name)}
-          </div>
-        </div>''' for i, (name, desc) in enumerate(p['products'])
+    # "How Kaizan helps" — tabbed showcase: the features as a clickable list on
+    # the left, one large media stage on the right that swaps to match.
+    # Each feature has its own colour (number, card shadow, progress bar and
+    # the stage's shadow); the first uses the brand yellow.
+    # assets/js/persona.js auto-advances it (progress bar on the active item)
+    # until the visitor clicks, then hands over control.
+    _how_colors = ['var(--kz-yellow)', '#1FA591', '#7C5CFC', '#E8432B']
+    how_tabs_html = '\n'.join(
+        f"""<button class="kz-how-item{' is-active' if i == 0 else ''}" type="button" role="tab"
+            id="how-tab-{i}" aria-controls="how-panel-{i}" aria-selected="{'true' if i == 0 else 'false'}"
+            data-how-tab style="--accent:{_how_colors[i % 4]};">
+          <span class="n">0{i+1}</span>
+          <span class="body">
+            <span class="t">{E(name)}</span>
+            <span class="d-wrap"><span class="d">{E(desc)}</span></span>
+          </span>
+          <span class="kz-how-progress" aria-hidden="true"><span></span></span>
+        </button>""" for i, (name, desc) in enumerate(p['products'])
+    )
+    how_panels_html = '\n'.join(
+        f"""<div class="kz-how-panel{' is-active' if i == 0 else ''}" role="tabpanel" id="how-panel-{i}"
+            aria-labelledby="how-tab-{i}" data-how-panel>
+          {_product_media(i, name)}
+        </div>""" for i, (name, desc) in enumerate(p['products'])
     )
 
     faqs_html = '\n'.join(
@@ -3349,7 +3381,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-persona-hero">
       <div class="kz-eyebrow">{E(p['eyebrow'])}</div>
       <div class="kz-persona-hero-grid">
-        <div>
+        <div class="kz-persona-hero-text">
           <h1 class="kz-h1">{h1_html}</h1>
           <p class="kz-lede" style="margin-top:26px;max-width:560px;">{E(p['sub'])}</p>
           <div class="kz-flex" style="gap:10px;margin-top:28px;">
@@ -3357,7 +3389,7 @@ def render_persona(slug: str) -> str:
             <a class="kz-btn kz-btn-ghost" style="padding:14px 22px;" href="../../white-paper/">Download CARE white paper</a>
           </div>
         </div>
-        <div class="kz-persona-quote{nudge_cls}" style="background:{p['quote_bg']};">
+        <div class="kz-persona-quote{nudge_cls}">
           <div class="photo-wrap">{photo_html}</div>
           <div class="copy">
             <q>{E(p['quote_pull'])}</q>
@@ -3376,21 +3408,28 @@ def render_persona(slug: str) -> str:
     </section>
 
     <!-- WHY {E(p['role_cap']).upper()} LOVE KAIZAN -->
-    <section class="kz-section" style="border-top:1px solid var(--kz-line);">
+    <section class="kz-section" id="persona-love">
       <div class="kz-eyebrow">Why {E(p['role'])} love Kaizan</div>
       <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">{E(p.get('love_h2') or f"The things {p['role_cap']} love.")}</h2>
       <div class="kz-love-grid{love_cols_cls}">{love_html}</div>
     </section>
 
     <!-- HOW KAIZAN HELPS -->
-    <section class="kz-section">
+    <section class="kz-section" id="persona-how">
       <div class="kz-eyebrow">How Kaizan helps</div>
       <h2 class="kz-h2" style="margin:12px 0 36px;max-width:900px;">{E(p['product_h2'])}</h2>
-      {products_html}
+      <div class="kz-how" data-how>
+        <div class="kz-how-list" role="tablist" aria-label="How Kaizan helps">
+          {how_tabs_html}
+        </div>
+        <div class="kz-how-stage" data-how-stage>
+          {how_panels_html}
+        </div>
+      </div>
     </section>
 
     <!-- FAQs -->
-    <section class="kz-section">
+    <section class="kz-section" id="persona-faqs">
       <div class="kz-eyebrow">FAQs</div>
       <h2 class="kz-h2" style="margin-top:10px;margin-bottom:32px;">
         {E(p.get('faq_h2') or f"The questions {p['role']} ask us.")}
@@ -3418,9 +3457,11 @@ def render_persona(slug: str) -> str:
     label = next((n for k, n in PERSONA_LIST if k == slug), slug.replace('-', ' ').title())
     title = p.get('meta_title') or f'For {label}'
     desc = p.get('meta_description') or p['sub']
-    extra = ''
+    extra = (f'<link rel="stylesheet" href="../../assets/css/persona.css'
+             f'{asset_v("assets/css/persona.css")}">'
+             f'<script defer src="../../assets/js/persona.js{asset_v("assets/js/persona.js")}"></script>')
     if p.get('schema'):
-        extra = ld_script([
+        extra += ld_script([
             ld_webpage(title, desc, dateModified=None if p.get('ld_undated') else LD_MODIFIED),
             {'@type': 'FAQPage', '@id': LD_PAGE + '#faq', 'mainEntity': ld_faq_entities(p['faqs'])},
         ])
@@ -3472,7 +3513,7 @@ def render_customers() -> str:
     <!-- HERO -->
     <section class="kz-section-tight">
       <div class="kz-eyebrow">Clients · 60+ client-services teams</div>
-      <h1 class="kz-h1" style="margin:20px 0 0;max-width:1100px;">
+      <h1 class="kz-h1" style="margin:20px 0 0;max-width:1100px;font-size:clamp(40px,4.8vw,66px);line-height:1.02;">
         The teams running Kaizan keep their clients
         <span class="kz-mark">and grow them.</span>
       </h1>
@@ -3674,6 +3715,13 @@ def og_tags(post: dict) -> str:
     return '\n        '.join(t)
 
 
+def resources_head(depth: int) -> str:
+    """Stylesheet shared by the Resources pages (blog, Knowledge Hub, FAQs,
+    Security): restyles them in the product-page visual language, yellow-led."""
+    return (f'<link rel="stylesheet" href="{relpath(depth)}assets/css/resources.css'
+            f'{asset_v("assets/css/resources.css")}">')
+
+
 def render_blog_index(posts: list) -> str:
     """The public /blog/ landing — a card grid of all published posts (depth 1)."""
     if posts:
@@ -3714,7 +3762,8 @@ def render_blog_index(posts: list) -> str:
     return page_head('Blog', 1,
                      'Field notes, product updates and research on client relationships from the '
                      'Kaizan team.',
-                     extra_head='<meta name="robots" content="noindex, follow">') + body + page_foot()
+                     extra_head='<meta name="robots" content="noindex, follow">\n        '
+                                + resources_head(1)) + body + page_foot()
 
 
 def render_blog_post(post: dict) -> str:
@@ -3738,7 +3787,7 @@ def render_blog_post(post: dict) -> str:
         extra += '\n        ' + ld_script([ld_blogposting(post)])
     return page_head(post.get('meta_title') or post['title'], 2,
                      post.get('meta_description') or post.get('excerpt', ''),
-                     extra_head=extra) + body + page_foot()
+                     extra_head=extra + '\n        ' + resources_head(2)) + body + page_foot()
 
 
 def render_about() -> str:
@@ -3836,11 +3885,14 @@ def render_about() -> str:
         </p>
 
         <div style="margin-top:32px;">
+          <!-- The three technologies are an exclusive accordion (<details name>):
+               one open at a time, first open by default; styled in about.css. -->
           <div class="kz-eyebrow" style="color:#FFB900;">At the core of Kaizan are three technologies</div>
         </div>
 
-        <div class="kz-essay-tech">
-          <div class="row"><span class="num">01</span><h3>Collective intelligence and AI helpers, always on.</h3></div>
+        <details class="kz-essay-tech" name="kz-tech" open>
+          <summary class="row"><span class="num">01</span><h3>Collective intelligence and AI helpers, always on.</h3><span class="tg" aria-hidden="true"></span></summary>
+          <div class="tech-body">
           <p>
             Every CRM in the world was built to be a passive filing cabinet in a UI built for humans to use
             as the system for sales and marketing. And retro fitted for CS. What you put in is what you get
@@ -3857,10 +3909,12 @@ def render_about() -> str:
             for the account it came from, but for every account the company runs. This helps teams achieve better
             outcomes. It also gives client teams a reliable source of truth.
           </p>
-        </div>
+          </div>
+        </details>
 
-        <div class="kz-essay-tech">
-          <div class="row"><span class="num">02</span><h3>Semantic understanding of the client relationship.</h3></div>
+        <details class="kz-essay-tech" name="kz-tech">
+          <summary class="row"><span class="num">02</span><h3>Semantic understanding of the client relationship.</h3><span class="tg" aria-hidden="true"></span></summary>
+          <div class="tech-body">
           <p>
             Kaizan unlocks the value in your most valuable data set, every conversation with clients, vendors,
             partners and internally. To Kaizan, those are the raw materials of something alive: a relationship,
@@ -3873,10 +3927,12 @@ def render_about() -> str:
             and gives Agents better answers and context in which to act, whether that is between meetings or in each
             quarter&rsquo;s review and planning cycle.
           </p>
-        </div>
+          </div>
+        </details>
 
-        <div class="kz-essay-tech">
-          <div class="row"><span class="num">03</span><h3>Agentic execution for the account manager.</h3></div>
+        <details class="kz-essay-tech" name="kz-tech">
+          <summary class="row"><span class="num">03</span><h3>Agentic execution for the account manager.</h3><span class="tg" aria-hidden="true"></span></summary>
+          <div class="tech-body">
           <p>
             People pointing and clicking UIs is evolving. The best account manager in any firm has never
             been the one with the best dashboard. The future is interacting with AI Helpers conversationally
@@ -3887,7 +3943,8 @@ def render_about() -> str:
             <strong>Signal → Work → Completion</strong>, run continuously, so that human judgement is spent
             where it matters and everything else gets handled. This can increase revenue on existing accounts.
           </p>
-        </div>
+          </div>
+        </details>
 
         <div class="kz-essay-tech">
           <p>
@@ -3908,7 +3965,7 @@ def render_about() -> str:
           </div>
         </div>
 
-        <div class="kz-essay-sign-off">Glen &amp; Pravin</div>
+        <div class="kz-essay-sign-off">Glen</div>
       </div>
     </article>
 
@@ -3953,7 +4010,8 @@ def render_about() -> str:
                          ld_webpage('About Kaizan',
                                     'Why Kaizan was founded: a proactive system of intelligence for client service and account management teams.',
                                     kind='AboutPage', about={'@id': LD_ORG_ID}),
-                     ], ident='about')) + body + page_foot()
+                     ], ident='about') + '\n        '
+                                + f'<link rel="stylesheet" href="../assets/css/about.css{asset_v("assets/css/about.css")}">') + body + page_foot()
 
 
 # Mailchimp embedded-form endpoints for the July free-coffee campaign.
@@ -4255,10 +4313,10 @@ def render_integrations() -> str:
     {nav_html(1, active='Integrations')}
 
     <!-- HERO -->
-    <section class="kz-section-tight" style="padding-top:60px;">
+    <section class="kz-section-tight" id="int-hero" style="padding-top:60px;">
       <div class="kz-eyebrow">Integrations</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
-        Kaizan.ai: The Tools Your Client Teams Already Use &ndash; Unify Your Data
+        Connect the Tools Your Client Teams Use
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">
         Kaizan builds a continuous memory on every client by automatically capturing every meeting,
@@ -4276,17 +4334,17 @@ def render_integrations() -> str:
     </section>
 
     <!-- STANDARD GRID -->
-    <section class="kz-int-grid-section">
+    <section class="kz-int-grid-section" id="int-standard">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Standard client intelligence platform</h2>
+        <h2 class="kz-h2 kz-h2-lg">Standard client intelligence platform</h2>
       </div>
       <div class="kz-int-grid">{tiles}</div>
     </section>
 
     <!-- KAIZAN API FEATURED -->
-    <section class="kz-int-grid-section">
+    <section class="kz-int-grid-section" id="int-api">
       <div class="kz-int-grid-head">
-        <h2 class="kz-h2" style="font-size:32px;">Featured for client success teams</h2>
+        <h2 class="kz-h2 kz-h2-lg">Featured for client success teams</h2>
         <span class="kz-eyebrow">BUILD YOUR OWN</span>
       </div>
       <div class="kz-int-api">
@@ -4302,7 +4360,7 @@ def render_integrations() -> str:
           <a class="kz-btn kz-btn-yellow" style="padding:12px 20px;font-size:14px;white-space:nowrap;" href="/demo/">Talk to us</a>
         </div>
       </div>
-      <h3 class="kz-h3" style="margin-top:32px;font-size:24px;max-width:880px;">
+      <h3 class="kz-h3 kz-int-api-note">
         Contact Kaizan to understand the full suite of client relationships integrations available.
       </h3>
     </section>
@@ -4312,10 +4370,10 @@ def render_integrations() -> str:
       <div class="kz-int-custom-card-outer">
         <div class="left">
           <div class="kz-eyebrow">Forward-deployed engineering</div>
-          <h2 class="kz-h2" style="font-size:44px;margin:12px 0 18px;line-height:1.05;">
+          <h2 class="kz-h2 kz-h2-lg" style="margin:12px 0 18px;">
             Custom client service <span class="kz-mark kz-mark-tight">integrations</span>
           </h2>
-          <p class="kz-lede" style="font-size:16px;max-width:560px;">
+          <p class="kz-lede" style="max-width:560px;">
             Leverage Kaizan&rsquo;s forward deployed engineers to integrate your AI Helpers and AI platform
             with your internal systems for client service teams and account managers, with a clear focus on
             workflow automation, more client intelligence, and autonomous client growth. These custom
@@ -4347,6 +4405,8 @@ def render_integrations() -> str:
 
     {footer_html(1)}
     '''
+    p = relpath(1)
+    int_head = f'<link rel="stylesheet" href="{p}assets/css/integrations.css{asset_v("assets/css/integrations.css")}">'
     ld = ld_script([
         ld_webpage('Kaizan integrations',
                    'Standard integrations for Microsoft Teams, Slack, HubSpot, Salesforce, Google Meet and more, '
@@ -4360,7 +4420,7 @@ def render_integrations() -> str:
     return page_head('Client Tool Integrations: Free Standard Set', 1,
                      'All standard Kaizan integrations are free: Teams, Slack, HubSpot, Salesforce, Google Meet and more '
                      'unify client data, plus the Kaizan API and custom builds.',
-                     extra_head=ld) + body + page_foot()
+                     extra_head=ld + int_head) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5063,7 +5123,8 @@ def render_security() -> str:
     {footer_html(1)}
     '''
     return page_head('Security & Trust', 1,
-                     'How Kaizan secures your data, handles privacy, and governs the AI behind the product.') + body + page_foot()
+                     'How Kaizan secures your data, handles privacy, and governs the AI behind the product.',
+                     extra_head=resources_head(1)) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5232,7 +5293,7 @@ def render_careers() -> str:
     <!-- HIRING PROCESS -->
     <section class="kz-careers-process">
       <div class="kz-eyebrow" style="color:rgba(255,251,240,.6);">Hiring process</div>
-      <h2 class="kz-h2" style="font-family:var(--kz-display);font-weight:400;font-size:56px;color:var(--kz-paper);margin:14px 0 36px;max-width:1000px;line-height:1.05;">
+      <h2 class="kz-h2" style="font-family:var(--kz-display);font-weight:500;font-size:56px;color:var(--kz-paper);margin:14px 0 36px;max-width:1000px;line-height:1.05;">
         Five steps. About three weeks end-to-end. We tell you where you are after every one.
       </h2>
       <div class="grid">{process_html}</div>
@@ -5339,8 +5400,7 @@ def faq_anchor(s: str) -> str:
 def render_faq() -> str:
     toc_html = '\n'.join(
         f'<li><span class="num">{i+1:02d}</span>'
-        f'<a href="#{faq_anchor(name)}">{E(name)}</a>'
-        f'<span class="ct">{len(qs)}</span></li>'
+        f'<a href="#{faq_anchor(name)}">{E(name)}</a></li>'
         for i, (name, qs) in enumerate(FAQ_DATA)
     )
     sections_html = []
@@ -5357,7 +5417,7 @@ def render_faq() -> str:
         sections_html.append(f'''
         <section id="{faq_anchor(name)}" class="kz-faq-section">
           <div class="head">
-            <span class="num">§ {i+1:02d}</span>
+            <span class="num">{i+1:02d}</span>
             <h2 class="kz-h2" style="font-size:22px;font-weight:600;letter-spacing:-0.01em;">{E(name)}</h2>
           </div>
           {items_html}
@@ -5367,13 +5427,8 @@ def render_faq() -> str:
     {nav_html(1, active='Resources')}
 
     <section class="kz-section-tight" style="padding-top:60px;border-bottom:1px solid var(--kz-line);">
-      <div class="kz-eyebrow">FAQ · Last updated April 2026</div>
+      <div class="kz-eyebrow">FAQ</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">Frequently asked questions about Kaizan.</h1>
-      <p class="kz-lede" style="margin-top:18px;max-width:820px;">
-        Plain-text answers, written so a person (or a language model) can read any single question and
-        answer in isolation and still get the full picture. If something is missing, email
-        <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>.
-      </p>
     </section>
 
     <section class="kz-faq-toc">
@@ -5415,7 +5470,7 @@ def render_faq() -> str:
     return page_head('Kaizan FAQs: Pricing, Integrations, Setup', 1,
                      'Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual '
                      'contracts, outcomes, comparisons and how to work with us.',
-                     extra_head=ld) + body + page_foot()
+                     extra_head=ld + '\n        ' + resources_head(1)) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5869,7 +5924,7 @@ def render_knowledge_hub() -> str:
         sections_html.append(f'''
         <section id="{faq_anchor(name)}" class="kz-faq-section">
           <div class="head">
-            <span class="num">§ {i+1:02d}</span>
+            <span class="num">{i+1:02d}</span>
             <h2 class="kz-h2" style="font-size:22px;font-weight:600;letter-spacing:-0.01em;">{E(name)}</h2>
           </div>
           {items_html}
@@ -5880,7 +5935,7 @@ def render_knowledge_hub() -> str:
 
     <section class="kz-section-tight" style="padding-top:60px;border-bottom:1px solid var(--kz-line);">
       <div class="kz-eyebrow">Knowledge Hub · Client success &amp; account management</div>
-      <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;line-height:1.28;">
+      <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
         <span class="kz-mark kz-mark-tight">Client success</span> and account management: FAQs
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:820px;">
@@ -5906,7 +5961,8 @@ def render_knowledge_hub() -> str:
     return page_head('Knowledge Hub', 1,
                      'Client success and account management FAQs: a resource hub covering client '
                      'intelligence, onboarding, retention, client health, reviews, reporting, '
-                     'expansion, metrics and AI for account managers.') + body + page_foot()
+                     'expansion, metrics and AI for account managers.',
+                     extra_head=resources_head(1)) + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5936,7 +5992,7 @@ def render_demo() -> str:
     <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
       <div style="max-width:520px;width:100%;text-align:center;">
         <div class="kz-eyebrow" style="justify-content:center;">Book a demo · 30-min live walkthrough</div>
-        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">One quick check, then your calendar.</h1>
+        <h1 class="kz-h1" style="margin-top:18px;width:min(900px, calc(100vw - 2 * var(--kz-gutter)));position:relative;left:50%;transform:translateX(-50%);">One quick check, then your calendar.</h1>
         <p class="kz-lede" style="margin-top:16px;">
           We ask everyone to confirm they're human before booking. It keeps our
           calendar clear for real conversations. This takes a second.
@@ -6014,7 +6070,7 @@ def render_demo_confirmed() -> str:
     <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
       <div style="max-width:520px;width:100%;text-align:center;">
         <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>You're booked</div>
-        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks, we&rsquo;ll see you soon.</h1>
+        <h1 class="kz-h1" style="margin-top:18px;width:min(900px, calc(100vw - 2 * var(--kz-gutter)));position:relative;left:50%;transform:translateX(-50%);">Thanks, we&rsquo;ll see you soon.</h1>
         <p class="kz-lede" style="margin-top:16px;">
           Your demo is confirmed, check your inbox for the calendar invite with the
           details and a link to join.
@@ -6607,7 +6663,7 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
@@ -6716,7 +6772,7 @@ def playbooks_sections_html() -> str:
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
@@ -6735,7 +6791,7 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
@@ -6872,7 +6928,7 @@ def playbooks_sections_html() -> str:
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
@@ -7038,7 +7094,7 @@ def _cs_stats_band_html() -> str:
     return f'''<div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
   <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
     <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 500; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
       <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;">{grid}</div>
     </div>
   </section>
@@ -7611,6 +7667,9 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
             transition: transform .2s ease, box-shadow .2s ease;
           }
+          /* Always keep breathing room above the button (margin-top:auto only
+             spaces it when the form is taller than its fields). */
+          .kz-trial-fields { margin-bottom: 26px; }
           .kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
           .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
           .kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
@@ -7666,11 +7725,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
 
           /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
-          :root {
-            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-          }
+          __FONT__
+          __HOMEONLY__
           __NAVHIDE__
           .kz-quotes { position: relative; }
           .kz-quotes .kz-carousel { position: static; }
@@ -7869,6 +7925,57 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             r'<span class="kz-nav-logo">\1</span>',
             html, count=1, flags=re.S,
         )
+    # Homepage-only overrides: the trial form card is flat Kaizan yellow
+    # (no gradient or inner shading) with a tight, close-in soft shadow, and the
+    # "Why choose Kaizan" heading runs a size smaller, and the stats-band heading
+    # is a touch heavier (inline 400 → 500); the stat cards drop their yellow icons
+    # and "avg." labels and show bigger, yellow numbers. The standalone landing page keeps its look.
+    # Homepage only: stat numbers count up and the "Let's talk" bubbles pop in
+    # when scrolled into view (assets/js/home.js).
+    if keep_nav:
+        html = html.replace('</body>', f'<script defer src="/assets/js/home.js'
+                                        f'{asset_v("assets/js/home.js")}"></script>\n</body>', 1)
+    html = html.replace('__HOMEONLY__', (
+        ".kz-trial {\n"
+        "            background: #FFB900;\n"
+        "            box-shadow: 0 1px 2px rgba(40,30,15,.22), 0 4px 8px -2px rgba(40,30,15,.22),\n"
+        "                        0 12px 20px -10px rgba(40,30,15,.35);\n"
+        "          }\n"
+        "          .kz-why-title { font-size: clamp(32px, 3.8vw, 46px); }\n"
+        "          .kz-statsband h2 { font-weight: 500 !important; }\n"
+        "          .kz-statsband-grid > div > svg,\n"
+        "          .kz-statsband-grid > div > div:first-of-type > span { display: none; }\n"
+        "          .kz-statsband-grid > div > div:first-of-type > div {\n"
+        "            font-size: clamp(52px, 5.6vw, 72px) !important; font-weight: 800 !important;\n"
+        "            letter-spacing: -0.03em; line-height: 1;\n"
+        "            color: #FFB900 !important; font-variant-numeric: tabular-nums;\n"
+        "          }\n"
+        "          .cs-lt-grid .cs-lt-card:nth-child(1) { background: #E8432B !important; }\n"
+        "          .cs-lt-grid .cs-lt-card:nth-child(2) { background: #1FA591 !important; }\n"
+        "          .cs-lt-grid .cs-lt-card {\n"
+        "            font-size: 21px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.3;\n"
+        "            color: #FFFFFF !important; text-shadow: 0 1px 2px rgba(0,0,0,.28), 0 0 12px rgba(0,0,0,.12);\n"
+        "          }\n"
+        "          .js-lt-bubbles .cs-lt-grid:not(.is-in) .cs-lt-card { opacity: 0; }\n"
+        "          .cs-lt-grid.is-in .cs-lt-card {\n"
+        "            animation: ltBubbleIn 1s cubic-bezier(.22,.61,.36,1) both, ltBubbleBob 4s ease-in-out 1s infinite;\n"
+        "          }\n"
+        "          .cs-lt-grid.is-in .cs-lt-card:nth-child(2) { animation-delay: .4s, 1.4s; }\n"
+        "          .cs-lt-grid.is-in .cs-lt-card:nth-child(3) { animation-delay: .8s, 1.8s; }\n"
+        "          @keyframes ltBubbleIn { from { opacity: 0; transform: translateX(-48px); } to { opacity: 1; transform: none; } }\n"
+        "          @keyframes ltBubbleBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }\n"
+        "          .cs-int-grid .cs-int-icon-box { transition: transform .2s ease, box-shadow .2s ease; }\n"
+        "          .cs-int-grid .cs-int-icon:hover .cs-int-icon-box {\n"
+        "            box-shadow: 0 0 0 3px #FFB900, 0 10px 20px rgba(23,21,17,.1);\n"
+        "          }") if keep_nav else '')
+    # The standalone landing page keeps its Helvetica Neue; the homepage
+    # (keep_nav) uses the site font (IBM Plex Sans) like every other page.
+    html = html.replace('__FONT__', '' if keep_nav else (
+        ":root {\n"
+        "            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
+        "            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
+        "            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
+        "          }"))
     html = html.replace('__NAVHIDE__', '' if keep_nav else (
         '.kz-nav-links, .kz-nav-toggle { display: none; }\n'
         '          .kz-nav-cta .kz-btn-ghost { display: none; }'), 1)
@@ -7970,6 +8077,17 @@ def main():
                # UK "Book a call" CTAs point to the UK partner calendar.
                .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7',
                         'https://calendar.app.google/eWwFxNXq3mCZqw7HA'))
+    # Restyle in the site's visual language without touching the export:
+    # load the site font + assets/css/partner.css (overrides) + assets/js/partner.js
+    # (scroll reveal) into its <head>.
+    _partner_head = (
+        '<link rel="preconnect" href="https://fonts.googleapis.com">'
+        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap">'
+        f'<link rel="stylesheet" href="/assets/css/partner.css{asset_v("assets/css/partner.css")}">'
+        f'<script defer src="/assets/js/partner.js{asset_v("assets/js/partner.js")}"></script>\n</head>')
+    ref_usd = ref_usd.replace('</head>', _partner_head, 1)
+    ref_gbp = ref_gbp.replace('</head>', _partner_head, 1)
     ref_gbp = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_gbp, '/referral-partners/'),
                                                  '/referral-partners/'), '/referral-partners/', 'uk')
     ref_usd = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_usd, '/referral-partners/'),

@@ -242,7 +242,7 @@ button { font-family: inherit; }
   font-size: 88px;
   line-height: 1.05;
   letter-spacing: -0.035em;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
 }
 .kz-h1-xl { font-size: 96px; line-height: 1.02; }
@@ -264,7 +264,7 @@ button { font-family: inherit; }
 }
 .kz-display-stat {
   font-family: var(--kz-display);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 0.95;
 }
@@ -336,7 +336,7 @@ button { font-family: inherit; }
 .kz-cta-headline {
   font-family: var(--kz-display);
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-top: 4px;
@@ -419,7 +419,7 @@ button { font-family: inherit; }
 }
 .kz-hero-trial-h1 {
   font-family: var(--kz-display);
-  font-size: 40px; line-height: 1.18; font-weight: 400; letter-spacing: -1px;
+  font-size: 40px; line-height: 1.18; font-weight: 500; letter-spacing: -1px;
   margin: 0;
 }
 .kz-hero-trial-h1 .kz-mark { padding: 3px 10px; }
@@ -919,7 +919,7 @@ button { font-family: inherit; }
   box-shadow: 0 30px 80px -40px rgba(0,0,0,.45);
 }
 .kz-proof-stat .num {
-  font-family: var(--kz-display); font-size: 200px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 200px; font-weight: 500;
   line-height: 0.9; color: var(--kz-yellow); letter-spacing: -0.04em;
 }
 .kz-proof-stat .lbl { font-size: 20px; margin-top: 10px; max-width: 420px; line-height: 1.3; font-weight: 500; }
@@ -1110,7 +1110,7 @@ button { font-family: inherit; }
   padding: 110px var(--kz-gutter); background: var(--kz-yellow); text-align: center;
 }
 .kz-cta-band .head {
-  font-family: var(--kz-display); font-size: 80px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 80px; font-weight: 500;
   letter-spacing: -0.025em; line-height: 1;
 }
 .kz-cta-band .actions { display: flex; justify-content: center; gap: 12px; margin-top: 32px; }
@@ -1121,7 +1121,7 @@ button { font-family: inherit; }
   padding: 100px var(--kz-gutter); background: #0A0A0A; color: var(--kz-paper); text-align: center;
 }
 .kz-cta-band-dark .head {
-  font-family: var(--kz-display); font-size: 60px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 60px; font-weight: 500;
   letter-spacing: -0.025em; line-height: 1.05;
 }
 .kz-cta-band-dark .actions { display: flex; justify-content: center; gap: 12px; margin-top: 32px; }
@@ -1343,7 +1343,7 @@ button { font-family: inherit; }
 }
 .kz-composite .lbl { font-family: var(--kz-mono); font-size: 11px; letter-spacing: .18em; color: var(--kz-yellow); }
 .kz-composite .num {
-  font-family: var(--kz-display); font-size: 88px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 88px; font-weight: 500;
   letter-spacing: -0.04em; line-height: 1; margin-top: 6px;
 }
 .kz-composite .delta { font-size: 13px; color: rgba(255,251,240,.6); margin-top: 6px; }
@@ -1369,7 +1369,7 @@ button { font-family: inherit; }
   display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; align-items: center;
 }
 .kz-product-quote-row .quote {
-  font-family: var(--kz-display); font-size: 36px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 36px; font-weight: 500;
   line-height: 1.25; letter-spacing: -0.015em;
 }
 
@@ -1648,7 +1648,7 @@ button { font-family: inherit; }
 }
 .kz-stat-cell:last-child { border-right: none; }
 .kz-stat-cell .num {
-  font-family: var(--kz-display); font-size: 72px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 72px; font-weight: 500;
   letter-spacing: -0.04em; line-height: 0.95;
 }
 .kz-stat-cell .lbl { font-size: 13px; color: var(--kz-mute); margin-top: 8px; letter-spacing: .01em; }
@@ -1676,7 +1676,7 @@ button { font-family: inherit; }
 }
 .kz-research-cover-card .big {
   font-family: var(--kz-display); font-size: 46px; line-height: 1.04;
-  letter-spacing: -0.03em; font-weight: 400;
+  letter-spacing: -0.03em; font-weight: 500;
 }
 .kz-research-nums {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 44px;
@@ -1733,7 +1733,7 @@ button { font-family: inherit; }
 }
 .kz-featured-case .panel q {
   display: block;
-  font-family: var(--kz-display); font-size: 52px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 52px; font-weight: 500;
   line-height: 1.1; letter-spacing: -0.025em; margin: 20px 0 28px;
 }
 .kz-featured-case .panel q::before { content: "\""; }
@@ -1743,7 +1743,7 @@ button { font-family: inherit; }
   padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12);
 }
 .kz-featured-case .panel .stats .v {
-  font-family: var(--kz-display); font-size: 34px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 34px; font-weight: 500;
   color: var(--kz-yellow); line-height: 1;
 }
 .kz-featured-case .panel .stats .l {
@@ -1811,8 +1811,8 @@ button { font-family: inherit; }
   letter-spacing: -0.035em; line-height: 1.05; margin-top: 18px;
 }
 .kz-case-hero .head {
-  font-family: var(--kz-display); font-size: 46px; font-weight: 400;
-  letter-spacing: -0.03em; line-height: 1.15; margin: 18px 0 0; max-width: 760px;
+  font-family: var(--kz-display); font-size: clamp(32px, 3.2vw, 46px); font-weight: 500;
+  letter-spacing: -0.03em; line-height: 1.15; margin: 18px 0 0; max-width: 1000px;
 }
 .kz-case-hero .metric {
   margin-top: 22px; font-family: var(--kz-mono); font-size: 13px;
@@ -1827,7 +1827,7 @@ button { font-family: inherit; }
   position: sticky; top: 90px;
 }
 .kz-case-body .pull q {
-  font-family: var(--kz-display); font-size: 30px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 30px; font-weight: 500;
   letter-spacing: -0.025em; line-height: 1.2; max-width: 340px;
   display: block;
 }
@@ -1853,7 +1853,7 @@ button { font-family: inherit; }
 .kz-insights-feat-main .cover { aspect-ratio: 16/9; background-size: cover; background-position: center; }
 .kz-insights-feat-main .body { padding: 28px 30px 30px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .kz-insights-feat-main .title {
-  font-family: var(--kz-display); font-size: 44px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 44px; font-weight: 500;
   letter-spacing: -0.025em; line-height: 1.05;
 }
 .kz-insights-feat-main .excerpt { font-size: 16px; color: var(--kz-mute); line-height: 1.55; max-width: 620px; }
@@ -1911,7 +1911,7 @@ button { font-family: inherit; }
   padding: 80px var(--kz-gutter); text-align: center; color: var(--kz-mute);
 }
 .kz-blog-empty .head {
-  font-family: var(--kz-display); font-size: 36px; font-weight: 400; letter-spacing: -0.025em; color: var(--kz-ink);
+  font-family: var(--kz-display); font-size: 36px; font-weight: 500; letter-spacing: -0.025em; color: var(--kz-ink);
   margin-bottom: 12px;
 }
 
@@ -1995,7 +1995,7 @@ button { font-family: inherit; }
 .kz-essay.kz-post { display: block; }
 .kz-post .kz-essay-body { max-width: 760px; margin: 0 auto; }
 .kz-post-title {
-  font-family: var(--kz-display); font-weight: 400;
+  font-family: var(--kz-display); font-weight: 500;
   font-size: 46px; line-height: 1.1; letter-spacing: -0.03em; margin: 14px 0 0;
 }
 .kz-post-byline { font-size: 14px; color: var(--kz-mute); margin-top: 14px; }
@@ -2071,7 +2071,7 @@ button { font-family: inherit; }
   display: flex; flex-direction: column; align-items: center; gap: 20px;
 }
 .kz-404 .num {
-  font-family: var(--kz-display); font-size: 200px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 200px; font-weight: 500;
   letter-spacing: -0.04em; line-height: 0.9; color: var(--kz-yellow);
 }
 .kz-404 .head { font-family: var(--kz-display); font-size: 44px; letter-spacing: -0.025em; }
@@ -2531,7 +2531,7 @@ button { font-family: inherit; }
   font-size: 14px; font-weight: 500; color: var(--kz-mute); line-height: 1.3;
 }
 .kz-tier .clients .bold {
-  font-family: var(--kz-display); font-weight: 400; font-size: 28px;
+  font-family: var(--kz-display); font-weight: 500; font-size: 28px;
   color: var(--kz-ink); letter-spacing: -0.025em; line-height: 1.05;
   margin-top: 4px;
 }
@@ -2545,7 +2545,7 @@ button { font-family: inherit; }
   display: flex; flex-direction: column; gap: 6px;
 }
 .kz-tier .price .line {
-  font-family: var(--kz-display); font-weight: 400;
+  font-family: var(--kz-display); font-weight: 500;
   font-size: 34px; letter-spacing: -0.035em; line-height: 1;
   color: var(--kz-ink);
 }
@@ -2572,7 +2572,7 @@ button { font-family: inherit; }
 }
 .kz-tier .bullets li {
   display: grid; grid-template-columns: 14px 1fr; column-gap: 8px;
-  font-size: 13px; font-weight: 400; line-height: 1.45;
+  font-size: 13px; font-weight: 500; line-height: 1.45;
   color: rgba(0,0,0,.78);
 }
 .kz-tier .bullets .arr {
@@ -2786,14 +2786,14 @@ button { font-family: inherit; }
 .kz-careers-note .left { position: sticky; top: 100px; }
 .kz-careers-note .left .title {
   margin-top: 18px; font-family: var(--kz-display);
-  font-size: 34px; font-weight: 400; letter-spacing: -0.025em; line-height: 1.1;
+  font-size: 34px; font-weight: 500; letter-spacing: -0.025em; line-height: 1.1;
 }
 .kz-careers-note .left .sub {
   color: var(--kz-mute); font-size: 18px; letter-spacing: -0.01em;
 }
 .kz-careers-note .right { display: flex; flex-direction: column; gap: 22px; max-width: 760px; }
 .kz-careers-note .right .pull {
-  font-family: var(--kz-display); font-size: 30px; font-weight: 400;
+  font-family: var(--kz-display); font-size: 30px; font-weight: 500;
   letter-spacing: -0.02em; line-height: 1.25;
 }
 .kz-careers-note .right p { font-size: 18px; line-height: 1.65; }
@@ -3370,7 +3370,7 @@ button { font-family: inherit; }
 .kz-policy-versions a { color: var(--kz-ink); font-weight: 500; text-decoration: none; }
 .kz-policy-versions a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .kz-policy-versions a[aria-current="page"] { pointer-events: none; }
-.kz-policy-versions a[aria-current="page"] time::after { content: " (you are here)"; font-weight: 400; color: var(--kz-mute-2); }
+.kz-policy-versions a[aria-current="page"] time::after { content: " (you are here)"; font-weight: 500; color: var(--kz-mute-2); }
 .kz-policy-tag {
   display: inline-block; margin-left: 8px; padding: 1px 8px;
   background: var(--kz-yellow); border-radius: 999px;
@@ -3386,7 +3386,7 @@ button { font-family: inherit; }
 .kz-policy-actions { margin-top: 18px; }
 .kz-btn-pdf { font-size: 13px; padding: 9px 16px; border-radius: 9px; }
 .kz-btn-pdf .arr { margin-left: 2px; }
-.kz-policy-pdf-link { font-weight: 400 !important; color: var(--kz-mute) !important; text-decoration: underline !important; text-underline-offset: 3px; font-size: 13px; }
+.kz-policy-pdf-link { font-weight: 500 !important; color: var(--kz-mute) !important; text-decoration: underline !important; text-underline-offset: 3px; font-size: 13px; }
 .kz-policy-pdf-link:hover { color: var(--kz-ink) !important; }
 
 /* Cookie consent card (assets/js/consent.js) — tabbed panel (Consent /
@@ -3398,7 +3398,7 @@ button { font-family: inherit; }
 .cb-overlay{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;display:flex;justify-content:center;pointer-events:none;
   padding:0 max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .cb-overlay[hidden]{display:none}
-.cb-dialog{pointer-events:auto;font:400 14px/1.6 var(--kz-sans);color:var(--kz-ink);background:var(--kz-paper);width:100%;max-width:760px;
+.cb-dialog{pointer-events:auto;font:500 14px/1.6 var(--kz-sans);color:var(--kz-ink);background:var(--kz-paper);width:100%;max-width:760px;
   max-height:min(560px,calc(100vh - 32px));max-height:min(560px,calc(100dvh - 32px));display:flex;flex-direction:column;
   border:1px solid var(--kz-line);border-radius:14px;overflow:hidden;
   box-shadow:0 1px 2px rgba(40,30,15,.06),0 24px 60px -20px rgba(40,30,15,.35)}
@@ -3498,3 +3498,26 @@ button { font-family: inherit; }
   .kz-subproc dl { grid-template-columns: 1fr; gap: 2px; }
   .kz-subproc dd { margin-bottom: 10px; }
 }
+
+/* ── Page titles: one standard across the site ─────────────────────────
+   Every page's main title (h1) uses the homepage hero title's size and line
+   spacing: 44-66px fluid, line-height 1.0, 34px on phones. !important so it
+   wins over older per-page sizes and inline styles. Line breaks are balanced
+   so no title ends on a single orphaned word; the homepage hero keeps its
+   natural breaks. */
+h1 {
+  font-size: clamp(44px, 4.8vw, 66px) !important;
+  line-height: 1.0 !important;
+  letter-spacing: -0.02em;
+}
+h1:not(.kz-hero-v2-h1) { text-wrap: balance; }
+@media (max-width: 768px) {
+  h1 { font-size: 34px !important; }
+}
+
+/* ── Minimum text weight ───────────────────────────────────────────────
+   Nothing on the site is lighter than 500 (medium), the lightest weight used
+   on the product page. Explicit 300/400 weights were raised to 500; this sets
+   the default for unstyled text and form fields. */
+body { font-weight: 500; }
+input, textarea, select, button { font-weight: inherit; }

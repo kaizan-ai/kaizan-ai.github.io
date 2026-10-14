@@ -1,0 +1,122 @@
+/* ── Integrations page only ───────────────────────────────────────────
+   Loaded exclusively on /integrations/ (via extra_head in
+   render_integrations), AFTER site.css, so these rules override the shared
+   defaults on this page alone. Mirrors the product page's visual language
+   (assets/css/product.css): heavy hero headline, bold section heads, full-
+   width colour bands and hard offset-shadow cards. */
+
+/* Hero headline matches the product / home hero headline. */
+#int-hero h1 {
+  font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0;
+  font-weight: 800; letter-spacing: -0.02em;
+}
+@media (max-width: 480px) { #int-hero h1 { font-size: 34px; } }
+
+/* Page-wide typography, as on the product page. */
+.kz-h2 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.kz-h2-lg { font-size: 40px; }
+.kz-lede { font-size: 17px; line-height: 1.6; font-weight: 500; }
+.kz-mark { background: transparent; padding: 0; display: inline; }
+.kz-mark-tight { padding: 0; }
+@media (max-width: 1100px) { .kz-h2-lg { font-size: 32px; } }
+
+/* Eyebrows are hidden, as on the product page. */
+.kz-eyebrow { display: none; }
+
+/* ── Hero: the three sync facts as coloured speech bubbles ─────── */
+.kz-int-meta { gap: 12px; margin-top: 32px; }
+.kz-int-meta > span {
+  display: inline-flex; align-items: center;
+  padding: 10px 18px; border-radius: 16px 16px 16px 5px;
+  background: var(--bub, var(--kz-ink));
+  box-shadow: 0 10px 22px -8px rgba(0,0,0,.28);
+  animation: intBubbleBob 4s ease-in-out infinite;
+}
+.kz-int-meta > span:nth-child(2) { animation-delay: .8s; }
+.kz-int-meta > span:nth-child(3) { animation-delay: 1.6s; }
+@keyframes intBubbleBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: reduce) { .kz-int-meta > span { animation: none; } }
+.kz-int-meta > span:nth-child(1) { --bub: #E8432B; }
+.kz-int-meta > span:nth-child(2) { --bub: #1FA591; }
+.kz-int-meta > span:nth-child(3) { --bub: #7C5CFC; }
+.kz-int-meta .kz-dot { display: none; }
+.kz-int-meta strong { color: #FFFBF0; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; }
+
+/* Section rhythm: full-width bands rather than inset panels. */
+.kz-int-grid-section { padding: 64px var(--kz-gutter); }
+.kz-int-grid-head { margin-bottom: 32px; }
+.kz-int-grid-head h2 { font-weight: 700; letter-spacing: -0.02em; }
+
+/* ── Standard integrations: pale-yellow band, white lifted cards ─ */
+#int-standard { background: #FFF3C4; }
+.kz-int-grid { gap: 16px; }
+.kz-int-tile {
+  background: #FFFFFF; border: 1px solid var(--kz-line); border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.kz-int-tile:hover {
+  transform: translateY(-5px);
+  /* 1px border + 2px ring = a 3px yellow outline, without shifting the content. */
+  border-color: var(--kz-yellow);
+  box-shadow: 0 0 0 2px var(--kz-yellow), 0 26px 48px -26px rgba(40,30,15,.42);
+}
+.kz-int-tile .logo { border: none; background: #FFFBF0; border-radius: 12px; }
+.kz-int-tile .name { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; }
+.kz-int-tile .cat { font-size: 11px; font-weight: 600; color: var(--kz-mute); }
+.kz-int-tile .why { font-size: 13.5px; font-weight: 500; color: var(--kz-mute); line-height: 1.55; }
+
+/* ── Kaizan API: black band, card framed in yellow ──────────────── */
+#int-api {
+  background: #0A0A0A; color: #FFFBF0;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+#int-api .kz-h2 { color: #FFFBF0; }
+.kz-int-api {
+  background: #161616; border-radius: 16px;
+  box-shadow: 0 0 0 4px var(--kz-yellow), 0 7px 16px -3px rgba(255,185,0,.6);
+}
+.kz-int-api .logo-large { background: var(--kz-yellow); border: none; border-radius: 18px; }
+.kz-int-api .head { font-weight: 800; letter-spacing: -0.02em; margin-top: 0; }
+.kz-int-api .lede { font-size: 16px; font-weight: 500; }
+.kz-int-api-note {
+  margin-top: 40px; max-width: 880px;
+  font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3;
+  color: rgba(255,251,240,.85);
+}
+
+/* ── Custom integrations: yellow band, ink-framed cards ─────────── */
+.kz-int-custom { background: var(--kz-yellow); padding: 72px var(--kz-gutter); }
+.kz-int-custom-card-outer { background: transparent; border: none; border-radius: 0; padding: 0; }
+.kz-int-custom .kz-lede { color: #171511; }
+.kz-int-custom-card-outer .right { gap: 20px; }
+.kz-int-custom-card {
+  background: #FFFBF3; border: 3px solid var(--kz-ink); border-radius: 16px;
+  padding: 20px; box-shadow: 8px 8px 0 var(--shadow, var(--kz-ink));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.kz-int-custom-card:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--shadow, var(--kz-ink)); }
+.kz-int-custom-card:nth-child(1) { --shadow: #2F5FE0; }
+.kz-int-custom-card:nth-child(2) { --shadow: #1FA591; }
+.kz-int-custom-card:nth-child(3) { --shadow: #7C5CFC; }
+.kz-int-custom-card:nth-child(4) { --shadow: #E8432B; }
+.kz-int-custom-card .lbl {
+  font-family: var(--kz-sans); font-size: 12px; font-weight: 800;
+  letter-spacing: .1em; color: var(--kz-ink);
+}
+.kz-int-custom-card .d { font-size: 14px; font-weight: 600; color: #171511; line-height: 1.5; }
+.kz-int-custom .kz-btn-yellow { background: #0A0A0A; color: #FFFBF0; border-color: #0A0A0A; }
+
+/* ── Request CTA: cream band, bold card with a hard shadow ─────── */
+.kz-int-request { padding: 72px var(--kz-gutter) 88px; }
+.kz-int-request .card {
+  background: #FFFBF3; border: 3px solid var(--kz-ink); border-radius: 16px;
+  box-shadow: 10px 10px 0 var(--kz-yellow);
+}
+.kz-int-request .head { font-weight: 800; letter-spacing: -0.02em; margin-top: 0; }
+.kz-int-request p { font-size: 16px; font-weight: 500; color: var(--kz-mute); }
+
+@media (max-width: 760px) {
+  .kz-int-grid-section, .kz-int-custom, .kz-int-request { padding-top: 48px; padding-bottom: 48px; }
+  .kz-int-request .card, .kz-int-api { padding: 28px; }
+}

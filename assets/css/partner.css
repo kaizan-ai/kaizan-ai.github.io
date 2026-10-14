@@ -1,0 +1,181 @@
+/* ── Become a partner (/referral-partners/) only ──────────────────────
+   The page is a static export of an approved design (content/referral-
+   partners/index.html) styled inline; tools/build.py injects this sheet into
+   its <head> so it adopts the site's look without editing the export.
+   Inline styles need !important to be overridden. */
+
+/* Site font everywhere, including the figures (were monospace). */
+:root {
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: var(--font-sans);
+}
+
+/* Hero: cream with a heavy ink headline, like the product / home hero. */
+[data-dc-tpl="13"] { background: var(--cream) !important; color: var(--ink) !important; border-bottom: 1px solid rgba(10,10,10,.08); }
+[data-dc-tpl="14"] { color: #0A0A0A !important; font-size: clamp(2.6rem, 1.8rem + 3.6vw, 4.6rem) !important; letter-spacing: -0.02em !important; text-wrap: balance; }
+[data-dc-tpl="15"] { color: rgba(10,10,10,.68) !important; font-weight: 500; }
+[data-dc-tpl="17"] { border: 2px solid #0A0A0A; font-weight: 800 !important; box-shadow: 6px 6px 0 #0A0A0A !important; border-radius: 12px !important; }
+
+/* "Four reasons": ink-framed white cards with a hard yellow shadow
+   (were outlined in four different colours); icon tiles keep their colour
+   as a small pop. */
+[data-dc-tpl="24"], [data-dc-tpl="30"], [data-dc-tpl="36"], [data-dc-tpl="42"] {
+  border: 3px solid #0A0A0A !important; border-radius: 16px !important;
+  box-shadow: 8px 8px 0 #FFB900 !important;
+}
+[data-dc-tpl="28"], [data-dc-tpl="34"], [data-dc-tpl="40"], [data-dc-tpl="46"] { font-weight: 800 !important; }
+
+/* ── Colours: match the rest of the site ─────────────────────────────
+   Icon squares were neon teal / coral / sky blue; the site uses yellow icon
+   tiles (see the product page's trust cards). Remap the export's chart
+   palette to the site palette too, so nothing off-brand can reappear. */
+:root {
+  --chart-green: #1FA591; --chart-coral: #E8432B; --chart-blue: #2F5FE0; --chart-purple: #7C5CFC;
+  --chart-2: #1FA591; --chart-3: #E8432B;
+}
+[data-dc-tpl="26"], [data-dc-tpl="32"], [data-dc-tpl="38"], [data-dc-tpl="44"] {
+  background: #FFB900 !important; border: 2px solid #0A0A0A;
+  transition: transform .25s ease;
+}
+/* "How it works" cards: same 3px frame / 8px shadow as every other card. */
+[data-dc-tpl="105"], [data-dc-tpl="112"], [data-dc-tpl="119"], [data-dc-tpl="126"] {
+  border-width: 3px !important; border-radius: 16px !important; box-shadow: 8px 8px 0 #0A0A0A !important;
+}
+[data-dc-tpl="58"], [data-dc-tpl="64"], [data-dc-tpl="67"], [data-dc-tpl="73"],
+[data-dc-tpl="76"], [data-dc-tpl="82"] { border-radius: 16px !important; }
+
+/* ── Hover interactions ─────────────────────────────────────────── */
+/* Lift-and-grow shadow on every card. */
+[data-dc-tpl="24"], [data-dc-tpl="30"], [data-dc-tpl="36"], [data-dc-tpl="42"],
+[data-dc-tpl="105"], [data-dc-tpl="112"], [data-dc-tpl="119"], [data-dc-tpl="126"],
+[data-dc-tpl="58"], [data-dc-tpl="64"], [data-dc-tpl="67"], [data-dc-tpl="73"],
+[data-dc-tpl="76"], [data-dc-tpl="82"] {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+[data-dc-tpl="24"]:hover, [data-dc-tpl="30"]:hover, [data-dc-tpl="36"]:hover, [data-dc-tpl="42"]:hover {
+  transform: translate(-3px, -3px); box-shadow: 12px 12px 0 #FFB900 !important;
+}
+[data-dc-tpl="24"]:hover [data-dc-tpl="26"], [data-dc-tpl="30"]:hover [data-dc-tpl="32"],
+[data-dc-tpl="36"]:hover [data-dc-tpl="38"], [data-dc-tpl="42"]:hover [data-dc-tpl="44"] {
+  transform: rotate(-8deg) scale(1.08);
+}
+[data-dc-tpl="105"]:hover, [data-dc-tpl="112"]:hover, [data-dc-tpl="119"]:hover, [data-dc-tpl="126"]:hover {
+  transform: translate(-3px, -3px); box-shadow: 12px 12px 0 #0A0A0A !important;
+}
+
+/* "Heard this from your clients?": hovering a row lifts both cards and
+   nudges the arrow, so the problem → answer pairing reads as one move. */
+.pair-row > div:first-child { transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.pair-row:hover > div:first-child { transform: translate(-3px, -3px); background: #FFFFFF !important; box-shadow: 8px 8px 0 #FFB900; }
+.pair-row:hover > div:last-child { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 #0A0A0A !important; }
+.pair-row .pair-arrow svg { transition: transform .25s ease; }
+.pair-row:hover .pair-arrow svg { transform: translateX(6px); }
+@media (max-width: 760px) { .pair-row:hover .pair-arrow svg { transform: rotate(90deg) translateX(6px); } }
+
+/* Earnings breakdown rows: highlight the row under the pointer. */
+[data-dc-tpl="92"], [data-dc-tpl="95"], [data-dc-tpl="98"] {
+  transition: background .2s ease, padding .2s ease; border-radius: 10px;
+}
+[data-dc-tpl="92"]:hover, [data-dc-tpl="95"]:hover, [data-dc-tpl="98"]:hover {
+  background: rgba(255,185,0,.12); padding-left: 14px !important; padding-right: 14px !important;
+}
+
+/* "A good introduction looks like this": checklist rows slide and tint. */
+[data-dc-tpl="137"], [data-dc-tpl="142"], [data-dc-tpl="147"], [data-dc-tpl="152"] {
+  transition: background .2s ease, padding .2s ease;
+}
+[data-dc-tpl="137"]:hover, [data-dc-tpl="142"]:hover, [data-dc-tpl="147"]:hover, [data-dc-tpl="152"]:hover {
+  background: #FFFFFF; padding-left: 14px !important;
+}
+
+/* Questions: tint on hover; the "+" turns into "×" when open. */
+details[data-dc-tpl] summary { transition: color .15s ease; }
+details[data-dc-tpl]:hover summary { color: #946200; }
+details[data-dc-tpl] summary > span[aria-hidden] {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #FFB900; border: 2px solid #0A0A0A; color: #0A0A0A !important; font-weight: 800;
+  transition: transform .25s ease, background .2s ease;
+}
+details[data-dc-tpl][open] summary > span[aria-hidden] { transform: rotate(45deg); background: #0A0A0A; color: #FFB900 !important; }
+
+/* Buttons: small lift. */
+[data-dc-tpl="12"], [data-dc-tpl="17"], [data-dc-tpl="165"] { transition: transform .15s ease, box-shadow .15s ease; }
+[data-dc-tpl="12"]:hover, [data-dc-tpl="165"]:hover { transform: translateY(-2px); }
+[data-dc-tpl="17"]:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 #0A0A0A !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-dc-tpl], .pair-row > div, .pair-row .pair-arrow svg { transition: none !important; }
+  [data-dc-tpl]:hover, .pair-row:hover > div { transform: none !important; }
+}
+
+/* ── Colour pops (yellow still leads) ───────────────────────────────
+   Site palette: yellow #FFB900, green #1FA591, red #E8432B, blue #2F5FE0,
+   purple #7C5CFC. Used on small elements only: icon squares and each "Four reasons" card's hover shadow. */
+[data-dc-tpl="24"] { --pop: #FFB900; }
+[data-dc-tpl="30"] { --pop: #1FA591; }
+[data-dc-tpl="36"] { --pop: #E8432B; }
+[data-dc-tpl="42"] { --pop: #2F5FE0; }
+[data-dc-tpl="26"] { background: #FFB900 !important; }
+[data-dc-tpl="32"] { background: #1FA591 !important; }
+[data-dc-tpl="38"] { background: #E8432B !important; }
+[data-dc-tpl="44"] { background: #2F5FE0 !important; }
+/* White icons on the darker squares so they stay legible. */
+[data-dc-tpl="33"], [data-dc-tpl="39"], [data-dc-tpl="45"] { filter: brightness(0) invert(1); }
+[data-dc-tpl="24"]:hover, [data-dc-tpl="30"]:hover, [data-dc-tpl="36"]:hover, [data-dc-tpl="42"]:hover {
+  box-shadow: 12px 12px 0 var(--pop) !important;
+}
+
+/* ── Scroll reveal: "What Kaizan does about it" cards (partner.js) ──── */
+.js-reveal .kz-reveal-pair > div:last-child,
+.js-reveal .kz-reveal-pair .pair-arrow {
+  transition: opacity .6s ease, transform .55s cubic-bezier(.22,.61,.36,1), box-shadow .2s ease, background .2s ease;
+}
+.js-reveal .kz-reveal-pair:not(.is-in) > div:last-child { opacity: 0; transform: translateX(-36px) scale(.96); }
+.js-reveal .kz-reveal-pair:not(.is-in) .pair-arrow { opacity: 0; transform: translateX(-12px); }
+.js-reveal .kz-reveal-pair.is-in .pair-arrow { transition-delay: calc(var(--reveal-delay, .12s) - .12s); }
+.js-reveal .kz-reveal-pair.is-in > div:last-child { transition-delay: var(--reveal-delay, .12s), var(--reveal-delay, .12s), 0s, 0s; }
+@media (max-width: 760px) {
+  .js-reveal .kz-reveal-pair:not(.is-in) > div:last-child { transform: translateY(-20px) scale(.96); }
+}
+
+/* ── Left-aligned hero, like every other page ─────────────────────────
+   Aligns to the same left edge as the 1100px content column below. */
+[data-dc-tpl="13"] {
+  text-align: left !important;
+  padding-left: max(clamp(20px, 5vw, 40px), calc((100% - 1100px) / 2)) !important;
+  padding-right: max(clamp(20px, 5vw, 40px), calc((100% - 1100px) / 2)) !important;
+}
+[data-dc-tpl="14"] { margin: 0 !important; max-width: 22ch !important; }
+[data-dc-tpl="15"] { text-align: left !important; margin: 22px 0 0 !important; }
+
+/* ── Type scale: match the rest of the site ──────────────────────────
+   The export runs ~20-30% larger than other pages at every level; bring it to
+   the site scale (hero 44-66px, section heads 30-40px, cards 15-16px). */
+/* Title: the site-wide title standard (homepage hero size and spacing). */
+[data-dc-tpl="14"] { font-size: clamp(44px, 4.8vw, 66px) !important; line-height: 1.0 !important; max-width: none !important; text-wrap: balance; }
+@media (max-width: 768px) { [data-dc-tpl="14"] { font-size: 34px !important; } }
+[data-dc-tpl="15"] { font-size: 17px !important; line-height: 1.6 !important; max-width: 640px !important; }
+h2[data-dc-tpl] { font-size: clamp(30px, 3vw, 40px) !important; line-height: 1.12 !important; letter-spacing: -0.02em !important; }
+/* "Heard this from your clients?" / "What Kaizan does about it" column heads. */
+h2[data-dc-tpl="53"], h2[data-dc-tpl="56"] { font-size: clamp(24px, 2.2vw, 30px) !important; }
+/* Card titles and copy. */
+h3[data-dc-tpl] { font-size: 18px !important; }
+[data-dc-tpl="29"], [data-dc-tpl="35"], [data-dc-tpl="41"], [data-dc-tpl="47"],
+[data-dc-tpl="111"], [data-dc-tpl="118"], [data-dc-tpl="125"], [data-dc-tpl="132"] { font-size: 15px !important; }
+[data-dc-tpl="59"], [data-dc-tpl="65"], [data-dc-tpl="68"], [data-dc-tpl="74"],
+[data-dc-tpl="77"], [data-dc-tpl="83"] { font-size: 16px !important; }
+/* Earn section: headline figure at the home stats size; supporting copy down a step. */
+[data-dc-tpl="88"] { font-size: clamp(52px, 5.6vw, 72px) !important; }
+[data-dc-tpl="89"] { font-size: 18px !important; }
+[data-dc-tpl="93"], [data-dc-tpl="96"], [data-dc-tpl="99"] { font-size: 16px !important; }
+[data-dc-tpl="94"], [data-dc-tpl="97"], [data-dc-tpl="100"] { font-size: 20px !important; }
+/* Checklist, "We ask one thing", "Book a call" copy, FAQ questions/answers. */
+[data-dc-tpl="141"], [data-dc-tpl="146"], [data-dc-tpl="151"], [data-dc-tpl="156"],
+[data-dc-tpl="160"], [data-dc-tpl="164"] { font-size: 17px !important; }
+details[data-dc-tpl] summary { font-size: 17px !important; }
+details[data-dc-tpl] p { font-size: 15px !important; }
+
+/* Minimum text weight 500 (medium), as on the rest of the site. */
+:root { --weight-regular: 500; }
+body { font-weight: 500; }
