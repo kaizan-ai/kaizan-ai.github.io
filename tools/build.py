@@ -2954,7 +2954,7 @@ def render_product() -> str:
         f'aria-label="AI Assistant"></video></div>'
     )
     pillar_assistant = _pillar('01', 'ai-assistant', 'AI Assistant',
-        'Every meeting captured. <span class="kz-mark">The work, done.</span>',
+        'Every meeting captured.<br><span class="kz-mark">The work, done.</span>',
         'The AI Assistant joins every call and turns it into structured, searchable memory '
         'by client, automatically. Decisions, owners, deadlines, sentiment. Then it ships the '
         'work behind the meeting: recaps, follow-ups, status notes, CRM hygiene. Humans approve '
