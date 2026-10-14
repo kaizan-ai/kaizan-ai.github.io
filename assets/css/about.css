@@ -1,0 +1,125 @@
+/* ── About page only ──────────────────────────────────────────────────
+   Loaded exclusively on /about/ (via extra_head in render_about), AFTER
+   site.css. Product-page visual language, yellow-led: heavy headline,
+   ink-framed cards with hard yellow shadows. */
+
+.kz-about-hero .kz-h1 {
+  font-size: clamp(40px, 4.8vw, 66px); line-height: 1.0;
+  font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;
+}
+@media (max-width: 480px) { .kz-about-hero .kz-h1 { font-size: 34px; } }
+.kz-about-hero .kz-mark { background: transparent; padding: 0; display: inline; }
+.kz-eyebrow { color: rgba(23,21,17,.72); }
+
+/* Letter grid starts at the page gutter (not centred) so the byline column's
+   left edge lines up with the headline; the photo fills that column. */
+@media (min-width: 1025px) {
+  .kz-essay { justify-content: start; grid-template-columns: clamp(220px, 24vw, 336px) minmax(0, 780px); }
+}
+/* Founder byline: framed photo with a hard yellow shadow, filling the
+   byline column (site.css sets it to 150px). */
+.kz-about-byline .photo {
+  width: 100%; height: auto; aspect-ratio: 1 / 1;
+  border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--kz-yellow);
+}
+.kz-about-byline .name { font-weight: 800; letter-spacing: -0.01em; margin-top: 8px; }
+.kz-about-byline .meta { font-weight: 500; }
+
+/* Letter body. */
+.kz-essay-pull { font-size: 24px; font-weight: 600; line-height: 1.4; letter-spacing: -0.015em; }
+.kz-essay-body p strong { font-weight: 700; }
+/* "At the core of Kaizan…" label: inline yellow text is hard to read on cream. */
+.kz-essay-body .kz-eyebrow[style] { color: rgba(23,21,17,.72) !important; }
+
+/* The three technologies: an exclusive accordion (<details name="kz-tech">).
+   Closed: white card, number + title + toggle, lifts on hover.
+   Open: ink frame + hard yellow shadow, body slides open. */
+.kz-essay-tech:not(:has(.row)) { border-top: none; padding-top: 8px; }
+details.kz-essay-tech {
+  background: #FFFFFF; border: 1px solid var(--kz-line); border-radius: 16px;
+  padding: 0; margin: 4px 8px 4px 0;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  interpolate-size: allow-keywords;
+}
+details.kz-essay-tech:not([open]):hover {
+  transform: translateY(-3px); border-color: var(--kz-yellow);
+  box-shadow: 0 0 0 2px var(--kz-yellow), 0 22px 40px -26px rgba(40,30,15,.4);
+}
+details.kz-essay-tech[open] {
+  border: 3px solid #0A0A0A; box-shadow: 8px 8px 0 var(--kz-yellow);
+}
+.kz-essay-tech summary.row {
+  list-style: none; cursor: pointer; margin: 0;
+  display: flex; align-items: center; gap: 16px;
+  padding: 22px 24px;
+}
+details.kz-essay-tech[open] summary.row { padding: 20px 22px 6px; }
+.kz-essay-tech summary.row::-webkit-details-marker { display: none; }
+.kz-essay-tech summary.row::marker { content: ''; }
+.kz-essay-tech summary.row:focus-visible { outline: 3px solid var(--kz-yellow); outline-offset: 3px; border-radius: 12px; }
+.kz-essay-tech .num {
+  display: inline-flex; align-items: center; padding: 4px 10px; flex-shrink: 0;
+  border-radius: 10px 10px 10px 3px; background: var(--kz-yellow); color: #0A0A0A;
+  font-family: var(--kz-sans); font-size: 13px; font-weight: 800; letter-spacing: .02em;
+}
+.kz-essay-tech h3 { font-weight: 800; flex: 1; margin: 0; }
+details.kz-essay-tech:not([open]) h3 { font-size: 22px; }
+/* +/− toggle: yellow disc that turns black when open. */
+.kz-essay-tech .tg {
+  position: relative; width: 34px; height: 34px; flex-shrink: 0; border-radius: 50%;
+  background: var(--kz-yellow); border: 2px solid #0A0A0A;
+  transition: background .2s ease, transform .25s ease;
+}
+.kz-essay-tech .tg::before, .kz-essay-tech .tg::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 12px; height: 2.5px; border-radius: 2px; background: #0A0A0A;
+  transform: translate(-50%, -50%);
+}
+.kz-essay-tech .tg::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform .25s ease; }
+details.kz-essay-tech[open] .tg { background: #0A0A0A; }
+details.kz-essay-tech[open] .tg::before { background: var(--kz-yellow); }
+details.kz-essay-tech[open] .tg::after { transform: translate(-50%, -50%) rotate(0deg); background: var(--kz-yellow); }
+.kz-essay-tech .tech-body { padding: 6px 24px 24px; display: flex; flex-direction: column; gap: 14px; }
+.kz-essay-tech .tech-body p { font-size: 16px; }
+/* Smooth open/close where supported (Chromium); instant elsewhere. */
+details.kz-essay-tech::details-content {
+  block-size: 0; overflow: hidden;
+  transition: block-size .35s ease, content-visibility .35s allow-discrete;
+}
+details.kz-essay-tech[open]::details-content { block-size: auto; }
+@media (prefers-reduced-motion: reduce) {
+  details.kz-essay-tech, details.kz-essay-tech::details-content, .kz-essay-tech .tg, .kz-essay-tech .tg::after { transition: none; }
+  details.kz-essay-tech:not([open]):hover { transform: none; }
+}
+.kz-essay-sign-off { font-weight: 800; letter-spacing: -0.02em; }
+
+/* CTA: yellow card with an ink frame and hard ink shadow. */
+.kz-about-cta-card {
+  border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 10px 10px 0 #0A0A0A;
+}
+.kz-about-cta-card .head { font-weight: 800; letter-spacing: -0.02em; }
+.kz-about-cta-card .sub { font-size: 16px; font-weight: 500; }
+.kz-about-cta-card .btn { font-weight: 800; border-radius: 12px; }
+
+/* Investors: pale-yellow band, logos on white cards. */
+.kz-investors { background: #FFF3C4; border-top: none; }
+.kz-investors .kz-h2 { font-weight: 800; letter-spacing: -0.02em; }
+.kz-investors-logos { gap: 20px; }
+.kz-investors-logos .cell {
+  height: 96px; padding: 18px 22px; background: #FFFFFF;
+  border: 1px solid var(--kz-line); border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
+}
+@media (max-width: 560px) { .kz-investors-logos { grid-template-columns: 1fr; } }
+/* One-column layout (site.css switches at 1024px): keep the photo modest. */
+@media (max-width: 1024px) { .kz-about-byline .photo { max-width: 220px; } }
+@media (max-width: 600px) {
+  .kz-essay-tech summary.row { gap: 12px; padding: 18px 16px; }
+  details.kz-essay-tech[open] summary.row { padding: 16px 14px 4px; }
+  .kz-essay-tech h3, details.kz-essay-tech:not([open]) h3 { font-size: 18px; line-height: 1.25; }
+  .kz-essay-tech .tech-body { padding: 6px 16px 20px; }
+  .kz-essay-tech .tg { width: 30px; height: 30px; }
+}

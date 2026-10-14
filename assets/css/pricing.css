@@ -131,3 +131,219 @@
   .kzp-grid { grid-template-columns: 1fr; }
   .kzp-name, .kzp-clients, .kzp-price, .kzp-per, .kzp-plan, .kzp-btn-note { min-height: 0; }
 }
+
+/* ============================================================================
+   Product / home visual language — overrides the reference styling above to
+   match /product/: heavy headline, speech-bubble badges, ink-framed cards with
+   hard offset shadows in the product palette, bold buttons.
+   ========================================================================== */
+.kzp { background: var(--kz-paper, #FFFBF0); padding-top: 64px; padding-bottom: 56px; --row-clients: 66px; }
+.kzp-h1 {
+  font-size: clamp(36px, 4.2vw, 56px); line-height: 1.02;
+  font-weight: 800; letter-spacing: -0.02em; margin-bottom: 20px;
+  text-wrap: balance;
+}
+.kzp-sub { font-size: 17px; line-height: 1.6; font-weight: 500; color: var(--kz-mute, #57534E); max-width: 680px; margin-bottom: 26px; }
+
+/* Badges: calm pale-yellow pills (no motion, no extra colours). */
+.kzp-badges { gap: 12px; margin-bottom: 56px; }
+.kzp-tag {
+  padding: 8px 16px; border-radius: 999px;
+  background: #FFF3C4; color: #0A0A0A; border: 1.5px solid rgba(10,10,10,.12);
+  font-size: 14px; font-weight: 700; letter-spacing: -0.01em;
+}
+
+/* Tier cards: ink frame, hard yellow shadow (one accent colour throughout). */
+.kzp-grid { gap: 24px; padding-top: 20px; }
+.kzp-tier { --accent: var(--kz-yellow, #FFB900); }
+.kzp-tier,
+.kzp-tier.changed,
+.kzp-tier.hero {
+  background: #FFFFFF; border: 3px solid var(--kz-ink, #0A0A0A); border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.kzp-tier:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--accent); }
+.kzp-ribbon {
+  top: -16px; padding: 6px 14px; border-radius: 12px 12px 12px 4px;
+  background: var(--accent); color: #0A0A0A; border: 2px solid var(--kz-ink, #0A0A0A);
+  font-size: 0.7rem; font-weight: 800; box-shadow: none;
+}
+/* "Most popular" is a quiet black label so "Start here" stays the one yellow callout. */
+.kzp-ribbon.quiet { background: #0A0A0A; color: #FFFBF0; }
+.kzp-name { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; }
+.kzp-clients { font-weight: 500; }
+.kzp-clients strong { font-weight: 800; letter-spacing: -0.01em; }
+.kzp-price { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.03em; }
+.kzp-price.sm { font-size: 1.9rem; }
+.kzp-per, .kzp-plan { font-weight: 500; }
+.kzp-plan { border-top: 2px dashed var(--kz-line, #D6D3D1); }
+.kzp-features { font-weight: 500; color: var(--kz-ink, #1C1917); }
+.kzp-features li::before { color: #946200; font-weight: 800; }
+.kzp-features a { color: var(--kz-ink, #1C1917); font-weight: 700; }
+
+/* Buttons: bold, ink-framed. */
+.kzp-btn { border: 2px solid var(--kz-ink, #0A0A0A); color: var(--kz-ink, #0A0A0A); font-size: 0.9rem; font-weight: 800; padding: 11px 16px; }
+.kzp-btn-primary { background: var(--kz-yellow, #FFB900); }
+.kzp-btn-outline { background: #FFFFFF; }
+.kzp-btn-outline:hover { background: #FFF3C4; }
+.kzp-btn-dark { background: #0A0A0A; color: #FFFBF0; }
+.kzp-btn-note { font-weight: 500; }
+.kzp-foot { font-weight: 500; margin-top: 56px; }
+
+/* "See the maths" accordion: white, ink frame, hard yellow shadow. */
+.kzp-calc { background: var(--kz-paper, #FFFBF0); padding-bottom: 88px; }
+.kzp-calc .kzacc {
+  background: #FFFFFF; border: 3px solid var(--kz-ink, #0A0A0A); border-radius: 16px;
+  box-shadow: 10px 10px 0 var(--kz-yellow, #FFB900);
+  overflow: visible;
+}
+.kzp-calc .kzacc-summary { border-radius: 13px; }
+.kzp-calc .kzacc-title { font-weight: 800; }
+.kzp-calc .kzacc-sub { font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kzp-tier, .kzp-tier:hover { transition: none; transform: none; }
+}
+
+/* ── ROI calculator inside "See the maths" — same visual language ───────── */
+.kzp-calc #kaizan-roi {
+  --kz-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --kz-mono: var(--kz-sans);
+  --kz-panel: #FFFFFF;
+  --kz-border: #0A0A0A;
+  background: transparent;
+}
+.kzp-calc #kaizan-roi [class*="kzroi-"] { font-variant-numeric: tabular-nums; }
+.kzp-calc #kaizan-roi .kzroi-eyebrow { color: rgba(23,21,17,.72); }
+.kzp-calc #kaizan-roi .kzroi-h2 {
+  font-size: clamp(36px, 4.2vw, 56px); font-weight: 800;
+  letter-spacing: -0.02em; line-height: 1.02; text-wrap: balance;
+}
+.kzp-calc #kaizan-roi .kzroi-h2 .hl { background: transparent; padding: 0; color: inherit; }
+
+/* Result bar: black, lifted by a hard yellow shadow. */
+.kzp-calc #kaizan-roi .kzroi-bar { border-radius: 16px; box-shadow: 10px 10px 0 var(--kz-yellow); }
+.kzp-calc #kaizan-roi .kzroi-net { font-weight: 800; letter-spacing: -0.03em; }
+.kzp-calc #kaizan-roi .kzroi-metric-val { font-weight: 800; letter-spacing: -0.02em; }
+.kzp-calc #kaizan-roi .kzroi-cost-val { font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-proof { font-weight: 500; }
+
+/* Toggle + buttons: bold, ink-framed. */
+.kzp-calc #kaizan-roi .kzroi-toggle-q { font-weight: 500; }
+.kzp-calc #kaizan-roi .kzroi-toggle { border: 2px solid #0A0A0A; }
+.kzp-calc #kaizan-roi .kzroi-toggle-btn { font-weight: 700; }
+.kzp-calc #kaizan-roi .kzroi-leadbtn,
+.kzp-calc #kaizan-roi .kzroi-pill { font-weight: 800; border: 2px solid #0A0A0A; }
+.kzp-calc #kaizan-roi .kzroi-cta-band .kzroi-pill-ghost { border-color: rgba(255,251,240,.6); }
+.kzp-calc #kaizan-roi .kzroi-leadform { border: 3px solid #0A0A0A; border-radius: 16px; box-shadow: 8px 8px 0 var(--kz-yellow); }
+.kzp-calc #kaizan-roi .kzroi-leadform input { border: 2px solid rgba(10,10,10,.25); }
+
+/* Inputs panel + cards: white, ink frame, hard shadow in the product palette. */
+.kzp-calc #kaizan-roi .kzroi-cols { gap: 32px; margin-top: 28px; }
+.kzp-calc #kaizan-roi .kzroi-right { gap: 28px; }
+.kzp-calc #kaizan-roi .kzroi-panel,
+.kzp-calc #kaizan-roi .kzroi-comp,
+.kzp-calc #kaizan-roi .kzroi-card {
+  background: #FFFFFF; border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent, #0A0A0A);
+}
+/* One shadow colour throughout the calculator (yellow), so colour doesn't
+   read as meaning anything. */
+.kzp-calc #kaizan-roi { --accent: var(--kz-yellow); }
+.kzp-calc #kaizan-roi .kzroi-areas { gap: 24px; }
+.kzp-calc #kaizan-roi .kzroi-card { transition: transform .2s ease, box-shadow .2s ease; }
+.kzp-calc #kaizan-roi .kzroi-card:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--accent); }
+.kzp-calc #kaizan-roi .kzroi-card-kicker { color: #946200; font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-card-kicker .agent { color: var(--kz-faint); }
+.kzp-calc #kaizan-roi .kzroi-card-fig { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; }
+.kzp-calc #kaizan-roi .kzroi-card-title { font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-bullet { font-weight: 500; color: #171511; }
+.kzp-calc #kaizan-roi .kzroi-bullet .arrow { color: #946200; font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-panel-title { font-size: 22px; font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-panel-sub,
+.kzp-calc #kaizan-roi .kzroi-num-help { font-weight: 500; }
+.kzp-calc #kaizan-roi .kzroi-num-label,
+.kzp-calc #kaizan-roi .kzroi-portfolio-label { font-weight: 700; }
+.kzp-calc #kaizan-roi .kzroi-step,
+.kzp-calc #kaizan-roi .kzroi-field { border: 2px solid #0A0A0A; }
+.kzp-calc #kaizan-roi .kzroi-step { font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-step:hover { background: #FFF3C4; border-color: #0A0A0A; }
+.kzp-calc #kaizan-roi .kzroi-field input { font-weight: 700; }
+.kzp-calc #kaizan-roi .kzroi-portfolio-val { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; }
+.kzp-calc #kaizan-roi .kzroi-portfolio-row { border-top: 2px dashed var(--kz-line, #D6D3D1); }
+.kzp-calc #kaizan-roi .kzroi-method { border: 2px solid #0A0A0A; }
+.kzp-calc #kaizan-roi .kzroi-method summary { color: #0A0A0A; font-weight: 700; }
+.kzp-calc #kaizan-roi .kzroi-comp-title { font-weight: 700; }
+.kzp-calc #kaizan-roi .kzroi-comp-title .mono { font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-legend-val { font-weight: 800; }
+.kzp-calc #kaizan-roi .kzroi-footnote span { font-weight: 500; }
+.kzp-calc #kaizan-roi .kzroi-footnote a { color: #0A0A0A; font-weight: 700; }
+
+/* Closing band: heavier headline. */
+.kzp-calc #kaizan-roi .kzroi-cta-band { border-radius: 16px; box-shadow: 10px 10px 0 var(--kz-yellow); }
+.kzp-calc #kaizan-roi .kzroi-cta-band h3 { font-weight: 800; letter-spacing: -0.02em; }
+.kzp-calc #kaizan-roi .kzroi-cta-band p { font-weight: 500; }
+
+@media (prefers-reduced-motion: reduce) {
+  .kzp-calc #kaizan-roi .kzroi-card, .kzp-calc #kaizan-roi .kzroi-card:hover { transition: none; transform: none; }
+}
+
+/* ── Left-aligned hero, like every other page ─────────────────────────
+   Content runs to the site gutter (same left edge as the nav logo and other
+   pages' headlines) instead of a centred 1180px column. */
+.kzp { padding-left: var(--kz-gutter, 24px); padding-right: var(--kz-gutter, 24px); }
+.kzp-wrap { max-width: none; }
+.kzp-h1, .kzp-sub, .kzp-foot { text-align: left; }
+.kzp-h1 { max-width: 1100px; }
+.kzp-sub { margin-left: 0; margin-right: 0; }
+.kzp-badges { justify-content: flex-start; }
+.kzp-foot { margin-left: 0; }
+.kzp-calc { padding-left: var(--kz-gutter, 24px); padding-right: var(--kz-gutter, 24px); }
+.kzp-calc .kzacc { max-width: none; }
+
+/* ── Softer outlines; Pilot and Growth stand out ───────────────────────
+   Every card used to share a 3px black frame. Now the plain tiers (Starter,
+   Enterprise) get a light border and soft shadow, while the two to steer
+   people towards — Pilot (.hero) and Growth (.changed) — keep a defined
+   outline, the hard yellow shadow and a slight lift. */
+.kzp-tier {
+  border: 1.5px solid rgba(10,10,10,.12); border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.05), 0 18px 36px -26px rgba(40,30,15,.32);
+}
+.kzp-tier:hover {
+  transform: translateY(-4px);
+  border-color: var(--kz-yellow, #FFB900);
+  box-shadow: 0 0 0 2px var(--kz-yellow, #FFB900), 0 24px 44px -26px rgba(40,30,15,.4);
+}
+.kzp-tier.hero, .kzp-tier.changed {
+  border: 2px solid #0A0A0A;
+  box-shadow: 8px 8px 0 var(--kz-yellow, #FFB900);
+  transform: translateY(-6px);
+}
+.kzp-tier.hero:hover, .kzp-tier.changed:hover {
+  transform: translate(-3px, -9px);
+  border-color: #0A0A0A;
+  box-shadow: 11px 11px 0 var(--kz-yellow, #FFB900);
+}
+.kzp-ribbon { border-width: 1.5px; }
+/* Outline buttons on the plain tiers follow the softer frame. */
+.kzp-tier:not(.hero):not(.changed) .kzp-btn-outline { border-color: rgba(10,10,10,.28); }
+.kzp-tier:not(.hero):not(.changed) .kzp-btn-outline:hover { border-color: #0A0A0A; }
+
+/* Calculator: light borders instead of black frames; the yellow hard
+   shadow and dark result/CTA bands keep it on-brand. */
+.kzp-calc .kzacc { border: 1.5px solid rgba(10,10,10,.12); }
+.kzp-calc #kaizan-roi .kzroi-panel,
+.kzp-calc #kaizan-roi .kzroi-comp,
+.kzp-calc #kaizan-roi .kzroi-card {
+  border: 1.5px solid rgba(10,10,10,.12);
+  box-shadow: 0 1px 2px rgba(40,30,15,.05), 0 18px 36px -26px rgba(40,30,15,.3);
+}
+.kzp-calc #kaizan-roi .kzroi-card:hover {
+  transform: translateY(-4px); border-color: var(--kz-yellow);
+  box-shadow: 0 0 0 2px var(--kz-yellow), 0 24px 44px -26px rgba(40,30,15,.4);
+}
+@media (prefers-reduced-motion: reduce) {
+  .kzp-tier.hero, .kzp-tier.changed, .kzp-tier.hero:hover, .kzp-tier.changed:hover { transform: none; }
+}

@@ -1,0 +1,198 @@
+/* ── Persona pages only (/for/<slug>/) ────────────────────────────────
+   Loaded exclusively on persona pages (via extra_head in render_persona),
+   AFTER site.css, so these rules override the shared defaults there alone.
+   Mirrors the product page's visual language (assets/css/product.css):
+   heavy hero headline, bold section heads, full-width colour bands, hard
+   offset-shadow cards and floating speech bubbles. */
+
+/* Hero headline matches the product / home hero headline. */
+.kz-persona-hero h1 {
+  font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0;
+  font-weight: 800; letter-spacing: -0.02em;
+}
+@media (max-width: 480px) { .kz-persona-hero h1 { font-size: 34px; } }
+
+/* Page-wide typography, as on the product page. */
+.kz-h2 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; font-size: 40px; }
+.kz-lede { font-size: 17px; line-height: 1.6; font-weight: 500; }
+.kz-mark { background: transparent; padding: 0; display: inline; }
+.kz-eyebrow { color: rgba(23,21,17,.72); }
+@media (max-width: 1100px) { .kz-h2 { font-size: 32px; } }
+
+/* Product-page palette, cycled across cards and bubbles. */
+.kz-love-cell:nth-child(4n+1), .kz-persona-pill:nth-child(4n+1) { --accent: #2F5FE0; }
+.kz-love-cell:nth-child(4n+2), .kz-persona-pill:nth-child(4n+2) { --accent: #1FA591; }
+.kz-love-cell:nth-child(4n+3), .kz-persona-pill:nth-child(4n+3) { --accent: #7C5CFC; }
+.kz-love-cell:nth-child(4n+4), .kz-persona-pill:nth-child(4n+4) { --accent: #E8432B; }
+
+/* ── Hero quote card: full-width horizontal card under the title,
+   white with a hard yellow offset shadow. ─────────────────────── */
+.kz-persona-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+/* Headline spans the full width so titles stay on two lines max on desktop/tablet. */
+.kz-persona-hero-text { max-width: none; }
+.kz-persona-hero h1 { text-wrap: balance; }
+.kz-persona-quote {
+  flex-direction: row; align-items: center; gap: 36px;
+  padding: 28px 32px; margin-bottom: 14px;
+  background: #FFFFFF; border-radius: 16px; border: 3px solid #0A0A0A;
+  box-shadow: 14px 14px 0 var(--kz-yellow);
+}
+.kz-persona-quote .photo,
+.kz-persona-quote.is-nudge .photo {
+  width: 150px; height: 150px; font-size: 30px;
+  border: 3px solid var(--kz-yellow); background: #FFF3C4; color: #0A0A0A;
+}
+.kz-persona-quote .copy { flex: 1; color: #0A0A0A; text-align: left; }
+.kz-persona-quote q,
+.kz-persona-quote.is-nudge q { font-size: 21px; font-weight: 600; line-height: 1.35; }
+.kz-persona-quote .who .name { font-weight: 700; }
+.kz-persona-quote .who .role { color: var(--kz-mute); opacity: 1; }
+.kz-persona-quote .who .co { color: var(--kz-mute); opacity: 1; }
+.kz-persona-quote .who .co a { color: inherit; }
+.kz-persona-quote .who .co:has(.co-logo) { margin-top: 12px; }
+.kz-persona-quote .co-logo {
+  display: block; width: auto; max-width: 180px; object-fit: contain;
+}
+.kz-persona-quote .co-logo.is-dark { filter: brightness(0); }
+@media (max-width: 860px) { .kz-persona-quote .co-logo { margin: 0 auto; } }
+.kz-persona-quote .actions-stack { margin-top: 0; align-items: stretch; }
+.kz-persona-quote .read-more, .kz-persona-quote .watch-video { font-weight: 700; justify-content: center; }
+.kz-persona-quote .read-more { background: var(--kz-yellow); color: #0A0A0A; }
+.kz-persona-quote .read-more:hover { background: #0A0A0A; color: #FFFBF0; }
+.kz-persona-quote .watch-video { background: #FFFFFF; color: #0A0A0A; border: 2px solid #0A0A0A; }
+.kz-persona-quote .watch-video:hover { background: #FFF3C4; }
+@media (max-width: 860px) {
+  .kz-persona-quote { flex-direction: column; text-align: center; padding: 28px 22px; }
+  .kz-persona-quote .copy { text-align: center; }
+  .kz-persona-quote .actions-stack { align-items: center; }
+  .kz-persona-quote .read-more { white-space: normal; text-align: center; }
+}
+
+/* ── "Why X love Kaizan": pale-yellow band, ink-framed cards ───── */
+#persona-love { background: #FFF3C4; }
+.kz-love-grid { border: none; gap: 24px; }
+.kz-love-cell {
+  background: #FFFBF3; border: 3px solid var(--kz-ink); border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent, var(--kz-ink));
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.kz-love-cell:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--accent, var(--kz-ink)); }
+.kz-love-cell .n {
+  font-family: var(--kz-sans); font-size: 28px; font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1; color: var(--accent, var(--kz-ink));
+}
+.kz-love-cell .t { font-weight: 700; }
+.kz-love-cell .d { font-weight: 500; color: #171511; }
+
+/* ── "How Kaizan helps": tabbed showcase (driven by persona.js) ──
+   Feature list on the left, one framed media stage on the right whose hard
+   shadow takes the active feature's colour. */
+.kz-how {
+  display: grid; grid-template-columns: minmax(300px, .9fr) 1.4fr;
+  gap: 56px; align-items: center;
+}
+.kz-how-list { display: flex; flex-direction: column; gap: 12px; }
+.kz-how-item {
+  position: relative; display: grid; grid-template-columns: 52px 1fr; align-items: start;
+  width: 100%; padding: 18px 22px 22px; text-align: left; cursor: pointer;
+  font: inherit; color: var(--kz-ink);
+  background: transparent; border: 3px solid transparent; border-radius: 16px;
+  opacity: .62;
+  transition: opacity .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.kz-how-item:hover { opacity: 1; }
+.kz-how-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.kz-how-item.is-active {
+  opacity: 1; background: #FFFFFF; border-color: var(--kz-ink);
+  box-shadow: 8px 8px 0 var(--accent);
+}
+.kz-how-item .n {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+  color: var(--accent);
+}
+.kz-how-item .t { display: block; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; padding-top: 3px; }
+.kz-how-item .d-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
+.kz-how-item.is-active .d-wrap { grid-template-rows: 1fr; }
+.kz-how-item .d {
+  overflow: hidden; display: block;
+  font-size: 15px; font-weight: 500; line-height: 1.55; color: var(--kz-mute);
+}
+.kz-how-item.is-active .d { padding-top: 8px; }
+.kz-how-progress {
+  position: absolute; left: 22px; right: 22px; bottom: 10px; height: 3px;
+  border-radius: 3px; background: rgba(10,10,10,.08); overflow: hidden;
+  opacity: 0; transition: opacity .2s ease;
+}
+.kz-how-progress span {
+  display: block; height: 100%; background: var(--accent);
+  transform: scaleX(0); transform-origin: left center;
+}
+.kz-how-item.is-active .kz-how-progress { opacity: 1; }
+.kz-how.is-manual .kz-how-progress { display: none; }
+
+.kz-how-stage {
+  background: #0A0A0A; padding: 3px; border-radius: 11px;
+  box-shadow: 14px 14px 0 var(--how-accent, var(--kz-yellow));
+  transition: box-shadow .3s ease;
+}
+.kz-how-panel { display: none; }
+.kz-how-panel.is-active { display: block; animation: howFade .4s ease both; }
+@keyframes howFade { from { opacity: 0; } to { opacity: 1; } }
+.kz-how-panel .frame-fill.is-media {
+  display: block; width: 100%; height: auto; border-radius: 9px; background: var(--kz-paper);
+}
+.kz-how-panel .frame-fill:not(.is-media) {
+  min-height: 280px; border-radius: 9px;
+  background: repeating-linear-gradient(135deg, var(--kz-paper), var(--kz-paper) 8px, #F5EFE0 8px, #F5EFE0 16px);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: var(--kz-mute-2);
+}
+@media (prefers-reduced-motion: reduce) {
+  .kz-how-item, .kz-how-item .d-wrap, .kz-how-stage { transition: none; }
+  .kz-how-panel.is-active { animation: none; }
+}
+/* Narrow: one column; persona.js moves the stage under the active item. */
+@media (max-width: 860px) {
+  .kz-how { display: block; }
+  .kz-how-stage { margin: 6px 14px 18px 0; box-shadow: 8px 8px 0 var(--how-accent, var(--kz-yellow)); }
+}
+
+/* ── FAQs: white lifted cards ───────────────────────────────────── */
+.kz-objections { gap: 16px; }
+.kz-objections-row {
+  background: #FFFFFF; border: 1px solid var(--kz-line); border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.kz-objections-row:hover {
+  transform: translateY(-5px); border-color: var(--kz-yellow);
+  box-shadow: 0 0 0 2px var(--kz-yellow), 0 26px 48px -26px rgba(40,30,15,.42);
+}
+.kz-objections-row .q { font-weight: 700; }
+.kz-objections-row .a { font-weight: 500; }
+
+/* ── "Not quite you?": yellow band, floating speech bubbles ────── */
+.kz-persona-ribbon { background: var(--kz-yellow); border-top: none; padding-top: 56px; padding-bottom: 72px; }
+.kz-persona-ribbon .kz-eyebrow { color: #0A0A0A; }
+.kz-persona-ribbon-grid { gap: 16px; margin-top: 20px; }
+.kz-persona-pill {
+  background: var(--accent, var(--kz-ink)); border: none; color: #FFFBF0;
+  border-radius: 20px 20px 20px 6px; padding: 18px 24px;
+  font-size: 17px; font-weight: 700; letter-spacing: -0.015em;
+  box-shadow: 0 10px 22px -6px rgba(0,0,0,.28);
+  animation: personaBubbleBob 4s ease-in-out infinite;
+}
+.kz-persona-pill:nth-child(2) { animation-delay: .8s; }
+.kz-persona-pill:nth-child(3) { animation-delay: 1.6s; }
+.kz-persona-pill .arr { color: #FFFBF0; }
+.kz-persona-pill:hover { box-shadow: 0 18px 34px -8px rgba(0,0,0,.34); }
+@keyframes personaBubbleBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: reduce) { .kz-persona-pill { animation: none; } }
+
+/* ── Closing band: heavier headline ─────────────────────────────── */
+.kz-cta-band-dark .head { font-weight: 800; letter-spacing: -0.02em; }
+
+@media (max-width: 900px) {
+  .kz-love-grid.cols-2, .kz-love-grid.cols-3 { grid-template-columns: 1fr; }
+}
