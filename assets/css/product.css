@@ -1,0 +1,267 @@
+/* ── Product page only ────────────────────────────────────────────────
+   Loaded exclusively on /product/ (via extra_head in render_product), AFTER
+   site.css, so these rules override the shared defaults on this page alone.
+   Everything product-specific lives here, which keeps site.css identical to
+   the rest of the site. */
+
+/* Product hero headline matches the home hero headline exactly. */
+#product-hero h1 {
+  font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0;
+  font-weight: 800; letter-spacing: -0.02em;
+}
+
+/* Product-wide typography (scoped to this page by product.css loading). */
+.kz-h2 { font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+.kz-h2-lg { font-size: 40px; }
+.kz-lede { font-size: 17px; line-height: 1.6; font-weight: 500; }
+/* Yellow highlight removed on this page — highlighted words read as plain text. */
+.kz-mark { background: transparent; padding: 0; display: inline; }
+.kz-mark-tight { padding: 0; }
+@media (max-width: 1100px) { .kz-h2-lg { font-size: 32px; } }
+
+/* Eyebrows are shown here only on the four pillar sections. */
+.kz-eyebrow { display: none; }
+#ai-assistant .kz-eyebrow,
+#care .kz-eyebrow,
+#health-model .kz-eyebrow,
+#client-360 .kz-eyebrow { display: block; }
+#ai-assistant .kz-eyebrow,
+#health-model .kz-eyebrow,
+#client-360 .kz-eyebrow { color: rgba(23,21,17,.72); }
+#care .kz-eyebrow { color: rgba(255,251,240,.75); }
+
+/* Heavier closing CTA headline. */
+.kz-cta-band-md .head { font-weight: 500; }
+
+/* ── AI Helpers tabs — black section ──────────────────────────── */
+.kz-helpers { padding: 56px var(--kz-gutter) 56px; background: #000000; color: #FFFBF0; }
+.kz-helpers { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.kz-helpers .kz-h2 { color: #FFFBF0; }
+.kz-helpers .kz-lede { color: rgba(255,251,240,.82); font-weight: 500; }
+.kz-helpers-tabs {
+  padding: 6px 0 0; display: flex; gap: 0;
+  border-bottom: 1px solid rgba(255,251,240,.18); margin-top: 16px;
+  flex-wrap: wrap;
+}
+.kz-helpers-tab.is-active { border-bottom-color: #FFFBF0; }
+.kz-helpers-tab .label { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; }
+.kz-helpers-detail {
+  padding: 26px 0 0; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: flex-start;
+}
+.kz-helpers-detail .name {
+  font-family: var(--kz-sans); font-size: 48px; font-weight: 600;
+  letter-spacing: -0.035em; line-height: 1; margin-top: 16px; color: #FFFBF0;
+}
+.kz-helpers-detail .blurb { font-size: 18px; line-height: 1.55; color: rgba(255,251,240,.82); margin-top: 18px; max-width: 560px; font-weight: 500; }
+/* White "How it behaves" card, lifted off the black section by a hard 3D
+   offset shadow in the active helper's theme colour (set via --theme inline). */
+.kz-helpers-detail .behaviour {
+  margin-top: 26px; padding: 20px 22px; max-width: 560px;
+  background: #FFFFFF; color: var(--kz-ink);
+  border: 2px solid var(--theme, var(--kz-yellow)); border-radius: 14px;
+  box-shadow: 8px 8px 0 var(--theme, var(--kz-yellow));
+}
+.kz-helpers-detail .behaviour-label {
+  font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--kz-ink); margin-bottom: 10px;
+}
+.kz-helpers-detail .behaviour .body { font-size: 15px; line-height: 1.55; color: var(--kz-ink); font-weight: 500; }
+/* Looping video that replaces the signal-feed graphic in each helper panel. */
+.kz-helper-video {
+  border-radius: 14px; overflow: hidden; background: #000;
+  box-shadow: 0 1px 2px rgba(40,30,15,.05), 0 26px 50px -30px rgba(40,30,15,.35);
+}
+.kz-helper-video video { display: block; width: 100%; height: auto; }
+
+/* ── CARE cards ───────────────────────────────────────────────── */
+.kz-care-card .kz-care-video {
+  margin-top: 16px; border-radius: 10px; overflow: hidden; background: #000;
+}
+.kz-care-card .kz-care-video video { display: block; width: 100%; height: auto; }
+/* Four cards in one row; score pinned top-right in the dimension's colour. */
+.kz-care-grid-lg { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.kz-care-grid-lg .kz-care-card {
+  position: relative; padding: 20px; border-radius: 16px;
+  border: 3px solid var(--kz-ink); background: #FFFBF3;
+  box-shadow: 8px 8px 0 var(--kz-ink);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.kz-care-grid-lg .kz-care-card:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--theme, var(--kz-ink));
+  box-shadow: 12px 12px 0 var(--theme, var(--kz-ink));
+}
+.kz-care-grid-lg .kz-care-card .glyph { width: 40px; height: 40px; font-size: 20px; border-radius: 9px; }
+.kz-care-grid-lg .kz-care-card .label { font-size: 17px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.015em; }
+.kz-care-grid-lg .kz-care-card .desc { font-size: 15px; font-weight: 600; color: #171511; line-height: 1.5; margin-top: 10px; }
+.kz-care-score {
+  position: absolute; top: 16px; right: 18px;
+  font-size: 28px; font-weight: 800; letter-spacing: -0.03em;
+  color: var(--theme, var(--kz-ink)); line-height: 1;
+}
+.kz-care-grid-lg .kz-care-video {
+  margin-top: 16px; aspect-ratio: 1300 / 1760;
+  overflow: hidden; border-radius: 10px; background: #FFFBF3;
+}
+.kz-care-grid-lg .kz-care-video video {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+@media (max-width: 900px) { .kz-care-grid-lg { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .kz-care-grid-lg { grid-template-columns: 1fr; } }
+
+/* ── Product pillars (two-column sections with looping media) ──── */
+.kz-prod-pillar {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+}
+#ai-assistant { background: #FFF3C4; }
+#ai-assistant .kz-prod-media { padding: 3px; }
+#health-model { background: var(--kz-yellow); }
+.kz-prod-pillar.is-reverse .kz-prod-pillar-text { order: 2; }
+.kz-prod-pillar-text .kz-h2 { margin-top: 14px; }
+.kz-prod-pillar-text .kz-lede { margin-top: 20px; max-width: 540px; }
+.kz-prod-scene { position: relative; }
+.kz-client-news {
+  background: #FFF3C4;
+  display: grid; grid-template-columns: 1.6fr 1fr; align-items: stretch;
+  gap: 48px; padding: 0 var(--kz-gutter);
+}
+.kz-client-news-media {
+  display: flex; align-items: center; justify-content: center;
+  background: #FFF3C4; overflow: hidden;
+}
+.kz-client-news-media video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.kz-client-news-text { padding: 56px 0; display: flex; flex-direction: column; justify-content: center; }
+@media (max-width: 860px) {
+  .kz-client-news { grid-template-columns: 1fr; gap: 0; padding: 0; }
+  .kz-client-news-text { padding: 28px var(--kz-gutter) 44px; }
+}
+
+/* Hero pillar nav: a line of speech bubbles, spread evenly, gently floating. */
+.kz-pillar-bubbles {
+  position: relative; display: flex; flex-wrap: wrap; align-items: center;
+  justify-content: space-between; gap: 12px; margin-top: 44px;
+}
+.kz-pillar-bubble {
+  position: relative; z-index: 1;
+  display: inline-flex; flex-direction: column; align-items: flex-start; gap: 4px;
+  max-width: 290px; padding: 18px 24px; border-radius: 20px 20px 20px 6px;
+  color: #FFFBF0; text-decoration: none; letter-spacing: -0.015em;
+  transition: transform .18s ease;
+}
+.kz-pillar-bubble::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  border-radius: inherit; background: var(--bub, var(--kz-ink));
+  box-shadow: 0 10px 22px -6px rgba(0,0,0,.28);
+  animation: bubbleBob 4s ease-in-out infinite;
+}
+.kz-pillar-bubble:nth-child(2)::before { animation-delay: .8s; }
+.kz-pillar-bubble:nth-child(3)::before { animation-delay: 1.6s; }
+.kz-pillar-bubble:nth-child(4)::before { animation-delay: 2.4s; }
+.kz-pillar-bubble .title { font-size: 19px; font-weight: 700; }
+.kz-pillar-bubble .bdesc { font-size: 15px; font-weight: 600; line-height: 1.45; color: #FFFFFF; }
+.kz-pillar-bubble:hover { transform: scale(1.06); }
+.kz-pillar-bubble:hover::before { box-shadow: 0 18px 34px -8px rgba(0,0,0,.34); }
+@keyframes bubbleBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+
+.kz-reveal-row .kz-pillar-bubble { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+.kz-reveal-row.in-view .kz-pillar-bubble { opacity: 1; transform: translateY(0); }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(2) { transition-delay: .28s; }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(3) { transition-delay: .56s; }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(4) { transition-delay: .84s; }
+.kz-reveal-row .kz-pillar-bubble::before { animation: none; }
+.kz-reveal-row.in-view .kz-pillar-bubble::before { animation: bubbleBob 4s ease-in-out infinite; animation-delay: 1s; }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(2)::before { animation-delay: 1.4s; }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(3)::before { animation-delay: 1.8s; }
+.kz-reveal-row.in-view .kz-pillar-bubble:nth-child(4)::before { animation-delay: 2.2s; }
+@media (prefers-reduced-motion: reduce) {
+  .kz-pillar-bubble::before { animation: none; }
+  .kz-reveal-row .kz-pillar-bubble { opacity: 1; transform: none; transition: none; }
+}
+@media (max-width: 760px) {
+  .kz-pillar-bubbles { justify-content: center; }
+  .kz-pillar-wave { display: none; }
+}
+/* Gold Kaizan card: loop in a gold frame lifted by a hard black offset shadow. */
+.kz-prod-media {
+  position: relative;
+  box-sizing: border-box;
+  aspect-ratio: 1510 / 842;
+  background: #0A0A0A;
+  padding: 3px;
+  border-radius: 11px;
+  box-shadow: 14px 14px 0 var(--kz-yellow);
+}
+.kz-prod-media img, .kz-prod-media video {
+  display: block; width: 100%; height: 100%;
+  object-fit: contain; border-radius: 9px; background: var(--kz-paper);
+}
+.kz-prod-feats {
+  margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px;
+}
+.kz-prod-feat h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.015em; }
+.kz-prod-feat p { font-size: 13px; color: var(--kz-mute); margin-top: 5px; line-height: 1.5; font-weight: 500; }
+@media (max-width: 900px) {
+  .kz-prod-pillar { grid-template-columns: 1fr; gap: 28px; }
+  .kz-prod-pillar.is-reverse .kz-prod-pillar-text { order: 0; }
+  .kz-prod-feats { grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* ── "See how we can help you" — role selector (black band) ────── */
+.kz-roles { background: #0A0A0A; color: #FFFBF0; }
+.kz-roles .kz-prod-media {
+  padding: 0;
+  box-shadow: 0 0 0 4px var(--kz-yellow), 0 7px 16px -3px rgba(255,185,0,.6);
+}
+.kz-roles .kz-h2 { color: #FFFBF0; }
+.kz-roles .kz-lede { color: rgba(255,251,240,.78); font-weight: 500; }
+.kz-roles-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 40px; }
+.kz-roles-tab {
+  padding: 12px 20px; border-radius: 999px;
+  border: 2px solid rgba(255,251,240,.45); background: transparent;
+  font-size: 16px; font-weight: 600; letter-spacing: -0.01em; color: #FFFBF0;
+  cursor: pointer; transition: background .2s, border-color .2s, color .2s, transform .15s;
+}
+.kz-roles-tab:hover { border-color: #FFFBF0; transform: translateY(-1px); }
+.kz-roles-tab.is-active { background: var(--kz-yellow); color: #0A0A0A; border-color: var(--kz-yellow); }
+.kz-roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.kz-role-card { display: flex; flex-direction: column; gap: 26px; margin: 0; }
+.kz-role-card-title { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; color: #FFFBF0; }
+.kz-role-card-desc { font-size: 16px; color: rgba(255,251,240,.72); line-height: 1.55; margin-top: 10px; font-weight: 500; }
+.kz-roles-panel { display: none; }
+.kz-roles-panel.is-active { display: block; }
+.kz-roles-panel.is-active .kz-role-card {
+  animation: roleReveal .55s cubic-bezier(.22,.61,.36,1) both;
+}
+.kz-roles-panel.is-active .kz-role-card:nth-child(2) { animation-delay: .09s; }
+.kz-roles-panel.is-active .kz-role-card:nth-child(3) { animation-delay: .18s; }
+@keyframes roleReveal {
+  from { opacity: 0; transform: translateY(22px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (max-width: 860px) { .kz-roles-grid { grid-template-columns: 1fr; gap: 22px; } }
+@media (prefers-reduced-motion: reduce) {
+  .kz-roles-panel.is-active .kz-role-card { animation: none; }
+}
+
+/* ── Built-for-enterprise trust cards ─────────────────────────── */
+.kz-trust-cards { gap: 16px; }
+.kz-trust-card {
+  background: #FFFFFF; border: 1px solid var(--kz-line);
+  border-radius: 16px; padding: 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.kz-trust-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--kz-yellow);
+  box-shadow: 0 26px 48px -26px rgba(40,30,15,.42);
+}
+.kz-trust-ico {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--kz-yellow);
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 14px -6px rgba(255,185,0,.6);
+}
+.kz-trust-card h4 { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; }
+.kz-trust-card p { font-size: 13.5px; color: var(--kz-mute); line-height: 1.55; font-weight: 500; }
