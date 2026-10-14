@@ -969,29 +969,6 @@ def gtm_head_snippet() -> str:
         ''')
 
 
-def meta_pixel_snippet() -> str:
-    """Meta (Facebook) Pixel base code, emitted in <head> on every page."""
-    return dedent('''\
-        <!-- Meta Pixel Code -->
-        <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1749079612993241');
-        fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=1749079612993241&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Meta Pixel Code -->
-        ''')
-
-
 # ── Structured data (JSON-LD) ──────────────────────────────────────────
 # Page-level URLs/language use tokens so the UK page and its /us/ mirror each
 # resolve to their own URL (see _resolve_ld_tokens / build_us_locale).
@@ -1103,7 +1080,6 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {gtm_head_snippet()}
-        {meta_pixel_snippet()}
         <title>{E(title)} · Kaizan</title>
         <meta name="description" content="{E(desc)}">
         <link rel="icon" type="image/png" sizes="32x32" href="{p}assets/img/favicon-32x32.png{asset_v('assets/img/favicon-32x32.png')}">
