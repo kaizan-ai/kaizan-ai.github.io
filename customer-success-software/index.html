@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
         <link rel="stylesheet" href="assets/css/tokens.css?v=44c900be">
-        <link rel="stylesheet" href="assets/css/site.css?v=eff2c92e">
+        <link rel="stylesheet" href="assets/css/site.css?v=7461e8dc">
         <script defer src="assets/js/site.js?v=7cfd32a6"></script>
         <script defer src="assets/js/trial-form.js?v=4029be61"></script>
 <style>
@@ -227,6 +227,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     box-shadow: 0 8px 20px -8px rgba(0,0,0,.5);
     transition: transform .2s ease, box-shadow .2s ease;
   }
+  /* Always keep breathing room above the button (margin-top:auto only
+     spaces it when the form is taller than its fields). */
+  .kz-trial-fields { margin-bottom: 26px; }
   .kz-trial-submit:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -10px rgba(0,0,0,.55); }
   .kz-trial-submit:disabled { opacity: .6; cursor: progress; }
   .kz-trial-msg { display: none; margin: 14px 0 0; font-size: 14px; color: #8A1C0C; }
@@ -283,10 +286,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
   :root {
-    --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
+            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+          }
+  
   .kz-nav-links, .kz-nav-toggle { display: none; }
           .kz-nav-cta .kz-btn-ghost { display: none; }
   .kz-quotes { position: relative; }
@@ -488,7 +492,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <a class="kz-drop-link" href="product/">Overview</a>
 <a class="kz-drop-link" href="integrations/">Integrations</a>
                 </div>
-              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Personas <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/for/account-manager/">Client Service / Account Manager</a>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">By role <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/for/account-manager/">Client Service / Account Manager</a>
 <a class="kz-mega-link" href="/for/client-service-director/">Head of Client Services</a>
 <a class="kz-mega-link" href="/for/leadership/">Senior Leadership</a>
 <a class="kz-mega-link" href="/for/head-of-ai/">Head of AI / CTO</a>
@@ -730,7 +734,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">The work gets done, without your team doing it</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan's AI Helpers sit on every client account, handling the admin that used to eat your week:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every call, email and chat captured and summarised</span></div>
@@ -839,7 +843,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Spot risk before your client says a word</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan scores every relationship and flags the warning signs early, so you can step in before a renewal is on the line:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">A best-in-class health score on every account, tracked over time</span></div>
@@ -858,7 +862,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
@@ -995,7 +999,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 400; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Turn existing clients into your best growth channel</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Your clients are already telling you what they want next. Kaizan makes sure you hear it:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Upsell and cross-sell opportunities flagged the moment they're raised</span></div>
@@ -1013,7 +1017,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="kz-statsband" style="width: 100%; background: #000000; color: #FFFFFF; position: relative; overflow: hidden;">
   <section style="padding: 96px var(--kz-gutter); position: relative; z-index: 1;">
     <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
-      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 400; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
+      <h2 style="margin: 0 0 56px; font-size: 32px; font-weight: 500; letter-spacing: -0.01em; color: #FFFFFF;">Client teams using Kaizan see significant, measurable results:</h2>
       <div class="kz-statsband-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px 32px;"><div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/><path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/><path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">21%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Average revenue increase per client</div></div>
 <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/><path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">5.4 hrs</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Admin saved per person, every week</div></div>
 <div><svg width="30" height="30" viewBox="0 0 24 24" fill="none" style="margin:0 auto 14px;"><circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/><circle cx="12" cy="12" r="5" stroke="#FFB900" stroke-width="1.8"/><circle cx="12" cy="12" r="1.4" fill="#FFB900"/></svg><div style="display:flex;align-items:baseline;justify-content:center;gap:6px;"><span style="font-size:14px;font-weight:600;color:rgba(255,255,255,.55);">avg.</span><div style="font-size:46px;font-weight:700;color:#FFFFFF;">45%</div></div><div style="font-size:17px;color:#ffffff;margin-top:6px;">Of revenue at risk protected through early signals</div></div>
