@@ -96,7 +96,7 @@ CLIENT_LOGOS = [
     # A few clients lead in, then the US clients (US market push) land around the
     # middle — so US prospects catch familiar logos once they've scrolled to the
     # band, rather than the US set scrolling past before they get there.
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
+    dict(name='The Kite Factory',         file='the-kite-factory.png'),
     dict(name='Scale Digital',            file='scale-digital.png'),
     dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
     dict(name='Open Partners',            file='open-partners.svg'),
@@ -1429,13 +1429,16 @@ PEOPLE_PHOTOS = {
 }
 
 
-def portrait(name, role, co=None, tone='warm', size='', layout='', depth=0):
+def portrait(name, role, co=None, tone='warm', size='', layout='', depth=0, photo=None):
     initials = ''.join(p[0] for p in name.split()[:2]).upper()
     cls = ['kz-portrait', f'tone-{tone}']
     if size: cls.append(f'size-{size}')
     if layout: cls.append(f'layout-{layout}')
     role_text = role if not co else f'{role}, {co}'
-    photo = PEOPLE_PHOTOS.get(name)
+    # `photo` lets a single caller override the shared PEOPLE_PHOTOS mapping
+    # (e.g. the product quote uses a head-and-shoulders crop that other pages
+    # using the same person's full photo shouldn't get).
+    photo = photo or PEOPLE_PHOTOS.get(name)
     if photo:
         cls.append('has-photo')
         src = f'{relpath(depth)}assets/img/people/{photo}'
@@ -2336,7 +2339,7 @@ def render_home() -> str:
     def _qcard(cq):
         logo = company_logo.get(cq['co'], '')
         h = logo_h.get(cq['co'], 52)
-        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+        inner = (f'<img class="kz-qcard-logo" '
                  f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
@@ -2344,8 +2347,7 @@ def render_home() -> str:
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
-                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
-                f'<q>{E(cq["q"])}</q>'
+                f'<div class="kz-qcard-body"><q>{E(cq["q"])}</q></div>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
                 f'{more}'
                 f'</figure>')
@@ -2768,186 +2770,319 @@ def render_confirmation() -> str:
 
 
 def render_product() -> str:
-    helpers = [
-        dict(k='$', name='ROI Helpers', tag='Grow client ROI',
-             blurb=('Agents that read every piece of work, every brief, deck, recap, deliverable, call, across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.'),
-             signals=[
-                'Acme briefs 28% shorter than top-quartile clients · template suggested',
-                'Verkeer creative review skipped 3 weeks running · cadence fix drafted',
-                'Northwind targeting brief missing 4 fields your best work always has',
-                'Hooli campaign tracking 12% under benchmark · two playbooks pulled from wins',
-             ],
-             evidence=("Helpers compare each client’s work against the patterns your best work follows, pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.")),
-        dict(k='❤', name='Relationship Helpers', tag='Deepen relationship strength',
-             blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage, and write the warm re-intro before your weekly review.',
-             signals=[
-                '21 days silent · Mike @ Acme · re-intro draft ready',
-                'No senior coverage at Northwind · exec match suggested',
-                'New buyer joined at Stark · onboarding note drafted',
-                'Tone shift on Sarah @ Hooli · escalation flagged with evidence',
-             ],
-             evidence='Trained on your conversations: who replies fast, who goes quiet, what tone your champions actually use. The longer you run it, the more the helpers sound like your best AM at their best moment.'),
-        dict(k='⚙', name='Growth Helpers', tag='Proactive client growth',
-             blurb=("Agents that listen for the moment a client says something they didn’t mean as a buying signal, and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week."),
-             signals=[
-                '"Do you do analytics?" · Acme · scoped pitch drafted using 3 lookalike wins',
-                "Hooli mentioned a new product line on Tuesday’s call · launch playbook pulled",
-                'Verkeer brief widened to include retention work · capacity check + brief drafted',
-                'Scale CMO joined Stark · suggest re-pitching the measurement workstream',
-             ],
-             evidence=("Suggestions are specific to that client’s objectives, history and tone, not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.")),
-        dict(k='+', name='Custom Helpers', tag='Build your own',
-             blurb='Spin up a helper grounded in your data and your objective: onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
-             signals=[
-                '"Flag any account where the senior buyer has gone quiet 14d+"',
-                "\"Draft a renewal narrative using last quarter’s wins on this client\"",
-                '"Brief me before every Acme call with the last 5 decisions"',
-                '"Watch for capacity asks across all retainer clients"',
-             ],
-             evidence=("Custom helpers inherit the same private memory: every doc, deck, call and Slack channel you connect. They keep learning from your outcomes, so each run is more personalised to that client’s objectives than the last.")),
+    p = relpath(1)
+
+    # ── Pillar media: looping persona GIFs. Each GIF frame doubles as a
+    # scroll-animation anchor: a bubble "launches" from one GIF and travels
+    # down into the next, reusing the home page's initPbConnectors engine
+    # (assets/js/site.js), same #sceneRoot / launchZone* / bubbleOrigin* /
+    # bubbleDest* / .connA|B|C contract, so no JS change is needed.
+    def _anchor(aid: str, edge: str) -> str:
+        pos = 'top:0;' if edge == 'top' else 'bottom:0;'
+        return (f'<span id="{aid}" aria-hidden="true" '
+                f'style="position:absolute;{pos}left:50%;width:1px;height:1px;"></span>')
+
+    # Loop frame colour. Set to black per request; swap back to the bubble
+    # palette ['#2F5FE0', '#1FA591', '#7C5CFC', '#E8432B'] to re-colour them.
+    FRAME_COLORS = ['#0A0A0A', '#0A0A0A', '#0A0A0A', '#0A0A0A']
+
+    def _media(persona_slug: str, stem: str, label: str,
+               zone_id: str = '', anchors: str = '', frame: str = '') -> str:
+        # Prefer a lightweight looping <video> (MP4) when present; fall back to
+        # the raw GIF. Videos play/pause in-view via initReel (data-play-inview).
+        # The MP4s live under a product-only path so the /for/ persona pages
+        # (which read assets/img/personas/) keep using their GIFs untouched.
+        rel_mp4 = f'assets/video/roles/{persona_slug}-{stem}.mp4'
+        rel_gif = f'assets/img/personas/{persona_slug}/{stem}.gif'
+        zid = f' id="{zone_id}"' if zone_id else ''
+        style = f' style="background:{frame}"' if frame else ''
+        if (ROOT / rel_mp4).exists():
+            inner = (f'<video src="{p}{rel_mp4}{asset_v(rel_mp4)}" muted loop '
+                     f'playsinline preload="none" data-play-inview '
+                     f'aria-label="{E(label)}"></video>')
+        else:
+            inner = (f'<img src="{p}{rel_gif}{asset_v(rel_gif)}" '
+                     f'alt="{E(label)}" loading="lazy">')
+        return f'<div class="kz-prod-media"{zid}{style}>{inner}{anchors}</div>'
+
+    # Traveler bubbles (3 per leg) that glide between the GIFs as you scroll.
+    def _travelers() -> str:
+        # Two legs chain the three graphic pillars (AI Assistant → CARE →
+        # Client 360). The AI Helpers tabbed section sits between pillars 1 and 2
+        # without an anchor, so the bubbles glide past it.
+        legs = [
+            ('connA', [('#2F5FE0', 46, 34), ('#1FA591', 40, 30), ('#FFB900', 36, 27)]),
+            ('connB', [('#1FA591', 46, 34), ('#7C5CFC', 40, 30), ('#E8432B', 36, 27)]),
+        ]
+        out = []
+        for cls, bubbles in legs:
+            for bg, w, h in bubbles:
+                dark = bg == '#FFB900'
+                l1 = 'rgba(23,21,17,.55)' if dark else 'rgba(255,255,255,.9)'
+                l2 = 'rgba(23,21,17,.4)' if dark else 'rgba(255,255,255,.65)'
+                out.append(
+                    f'<div class="bubbleTraveler {cls}" aria-hidden="true" '
+                    f'style="background:{bg};width:{w}px;height:{h}px;z-index:1;'
+                    f'box-shadow:0 10px 24px rgba(0,0,0,.28);">'
+                    f'<span class="travelerLine" style="top:9px;background:{l1};"></span>'
+                    f'<span class="travelerLine" style="top:16px;right:14px;background:{l2};"></span>'
+                    f'</div>')
+        return '\n'.join(out)
+
+    def _feats(items) -> str:
+        return '\n'.join(
+            f'<div class="kz-prod-feat"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
+            for t, d in items
+        )
+
+    def _pillar(num, pid, eyebrow, h2_html, copy, feats, media, reverse=False) -> str:
+        rev = ' is-reverse' if reverse else ''
+        return f'''
+    <section class="kz-section kz-prod-pillar{rev}" id="{pid}">
+      <div class="kz-prod-pillar-text">
+        <div class="kz-eyebrow">{num} · {E(eyebrow)}</div>
+        <h2 class="kz-h2 kz-h2-lg">{h2_html}</h2>
+        <p class="kz-lede">{copy}</p>
+        <div class="kz-prod-feats">{_feats(feats)}</div>
+      </div>
+      {media}
+    </section>'''
+
+    # ── Pillar data (copy unchanged from the previous product page) ──────────
+    asst_features = [
+        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads.'),
+        ('Decisions, not transcripts', 'Action items, owners and dates. The shape of work.'),
+        ('Does the work',
+         'Recaps, follow-ups, status notes, CRM hygiene, brief-backs. Humans approve what matters; the rest just gets done.'),
+        ('Sounds like you',
+         'Reads every doc, deck and Slack thread for that client, so a draft for Acme sounds like Acme, not a template.'),
+    ]
+
+    helper_packs = [
+        ('ROI Helpers', 'Grow client ROI, spot where the work itself is leaking value and suggest the lift.'),
+        ('Relationship Helpers', 'Deepen relationship strength, catch silence, dormant champions and thin coverage.'),
+        ('Growth Helpers', 'Proactive client growth, turn an off-hand cue into the next right move, this week.'),
+        ('Custom Helpers', 'Build your own, describe the outcome; Kaizan assembles the agent on your data.'),
     ]
 
     care_dims = [
-        ('C', 'Client sentiment',
-         'How the client actually feels about the work: tone, effort, intent, pulled from every email, call and review.', 78, '+3'),
-        ('A', 'Account activity',
-         'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.', 64, '+1'),
-        ('R', 'Relationship coverage',
-         'Who you know, how senior, how warm. Spots thin coverage and dormant champions before the work suffers.', 52, '-9'),
-        ('E', 'Engagement growth',
-         'Where the scope can deepen: capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.', 71, '+2'),
+        ('Client sentiment', 'How the client actually feels about the work: tone, effort, intent, pulled from every email, call and review.'),
+        ('Account activity', 'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.'),
+        ('Relationship coverage', 'Who you know, how senior, how warm. Spots thin coverage and dormant champions early.'),
+        ('Engagement growth', 'Where the scope can deepen: capability gaps, brief widenings, exec asks.'),
     ]
 
-    pillar_hero = [
-        ('01','AI Assistant',     'Captures every meeting. Ships the work behind it.'),
-        ('02','AI Helpers',       'Outcome-shaped agents that actually act'),
-        ('03','Client Health Model','Self-learning relationship score'),
-        ('04','Client 360',       'Market context for every account'),
+    c360_feats = [
+        ('Always-on research', 'Re-checks every client every day. No briefs to commission.'),
+        ('Routed to Helpers', 'Context lands in the right Helper, not in a buried report.'),
+        ('Source-backed', 'Every claim links to the article, filing or post it came from.'),
+        ('Your watch-list', 'Tag what matters per account: comp moves, hiring, M&A.'),
     ]
-    pillar_html = '\n'.join(
-        f'<div class="kz-pillar"><div class="num">{E(n)}</div>'
-        f'<div class="title">{E(t)}</div><div class="desc">{E(d)}</div></div>'
-        for n, t, d in pillar_hero
-    )
 
-    asst_features = [
-        ('Joins every call', 'Teams · Zoom · Google Meet · in-person uploads — joins every call, including uploaded calls.'),
-        ('Decisions, not transcripts', 'Action items, owners and dates. The shape of work.'),
-        ('Does the work',
-         'Meeting recaps, follow-ups, status notes, CRM hygiene, brief-backs, and delivery. Humans approve what matters; the rest just gets done.'),
-        ('Sounds like you',
-         "Reads every doc, deck and Slack thread for that client, so a draft for Acme actually sounds like Acme, not a template."),
+    # ── AI Helpers: original tabbed interface, one looping video per helper ──
+    helpers = [
+        dict(k='$', name='ROI Helpers', tag='Grow client ROI', video='assets/video/helpers/roi.mp4', color='#2F5FE0',
+             blurb='Agents that read every piece of work, every brief, deck, recap, deliverable, call, across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.',
+             evidence='Helpers compare each client&rsquo;s work against the patterns your best work follows, pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.'),
+        dict(k='❤', name='Relationship Helpers', tag='Deepen relationship strength', video='assets/video/helpers/relationship.mp4', color='#E8432B',
+             blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage, and write the warm re-intro before your weekly review.',
+             evidence='Trained on your conversations: who replies fast, who goes quiet, what tone your champions actually use. The longer you run it, the more the helpers sound like your best AM at their best moment.'),
+        dict(k='⚙', name='Growth Helpers', tag='Proactive client growth', video='assets/video/helpers/growth.mp4', color='#1FA591',
+             blurb='Agents that listen for the moment a client says something they didn&rsquo;t mean as a buying signal, and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week.',
+             evidence='Suggestions are specific to that client&rsquo;s objectives, history and tone, not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.'),
+        dict(k='+', name='Custom Helpers', tag='Build your own', video='assets/video/helpers/custom.mp4', color='#FFB900',
+             blurb='Spin up a helper grounded in your data and your objective: onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
+             evidence='Custom helpers inherit the same private memory: every doc, deck, call and Slack channel you connect. They keep learning from your outcomes, so each run is more personalised to that client&rsquo;s objectives than the last.'),
     ]
-    asst_html = '\n'.join(
-        f'<div class="kz-dark-feature"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
-        for t, d in asst_features
-    )
-
-    timeline_cards = [
-        dict(when='Today · 14:30', who='Quarterly review',
-             sum='Renewal pushed to Q3. Mike concerned about analytics gap. Senior buyer (Sarah) joining next call.',
-             tags=['Renewal slip','New buyer']),
-        dict(when='Tue · 11:00', who='Creative brief',
-             sum='New campaign signed off. Wants ROI deck before exec read-out on Friday.',
-             tags=['Action: deck']),
-        dict(when='Mon · 09:15', who='Slack #acme-team',
-             sum='Three messages on attribution model. Resolved by lunch. No blocker.',
-             tags=['Resolved']),
-    ]
-    timeline_html = '\n'.join(
-        f'''<div class="kz-timeline-card">
-            <div class="top"><div class="who">{E(c["who"])}</div><div class="when">{E(c["when"])}</div></div>
-            <div class="sum">{E(c["sum"])}</div>
-            <div class="tags">{''.join(f'<span class="tag">{E(t.upper())}</span>' for t in c["tags"])}</div>
-          </div>''' for c in timeline_cards
-    )
-
+    def _glyph_fg(c):
+        return '#0A0A0A' if c == '#FFB900' else '#FFFBF0'
     helpers_tabs = '\n'.join(
         f'''<button type="button" class="kz-helpers-tab{" is-active" if i == 0 else ""}" data-helper-tab>
-          <span class="glyph">{E(h["k"])}</span>
-          <div><div class="num">0{i+1}</div><div class="label">{E(h["tag"])}</div></div>
+          <span class="glyph" style="background:{h["color"]};color:{_glyph_fg(h["color"])};">{E(h["k"])}</span>
+          <div><div class="label">{E(h["tag"])}</div></div>
         </button>''' for i, h in enumerate(helpers)
     )
 
     def helper_panel(h, i):
-        signals = '\n'.join(
-            f'''<div class="row">
-              <span class="glyph">{E(h["k"])}</span>
-              <div style="flex:1;">
-                <div class="text">{E(s)}</div>
-                <div class="meta">evidence · {2+j*3}m ago</div>
-              </div>
-              <a class="open" href="#">OPEN →</a>
-            </div>'''
-            for j, s in enumerate(h["signals"])
-        )
         return f'''<div class="kz-helpers-detail" data-helper-panel>
           <div>
-            <div class="kz-eyebrow">Helper 0{i+1} · {E(h["tag"])}</div>
             <div class="name">{E(h["name"])}</div>
-            <div class="blurb">{E(h["blurb"])}</div>
-            <div class="behaviour">
-              <div class="kz-eyebrow" style="margin-bottom:10px;">How it behaves</div>
-              <div class="body">{E(h["evidence"])}</div>
+            <div class="blurb">{h["blurb"]}</div>
+            <div class="behaviour" style="--theme:{h["color"]};">
+              <div class="behaviour-label">How it behaves</div>
+              <div class="body">{h["evidence"]}</div>
             </div>
           </div>
-          <div class="kz-helper-feed">
-            <div class="head"><span class="label">LIVE · ACME CREATIVE</span><span class="meta">auto-running</span></div>
-            <div class="body">{signals}</div>
+          <div class="kz-helper-video">
+            <video src="{p}{h["video"]}{asset_v(h["video"])}" muted loop playsinline autoplay
+                   preload="none" data-play-inview aria-label="{E(h["name"])} in action"></video>
           </div>
         </div>'''
     helpers_panels = '\n'.join(helper_panel(h, i) for i, h in enumerate(helpers))
 
-    care_cards = '\n'.join(
-        f'''<div class="kz-care-card">
+    helpers_section = f'''
+    <section class="kz-helpers" id="care" data-helpers>
+      <div style="max-width:900px;">
+        <div class="kz-eyebrow">02 · AI Helpers</div>
+        <h2 class="kz-h2 kz-h2-lg" style="margin-top:12px;max-width:900px;">AI Helpers built for client growth,<br>acting around the clock.</h2>
+        <p class="kz-lede" style="margin-top:18px;max-width:720px;">
+          Three packs of AI Helpers, plus your own. Every helper is grounded in your company data:
+          docs, decks, transcripts, Slack, CRM, email. They keep learning from every new conversation,
+          so the output gets more personal to each client&rsquo;s objectives the longer you run them.
+        </p>
+      </div>
+      <div class="kz-helpers-tabs">{helpers_tabs}</div>
+      {helpers_panels}
+    </section>'''
+
+    _ai_rel = 'assets/video/product/ai-assistant.mp4'
+    ai_media = (
+        f'<div class="kz-prod-media" style="background:{FRAME_COLORS[0]};">'
+        f'<video src="{p}{_ai_rel}{asset_v(_ai_rel)}" muted loop playsinline '
+        f'preload="metadata" data-play-inview '
+        f'poster="{p}assets/video/product/ai-assistant-poster.jpg{asset_v("assets/video/product/ai-assistant-poster.jpg")}" '
+        f'aria-label="AI Assistant"></video></div>'
+    )
+    pillar_assistant = _pillar('01', 'ai-assistant', 'AI Assistant',
+        'Every meeting captured. <span class="kz-mark">The work, done.</span>',
+        'The AI Assistant joins every call and turns it into structured, searchable memory '
+        'by client, automatically. Decisions, owners, deadlines, sentiment. Then it ships the '
+        'work behind the meeting: recaps, follow-ups, status notes, CRM hygiene. Humans approve '
+        'what matters; the rest just gets done.',
+        asst_features,
+        ai_media,
+        reverse=False)
+    # CARE: original two-column layout, copy on the left, a 2×2 grid of
+    # dimension cards on the right, each card holding its own looping video.
+    # Each card: theme colour matches its video's radar "heatmap" colour; the
+    # video is cropped to just the radar, and the score is surfaced top-right.
+    care_cards_data = [
+        ('C', 'Client sentiment',
+         'How the client actually feels about the work: tone, effort, intent, pulled from every email, call and review.',
+         'satisfaction', '#2F5FE0', '6.9'),
+        ('A', 'Account activity',
+         'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.',
+         'activity', '#E8432B', '9.3'),
+        ('R', 'Relationship coverage',
+         'Who you know, how senior, how warm. Spots thin coverage and dormant champions before the work suffers.',
+         'relationship', '#7C5CFC', '7.5'),
+        ('E', 'Expansion opportunities',
+         'Where the scope can deepen: capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.',
+         'expansion', '#1FA591', '4.8'),
+    ]
+    care_cards_html = '\n'.join(
+        f'''<div class="kz-care-card" style="--theme:{color};">
           <div class="top">
             <div class="glyph">{E(k)}</div>
-            <div><div class="num">0{i+1}</div><div class="label">{E(name)}</div></div>
+            <div class="label">{E(name)}</div>
           </div>
           <div class="desc">{E(desc)}</div>
-          <div class="bar">
-            <div class="bar-track"><div class="bar-fill" style="width:{score}%;"></div></div>
-            <div class="bar-val">{score}</div>
+          <div class="kz-care-video">
+            <video src="{p}assets/video/care/{vid}.mp4{asset_v(f'assets/video/care/{vid}.mp4')}"
+                   muted loop playsinline preload="none" data-hover-play
+                   poster="{p}assets/video/care/{vid}-poster.jpg{asset_v(f'assets/video/care/{vid}-poster.jpg')}"
+                   aria-label="{E(name)}"></video>
           </div>
-        </div>''' for i, (k, name, desc, score, _) in enumerate(care_dims)
+        </div>''' for i, (k, name, desc, vid, color, score) in enumerate(care_cards_data)
     )
+    pillar_care = f'''
+    <section class="kz-section" id="health-model">
+      <div class="kz-eyebrow">03 · CARE&trade; Client Health Model</div>
+      <h2 class="kz-h2 kz-h2-lg" style="margin-top:12px;max-width:900px;">A self-learning client relationships score, <span class="kz-mark">grounded in your data.</span></h2>
+      <p class="kz-lede" style="margin-top:18px;max-width:760px;">The unifying score across every Helper.
+        It uses your data to measure relationship health and client satisfaction, not someone
+        else&rsquo;s benchmark. It learns from your won pitches, kept clients and lost briefs: what
+        predicts a healthy engagement in your company. Not a biased RAG status. Re-tuned weekly
+        against your data.</p>
+      <div class="kz-care-grid kz-care-grid-lg" id="launchZoneB" style="position:relative;margin-top:48px;">
+        {_anchor('bubbleDestA', 'top')}{_anchor('bubbleOriginB', 'bottom')}
+        {care_cards_html}
+      </div>
+    </section>'''
+    _news_rel = 'assets/video/product/client-news.mp4'
+    pillar_c360 = f'''
+    <section id="client-360" class="kz-client-news">
+      <div class="kz-client-news-media">
+        <video src="{p}{_news_rel}{asset_v(_news_rel)}" muted loop playsinline
+               preload="metadata" data-play-inview
+               poster="{p}assets/video/product/client-news-poster.jpg{asset_v('assets/video/product/client-news-poster.jpg')}"
+               aria-label="Client News"></video>
+      </div>
+      <div class="kz-client-news-text">
+        <div class="kz-eyebrow">04 · Client News</div>
+        <h2 class="kz-h2 kz-h2-lg">Market research on every client. <span class="kz-mark">Always-on context.</span></h2>
+        <p class="kz-lede" style="margin-top:18px;">Client News continuously researches every
+          account (funding, hiring, exec moves, competitor noise, earnings tone, product launches)
+          and feeds it into the Helpers as live ground truth. So when CARE&trade; drops, you don&rsquo;t
+          just know <em>that</em> something changed: you know <em>what</em>.</p>
+        <div class="kz-prod-feats">{_feats(c360_feats)}</div>
+      </div>
+    </section>'''
 
-    composite_cells = '\n'.join(
-        f'''<div class="cell{' is-warn' if delta.startswith("-") else ''}">
-          <div class="k">{E(k)} · {E(name.split(" ")[0])}</div>
-          <div class="v">{score}</div>
-          <div class="d">{E(delta)} 7d</div>
-        </div>''' for k, name, _, score, delta in care_dims
-    )
+    # Section order: AI Assistant → AI Helpers (tabbed) → CARE → Client News.
+    # (Scroll-bubble animation removed per request, plain sections now.)
+    pillars_html = f'{pillar_assistant}\n{helpers_section}\n{pillar_care}\n{pillar_c360}'
 
-    c360_rows = [
-        ('EXEC MOVE', 'New CMO joined from Stark, Jen Patel',
-         'Likely to push for analytics tooling. Buyer profile updated.', '→ Growth helper'),
-        ('EARNINGS', 'Q1 call: cost discipline; growth still funded',
-         'CFO emphasised brand spend. Renewal posture: positive.', '→ Relationship helper'),
-        ('HIRING', '12 open roles in performance marketing',
-         'Capability gap that overlaps Kaizan capacity. Brief drafted.', '→ Growth helper'),
-        ('COMPETITOR', 'Competitor X announced agency-wide AI tool',
-         'No customer overlap mentioned. Watching for client reaction.', '→ Watch-list'),
+    # ── "See how we can help you", interactive role selector. Click a role
+    # and its three loops reveal with a staggered animation (initRoles in
+    # assets/js/site.js). Only one role's loops are in view at a time, so the
+    # page stays short. ──────────────────────────────────────────────────────
+    def _role_card(role, idx, name, desc, slug, color):
+        return f'''
+        <figure class="kz-role-card">
+          {_media(slug, f'0{idx + 1}', f'{role}, {name}', frame=color)}
+          <figcaption class="kz-role-card-body">
+            <h4 class="kz-role-card-title">{E(name)}</h4>
+            <p class="kz-role-card-desc">{E(desc)}</p>
+          </figcaption>
+        </figure>'''
+
+    role_tabs, role_panels = [], []
+    card_n = 0  # running index so the blue/green/purple/red palette cycles across all cards
+    for ri, (slug, label) in enumerate(PERSONA_LIST):
+        pdata = PERSONAS[slug]
+        is_first = ri == 0
+        role_tabs.append(
+            f'<button class="kz-roles-tab{" is-active" if is_first else ""}" '
+            f'type="button" data-role-tab>{E(label)}</button>'
+        )
+        card_htmls = []
+        for i, (nm, ds) in enumerate(pdata['products']):
+            card_htmls.append(_role_card(label, i, nm, ds, slug, FRAME_COLORS[card_n % len(FRAME_COLORS)]))
+            card_n += 1
+        cards = '\n'.join(card_htmls)
+        role_panels.append(
+            f'<div class="kz-roles-panel{" is-active" if is_first else ""}" data-role-panel>'
+            f'<div class="kz-roles-grid">{cards}</div></div>'
+        )
+    roles_tabs_html = '\n'.join(role_tabs)
+    roles_panels_html = '\n'.join(role_panels)
+
+    # ── Hero pillar quick-links ─────────────────────────────────────────────
+    pillar_hero = [
+        ('01', 'AI Assistant', 'Captures every meeting. Ships the work behind it.', 'ai-assistant'),
+        ('02', 'AI Helpers', 'Outcome-shaped agents that actually act.', 'care'),
+        ('03', 'Client Health Model', 'Self-learning relationship score.', 'health-model'),
+        ('04', 'Client News', 'Market context for every account.', 'client-360'),
     ]
-    c360_html = '\n'.join(
-        f'''<div class="kz-c360-row">
-          <span class="tag">{E(tag)}</span>
-          <div><div class="head">{E(head)}</div><div class="sub">{E(sub)}</div></div>
-          <div class="route">{E(route)}</div>
-        </div>''' for tag, head, sub, route in c360_rows
+    _bubble_colors = ['#2F5FE0', '#1FA591', '#7C5CFC', '#E8432B']  # blue, green, purple, red
+    pillar_nav_html = '\n'.join(
+        f'<a class="kz-pillar-bubble" href="#{pid}" style="--bub:{_bubble_colors[i % 4]};">'
+        f'<span class="title">{E(t)}</span><span class="bdesc">{E(d)}</span></a>'
+        for i, (n, t, d, pid) in enumerate(pillar_hero)
     )
 
+    # ── How it works pipeline (unchanged) ───────────────────────────────────
     pipeline_steps = [
-        ('01','Ingest','Gmail, Outlook, Teams, Zoom, Slack, HubSpot, Salesforce. Zero-retention by default.'),
-        ('02','Analyse','Client health scoring runs continuously. Sentiment, activity, coverage, growth, and the number behind each signal.'),
-        ('03','Act','Helpers draft, chase, schedule, summarise. Humans approve what matters.'),
-        ('04','Learn','Outcomes feed back: what predicts a healthy engagement, per segment, per team, helping teams build smarter processes directly from what was delivered.'),
+        ('01', 'Ingest', 'Gmail, Outlook, Teams, Zoom, Slack, HubSpot, Salesforce. Zero-retention by default.'),
+        ('02', 'Analyse', 'Client health scoring runs continuously. Sentiment, activity, coverage, growth.'),
+        ('03', 'Act', 'Helpers draft, chase, schedule, summarise. Humans approve what matters.'),
+        ('04', 'Learn', 'Outcomes feed back: what predicts a healthy engagement, per segment, per team.'),
     ]
     pipeline_html = '\n'.join(
-        f'<div class="kz-pipeline-cell"><div class="num">{E(n)}</div>'
-        f'<div class="title">{E(t)}</div><div class="desc">{E(d)}</div></div>'
-        for n, t, d in pipeline_steps
+        f'<div class="kz-pillar-bubble" style="--bub:{_bubble_colors[i % 4]};">'
+        f'<span class="title">{E(t)}</span><span class="bdesc">{E(d)}</span></div>'
+        for i, (n, t, d) in enumerate(pipeline_steps)
     )
 
     trust_items = [
@@ -2955,15 +3090,31 @@ def render_product() -> str:
         ('Zero retention', 'Your conversations never train foundation models.'),
         ('EU + US residency', 'Pick your region. Data stays where you need it.'),
         ('MCP + REST API', 'Wire Kaizan into your own agents and tools.'),
-        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning for employees.'),
-        ('Per-role access', 'Scoped by account, team or client, so the right engaged account teams get access without leakage. Never leaky.'),
+        ('SSO + SCIM', 'Okta, Azure AD, Google Workspace. Managed provisioning.'),
+        ('Per-role access', 'Scoped by account, team or client. Never leaky.'),
     ]
+    _check = ('<svg width="14" height="11" viewBox="0 0 14 11" fill="none" aria-hidden="true">'
+              '<path d="M1 5.6L5 9.6L13 1.4" stroke="#171511" stroke-width="2.4" '
+              'stroke-linecap="round" stroke-linejoin="round"/></svg>')
     trust_html = '\n'.join(
-        f'<div class="kz-trust-card"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
+        f'<div class="kz-trust-card">'
+        f'<span class="kz-trust-ico">{_check}</span>'
+        f'<h4>{E(t)}</h4><p>{E(d)}</p></div>'
         for t, d in trust_items
     )
 
-    q = QUOTES[3]
+    # ── Quote carousel (home-style; powered by the shared carousel engine) ───
+    qcards = '\n'.join(
+        f'<figure class="kz-qcard">'
+        f'<div class="kz-qcard-body"><q>{E(qq["q"])}</q></div>'
+        f'<figcaption>{portrait(qq["name"], qq["role"], qq["co"], tone=qq.get("tone", "warm"), depth=1)}</figcaption>'
+        f'</figure>'
+        for qq in QUOTES
+    )
+    qdots = '\n'.join(
+        f'<button class="kz-carousel-dot" type="button" aria-label="Show quote {i + 1}"></button>'
+        for i in range(len(QUOTES))
+    )
 
     body = f'''
     {nav_html(1, active='Product')}
@@ -2972,139 +3123,37 @@ def render_product() -> str:
     <section class="kz-section-tight" id="product-hero">
       <div class="kz-eyebrow">PRODUCT · CLIENT SUPER INTELLIGENCE</div>
       <h1 class="kz-h1 kz-h1-xl" style="margin-top:20px;max-width:1180px;">
-        Kaizan: One Platform for <span class="kz-mark">AI-First</span><br>
-        Client Service Teams
+        One platform for <span class="kz-mark">AI-first</span><br>
+        client service teams.
       </h1>
       <div class="kz-product-hero-row">
-        <p class="kz-lede" style="font-size:19px;max-width:640px;">
+        <p class="kz-lede" style="max-width:640px;">
           The AI Assistant captures and unifies every meeting, chat and email.
-          The CARE Client Health Model scores every relationship.
+          The CARE&trade; Client Health Model scores every relationship.
           AI Helpers act on every client for you.
-          Client360 shares market intel that affects clients.
+          Client News shares market intel that affects clients.
           Together they form a system of truth and action for your client teams.
         </p>
         <div class="cta">
           <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
         </div>
       </div>
-      <div class="kz-pillars">{pillar_html}</div>
-    </section>
-
-    <!-- 01 · AI ASSISTANT -->
-    <section class="kz-dark-section" id="ai-assistant">
-      <div class="kz-eyebrow-row">
-        <span class="kz-eyebrow kz-eyebrow-yellow">01 · AI Assistant</span>
-        <span class="kz-eyebrow" style="color:rgba(255,251,240,.45);">The pillar everything else stands on</span>
-      </div>
-      <h2 class="kz-h1" style="font-size:84px;line-height:1.02;max-width:1100px;">
-        Every meeting captured.<br>
-        <span class="kz-mark" style="color:#0A0A0A;">The work, done.</span>
-      </h2>
-      <div class="kz-dark-grid">
-        <div>
-          <p class="copy">
-            The AI Assistant joins every call (Teams, Zoom, Google Meet) and captures client conversations
-            across calls, email, chat, and each message stream, turning them into structured, searchable
-            memory by client automatically. Decisions, owners, deadlines, sentiment, and signals. A living
-            personalised memory of every client. Then it ships the work behind the meeting: recaps,
-            follow-ups, status notes, CRM hygiene. Humans approve what matters; the automation is designed
-            to increase efficiency and reduce manual admin.
-          </p>
-          <div class="kz-dark-features">{asst_html}</div>
-        </div>
-        <div class="kz-timeline">
-          <div class="head">
-            <span class="label">ACME · TIMELINE</span>
-            <span class="meta">last 7 days</span>
-          </div>
-          <div class="body">{timeline_html}</div>
-        </div>
+      <div class="kz-pillar-bubbles">
+        {pillar_nav_html}
       </div>
     </section>
 
-    <!-- 02 · AI HELPERS -->
-    <section class="kz-helpers" id="care" data-helpers>
-      <div style="max-width:900px;">
-        <div class="kz-eyebrow">02 · AI Helpers</div>
-        <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;">Helpers built for client growth. Acting around the clock.</h2>
-        <p class="kz-lede" style="font-size:18px;margin-top:18px;max-width:720px;">
-          Three packs of AI Helpers, plus your own, built to serve client growth and spot expansion
-          opportunities. Every helper is grounded in your company data:
-          docs, decks, transcripts, Slack, CRM, email. They keep learning from every new conversation,
-          so teams understand what to do next for each client more clearly over time and the output gets
-          more personal to each client&rsquo;s objectives the longer you run them.
-        </p>
-      </div>
-      <div class="kz-helpers-tabs">{helpers_tabs}</div>
-      {helpers_panels}
-    </section>
+    <!-- FOUR PILLARS -->
+    {pillars_html}
 
-    <!-- 03 · CARE MODEL -->
-    <section class="kz-section-loose" id="health-model">
-      <div class="kz-product-care-row">
-        <div>
-          <div class="kz-eyebrow">03 · CARE Client Health Model</div>
-          <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;max-width:520px;">
-            A self-learning client relationships score, grounded in your data.
-          </h2>
-          <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:520px;">
-            The unifying score across every Helper. It uses your data to measure relationship health and
-            client satisfaction, not someone else&rsquo;s benchmark. It learns from your won pitches, kept
-            clients and lost briefs: what predicts a healthy engagement in your company, and the result the
-            model is trained to predict. Not a biased RAG status. Re-tuned weekly against your data to help
-            teams achieve a more reliable view of account health.
-          </p>
-          <div style="margin-top:26px;padding:18px 22px;background:var(--kz-paper);border:1px solid var(--kz-line);border-radius:12px;max-width:520px;">
-            <div class="kz-eyebrow" style="margin-bottom:10px;">Trained on you</div>
-            <p style="font-size:15px;line-height:1.55;color:rgba(10,10,10,.78);">
-              The weights that drive CARE for a 200-person agency look nothing like a 20-person consultancy.
-              We tune privately, per tenant. Your model never trains a foundation model and never crosses
-              tenant lines.
-            </p>
-          </div>
-        </div>
-        <div class="kz-care-grid">{care_cards}</div>
-      </div>
-
-      <div class="kz-composite">
-        <div>
-          <div class="lbl">COMPOSITE · ACME</div>
-          <div class="num">66</div>
-          <div class="delta">↓ 8 vs. last week</div>
-        </div>
-        <div class="grid">{composite_cells}</div>
-        <div class="note">
-          Relationship dipped after senior contact dropped from the meeting cadence. Helper drafted a re-engagement.
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 · CLIENT 360 -->
-    <section class="kz-c360" id="client-360">
-      <div class="kz-c360-grid">
-        <div>
-          <div class="kz-eyebrow">04 · Client 360</div>
-          <h2 class="kz-h2 kz-h2-lg" style="margin-top:14px;max-width:560px;">
-            Market research on every client. Always-on context for every Helper.
-          </h2>
-          <p class="kz-lede" style="font-size:18px;margin-top:22px;max-width:560px;">
-            Client 360 continuously researches every account for your business (funding, hiring, exec moves,
-            competitor noise, earnings tone, product launches) and feeds it into the Helpers as always-on
-            ground truth. So when CARE drops, the research helps you spot opportunities and risk, not just
-            see what changed.
-          </p>
-          <div class="kz-dark-features" style="margin-top:28px;color:var(--kz-ink);max-width:560px;">
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Always-on research</h4><p style="color:var(--kz-mute);">Re-checks every client every day. No briefs to commission.</p></div>
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Routed to Helpers</h4><p style="color:var(--kz-mute);">Context lands in the right Helper, not in a buried report.</p></div>
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Source-backed</h4><p style="color:var(--kz-mute);">Every claim links to the article, filing or post it came from.</p></div>
-            <div class="kz-dark-feature" style="border-color:var(--kz-line);"><h4 style="color:var(--kz-ink);">Your watch-list</h4><p style="color:var(--kz-mute);">Tag what matters per account, including the stakeholders that matter: comp moves, hiring, M&amp;A.</p></div>
-          </div>
-        </div>
-        <div class="kz-c360-feed">
-          <div class="head"><span>CLIENT 360 · ACME</span><span>updated 4m ago</span></div>
-          <div class="body">{c360_html}</div>
-        </div>
-      </div>
+    <!-- SEE HOW WE CAN HELP YOU (interactive role selector) -->
+    <section class="kz-section kz-roles" data-roles>
+      <h2 class="kz-h2 kz-h2-lg" style="max-width:880px;">See how we can help you.</h2>
+      <p class="kz-lede" style="margin-top:18px;max-width:640px;">
+        Pick your role to see how Kaizan fits into your day.
+      </p>
+      <div class="kz-roles-tabs">{roles_tabs_html}</div>
+      <div class="kz-roles-panels">{roles_panels_html}</div>
     </section>
 
     <!-- HOW IT WORKS -->
@@ -3113,7 +3162,7 @@ def render_product() -> str:
       <h2 class="kz-h2" style="margin-top:10px;max-width:820px;">
         From conversation → signal → action, in minutes.
       </h2>
-      <div class="kz-pipeline">{pipeline_html}</div>
+      <div class="kz-pillar-bubbles kz-reveal-row" data-reveal-row style="margin-top:36px;">{pipeline_html}</div>
     </section>
 
     <!-- ENTERPRISE TRUST -->
@@ -3134,7 +3183,7 @@ def render_product() -> str:
         Native connectors for the tools your team already lives in.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else&mdash;covering the inbox, calendar, meetings, and the services your team already uses.
+        {E(', '.join(INTEGRATIONS))}, plus webhooks and a REST/MCP API for everything else. <a href="/integrations/" style="color:var(--kz-ink);font-weight:600;">View all integrations →</a>
       </p>
     </section>
 
@@ -3145,7 +3194,7 @@ def render_product() -> str:
         Common questions, ranked by how often a security review asks them.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Answers ship with our security review pack. It helps the CEO or account manager get answers quickly in review cycles. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
+        Answers ship with our security review pack. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Request the pack →</a>
       </p>
     </section>
 
@@ -3156,25 +3205,24 @@ def render_product() -> str:
         Priced by number of clients, with unlimited users.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Pricing is public and set by the number of clients you cover: per client per month on an annual
-        contract, with unlimited users on every tier and a free 14-day pilot first. Book a demo to plan for
-        the next quarter, align to revenue goals, and improve cost-to-serve efficiency. <a href="/demo/" style="color:var(--kz-ink);font-weight:600;">Book a demo →</a>
+        Pricing is public and set by the number of clients you cover: per client per month on an
+        annual contract, with unlimited users on every tier and a free 14-day pilot first. Book a
+        demo to plan for the next quarter, align to revenue goals, and improve cost-to-serve
+        efficiency. <a href="/" style="color:var(--kz-ink);font-weight:600;">Start my free trial →</a>
       </p>
     </section>
 
     <!-- QUOTE -->
-    <section class="kz-section">
+    <section class="kz-section" style="border-top:1px solid var(--kz-line);">
       <div class="kz-product-quote-row">
-        {portrait(q['name'], q['role'], q['co'], q['tone'], size='xl', depth=1)}
-        <div class="quote">
-          &ldquo;{E(q['q'])}&rdquo;
-        </div>
+        {portrait('Stephen Kerin', 'Director', 'Scale Digital', 'gold', size='xl', depth=1, photo='stephen-kerin-product.png')}
+        <div class="quote">&ldquo;Kaizan is now fundamental to the team and managing client relationships.&rdquo;</div>
       </div>
     </section>
 
     <!-- CTA -->
     <section class="kz-cta-band kz-cta-band-md">
-      <h2 class="head">Put the AI helpers to work.</h2>
+      <h2 class="head">Put the helpers to work.</h2>
       <div class="actions">
         <a class="kz-btn kz-btn-black" style="padding:14px 24px;font-size:15px;" href="/demo/">Book a demo</a>
       </div>
@@ -3182,11 +3230,15 @@ def render_product() -> str:
 
     {footer_html(1)}
     '''
-    prod_desc = ('AI Assistant, AI Helpers, the CARE Client Health Model and Client 360 in one platform '
-                 'that captures meetings, scores relationships and acts for client teams.')
-    prod_ld = ld_script([ld_webpage('Product', prod_desc), ld_software(prod_desc)], ident='product')
-    return page_head('One AI Platform for Client Service Teams', 1, prod_desc,
-                     extra_head=prod_ld) + body + page_foot()
+    p = relpath(1)
+    prod_head = (
+        f'<link rel="stylesheet" href="{p}assets/css/product.css{asset_v("assets/css/product.css")}">'
+        f'<script defer src="{p}assets/js/product.js{asset_v("assets/js/product.js")}"></script>'
+    )
+    return page_head('Product', 1,
+                     'AI Assistant, AI Helpers, the Client Health Model and Client News, '
+                     'one platform for AI-first client service teams.',
+                     extra_head=prod_head) + body + page_foot()
 
 
 def render_persona(slug: str) -> str:
