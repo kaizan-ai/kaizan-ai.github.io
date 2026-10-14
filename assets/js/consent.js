@@ -13,7 +13,8 @@
    down to "Additional Consent Checks" configured per tag inside the GTM
    container itself — outside this repo.
    HubSpot's own direct tracking script (not routed through GTM) still loads
-   only once "Marketing" is allowed, since that one we fully control here.
+   only once "Marketing" is allowed, since that one we fully control here;
+   the Meta Pixel (loadMetaPixel) is gated the same way.
    Declining a category that was previously granted clears its cookies and
    reloads (a fired tag can't be un-fired any other way). Choice is stored
    for 12 months; bump VERSION to re-prompt everyone after a material
@@ -76,10 +77,24 @@
     document.head.appendChild(h);
   }
 
-  // Cookies set by the trackers we gate (GA via GTM, HubSpot). Deleted
+  // Meta Pixel (Marketing). Standard base code, injected only after consent;
+  // the <noscript> image fallback is deliberately omitted since it can't be gated.
+  function loadMetaPixel() {
+    if (window.fbq) return;
+    var f = window, b = document, e = 'script', v = 'https://connect.facebook.net/en_US/fbevents.js', n, t, s;
+    n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!f._fbq) f._fbq = n;
+    n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+    t = b.createElement(e); t.async = true; t.src = v;
+    s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    f.fbq('init', '1749079612993241');
+    f.fbq('track', 'PageView');
+  }
+
+  // Cookies set by the trackers we gate (GA via GTM, HubSpot, Meta). Deleted
   // best-effort when a visitor withdraws consent for that category.
   var GA_COOKIES = /^(_ga|_gid|_gat)/;
-  var HS_COOKIES = /^(__hstc|hubspotutk|__hssc|__hssrc|__hs)/;
+  var HS_COOKIES = /^(__hstc|hubspotutk|__hssc|__hssrc|__hs|_fbp|_fbc)/;
 
   function clearCookies(pattern) {
     var host = location.hostname;
@@ -123,7 +138,7 @@
 
   function announce(v) {
     syncConsentMode(v);
-    if (v.marketing) loadHubSpot();
+    if (v.marketing) { loadHubSpot(); loadMetaPixel(); }
     window.dispatchEvent(new CustomEvent('cookie-consent', { detail: v }));
   }
 
