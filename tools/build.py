@@ -1085,9 +1085,6 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="icon" type="image/png" sizes="16x16" href="{p}assets/img/favicon-16x16.png{asset_v('assets/img/favicon-16x16.png')}">
         <link rel="apple-touch-icon" sizes="180x180" href="{p}assets/img/apple-touch-icon.png{asset_v('assets/img/apple-touch-icon.png')}">
         <link rel="mask-icon" href="{p}assets/img/safari-pinned-tab.svg" color="#FFB900">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
         <link rel="stylesheet" href="{p}assets/css/tokens.css{tokens_v}">
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
@@ -1787,6 +1784,8 @@ def trial_form_html(depth: int) -> str:
              'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
              '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
     return f'''<div class="kz-trial" data-trial>
+        <!-- Collapse the optional fields before first paint; trial-form.js is deferred. -->
+        <script>document.currentScript.parentNode.classList.add('is-js');</script>
         <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
               action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
           <h2 class="kz-trial-title">Start your 14-day free trial</h2>
@@ -2250,7 +2249,7 @@ def render_home() -> str:
         ('AI Helpers on every client',
          "Specialist agents on every account, working 24/7: drafting replies, prepping QBRs, watching for risk, surfacing expansion the moment it lands."),
         ('CARE Model · Relationship health',
-         "The four-pillar framework: Client satisfaction, Activity with stakeholders, Relationship strength, Expansion opportunities, scored and tracked on every account."),
+         "The four-pillar framework: Client satisfaction, Activity with stakeholders, Relationship & interaction quality, Expansion strategy, scored and tracked on every account."),
         ('Chatbot and MCP',
          "Ask anything in natural language. Connect Kaizan to Claude, ChatGPT or any MCP-aware tool, answers with citations from the source conversations."),
     ]
@@ -2268,9 +2267,9 @@ def render_home() -> str:
          "Sentiment on every stakeholder and thread. Not RAG guesses: evidence pulled from the source conversations."),
         ('A', 'Activity with stakeholders',
          'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically for agencies and consultancies.'),
-        ('R', 'Relationship strength',
+        ('R', 'Relationship & interaction quality',
          'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros, handled before you ask.'),
-        ('E', 'Expansion opportunities',
+        ('E', 'Expansion strategy',
          'Upsell and cross-sell signals surfaced the moment a client raises them, not next quarter.'),
     ]
     care_html = '\n'.join(
@@ -2966,16 +2965,16 @@ def render_product() -> str:
     # Each card: theme colour matches its video's radar "heatmap" colour; the
     # video is cropped to just the radar, and the score is surfaced top-right.
     care_cards_data = [
-        ('C', 'Client sentiment',
+        ('C', 'Client satisfaction',
          'How the client actually feels about the work: tone, effort, intent, pulled from every email, call and review.',
          'satisfaction', '#2F5FE0', '6.9'),
-        ('A', 'Account activity',
+        ('A', 'Activity with stakeholders',
          'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.',
          'activity', '#E8432B', '9.3'),
-        ('R', 'Relationship coverage',
+        ('R', 'Relationship & interaction quality',
          'Who you know, how senior, how warm. Spots thin coverage and dormant champions before the work suffers.',
          'relationship', '#7C5CFC', '7.5'),
-        ('E', 'Expansion opportunities',
+        ('E', 'Expansion strategy',
          'Where the scope can deepen: capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.',
          'expansion', '#1FA591', '4.8'),
     ]
@@ -3923,8 +3922,8 @@ def render_about() -> str:
             has memory, and can spot a problem early from a single message or a change in tone: the procurement lead who went quiet on Slack is the same person
             who pushed back on pricing three quarters ago and the same person whose boss just changed on LinkedIn.
             It sees the shape of the account across
-            <strong>Client Satisfaction on the work being done, Activity with stakeholders, Relationship strength,
-            and Expansion opportunities &mdash; the CARE framework</strong> &mdash; which updates every second
+            <strong>Client satisfaction on the work being done, Activity with stakeholders, Relationship &amp; interaction quality,
+            and Expansion strategy &mdash; the CARE framework</strong> &mdash; which updates every second
             and gives Agents better answers and context in which to act, whether that is between meetings or in each
             quarter&rsquo;s review and planning cycle.
           </p>
@@ -5347,9 +5346,9 @@ FAQ_DATA = [
         ('How does Kaizan listen to client conversations?',
          'Kaizan ingests three sources: meeting transcripts (from Zoom, Google Meet, Microsoft Teams, Gong and Chorus), email threads (from Gmail and Outlook / Microsoft 365), and chat (from Slack and Microsoft Teams chat). Audio is transcribed by a speech-to-text model with speaker diarisation. Text is parsed for participants, topics, commitments, risks, sentiment and questions.'),
         ('What does Kaizan actually output?',
-         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client Satisfaction, account activity, relationship coverage, and Expansion (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
+         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client satisfaction, Activity with stakeholders, Relationship & interaction quality, and Expansion strategy (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
         ('What is the CARE model?',
-         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client Satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship measures relationship coverage alongside sentiment and trust signals from language used in real conversations. Expansion measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained, while also considering engagement growth over time when evaluating account health.'),
+         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity with stakeholders measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship & interaction quality measures relationship coverage alongside sentiment and trust signals from language used in real conversations. Expansion strategy measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained, while also considering engagement growth over time when evaluating account health.'),
         ('How accurate is Kaizan’s sentiment analysis?',
          'Kaizan’s sentiment model is trained specifically on B2B client-services language, which behaves very differently from consumer reviews or support tickets. Internal benchmarks across 4.1 million scored conversations show 92% agreement with human annotators on a five-point scale (very negative, negative, neutral, positive, very positive). Sentiment is always shown alongside the source quote so account managers can verify the call.'),
         ('How long does it take to set up Kaizan?',
@@ -5516,10 +5515,10 @@ RESEARCH_REPORT = dict(
         ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context: who matters, '
          'what changed this week, the shape of the next conversation.',
          '73%', 'Of top performers maintain a live stakeholder map'),
-        ('R', 'Relationship strength', 'Strategic partner or just a vendor? Whether rapport, trust and '
+        ('R', 'Relationship & interaction quality', 'Strategic partner or just a vendor? Whether rapport, trust and '
          'sentiment are where they need to be.',
          '2.1h', 'Median first response time at the top 10%'),
-        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion: the quiet ask in '
+        ('E', 'Expansion strategy', 'Inbound-signal capture and conversion: the quiet ask in '
          'passing, or the proactive suggestion of how to grow their business.',
          '82%', 'Of expansion revenue comes from prioritising commercial conversations early'),
     ],
@@ -6970,7 +6969,7 @@ def playbooks_sections_html() -> str:
 
 
 
-def _cs_hero_copy_html(depth: int) -> str:
+def _cs_hero_copy_html(depth: int, home: bool = False) -> str:
     """Hero-v2 headline/lede/CTA for the standalone /client-success-software/
     landing page. Ported from the homepage-redesign branch's
     trial_hero_copy_html() under a new name — kept separate (rather than
@@ -6978,6 +6977,17 @@ def _cs_hero_copy_html(depth: int) -> str:
     render_confirmation() still use) so the live homepage and its
     /confirmation/ page are completely untouched by this page."""
     p = relpath(depth)
+    # The homepage (a replica of this page) carries its own headline/lede;
+    # the SEO landing page keeps the original copy.
+    if home:
+        h1 = ('Kaizan does<br class="kz-hero-br"> the work that grows'
+              '<br class="kz-hero-br"> every client')
+        lede = ('Kaizan knows the client from every interaction, knows what great\n'
+                '            looks like, and does the work your team cannot get to.')
+    else:
+        h1 = 'Turn client conversations into revenue'
+        lede = ('Kaizan turns every call, email and signal into the next\n'
+                '            best action so you keep every client and grow every account.')
     return f'''<div class="kz-hero-copy kz-hero-copy--v2">
         <div class="kz-hero-deco" aria-hidden="true">
           <div class="kz-hero-bubble kz-hero-bubble--blue"><span></span><span></span></div>
@@ -6990,10 +7000,9 @@ def _cs_hero_copy_html(depth: int) -> str:
           <span class="kz-hero-dot kz-hero-dot--purple"></span>
           <span class="kz-hero-dot kz-hero-dot--sage"></span>
         </div>
-        <div class="kz-hero-copy-inner">
-          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
-          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
-            best action so you keep every client and grow every account.</p>
+        <div class="kz-hero-copy-inner{' kz-hero-copy-inner--home' if home else ''}">
+          <h1 class="kz-hero-v2-h1">{h1}</h1>
+          <p class="kz-hero-v2-lede">{lede}</p>
           <div class="kz-hero-v2-cta">
             <a class="kz-hero-pill" href="{p}demo/">Book a demo</a>
           </div>
@@ -7013,6 +7022,8 @@ def _cs_trial_form_html(depth: int) -> str:
              'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
              '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
     return f'''<div class="kz-trial" data-trial>
+        <!-- Collapse the optional fields before first paint; trial-form.js is deferred. -->
+        <script>document.currentScript.parentNode.classList.add('is-js');</script>
         <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
               action="{E(TRIAL_MC_POST)}" data-mc-json="{E(TRIAL_MC_JSON)}" method="post" target="_blank">
           <h2 class="kz-trial-title">Start your 14-day free trial</h2>
@@ -7484,7 +7495,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
 
     <!-- HERO -->
     <section class="kz-hero kz-hero--trial">
-      {_cs_hero_copy_html(0)}
+      {_cs_hero_copy_html(0, home=keep_nav)}
       <div class="kz-trial-col">
         <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
         {_cs_trial_form_html(0)}
@@ -7595,6 +7606,13 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             margin: 0; font-family: var(--kz-display);
             font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
             letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+          }
+          /* Homepage title has fixed phrase breaks; cap its size to the column so
+             the longest line ("the work that grows") never wraps on its own. */
+          .kz-hero-copy-inner--home { container-type: inline-size; }
+          /* !important to beat site.css's sitewide h1 size; desktop only so phones keep 34px. */
+          @media (min-width: 769px) {
+            .kz-hero-copy-inner--home .kz-hero-v2-h1 { font-size: min(clamp(44px, 4.8vw, 66px), 10.4cqi) !important; }
           }
           .kz-hero-v2-lede {
             margin: 0; max-width: 44ch;
@@ -7776,6 +7794,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           }
           @media (max-width: 768px) {
             .kz-hero-v2-h1 { font-size: 34px; }
+            .kz-hero-br { display: none; }
             .kz-hero-v2-lede { font-size: 17px; }
             .kz-hero-deco, .kz-trial-bubble { display: none; }
             .kz-trial { padding: 28px 22px 24px; }
@@ -7818,7 +7837,6 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
 
           /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
-          __FONT__
           __HOMEONLY__
           __NAVHIDE__
           .kz-quotes { position: relative; }
@@ -8061,14 +8079,6 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
         "          .cs-int-grid .cs-int-icon:hover .cs-int-icon-box {\n"
         "            box-shadow: 0 0 0 3px #FFB900, 0 10px 20px rgba(23,21,17,.1);\n"
         "          }") if keep_nav else '')
-    # The standalone landing page keeps its Helvetica Neue; the homepage
-    # (keep_nav) uses the site font (IBM Plex Sans) like every other page.
-    html = html.replace('__FONT__', '' if keep_nav else (
-        ":root {\n"
-        "            --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
-        "            --kz-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
-        "            --kz-mono: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n"
-        "          }"))
     html = html.replace('__NAVHIDE__', '' if keep_nav else (
         '.kz-nav-links, .kz-nav-toggle { display: none; }\n'
         '          .kz-nav-cta .kz-btn-ghost { display: none; }'), 1)
@@ -8171,12 +8181,9 @@ def main():
                .replace('https://calendar.app.google/nXCQjV6kHfsmDs5c7',
                         'https://calendar.app.google/eWwFxNXq3mCZqw7HA'))
     # Restyle in the site's visual language without touching the export:
-    # load the site font + assets/css/partner.css (overrides) + assets/js/partner.js
+    # load assets/css/partner.css (overrides) + assets/js/partner.js
     # (scroll reveal) into its <head>.
     _partner_head = (
-        '<link rel="preconnect" href="https://fonts.googleapis.com">'
-        '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&display=swap">'
         f'<link rel="stylesheet" href="/assets/css/partner.css{asset_v("assets/css/partner.css")}">'
         f'<script defer src="/assets/js/partner.js{asset_v("assets/js/partner.js")}"></script>\n</head>')
     ref_usd = ref_usd.replace('</head>', _partner_head, 1)

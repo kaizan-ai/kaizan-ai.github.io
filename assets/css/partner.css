@@ -6,7 +6,7 @@
 
 /* Site font everywhere, including the figures (were monospace). */
 :root {
-  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono: var(--font-sans);
 }
 

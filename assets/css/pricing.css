@@ -208,7 +208,7 @@
 
 /* ── ROI calculator inside "See the maths" — same visual language ───────── */
 .kzp-calc #kaizan-roi {
-  --kz-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --kz-mono: var(--kz-sans);
   --kz-panel: #FFFFFF;
   --kz-border: #0A0A0A;

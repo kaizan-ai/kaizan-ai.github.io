@@ -3,7 +3,7 @@
    Brand palette: Gold #FFB900 / Gold Light #FFD133 / Gold Pale #FFF3C4 /
                   Cream #FFFBF0 / Ink #171717 / Black #141210
    All rules are scoped under #kaizan-roi so they won't collide with the host
-   site. Load the IBM Plex Sans webfont in your page <head> (see HTML file).
+   site. Uses Helvetica Neue (system font; no webfont to load).
    ========================================================================== */
 
 #kaizan-roi {
@@ -14,7 +14,7 @@
   --kz-paper: #FFFBF0;
   --kz-line: rgba(0, 0, 0, 0.10);
   --kz-mute: #4a4a4a;
-  --kz-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --kz-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --kz-mono: 'SF Mono', ui-monospace, 'Menlo', 'Consolas', monospace;
 
   /* derived tokens (mirror the original module-scope constants) */
@@ -50,7 +50,7 @@
 .kzroi-eyebrow { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #9A7B0C; font-weight: 700; margin-bottom: 16px; }
 
 .kzroi-h2 {
-  font-family: 'IBM Plex Sans', var(--kz-sans);
+  font-family: var(--kz-sans);
   font-size: clamp(40px, 6.4vw, 76px);
   font-weight: 500; letter-spacing: -0.035em; line-height: 1.1; max-width: 880px;
 }
@@ -181,7 +181,7 @@
 
 /* closing CTA band */
 .kzroi-cta-band { background: var(--kz-black); border-radius: 20px; padding: clamp(32px, 5vw, 52px) clamp(24px, 4vw, 48px); margin-top: 36px; text-align: center; }
-#kaizan-roi .kzroi-cta-band h3 { font-family: 'IBM Plex Sans', var(--kz-sans); font-weight: 500; color: #fff; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 22px; }
+#kaizan-roi .kzroi-cta-band h3 { font-family: var(--kz-sans); font-weight: 500; color: #fff; font-size: clamp(28px, 4vw, 44px); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 22px; }
 /* #kaizan-roi prefix so `margin: 0 auto` beats the ID-specificity `#kaizan-roi p { margin: 0 }` reset (otherwise the 600px block stays left-aligned). */
 #kaizan-roi .kzroi-cta-band p { color: rgba(255, 255, 255, 0.6); font-size: 15px; max-width: 600px; margin: 0 auto 24px; line-height: 1.55; text-align: center; }
 .kzroi-cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }

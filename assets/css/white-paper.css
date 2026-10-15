@@ -38,8 +38,8 @@
   --hairline-dark-strong: rgba(255, 251, 240, 0.22);
 
   /* ---------- Typography ---------- */
-  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-sans:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans:    'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono:    'SF Mono', ui-monospace, Menlo, Monaco, Consolas, monospace;
 
   /* ---------- Spacing ---------- */
