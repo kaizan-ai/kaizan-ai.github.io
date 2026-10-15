@@ -341,7 +341,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
 
   .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
-  .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
+  .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 72px; text-align: center; }
   .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
   .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
   .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
@@ -483,7 +483,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
       </span>
       <nav class="kz-nav-links" aria-label="Primary">
-        <a href="/us/">Home</a>
+        
               <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
                 <a class="kz-mega-trigger" href="product/" aria-expanded="false" aria-haspopup="true">
                   Product <span class="kz-mega-caret">▾</span>
@@ -492,7 +492,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <a class="kz-drop-link" href="product/">Overview</a>
 <a class="kz-drop-link" href="integrations/">Integrations</a>
                 </div>
-              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">By role <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/us/for/account-manager/">Client Service / Account Manager</a>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Product Guides <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/us/for/account-manager/">Client Service / Account Manager</a>
 <a class="kz-mega-link" href="/us/for/client-service-director/">Head of Client Services</a>
 <a class="kz-mega-link" href="/us/for/leadership/">Senior Leadership</a>
 <a class="kz-mega-link" href="/us/for/head-of-ai/">Head of AI / CTO</a>
@@ -1271,6 +1271,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/clickup.svg" alt="ClickUp" loading="lazy"></div><div class="cs-int-icon-label">ClickUp</div></div>
 <div class="cs-int-icon"><div class="cs-int-icon-box"><img src="/assets/img/integrations/notion.svg" alt="Notion" loading="lazy"></div><div class="cs-int-icon-label">Notion</div></div></div>
       </div>
+    </section>
+    <link rel="stylesheet" href="/assets/css/wp-strip.css?v=475de274">
+    <section class="wp-strip" id="report">
+      <div class="wp-strip__in">
+        <div class="wp-strip__copy">
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free</span>
+          <h2 class="wp-strip__title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymized. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviors that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
+          <div class="wp-strip__pages" aria-hidden="true"><img src="/assets/img/white-paper/report-page-01.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-08.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-care.png" alt="" width="92" loading="lazy"></div>
+        </div>
+        <form class="wp-strip__form" novalidate>
+          <h3>Download the 2026 Report</h3>
+          <p class="wp-strip__sub">Two fields. Straight to your inbox.</p>
+          <label class="wp-strip__field"><span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="wp-strip__err" role="alert"></div></label>
+          <label class="wp-strip__field"><span>Job title</span>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option>Head of Client Services / CS</option>
+<option>Client Success Manager</option>
+<option>Account Director / Manager</option>
+<option>Founder / CEO</option>
+<option>Head of AI / CTO</option>
+<option>VP / Commercial Leader</option>
+<option>Marketing / Operations</option>
+<option>Agency Leader</option>
+<option>Other</option>
+            </select>
+            <div class="wp-strip__err" role="alert"></div></label>
+          <button type="submit">Get the report &rarr;</button>
+          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+    </section>
+    <script defer src="/assets/js/wp-strip.js?v=68113e91"></script>
+    <section class="cs-integrations">
       <div class="cs-faq-inner">
         <h2 class="cs-faq-title">Frequently asked questions</h2>
         <details class="cs-faq-item"><summary class="cs-faq-summary"><span>Is AI built into Kaizan, or is it an add-on?</span><svg class="cs-faq-plus" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="var(--kz-yellow)" stroke-width="2" stroke-linecap="round"/></svg></summary><p class="cs-faq-body">AI is the core of Kaizan. Your Helpers work from day one, capturing conversations, drafting follow-ups and flagging risk and opportunity without any extra setup.</p></details>
