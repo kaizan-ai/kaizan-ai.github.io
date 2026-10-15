@@ -70,9 +70,36 @@
     activate(0);
   }
 
+  // ── Scroll-to-play videos (AI Assistant): the section is often already
+  // partly visible on load, so wait for the visitor's first scroll, then play
+  // while at least half the video is on screen (restarting each time).
+  function initScrollPlayVideos() {
+    var vids = document.querySelectorAll('[data-play-on-scroll]');
+    if (!vids.length || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) {
+          try { v.currentTime = 0; } catch (err) {}
+          v.muted = true;
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+    function start() {
+      window.removeEventListener('scroll', start);
+      vids.forEach(function (v) { io.observe(v); });
+    }
+    window.addEventListener('scroll', start, { passive: true });
+  }
+
   function boot() {
     initBubbleReveal();
     initHoverVideos();
+    initScrollPlayVideos();
     initRoles();
   }
   if (document.readyState === 'loading') {

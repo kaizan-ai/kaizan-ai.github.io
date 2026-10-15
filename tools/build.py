@@ -2835,12 +2835,12 @@ def render_product() -> str:
 
     def _feats_dropdown(items, group: str) -> str:
         """Features as an exclusive accordion (<details name>): titles show,
-        each description drops down on click; first one open."""
+        each description drops down on click; all start closed."""
         return '\n'.join(
-            f'<details class="kz-prod-drop" name="{group}"{" open" if i == 0 else ""}>'
+            f'<details class="kz-prod-drop" name="{group}">'
             f'<summary><span class="t">{E(t)}</span><span class="tg" aria-hidden="true"></span></summary>'
             f'<p>{E(d)}</p></details>'
-            for i, (t, d) in enumerate(items)
+            for t, d in items
         )
 
     def _pillar(num, pid, eyebrow, h2_html, copy, feats, media, reverse=False) -> str:
@@ -2863,7 +2863,7 @@ def render_product() -> str:
         ('Does the work',
          'Recaps, follow-ups, status notes, CRM hygiene, brief-backs. Humans approve what matters; the rest just gets done.'),
         ('Sounds like you',
-         'Reads every doc, deck and Slack thread for that client, so a draft for Acme sounds like Acme, not a template.'),
+         'Reads every doc, deck and Slack thread for each client, so every draft fits their preferred style and sounds like you, not a template.'),
     ]
 
     helper_packs = [
@@ -2947,7 +2947,7 @@ def render_product() -> str:
     ai_media = (
         f'<div class="kz-prod-media" style="background:{FRAME_COLORS[0]};">'
         f'<video src="{p}{_ai_rel}{asset_v(_ai_rel)}" muted loop playsinline '
-        f'preload="metadata" data-play-inview '
+        f'preload="metadata" data-play-on-scroll '
         f'poster="{p}assets/video/product/ai-assistant-poster.jpg{asset_v("assets/video/product/ai-assistant-poster.jpg")}" '
         f'aria-label="AI Assistant"></video></div>'
     )
@@ -3354,8 +3354,13 @@ def render_persona(slug: str) -> str:
     )
 
     faqs_html = '\n'.join(
-        f'<div class="kz-objections-row"><div class="q">{E(qq)}</div><div class="a">{E(aa)}</div></div>'
-        for qq, aa in p['faqs']
+        f'''<details class="kz-faq-item">
+          <summary>
+            <h3>{E(qq)}</h3>
+            <span class="ic" aria-hidden="true">+</span>
+          </summary>
+          <p>{E(aa)}</p>
+        </details>''' for qq, aa in p['faqs']
     )
 
     others_html = '\n'.join(
@@ -3432,7 +3437,7 @@ def render_persona(slug: str) -> str:
       <h2 class="kz-h2" style="margin-top:10px;margin-bottom:32px;">
         {E(p.get('faq_h2') or f"The questions {p['role']} ask us.")}
       </h2>
-      <div class="kz-objections">{faqs_html}</div>
+      <div class="kz-persona-faqs">{faqs_html}</div>
     </section>
 
     <!-- NOT QUITE YOU? -->
@@ -4291,12 +4296,17 @@ INT_DATA = [
 
 def render_integrations() -> str:
     tiles = '\n'.join(
-        f'''<a class="kz-int-tile" href="#">
-          <div class="logo">{INT_LOGOS.get(i["k"], "")}</div>
-          <div class="meta"><div class="name">{E(i["name"])}</div>
-            <div class="cat">{E(i["cat"].upper())}</div></div>
-          <p class="why">{E(i["why"])}</p>
-        </a>''' for i in INT_DATA
+        f'''<div class="kz-int-tile" tabindex="0">
+          <div class="front">
+            <div class="logo">{INT_LOGOS.get(i["k"], "")}</div>
+            <div class="name">{E(i["name"])}</div>
+          </div>
+          <div class="back">
+            <div class="name">{E(i["name"])}</div>
+            <div class="cat">{E(i["cat"].upper())}</div>
+            <p class="why">{E(i["why"])}</p>
+          </div>
+        </div>''' for i in INT_DATA
     )
 
     custom_cards = '\n'.join(
@@ -4316,7 +4326,7 @@ def render_integrations() -> str:
     <section class="kz-section-tight" id="int-hero" style="padding-top:60px;">
       <div class="kz-eyebrow">Integrations</div>
       <h1 class="kz-h1" style="margin-top:18px;max-width:1100px;">
-        Connect the Tools Your Client Teams Use
+        Connect the tools your client teams use
       </h1>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">
         Kaizan builds a continuous memory on every client by automatically capturing every meeting,
@@ -4526,6 +4536,7 @@ PRICING_TIERS_US = [
                    'Full integrations suite',
                    'Client intelligence platform',
                    'API and MCP access',
+                   'Desktop SDK',
                    'Dedicated account manager']),
     dict(name='Growth', clients_pre='21 to ', clients_bold='49 clients',
          price='$159', per='per client / month, billed as one flat monthly plan',
@@ -4534,7 +4545,9 @@ PRICING_TIERS_US = [
          ribbon='Most popular', ribbon_quiet=True, card='changed',
          features=['Everything in Starter',
                    'Bigger portfolio, up to 49 accounts',
-                   'Guided onboarding with CARE calibration']),
+                   'Guided onboarding with CARE calibration',
+                   'AI maturity framework assessment',
+                   'Priority support']),
     dict(name='Enterprise', clients_pre='Large portfolios ', clients_bold='for enterprises and custom work',
          price='Custom', per='Per client rate negotiated to your portfolio',
          plan='Scoped with you, billed as one flat monthly plan',
@@ -4542,6 +4555,7 @@ PRICING_TIERS_US = [
          features=['Unlimited portfolio, multi office and region',
                    'Unlimited users, no per-seat fees',
                    'Multi team segmentation across practices',
+                   'CARE calibration per practice',
                    'Custom AI helpers, quoted to your requirements',
                    'API and MCP, extended access and rate limits',
                    'Custom integrations and bespoke builds',
@@ -7884,6 +7898,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .cs-modcard-title { font-size: 18px; font-weight: 700; color: #FFFFFF; }
           .cs-modcard-desc { margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.78); }
           .cs-modules .kz-carousel-dots { margin-top: 32px; }
+          .cs-modules .kz-carousel-dot.is-active { background: #0A0A0A; } /* yellow merges with this band */
           @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
 
           .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }

@@ -157,20 +157,25 @@
   .kz-how-stage { margin: 6px 14px 18px 0; box-shadow: 8px 8px 0 var(--how-accent, var(--kz-yellow)); }
 }
 
-/* ── FAQs: white lifted cards ───────────────────────────────────── */
-.kz-objections { gap: 16px; }
-.kz-objections-row {
-  background: #FFFFFF; border: 1px solid var(--kz-line); border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 1px 2px rgba(40,30,15,.04), 0 18px 36px -28px rgba(40,30,15,.3);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+/* ── FAQs: dropdown cards, matching the main FAQ page (resources.css) ── */
+#persona-faqs { background: #FFF3C4; } /* pale-yellow band, as on the integrations grid */
+.kz-persona-faqs { max-width: 880px; }
+.kz-persona-faqs .kz-faq-item {
+  border: 1px solid var(--kz-line); border-radius: 14px; background: #FFFFFF;
+  padding: 0 18px; margin-top: 12px;
+  transition: border-color .18s ease, box-shadow .18s ease;
 }
-.kz-objections-row:hover {
-  transform: translateY(-5px); border-color: var(--kz-yellow);
-  box-shadow: 0 0 0 2px var(--kz-yellow), 0 26px 48px -26px rgba(40,30,15,.42);
+.kz-persona-faqs .kz-faq-item:first-child { margin-top: 0; }
+.kz-persona-faqs .kz-faq-item:hover { border-color: var(--kz-yellow); box-shadow: 0 0 0 2px var(--kz-yellow); }
+.kz-persona-faqs .kz-faq-item[open] {
+  border: 3px solid #0A0A0A; padding: 0 16px;
+  box-shadow: 8px 8px 0 var(--kz-yellow);
 }
-.kz-objections-row .q { font-weight: 700; }
-.kz-objections-row .a { font-weight: 500; }
+.kz-persona-faqs .kz-faq-item summary h3 { font-weight: 700; }
+.kz-persona-faqs .kz-faq-item summary .ic {
+  background: var(--kz-yellow); border: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 800;
+}
+.kz-persona-faqs .kz-faq-item p { font-weight: 500; }
 
 /* ── "Not quite you?": yellow band, floating speech bubbles ────── */
 .kz-persona-ribbon { background: var(--kz-yellow); border-top: none; padding-top: 56px; padding-bottom: 72px; }
