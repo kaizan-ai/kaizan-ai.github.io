@@ -5,6 +5,7 @@
 ## Key pages
 
 - [Our Story: Intelligence for Client Service](https://kaizan.ai/about/): Why Glen Calvert and Pravin Paratey founded Kaizan in London: a proactive system of intelligence for client service and account management teams.
+- [Customer Success Software](https://kaizan.ai/client-success-software/): Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
 - [Cookie Policy](https://kaizan.ai/cookie-policy/): The cookies Kaizan uses on its website and app, and how to manage them.
 - [Customer Success Software](https://kaizan.ai/customer-success-software/): Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
 - [Clients](https://kaizan.ai/customers/): 60+ client-services teams running Kaizan to keep their clients and grow them.
