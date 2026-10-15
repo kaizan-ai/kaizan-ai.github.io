@@ -1384,16 +1384,21 @@ def marquee_html(items, depth: int = 0):
             # Optional per-logo height (px) and vertical nudge (dy px) for fine
             # optical balancing/alignment.
             rules = []
-            if x.get('h'):  rules.append(f'height:{int(x["h"])}px')
+            # As a CSS variable (not a fixed height) so the stylesheet can scale
+            # every logo proportionally on phones.
+            if x.get('h'):  rules.append(f'--h:{int(x["h"])}px')
             if x.get('dy'): rules.append(f'transform:translateY({int(x["dy"])}px)')
             style = f' style="{";".join(rules)}"' if rules else ''
+            # Eager, not lazy: the strip slides via a CSS transform, which iOS Safari
+            # doesn't count as scrolling into view, so lazy logos never loaded (gaps,
+            # and the loop jumped as late logos widened the track).
             return (f'<span class="kz-marquee-logo{span_cls}"{style}>'
-                    f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" loading="lazy">'
+                    f'<img class="kz-marquee-img{img_cls}" src="{E(src)}" alt="{E(name)}" decoding="async">'
                     f'</span>')
         return f'<span class="kz-marquee-text">{E(name)}</span>'
 
     one_run = ''.join(
-        f'<span class="kz-marquee-item">{render_one(x)}<span class="sep">✺</span></span>'
+        f'<span class="kz-marquee-item">{render_one(x)}</span>'
         for x in items
     )
     # Two identical runs + a -50% translate = a seamless loop that scrolls
