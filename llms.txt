@@ -5,9 +5,8 @@
 ## Key pages
 
 - [Our Story: Intelligence for Client Service](https://kaizan.ai/about/): Why Glen Calvert and Pravin Paratey founded Kaizan in London: a proactive system of intelligence for client service and account management teams.
-- [Customer Success Software](https://kaizan.ai/client-success-software/): Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
+- [Client Success Software](https://kaizan.ai/client-success-software/): Kaizan is client success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
 - [Cookie Policy](https://kaizan.ai/cookie-policy/): The cookies Kaizan uses on its website and app, and how to manage them.
-- [Customer Success Software](https://kaizan.ai/customer-success-software/): Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
 - [Clients](https://kaizan.ai/customers/): 60+ client-services teams running Kaizan to keep their clients and grow them.
 - [Jellyfish · Client story](https://kaizan.ai/customers/jellyfish/): Standardised account health across 9 offices in a quarter.
 - [Scale Digital · Client story](https://kaizan.ai/customers/scale/): Expansion signals that used to take weeks now hit the desk same day.
@@ -23,7 +22,7 @@
 - [Client Interaction Data for Operations Leaders](https://kaizan.ai/for/performance/): See where the hours go, which processes are landing and how client sentiment is trending, with data that flows into the BI tools your team already uses.
 - [AI Project Status and Scope Tracking for PMs](https://kaizan.ai/for/project-manager/): One always-current view of every project, status and commitment. Kaizan drafts status updates, flags scope drift and feeds a live risk register for PMs.
 - [For Strategy, Creative, Marketing](https://kaizan.ai/for/strategy-creative-marketing/): Every conversation, decision, and signal on every client - ready the moment the brief lands.
-- [Customer Success Software](https://kaizan.ai/): Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
+- [Client Success Software](https://kaizan.ai/): Kaizan is client success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.
 - [Client Tool Integrations: Free Standard Set](https://kaizan.ai/integrations/): All standard Kaizan integrations are free: Teams, Slack, HubSpot, Salesforce, Google Meet and more unify client data, plus the Kaizan API and custom builds.
 - [Knowledge Hub](https://kaizan.ai/knowledge-hub/): Client success and account management FAQs: a resource hub covering client intelligence, onboarding, retention, client health, reviews, reporting, expansion, metrics and AI for account managers.
 - [Licence Agreement](https://kaizan.ai/license-agreement/): The terms on which Kaizan Limited supplies the Kaizan software.

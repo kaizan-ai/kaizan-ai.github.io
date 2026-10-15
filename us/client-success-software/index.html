@@ -27,17 +27,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
         <base href="/us/">
-        <title>Customer Success Software · Kaizan</title>
+        <title>Client Success Software · Kaizan</title>
 <link rel="alternate" hreflang="en-GB" href="https://kaizan.ai/client-success-software/"><link rel="alternate" hreflang="en-US" href="https://kaizan.ai/us/client-success-software/"><link rel="alternate" hreflang="x-default" href="https://kaizan.ai/client-success-software/">
 <link rel="canonical" href="https://kaizan.ai/us/client-success-software/">
-        <meta name="description" content="Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.">
+        <meta name="description" content="Kaizan is client success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=89c819ed">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=4c633a30">
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/css/tokens.css?v=0739307f">
         <link rel="stylesheet" href="/assets/css/site.css?v=3d6960f2">
-        <script defer src="/assets/js/site.js?v=2f7d0368"></script>
+        <script defer src="/assets/js/site.js?v=10c1b9c5"></script>
         <script defer src="/assets/js/trial-form.js?v=4029be61"></script>
 <style>
   /* ============================================================
@@ -116,7 +116,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
   .kz-reel-section { padding: 20px 24px 12px; }
   .kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
-  .kz-reel-video { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 84vh; }
+  /* Fixed 16:9 box from first paint (sized to fit 84vh), so the video doesn't
+     start small and jump to full size once its metadata loads. */
+  .kz-reel .kz-reel-video { display: block; margin: 0 auto; width: min(100%, calc(84vh * 16 / 9)); height: auto; max-height: none; aspect-ratio: 16 / 9; background: #000; }
   @media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
   .kz-why { padding: 84px var(--kz-gutter) 72px; }
   .kz-why-inner { max-width: 1280px; margin: 0 auto; }
@@ -473,115 +475,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
   .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
 </style>
-<script>
-(function () {
-  function initReel() {
-    var vids = document.querySelectorAll('[data-play-inview]');
-    if (!vids.length) return;
-    if (!('IntersectionObserver' in window)) {
-      vids.forEach(function (v) { v.play().catch(function () {}); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        var v = e.target;
-        if (e.isIntersecting) {
-          try { v.currentTime = 0; } catch (err) {}
-          v.play().catch(function () {});
-        } else {
-          v.pause();
-        }
-      });
-    }, { threshold: 0.35 });
-    vids.forEach(function (v) { io.observe(v); });
-  }
-  function initPbConnectors() {
-    var root = document.getElementById('sceneRoot');
-    if (!root) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    function applyRealPath(originId, destId, selector) {
-      try {
-        var origin = document.getElementById(originId);
-        var dest = document.getElementById(destId);
-        var travelers = document.querySelectorAll(selector);
-        if (!origin || !dest || !travelers.length) return;
-        var rRect = root.getBoundingClientRect();
-        var oRect = origin.getBoundingClientRect();
-        var dRect = dest.getBoundingClientRect();
-        var ox = oRect.left - rRect.left + oRect.width / 2;
-        var oy = oRect.top - rRect.top + oRect.height / 2;
-        var dx = dRect.left - rRect.left + dRect.width / 2;
-        var dy = dRect.top - rRect.top + dRect.height / 2;
-        var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
-        var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
-        var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
-        travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
-      } catch (e) {}
-    }
-    function applyAllPaths() {
-      applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
-      applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
-      applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
-    }
-    function trackProgress(trackId) {
-      var el = document.getElementById(trackId);
-      if (!el) return 0;
-      var rect = el.getBoundingClientRect();
-      var vh = window.innerHeight || document.documentElement.clientHeight;
-      var total = rect.height + vh;
-      if (total <= 0) return 0;
-      return Math.min(1, Math.max(0, (vh - rect.top) / total));
-    }
-    var legs = [
-      { track: 'launchZoneA', selector: '.connA' },
-      { track: 'launchZoneB', selector: '.connB' },
-      { track: 'launchZone',  selector: '.connC' }
-    ];
-    var state = {};
-    function tick() {
-      legs.forEach(function (leg) {
-        var master = trackProgress(leg.track);
-        var travelers = document.querySelectorAll(leg.selector);
-        travelers.forEach(function (el, i) {
-          var stagger = i * 0.07;
-          var target = Math.min(1, Math.max(0, master - stagger));
-          var key = leg.selector + i;
-          var cur = state[key] === undefined ? target : state[key];
-          var next = cur + (target - cur) * 0.18;
-          state[key] = next;
-          var fadeIn = Math.min(1, next / 0.08);
-          var fadeOut = Math.min(1, (1 - next) / 0.05);
-          var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
-          var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
-          var rotate = -4 + 6 * next;
-          el.style.offsetDistance = (next * 100) + '%';
-          el.style.opacity = String(opacity);
-          el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
-        });
-      });
-      requestAnimationFrame(tick);
-    }
-    function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
-    remeasure();
-    window.addEventListener('load', remeasure);
-    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
-    var rt = null;
-    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
-    requestAnimationFrame(tick);
-  }
-  document.addEventListener('DOMContentLoaded', function () {
-    initReel();
-    initPbConnectors();
-  });
-})();
-</script>
+<!-- Reel play-in-view and the travelling bubbles run from site.js
+     (initReel / initPbConnectors); no page-level copy, so they don't run twice. -->
         <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
         <script defer src="/assets/js/calendly-utm.js?v=2ce26b8f"></script>
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
         <script defer src="/assets/js/consent.js?v=28628d00"></script>
-        <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-US", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "WebPage", "@id": "https://kaizan.ai/us/client-success-software/#webpage", "url": "https://kaizan.ai/us/client-success-software/", "name": "Customer Success Software", "description": "Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.", "inLanguage": "en-US", "isPartOf": {"@id": "https://kaizan.ai/#website"}, "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "SoftwareApplication", "@id": "https://kaizan.ai/#software", "name": "Kaizan", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Kaizan is customer success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.", "url": "https://kaizan.ai/product/", "publisher": {"@id": "https://kaizan.ai/#organization"}}]}</script>
+        <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-US", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "WebPage", "@id": "https://kaizan.ai/us/client-success-software/#webpage", "url": "https://kaizan.ai/us/client-success-software/", "name": "Client Success Software", "description": "Kaizan is client success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.", "inLanguage": "en-US", "isPartOf": {"@id": "https://kaizan.ai/#website"}, "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "SoftwareApplication", "@id": "https://kaizan.ai/#software", "name": "Kaizan", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Kaizan is client success software that turns every call, email and signal into the next best action, AI Helpers that work 24/7 to grow client ROI, satisfaction and revenue.", "url": "https://kaizan.ai/product/", "publisher": {"@id": "https://kaizan.ai/#organization"}}]}</script>
 </head>
         <body>
         <div class="kz-page">
@@ -656,9 +558,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <!-- Phones: the reel sits here, above the trial form (the full-width reel
            section further down is hidden on phones). -->
       <div class="kz-reel kz-hero-reel-m">
-        <video class="kz-reel-video" muted loop playsinline preload="none"
-               poster="/assets/video/hero-intro-poster.jpg?v=d75cdeec"
-               data-play-inview aria-label="Kaizan product overview">
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+               poster="/assets/video/hero-intro-poster.jpg?v=704bbaa1"
+               data-play-inview data-play-resume aria-label="Kaizan product overview">
           <source src="/assets/video/hero-intro.mp4?v=db1730fc" type="video/mp4">
         </video>
       </div>
@@ -763,7 +665,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <!-- HERO REEL -->
     <section class="kz-reel-section">
       <div class="kz-reel">
-        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+        <video class="kz-reel-video" muted loop playsinline preload="metadata" width="1920" height="1080"
+               poster="/assets/video/hero-intro-poster.jpg?v=704bbaa1"
                data-play-inview aria-label="Kaizan product overview">
           <source src="/assets/video/hero-intro.mp4?v=db1730fc" type="video/mp4">
         </video>
