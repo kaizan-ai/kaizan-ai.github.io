@@ -7274,6 +7274,47 @@ def _cs_modules_html() -> str:
     </section>'''
 
 
+def _wp_strip_html() -> str:
+    """Lead strip for the 2026 Client Service Report (white paper), between the
+    integrations grid and the FAQ. Submits to the same HubSpot form as
+    /white-paper/ via assets/js/wp-strip.js."""
+    css_v = asset_v('assets/css/wp-strip.css')
+    js_v = asset_v('assets/js/wp-strip.js')
+    roles = ['Head of Client Services / CS', 'Client Success Manager', 'Account Director / Manager',
+             'Founder / CEO', 'Head of AI / CTO', 'VP / Commercial Leader', 'Marketing / Operations',
+             'Agency Leader', 'Other']
+    options = '\n'.join(f'<option>{E(r)}</option>' for r in roles)
+    pages = ''.join(f'<img src="/assets/img/white-paper/{n}.png" alt="" width="92" loading="lazy">'
+                    for n in ('report-page-01', 'report-page-08', 'report-page-care'))
+    return f'''<link rel="stylesheet" href="/assets/css/wp-strip.css{css_v}">
+    <section class="wp-strip" id="report">
+      <div class="wp-strip__in">
+        <div class="wp-strip__copy">
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free &middot; Instant</span>
+          <h2>What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
+          <div class="wp-strip__pages" aria-hidden="true">{pages}</div>
+        </div>
+        <form class="wp-strip__form" novalidate>
+          <h3>Download the 2026 Report</h3>
+          <p class="wp-strip__sub">Two fields. Straight to your inbox.</p>
+          <label class="wp-strip__field"><span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="wp-strip__err" role="alert"></div></label>
+          <label class="wp-strip__field"><span>Job title</span>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              {options}
+            </select>
+            <div class="wp-strip__err" role="alert"></div></label>
+          <button type="submit">Get the report &rarr;</button>
+          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+    </section>
+    <script defer src="/assets/js/wp-strip.js{js_v}"></script>'''
+
+
 def _cs_integrations_faq_html() -> str:
     """'Works with the tools you already use' icon grid + an FAQ accordion.
     The accordion uses native <details>/<summary> — no JS needed."""
@@ -7319,6 +7360,9 @@ def _cs_integrations_faq_html() -> str:
         <h2 class="cs-int-title">Works with the tools you already use</h2>
         <div class="cs-int-grid">{icons_html}</div>
       </div>
+    </section>
+    {_wp_strip_html()}
+    <section class="cs-integrations">
       <div class="cs-faq-inner">
         <h2 class="cs-faq-title">Frequently asked questions</h2>
         {faq_html}
@@ -7801,7 +7845,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
 
           .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
-          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 72px; text-align: center; }
           .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
           .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
           .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
