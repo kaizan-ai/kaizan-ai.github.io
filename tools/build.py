@@ -228,7 +228,7 @@ PERSONAS = {
         schema=True,
         role='client service directors',
         role_cap='Client Service Directors',
-        h1=('Run Your Portfolio with', 'Eyes Open', '.'),
+        h1=('Run your portfolio with', 'eyes open', '.'),
         sub=("Onboard new team members in days. Catch dissatisfaction before the renewal call. "
              "See the patterns across your portfolio that no individual AM can spot alone."),
         quote_bg='radial-gradient(circle at 30% 30%, #B58A4F, #4A2A0E)',
@@ -309,7 +309,7 @@ PERSONAS = {
         schema=True,
         role='senior leaders',
         role_cap='Senior Leaders',
-        h1=('See the Path to', 'Doubling Revenue', ' on Every Client'),
+        h1=('See the path to', 'doubling revenue', ' on every client'),
         sub=("Kaizan turns every meeting, signal, and stakeholder into the intelligence you need "
              "to grow each client deliberately - and catch the risks that could cost you the "
              "relationship."),
@@ -454,7 +454,7 @@ PERSONAS = {
         schema=True,
         role='project managers',
         role_cap='Project Managers',
-        h1=('Run the Work.', "Don't Chase It.", ''),
+        h1=('Run the work.', "Don't chase it.", ''),
         sub=("Every project, every status, every commitment - in one always-current place, with "
              "an AI Helper watching it all 24/7."),
         quote_bg='radial-gradient(circle at 30% 30%, #6F8474, #1F3025)',
@@ -527,7 +527,7 @@ PERSONAS = {
         schema=True,
         role='new business leaders',
         role_cap='New Business Leaders',
-        h1=('', 'Pitch Warmer.', ' Grow Existing Clients Deliberately.'),
+        h1=('', 'Pitch warmer.', ' Grow existing clients deliberately.'),
         sub=("Kaizan is an AI-powered platform for new business leaders, account managers, client "
              "service teams, and senior leaders who want to prepare better for pitches and grow "
              "existing clients without losing hours to research. It surfaces the intel, key "
@@ -615,7 +615,7 @@ PERSONAS = {
         schema=True,
         role='performance and operations leaders',
         role_cap='Performance and Operations Leaders',
-        h1=('Turn Every Client Interaction into', 'Operational Data', ''),
+        h1=('Turn every client interaction into', 'operational data', ''),
         sub=("See where the hours go, which processes are landing, and how sentiment is trending "
              "- all flowing into the BI tools you already use."),
         quote_bg='radial-gradient(circle at 35% 30%, #708FAA, #1F3A50)',
@@ -3803,7 +3803,7 @@ def render_about() -> str:
     <section class="kz-about-hero">
       <div class="kz-eyebrow">Founder&rsquo;s Letter · Kaizan</div>
       <h1 class="kz-h1" style="margin:22px 0 0;max-width:1200px;">
-        Kaizan: A Proactive System of <span class="kz-mark">Intelligence</span> for Client Service
+        Kaizan: a proactive system of <span class="kz-mark">intelligence</span> for client service
       </h1>
     </section>
 
