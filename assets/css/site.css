@@ -444,7 +444,7 @@ button { font-family: inherit; }
 
 /* ── Hero left — v2 (conversational headline + playful floaters) ──
    Ported from the Hero design mockup; keeps the site's own fonts
-   (IBM Plex via --kz-display) rather than the mockup's Comfortaa. */
+   (Helvetica Neue via --kz-display) rather than the mockup's Comfortaa. */
 .kz-hero-copy--v2 { padding: 24px 8px; overflow: visible; display: flex; flex-direction: column; }
 .kz-hero-copy-inner { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: flex-start; gap: 20px; }
 .kz-hero-v2-h1 {

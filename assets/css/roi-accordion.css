@@ -12,8 +12,7 @@
   --kzacc-paper: #FFFBF0;
   --kzacc-ink: #171717;
   --kzacc-mute: rgba(0, 0, 0, 0.56);
-  --kzacc-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI",
-                Roboto, "Helvetica Neue", Arial, sans-serif;
+  --kzacc-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   display: block;
   max-width: 1180px;
