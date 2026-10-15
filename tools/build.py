@@ -3755,6 +3755,7 @@ def render_blog_index(posts: list) -> str:
     </section>
     {grid}
     {footer_html(1)}
+    {_wp_popup_html()}
     '''
     # The blog landing page is kept out of the index (noindex, follow): the posts
     # stay crawlable through its links and the sitemap, and rank on their own.
@@ -3780,6 +3781,7 @@ def render_blog_post(post: dict) -> str:
       </div>
     </article>
     {footer_html(2)}
+    {_wp_popup_html()}
     '''
     extra = og_tags(post)
     if post.get('schema'):
@@ -7273,24 +7275,20 @@ def _cs_modules_html() -> str:
     </section>'''
 
 
-def _wp_strip_html() -> str:
-    """Lead strip for the 2026 Client Service Report (white paper), between the
-    integrations grid and the FAQ. Submits to the same HubSpot form as
-    /white-paper/ via assets/js/wp-strip.js."""
-    css_v = asset_v('assets/css/wp-strip.css')
-    js_v = asset_v('assets/js/wp-strip.js')
+def _wp_inner_html() -> str:
+    """Copy + two-field form for the 2026 Client Service Report (white paper).
+    Shared by the homepage strip and the blog pop-up; submits to the same
+    HubSpot form as /white-paper/ via assets/js/wp-strip.js."""
     roles = ['Head of Client Services / CS', 'Client Success Manager', 'Account Director / Manager',
              'Founder / CEO', 'Head of AI / CTO', 'VP / Commercial Leader', 'Marketing / Operations',
              'Agency Leader', 'Other']
     options = '\n'.join(f'<option>{E(r)}</option>' for r in roles)
     pages = ''.join(f'<img src="/assets/img/white-paper/{n}.png" alt="" width="92" loading="lazy">'
                     for n in ('report-page-01', 'report-page-08', 'report-page-care'))
-    return f'''<link rel="stylesheet" href="/assets/css/wp-strip.css{css_v}">
-    <section class="wp-strip" id="report">
-      <div class="wp-strip__in">
+    return f'''<div class="wp-strip__in">
         <div class="wp-strip__copy">
           <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free &middot; Instant</span>
-          <h2>What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <h2 class="wp-strip__title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
           <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
           <div class="wp-strip__pages" aria-hidden="true">{pages}</div>
         </div>
@@ -7309,9 +7307,36 @@ def _wp_strip_html() -> str:
           <button type="submit">Get the report &rarr;</button>
           <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
         </form>
-      </div>
+      </div>'''
+
+
+def _wp_assets(tag: str) -> str:
+    css_v = asset_v('assets/css/wp-strip.css')
+    js_v = asset_v('assets/js/wp-strip.js')
+    return {'css': f'<link rel="stylesheet" href="/assets/css/wp-strip.css{css_v}">',
+            'js': f'<script defer src="/assets/js/wp-strip.js{js_v}"></script>'}[tag]
+
+
+def _wp_strip_html() -> str:
+    """Lead strip between the integrations grid and the FAQ."""
+    return f'''{_wp_assets('css')}
+    <section class="wp-strip" id="report">
+      {_wp_inner_html()}
     </section>
-    <script defer src="/assets/js/wp-strip.js{js_v}"></script>'''
+    {_wp_assets('js')}'''
+
+
+def _wp_popup_html() -> str:
+    """Blog pop-up (bottom-right card) version of the report form, shown by wp-strip.js after 5s on
+    the page (once per visitor until dismissed or submitted)."""
+    return f'''{_wp_assets('css')}
+    <div class="wp-popup" id="wp-popup" hidden>
+      <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
+        <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
+        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"')}
+      </div>
+    </div>
+    {_wp_assets('js')}'''
 
 
 def _cs_integrations_faq_html() -> str:
