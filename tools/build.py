@@ -7511,9 +7511,9 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
       <!-- Phones: the reel sits here, above the trial form (the full-width reel
            section further down is hidden on phones). -->
       <div class="kz-reel kz-hero-reel-m">
-        <video class="kz-reel-video" muted loop playsinline preload="none"
+        <video class="kz-reel-video" muted loop playsinline preload="metadata"
                poster="assets/video/hero-intro-poster.jpg{asset_v('assets/video/hero-intro-poster.jpg')}"
-               data-play-inview aria-label="Kaizan product overview">
+               data-play-inview data-play-resume aria-label="Kaizan product overview">
           <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
         </video>
       </div>
@@ -7528,7 +7528,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
     <!-- HERO REEL -->
     <section class="kz-reel-section">
       <div class="kz-reel">
-        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+        <video class="kz-reel-video" muted loop playsinline preload="metadata" width="1920" height="1080"
+               poster="assets/video/hero-intro-poster.jpg{asset_v('assets/video/hero-intro-poster.jpg')}"
                data-play-inview aria-label="Kaizan product overview">
           <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
         </video>
@@ -7684,7 +7685,9 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .kz-trial-bubble span:last-child { width: 45%; background: rgba(255,255,255,.6); }
           .kz-reel-section { padding: 20px 24px 12px; }
           .kz-reel { max-width: 100%; margin: 0 auto; background: transparent; text-align: center; }
-          .kz-reel-video { display: inline-block; width: auto; height: auto; max-width: 100%; max-height: 84vh; }
+          /* Fixed 16:9 box from first paint (sized to fit 84vh), so the video doesn't
+             start small and jump to full size once its metadata loads. */
+          .kz-reel .kz-reel-video { display: block; margin: 0 auto; width: min(100%, calc(84vh * 16 / 9)); height: auto; max-height: none; aspect-ratio: 16 / 9; background: #000; }
           @media (max-width: 768px) { .kz-reel-section { padding: 16px 16px 8px; } .kz-reel-video { max-height: none; } }
           .kz-why { padding: 84px var(--kz-gutter) 72px; }
           .kz-why-inner { max-width: 1280px; margin: 0 auto; }
@@ -8040,111 +8043,11 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
           .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
         </style>
-        <script>
-        (function () {
-          function initReel() {
-            var vids = document.querySelectorAll('[data-play-inview]');
-            if (!vids.length) return;
-            if (!('IntersectionObserver' in window)) {
-              vids.forEach(function (v) { v.play().catch(function () {}); });
-              return;
-            }
-            var io = new IntersectionObserver(function (entries) {
-              entries.forEach(function (e) {
-                var v = e.target;
-                if (e.isIntersecting) {
-                  try { v.currentTime = 0; } catch (err) {}
-                  v.play().catch(function () {});
-                } else {
-                  v.pause();
-                }
-              });
-            }, { threshold: 0.35 });
-            vids.forEach(function (v) { io.observe(v); });
-          }
-          function initPbConnectors() {
-            var root = document.getElementById('sceneRoot');
-            if (!root) return;
-            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            function applyRealPath(originId, destId, selector) {
-              try {
-                var origin = document.getElementById(originId);
-                var dest = document.getElementById(destId);
-                var travelers = document.querySelectorAll(selector);
-                if (!origin || !dest || !travelers.length) return;
-                var rRect = root.getBoundingClientRect();
-                var oRect = origin.getBoundingClientRect();
-                var dRect = dest.getBoundingClientRect();
-                var ox = oRect.left - rRect.left + oRect.width / 2;
-                var oy = oRect.top - rRect.top + oRect.height / 2;
-                var dx = dRect.left - rRect.left + dRect.width / 2;
-                var dy = dRect.top - rRect.top + dRect.height / 2;
-                var c1x = ox + (dx - ox) * 0.25, c1y = oy + (dy - oy) * 0.32;
-                var c2x = ox + (dx - ox) * 0.6,  c2y = oy + (dy - oy) * 0.78;
-                var d = 'M' + ox + ',' + oy + ' C' + c1x + ',' + c1y + ' ' + c2x + ',' + c2y + ' ' + dx + ',' + dy;
-                travelers.forEach(function (el) { el.style.offsetPath = "path('" + d + "')"; el.style.offsetRotate = '0deg'; });
-              } catch (e) {}
-            }
-            function applyAllPaths() {
-              applyRealPath('bubbleOriginA', 'bubbleDestA', '.connA');
-              applyRealPath('bubbleOriginB', 'bubbleDestB', '.connB');
-              applyRealPath('bubbleOrigin', 'bubbleDest', '.connC');
-            }
-            function trackProgress(trackId) {
-              var el = document.getElementById(trackId);
-              if (!el) return 0;
-              var rect = el.getBoundingClientRect();
-              var vh = window.innerHeight || document.documentElement.clientHeight;
-              var total = rect.height + vh;
-              if (total <= 0) return 0;
-              return Math.min(1, Math.max(0, (vh - rect.top) / total));
-            }
-            var legs = [
-              { track: 'launchZoneA', selector: '.connA' },
-              { track: 'launchZoneB', selector: '.connB' },
-              { track: 'launchZone',  selector: '.connC' }
-            ];
-            var state = {};
-            function tick() {
-              legs.forEach(function (leg) {
-                var master = trackProgress(leg.track);
-                var travelers = document.querySelectorAll(leg.selector);
-                travelers.forEach(function (el, i) {
-                  var stagger = i * 0.07;
-                  var target = Math.min(1, Math.max(0, master - stagger));
-                  var key = leg.selector + i;
-                  var cur = state[key] === undefined ? target : state[key];
-                  var next = cur + (target - cur) * 0.18;
-                  state[key] = next;
-                  var fadeIn = Math.min(1, next / 0.08);
-                  var fadeOut = Math.min(1, (1 - next) / 0.05);
-                  var opacity = Math.max(0, Math.min(fadeIn, fadeOut));
-                  var scale = 0.5 + 0.9 * Math.sin(Math.PI * Math.min(1, Math.max(0, next)));
-                  var rotate = -4 + 6 * next;
-                  el.style.offsetDistance = (next * 100) + '%';
-                  el.style.opacity = String(opacity);
-                  el.style.transform = 'scale(' + scale.toFixed(3) + ') rotate(' + rotate.toFixed(1) + 'deg)';
-                });
-              });
-              requestAnimationFrame(tick);
-            }
-            function remeasure() { requestAnimationFrame(function () { requestAnimationFrame(applyAllPaths); }); }
-            remeasure();
-            window.addEventListener('load', remeasure);
-            if (document.fonts && document.fonts.ready) { document.fonts.ready.then(remeasure).catch(function () {}); }
-            var rt = null;
-            window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(applyAllPaths, 150); });
-            requestAnimationFrame(tick);
-          }
-          document.addEventListener('DOMContentLoaded', function () {
-            initReel();
-            initPbConnectors();
-          });
-        })();
-        </script>''')
+        <!-- Reel play-in-view and the travelling bubbles run from site.js
+             (initReel / initPbConnectors); no page-level copy, so they don't run twice. -->''')
 
-    html = page_head('Customer Success Software', 0,
-                     'Kaizan is customer success software that turns every call, email '
+    html = page_head('Client Success Software', 0,
+                     'Kaizan is client success software that turns every call, email '
                      'and signal into the next best action, AI Helpers that work 24/7 to grow '
                      'client ROI, satisfaction and revenue.',
                      extra_head=extra_head) + body + page_foot()
@@ -8155,8 +8058,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
     # before page_head()'s own asset links, which is earlier than extra_head
     # gets injected, hence doing it here rather than via extra_head.
     html = html.replace(
-        '<title>Customer Success Software · Kaizan</title>',
-        '<base href="/">\n        <title>Customer Success Software · Kaizan</title>',
+        '<title>Client Success Software · Kaizan</title>',
+        '<base href="/">\n        <title>Client Success Software · Kaizan</title>',
         1,
     )
     # Header logo (first occurrence only — not the footer's copy, further

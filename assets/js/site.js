@@ -330,7 +330,9 @@
       entries.forEach(function (e) {
         var v = e.target;
         if (e.isIntersecting) {
-          try { v.currentTime = 0; } catch (err) {}  // restart from the beginning each time it scrolls into view
+          // Restart from the beginning each time it scrolls into view, unless the
+          // video opts out (data-play-resume): it then carries on where it left off.
+          if (!v.hasAttribute('data-play-resume')) { try { v.currentTime = 0; } catch (err) {} }
           v.play().catch(function () {});
         } else {
           v.pause();
