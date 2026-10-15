@@ -35,11 +35,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png?v=4c633a30">
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#FFB900">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap">
-        <link rel="stylesheet" href="assets/css/tokens.css?v=44c900be">
-        <link rel="stylesheet" href="assets/css/site.css?v=7461e8dc">
+        <link rel="stylesheet" href="assets/css/tokens.css?v=0739307f">
+        <link rel="stylesheet" href="assets/css/site.css?v=7c7c47c3">
         <script defer src="assets/js/site.js?v=7cfd32a6"></script>
         <script defer src="assets/js/trial-form.js?v=4029be61"></script>
 <style>
@@ -62,6 +59,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin: 0; font-family: var(--kz-display);
     font-size: clamp(44px, 4.8vw, 66px); line-height: 1.0; font-weight: 800;
     letter-spacing: -0.02em; color: #000; overflow-wrap: break-word;
+  }
+  /* Homepage title has fixed phrase breaks; cap its size to the column so
+     the longest line ("the work that grows") never wraps on its own. */
+  .kz-hero-copy-inner--home { container-type: inline-size; }
+  /* !important to beat site.css's sitewide h1 size; desktop only so phones keep 34px. */
+  @media (min-width: 769px) {
+    .kz-hero-copy-inner--home .kz-hero-v2-h1 { font-size: min(clamp(44px, 4.8vw, 66px), 10.4cqi) !important; }
   }
   .kz-hero-v2-lede {
     margin: 0; max-width: 44ch;
@@ -243,6 +247,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   @media (max-width: 768px) {
     .kz-hero-v2-h1 { font-size: 34px; }
+    .kz-hero-br { display: none; }
     .kz-hero-v2-lede { font-size: 17px; }
     .kz-hero-deco, .kz-trial-bubble { display: none; }
     .kz-trial { padding: 28px 22px 24px; }
@@ -285,7 +290,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .kz-qcard-more:hover, .kz-qcard-more:focus-visible { filter: brightness(.94); box-shadow: 0 6px 16px -6px rgba(40,30,15,.5); }
 
   /* ── Page-only trims (nav, font, testimonial arrows, etc.) ──── */
-  
   .kz-trial {
             background: #FFB900;
             box-shadow: 0 1px 2px rgba(40,30,15,.22), 0 4px 8px -2px rgba(40,30,15,.22),
@@ -560,10 +564,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <span class="kz-hero-dot kz-hero-dot--purple"></span>
           <span class="kz-hero-dot kz-hero-dot--sage"></span>
         </div>
-        <div class="kz-hero-copy-inner">
-          <h1 class="kz-hero-v2-h1">Turn client conversations into revenue</h1>
-          <p class="kz-hero-v2-lede">Kaizan turns every call, email and signal into the next
-            best action so you keep every client and grow every account.</p>
+        <div class="kz-hero-copy-inner kz-hero-copy-inner--home">
+          <h1 class="kz-hero-v2-h1">Kaizan does<br class="kz-hero-br"> the work that grows<br class="kz-hero-br"> every client</h1>
+          <p class="kz-hero-v2-lede">Kaizan knows the client from every interaction, knows what great
+            looks like, and does the work your team cannot get to.</p>
           <div class="kz-hero-v2-cta">
             <a class="kz-hero-pill" href="demo/">Book a demo</a>
           </div>
@@ -572,6 +576,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div class="kz-trial-col">
         <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
         <div class="kz-trial" data-trial>
+        <!-- Collapse the optional fields before first paint; trial-form.js is deferred. -->
+        <script>document.currentScript.parentNode.classList.add('is-js');</script>
         <form class="kz-trial-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
               action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=001aefe5f0" data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=001aefe5f0" method="post" target="_blank">
           <h2 class="kz-trial-title">Start your 14-day free trial</h2>
