@@ -33,12 +33,11 @@ ROOT = Path(__file__).resolve().parents[1]
 # behaviour where the "Blog" nav target was the Insights page). The hidden
 # /blog/ landing is NOT in the nav by design.
 NAV = [
-    ('Home',         '/'),
     # nav_html renders "Product" as a hover dropdown listing PRODUCT_MENU
     # (Integrations lives under it, so it has no top-level nav item).
     ('Product',      'product/'),
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
-    ('By role',      '__personas_dropdown__'),
+    ('Product Guides', '__personas_dropdown__'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
