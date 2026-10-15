@@ -7511,9 +7511,9 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
       <!-- Phones: the reel sits here, above the trial form (the full-width reel
            section further down is hidden on phones). -->
       <div class="kz-reel kz-hero-reel-m">
-        <video class="kz-reel-video" muted loop playsinline preload="metadata"
+        <video class="kz-reel-video" autoplay muted loop playsinline preload="metadata"
                poster="assets/video/hero-intro-poster.jpg{asset_v('assets/video/hero-intro-poster.jpg')}"
-               data-play-inview data-play-resume aria-label="Kaizan product overview">
+               data-play-inview data-play-resume data-start="0.8" aria-label="Kaizan product overview">
           <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
         </video>
       </div>
@@ -7530,7 +7530,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
       <div class="kz-reel">
         <video class="kz-reel-video" muted loop playsinline preload="metadata" width="1920" height="1080"
                poster="assets/video/hero-intro-poster.jpg{asset_v('assets/video/hero-intro-poster.jpg')}"
-               data-play-inview aria-label="Kaizan product overview">
+               data-play-inview data-start="0.8" aria-label="Kaizan product overview">
           <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
         </video>
       </div>

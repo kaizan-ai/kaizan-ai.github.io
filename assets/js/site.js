@@ -326,14 +326,40 @@
       vids.forEach(function (v) { v.play().catch(function () {}); });
       return;
     }
+    vids.forEach(function (v) {
+      // iOS Safari only autoplays when the muted/playsInline PROPERTIES are set.
+      v.muted = true; v.playsInline = true;
+      // data-start skips an intro (e.g. a fade from black) so the first frame
+      // matches the poster; later loops play from 0 as normal.
+      var start = parseFloat(v.getAttribute('data-start')) || 0;
+      if (start) {
+        var seek = function () { if (v.currentTime < start) { try { v.currentTime = start; } catch (err) {} } };
+        if (v.readyState >= 1) seek(); else v.addEventListener('loadedmetadata', seek, { once: true });
+      }
+    });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         var v = e.target;
         if (e.isIntersecting) {
-          // Restart from the beginning each time it scrolls into view, unless the
-          // video opts out (data-play-resume): it then carries on where it left off.
-          if (!v.hasAttribute('data-play-resume')) { try { v.currentTime = 0; } catch (err) {} }
-          v.play().catch(function () {});
+          // Restart each time it scrolls into view (from data-start, or 0), unless
+          // the video opts out (data-play-resume): it then carries on.
+          if (!v.hasAttribute('data-play-resume')) {
+            try { v.currentTime = parseFloat(v.getAttribute('data-start')) || 0; } catch (err) {}
+          }
+          v.muted = true;
+          v.play().then(function () {
+            if (v.parentElement) v.parentElement.classList.remove('is-blocked');
+          }).catch(function (err) {
+            // Only a real autoplay block (e.g. iPhone Low Power Mode), not a play
+            // interrupted by scrolling away: keep the poster up with a play
+            // button over it; tapping the video starts it.
+            if (!err || err.name !== 'NotAllowedError') return;
+            var box = v.parentElement;
+            if (!box || box.classList.contains('is-blocked')) return;
+            box.classList.add('is-blocked');
+            v.addEventListener('playing', function () { box.classList.remove('is-blocked'); });
+            v.addEventListener('click', function () { if (v.paused) v.play().catch(function () {}); });
+          });
         } else {
           v.pause();
         }
