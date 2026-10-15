@@ -36,8 +36,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/css/tokens.css?v=0739307f">
-        <link rel="stylesheet" href="/assets/css/site.css?v=d94e0487">
-        <script defer src="/assets/js/site.js?v=7cfd32a6"></script>
+        <link rel="stylesheet" href="/assets/css/site.css?v=3d6960f2">
+        <script defer src="/assets/js/site.js?v=2f7d0368"></script>
         <script defer src="/assets/js/trial-form.js?v=4029be61"></script>
 <style>
   /* ============================================================
@@ -147,7 +147,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
   .kz-statsband { font-family: var(--kz-sans); }
   @media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
-  @media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+  @media (max-width: 560px) {
+    /* Phones: stats in an even 2×3 grid with thin dividers, numbers and
+       labels sized so every cell reads the same. */
+    .kz-statsband > section { padding: 52px var(--kz-gutter) 48px !important; }
+    .kz-statsband h2 { font-size: 24px !important; line-height: 1.25; margin-bottom: 28px !important; }
+    .kz-statsband .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; gap: 0 !important; }
+    .kz-statsband .kz-statsband-grid > div { padding: 20px 10px; }
+    .kz-statsband .kz-statsband-grid > div:nth-child(even) { border-left: 1px solid rgba(255,255,255,.16); }
+    .kz-statsband .kz-statsband-grid > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.16); }
+    .kz-statsband .kz-statsband-grid > div > svg { margin-bottom: 8px !important; }
+    .kz-statsband .kz-statsband-grid > div > div:first-of-type > div {
+      font-size: 38px !important; line-height: 1 !important; font-variant-numeric: tabular-nums;
+    }
+    .kz-statsband .kz-statsband-grid > div > div:last-child {
+      font-size: 13.5px !important; line-height: 1.4; margin-top: 8px !important; color: rgba(255,255,255,.78) !important;
+    }
+  }
   .kz-pb { position: relative; overflow: hidden; }
   .kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
   .kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
@@ -174,9 +190,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
   }
   @media (max-width: 560px) {
-    .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
-    .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
-    .kz-why-card:first-child { border-top: none; }
+    /* Phones: benefits 2×2, compact */
+    .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 0; }
+    .kz-why-card { border-left: none; padding: 22px 10px; gap: 10px; }
+    .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+    .kz-why-grid .kz-why-card { border-top: none; }
+    .kz-why-grid .kz-why-card:nth-child(n+3) { border-top: 1px solid var(--kz-line); }
+    .kz-why-icon { width: 48px; height: 48px; }
+    .kz-why-card-title { font-size: 16px; }
+    .kz-why-card-desc { font-size: 13.5px; }
+  }
+  @media (max-width: 560px) {
+    /* Phones: feature sections (#sceneRoot). The travelling bubbles fly
+       across the text in a single column, so they're hidden; spacing,
+       headings and illustrations are scaled down to suit the screen. */
+    #sceneRoot .bubbleTraveler { display: none !important; }
+    #sceneRoot > section { padding: 44px var(--kz-gutter) 52px calc(var(--kz-gutter) + 34px) !important; }
+    /* Numbered thread: a line down the left edge links the four sections,
+       with a numbered dot in each section's colour at its heading. A small
+       bubble rides the line as you scroll (site.js initPbThread). */
+    #sceneRoot { counter-reset: pbstep; }
+    #sceneRoot > section { counter-increment: pbstep; --pb-c: #2F5FE0; }
+    #sceneRoot > section:nth-of-type(2) { --pb-c: #1FA591; }
+    #sceneRoot > section:nth-of-type(3) { --pb-c: #E8432B; }
+    #sceneRoot > section:nth-of-type(4) { --pb-c: #7C5CFC; }
+    #sceneRoot > section::before {
+      content: ""; position: absolute; top: 0; bottom: 0; z-index: 0;
+      left: calc(var(--kz-gutter) + 10px); width: 2px; background: rgba(23,21,17,.12);
+    }
+    #sceneRoot > section:first-of-type::before { top: 56px; }
+    #sceneRoot > section:last-of-type::before { bottom: 50%; }
+    #sceneRoot > section h2 { position: relative; }
+    #sceneRoot > section h2::before {
+      content: counter(pbstep); position: absolute; left: -35px; top: 3px;
+      width: 24px; height: 24px; border-radius: 50%;
+      background: var(--pb-c); color: #fff; box-shadow: 0 0 0 4px var(--kz-paper, #FFFBF0);
+      font-size: 13px; font-weight: 700; line-height: 24px; text-align: center; letter-spacing: 0;
+    }
+    #sceneRoot .kz-pb-thread-bubble {
+      display: block; position: absolute; z-index: 3; top: 0; pointer-events: none;
+      left: calc(var(--kz-gutter) - 4px); width: 30px; height: 22px;
+      border-radius: 10px 10px 10px 4px; background: #2F5FE0;
+      box-shadow: 0 6px 14px rgba(0,0,0,.22); transition: background .3s ease;
+      will-change: transform;
+    }
+    #sceneRoot .kz-pb-thread-bubble::before, #sceneRoot .kz-pb-thread-bubble::after {
+      content: ""; position: absolute; left: 6px; height: 2px; border-radius: 2px; background: rgba(255,255,255,.9);
+    }
+    #sceneRoot .kz-pb-thread-bubble::before { top: 7px; right: 6px; }
+    #sceneRoot .kz-pb-thread-bubble::after { top: 12px; right: 12px; background: rgba(255,255,255,.65); }
+    #sceneRoot > section > div { gap: 28px !important; }
+    #sceneRoot h2 { font-size: 30px !important; }
+    #sceneRoot [style*="flex: 1 1 440px"] { min-width: 0 !important; }
+    #sceneRoot [style*="position: relative; width: 100%; max-width"] { zoom: .85; }
+    /* Spot-risk illustration: its green bubble sits above the box, over the
+       "Book a demo" link once stacked, so give it room. */
+    #sceneRoot #launchZoneB { margin-top: 48px; }
+    /* Tool icons: 4 per row */
+    .cs-int-grid { gap: 14px 6px !important; }
+    .cs-int-icon { width: 74px !important; }
   }
   .kz-trial {
     position: relative; overflow: hidden; z-index: 1;
@@ -245,14 +317,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
     .kz-hero--trial .kz-trial { max-width: 640px; }
   }
+  .kz-hero-reel-m { display: none; }
+  .kz-pb-thread-bubble { display: none; }
   @media (max-width: 768px) {
     .kz-hero-v2-h1 { font-size: 34px; }
     .kz-hero-br { display: none; }
     .kz-hero-v2-lede { font-size: 17px; }
-    .kz-hero-deco, .kz-trial-bubble { display: none; }
+    .kz-trial-bubble { display: none; }
     .kz-trial { padding: 28px 22px 24px; }
+    /* Reel moves up into the hero, above the trial form */
+    .kz-hero-reel-m { display: block; border-radius: 14px; overflow: hidden; }
+    .kz-hero-reel-m .kz-reel-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+    .kz-reel-section { display: none; }
+    /* Floating bubbles framing the heading (room made above it) */
+    .kz-hero.kz-hero--trial { padding-top: 18px; }   /* bubbles above the heading supply the top space */
+    .kz-hero-copy--v2 { padding-top: 64px; }
+    /* Tighten the run from the trial box, past the client logos, to the
+       next section (the reel that sat between them moved up). */
+    .kz-marquee { margin-top: 4px; padding-top: 12px; padding-bottom: 8px; }
+    .kz-why { padding-top: 40px; }
+    .kz-hero-copy .kz-hero-deco { display: block; transform: none; }  /* site.css hides it on phones */
+    .kz-hero-bubble { padding: 9px 11px; }
+    .kz-hero-bubble span { height: 5px; }
+    .kz-hero-bubble span:first-child { margin-bottom: 6px; }
+    .kz-hero-bubble--blue { left: -6px; top: 4px; width: 74px; height: 44px; }
+    .kz-hero-bubble--gold { left: auto; right: 72px; top: 14px; width: 42px; height: 32px; }
+    .kz-hero-bubble--teal { right: -4px; bottom: auto; top: -2px; width: 64px; height: 44px; }
+    .kz-hero-dot--blue { left: 92px; top: 10px; }
+    .kz-hero-dot--purple { right: 128px; top: 44px; }
+    .kz-hero-dot--sage { left: 140px; top: 30px; }
+    .kz-hero-dot--teal { right: 4px; top: 54px; }
+    .kz-hero-dot--gold { right: 8px; bottom: 14px; }
+    .kz-hero-dot--red { left: 0; bottom: -4px; }
   }
-  @media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+  @media (max-width: 560px) {
+    /* Phones: compact trial box. Fields stay two per row; inputs keep
+       16px text so iOS doesn't zoom in when one is tapped. */
+    .kz-trial { padding: 20px 16px 18px !important; }
+    .kz-trial-title { font-size: 22px; }
+    .kz-trial-sub { font-size: 14px; line-height: 1.45; margin-top: 6px; }
+    .kz-trial-fields { margin-top: 14px; gap: 10px; margin-bottom: 16px; }
+    .kz-trial .kz-trial-row { flex-direction: row; gap: 8px; }   /* site.css stacks them below 460px */
+    .kz-trial-field label { font-size: 10.5px; margin-bottom: 4px; }
+    .kz-trial-field input, .kz-trial-field select { padding: 9px 10px; font-size: 16px; }
+    .kz-trial-submit { padding: 13px 18px; font-size: 15px; }
+  }
   .kz-qcard {
     flex: 0 0 300px; max-width: 84vw; margin: 0; scroll-snap-align: start;
     background: #FCF6E2; border: 1px solid var(--kz-line); border-radius: 14px;
@@ -574,6 +683,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </div>
         </div>
       </div>
+      <!-- Phones: the reel sits here, above the trial form (the full-width reel
+           section further down is hidden on phones). -->
+      <div class="kz-reel kz-hero-reel-m">
+        <video class="kz-reel-video" muted loop playsinline preload="none"
+               poster="/assets/video/hero-intro-poster.jpg?v=d75cdeec"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="/assets/video/hero-intro.mp4?v=db1730fc" type="video/mp4">
+        </video>
+      </div>
       <div class="kz-trial-col">
         <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
         <div class="kz-trial" data-trial>
@@ -598,7 +716,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="kz-trial-row">
               <div class="kz-trial-field">
                 <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
-                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@work.com" autocomplete="email" required>
               </div>
               <div class="kz-trial-field">
                 <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
