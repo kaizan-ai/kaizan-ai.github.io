@@ -1,5 +1,6 @@
 ---
 title: How The Kite Factory Uses AI to Level Up Client Relationships
+meta_title: The Kite Factory: AI for Client Relationships
 date: 2026-07-06
 author: Lia
 category: POV

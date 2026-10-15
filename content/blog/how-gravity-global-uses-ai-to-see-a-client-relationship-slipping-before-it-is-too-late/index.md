@@ -1,10 +1,10 @@
 ---
 title: How Gravity Global Uses AI to See a Client Relationship Slipping Before It Is Too Late
+meta_title: Gravity Global: Spotting Client Drift Early
 date: 2026-07-01
 author: Lia Grant
 category: POV
 excerpt: Ada Cavalmoretti, Group Account Director at Gravity Global, shares how AI helps client teams catch the quiet signals of a slipping relationship, confirm their instincts, and protect the time for human work that keeps clients close.
-meta_title: Gravity Global on Spotting Client Relationship Drift
 meta_description: Gravity Global’s Ada Cavalmoretti on spotting the quiet signals of a slipping client relationship, confirming instinct with data and protecting time.
 cover: cover.png
 draft: false

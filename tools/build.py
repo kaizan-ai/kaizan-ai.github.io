@@ -33,12 +33,11 @@ ROOT = Path(__file__).resolve().parents[1]
 # behaviour where the "Blog" nav target was the Insights page). The hidden
 # /blog/ landing is NOT in the nav by design.
 NAV = [
-    ('Home',         '/'),
     # nav_html renders "Product" as a hover dropdown listing PRODUCT_MENU
     # (Integrations lives under it, so it has no top-level nav item).
     ('Product',      'product/'),
     # Sentinel: nav_html renders this as a hover dropdown listing PERSONA_LIST.
-    ('By role',      '__personas_dropdown__'),
+    ('Product Guides', '__personas_dropdown__'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
     # ('Clients',      'customers/'),
@@ -3756,6 +3755,7 @@ def render_blog_index(posts: list) -> str:
     </section>
     {grid}
     {footer_html(1)}
+    {_wp_popup_html()}
     '''
     # The blog landing page is kept out of the index (noindex, follow): the posts
     # stay crawlable through its links and the sitemap, and rank on their own.
@@ -3781,6 +3781,7 @@ def render_blog_post(post: dict) -> str:
       </div>
     </article>
     {footer_html(2)}
+    {_wp_popup_html()}
     '''
     extra = og_tags(post)
     if post.get('schema'):
@@ -6438,6 +6439,31 @@ def write_sitemap():
     print(f'  (sitemap.xml: {len(entries)} URLs)')
 
 
+def write_llms_txt():
+    """llms.txt: a plain-text map of the site for AI search/answer engines
+    (llmstxt.org format). Built from the sitemap so it never drifts; UK pages only."""
+    from html import unescape
+    urls = re.findall(r'<loc>([^<]+)</loc>', (ROOT / 'sitemap.xml').read_text(encoding='utf-8'))
+    pages, posts = [], []
+    for u in urls:
+        path = u[len(SITE_ORIGIN):]
+        if path.startswith('/us/') or path == '/us/':
+            continue
+        f = ROOT / path.strip('/') / 'index.html' if path != '/' else ROOT / 'index.html'
+        html = f.read_text(encoding='utf-8')
+        t = re.search(r'<title>(.*?)</title>', html, re.S)
+        d = re.search(r'<meta name="description" content="([^"]*)"', html)
+        title = unescape(t.group(1)).replace(' · Kaizan', '') if t else path
+        line = f'- [{title}]({u})' + (f': {unescape(d.group(1))}' if d else '')
+        (posts if path.startswith('/blog/') and path != '/blog/' else pages).append(line)
+    out = ['# Kaizan', '',
+           '> Kaizan is client super intelligence for professional services firms: AI that turns client '
+           'conversations and data into early warnings on relationship health, churn risk and growth opportunities.',
+           '', '## Key pages', '', *pages, '', '## Blog', '', *posts, '']
+    (ROOT / 'llms.txt').write_text('\n'.join(out), encoding='utf-8')
+    print(f'  (llms.txt: {len(pages)} pages, {len(posts)} posts)')
+
+
 # Page-specific US variants of a JSON-LD block (keyed by the script's data-kz-ld
 # id), for schema that carries locale-specific facts such as USD prices.
 US_LD_BUILDERS: dict = {}
@@ -7249,6 +7275,70 @@ def _cs_modules_html() -> str:
     </section>'''
 
 
+def _wp_inner_html() -> str:
+    """Copy + two-field form for the 2026 Client Service Report (white paper).
+    Shared by the homepage strip and the blog pop-up; submits to the same
+    HubSpot form as /white-paper/ via assets/js/wp-strip.js."""
+    roles = ['Head of Client Services / CS', 'Client Success Manager', 'Account Director / Manager',
+             'Founder / CEO', 'Head of AI / CTO', 'VP / Commercial Leader', 'Marketing / Operations',
+             'Agency Leader', 'Other']
+    options = '\n'.join(f'<option>{E(r)}</option>' for r in roles)
+    pages = ''.join(f'<img src="/assets/img/white-paper/{n}.png" alt="" width="92" loading="lazy">'
+                    for n in ('report-page-01', 'report-page-08', 'report-page-care'))
+    return f'''<div class="wp-strip__in">
+        <div class="wp-strip__copy">
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free</span>
+          <h2 class="wp-strip__title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
+          <div class="wp-strip__pages" aria-hidden="true">{pages}</div>
+        </div>
+        <form class="wp-strip__form" novalidate>
+          <h3>Download the 2026 Report</h3>
+          <p class="wp-strip__sub">Two fields. Straight to your inbox.</p>
+          <label class="wp-strip__field"><span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="wp-strip__err" role="alert"></div></label>
+          <label class="wp-strip__field"><span>Job title</span>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              {options}
+            </select>
+            <div class="wp-strip__err" role="alert"></div></label>
+          <button type="submit">Get the report &rarr;</button>
+          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>'''
+
+
+def _wp_assets(tag: str) -> str:
+    css_v = asset_v('assets/css/wp-strip.css')
+    js_v = asset_v('assets/js/wp-strip.js')
+    return {'css': f'<link rel="stylesheet" href="/assets/css/wp-strip.css{css_v}">',
+            'js': f'<script defer src="/assets/js/wp-strip.js{js_v}"></script>'}[tag]
+
+
+def _wp_strip_html() -> str:
+    """Lead strip between the integrations grid and the FAQ."""
+    return f'''{_wp_assets('css')}
+    <section class="wp-strip" id="report">
+      {_wp_inner_html()}
+    </section>
+    {_wp_assets('js')}'''
+
+
+def _wp_popup_html() -> str:
+    """Blog pop-up (bottom-right card) version of the report form, shown by wp-strip.js after 5s on
+    the page (once per visitor until dismissed or submitted)."""
+    return f'''{_wp_assets('css')}
+    <div class="wp-popup" id="wp-popup" hidden>
+      <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
+        <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
+        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"').replace('<p class="wp-strip__sub">Two fields. Straight to your inbox.</p>', '')}
+      </div>
+    </div>
+    {_wp_assets('js')}'''
+
+
 def _cs_integrations_faq_html() -> str:
     """'Works with the tools you already use' icon grid + an FAQ accordion.
     The accordion uses native <details>/<summary> — no JS needed."""
@@ -7294,6 +7384,9 @@ def _cs_integrations_faq_html() -> str:
         <h2 class="cs-int-title">Works with the tools you already use</h2>
         <div class="cs-int-grid">{icons_html}</div>
       </div>
+    </section>
+    {_wp_strip_html()}
+    <section class="cs-integrations">
       <div class="cs-faq-inner">
         <h2 class="cs-faq-title">Frequently asked questions</h2>
         {faq_html}
@@ -7776,7 +7869,7 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           @media (max-width: 760px) { .cs-modules-title { max-width: 100%; } }
 
           .cs-integrations { background: var(--kz-paper); padding: 0 var(--kz-gutter); }
-          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 0; text-align: center; }
+          .cs-int-inner { max-width: 1280px; margin: 0 auto; padding: 88px 0 72px; text-align: center; }
           .cs-int-title { margin: 0 0 44px; font-size: 34px; line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
           .cs-int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
           .cs-int-icon { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 92px; }
@@ -8100,6 +8193,7 @@ def main():
     print('  (referral partner page → /referral-partners/ [GBP] + /us/referral-partners/ [USD])')
 
     write_sitemap()
+    write_llms_txt()
     print('Done.')
 
 

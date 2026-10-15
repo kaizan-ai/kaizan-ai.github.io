@@ -1,5 +1,6 @@
 ---
 title: How can AI be used to optimise partnerships with Resellers?
+meta_title: Using AI to Strengthen Reseller Partnerships
 date: 2023-07-18
 category: POV
 excerpt: In this article we’ll explore the value of reseller partnerships for businesses and the key benefits of working with a reseller. We’ll also discuss the ways in which to…
@@ -89,7 +90,7 @@ Let’s take a look at some of the ways in which AI can be utilised when working
 
 ## Performance Monitoring and Alerts
 
-AI algorithms developed in technologies such as [Kaizan](http://Kaizan.ai) can monitor reseller performance metrics in real-time, automatically identify deviations from predefined targets or benchmarks, and send alerts or notifications to relevant stakeholders. This enables proactive monitoring and timely intervention to address performance issues, maintain compliance, and ensure that resellers are meeting their obligations.
+AI algorithms developed in technologies such as [Kaizan](https://kaizan.ai) can monitor reseller performance metrics in real-time, automatically identify deviations from predefined targets or benchmarks, and send alerts or notifications to relevant stakeholders. This enables proactive monitoring and timely intervention to address performance issues, maintain compliance, and ensure that resellers are meeting their obligations.
 
 ## Automated Communication and Collaboration
 

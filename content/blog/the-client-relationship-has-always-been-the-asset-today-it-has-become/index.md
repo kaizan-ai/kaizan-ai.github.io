@@ -1,5 +1,6 @@
 ---
 title: The client relationship has always been the asset. Today it has become an operating system.
+meta_title: The Client Relationship Is Now an Operating System
 date: 2026-06-22
 author: Lia
 category: POV

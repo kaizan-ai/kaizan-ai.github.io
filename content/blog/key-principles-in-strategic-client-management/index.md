@@ -71,7 +71,7 @@ One way to overcome this challenge is to create a daily or weekly schedule and s
 
 Another option is to use a prioritisation grid to differentiate important tasks from urgent ones, then focus on important over urgent whenever you can.
 
-There are many tools designed to increase the productivity of client service teams, they all vary and offer a range of different features. [Kaizan](http://kaizan.ai) is a client intelligence tool created for client service teams, which helps to increase their productivity by reducing time spent on administrative tasks. Kaizan automatically captures meeting minutes and generates a meeting summary with action items which can be emailed directly to clients, saving significant time.
+There are many tools designed to increase the productivity of client service teams, they all vary and offer a range of different features. [Kaizan](https://kaizan.ai) is a client intelligence tool created for client service teams, which helps to increase their productivity by reducing time spent on administrative tasks. Kaizan automatically captures meeting minutes and generates a meeting summary with action items which can be emailed directly to clients, saving significant time.
 
 ## Client expectations
 

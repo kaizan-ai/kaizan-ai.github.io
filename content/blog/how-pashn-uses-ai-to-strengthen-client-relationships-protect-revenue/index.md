@@ -1,5 +1,6 @@
 ---
 title: How PASHN Uses AI to Strengthen Client Relationships, Protect Revenue, and Save Time
+meta_title: PASHN: AI to Protect Revenue and Save Time
 date: 2026-05-18
 author: Lia
 category: POV
