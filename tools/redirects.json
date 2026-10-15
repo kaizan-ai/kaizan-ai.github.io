@@ -1,4 +1,6 @@
 {
+ "/customer-success-software": "/client-success-software/",
+ "/us/customer-success-software": "/us/client-success-software/",
  "/a-guide-to-segmentation-in-client-success": "/blog/client-segmentation/",
  "/ai-client-data-visibility-kitefactory": "/blog/how-the-kite-factory-uses-ai-to-unify-client-data-and-improve/",
  "/ai-client-retention-npdigital": "/blog/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive/",

@@ -6289,7 +6289,7 @@ def _inject_default_schema(html: str, path: str) -> str:
     tm = re.search(r'<time datetime="(\d{4}-\d{2}-\d{2})"', html) if 'kz-policy' in html else None
     nodes = [ld_webpage(name, desc, _LD_KINDS.get(path, 'WebPage'),
                         dateModified=tm.group(1) if tm else None)]
-    if path == '/customer-success-software/':
+    if path == '/client-success-software/':
         nodes.append(ld_software(desc))
     return html.replace('</head>', ld_script(nodes) + '\n</head>', 1)
 
@@ -6837,7 +6837,7 @@ def playbooks_sections_html() -> str:
 
 
 def _cs_hero_copy_html(depth: int) -> str:
-    """Hero-v2 headline/lede/CTA for the standalone /customer-success-software/
+    """Hero-v2 headline/lede/CTA for the standalone /client-success-software/
     landing page. Ported from the homepage-redesign branch's
     trial_hero_copy_html() under a new name — kept separate (rather than
     overwriting the shared trial_hero_copy_html(), which render_home() and
@@ -7196,7 +7196,7 @@ def _cs_integrations_faq_html() -> str:
 
 
 def render_customer_success_software(keep_nav: bool = False) -> str:
-    """Standalone SEO landing page at /customer-success-software/, targeting
+    """Standalone SEO landing page at /client-success-software/, targeting
     the "customer success software" search term with the same hero-v2 /
     playbooks / stats-band / testimonial design reviewed throughout this
     project's homepage-redesign work (PR #85) — but built independently of
@@ -7827,7 +7827,7 @@ def main():
     print(f'Building Kaizan site → {ROOT}')
 
     # Top-level pages
-    # Homepage is a replica of the /customer-success-software/ landing page.
+    # Homepage is a replica of the /client-success-software/ landing page.
     write(ROOT / 'index.html',                  render_customer_success_software(keep_nav=True))
     write(ROOT / 'product' / 'index.html',      render_product())
     write(ROOT / 'integrations' / 'index.html', render_integrations())
@@ -7849,7 +7849,7 @@ def main():
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
     write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
-    write(ROOT / 'customer-success-software' / 'index.html',
+    write(ROOT / 'client-success-software' / 'index.html',
                                                  render_customer_success_software())
     write(ROOT / '404.html',                    render_404())
 
