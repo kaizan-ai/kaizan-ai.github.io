@@ -417,6 +417,102 @@
     requestAnimationFrame(tick);
   }
 
+  // ── Swipe rows (phones): any [data-swipe-row] that scrolls sideways gets
+  // ‹ › buttons and dots underneath, so it's clear there is more to see.
+  // The bar hides itself whenever the row isn't actually scrolling.
+  function initSwipeRows() {
+    document.querySelectorAll('[data-swipe-row]').forEach(function (row) {
+      // Skip decorative children (e.g. absolutely positioned animation anchors).
+      var items = [].slice.call(row.children).filter(function (el) {
+        return el.getAttribute('aria-hidden') !== 'true' && getComputedStyle(el).position !== 'absolute';
+      });
+      if (items.length < 2) return;
+      var bar = document.createElement('div');
+      bar.className = 'kz-swipe-ctrl';
+      bar.innerHTML =
+        '<button type="button" class="kz-swipe-btn" data-dir="-1" aria-label="Previous">&lsaquo;</button>' +
+        '<span class="kz-swipe-dots">' + items.map(function (_, i) {
+          return '<button type="button" class="kz-swipe-dot" aria-label="Go to ' + (i + 1) + '"></button>';
+        }).join('') + '</span>' +
+        '<button type="button" class="kz-swipe-btn" data-dir="1" aria-label="Next">&rsaquo;</button>';
+      row.parentNode.insertBefore(bar, row.nextSibling);
+      var dots = [].slice.call(bar.querySelectorAll('.kz-swipe-dot'));
+      var prev = bar.querySelector('[data-dir="-1"]'), next = bar.querySelector('[data-dir="1"]');
+
+      function current() {
+        var x = row.scrollLeft, best = 0, bestD = Infinity;
+        items.forEach(function (el, i) {
+          var d = Math.abs(el.offsetLeft - items[0].offsetLeft - x);
+          if (d < bestD) { bestD = d; best = i; }
+        });
+        return best;
+      }
+      function go(i) {
+        i = Math.max(0, Math.min(items.length - 1, i));
+        row.scrollTo({ left: items[i].offsetLeft - items[0].offsetLeft, behavior: 'smooth' });
+      }
+      function sync() {
+        var c = current();
+        dots.forEach(function (d, i) { d.classList.toggle('is-on', i === c); });
+        prev.disabled = row.scrollLeft <= 2;
+        next.disabled = row.scrollLeft >= row.scrollWidth - row.clientWidth - 2;
+        bar.hidden = row.scrollWidth <= row.clientWidth + 4;
+      }
+      prev.addEventListener('click', function () { go(current() - 1); });
+      next.addEventListener('click', function () { go(current() + 1); });
+      dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+      var raf = 0;
+      row.addEventListener('scroll', function () {
+        if (raf) return;
+        raf = requestAnimationFrame(function () { raf = 0; sync(); });
+      }, { passive: true });
+      window.addEventListener('resize', sync);
+      // Rows inside hidden tab panels only get a size once shown.
+      document.addEventListener('click', function () { setTimeout(sync, 50); });
+      sync();
+    });
+  }
+
+  // ── Homepage explainer sections on phones: a bubble rides the numbered
+  // thread down the left edge, staying level with where the reader is looking
+  // (just above the middle of the screen) and taking the colour of the section
+  // it's in. The line, dots and bubble are styled for phones only.
+  function initPbThread() {
+    var root = document.getElementById('sceneRoot');
+    if (!root || !window.matchMedia) return;
+    var phone = window.matchMedia('(max-width: 560px)');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var secs = [].slice.call(root.children).filter(function (el) { return el.tagName === 'SECTION'; });
+    if (!secs.length) return;
+    var bub = document.createElement('div');
+    bub.className = 'kz-pb-thread-bubble';
+    bub.setAttribute('aria-hidden', 'true');
+    root.appendChild(bub);
+    var raf = 0;
+    function place() {
+      raf = 0;
+      if (!phone.matches) return;
+      var r = root.getBoundingClientRect();
+      var first = secs[0].querySelector('h2'), last = secs[secs.length - 1];
+      var top = first ? first.getBoundingClientRect().top - r.top : 0;
+      var lr = last.getBoundingClientRect();
+      var bottom = (lr.top + lr.height / 2) - r.top;
+      var y = window.innerHeight * 0.45 - r.top;
+      y = Math.max(top, Math.min(bottom, y));
+      bub.style.transform = 'translateY(' + Math.round(y) + 'px)';
+      for (var i = secs.length - 1; i >= 0; i--) {
+        if (secs[i].getBoundingClientRect().top - r.top <= y) {
+          bub.style.background = getComputedStyle(secs[i]).getPropertyValue('--pb-c') || '';
+          break;
+        }
+      }
+    }
+    function req() { if (!raf) raf = requestAnimationFrame(place); }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    place();
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
@@ -430,6 +526,8 @@
     initPbConnectors();
     initSecurityTabs();
     initVideoLightbox();
+    initSwipeRows();
+    initPbThread();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

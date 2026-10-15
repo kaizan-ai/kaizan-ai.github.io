@@ -22,16 +22,19 @@
   }
 
   // ── CARE cards: spotlight in turn ─────────────────────────────────────
-  // When the grid scrolls into view, each card's video plays once in order
-  // (C → A → R → E, repeating); the playing card is highlighted and the rest
-  // rest on their posters. Hovering or tapping a card jumps to it. Pauses
-  // when scrolled away. With reduced motion, nothing auto-advances: cards
-  // play only on hover/tap.
+  // Each card's video plays once, in order (C → A → R → E, repeating), with
+  // the playing card highlighted and the rest on their posters. A card only
+  // starts once its video is at least half on screen, so the cycle doesn't
+  // run ahead while the visitor is still reading. On phones the cards sit in
+  // a swipe row: finishing a card slides the row to the next one, and
+  // swiping to a card plays it. Hover/tap jumps to a card. With reduced
+  // motion nothing auto-plays: cards play only on hover/tap.
   function initCareSpotlight() {
     var cards = [].slice.call(document.querySelectorAll('.kz-care-card')).filter(function (c) {
       return c.querySelector('video[data-hover-play]');
     });
     if (!cards.length) return;
+    var grid = cards[0].parentElement;
     var vids = cards.map(function (c) {
       var v = c.querySelector('video');
       // Force the muted/playsinline PROPERTIES (the attributes alone don't
@@ -40,8 +43,11 @@
       return v;
     });
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var active = -1, inView = false, started = false;
+    var vis = vids.map(function () { return 0; });
+    var active = -1;
 
+    function isRow() { return grid.scrollWidth > grid.clientWidth + 4; }
+    function seen(i) { return vis[i] >= 0.5; }
     function play(v) {
       v.muted = true;
       var p = v.play();
@@ -59,11 +65,18 @@
       try { vids[i].currentTime = 0; } catch (e) {}
       play(vids[i]);
     }
+    function slideTo(i) {
+      if (!isRow()) return;
+      grid.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: 'smooth' });
+    }
+
     vids.forEach(function (v, i) {
       v.addEventListener('ended', function () {
         if (i !== active) return;
-        if (reduced || !inView) { rest(i); active = -1; return; }
-        activate((i + 1) % cards.length);
+        if (reduced || !seen(i)) { rest(i); active = -1; return; }
+        var next = (i + 1) % cards.length;
+        slideTo(next);
+        activate(next);
       });
     });
     cards.forEach(function (c, i) {
@@ -72,20 +85,21 @@
     });
 
     if (reduced) return;
-    var grid = cards[0].parentElement;
-    if (!('IntersectionObserver' in window)) { inView = true; activate(0); return; }
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        inView = e.isIntersecting;
-        if (inView) {
-          if (!started) { started = true; activate(0); }
-          else if (active !== -1) play(vids[active]);
-          else activate(0);
-        } else if (active !== -1) {
-          vids[active].pause();
-        }
-      });
-    }, { threshold: 0.4 }).observe(grid);
+    if (!('IntersectionObserver' in window)) { activate(0); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { vis[vids.indexOf(e.target)] = e.intersectionRatio; });
+      if (active !== -1 && seen(active)) {
+        if (vids[active].paused && !vids[active].ended) play(vids[active]);
+        return;
+      }
+      // Active card is off screen (scrolled away, or swiped past): play the
+      // first card that is in view instead, or pause until one is.
+      for (var i = 0; i < cards.length; i++) {
+        if (seen(i)) { activate(i); return; }
+      }
+      if (active !== -1) vids[active].pause();
+    }, { threshold: [0, 0.5, 1] });
+    vids.forEach(function (v) { io.observe(v); });
   }
 
   // ── Roles: "See how we can help you" — click a role, reveal its loops ───
@@ -136,11 +150,46 @@
     window.addEventListener('scroll', start, { passive: true });
   }
 
+  // ── Section bubbles: each pillar section's label is a speech bubble that
+  // matches a hero bubble. As the section scrolls into view the bubble drifts
+  // in from above-left (the hero's direction) and settles into place; it is
+  // scroll-linked, so scrolling back up sends it back. Reduced motion: static.
+  function initSectionBubbles() {
+    var badges = ['#ai-assistant', '#care', '#health-model', '#client-360'].map(function (id) {
+      return document.querySelector(id + ' .kz-eyebrow');
+    }).filter(Boolean);
+    if (!badges.length) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var raf = 0;
+    function ease(t) { return 1 - Math.pow(1 - t, 3); }
+    function place() {
+      raf = 0;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      badges.forEach(function (b, i) {
+        // Measure the resting position (ignore the current transform).
+        var top = b.getBoundingClientRect().top - (parseFloat(b.dataset.dy) || 0);
+        // 0 when the label is at the bottom of the screen, 1 by 62% of the way up.
+        var t = Math.max(0, Math.min(1, (vh - top) / (vh * 0.38)));
+        var e = ease(t);
+        var dx = (1 - e) * -70, dy = (1 - e) * -120;
+        var rot = (1 - e) * (i % 2 ? 9 : -9);
+        b.dataset.dy = dy;
+        b.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) rotate(' + rot.toFixed(1) + 'deg) scale(' + (0.6 + 0.4 * e).toFixed(3) + ')';
+        b.style.opacity = Math.min(1, t * 1.6).toFixed(2);
+      });
+    }
+    function req() { if (!raf) raf = requestAnimationFrame(place); }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    place();
+  }
+
   function boot() {
     initBubbleReveal();
     initCareSpotlight();
     initScrollPlayVideos();
     initRoles();
+    initSectionBubbles();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

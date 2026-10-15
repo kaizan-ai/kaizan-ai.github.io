@@ -3521,3 +3521,59 @@ h1:not(.kz-hero-v2-h1) { text-wrap: balance; }
    the default for unstyled text and form fields. */
 body { font-weight: 500; }
 input, textarea, select, button { font-weight: inherit; }
+
+/* ── Swipe rows (phones) ──────────────────────────────────────────
+   Any grid marked data-swipe-row becomes a sideways, snap-scrolling row on
+   phones, with ‹ dots › controls added under it by site.js (initSwipeRows).
+   !important so it wins over each page's own grid columns. */
+.kz-swipe-ctrl { display: none; }
+@media (max-width: 560px) {
+  [data-swipe-row] {
+    display: grid !important; grid-template-columns: none !important;
+    grid-auto-flow: column; grid-auto-columns: 84%;
+    gap: 14px !important; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--kz-gutter)) !important;
+    padding: 16px var(--kz-gutter) 18px !important;
+    scroll-padding-inline: var(--kz-gutter);
+  }
+  [data-swipe-row]::-webkit-scrollbar { display: none; }
+  [data-swipe-row] > * { scroll-snap-align: start; min-width: 0; }
+
+  .kz-swipe-ctrl {
+    display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 6px;
+    color: var(--kz-ink);
+  }
+  .kz-swipe-ctrl[hidden] { display: none; }
+  .kz-swipe-btn {
+    width: 40px; height: 40px; border-radius: 50%; flex: none;
+    border: 2px solid currentColor; background: transparent; color: inherit;
+    font-size: 24px; line-height: 1; font-weight: 700; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; padding: 0 0 3px;
+  }
+  .kz-swipe-btn:disabled { opacity: .3; cursor: default; }
+  .kz-swipe-dots { display: inline-flex; gap: 8px; }
+  .kz-swipe-dot {
+    width: 8px; height: 8px; border-radius: 999px; border: 0; padding: 0;
+    color: inherit;   /* iOS gives buttons a blue text colour by default */
+    background: currentColor; opacity: .3; cursor: pointer; transition: width .2s, opacity .2s;
+  }
+  .kz-swipe-dot.is-on { width: 22px; opacity: 1; }
+
+  /* Research page: dataset stats 2×2, audience cards 2 per row */
+  .kz-stat-row { grid-template-columns: 1fr 1fr !important; }
+  .kz-research-aud { grid-template-columns: 1fr 1fr !important; gap: 10px !important; }
+  .kz-research-aud-card { padding: 16px !important; }
+  .kz-research-aud-card .kz-h3 { font-size: 15px; }
+  .kz-research-aud-card p { font-size: 12.5px; }
+}
+
+/* ── Footer on phones: brand across the top, link groups two per row,
+   side padding matching the page gutter ── */
+@media (max-width: 560px) {
+  .kz-footer { padding: 40px var(--kz-gutter) 28px; }
+  .kz-footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 28px; }
+  .kz-footer-brand { grid-column: 1 / -1; }
+  .kz-footer-brand .blurb, .kz-footer-brand .footer-address { max-width: none; }
+  .kz-footer .col h4 { margin-bottom: 8px; }
+  .kz-footer-bot { flex-direction: column; gap: 8px; line-height: 1.6; }
+}

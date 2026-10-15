@@ -156,3 +156,14 @@
   .kz-int-grid-section, .kz-int-custom, .kz-int-request { padding-top: 48px; padding-bottom: 48px; }
   .kz-int-request .card, .kz-int-api { padding: 28px; }
 }
+
+/* Phones: integration cards 2 per row, compact */
+@media (max-width: 560px) {
+  .kz-int-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
+  .kz-int-tile { padding: 16px 12px; min-height: 0; }
+  .kz-int-tile .front { gap: 10px; }
+  .kz-int-tile .front .logo { width: 64px; height: 64px; border-radius: 14px; }
+  .kz-int-tile .front .logo svg, .kz-int-tile .front .logo img { width: 40px; height: 40px; }
+  .kz-int-tile .name { font-size: 15px; }
+  .kz-int-tile .back .why { font-size: 13px; line-height: 1.4; margin-top: 6px; }
+}

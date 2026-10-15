@@ -25,10 +25,23 @@
 #care .kz-eyebrow,
 #health-model .kz-eyebrow,
 #client-360 .kz-eyebrow { display: block; }
+/* Section labels are speech bubbles matching the hero's four bubbles (same
+   colour, shape and title). product.js flies each one in from above as its
+   section scrolls into view, as if it travelled down from the hero. */
+#ai-assistant { --badge: #2F5FE0; }
+#care { --badge: #1FA591; }
+#health-model { --badge: #7C5CFC; }
+#client-360 { --badge: #E8432B; }
 #ai-assistant .kz-eyebrow,
+#care .kz-eyebrow,
 #health-model .kz-eyebrow,
-#client-360 .kz-eyebrow { color: rgba(23,21,17,.72); }
-#care .kz-eyebrow { color: rgba(255,251,240,.75); }
+#client-360 .kz-eyebrow {
+  width: fit-content; padding: 11px 19px 12px; border-radius: 18px 18px 18px 6px;
+  background: var(--badge); color: #FFFFFF;
+  font-family: var(--kz-sans); font-size: 17px; font-weight: 700; letter-spacing: -0.015em; text-transform: none;
+  box-shadow: 0 10px 22px -6px rgba(0,0,0,.3);
+  will-change: transform, opacity;
+}
 
 /* Heavier closing CTA headline. */
 .kz-cta-band-md .head { font-weight: 500; }
@@ -66,6 +79,20 @@
   color: var(--kz-ink); margin-bottom: 10px;
 }
 .kz-helpers-detail .behaviour .body { font-size: 15px; line-height: 1.55; color: var(--kz-ink); font-weight: 500; }
+/* Stack text over video below 1024px. Needed here because the two-column rule
+   above (this file loads after site.css) overrides site.css's own stacking. */
+@media (max-width: 1024px) {
+  .kz-helpers-detail { grid-template-columns: 1fr; gap: 28px; }
+  .kz-helpers-detail .blurb, .kz-helpers-detail .behaviour { max-width: none; }
+}
+@media (max-width: 560px) {
+  .kz-helpers-detail .name { font-size: 36px; }
+  .kz-helpers-detail .blurb { font-size: 16px; }
+  /* The recordings are desktop-sized with black margins: run edge to edge and
+     zoom slightly to trim the margins so the card reads larger on phones. */
+  .kz-helper-video { margin-inline: calc(-1 * var(--kz-gutter)); border-radius: 0; box-shadow: none; }
+  .kz-helper-video video { transform: scale(1.06); }
+}
 /* Looping video that replaces the signal-feed graphic in each helper panel. */
 .kz-helper-video {
   border-radius: 14px; overflow: hidden; background: #000;
@@ -133,10 +160,20 @@
 }
 .kz-client-news-media video { display: block; width: 100%; height: 100%; object-fit: contain; }
 .kz-client-news-text { padding: 56px 0; display: flex; flex-direction: column; justify-content: center; }
+/* Phone/tablet: eyebrow and heading above the video, then the rest of the
+   copy. The text block is flattened (display: contents) so its children can be
+   reordered around the video. */
 @media (max-width: 860px) {
-  .kz-client-news { grid-template-columns: 1fr; gap: 0; padding: 0; }
-  .kz-client-news-text { padding: 28px var(--kz-gutter) 44px; }
+  .kz-client-news { display: flex; flex-direction: column; gap: 0; padding: 0; }
+  .kz-client-news-text { display: contents; }
+  #client-360 .kz-client-news-text > * { padding-inline: var(--kz-gutter); }
+  #client-360 .kz-client-news-text > .kz-eyebrow { order: 1; padding: 9px 16px 10px; margin: 40px var(--kz-gutter) 0; align-self: flex-start; }
+  .kz-client-news-text > .kz-h2 { order: 2; margin-bottom: 8px; }
+  .kz-client-news-media { order: 3; }
+  .kz-client-news-text > .kz-lede { order: 4; margin-top: 24px !important; }
+  .kz-client-news-text > .kz-prod-drops { order: 5; padding-bottom: 44px; }
 }
+
 
 /* Hero pillar nav: a line of speech bubbles, spread evenly, gently floating. */
 .kz-pillar-bubbles {
@@ -197,15 +234,9 @@
   display: block; width: 100%; height: 100%;
   object-fit: contain; border-radius: 9px; background: var(--kz-paper);
 }
-.kz-prod-feats {
-  margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 24px;
-}
-.kz-prod-feat h4 { font-size: 15px; font-weight: 600; letter-spacing: -0.015em; }
-.kz-prod-feat p { font-size: 13px; color: var(--kz-mute); margin-top: 5px; line-height: 1.5; font-weight: 500; }
 @media (max-width: 900px) {
   .kz-prod-pillar { grid-template-columns: 1fr; gap: 28px; }
   .kz-prod-pillar.is-reverse .kz-prod-pillar-text { order: 0; }
-  .kz-prod-feats { grid-template-columns: 1fr; gap: 14px; }
 }
 
 /* ── "See how we can help you" — role selector (black band) ────── */
@@ -278,7 +309,6 @@
   margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
   align-items: start; max-width: 560px;
 }
-@media (max-width: 560px) { .kz-prod-drops { grid-template-columns: 1fr; } }
 .kz-prod-drop {
   background: #FFFFFF; border: 1px solid rgba(10,10,10,.1); border-radius: 14px;
   box-shadow: 0 1px 2px rgba(40,30,15,.04);
@@ -315,4 +345,47 @@
 .kz-prod-drop[open]::details-content { block-size: auto; }
 @media (prefers-reduced-motion: reduce) {
   .kz-prod-drop, .kz-prod-drop .tg, .kz-prod-drop::details-content { transition: none; }
+}
+
+/* ── Phones: compact the page ─────────────────────────────────────
+   Lists of four that stacked one per row now sit two by two, and the
+   long card rows (CARE, role cards) become swipeable carousels. */
+@media (max-width: 560px) {
+  /* Section bubbles a touch smaller on phones */
+  #ai-assistant .kz-eyebrow, #care .kz-eyebrow, #health-model .kz-eyebrow, #client-360 .kz-eyebrow {
+    font-size: 15px; padding: 9px 16px 10px; border-radius: 16px 16px 16px 5px;
+  }
+  /* Hero: drop the Book a demo button under the intro (the header has one) */
+  .kz-product-hero-row .cta { display: none; }
+
+  /* Hero product bubbles + Ingest/Analyse/Act/Learn: 2×2 */
+  .kz-pillar-bubbles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .kz-pillar-bubble { max-width: none; padding: 14px; border-radius: 16px 16px 16px 5px; }
+  .kz-pillar-bubble .title { font-size: 15px; }
+  .kz-pillar-bubble .bdesc { font-size: 12.5px; line-height: 1.4; }
+
+  /* AI Assistant dropdowns: keep 2 per row */
+  .kz-prod-drops { gap: 8px; }
+  .kz-prod-drop .t { font-size: 13.5px; }
+
+  /* AI Helpers tabs: 2×2 */
+  .kz-helpers-tab { flex: 1 1 50%; padding: 12px 6px; gap: 10px; }
+  .kz-helpers-tab .glyph { width: 40px; height: 40px; font-size: 20px; }
+  .kz-helpers-tab .glyph svg { width: 20px; height: 20px; }
+  .kz-helpers-tab .label { font-size: 14px; line-height: 1.25; }
+
+  /* Role tabs: smaller pills that wrap, so every role stays visible */
+  .kz-roles-tabs { gap: 8px; margin: 24px 0 28px; }
+  .kz-roles-tab { padding: 8px 14px; font-size: 13.5px; }
+
+  /* Swipe-row controls (site.js): black on the yellow CARE section,
+     yellow on the dark roles section */
+  .kz-swipe-ctrl { color: #0A0A0A; }
+  .kz-roles .kz-swipe-ctrl { color: var(--kz-yellow); }
+
+  /* Security cards: 2 per row */
+  .kz-trust-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kz-trust-card { padding: 16px; gap: 8px; }
+  .kz-trust-card h4 { font-size: 15px; }
+  .kz-trust-card p { font-size: 12.5px; }
 }

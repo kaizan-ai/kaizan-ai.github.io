@@ -1237,7 +1237,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
                 </a>
                 <div class="kz-mega-panel" role="menu">
                   <div>
-                    <a href="{p}product/" class="kz-mega-cta-row">Explore the Kaizan platform <span class="arrow">↗</span></a>
+                    <a href="{p}product/" class="kz-mega-cta-row">Explore the Kaizan platform <span class="arrow"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px"><path d="M3 9L9 3M4 3h5v5"/></svg></span></a>
                     <div class="kz-mega-cols">
                       <div>
                         <div class="kz-mega-label">Applications</div>
@@ -1653,7 +1653,7 @@ def scene_chatbot() -> str:
         </div>
         <div class="kz-mock-input">
           <span class="placeholder">Ask about this client&hellip;</span>
-          <span class="send">↗</span>
+          <span class="send"><svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px"><path d="M3 9L9 3M4 3h5v5"/></svg></span>
         </div>
         <div class="kz-mock-chips">{chips_html}</div>
       </div>
@@ -2767,6 +2767,12 @@ def render_confirmation() -> str:
                      extra_head='<meta name="robots" content="noindex">') + body + page_foot()
 
 
+# AI Helpers tab icons. The heart and gear are drawn as SVG because phones
+# (iOS especially) render the ❤ / ⚙ characters as colour emoji.
+HELPER_ICON_HEART = '<svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'
+HELPER_ICON_GEAR = '<svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>'
+
+
 def render_product() -> str:
     p = relpath(1)
 
@@ -2827,12 +2833,6 @@ def render_product() -> str:
                     f'</div>')
         return '\n'.join(out)
 
-    def _feats(items) -> str:
-        return '\n'.join(
-            f'<div class="kz-prod-feat"><h4>{E(t)}</h4><p>{E(d)}</p></div>'
-            for t, d in items
-        )
-
     def _feats_dropdown(items, group: str) -> str:
         """Features as an exclusive accordion (<details name>): titles show,
         each description drops down on click; all start closed."""
@@ -2848,7 +2848,7 @@ def render_product() -> str:
         return f'''
     <section class="kz-section kz-prod-pillar{rev}" id="{pid}">
       <div class="kz-prod-pillar-text">
-        <div class="kz-eyebrow">{num} · {E(eyebrow)}</div>
+        <div class="kz-eyebrow">{E(eyebrow)}</div>
         <h2 class="kz-h2 kz-h2-lg">{h2_html}</h2>
         <p class="kz-lede">{copy}</p>
         <div class="kz-prod-drops">{_feats_dropdown(feats, pid + '-feats')}</div>
@@ -2892,21 +2892,19 @@ def render_product() -> str:
         dict(k='$', name='ROI Helpers', tag='Grow client ROI', video='assets/video/helpers/roi.mp4', color='#2F5FE0',
              blurb='Agents that read every piece of work, every brief, deck, recap, deliverable, call, across every client, and tell you where the work itself is leaking value. They benchmark across the book, then suggest exactly what would lift output for that one client.',
              evidence='Helpers compare each client&rsquo;s work against the patterns your best work follows, pulled live from your docs, decks, transcripts and outcomes. Continuously learning, so the suggestion for Acme on Friday is sharper than the one on Monday.'),
-        dict(k='❤', name='Relationship Helpers', tag='Deepen relationship strength', video='assets/video/helpers/relationship.mp4', color='#E8432B',
+        dict(k=HELPER_ICON_HEART, name='Relationship Helpers', tag='Deepen relationship strength', video='assets/video/helpers/relationship.mp4', color='#E8432B',
              blurb='Agents that map every stakeholder and act on the gaps. They catch silence, dormant champions and thin coverage, and write the warm re-intro before your weekly review.',
              evidence='Trained on your conversations: who replies fast, who goes quiet, what tone your champions actually use. The longer you run it, the more the helpers sound like your best AM at their best moment.'),
-        dict(k='⚙', name='Growth Helpers', tag='Proactive client growth', video='assets/video/helpers/growth.mp4', color='#1FA591',
+        dict(k=HELPER_ICON_GEAR, name='Growth Helpers', tag='Proactive client growth', video='assets/video/helpers/growth.mp4', color='#1FA591',
              blurb='Agents that listen for the moment a client says something they didn&rsquo;t mean as a buying signal, and turn it into a proactive, client-specific suggestion. Not generic upsell. The next right move for that client, this week.',
              evidence='Suggestions are specific to that client&rsquo;s objectives, history and tone, not a template. Helpers read every conversation across every account, so a cue heard on a Wednesday call shows up as a written-up move on Thursday morning.'),
         dict(k='+', name='Custom Helpers', tag='Build your own', video='assets/video/helpers/custom.mp4', color='#FFB900',
              blurb='Spin up a helper grounded in your data and your objective: onboarding QA, exec read-outs, pitch prep, capacity planning. Describe the outcome; Kaizan assembles the agent.',
              evidence='Custom helpers inherit the same private memory: every doc, deck, call and Slack channel you connect. They keep learning from your outcomes, so each run is more personalised to that client&rsquo;s objectives than the last.'),
     ]
-    def _glyph_fg(c):
-        return '#0A0A0A' if c == '#FFB900' else '#FFFBF0'
     helpers_tabs = '\n'.join(
         f'''<button type="button" class="kz-helpers-tab{" is-active" if i == 0 else ""}" data-helper-tab>
-          <span class="glyph" style="background:{h["color"]};color:{_glyph_fg(h["color"])};">{E(h["k"])}</span>
+          <span class="glyph" style="background:{h["color"]};color:#FFFBF0;">{h["k"] if h["k"].startswith("<svg") else E(h["k"])}</span>
           <div><div class="label">{E(h["tag"])}</div></div>
         </button>''' for i, h in enumerate(helpers)
     )
@@ -2931,7 +2929,7 @@ def render_product() -> str:
     helpers_section = f'''
     <section class="kz-helpers" id="care" data-helpers>
       <div style="max-width:900px;">
-        <div class="kz-eyebrow">02 · AI Helpers</div>
+        <div class="kz-eyebrow">AI Helpers</div>
         <h2 class="kz-h2 kz-h2-lg" style="margin-top:12px;max-width:900px;">AI Helpers built for client growth,<br>acting around the clock.</h2>
         <p class="kz-lede" style="margin-top:18px;max-width:720px;">
           Three packs of AI Helpers, plus your own. Every helper is grounded in your company data:
@@ -2995,14 +2993,14 @@ def render_product() -> str:
     )
     pillar_care = f'''
     <section class="kz-section" id="health-model">
-      <div class="kz-eyebrow">03 · CARE&trade; Client Health Model</div>
+      <div class="kz-eyebrow">Client Health Model</div>
       <h2 class="kz-h2 kz-h2-lg" style="margin-top:12px;max-width:900px;">A self-learning client relationships score, <span class="kz-mark">grounded in your data.</span></h2>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">The unifying score across every Helper.
         It uses your data to measure relationship health and client satisfaction, not someone
         else&rsquo;s benchmark. It learns from your won pitches, kept clients and lost briefs: what
         predicts a healthy engagement in your company. Not a biased RAG status. Re-tuned weekly
         against your data.</p>
-      <div class="kz-care-grid kz-care-grid-lg" id="launchZoneB" style="position:relative;margin-top:48px;">
+      <div class="kz-care-grid kz-care-grid-lg" data-swipe-row id="launchZoneB" style="position:relative;margin-top:48px;">
         {_anchor('bubbleDestA', 'top')}{_anchor('bubbleOriginB', 'bottom')}
         {care_cards_html}
       </div>
@@ -3017,13 +3015,13 @@ def render_product() -> str:
                aria-label="Client News"></video>
       </div>
       <div class="kz-client-news-text">
-        <div class="kz-eyebrow">04 · Client News</div>
+        <div class="kz-eyebrow">Client News</div>
         <h2 class="kz-h2 kz-h2-lg">Market research on every client. <span class="kz-mark">Always-on context.</span></h2>
         <p class="kz-lede" style="margin-top:18px;">Client News continuously researches every
           account (funding, hiring, exec moves, competitor noise, earnings tone, product launches)
           and feeds it into the Helpers as live ground truth. So when CARE&trade; drops, you don&rsquo;t
           just know <em>that</em> something changed: you know <em>what</em>.</p>
-        <div class="kz-prod-feats">{_feats(c360_feats)}</div>
+        <div class="kz-prod-drops">{_feats_dropdown(c360_feats, 'client-news-feats')}</div>
       </div>
     </section>'''
 
@@ -3061,7 +3059,7 @@ def render_product() -> str:
         cards = '\n'.join(card_htmls)
         role_panels.append(
             f'<div class="kz-roles-panel{" is-active" if is_first else ""}" data-role-panel>'
-            f'<div class="kz-roles-grid">{cards}</div></div>'
+            f'<div class="kz-roles-grid" data-swipe-row>{cards}</div></div>'
         )
     roles_tabs_html = '\n'.join(role_tabs)
     roles_panels_html = '\n'.join(role_panels)
@@ -3131,7 +3129,7 @@ def render_product() -> str:
     <section class="kz-section-tight" id="product-hero">
       <div class="kz-eyebrow">PRODUCT · CLIENT SUPER INTELLIGENCE</div>
       <h1 class="kz-h1 kz-h1-xl" style="margin-top:20px;max-width:1180px;">
-        One platform for <span class="kz-mark">AI-first</span><br>
+        One platform for <span class="kz-mark" style="white-space:nowrap">AI-first</span><br>
         client service teams.
       </h1>
       <div class="kz-product-hero-row">
@@ -3290,7 +3288,7 @@ def render_persona(slug: str) -> str:
             video_html = (
                 f'<button class="watch-video" type="button" data-video-btn '
                 f'data-video-src="{E(video_src)}">'
-                f'<span class="play" aria-hidden="true">▶</span> Watch video'
+                f'<span class="play" aria-hidden="true"><svg width="9" height="10" viewBox="0 0 9 10" fill="currentColor" style="display:block"><path d="M0 0l9 5-9 5z"/></svg></span> Watch video'
                 f'</button>'
             )
             break
@@ -3414,7 +3412,7 @@ def render_persona(slug: str) -> str:
     <section class="kz-section" id="persona-love">
       <div class="kz-eyebrow">Why {E(p['role'])} love Kaizan</div>
       <h2 class="kz-h2" style="margin:10px 0 28px;max-width:900px;">{E(p.get('love_h2') or f"The things {p['role_cap']} love.")}</h2>
-      <div class="kz-love-grid{love_cols_cls}">{love_html}</div>
+      <div class="kz-love-grid{love_cols_cls}" data-swipe-row>{love_html}</div>
     </section>
 
     <!-- HOW KAIZAN HELPS -->
@@ -4576,7 +4574,7 @@ def us_pricing_section() -> str:
           <span class="kzp-tag">✓ New: 14-day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
-        <div class="kzp-grid">{tiers_html}</div>
+        <div class="kzp-grid" data-swipe-row>{tiers_html}</div>
         <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier for a range of company sizes. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
       </div>
     </section>'''
@@ -4893,7 +4891,7 @@ def render_pricing() -> str:
           <span class="kzp-tag">✓ New: 14 day pilot, free of charge</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
-        <div class="kzp-grid">{tiers_html}</div>
+        <div class="kzp-grid" data-swipe-row>{tiers_html}</div>
         <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier for a range of company sizes. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
       </div>
     </section>'''
@@ -5629,7 +5627,7 @@ def render_research() -> str:
         CARE: how the patterns cluster.
       </h2>
       <p class="kz-lede" style="margin-bottom:36px;">Eleven behaviours, four pillars: the structure behind every top-decile account team.</p>
-      <div class="kz-research-care">{care_html}</div>
+      <div class="kz-research-care" data-swipe-row>{care_html}</div>
     </section>
 
     <section class="kz-section">
@@ -7057,7 +7055,7 @@ def _cs_trial_form_html(depth: int) -> str:
             <div class="kz-trial-row">
               <div class="kz-trial-field">
                 <label for="mce-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
-                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+                <input id="mce-EMAIL" name="EMAIL" type="email" placeholder="you@work.com" autocomplete="email" required>
               </div>
               <div class="kz-trial-field">
                 <label for="mce-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
@@ -7510,6 +7508,15 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
     <!-- HERO -->
     <section class="kz-hero kz-hero--trial">
       {_cs_hero_copy_html(0, home=keep_nav)}
+      <!-- Phones: the reel sits here, above the trial form (the full-width reel
+           section further down is hidden on phones). -->
+      <div class="kz-reel kz-hero-reel-m">
+        <video class="kz-reel-video" muted loop playsinline preload="none"
+               poster="assets/video/hero-intro-poster.jpg{asset_v('assets/video/hero-intro-poster.jpg')}"
+               data-play-inview aria-label="Kaizan product overview">
+          <source src="assets/video/hero-intro.mp4{asset_v('assets/video/hero-intro.mp4')}" type="video/mp4">
+        </video>
+      </div>
       <div class="kz-trial-col">
         <span class="kz-trial-bubble" aria-hidden="true"><span></span><span></span></span>
         {_cs_trial_form_html(0)}
@@ -7708,7 +7715,23 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           @media (prefers-reduced-motion: reduce) { .kz-why-icon { animation: none; } }
           .kz-statsband { font-family: var(--kz-sans); }
           @media (max-width: 860px) { .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; } }
-          @media (max-width: 520px) { .kz-statsband-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 560px) {
+            /* Phones: stats in an even 2×3 grid with thin dividers, numbers and
+               labels sized so every cell reads the same. */
+            .kz-statsband > section { padding: 52px var(--kz-gutter) 48px !important; }
+            .kz-statsband h2 { font-size: 24px !important; line-height: 1.25; margin-bottom: 28px !important; }
+            .kz-statsband .kz-statsband-grid { grid-template-columns: 1fr 1fr !important; gap: 0 !important; }
+            .kz-statsband .kz-statsband-grid > div { padding: 20px 10px; }
+            .kz-statsband .kz-statsband-grid > div:nth-child(even) { border-left: 1px solid rgba(255,255,255,.16); }
+            .kz-statsband .kz-statsband-grid > div:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.16); }
+            .kz-statsband .kz-statsband-grid > div > svg { margin-bottom: 8px !important; }
+            .kz-statsband .kz-statsband-grid > div > div:first-of-type > div {
+              font-size: 38px !important; line-height: 1 !important; font-variant-numeric: tabular-nums;
+            }
+            .kz-statsband .kz-statsband-grid > div > div:last-child {
+              font-size: 13.5px !important; line-height: 1.4; margin-top: 8px !important; color: rgba(255,255,255,.78) !important;
+            }
+          }
           .kz-pb { position: relative; overflow: hidden; }
           .kz-pb h2, .kz-pb h3 { font-family: var(--kz-display); }
           .kz-pb h2 { font-weight: 700 !important; letter-spacing: -0.02em; }
@@ -7735,9 +7758,65 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
           }
           @media (max-width: 560px) {
-            .kz-why-grid { grid-template-columns: 1fr; row-gap: 0; }
-            .kz-why-card { border-left: none; border-top: 1px solid var(--kz-line); padding: 32px 16px; }
-            .kz-why-card:first-child { border-top: none; }
+            /* Phones: benefits 2×2, compact */
+            .kz-why-grid { grid-template-columns: 1fr 1fr; row-gap: 0; }
+            .kz-why-card { border-left: none; padding: 22px 10px; gap: 10px; }
+            .kz-why-card:nth-child(even) { border-left: 1px solid var(--kz-line); }
+            .kz-why-grid .kz-why-card { border-top: none; }
+            .kz-why-grid .kz-why-card:nth-child(n+3) { border-top: 1px solid var(--kz-line); }
+            .kz-why-icon { width: 48px; height: 48px; }
+            .kz-why-card-title { font-size: 16px; }
+            .kz-why-card-desc { font-size: 13.5px; }
+          }
+          @media (max-width: 560px) {
+            /* Phones: feature sections (#sceneRoot). The travelling bubbles fly
+               across the text in a single column, so they're hidden; spacing,
+               headings and illustrations are scaled down to suit the screen. */
+            #sceneRoot .bubbleTraveler { display: none !important; }
+            #sceneRoot > section { padding: 44px var(--kz-gutter) 52px calc(var(--kz-gutter) + 34px) !important; }
+            /* Numbered thread: a line down the left edge links the four sections,
+               with a numbered dot in each section's colour at its heading. A small
+               bubble rides the line as you scroll (site.js initPbThread). */
+            #sceneRoot { counter-reset: pbstep; }
+            #sceneRoot > section { counter-increment: pbstep; --pb-c: #2F5FE0; }
+            #sceneRoot > section:nth-of-type(2) { --pb-c: #1FA591; }
+            #sceneRoot > section:nth-of-type(3) { --pb-c: #E8432B; }
+            #sceneRoot > section:nth-of-type(4) { --pb-c: #7C5CFC; }
+            #sceneRoot > section::before {
+              content: ""; position: absolute; top: 0; bottom: 0; z-index: 0;
+              left: calc(var(--kz-gutter) + 10px); width: 2px; background: rgba(23,21,17,.12);
+            }
+            #sceneRoot > section:first-of-type::before { top: 56px; }
+            #sceneRoot > section:last-of-type::before { bottom: 50%; }
+            #sceneRoot > section h2 { position: relative; }
+            #sceneRoot > section h2::before {
+              content: counter(pbstep); position: absolute; left: -35px; top: 3px;
+              width: 24px; height: 24px; border-radius: 50%;
+              background: var(--pb-c); color: #fff; box-shadow: 0 0 0 4px var(--kz-paper, #FFFBF0);
+              font-size: 13px; font-weight: 700; line-height: 24px; text-align: center; letter-spacing: 0;
+            }
+            #sceneRoot .kz-pb-thread-bubble {
+              display: block; position: absolute; z-index: 3; top: 0; pointer-events: none;
+              left: calc(var(--kz-gutter) - 4px); width: 30px; height: 22px;
+              border-radius: 10px 10px 10px 4px; background: #2F5FE0;
+              box-shadow: 0 6px 14px rgba(0,0,0,.22); transition: background .3s ease;
+              will-change: transform;
+            }
+            #sceneRoot .kz-pb-thread-bubble::before, #sceneRoot .kz-pb-thread-bubble::after {
+              content: ""; position: absolute; left: 6px; height: 2px; border-radius: 2px; background: rgba(255,255,255,.9);
+            }
+            #sceneRoot .kz-pb-thread-bubble::before { top: 7px; right: 6px; }
+            #sceneRoot .kz-pb-thread-bubble::after { top: 12px; right: 12px; background: rgba(255,255,255,.65); }
+            #sceneRoot > section > div { gap: 28px !important; }
+            #sceneRoot h2 { font-size: 30px !important; }
+            #sceneRoot [style*="flex: 1 1 440px"] { min-width: 0 !important; }
+            #sceneRoot [style*="position: relative; width: 100%; max-width"] { zoom: .85; }
+            /* Spot-risk illustration: its green bubble sits above the box, over the
+               "Book a demo" link once stacked, so give it room. */
+            #sceneRoot #launchZoneB { margin-top: 48px; }
+            /* Tool icons: 4 per row */
+            .cs-int-grid { gap: 14px 6px !important; }
+            .cs-int-icon { width: 74px !important; }
           }
           .kz-trial {
             position: relative; overflow: hidden; z-index: 1;
@@ -7806,14 +7885,51 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             .kz-hero--trial { grid-template-columns: 1fr; row-gap: 36px; }
             .kz-hero--trial .kz-trial { max-width: 640px; }
           }
+          .kz-hero-reel-m { display: none; }
+          .kz-pb-thread-bubble { display: none; }
           @media (max-width: 768px) {
             .kz-hero-v2-h1 { font-size: 34px; }
             .kz-hero-br { display: none; }
             .kz-hero-v2-lede { font-size: 17px; }
-            .kz-hero-deco, .kz-trial-bubble { display: none; }
+            .kz-trial-bubble { display: none; }
             .kz-trial { padding: 28px 22px 24px; }
+            /* Reel moves up into the hero, above the trial form */
+            .kz-hero-reel-m { display: block; border-radius: 14px; overflow: hidden; }
+            .kz-hero-reel-m .kz-reel-video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #000; }
+            .kz-reel-section { display: none; }
+            /* Floating bubbles framing the heading (room made above it) */
+            .kz-hero.kz-hero--trial { padding-top: 18px; }   /* bubbles above the heading supply the top space */
+            .kz-hero-copy--v2 { padding-top: 64px; }
+            /* Tighten the run from the trial box, past the client logos, to the
+               next section (the reel that sat between them moved up). */
+            .kz-marquee { margin-top: 4px; padding-top: 12px; padding-bottom: 8px; }
+            .kz-why { padding-top: 40px; }
+            .kz-hero-copy .kz-hero-deco { display: block; transform: none; }  /* site.css hides it on phones */
+            .kz-hero-bubble { padding: 9px 11px; }
+            .kz-hero-bubble span { height: 5px; }
+            .kz-hero-bubble span:first-child { margin-bottom: 6px; }
+            .kz-hero-bubble--blue { left: -6px; top: 4px; width: 74px; height: 44px; }
+            .kz-hero-bubble--gold { left: auto; right: 72px; top: 14px; width: 42px; height: 32px; }
+            .kz-hero-bubble--teal { right: -4px; bottom: auto; top: -2px; width: 64px; height: 44px; }
+            .kz-hero-dot--blue { left: 92px; top: 10px; }
+            .kz-hero-dot--purple { right: 128px; top: 44px; }
+            .kz-hero-dot--sage { left: 140px; top: 30px; }
+            .kz-hero-dot--teal { right: 4px; top: 54px; }
+            .kz-hero-dot--gold { right: 8px; bottom: 14px; }
+            .kz-hero-dot--red { left: 0; bottom: -4px; }
           }
-          @media (max-width: 460px) { .kz-trial-row { flex-direction: column; } }
+          @media (max-width: 560px) {
+            /* Phones: compact trial box. Fields stay two per row; inputs keep
+               16px text so iOS doesn't zoom in when one is tapped. */
+            .kz-trial { padding: 20px 16px 18px !important; }
+            .kz-trial-title { font-size: 22px; }
+            .kz-trial-sub { font-size: 14px; line-height: 1.45; margin-top: 6px; }
+            .kz-trial-fields { margin-top: 14px; gap: 10px; margin-bottom: 16px; }
+            .kz-trial .kz-trial-row { flex-direction: row; gap: 8px; }   /* site.css stacks them below 460px */
+            .kz-trial-field label { font-size: 10.5px; margin-bottom: 4px; }
+            .kz-trial-field input, .kz-trial-field select { padding: 9px 10px; font-size: 16px; }
+            .kz-trial-submit { padding: 13px 18px; font-size: 15px; }
+          }
           .kz-qcard {
             flex: 0 0 300px; max-width: 84vw; margin: 0; scroll-snap-align: start;
             background: #FCF6E2; border: 1px solid var(--kz-line); border-radius: 14px;
