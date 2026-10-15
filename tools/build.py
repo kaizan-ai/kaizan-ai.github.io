@@ -7287,7 +7287,7 @@ def _wp_inner_html() -> str:
                     for n in ('report-page-01', 'report-page-08', 'report-page-care'))
     return f'''<div class="wp-strip__in">
         <div class="wp-strip__copy">
-          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free &middot; Instant</span>
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free</span>
           <h2 class="wp-strip__title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
           <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
           <div class="wp-strip__pages" aria-hidden="true">{pages}</div>
@@ -7333,7 +7333,7 @@ def _wp_popup_html() -> str:
     <div class="wp-popup" id="wp-popup" hidden>
       <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
         <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
-        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"')}
+        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"').replace('<p class="wp-strip__sub">Two fields. Straight to your inbox.</p>', '')}
       </div>
     </div>
     {_wp_assets('js')}'''
