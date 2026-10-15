@@ -1,0 +1,157 @@
+/* ── Resources pages only ─────────────────────────────────────────────
+   Blog index, blog posts, Knowledge Hub, FAQs and Security (Trust Centre).
+   Loaded via resources_head() in their render_* functions, AFTER site.css,
+   so these rules override the shared defaults on these pages alone.
+   Product-page visual language (heavy headlines, ink-framed cards, hard
+   offset shadows), led by Kaizan yellow; other colours are not used. */
+
+/* ── Shared type ─────────────────────────────────────────────────── */
+.kz-h1, .kz-post-title {
+  font-size: clamp(40px, 4.8vw, 66px); line-height: 1.0;
+  font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;
+}
+/* Post titles use the site title size (see the h1 rule in site.css) and span
+   the full content width, centred on the ~760px reading column, so long
+   titles take as few lines as possible. */
+.kz-post-title {
+  width: min(1288px, calc(100vw - 2 * var(--kz-gutter)));
+  position: relative; left: 50%; transform: translateX(-50%);
+}
+@media (max-width: 480px) { .kz-h1, .kz-post-title { font-size: 34px; } }
+.kz-h1 .kz-mark { background: transparent; padding: 0; display: inline; }
+.kz-h2 { font-weight: 700; letter-spacing: -0.02em; }
+.kz-lede { font-size: 17px; line-height: 1.6; font-weight: 500; }
+.kz-eyebrow { color: rgba(23,21,17,.72); }
+
+/* ── Blog index: white cards, ink frame, hard yellow shadow ─────── */
+.kz-insights-cards { gap: 28px; }
+.kz-insights-card {
+  background: #FFFFFF; border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--kz-yellow);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.kz-insights-card:hover { transform: translate(-3px, -3px); box-shadow: 12px 12px 0 var(--kz-yellow); }
+.kz-insights-card .cover { border-bottom: 3px solid #0A0A0A; }
+.kz-insights-card .title { font-weight: 800; }
+.kz-insights-card .excerpt { font-size: 14px; font-weight: 500; }
+.kz-insights-card .meta {
+  font-family: var(--kz-sans); font-size: 12px; font-weight: 700;
+  color: var(--kz-mute); border-top: 2px dashed var(--kz-line);
+}
+
+/* ── FAQs + Knowledge Hub ─────────────────────────────────────────── */
+/* "On this page": a wrapping row of pill links (number in a yellow disc);
+   hover fills the pill yellow, inverts the disc and lifts it slightly. */
+.kz-faq-toc { padding-top: 28px; padding-bottom: 36px; }
+.kz-faq-toc ol { display: flex; flex-wrap: wrap; gap: 10px; }
+.kz-faq-toc ol li {
+  position: relative; align-items: center; gap: 10px;
+  padding: 6px 16px 6px 6px; border-radius: 999px;
+  background: #FFFFFF; border: 1.5px solid rgba(10,10,10,.14);
+  box-shadow: 0 1px 2px rgba(40,30,15,.05);
+  transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.kz-faq-toc ol li:hover {
+  background: var(--kz-yellow); border-color: var(--kz-yellow);
+  transform: translateY(-2px); box-shadow: 0 10px 20px -10px rgba(40,30,15,.45);
+}
+.kz-faq-toc ol .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: var(--kz-yellow); color: #0A0A0A;
+  font-family: var(--kz-sans); font-size: 11px; font-weight: 800;
+  transition: background .15s ease, color .15s ease;
+}
+.kz-faq-toc ol li:hover .num { background: #0A0A0A; color: var(--kz-yellow); }
+.kz-faq-toc ol a { flex: none; font-size: 14px; font-weight: 700; color: #0A0A0A; }
+.kz-faq-toc ol a::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.kz-faq-toc ol a:hover { text-decoration: none; }
+.kz-faq-toc ol .ct { margin-left: 2px; font-family: var(--kz-sans); font-size: 12px; font-weight: 700; color: var(--kz-mute); }
+@media (prefers-reduced-motion: reduce) { .kz-faq-toc ol li, .kz-faq-toc ol li:hover { transition: none; transform: none; } }
+
+/* Section heads: number as a yellow speech-bubble tag, heavy title. */
+.kz-faq-section .head { border-bottom: 3px solid #0A0A0A; }
+.kz-faq-section .head .num {
+  display: inline-flex; align-items: center; padding: 3px 9px;
+  border-radius: 9px 9px 9px 3px; background: var(--kz-yellow);
+  font-family: var(--kz-sans); font-size: 12px; font-weight: 800; color: #0A0A0A;
+}
+.kz-faq-section .head .kz-h2 { font-weight: 800; }
+
+/* Questions: lift into white cards; open = ink frame + yellow shadow. */
+.kz-faq-item {
+  border: 1px solid var(--kz-line); border-radius: 14px; background: #FFFFFF;
+  padding: 0 18px; margin-top: 12px;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.kz-faq-item:hover { border-color: var(--kz-yellow); box-shadow: 0 0 0 2px var(--kz-yellow); }
+.kz-faq-item[open] {
+  border: 3px solid #0A0A0A; padding: 0 16px;
+  box-shadow: 8px 8px 0 var(--kz-yellow);
+}
+.kz-faq-item summary h3 { font-weight: 700; }
+.kz-faq-item summary .ic {
+  background: var(--kz-yellow); border: 2px solid #0A0A0A; color: #0A0A0A; font-weight: 800;
+}
+.kz-faq-item p { font-weight: 500; }
+
+.kz-faq-closing { border-radius: 16px; box-shadow: 10px 10px 0 var(--kz-yellow); }
+.kz-faq-closing h3 { font-weight: 800; }
+
+/* ── Security / Trust Centre ──────────────────────────────────────
+   Each section (Security, Privacy, AI) carries its own accent colour on the
+   stage shadow, active tab and icons — the one place these pages use colour
+   beyond yellow. */
+.kz-sec-section[data-sec-group="0"] { --accent: var(--kz-yellow); --accent-soft: #FFF3C4; }
+.kz-sec-section[data-sec-group="1"] { --accent: #2F5FE0; --accent-soft: #E3EAFC; }
+.kz-sec-section[data-sec-group="2"] { --accent: #7C5CFC; --accent-soft: #ECE6FF; }
+.kz-sec-section h2 { font-weight: 800; letter-spacing: -0.02em; }
+.kz-sec-section h2::after {
+  content: ""; display: block; width: 56px; height: 6px; margin-top: 10px;
+  border-radius: 3px; background: var(--accent);
+}
+.kz-sec-stage {
+  border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 14px 14px 0 var(--accent);
+}
+.kz-sec-tab {
+  background: #FFFFFF; border: 1px solid var(--kz-line); border-radius: 16px;
+  opacity: .8;
+}
+.kz-sec-tab:hover { opacity: 1; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+.kz-sec-tab .ic {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; border-radius: 9px; background: var(--accent-soft);
+}
+.kz-sec-tab .lbl { font-weight: 700; }
+.kz-sec-tab.is-active {
+  opacity: 1; background: #FFFFFF; color: var(--kz-ink);
+  border: 3px solid #0A0A0A; box-shadow: 8px 8px 0 var(--accent);
+}
+.kz-sec-tab.is-active .ic { background: var(--accent); }
+.kz-sec-tab.is-active .lbl { font-weight: 800; }
+.kz-sec-tab.is-active .desc { color: var(--kz-mute); font-weight: 500; }
+
+/* ── Blog post ───────────────────────────────────────────────────── */
+.kz-post-hero {
+  border: 3px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 10px 10px 0 var(--kz-yellow); margin-bottom: 12px;
+}
+.kz-post-body h2 { font-weight: 800; }
+.kz-post-body h3 { font-weight: 700; }
+.kz-post-body p strong { font-weight: 700; }
+.kz-post-body a { text-decoration-color: var(--kz-yellow); text-decoration-thickness: 3px; }
+.kz-post-body a:hover { color: var(--kz-ink); background: #FFF3C4; }
+.kz-post-body blockquote {
+  border-left: 6px solid var(--kz-yellow); font-style: normal; font-weight: 600; color: var(--kz-ink);
+}
+.kz-post-body img { border: 3px solid #0A0A0A; border-radius: 14px; }
+.kz-post-hero + * { margin-top: 8px; }
+.kz-post-back a {
+  display: inline-flex; padding: 12px 20px; border-radius: 999px;
+  background: var(--kz-yellow); border: 2px solid #0A0A0A; font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kz-insights-card, .kz-insights-card:hover { transition: none; transform: none; }
+}
