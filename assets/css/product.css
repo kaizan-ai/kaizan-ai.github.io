@@ -86,7 +86,9 @@
   box-shadow: 8px 8px 0 var(--kz-ink);
   transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
-.kz-care-grid-lg .kz-care-card:hover {
+.kz-care-grid-lg .kz-care-card { cursor: pointer; }
+.kz-care-grid-lg .kz-care-card:hover,
+.kz-care-grid-lg .kz-care-card.is-playing {
   transform: translate(-3px, -3px);
   border-color: var(--theme, var(--kz-ink));
   box-shadow: 12px 12px 0 var(--theme, var(--kz-ink));

@@ -61,7 +61,7 @@ button { font-family: inherit; }
 }
 .kz-nav-logo { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
 .kz-nav-logo .icon { height: 44px; width: 44px; border-radius: 8px; }
-.kz-nav-logo .word { height: 30px; width: auto; }
+.kz-nav-logo .word { height: 26px; width: auto; }
 .kz-nav-links { display: flex; gap: 28px; align-items: center; }
 .kz-nav-links a {
   color: inherit;
@@ -84,7 +84,7 @@ button { font-family: inherit; }
   .kz-nav-links { gap: 18px; }
   .kz-nav-logo { gap: 10px; }
   .kz-nav-logo .icon { height: 40px; width: 40px; }
-  .kz-nav-logo .word { height: 26px; }
+  .kz-nav-logo .word { height: 23px; }
 }
 @media (max-width: 1180px) and (min-width: 1025px) {
   .kz-nav-links { gap: 13px; }
@@ -2263,7 +2263,7 @@ button { font-family: inherit; }
 
   .kz-nav-cta a.kz-btn-yellow { padding: 9px 14px; font-size: 13px; }
   .kz-nav-logo .icon { height: 36px; width: 36px; }
-  .kz-nav-logo .word { height: 24px; }
+  .kz-nav-logo .word { height: 21px; }
 
   .kz-marquee-track { font-size: 16px; }
   .kz-marquee .sep  { margin: 0 20px; }

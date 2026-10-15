@@ -61,10 +61,46 @@
   border-color: var(--kz-yellow);
   box-shadow: 0 0 0 2px var(--kz-yellow), 0 26px 48px -26px rgba(40,30,15,.42);
 }
-.kz-int-tile .logo { border: none; background: #FFFBF0; border-radius: 12px; }
 .kz-int-tile .name { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; }
 .kz-int-tile .cat { font-size: 11px; font-weight: 600; color: var(--kz-mute); }
 .kz-int-tile .why { font-size: 13.5px; font-weight: 500; color: var(--kz-mute); line-height: 1.55; }
+
+/* Card flip: front = big logo + name; hover/focus swaps to the description.
+   Front and back share one grid cell, so the card sizes to the taller of the two. */
+.kz-int-tile { position: relative; display: grid; outline: none; }
+.kz-int-tile:focus-visible { border-color: var(--kz-yellow); box-shadow: 0 0 0 2px var(--kz-yellow); }
+.kz-int-tile .front, .kz-int-tile .back { grid-area: 1 / 1; transition: opacity .2s ease, transform .2s ease; }
+.kz-int-tile .front {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 16px; text-align: center;
+}
+.kz-int-tile .front .logo {
+  width: 96px; height: 96px; border: none; background: #FFFBF0; border-radius: 20px;
+}
+.kz-int-tile .front .logo svg,
+.kz-int-tile .front .logo img { width: 60px; height: 60px; }
+.kz-int-tile .back {
+  display: flex; flex-direction: column; gap: 4px;
+  opacity: 0; transform: translateY(8px);
+}
+.kz-int-tile .back .why {
+  margin-top: 12px; flex: none;
+  font-size: clamp(17px, 1.45vw, 21px); font-weight: 600; line-height: 1.35;
+  letter-spacing: -0.01em; color: var(--kz-ink);
+}
+.kz-int-tile:hover .front, .kz-int-tile:focus-visible .front { opacity: 0; transform: translateY(-8px); }
+.kz-int-tile:hover .back, .kz-int-tile:focus-visible .back { opacity: 1; transform: none; }
+/* Touch screens (no hover): show the description under the logo instead. */
+@media (hover: none) {
+  .kz-int-tile { display: flex; }
+  .kz-int-tile .back { opacity: 1; transform: none; }
+  .kz-int-tile .back .name, .kz-int-tile .back .cat { display: none; }
+  .kz-int-tile .back .why { font-size: 16px; text-align: center; }
+  .kz-int-tile:hover .front { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kz-int-tile .front, .kz-int-tile .back { transition: none; }
+}
 
 /* ── Kaizan API: black band, card framed in yellow ──────────────── */
 #int-api {
