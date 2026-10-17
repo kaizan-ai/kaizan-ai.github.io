@@ -96,7 +96,7 @@ CLIENT_LOGOS = [
     # A few clients lead in, then the US clients (US market push) land around the
     # middle — so US prospects catch familiar logos once they've scrolled to the
     # band, rather than the US set scrolling past before they get there.
-    dict(name='The Kite Factory',         file='the-kite-factory.png', h=88, dy=-8),
+    dict(name='The Kite Factory',         file='the-kite-factory.png'),
     dict(name='Scale Digital',            file='scale-digital.png'),
     dict(name='Tradedoubler',             file='tradedoubler.png', h=38),
     dict(name='Open Partners',            file='open-partners.svg'),
@@ -2176,7 +2176,7 @@ def render_home() -> str:
     def _qcard(cq):
         logo = company_logo.get(cq['co'], '')
         h = logo_h.get(cq['co'], 52)
-        inner = (f'<img class="kz-qcard-logo" style="height:{h}px" '
+        inner = (f'<img class="kz-qcard-logo" '
                  f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
@@ -2184,8 +2184,7 @@ def render_home() -> str:
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
-                f'<span class="kz-qcard-mark" aria-hidden="true">“</span>'
-                f'<q>{E(cq["q"])}</q>'
+                f'<div class="kz-qcard-body"><q>{E(cq["q"])}</q></div>'
                 f'<figcaption>{portrait(cq["name"], cq["role"], depth=0)}</figcaption>'
                 f'{more}'
                 f'</figure>')
