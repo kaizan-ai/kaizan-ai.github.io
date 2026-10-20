@@ -399,26 +399,34 @@ PERSONAS = {
         quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and-product-decisions-5669edac12c8',
         love=[
             ('Your client brain, in the AI tools you already use.',
-             "Every meeting, email, decision, and signal - unified and queryable via MCP from "
-             "Claude, ChatGPT, or whatever model your org has standardised on."),
+             "Kaizan is a client intelligence platform that unifies every meeting, email, "
+             "decision, and signal into queryable context via MCP from Claude, ChatGPT, or "
+             "whatever model your org has standardised on, helping client service teams "
+             "strengthen client relationships without replacing existing tools."),
             ('Build your own products, services, and workflows on top.',
-             "The API gives you a full data layer to build custom client-facing products and "
+             "The API gives client teams a full data layer to build custom client-facing products and "
              "internal workflows - without rebuilding the ingestion and unification work yourselves."),
             ('Enterprise-grade controls.',
              "SSO/SAML, custom retention, data residency - the controls procurement asks about, "
              "available from day one."),
         ],
-        product_h2='The platform layer your team would have to build - already built.',
+        love_h2='The things AI, Technology Leaders, and client success teams love.',
+        product_h2='The client intelligence platform layer your team would have to build - already built.',
+        faq_h2='The client conversations and questions AI and technology leaders ask us.',
         products=[
             ('Kaizan API',
              'RESTful and MCP endpoints for every primitive: clients, conversations, signals, '
-             'drafts, scores. Drop into your existing internal tools.'),
+             'drafts, scores. Drop into your existing internal tools to handle day-to-day '
+             'tasks, improve productivity, and manage client relationships with more '
+             'efficiency.'),
             ('MCP server',
              'Native MCP - any LLM your org has standardised on can query the unified client data '
-             'layer without bespoke glue.'),
+             'layer for context and insights inside the tools client service teams already '
+             'use, without bespoke glue.'),
             ('Governance console',
              'Eval runs, prompt versions, redaction rules, access logs. Everything your security '
-             'review will ask for, in one place.'),
+             'review will ask for, in one place as you build products, services, and '
+             'workflows for client-facing teams.'),
         ],
         schema=True,
         ld_undated=True,
@@ -444,7 +452,7 @@ PERSONAS = {
              "Enterprise tier. We share the full posture, certifications and reports under NDA so "
              "your security review has what it needs."),
         ],
-        cta='See Kaizan for heads of AI.',
+        cta='See Kaizan for heads of AI and client service teams.',
     ),
 
     'project-manager': dict(
@@ -455,8 +463,13 @@ PERSONAS = {
         role='project managers',
         role_cap='Project Managers',
         h1=('Run the work.', "Don't chase it.", ''),
-        sub=("Every project, every status, every commitment - in one always-current place, with "
-             "an AI Helper watching it all 24/7."),
+        sub=("Kaizan is an AI platform for project managers, client success teams, account "
+             "managers, and leaders in client-service firms who need one always-current place to "
+             "track every project, status, action, and decision, with AI Helpers watching "
+             "progress 24/7. This page shows how Kaizan gives teams a unified project view, "
+             "drafts status updates automatically, captures actions from meetings, connects with "
+             "project tools, and flags risks early so less time goes into chasing updates and "
+             "more goes into steering projects and strengthening client relationships."),
         quote_bg='radial-gradient(circle at 30% 30%, #6F8474, #1F3025)',
         quote_pull=('A lot of CS teams try to run without too many processes as they put the human '
                     'connection first. The processes are what help consistency across the client '
