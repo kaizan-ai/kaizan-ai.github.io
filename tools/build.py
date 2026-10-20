@@ -47,7 +47,7 @@ NAV = [
     ('About',        'about/'),
     # Plain text nav link (relative, so it resolves to /referral-partners/ on UK
     # and /us/referral-partners/ on US via normal relative paths).
-    ('Become a partner', 'referral-partners/'),
+    ('Partner Programme', 'referral-partners/'),
 ]
 
 # ─────────────────────────────────────────────────────────────────────
