@@ -7336,7 +7336,6 @@ def _wp_inner_html() -> str:
         </div>
         <form class="wp-strip__form" novalidate>
           <h3>Download the 2026 Report</h3>
-          <p class="wp-strip__sub">Two fields. Straight to your inbox.</p>
           <label class="wp-strip__field"><span>Work email</span>
             <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
             <div class="wp-strip__err" role="alert"></div></label>
@@ -7375,7 +7374,7 @@ def _wp_popup_html() -> str:
     <div class="wp-popup" id="wp-popup" hidden>
       <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
         <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
-        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"').replace('<p class="wp-strip__sub">Two fields. Straight to your inbox.</p>', '')}
+        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"')}
       </div>
     </div>
     {_wp_assets('js')}'''
