@@ -36,7 +36,7 @@ CARE is that definition, made explicit and made shared. It gives humans and agen
 
 - **A framework that defines what great looks like**, so an agent knows the difference between a client venting and a client leaving, and how each account can improve from all the work occurring across the portfolio.
 
-- **A living, always-on company brain.** CARE is the evals of what matters in your company. The way an AI lab writes down the behaviours it wants from a model and grades against them, CARE writes down what a great client relationship looks like and grades every account against it, continuously. This turns Kaizen’s philosophy into a shared standard for continuous improvement. Your standards stop living in your best people’s heads and become a measurable, shared definition the whole company, and every agent, works toward.
+- **A living, always-on company brain.** CARE is the evals of what matters in your company. The way an AI lab writes down the behaviours it wants from a model and grades against them, CARE writes down what a great client relationship looks like and grades every account against it, continuously. This turns Kaizan’s philosophy into a shared standard for continuous improvement. Your standards stop living in your best people’s heads and become a measurable, shared definition the whole company, and every agent, works toward.
 
 Software replacing relationship managers was never the future. **People plus agents, working from a shared definition of great, 24/7.** That’s the future, and CARE is the operating layer that makes it real.
 
