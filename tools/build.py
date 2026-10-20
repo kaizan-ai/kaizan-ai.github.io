@@ -1297,6 +1297,7 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
       </a>
       <nav class="kz-nav-links" aria-label="Primary">
         {''.join(items_html)}
+        <a class="kz-nav-login-m" href="https://app.kaizan.ai/">Client log in</a>
       </nav>
       <div class="kz-nav-cta">
         <a class="kz-btn kz-btn-ghost" href="https://app.kaizan.ai/">Client log in</a>
@@ -1325,7 +1326,8 @@ def footer_html(depth: int) -> str:
                      # ('Insights', f'{p}insights/'),
                      # ('Clients', f'{p}customers/'),
                      ('FAQ', f'{p}faq/')]),
-        ('Get in touch', [('Book a demo', '/demo/'), ('Contact', 'mailto:hello@kaizan.ai'),
+        ('Get in touch', [('Book a demo', '/demo/'), ('Client log in', 'https://app.kaizan.ai/'),
+                          ('Contact', 'mailto:hello@kaizan.ai'),
                           ('LinkedIn', 'https://www.linkedin.com/company/kaizan')]),
     ]
     cols_html = []
