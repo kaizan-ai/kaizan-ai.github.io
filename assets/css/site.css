@@ -3618,3 +3618,10 @@ input, textarea, select, button { font-weight: inherit; }
   .kz-nav-cta a.kz-btn-ghost { padding: 7px 10px; }
   .kz-nav-cta a.kz-btn-yellow { padding: 8px 9px; }
 }
+
+/* Consent / privacy note shown under every lead-form submit button. */
+.kz-consent { margin: 14px 0 0; font-size: 12px; line-height: 1.55; color: rgba(0,0,0,.6); text-align: left; font-weight: 400; }
+.kz-consent a { color: inherit; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }
+.kz-consent--dark { color: rgba(255,251,240,.7); }
+.kz-consent--dark a { color: #FFFBF0; }
+.kz-consent--center { max-width: 520px; margin: 14px auto 0; text-align: center; }
