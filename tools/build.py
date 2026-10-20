@@ -4192,6 +4192,7 @@ def render_july_offer() -> str:
               <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
             </div>
             <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Claim your free iced coffee →</button>
+            <p class="kz-consent">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
             <p id="kz-coffee-msg" class="july-msg" role="status" aria-live="polite"></p>
           </form>
 
@@ -4877,6 +4878,7 @@ ROI_CALCULATOR_SECTION = '''
           <div class="kzroi-modal-title">Get your ROI breakdown</div>
           <div class="lf-intro">Your results are yours either way. For the full PDF breakdown (your numbers and the workings) tell us where to send it, then download it here.</div>
           <div id="kzroi-hubspot-form" class="kzroi-hsform"></div>
+          <p class="kz-consent">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
         </div>
         <div class="kzroi-leadsent kzroi-hidden" data-roi="lead-sent">
           <div class="ls-msg">Thanks, your breakdown is ready.</div>
@@ -5667,6 +5669,7 @@ def render_research() -> str:
         <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
         <button type="submit" class="kz-btn kz-btn-yellow">Get the report</button>
       </form>
+      <p class="kz-consent kz-consent--dark kz-consent--center">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
     </section>
 
     {footer_html(1)}
@@ -7346,6 +7349,7 @@ def _wp_inner_html() -> str:
             </select>
             <div class="wp-strip__err" role="alert"></div></label>
           <button type="submit">Get the report &rarr;</button>
+          <p class="kz-consent kz-consent--dark">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
           <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
         </form>
       </div>'''
