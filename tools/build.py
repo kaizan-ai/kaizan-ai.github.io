@@ -7318,13 +7318,9 @@ def _cs_modules_html() -> str:
 
 
 def _wp_inner_html() -> str:
-    """Copy + two-field form for the 2026 Client Service Report (white paper).
-    Shared by the homepage strip and the blog pop-up; submits to the same
-    HubSpot form as /white-paper/ via assets/js/wp-strip.js."""
-    roles = ['Head of Client Services / CS', 'Client Success Manager', 'Account Director / Manager',
-             'Founder / CEO', 'Head of AI / CTO', 'VP / Commercial Leader', 'Marketing / Operations',
-             'Agency Leader', 'Other']
-    options = '\n'.join(f'<option>{E(r)}</option>' for r in roles)
+    """Copy + embedded HubSpot form for the 2026 Client Service Report (white paper).
+    Shared by the homepage strip and the blog pop-up; assets/js/wp-strip.js mounts the
+    native HubSpot form (portal 144688314, 'White Paper') into [data-wp-hs]."""
     pages = ''.join(f'<img src="/assets/img/white-paper/{n}.png" alt="" width="92" loading="lazy">'
                     for n in ('report-page-01', 'report-page-08', 'report-page-care'))
     return f'''<div class="wp-strip__in">
@@ -7334,21 +7330,11 @@ def _wp_inner_html() -> str:
           <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
           <div class="wp-strip__pages" aria-hidden="true">{pages}</div>
         </div>
-        <form class="wp-strip__form" novalidate>
+        <div class="wp-strip__form">
           <h3>Download the 2026 Report</h3>
-          <p class="wp-strip__sub">Two fields. Straight to your inbox.</p>
-          <label class="wp-strip__field"><span>Work email</span>
-            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
-            <div class="wp-strip__err" role="alert"></div></label>
-          <label class="wp-strip__field"><span>Job title</span>
-            <select name="role" required>
-              <option value="" disabled selected>Select your role</option>
-              {options}
-            </select>
-            <div class="wp-strip__err" role="alert"></div></label>
-          <button type="submit">Get the report &rarr;</button>
-          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
-        </form>
+          <p class="wp-strip__sub">Straight to your inbox.</p>
+          <div class="wp-strip__hs" data-wp-hs></div>
+        </div>
       </div>'''
 
 
@@ -7375,7 +7361,7 @@ def _wp_popup_html() -> str:
     <div class="wp-popup" id="wp-popup" hidden>
       <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
         <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
-        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"').replace('<p class="wp-strip__sub">Two fields. Straight to your inbox.</p>', '')}
+        {_wp_inner_html().replace('class="wp-strip__title"', 'class="wp-strip__title" id="wp-popup-title"').replace('<p class="wp-strip__sub">Straight to your inbox.</p>', '')}
       </div>
     </div>
     {_wp_assets('js')}'''
