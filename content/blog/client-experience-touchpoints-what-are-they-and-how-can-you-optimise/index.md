@@ -114,7 +114,7 @@ Optimising client touchpoints can lead to increased client loyalty. When clients
 
 ## To reduce client churn
 
-In addition to increasing client loyalty, optimising touchpoints can [reduce client churn](https://kaizan.ai/blog-posts/five-strategies-for-preventing-client-churn). Negative experiences give clients a reason to reconsider the business they do with you, and so make them open to being poached by your rivals. When clients have positive experiences, they are less likely to switch to a competitor, helping you retain a loyal customer base.
+In addition to increasing client loyalty, optimising touchpoints can [reduce client churn](https://kaizan.ai/blog/re-engage-inactive-clients/). Negative experiences give clients a reason to reconsider the business they do with you, and so make them open to being poached by your rivals. When clients have positive experiences, they are less likely to switch to a competitor, helping you retain a loyal customer base.
 
 ## To improve conversion rates
 

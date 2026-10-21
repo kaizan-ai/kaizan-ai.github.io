@@ -1084,7 +1084,6 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
     site_css_v = asset_v('assets/css/site.css')
     site_js_v = asset_v('assets/js/site.js')
     consent_js_v = asset_v('assets/js/consent.js')
-    calendly_utm_v = asset_v('assets/js/calendly-utm.js')
     return dedent(f'''\
         <!doctype html>
         <html lang="en">
@@ -1102,8 +1101,6 @@ def page_head(title: str, depth: int, description: str = '', extra_head: str = '
         <link rel="stylesheet" href="{p}assets/css/site.css{site_css_v}">
         <script defer src="{p}assets/js/site.js{site_js_v}"></script>
         {extra_head}
-        <!-- Calendly attribution: both UK and /us/ book via Calendly. -->
-        <script defer src="{p}assets/js/calendly-utm.js{calendly_utm_v}"></script>
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
@@ -6003,125 +6000,6 @@ def render_knowledge_hub() -> str:
 # WRITE
 # ─────────────────────────────────────────────────────────────────────
 
-def render_demo() -> str:
-    """Anti-bot interstitial for /demo/.
-
-    Buttons across the site link here instead of straight to the calendar. The
-    real booking URL is base64-obfuscated and only revealed after a Cloudflare
-    Turnstile human-check passes — so crawlers can't scrape the link, and the
-    common headless-bot bookers are stopped by Turnstile. This is a static page
-    (no server-side token verification), which is the practical ceiling on
-    GitHub Pages; it kills link-harvesting and most automated bookings."""
-    import base64
-    enc = base64.b64encode(CALENDAR_URL.encode()).decode()
-
-    extra_head = (
-        '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" '
-        'async defer></script>'
-    )
-
-    body = f'''
-    {nav_html(1)}
-
-    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
-      <div style="max-width:520px;width:100%;text-align:center;">
-        <div class="kz-eyebrow" style="justify-content:center;">Book a demo · 30-min live walkthrough</div>
-        <h1 class="kz-h1" style="margin-top:18px;width:min(900px, calc(100vw - 2 * var(--kz-gutter)));position:relative;left:50%;transform:translateX(-50%);">One quick check, then your calendar.</h1>
-        <p class="kz-lede" style="margin-top:16px;">
-          We ask everyone to confirm they're human before booking. It keeps our
-          calendar clear for real conversations. This takes a second.
-        </p>
-
-        <div style="display:flex;justify-content:center;margin:28px 0 8px;">
-          <div class="cf-turnstile"
-               data-sitekey="{TURNSTILE_SITE_KEY}"
-               data-callback="kzOnVerified"
-               data-error-callback="kzOnError"></div>
-        </div>
-
-        <p id="kz-demo-status" role="status" aria-live="polite"
-           style="min-height:22px;color:var(--kz-ink-soft, #6b6b6b);font-size:14px;"></p>
-
-        <noscript>
-          <p class="kz-lede" style="margin-top:12px;">
-            JavaScript is required to book online. Email
-            <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>
-            and we'll set up a time.
-          </p>
-        </noscript>
-
-        <p style="margin-top:20px;font-size:14px;color:var(--kz-ink-soft, #6b6b6b);">
-          Trouble verifying? Email
-          <a href="mailto:hello@kaizan.ai" style="color:var(--kz-ink);text-decoration:underline;">hello@kaizan.ai</a>.
-        </p>
-      </div>
-    </section>
-
-    <script>
-    (function () {{
-      var DEST = '{enc}';
-      var statusEl = document.getElementById('kz-demo-status');
-      // Both UK and /us/ redirect to a Calendly link (different reps), and
-      // both carry the visit's UTMs, captured earlier by
-      // assets/js/calendly-utm.js into the same sessionStorage key.
-      var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-      var UTM_STORE = 'calendly_utms';
-      function withUtms(dest) {{
-        try {{
-          var url = new URL(dest);
-          if (url.hostname.indexOf('calendly.com') === -1) return dest;
-          var saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{{}}');
-          UTM_KEYS.forEach(function (k) {{ if (saved[k]) url.searchParams.set(k, saved[k]); }});
-          return url.toString();
-        }} catch (e) {{ return dest; }}
-      }}
-      window.kzOnVerified = function () {{
-        if (statusEl) statusEl.textContent = 'Verified, opening the calendar…';
-        window.location.href = withUtms(atob(DEST));
-      }};
-      window.kzOnError = function () {{
-        if (statusEl) statusEl.textContent = 'Verification failed. Please refresh and try again, or email hello@kaizan.ai.';
-      }};
-    }})();
-    </script>
-
-    {footer_html(1)}
-    '''
-    # Booking interstitial kept out of the index (noindex, follow); the UK and /us/
-    # versions both inherit this through the /us/ mirror.
-    return page_head('Book a demo', 1,
-                     "Confirm you're human, then book a 30-minute live demo of Kaizan.",
-                     extra_head='<meta name="robots" content="noindex, follow">\n        ' + extra_head) + body + page_foot()
-
-
-def render_demo_confirmed() -> str:
-    """/demo-confirmed/ — set as the Confirmation Page redirect on the Calendly
-    event type both /demo/ links point to, so a visitor lands here right after
-    booking a slot (UK and US both redirect here; nothing routes them by rep)."""
-    body = f'''
-    {nav_html(1)}
-
-    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
-      <div style="max-width:520px;width:100%;text-align:center;">
-        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>You're booked</div>
-        <h1 class="kz-h1" style="margin-top:18px;width:min(900px, calc(100vw - 2 * var(--kz-gutter)));position:relative;left:50%;transform:translateX(-50%);">Thanks, we&rsquo;ll see you soon.</h1>
-        <p class="kz-lede" style="margin-top:16px;">
-          Your demo is confirmed, check your inbox for the calendar invite with the
-          details and a link to join.
-        </p>
-        <div style="margin-top:28px;">
-          <a class="kz-btn kz-btn-yellow" href="/">Back to homepage</a>
-        </div>
-      </div>
-    </section>
-
-    {footer_html(1)}
-    '''
-    return page_head('Demo booked', 1,
-                     "Your demo with Kaizan is confirmed, check your inbox for the details.",
-                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
-
-
 def render_white_paper_confirmation() -> str:
     """/white-paper-confirmation/ — where the CARE white paper lead form
     (assets/js/white-paper.js, on /white-paper/) sends the visitor after a
@@ -6311,12 +6189,143 @@ def write_redirects():
     print(f'  ({written} redirect stub(s) written, {skipped} skipped — real page exists)')
 
 
+# ── US "Book a call" popup ─────────────────────────────────────────────
+# On /us/ every booking CTA (anything that linked to /demo/) opens this popup
+# form instead of the Calendly interstitial. Same Mailchimp audience and card
+# styling as the 14-day trial form; assets/js/book-call.js submits via JSONP and
+# sends the visitor to /us/book-demo-confirmation/. Without JS the links still
+# fall back to /us/demo/.
+# UK and /us/ share the audience but use separate form instances (f_id).
+BC_MC_BASE = ('https://kaizan.us6.list-manage.com/subscribe/post'
+              '?u=b61e5cb1cebf0c30b44ebb455&id=1ea9163949&f_id=')
+BC_LOCALES = {
+    'uk': dict(f_id='0005efe5f0', tags='3789740,3789536', confirm='/book-demo-confirmation/',
+               privacy='/privacy-policy/', phone='07700 900000'),
+    'us': dict(f_id='0006efe5f0', tags='3789741,3789550', confirm='/us/book-demo-confirmation/',
+               privacy='/us/privacy-policy/', phone='(555) 555-0100'),
+}
+
+
+def book_call_inject(html: str, locale: str) -> str:
+    """Append the popup + its script to a page (UK root or /us/ mirror)."""
+    return html.replace(
+        '</body>',
+        book_call_modal_html(locale) + '\n'
+        f'<script defer src="/assets/js/book-call.js{asset_v("assets/js/book-call.js")}"></script>\n'
+        '</body>', 1)
+
+
+def book_call_modal_html(locale: str = 'us') -> str:
+    cfg = BC_LOCALES[locale]
+    BC_MC_POST = BC_MC_BASE + cfg['f_id']
+    BC_MC_JSON = BC_MC_POST.replace('/subscribe/post?', '/subscribe/post-json?')
+    BC_MC_TAGS = cfg['tags']
+    BC_CONFIRM_PATH = cfg['confirm']
+    heard = '\n'.join(f'<option value="{E(o)}">{E(o)}</option>' for o in TRIAL_HEARD_OPTIONS)
+    utm = '\n'.join(f'<input type="hidden" name="{tag}" value="" data-utm="{param}">'
+                    for tag, param in TRIAL_UTM_FIELDS)
+    arrow = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+             'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+             '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>')
+    return f'''<div class="kz-bc" data-book-call-modal hidden role="dialog" aria-modal="true" aria-labelledby="kz-bc-title">
+  <div class="kz-bc-backdrop" data-bc-close></div>
+  <div class="kz-bc-dialog">
+    <div class="kz-trial kz-bc-card">
+      {TRIAL_SIGNAL_SVG}
+      <button type="button" class="kz-bc-x" data-bc-close aria-label="Close">&times;</button>
+      <form class="kz-trial-form" action="{E(BC_MC_POST)}" data-mc-json="{E(BC_MC_JSON)}"
+            data-confirm="{BC_CONFIRM_PATH}" method="post" target="_blank">
+        <h2 class="kz-trial-title" id="kz-bc-title">Book a call</h2>
+        <div class="kz-trial-fields">
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-PHONE" name="PHONE" type="tel" placeholder="{cfg['phone']}" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+            </div>
+          </div>
+          <div class="kz-trial-field">
+            <label for="bc-MMERGE12">How did you hear about us?</label>
+            <select id="bc-MMERGE12" name="MMERGE12">
+              <option value="">Select an option</option>
+              {heard}
+            </select>
+          </div>
+        </div>
+        {utm}
+        <div hidden><input type="hidden" name="tags" value="{BC_MC_TAGS}"></div>
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="{TRIAL_MC_HONEYPOT}" tabindex="-1" value="">
+        </div>
+        <button type="submit" name="subscribe" class="kz-trial-submit">Book a call {arrow}</button>
+        <p class="kz-trial-msg" data-bc-msg role="status" aria-live="polite"></p>
+        <p class="kz-trial-legal">
+          By submitting your details to Kaizan you are showing interest in our product and so we may
+          contact you about booking a call and about our product and services. Please review our
+          <a href="{cfg['privacy']}">Privacy Policy</a> for how we use your information.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>'''
+
+
+def render_book_demo_confirmation() -> str:
+    """/book-demo-confirmation/ — where the "Book a call" popup sends the
+    visitor after a successful submit. Built at the UK root (/book-demo-confirmation/) and mirrored
+    into /us/ by build_us_locale()."""
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
+      <div style="max-width:520px;width:100%;text-align:center;">
+        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>You&rsquo;re in</div>
+        <h1 class="kz-h1" style="margin-top:18px;width:min(900px, calc(100vw - 2 * var(--kz-gutter)));position:relative;left:50%;transform:translateX(-50%);">Thanks, we&rsquo;ll be in touch shortly.</h1>
+        <p class="kz-lede" style="margin-top:16px;">
+          We&rsquo;ve got your details and someone from the team will reach out to get a time
+          in the diary for your call.
+        </p>
+        <div style="margin-top:28px;">
+          <a class="kz-btn kz-btn-yellow" href="/">Back to homepage</a>
+        </div>
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Call request received', 1,
+                     "Thanks, we've got your details and will be in touch to arrange your call.",
+                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
+
+
 # ── US locale ──────────────────────────────────────────────────────────
 # The UK site is the default (root). After it's built we mirror every page
 # into /us/ with US spelling, the US booking link, the US legal entity, and
 # self-canonical + hreflang tags so each market is independently indexable.
 
-US_CALENDAR_URL = 'https://calendly.com/ray-kaizan/30min'
 SITE_ORIGIN = 'https://kaizan.ai'
 
 # US-only trial-form config: a separate Mailchimp embed instance (f_id) and
@@ -6571,8 +6580,6 @@ def build_us_locale():
     if us_dir.exists():
         shutil.rmtree(us_dir)
 
-    uk_cal_b64 = base64.b64encode(CALENDAR_URL.encode()).decode()
-    us_cal_b64 = base64.b64encode(US_CALENDAR_URL.encode()).decode()
 
     skip_top = {'us', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
 
@@ -6598,6 +6605,9 @@ def build_us_locale():
         #    and resolve the JSON-LD URL/language tokens for the UK page itself.
         html = _inject_default_schema(_inject_seo_head(html, path), path)
         uk_html = _resolve_ld(html, path, 'uk')
+        uk_html = uk_html.replace('Book time with Glen →', 'Book a call')
+        uk_html = re.sub(r'href="(?:(?:\.\./)*demo/|/demo/|https://kaizan\.ai/demo/)"', 'href="mailto:hello@kaizan.ai" data-book-call', uk_html)
+        uk_html = book_call_inject(uk_html, 'uk')
         if uk_html != f.read_text(encoding='utf-8'):
             f.write_text(uk_html, encoding='utf-8')
 
@@ -6605,8 +6615,6 @@ def build_us_locale():
         us = _resolve_ld(html, path, 'us')
         # Assets → root-absolute (shared, no duplication).
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
-        # calendly-utm.js (from page_head()) is kept as-is — /us/ also books
-        # via Calendly, just a different link (US_CALENDAR_URL, below).
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
         us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)
@@ -6615,11 +6623,9 @@ def build_us_locale():
                         f'rel="canonical" href="{SITE_ORIGIN}/us')
         us = us.replace(f'property="og:url" content="{SITE_ORIGIN}',
                         f'property="og:url" content="{SITE_ORIGIN}/us')
-        # US booking link (only the /demo/ interstitial carries it, base64-encoded).
-        us = us.replace(uk_cal_b64, us_cal_b64)
         # About page CTA names the rep it books with — Glen on the UK link,
         # Ray on the US one — so it stays accurate after the link swap above.
-        us = us.replace('Book time with Glen →', 'Book time with Ray →')
+        us = us.replace('Book time with Glen →', 'Book a call')
         # US legal entity.
         us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
         # US spelling.
@@ -6654,6 +6660,11 @@ def build_us_locale():
             us = re.sub(r'<section class="kzp">.*?</section>',
                         lambda m: us_pricing_section(), us, count=1, flags=re.S)
 
+        # Every booking CTA opens the "Book a call" popup (book-call.js); the
+        # href stays as a no-JS mailto fallback.
+        us = re.sub(r'href="(?:(?:\.\./)*demo/|/us/demo/|https://kaizan\.ai/demo/)"',
+                    'href="mailto:hello@kaizan.ai" data-book-call', us)
+        us = book_call_inject(us, 'us')
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(us, encoding='utf-8')
@@ -8163,9 +8174,11 @@ def main():
     # for easy revert; the directory is removed so it doesn't serve stale content.
     _remove_page(ROOT / 'insights')
     write(ROOT / 'about' / 'index.html',        render_about())
-    write(ROOT / 'demo' / 'index.html',         render_demo())
+    # Calendly interstitial + its confirmation page retired: booking is the popup form.
+    _remove_page(ROOT / 'demo')
+    _remove_page(ROOT / 'demo-confirmed')
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
-    write(ROOT / 'demo-confirmed' / 'index.html', render_demo_confirmed())
+    write(ROOT / 'book-demo-confirmation' / 'index.html', render_book_demo_confirmation())
     write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
     write(ROOT / 'client-success-software' / 'index.html',
                                                  render_customer_success_software())
