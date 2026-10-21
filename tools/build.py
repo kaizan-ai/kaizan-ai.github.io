@@ -6611,6 +6611,16 @@ def build_us_locale():
         if uk_html != f.read_text(encoding='utf-8'):
             f.write_text(uk_html, encoding='utf-8')
 
+        # Redirect stubs (write_redirects) get their own /us/ stub that points at
+        # the /us/ target, rather than a copy of the UK one.
+        m = re.search(r'http-equiv="refresh" content="0; url=(/[^"]*)"', html)
+        if m and 'Redirecting' in html:
+            out = us_dir / rel
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(render_redirect('/us' + m.group(1)), encoding='utf-8')
+            written += 1
+            continue
+
         # 2. Build the US version (from the token-bearing html, not the UK-resolved one).
         us = _resolve_ld(html, path, 'us')
         # Assets → root-absolute (shared, no duplication).
@@ -6637,9 +6647,10 @@ def build_us_locale():
                 r'<span class="kz-marquee-item"><span class="kz-marquee-logo"[^>]*>'
                 r'<img[^>]*tradedoubler[^>]*></span><span class="sep">✺</span></span>',
                 '', us)
+        if path in ('/', '/client-success-software/'):
             # US-only trial-form Mailchimp config: a different form instance
             # (f_id) and tag IDs than the UK form, so US signups route and
-            # tag distinctly. The UK homepage keeps the original config.
+            # tag distinctly. The UK pages keep the original config.
             us = us.replace(f'f_id={TRIAL_MC_F_ID}', f'f_id={US_TRIAL_MC_F_ID}')
             us = us.replace(f'name="tags" value="{TRIAL_MC_TAGS}"',
                              f'name="tags" value="{US_TRIAL_TAGS}"')
