@@ -30,8 +30,9 @@
   // Match the host site's own Book-a-demo / pricing links, US or UK, so the
   // /us/ mirror never links back to the UK page.
   var IS_US = location.pathname.indexOf('/us/') === 0;
-  var DEMO_URL = IS_US ? '/us/demo/' : '/demo/';
-  var DEMO_URL_ABS = IS_US ? 'https://kaizan.ai/us/demo/' : 'https://kaizan.ai/demo/';
+  // Booking opens the site-wide "Book a call" popup (book-call.js); mailto is the no-JS/PDF fallback.
+  var DEMO_URL = 'mailto:hello@kaizan.ai';
+  var DEMO_URL_ABS = DEMO_URL;
   var PRICING_URL = IS_US ? '/us/pricing/' : '/pricing/';
   var CUR = IS_US ? '$' : '£';
   var LOCALE_CODE = IS_US ? 'en-US' : 'en-GB';
@@ -370,7 +371,7 @@
         row('Capacity recovered from admin', gbp0(r.capacity) + '  ·  +' + r.fte.toFixed(1) + ' FTE') +
       '</table>' +
       '<h2>Headline &amp; pricing</h2><table>' + headline + costRows + '</table>' +
-      '<div class="cta">Ready to see your clients clearly? <a href="' + DEMO_URL + '">Book a demo →</a></div>' +
+      '<div class="cta">Ready to see your clients clearly? <a href="' + DEMO_URL + '" data-book-call>Book a demo →</a></div>' +
       '<div class="foot">' + (q('[data-roi="footnote"]') ? q('[data-roi="footnote"]').textContent : '') +
         ' Satisfaction is shown directionally and never ' + (IS_US ? 'monetized' : 'monetised') + '. Generated from your inputs on kaizan.ai.</div>' +
       '</div></body></html>';
