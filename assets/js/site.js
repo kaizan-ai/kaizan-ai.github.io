@@ -541,6 +541,85 @@
     place();
   }
 
+  // ── Footer newsletter: submit to Mailchimp via JSONP so the visitor stays
+  //    on the page; without JS the form POSTs to Mailchimp in a new tab. ──
+  function initNewsletter() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-newsletter]'), function (form) {
+      var jsonUrl = form.getAttribute('data-mc-json');
+      var msg = form.querySelector('.kz-footer-news-msg');
+      var btn = form.querySelector('button[type=submit]');
+      var role = form.querySelector('[name=ROLE]');
+      // Job role opens once the email box is used, and stays open.
+      var emailIn = form.querySelector('[name=EMAIL]');
+      function open() { form.classList.add('is-open'); }
+      emailIn.addEventListener('focus', open);
+      emailIn.addEventListener('input', open);
+      function show(text, ok) {
+        msg.textContent = text;
+        msg.classList.toggle('is-error', !ok);
+        msg.hidden = false;
+      }
+      form.addEventListener('submit', function (e) {
+        if (!jsonUrl) return;
+        e.preventDefault();
+        var email = form.querySelector('[name=EMAIL]');
+        if (!email.value || !email.checkValidity()) { show('Please enter a valid email address.', false); return; }
+        form.classList.add('is-open');
+        if (role && !role.value) { show('Please choose your job role.', false); role.focus(); return; }
+        msg.hidden = true;
+        btn.disabled = true;
+        var cb = 'kzNl_' + Date.now(), s = document.createElement('script');
+        window[cb] = function (data) {
+          btn.disabled = false;
+          if (data && data.result === 'success') {
+            form.querySelector('.kz-footer-news-row').hidden = true;
+            form.classList.remove('is-open'); form.querySelector('[data-newsletter-role]').style.display = 'none';
+            show('Thanks, you\u2019re subscribed. Check your inbox.', true);
+          } else if (data && /already subscribed/i.test(data.msg || '')) {
+            form.querySelector('.kz-footer-news-row').hidden = true;
+            form.classList.remove('is-open'); form.querySelector('[data-newsletter-role]').style.display = 'none';
+            show('You\u2019re already subscribed. Thanks!', true);
+          } else {
+            var m = (data && data.msg) ? String(data.msg).replace(/<[^>]*>/g, '').replace(/^\d+\s*-\s*/, '') : '';
+            show(m || 'Something went wrong. Please try again.', false);
+          }
+          delete window[cb];
+          if (s.parentNode) s.parentNode.removeChild(s);
+        };
+        s.src = jsonUrl + '&' + new URLSearchParams(new FormData(form)).toString() + '&c=' + cb;
+        s.onerror = function () { btn.disabled = false; show('Network error. Please try again.', false); };
+        document.body.appendChild(s);
+      });
+    });
+  }
+
+  // ── Footer newsletter bubble: flies in from above as it scrolls into view,
+  //    tied to scroll position (same motion as product.js initSectionBubbles). ──
+  function initNewsBubble() {
+    var b = document.querySelector('.kz-footer-news-icon');
+    if (!b || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    var raf = 0;
+    function ease(t) { return 1 - Math.pow(1 - t, 3); }
+    function place() {
+      raf = 0;
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      var top = b.getBoundingClientRect().top - (parseFloat(b.dataset.dy) || 0);
+      // 0 at the bottom of the screen, 1 by 62% of the way up (or once the page can't scroll further).
+      var t = Math.max(0, Math.min(1, (vh - top) / (vh * 0.38)));
+      var atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atEnd && top < vh) t = 1;
+      var e = ease(t);
+      var dx = (1 - e) * -70, dy = (1 - e) * -120, rot = (1 - e) * -9;
+      b.dataset.dy = dy;
+      b.style.transform = 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) rotate(' + rot.toFixed(1) + 'deg) scale(' + (0.6 + 0.4 * e).toFixed(3) + ')';
+      b.style.opacity = Math.min(1, t * 1.6).toFixed(2);
+    }
+    function req() { if (!raf) raf = requestAnimationFrame(place); }
+    window.addEventListener('scroll', req, { passive: true });
+    window.addEventListener('resize', req);
+    place();
+  }
+
   // ── Boot ─────────────────────────────────────────────────────────
   function boot() {
     initMobileNav();
@@ -556,6 +635,8 @@
     initVideoLightbox();
     initSwipeRows();
     initPbThread();
+    initNewsletter();
+    initNewsBubble();
   }
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', boot);

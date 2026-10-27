@@ -3639,3 +3639,63 @@ input, textarea, select, button { font-weight: inherit; }
 .kz-bc-x:hover { background: rgba(0,0,0,.18); }
 .kz-bc .kz-trial-submit { margin-top: 22px; }
 body.kz-bc-open { overflow: hidden; }
+
+/* ── Footer newsletter signup (Mailchimp, same audience as July coffee) ── */
+.kz-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.kz-footer-news {
+  display: flex; align-items: center; justify-content: space-between; gap: 32px 56px; flex-wrap: wrap;
+  padding: 0 0 40px; margin-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.kz-footer-news-copy h4 { margin: 0 0 12px; font-size: clamp(30px, 3vw, 40px); line-height: 1.05; font-weight: 800; letter-spacing: -0.025em; color: #F5F5EF; }
+.kz-footer-news-copy h4 .kz-y { color: var(--kz-yellow); }
+/* Speech-bubble badge above the heading; site.js flies it in on scroll like
+   the product page's section bubbles. */
+.kz-footer-news-icon {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 44px; margin-bottom: 16px;
+  background: var(--kz-yellow); border-radius: 16px 16px 16px 4px; box-shadow: 0 10px 22px -8px rgba(255,185,0,.55);
+  will-change: transform, opacity;
+}
+.kz-footer-news-copy strong { font-weight: 600; color: rgba(245,245,239,.9); }
+.kz-footer-news-copy p { margin: 0; max-width: 520px; font-size: 15px; line-height: 1.55; color: rgba(245,245,239,.65); }
+.kz-footer-news-form { position: relative; flex: 0 1 480px; min-width: 0; }
+.kz-footer-news-row { display: flex; gap: 10px; }
+.kz-footer-news-row input {
+  flex: 1; min-width: 0; padding: 14px 18px; font: inherit; font-size: 16px; color: #F5F5EF;
+  background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.22); border-radius: 999px;
+}
+.kz-footer-news-row input::placeholder { color: rgba(245,245,239,.4); }
+.kz-footer-news-row input:focus { outline: none; border-color: var(--kz-yellow); box-shadow: 0 0 0 3px rgba(255,185,0,.25); }
+.kz-footer-news-row .kz-btn { flex: none; padding: 14px 24px; font-size: 15px; font-weight: 700; border-radius: 999px; }
+/* Job role: hidden until the email box is used (site.js adds .is-open) */
+.kz-footer-news-role {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 12px;
+  max-height: 0; opacity: 0; overflow: hidden; margin-top: 0; visibility: hidden;
+  transition: max-height .3s ease, opacity .25s ease, margin-top .3s ease, visibility 0s linear .3s;
+}
+.kz-footer-news-form.is-open .kz-footer-news-role,
+.kz-footer-news-form:focus-within .kz-footer-news-role {
+  max-height: 80px; opacity: 1; margin-top: 12px; visibility: visible;
+  transition: max-height .3s ease, opacity .25s ease, margin-top .3s ease;
+}
+.kz-footer-news-role label { font-size: 14px; font-weight: 600; color: rgba(245,245,239,.75); }
+.kz-footer-news-role select {
+  width: 100%; min-width: 0; padding: 13px 40px 13px 18px; font: inherit; font-size: 16px; color: #F5F5EF;
+  background: rgba(255,255,255,.06) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23F5F5EF' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 18px center;
+  border: 1.5px solid rgba(255,255,255,.22); border-radius: 999px; -webkit-appearance: none; appearance: none;
+}
+.kz-footer-news-role select:focus { outline: none; border-color: var(--kz-yellow); box-shadow: 0 0 0 3px rgba(255,185,0,.25); }
+.kz-footer-news-role option { color: #000; }
+.kz-footer-news-msg { margin: 12px 0 0; font-size: 14px; font-weight: 600; color: var(--kz-yellow); }
+.kz-footer-news-msg.is-error { color: #FF8A7A; }
+.kz-footer-news .kz-consent { margin-top: 10px; }
+@media (max-width: 560px) {
+  .kz-footer-news { gap: 18px; padding-bottom: 32px; margin-bottom: 32px; }
+  .kz-footer-news-copy h4 { font-size: 28px; }
+  .kz-footer-news-icon { width: 44px; height: 40px; margin-bottom: 12px; }
+  .kz-footer-news-copy p { font-size: 14px; }
+  .kz-footer-news-form { flex-basis: 100%; }
+  .kz-footer-news-row .kz-btn { padding: 14px 18px; }
+  .kz-footer-news-role { grid-template-columns: 1fr; gap: 6px; }
+  .kz-footer-news-form.is-open .kz-footer-news-role,
+  .kz-footer-news-form:focus-within .kz-footer-news-role { max-height: 110px; }
+}
