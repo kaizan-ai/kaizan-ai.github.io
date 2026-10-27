@@ -1344,7 +1344,43 @@ def footer_html(depth: int) -> str:
         anchors = '\n'.join(f'<a href="{E(href)}">{E(label)}</a>' for label, href in links)
         cols_html.append(f'<div class="col"><h4>{E(title)}</h4>{anchors}</div>')
 
+    # Newsletter signup: same Mailchimp audience as the July coffee campaign
+    # (MC_POST / MC_JSON). Tagged "newsletter", never "july-coffee", which fires
+    # the voucher automation. The job-role dropdown (ROLE merge field, same
+    # choices as the July form) slides open once the email box is used.
+    # site.js initNewsletter submits it via JSONP.
+    role_options = '<option value="">Select your role…</option>' + ''.join(
+        f'<option>{E(name)}</option>' for _, name in PERSONA_LIST) + '<option>Other</option>'
+    newsletter = f'''<div class="kz-footer-news">
+        <div class="kz-footer-news-copy">
+          <span class="kz-footer-news-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#000" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4>Get the Kaizan <span class="kz-y">newsletter</span></h4>
+          <p><strong>What’s really happening inside client relationships.</strong><br>
+          Benchmarks from real account data, playbooks from teams that keep clients longer, and practical AI for client service.</p>
+        </div>
+        <form class="kz-footer-news-form" action="{MC_POST}" method="post" target="_blank"
+              data-mc-json="{MC_JSON}" data-newsletter novalidate>
+          <div class="kz-footer-news-row">
+            <label class="kz-sr-only" for="kz-nl-email">Work email</label>
+            <input id="kz-nl-email" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Subscribe</button>
+          </div>
+          <div class="kz-footer-news-role" data-newsletter-role>
+            <label for="kz-nl-role">Your job role</label>
+            <select id="kz-nl-role" name="ROLE" required>{role_options}</select>
+          </div>
+          <input type="hidden" name="tags" value="newsletter">
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
+          </div>
+          <p class="kz-footer-news-msg" role="status" aria-live="polite" hidden></p>
+          <p class="kz-consent kz-consent--dark">You can unsubscribe at any time. See our <a href="{p}privacy-policy/">Privacy Policy</a>.</p>
+        </form>
+      </div>'''
+
     return f'''<footer class="kz-footer">
+      {newsletter}
       <div class="kz-footer-grid">
         <div class="kz-footer-brand logo-light">
           <a class="kz-nav-logo" href="/">
