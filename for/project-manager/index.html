@@ -35,8 +35,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../assets/css/tokens.css?v=0739307f">
-        <link rel="stylesheet" href="../../assets/css/site.css?v=231d8888">
-        <script defer src="../../assets/js/site.js?v=5d682e12"></script>
+        <link rel="stylesheet" href="../../assets/css/site.css?v=d046324d">
+        <script defer src="../../assets/js/site.js?v=c77ed279"></script>
         <link rel="stylesheet" href="../../assets/css/persona.css?v=427e88f6"><script defer src="../../assets/js/persona.js?v=e38b1438"></script><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "WebPage", "@id": "https://kaizan.ai/for/project-manager/#webpage", "url": "https://kaizan.ai/for/project-manager/", "name": "AI Project Status and Scope Tracking for PMs", "description": "One always-current view of every project, status and commitment. Kaizan drafts status updates, flags scope drift and feeds a live risk register for PMs.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://kaizan.ai/#website"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "dateModified": "2026-10-09"}, {"@type": "FAQPage", "@id": "https://kaizan.ai/for/project-manager/#faq", "mainEntity": [{"@type": "Question", "name": "Does it sync into Asana / Monday / ClickUp / Jira?", "acceptedAnswer": {"@type": "Answer", "text": "Kaizan integrates with Asana, Monday, ClickUp and Jira, so actions, owners and status flow both ways without manual re-entry, giving connected teams better visibility into growth opportunities. Anything not natively integrated is reachable via the API."}}, {"@type": "Question", "name": "Can it tell the difference between an action item and general discussion?", "acceptedAnswer": {"@type": "Answer", "text": "Kaizan separates actions, decisions and commitments from general discussion, attributes each one to the right owner, and links it back to the moment in the meeting it came from. You review and confirm - nothing routes downstream until you do."}}, {"@type": "Question", "name": "What if a meeting happened offline - can I add decisions and actions manually?", "acceptedAnswer": {"@type": "Answer", "text": "Manual entry sits alongside automatic capture from calls and emails. Add or edit actions, decisions and notes directly, and they're treated as first-class items - owned, tracked and followed up like anything Kaizan captured itself."}}, {"@type": "Question", "name": "Can captured actions be assigned automatically based on who said what?", "acceptedAnswer": {"@type": "Answer", "text": "Kaizan attributes actions to the person who took them on in the conversation, and routes them into your project tool of choice - with optional human review before anything is auto-assigned, supporting engagement growth and revenue while ensuring the system never overrides judgement."}}]}]}</script>
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
@@ -249,6 +249,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </section>
 
     <footer class="kz-footer">
+      <div class="kz-footer-news">
+        <div class="kz-footer-news-copy">
+          <span class="kz-footer-news-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#000" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4>Get the Kaizan <span class="kz-y">newsletter</span></h4>
+          <p><strong>What’s really happening inside client relationships.</strong><br>
+          Benchmarks from real account data, playbooks from teams that keep clients longer, and practical AI for client service.</p>
+        </div>
+        <form class="kz-footer-news-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" method="post" target="_blank"
+              data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" data-newsletter novalidate>
+          <div class="kz-footer-news-row">
+            <label class="kz-sr-only" for="kz-nl-email">Work email</label>
+            <input id="kz-nl-email" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Subscribe</button>
+          </div>
+          <div class="kz-footer-news-role" data-newsletter-role>
+            <label for="kz-nl-role">Your job role</label>
+            <select id="kz-nl-role" name="ROLE" required><option value="">Select your role…</option><option>Client Service / Account Manager</option><option>Head of Client Services</option><option>Senior Leadership</option><option>Head of AI / CTO</option><option>Project Manager</option><option>New Business / Sales</option><option>Performance / Operations</option><option>Strategy, Creative, Marketing</option><option>Other</option></select>
+          </div>
+          <input type="hidden" name="tags" value="newsletter">
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_40f0f855d8" tabindex="-1" value="">
+          </div>
+          <p class="kz-footer-news-msg" role="status" aria-live="polite" hidden></p>
+          <p class="kz-consent kz-consent--dark">You can unsubscribe at any time. See our <a href="../../privacy-policy/">Privacy Policy</a>.</p>
+        </form>
+      </div>
       <div class="kz-footer-grid">
         <div class="kz-footer-brand logo-light">
           <a class="kz-nav-logo" href="/">
