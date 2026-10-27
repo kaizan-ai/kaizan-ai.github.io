@@ -574,7 +574,7 @@
           if (data && data.result === 'success') {
             form.querySelector('.kz-footer-news-row').hidden = true;
             form.classList.remove('is-open'); form.querySelector('[data-newsletter-role]').style.display = 'none';
-            show('Thanks, you\u2019re subscribed. Check your inbox.', true);
+            show('Thanks, you\u2019re subscribed.', true);
           } else if (data && /already subscribed/i.test(data.msg || '')) {
             form.querySelector('.kz-footer-news-row').hidden = true;
             form.classList.remove('is-open'); form.querySelector('[data-newsletter-role]').style.display = 'none';
