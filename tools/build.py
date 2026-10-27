@@ -7406,6 +7406,71 @@ def _wp_popup_html() -> str:
     {_wp_assets('js')}'''
 
 
+def _cs_ai_tools_html() -> str:
+    """'Works inside the AI your team already uses' band: ChatGPT / Claude /
+    Copilot tabs, each switching a mock chat that answers from Kaizan data.
+    Separate from the integrations grid. Tab switching + auto-rotate live in
+    home.js; without JS the first panel shows."""
+    tools = [
+        dict(k='chatgpt', name='ChatGPT',
+             q='Which clients need attention this week?',
+             a=('Three accounts are trending down. <strong>Northwind</strong> has had no senior '
+                'contact in five weeks, and sentiment dipped on the last two calls. '
+                '<strong>Harbour &amp; Co.</strong> raised budget concerns twice in email.'),
+             src='14 calls · 32 emails · 6 Slack threads'),
+        dict(k='claude', name='Claude',
+             q='Prep me for tomorrow’s QBR with Harbour &amp; Co.',
+             a=('Here’s your brief: wins to lead with, the two open concerns from '
+                'September, and who’s new on their side. Suggested agenda attached, '
+                'in the style of your last QBR deck.'),
+             src='9 calls · 21 emails · 2 decks'),
+        dict(k='copilot', name='Copilot',
+             q='Draft a follow-up to today’s call with Lumen.',
+             a=('Draft ready, in your tone. It recaps the three actions agreed, '
+                'confirms the 14 Nov review, and answers their analytics question '
+                'with the case study they asked about.'),
+             src='Today’s call · 4 emails'),
+    ]
+
+    def logo(k):
+        src = f'assets/img/ai-tools/{k}.svg'
+        return f'<img src="{src}{asset_v(src)}" alt="" width="24" height="24" decoding="async">'
+
+    tabs = '\n'.join(
+        f'<button class="kz-ai-tab{" is-active" if i == 0 else ""}" type="button" role="tab" '
+        f'aria-selected="{"true" if i == 0 else "false"}" aria-controls="kz-ai-panel-{t["k"]}" '
+        f'id="kz-ai-tab-{t["k"]}" data-ai-tab>{logo(t["k"])}<span>{t["name"]}</span></button>'
+        for i, t in enumerate(tools)
+    )
+    k_icon = (f'<img src="assets/img/kaizan-icon.png{asset_v("assets/img/kaizan-icon.png")}" '
+              f'alt="" width="16" height="16">')
+    panels = '\n'.join(
+        f'<div class="kz-ai-panel{" is-active" if i == 0 else ""}" role="tabpanel" '
+        f'id="kz-ai-panel-{t["k"]}" aria-labelledby="kz-ai-tab-{t["k"]}" data-ai-panel>'
+        f'<div class="kz-ai-chrome">{logo(t["k"])}<span>{t["name"]}</span><i></i><i></i><i></i></div>'
+        f'<div class="kz-ai-chat">'
+        f'<p class="kz-ai-q">{t["q"]}</p>'
+        f'<div class="kz-ai-tool">{k_icon}<span>Searched Kaizan</span><em>{t["src"]}</em></div>'
+        f'<p class="kz-ai-a">{t["a"]}</p>'
+        f'</div></div>'
+        for i, t in enumerate(tools)
+    )
+    return f'''<section class="kz-ai" id="ai-tools">
+      <div class="kz-ai-inner">
+        <div class="kz-ai-copy">
+          <span class="kz-ai-eyebrow">Works with your AI</span>
+          <h2 class="kz-ai-title">Use Kaizan inside ChatGPT, Claude and Copilot</h2>
+          <p class="kz-ai-lede">Your team already has an AI tool open all day. Connect Kaizan and it
+            can answer about any client from every call, email and Slack thread, with the sources
+            to check. No new app to learn.</p>
+          <div class="kz-ai-tabs" role="tablist" aria-label="AI tools">{tabs}</div>
+          <p class="kz-ai-note">Connects over MCP, so it also works with any other MCP-ready AI tool.</p>
+        </div>
+        <div class="kz-ai-demo" data-ai-demo>{panels}</div>
+      </div>
+    </section>'''
+
+
 def _cs_integrations_faq_html() -> str:
     """'Works with the tools you already use' icon grid + an FAQ accordion.
     The accordion uses native <details>/<summary> — no JS needed."""
@@ -7616,6 +7681,9 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
         </div>
       </div>
     </section>
+
+    <!-- WORKS INSIDE CHATGPT / CLAUDE / COPILOT -->
+    {_cs_ai_tools_html()}
 
     <!-- PLAYBOOKS / RISK / ACTIONS / GROWTH -->
     {playbooks_sections_html()}
@@ -8086,6 +8154,78 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
           .cs-faq-plus { flex: none; transition: transform .25s ease; }
           .cs-faq-item[open] .cs-faq-plus { transform: rotate(45deg); }
           .cs-faq-body { margin: 14px 0 0; font-size: 15px; line-height: 1.6; color: var(--kz-mute); }
+          /* ---- Works inside ChatGPT / Claude / Copilot ---- */
+          .kz-ai { background: var(--kz-yellow-soft); padding: 88px var(--kz-gutter); }
+          .kz-ai-inner { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
+          .kz-ai-eyebrow {
+            display: block; width: fit-content; background: #2F5FE0; color: #fff;
+            font-size: 17px; font-weight: 700; letter-spacing: -0.015em;
+            padding: 11px 19px 12px; border-radius: 18px 18px 18px 6px; margin-bottom: 20px;
+            box-shadow: 0 10px 22px -6px rgba(0,0,0,.3); will-change: transform, opacity;
+          }
+          .kz-ai-title { margin: 0 0 16px; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; }
+          .kz-ai-lede { margin: 0 0 28px; max-width: 46ch; font-size: 17px; line-height: 1.55; font-weight: 500; color: #3F3B2F; }
+          .kz-ai-tabs { display: flex; flex-wrap: wrap; gap: 12px; }
+          .kz-ai-tab {
+            display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 14px;
+            background: #fff; border: 2px solid var(--kz-ink); border-radius: 14px; cursor: pointer;
+            font: inherit; font-size: 16px; font-weight: 700; color: var(--kz-ink);
+            box-shadow: 4px 4px 0 var(--kz-ink); transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+          }
+          .kz-ai-tab img { width: 24px; height: 24px; }
+          .kz-ai-tab:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--kz-ink); }
+          .kz-ai-tab.is-active { background: var(--kz-yellow); }
+          .kz-ai-tab:focus-visible { outline: 3px solid #2F5FE0; outline-offset: 3px; }
+          .kz-ai-note { margin: 22px 0 0; font-size: 14px; color: var(--kz-mute); }
+          .kz-ai-demo { display: grid; }
+          .kz-ai-panel {
+            grid-area: 1 / 1; background: #fff; border: 3px solid var(--kz-ink); border-radius: 20px;
+            box-shadow: 8px 8px 0 var(--kz-yellow); overflow: hidden;
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
+          }
+          .kz-ai-panel.is-active { opacity: 1; visibility: visible; transform: none; transition: opacity .35s ease, transform .35s ease; }
+          .kz-ai-chrome {
+            display: flex; align-items: center; gap: 10px; padding: 14px 20px;
+            border-bottom: 2px solid var(--kz-ink); font-size: 15px; font-weight: 700;
+          }
+          .kz-ai-chrome img { width: 22px; height: 22px; }
+          .kz-ai-chrome span { margin-right: auto; }
+          .kz-ai-chrome i { width: 9px; height: 9px; border-radius: 50%; background: var(--kz-line-strong); }
+          .kz-ai-chat { padding: 26px 24px 28px; display: flex; flex-direction: column; gap: 16px; }
+          .kz-ai-q {
+            align-self: flex-end; max-width: 80%; margin: 0; padding: 12px 16px;
+            background: var(--kz-ink); color: #fff; border-radius: 18px 18px 4px 18px;
+            font-size: 15px; line-height: 1.45; font-weight: 600;
+          }
+          .kz-ai-tool {
+            align-self: flex-start; display: inline-flex; align-items: center; flex-wrap: wrap; gap: 6px 8px;
+            padding: 7px 12px; background: var(--kz-yellow-soft); border: 1.5px solid var(--kz-yellow);
+            border-radius: 999px; font-size: 13px; font-weight: 700;
+          }
+          .kz-ai-tool img { width: 16px; height: 16px; border-radius: 4px; }
+          .kz-ai-tool em { font-style: normal; font-weight: 500; color: var(--kz-mute); }
+          .kz-ai-a { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--kz-ink-2); }
+          @media (max-width: 1024px) {
+            .kz-ai-inner { grid-template-columns: 1fr; gap: 40px; }
+          }
+          @media (max-width: 560px) {
+            .kz-ai { padding: 56px 20px 60px; }
+            .kz-ai-inner { gap: 28px; }
+            .kz-ai-eyebrow { margin-bottom: 14px; font-size: 15px; padding: 9px 16px 10px; border-radius: 16px 16px 16px 5px; }
+            .kz-ai-title { font-size: 30px; }
+            .kz-ai-lede { font-size: 16px; margin-bottom: 22px; }
+            .kz-ai-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+            .kz-ai-tab { flex-direction: column; justify-content: center; gap: 6px; padding: 12px 4px; font-size: 13px; box-shadow: 3px 3px 0 var(--kz-ink); }
+            .kz-ai-tab img { width: 26px; height: 26px; }
+            .kz-ai-note { font-size: 13px; margin-top: 16px; }
+            .kz-ai-panel { box-shadow: 6px 6px 0 var(--kz-yellow); border-radius: 16px; }
+            .kz-ai-chat { padding: 20px 16px 22px; gap: 12px; }
+            .kz-ai-q { font-size: 14px; max-width: 88%; }
+            .kz-ai-a { font-size: 14.5px; }
+            .kz-ai-tool { border-radius: 14px; }
+          }
+          @media (prefers-reduced-motion: reduce) { .kz-ai-panel { transition: none; } }
         </style>
         <!-- Reel play-in-view and the travelling bubbles run from site.js
              (initReel / initPbConnectors); no page-level copy, so they don't run twice. -->''')
