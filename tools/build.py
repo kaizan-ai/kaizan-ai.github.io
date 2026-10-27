@@ -84,6 +84,7 @@ PRODUCT_MENU = [
 RESOURCES_MENU = [
     ('Blog',          'blog/',           'is-mute'),
     ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
+    ('Hall of Fame',  'hall-of-fame/',   'is-mute'),
     ('FAQs',          'faq/',            'is-mute'),
     ('Security',      'security/',       'is-mute'),
 ]
@@ -3029,7 +3030,7 @@ def render_product() -> str:
          'expansion', '#1FA591', '4.8'),
     ]
     care_cards_html = '\n'.join(
-        f'''<div class="kz-care-card" style="--theme:{color};">
+        f'''<div class="kz-care-card" id="care-{vid}" style="--theme:{color};">
           <div class="top">
             <div class="glyph">{E(k)}</div>
             <div class="label">{E(name)}</div>
@@ -5597,6 +5598,339 @@ RESEARCH_REPORT = dict(
         ('Heads of AI & CTOs', 'The metrics, the tooling and the workflow. Page 28 onward.'),
     ],
 )
+
+
+# ─────────────────────────────────────────────────────────────────────
+# CLIENT SERVICE HALL OF FAME — Kaizan Award winners, in their own words.
+# /hall-of-fame/ lists the winners; each gets a profile at /hall-of-fame/<slug>/.
+# Add a winner by appending to HALL_OF_FAME. Only answered questions go in
+# `qa`; an answer is a string (paragraphs split on blank lines) or a list
+# (rendered as numbered cards). `photo` is a file in assets/img/people/
+# (None shows initials).
+HALL_OF_FAME = [
+    dict(
+        slug='gaetan-staples',
+        name='Gaetan Staples',
+        role='Account Director',
+        company='Gravity Global',
+        logo='gravity-global.svg',   # in assets/img/clients/; shown in place of the company name
+        photo='gaetan-staples.jpg',
+        award='Client Champion',
+        month='September 2026',
+        citation='Puts their clients first and makes them feel looked after: '
+                 'they devote their time to their clients.',
+        calls=70,
+        # (label, value, unit/sub-label, market standing) from the award card.
+        stats=[
+            ('Post-call follow-up speed', '1h', '', 'Top 5%'),
+            ('High-sentiment moments', '61', '', 'Top 5%'),
+            ('Strategy and planning calls', '23', '', 'Top 10%'),
+            ('Median reply speed', '7', 'min', 'Top 20%'),
+            ('Stakeholder reach', '60', 'client contacts', 'Top 25%'),
+            ('Response consistency', '0.84', '', 'Top 25%'),
+        ],
+        quote='I hate not knowing whether someone has seen my requests, '
+              'so I imagine my clients feel the same.',
+        qa=[
+            ("What's your rule for following up with a client? You were recognised for fast follow-ups.",
+             "It's not always possible to follow up with a client immediately with an answer or "
+             "deliverable they request. But what you can do is acknowledge it, reassure them that "
+             "you've seen it and that you'll get back to them by a certain time or date. I hate not "
+             "knowing whether someone has seen my requests, so I imagine my clients feel the same. "
+             "Putting a dedicated block in my calendar to action that request ensures I get to it by "
+             "the agreed deadline."),
+            ('What do you do before every client meeting that most people skip?',
+             'It may sound overkill, but I have a pre-thought or written answer to every question I '
+             'anticipate the client will ask depending on any given agenda.'),
+            ('3 pieces of advice for someone starting out in account management?',
+             ['Communication to your colleagues is as important, if not more, than with your client.',
+              "Don't be afraid to tell your clients you don't know the answer. You're not expected to "
+              "be an expert in all areas of marketing - that's what your practice area specialist "
+              "colleagues are for. Lean on them.",
+              'Ensure you have a written audit trail of notes, actions, requests - internally and '
+              'externally. You never know when you might need to refer back to it (fortunately, '
+              'Kaizan pretty much does this for you if present on a call).']),
+            ("What's the biggest mistake an account manager can make?",
+             "Not communicate - internally or externally. If something is going to be delayed, let "
+             "the client know as soon as possible. 9/10 times it won't be an issue - clients are "
+             "(usually) understanding. A late delivery that you were aware of but had not been "
+             "communicated to the client is unacceptable. Put yourselves in their shoes and imagine "
+             "how you'd feel."),
+            ('What does a great account director do that nobody teaches?',
+             'I believe a good AD can read the room and tell if a client, colleague or even a '
+             'supplier is happy or not. The skill is being able to notice it, address it and resolve '
+             'it before it escalates.'),
+            ('How has AI changed the way you run your accounts?',
+             "I'm able to be more present in client meetings because I know it's recorded and "
+             "actions are being noted. It allows me to listen better and offer more value during "
+             "the meeting."),
+            ('What would you miss most if Kaizan disappeared tomorrow?',
+             'Knowing that Kaizan has my back if I miss anything in any client meetings!'),
+        ],
+    ),
+]
+
+# Kaizan Awards categories: colour + icon per award, from the monthly winners
+# email. Every winner's `award` must be one of these keys; the colour (with its
+# light/dark shades) tints the badge, photo frame and stat pills, and the icon
+# (assets/img/awards/<slug>.svg) sits on a yellow coin like the email's.
+AWARD_CATEGORIES = {
+    'Client Service Team of the Month': dict(
+        slug='team-of-the-month', color='#FFB900', light='#FFD133', dark='#E6A700', team=True,
+        pillar='',
+        desc='The client service team with the strongest client health across their accounts: the '
+             'highest average CARE™ score, with Kaizan running across their client calls.'),
+    'Client Champion': dict(
+        slug='client-champion', color='#4CC9F0', light='#9FE3F8', dark='#1E7CA0',
+        pillar='Client satisfaction', care_id='care-satisfaction',   # card on /product/
+        desc='Puts their clients first and makes them feel looked after: they devote their time to '
+             'their clients.'),
+    'Account Excellence': dict(
+        slug='account-excellence', color='#FF66C4', light='#FF9ED9', dark='#C2358F',
+        pillar='Activity with stakeholders', care_id='care-activity',   # card on /product/
+        desc='Builds warm, lasting client relationships by proactively reaching out and building '
+             'multithreaded accounts.'),
+    'Trusted Partner': dict(
+        slug='trusted-partner', color='#B388FF', light='#D4BDFF', dark='#5A2EC4',
+        pillar='Relationship & interaction quality', care_id='care-relationship',   # card on /product/
+        desc='The person clients turn to for strategic guidance. They collaborate and consult by '
+             'leading deep, strategic conversations.'),
+    'Growth Leader': dict(
+        slug='growth-leader', color='#14C6B8', light='#7FDFD6', dark='#0B7F76',
+        pillar='Expansion strategy', care_id='care-expansion',   # card on /product/
+        desc='Steers calls toward new opportunities by constantly leading with expansion and building '
+             'advocacy in the relationship.'),
+}
+
+
+def _hof_cat_style(w: dict) -> str:
+    c = AWARD_CATEGORIES[w['award']]
+    return f'--cat:{c["color"]};--cat-light:{c["light"]};--cat-dark:{c["dark"]}'
+
+
+def _hof_award_html(w: dict, depth: int, big: bool = False) -> str:
+    """Award badge: yellow coin with the category icon, then the award name with
+    its last word in the category colour (as in the winners email), then the month."""
+    c = AWARD_CATEGORIES[w['award']]
+    src = f'assets/img/awards/{c["slug"]}.svg'
+    coin = (f'<span class="hof-coin" aria-hidden="true"><span>'
+            f'<img src="{relpath(depth)}{src}{asset_v(src)}" alt=""></span></span>')
+    first, _, last = w['award'].rpartition(' ')
+    name = f'{E(first)} <b>{E(last)}</b>' if first else f'<b>{E(last)}</b>'
+    cls = 'hof-award hof-award--lg' if big else 'hof-award'
+    return (f'<span class="{cls}">{coin}<span class="hof-award-name">{name}</span>'
+            f'<span class="hof-award-month">{E(w["month"])}</span></span>')
+
+
+def _hof_byline(w: dict) -> str:
+    return ' · '.join(x for x in (w['role'], w['company']) if x)
+
+
+def _hof_byline_html(w: dict, depth: int, cls: str) -> str:
+    """Role, then the company logo (or its name when there's no logo)."""
+    if not w.get('logo'):
+        by = _hof_byline(w)
+        return f'<p class="{cls}">{E(by)}</p>' if by else ''
+    src = f'assets/img/clients/{w["logo"]}'
+    logo = (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}" '
+            f'alt="{E(w["company"])}" decoding="async">')
+    role = f'<span>{E(w["role"])}</span><span class="sep" aria-hidden="true">·</span>' if w['role'] else ''
+    return f'<p class="{cls} hof-by-logo">{role}{logo}</p>'
+
+
+def _hof_photo(w: dict, depth: int, cls: str) -> str:
+    if w['photo']:
+        src = f'assets/img/people/{w["photo"]}'
+        return (f'<div class="{cls}"><img src="{relpath(depth)}{src}{asset_v(src)}" '
+                f'alt="{E(w["name"])}" loading="lazy" decoding="async"></div>')
+    initials = ''.join(part[0] for part in w['name'].split()[:2]).upper()
+    return f'<div class="{cls} is-initials" aria-hidden="true"><span>{E(initials)}</span></div>'
+
+
+def _hof_head(title: str, depth: int, desc: str) -> str:
+    css, js = 'assets/css/hall-of-fame.css', 'assets/js/hall-of-fame.js'
+    return page_head(title, depth, desc,
+                     extra_head=f'<link rel="stylesheet" href="{relpath(depth)}{css}{asset_v(css)}">'
+                                f'<script defer src="{relpath(depth)}{js}{asset_v(js)}"></script>')
+
+
+def _hof_about_html() -> str:
+    """About the Kaizan Awards: why we run them, how winners are chosen, and a
+    card per category (its colour, coin icon, CARE pillar and description)."""
+    def coin(c):
+        src = f'assets/img/awards/{c["slug"]}.svg'
+        return (f'<span class="hof-coin hof-coin--xl" aria-hidden="true"><span>'
+                f'<img src="{relpath(1)}{src}{asset_v(src)}" alt=""></span></span>')
+
+    cards = []
+    for name, c in AWARD_CATEGORIES.items():
+        first, _, last = name.rpartition(' ')
+        tag = (f'<span class="hof-cat-tag">Team award</span>' if c.get('team')
+               else f'<a class="hof-cat-tag hof-cat-tag--link" href="{relpath(1)}product/#{c["care_id"]}">'
+                    f'CARE™ · {E(c["pillar"])} <span aria-hidden="true">&rarr;</span></a>')
+        cards.append(f'''
+          <div class="hof-cat{" hof-cat--team" if c.get("team") else ""}" style="--cat:{c["color"]}">
+            <div class="hof-cat-head">{coin(c)}<h3>{E(first)} <b>{E(last)}</b></h3></div>
+            {tag}
+            <p>{E(c["desc"])}</p>
+          </div>''')
+    how = [
+        ('Picked on real data', 'Winners are chosen on what actually happened with their clients, '
+                                'measured in Kaizan against the CARE™ Client Health Model. No votes, '
+                                'no nominations.'),
+        ('Every Kaizan user, globally', 'Every client service person and team using Kaizan is in the '
+                                        'running, every month.'),
+        ('Nothing to enter', 'Keep looking after your clients, and Kaizan does the rest. Winners are '
+                             'announced at the start of each month.'),
+    ]
+    how_html = ''.join(f'<li><span class="n">{i}</span><div><h4>{E(t)}</h4><p>{E(d)}</p></div></li>'
+                       for i, (t, d) in enumerate(how, 1))
+    return f'''<section class="hof-about">
+        <div class="hof-about-inner">
+          <div class="hof-about-why">
+            <span class="hof-bubble">About the Kaizan Awards</span>
+            <h2 class="hof-about-title">Why we run the Kaizan Awards</h2>
+            <p>Great client service rarely gets seen. It happens in the follow-up sent within the hour,
+              the stakeholder nobody else thought to call, the quiet question that turns into new work.</p>
+            <p>Every month the Kaizan Awards recognise the client service people and teams doing
+              outstanding work for their clients, so that work gets the credit it deserves, and so the
+              rest of us can learn how they do it.</p>
+          </div>
+          <ol class="hof-how">{how_html}</ol>
+        </div>
+        <div class="hof-cats-wrap">
+          <h2 class="hof-about-title">The award categories</h2>
+          <p class="hof-cats-sub">Four individual awards, one for each pillar of the CARE™ Client Health Model, plus a team award.</p>
+          <div class="hof-cats">{"".join(cards)}
+          </div>
+        </div>
+      </section>'''
+
+
+def render_hall_of_fame() -> str:
+    wm = 'assets/img/awards/kaizan-awards-wordmark-white.png'   # white: needs the black hero band
+    trophy = 'assets/img/awards/kaizan-trophy.png'
+    cards = '\n'.join(f'''
+        <a class="hof-card" href="{w["slug"]}/" style="{_hof_cat_style(w)}">
+          <div class="hof-card-top">{_hof_award_html(w, 1)}</div>
+          {_hof_photo(w, 1, "hof-card-photo")}
+          <div class="hof-card-body">
+            <h2 class="hof-card-name">{E(w["name"])}</h2>
+            {_hof_byline_html(w, 1, "hof-card-by")}
+            <blockquote class="hof-card-quote">&ldquo;{E(w["quote"])}&rdquo;</blockquote>
+            <span class="hof-card-more">Read {E(w["name"].split()[0])}&rsquo;s story &rarr;</span>
+          </div>
+        </a>''' for w in HALL_OF_FAME)
+    body = f'''
+    {nav_html(1)}
+    <main class="hof">
+      <section class="hof-hero">
+        <div class="hof-hero-inner">
+          <div class="hof-hero-copy">
+            <h1 class="hof-h1">The Client Service Hall of Fame</h1>
+            <p class="hof-lede">The people behind the best client relationships, and how they do it.
+              Each Kaizan Monthly Award winner shares the habits, rules and lessons that keep their clients coming back.</p>
+          </div>
+          <div class="hof-hero-trophy">
+            <img src="{relpath(1)}{trophy}{asset_v(trophy)}" alt="" width="520" height="655">
+          </div>
+        </div>
+        <img class="hof-hero-wordmark" src="{relpath(1)}{wm}{asset_v(wm)}" alt="The Kaizan Awards" width="500" height="235">
+      </section>
+      <section class="hof-band">
+        <div class="hof-grid">{cards}
+        </div>
+      </section>
+      {_hof_about_html()}
+    </main>
+    {footer_html(1)}
+    '''
+    return _hof_head('Client Service Hall of Fame', 1,
+                     'Kaizan Award winners share the habits, rules and lessons behind great client '
+                     'relationships.') + body + page_foot()
+
+
+def _hof_unit(unit: str) -> str:
+    """Stat unit after the number; long ones ("client contacts") drop to their own line on phones."""
+    if not unit:
+        return ''
+    cls = ' class="is-long"' if len(unit) > 4 else ''
+    return f'<small{cls}>{E(unit)}</small>'
+
+
+def render_hall_of_fame_winner(w: dict) -> str:
+    first = w['name'].split()[0]
+    # Interview as a chat: Kaizan's questions (yellow bubbles, Kaizan icon) and
+    # the winner's answers (white bubbles, their photo). hall-of-fame.js pops
+    # each bubble in as it scrolls into view.
+    k_src = 'assets/img/kaizan-icon.png'
+    k_av = f'<img src="{relpath(2)}{k_src}{asset_v(k_src)}" alt="">'
+    if w['photo']:
+        w_src = f'assets/img/people/{w["photo"]}'
+        w_av = f'<img src="{relpath(2)}{w_src}{asset_v(w_src)}" alt="">'
+    else:
+        w_av = f'<span>{E(first[0])}</span>'
+    qa_html = []
+    for i, (q, a) in enumerate(w['qa']):
+        if isinstance(a, list):
+            ans = '<ol class="hof-tips">' + ''.join(
+                f'<li><span class="n">{n}</span><p>{E(t)}</p></li>' for n, t in enumerate(a, 1)) + '</ol>'
+        else:
+            ans = ''.join(f'<p>{E(para)}</p>' for para in a.split('\n\n'))
+        qa_html.append(f'''
+        <div class="hof-qa">
+          <div class="hof-q-row" data-hof-reveal>
+            <span class="hof-av hof-av--k" aria-hidden="true">{k_av}</span>
+            <h2 class="hof-q"><span class="hof-q-n">{i + 1:02d}</span>{E(q)}</h2>
+          </div>
+          <div class="hof-a-row" data-hof-reveal>
+            <div class="hof-a">{ans}</div>
+            <span class="hof-av" aria-hidden="true">{w_av}</span>
+          </div>
+        </div>''')
+    stats_html = ''.join(
+        f'<div class="hof-stat"><div class="lbl">{E(lbl)}</div>'
+        f'<div class="val">{E(val)}{_hof_unit(unit)}</div>'
+        f'<div class="rank">{E(rank)} of the market</div></div>'
+        for lbl, val, unit, rank in w['stats'])
+    byline = _hof_byline(w)
+    body = f'''
+    {nav_html(2)}
+    <main class="hof" style="{_hof_cat_style(w)}">
+      <section class="hof-profile">
+        <div class="hof-profile-copy">
+          <a class="hof-back" href="../">&larr; Client Service Hall of Fame</a>
+          <span class="hof-bubble">Kaizan Award winner</span>
+          <h1 class="hof-h1">{E(w["name"])}</h1>
+          {_hof_byline_html(w, 2, "hof-by")}
+          {_hof_award_html(w, 2, big=True)}
+          <p class="hof-citation">{E(w["citation"])}</p>
+        </div>
+        {_hof_photo(w, 2, "hof-profile-photo")}
+      </section>
+      <section class="hof-pull">
+        <blockquote>&ldquo;{E(w["quote"])}&rdquo;</blockquote>
+        <cite>{E(first)}</cite>
+      </section>
+      <section class="hof-stats">
+        <h2 class="hof-stats-title">The numbers behind the award</h2>
+        <p class="hof-stats-sub">{E(w["month"])}, across {w["calls"]} client calls, measured by Kaizan.</p>
+        <div class="hof-stats-grid">{stats_html}</div>
+      </section>
+      <section class="hof-interview">
+        <h2 class="hof-interview-title">In {E(first)}&rsquo;s words</h2>
+        <p class="hof-interview-sub">We asked {E(first)} how they look after their clients.</p>
+        {''.join(qa_html)}
+      </section>
+      <section class="hof-more">
+        <a class="kz-btn kz-btn-black" href="../">Meet the Hall of Fame</a>
+      </section>
+    </main>
+    {footer_html(2)}
+    '''
+    desc = (f'{w["name"]}, {w["role"]} at {w["company"]} and Kaizan {w["award"]} for {w["month"]}, '
+            f'on the habits behind great client service.')
+    return _hof_head(f'{w["name"]} · Client Service Hall of Fame', 2, desc) + body + page_foot()
 
 
 def render_research() -> str:
@@ -8356,6 +8690,9 @@ def main():
     write(ROOT / 'faq' / 'index.html',          render_faq())
     write(ROOT / 'research' / 'index.html',     render_research())
     write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
+    write(ROOT / 'hall-of-fame' / 'index.html', render_hall_of_fame())
+    for w in HALL_OF_FAME:
+        write(ROOT / 'hall-of-fame' / w['slug'] / 'index.html', render_hall_of_fame_winner(w))
     write(ROOT / 'customers' / 'index.html',    render_customers())
     # /insights/ retired — the blog now lives at /blog/. render_insights() kept
     # for easy revert; the directory is removed so it doesn't serve stale content.

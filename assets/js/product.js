@@ -184,7 +184,17 @@
     place();
   }
 
+  // Arriving on /product/#care-<pillar> (e.g. from a Hall of Fame award
+  // category): flash that CARE card so it's clear which pillar was meant.
+  function initCareTarget() {
+    var id = location.hash.slice(1);
+    if (!/^care-/.test(id)) return;
+    var card = document.getElementById(id);
+    if (card) card.classList.add('is-target');
+  }
+
   function boot() {
+    initCareTarget();
     initBubbleReveal();
     initCareSpotlight();
     initScrollPlayVideos();
