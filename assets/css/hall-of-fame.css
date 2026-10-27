@@ -1,0 +1,335 @@
+/* ── Client Service Hall of Fame (/hall-of-fame/ and winner profiles) ──
+   Product-page language: heavy headline, speech-bubble label, 3px ink cards
+   with a hard yellow offset shadow, full-width yellow pull-quote band. */
+.hof { background: var(--kz-paper); }
+
+.hof-bubble {
+  display: block; width: fit-content; margin-bottom: 18px; padding: 11px 19px 12px;
+  background: var(--kz-yellow); color: var(--kz-ink); border-radius: 18px 18px 18px 6px;
+  font-size: 17px; font-weight: 700; letter-spacing: -0.015em;
+  box-shadow: 0 10px 22px -8px rgba(255,185,0,.55);
+}
+.hof-h1 {
+  margin: 0; font-family: var(--kz-display);
+  font-size: clamp(44px, 4.8vw, 66px) !important; line-height: 1.0; font-weight: 800; letter-spacing: -0.02em;
+}
+.hof-lede { margin: 20px 0 0; max-width: 58ch; font-size: 19px; line-height: 1.55; font-weight: 500; color: #3F3B2F; }
+
+/* Award badge: yellow coin + category icon, name with the last word in the
+   category colour (--cat, set per winner from AWARD_CATEGORIES). */
+.hof-award {
+  display: inline-flex; align-items: center; gap: 10px; width: fit-content;
+  padding: 5px 16px 5px 5px; background: var(--kz-ink); color: #FFFBF0; border-radius: 999px;
+  font-size: 13px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.hof-award b { color: var(--cat, var(--kz-yellow)); font-weight: 800; }
+.hof-award-month { padding-left: 10px; border-left: 1px solid rgba(255,251,240,.25); font-weight: 600; letter-spacing: 0.02em; text-transform: none; color: #B8B2A6; }
+.hof-coin {
+  flex: none; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%;
+  background: var(--kz-yellow);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), inset 0 -2px 0 #E6A700, 0 0 0 2px #000, 0 0 0 3.5px var(--cat, var(--kz-yellow));
+}
+.hof-coin > span { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; border: 1px dashed rgba(0,0,0,.55); }
+.hof-coin img { width: 15px; height: 15px; display: block; }
+.hof-award--lg { margin-top: 24px; gap: 14px; padding: 7px 22px 7px 7px; font-size: 17px; }
+.hof-award--lg .hof-coin { width: 46px; height: 46px; box-shadow: inset 0 2px 0 rgba(255,255,255,.45), inset 0 -3px 0 #E6A700, 0 0 0 3px #000, 0 0 0 5px var(--cat, var(--kz-yellow)); }
+.hof-award--lg .hof-coin > span { width: 37px; height: 37px; border-width: 1.5px; }
+.hof-award--lg .hof-coin img { width: 23px; height: 23px; }
+.hof-award--lg .hof-award-month { font-size: 15px; }
+
+/* Photo / initials (shared) */
+.hof-card-photo, .hof-profile-photo { overflow: hidden; background: var(--kz-yellow-soft); }
+.hof-card-photo img, .hof-profile-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.is-initials { display: flex; align-items: center; justify-content: center; background: var(--kz-yellow); }
+.is-initials span { font-weight: 800; letter-spacing: -0.03em; color: var(--kz-ink); }
+
+/* ── Index ── */
+/* Black header band: title left, the gold trophy beside it standing right on
+   the band's bottom edge (no bottom padding, so its base meets the yellow
+   strip), and the white Kaizan Awards wordmark small in the top-right corner. */
+/* overflow-x only, so the trophy's light can spill down onto the yellow strip. */
+.hof-hero { position: relative; z-index: 1; background: #0A0A0A; color: #FFFBF0; padding: 48px var(--kz-gutter) 0; overflow-x: clip; }
+.hof-hero-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: flex-start; gap: 72px; }
+.hof-hero-copy { flex: 0 1 auto; max-width: 700px; align-self: center; padding: 8px 0 48px; }
+.hof-hero .hof-h1 { color: #FFFBF0; font-size: clamp(48px, 5.6vw, 80px) !important; }
+.hof-hero .hof-lede { color: rgba(255,251,240,.75); }
+.hof-hero-wordmark { position: absolute; top: 28px; right: var(--kz-gutter); display: block; width: 130px; height: auto; }
+.hof-hero-trophy { position: relative; flex: none; margin: 0; }
+.hof-hero-trophy img { position: relative; z-index: 1; display: block; width: auto; height: 300px; }
+/* Warm pool of light under the base, and a soft shadow that spills over the
+   band's edge onto the yellow strip below, so the trophy sits on the seam. */
+.hof-hero-trophy::before {
+  /* Halo + pool of light, anchored to the band's bottom edge so none of it lands on the yellow. */
+  content: ""; position: absolute; left: -45%; right: -45%; bottom: 0; height: 125%;
+  background:
+    radial-gradient(50% 22% at 50% 100%, rgba(255,185,0,.40), rgba(255,185,0,0)),
+    radial-gradient(42% 48% at 50% 58%, rgba(255,185,0,.16), rgba(255,185,0,0));
+}
+.hof-hero-trophy::after {
+  content: ""; position: absolute; left: -6%; right: -6%; bottom: -26px; height: 52px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(120,72,0,.45), rgba(120,72,0,0));
+}
+/* Winner cards sit on a full-width yellow strip under the black header. */
+.hof-band { background: var(--kz-yellow); padding: 72px var(--kz-gutter) 88px; }
+.hof-grid {
+  max-width: 1280px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px;
+}
+.hof-card {
+  display: flex; flex-direction: column; background: #fff; color: var(--kz-ink); text-decoration: none;
+  border: 3px solid var(--kz-ink); border-radius: 20px; overflow: hidden;
+  box-shadow: 8px 8px 0 var(--cat, var(--kz-yellow)); transition: transform .2s ease, box-shadow .2s ease;
+}
+.hof-card:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0 var(--cat, var(--kz-yellow)); }
+.hof-card-photo { aspect-ratio: 4 / 3; border-bottom: 3px solid var(--kz-ink); }
+/* Award as a black strip across the top of the card. */
+.hof-card-top { background: var(--kz-ink); padding: 14px 18px 14px 16px; border-bottom: 3px solid var(--kz-ink); }
+.hof-card-top .hof-award { position: relative; width: 100%; gap: 14px; padding: 0; border-radius: 0; font-size: 22px; letter-spacing: 0.01em; }
+.hof-card-top .hof-award-month {
+  position: absolute; top: -4px; right: 0; border-left: none; padding-left: 0; font-size: 12px; letter-spacing: 0.04em;
+}
+.hof-card-top .hof-coin {
+  width: 52px; height: 52px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), inset 0 -3px 0 #E6A700, 0 0 0 3px #000, 0 0 0 5px var(--cat, var(--kz-yellow));
+}
+.hof-card-top .hof-coin > span { width: 42px; height: 42px; border-width: 1.5px; }
+.hof-card-top .hof-coin img { width: 26px; height: 26px; }
+.hof-card-photo.is-initials span { font-size: 96px; }
+.hof-card-body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 26px; flex: 1; }
+.hof-card-name { margin: 4px 0 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.hof-card-by { margin: -4px 0 0; font-size: 15px; color: var(--kz-mute); }
+.hof-card-quote { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 500; color: #3F3B2F; }
+.hof-card-more { margin-top: auto; padding-top: 6px; font-size: 15px; font-weight: 700; }
+.hof-card:hover .hof-card-more { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Winner profile ── */
+.hof-profile {
+  max-width: 1280px; margin: 0 auto; padding: 72px var(--kz-gutter) 72px; box-sizing: content-box;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center;
+}
+.hof-back { display: inline-block; margin-bottom: 28px; font-size: 14px; font-weight: 600; color: var(--kz-mute); text-decoration: none; }
+.hof-back:hover { color: var(--kz-ink); }
+.hof-by { margin: 14px 0 0; font-size: 20px; font-weight: 500; color: #3F3B2F; }
+.hof-profile-photo {
+  aspect-ratio: 1; max-width: 420px; width: 100%; justify-self: end;
+  border: 3px solid var(--kz-ink); border-radius: 24px; box-shadow: 10px 10px 0 var(--cat, var(--kz-yellow));
+}
+.hof-profile-photo.is-initials { background: var(--kz-yellow-soft); }
+.hof-profile-photo.is-initials span { font-size: 140px; }
+
+.hof-pull { background: var(--kz-yellow); padding: 72px var(--kz-gutter); text-align: center; }
+.hof-pull blockquote {
+  max-width: 900px; margin: 0 auto; font-size: clamp(28px, 3.2vw, 42px); line-height: 1.2;
+  font-weight: 800; letter-spacing: -0.02em; color: var(--kz-ink);
+}
+.hof-pull cite { display: block; margin-top: 20px; font-style: normal; font-size: 16px; font-weight: 700; }
+
+/* Interview as a chat: Kaizan asks (yellow bubble, left), the winner answers
+   (white bubble with a category-colour shadow, right, with their photo). */
+.hof-interview { max-width: 900px; margin: 0 auto; padding: 88px 24px 40px; }
+.hof-interview-title { margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 700; letter-spacing: -0.02em; }
+.hof-interview-sub { margin: 10px 0 44px; font-size: 17px; color: var(--kz-mute); }
+.hof-qa { display: flex; flex-direction: column; gap: 18px; margin-bottom: 48px; }
+.hof-av {
+  flex: none; width: 48px; height: 48px; border-radius: 50%; overflow: hidden; background: var(--kz-yellow);
+  border: 2.5px solid var(--kz-ink); display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 20px;
+}
+.hof-av img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hof-av--k { background: var(--kz-yellow); }
+/* Scale past the circle so the icon's own rounded corners are clipped away. */
+.hof-av--k img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.12); }
+.hof-q-row { display: flex; align-items: flex-end; gap: 12px; max-width: 82%; }
+.hof-q {
+  margin: 0; padding: 18px 22px; background: var(--kz-yellow); color: var(--kz-ink);
+  border-radius: 22px 22px 22px 6px; font-size: 20px; line-height: 1.35; font-weight: 700; letter-spacing: -0.01em;
+  box-shadow: 0 10px 22px -10px rgba(255,185,0,.6);
+}
+.hof-q-n {
+  display: inline-block; margin-right: 10px; padding: 2px 8px; border-radius: 999px; background: var(--kz-ink);
+  color: var(--kz-yellow); font-size: 12px; font-weight: 800; letter-spacing: .04em; vertical-align: 3px;
+}
+.hof-a-row { display: flex; align-items: flex-end; gap: 12px; align-self: flex-end; max-width: 88%; }
+.hof-a {
+  padding: 20px 24px; background: #fff; border: 2.5px solid var(--kz-ink); border-radius: 22px 22px 6px 22px;
+  box-shadow: 6px 6px 0 var(--cat, var(--kz-yellow));
+}
+.hof-a p { margin: 0 0 12px; font-size: 17.5px; line-height: 1.6; color: var(--kz-ink-2); }
+.hof-a p:last-child { margin-bottom: 0; }
+.hof-tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.hof-tips li { display: flex; gap: 14px; align-items: flex-start; }
+.hof-tips li + li { padding-top: 14px; border-top: 1px dashed var(--kz-line-strong); }
+.hof-tips .n {
+  flex: none; display: flex; align-items: center; justify-content: center; width: 32px; height: 32px;
+  background: var(--kz-yellow); border: 2px solid var(--kz-ink); border-radius: 12px 12px 12px 4px; font-weight: 800; font-size: 15px;
+}
+.hof-tips p { margin: 3px 0 0 !important; font-size: 17px; line-height: 1.55; }
+
+/* Pop-in on scroll (hall-of-fame.js adds .js-hof-reveal to <html>, then .is-in per bubble) */
+.js-hof-reveal [data-hof-reveal] { opacity: 0; transform: translateY(18px) scale(.97); transition: opacity .5s ease, transform .5s cubic-bezier(.34,1.4,.64,1); }
+.js-hof-reveal .hof-q-row[data-hof-reveal] { transform-origin: 0 100%; }
+.js-hof-reveal .hof-a-row[data-hof-reveal] { transform-origin: 100% 100%; transition-delay: .15s; }
+.js-hof-reveal [data-hof-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js-hof-reveal [data-hof-reveal] { opacity: 1; transform: none; transition: none; } }
+
+.hof-more { text-align: center; padding: 24px 24px 110px; }
+
+@media (max-width: 900px) {
+  .hof-hero-trophy { margin-right: 0; }
+  .hof-hero-trophy img { height: 210px; }
+  .hof-hero-wordmark { right: 32px; width: 110px; }
+  .hof-hero-wordmark { width: 110px; top: 22px; }
+  .hof-profile { grid-template-columns: 1fr; gap: 36px; padding-top: 48px; }
+  .hof-profile-photo { justify-self: start; max-width: 320px; }
+}
+@media (max-width: 560px) {
+  .hof-hero { padding: 32px 20px 0; }
+  .hof-hero .hof-h1 { font-size: 40px !important; }
+  .hof-hero-inner { flex-direction: column; align-items: flex-end; gap: 4px; }
+  .hof-hero-copy { padding: 44px 0 0; align-self: stretch; }
+  .hof-hero-wordmark { top: 22px; right: 20px; width: 92px; }
+  .hof-hero-trophy { margin: 0 4px 0 0; }
+  .hof-hero-trophy img { height: 132px; }
+  .hof-h1 { font-size: 40px !important; }
+  .hof-lede { font-size: 17px; }
+  .hof-bubble { font-size: 15px; padding: 9px 16px 10px; border-radius: 16px 16px 16px 5px; }
+  .hof-band { padding: 40px 20px 52px; }
+  .hof-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hof-card { box-shadow: 6px 6px 0 var(--cat, var(--kz-yellow)); }
+  .hof-card-photo.is-initials span { font-size: 72px; }
+  .hof-card-name { font-size: 26px; }
+  .hof-award { font-size: 11.5px; gap: 8px; padding-right: 12px; }
+  .hof-card-top .hof-award { font-size: 19px; gap: 12px; padding-right: 0; }
+  .hof-card-top .hof-award-month { font-size: 11px; }
+  .hof-card-top .hof-coin { width: 46px; height: 46px; }
+  .hof-card-top .hof-coin > span { width: 37px; height: 37px; }
+  .hof-card-top .hof-coin img { width: 23px; height: 23px; }
+  .hof-award-month { padding-left: 8px; }
+  .hof-award--lg { font-size: 14px; gap: 11px; padding: 6px 16px 6px 6px; }
+  .hof-award--lg .hof-coin { width: 38px; height: 38px; }
+  .hof-award--lg .hof-coin > span { width: 30px; height: 30px; }
+  .hof-award--lg .hof-coin img { width: 19px; height: 19px; }
+  .hof-award--lg .hof-award-month { font-size: 13px; }
+  .hof-profile { padding: 32px 20px 48px; gap: 28px; }
+  .hof-back { margin-bottom: 20px; }
+  .hof-by { font-size: 17px; }
+  .hof-profile-photo { max-width: 220px; box-shadow: 7px 7px 0 var(--cat, var(--kz-yellow)); border-radius: 20px; }
+  .hof-profile-photo.is-initials span { font-size: 88px; }
+  .hof-pull { padding: 48px 20px; }
+  .hof-pull blockquote { font-size: 25px; }
+  .hof-interview { padding: 56px 16px 24px; }
+  .hof-interview-sub { margin-bottom: 28px; font-size: 15px; }
+  .hof-qa { gap: 12px; margin-bottom: 32px; }
+  .hof-av { width: 34px; height: 34px; border-width: 2px; font-size: 15px; }
+  .hof-q-row, .hof-a-row { gap: 8px; max-width: 94%; }
+  .hof-q { padding: 14px 16px; font-size: 16.5px; border-radius: 18px 18px 18px 5px; }
+  .hof-q-n { display: block; width: fit-content; margin: 0 0 6px; vertical-align: 0; }
+  .hof-a { padding: 15px 16px; border-width: 2px; border-radius: 18px 18px 5px 18px; box-shadow: 4px 4px 0 var(--cat, var(--kz-yellow)); }
+  .hof-a p { font-size: 15.5px; }
+  .hof-tips p { font-size: 15px; }
+  .hof-tips .n { width: 28px; height: 28px; font-size: 13px; }
+  .hof-more { padding-bottom: 72px; }
+}
+
+/* Award citation + stats (winner profile) */
+.hof-citation { margin: 18px 0 0; max-width: 46ch; font-size: 18px; line-height: 1.55; font-weight: 500; color: #3F3B2F; }
+.hof-stats { max-width: 1280px; margin: 0 auto; padding: 88px var(--kz-gutter) 0; box-sizing: content-box; }
+.hof-stats-title { margin: 0; font-size: clamp(32px, 3.6vw, 44px); font-weight: 700; letter-spacing: -0.02em; }
+.hof-stats-sub { margin: 10px 0 36px; font-size: 17px; color: var(--kz-mute); }
+.hof-stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.hof-stat {
+  display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 22px; background: #fff;
+  border: 3px solid var(--kz-ink); border-radius: 18px; box-shadow: 8px 8px 0 var(--kz-yellow);
+}
+.hof-stat .lbl { font-size: 16px; font-weight: 700; }
+.hof-stat .val { font-size: clamp(48px, 5vw, 64px); line-height: 1; font-weight: 800; letter-spacing: -0.03em; }
+.hof-stat .val small { margin-left: 6px; font-size: .4em; font-weight: 700; letter-spacing: 0; }
+.hof-stat .rank {
+  width: fit-content; margin-top: 4px; padding: 6px 12px; background: var(--kz-ink); color: var(--kz-yellow);
+  border-radius: 999px; font-size: 13px; font-weight: 700;
+}
+@media (max-width: 900px) { .hof-stats-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) {
+  .hof-citation { font-size: 16px; }
+  .hof-stats { padding: 56px 20px 0; }
+  .hof-stats-sub { font-size: 15px; margin-bottom: 24px; }
+  .hof-stats-grid { gap: 14px; }
+  .hof-stat { padding: 16px 14px; gap: 8px; box-shadow: 5px 5px 0 var(--kz-yellow); border-width: 2px; border-radius: 14px; }
+  .hof-stat .lbl { font-size: 13.5px; }
+  .hof-stat .val { font-size: 40px; }
+  .hof-stat .rank { font-size: 10.5px; padding: 5px 8px; white-space: nowrap; letter-spacing: -0.01em; }
+  .hof-stat .val small { font-size: 16px; }
+  .hof-stat .val small.is-long { display: block; margin: 6px 0 0; font-size: 13px; }
+}
+
+/* Company logo in the byline */
+.hof-by-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+.hof-by-logo .sep { color: var(--kz-mute-2); }
+.hof-logo { display: block; width: auto; height: 26px; }
+.hof-card-by .hof-logo { height: 20px; }
+@media (max-width: 560px) { .hof-by .hof-logo { height: 22px; } }
+
+/* ── About the Kaizan Awards (index, below the winners) ── */
+.hof-about { padding: 96px var(--kz-gutter) 110px; }
+.hof-about-inner {
+  max-width: 1280px; margin: 0 auto 88px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 72px; align-items: start;
+}
+.hof-about-title { margin: 0 0 18px; font-size: clamp(32px, 3.6vw, 46px); line-height: 1.08; font-weight: 700; letter-spacing: -0.02em; }
+.hof-about-why p { margin: 0 0 14px; max-width: 56ch; font-size: 18px; line-height: 1.6; color: #3F3B2F; }
+.hof-how { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.hof-how li {
+  display: flex; gap: 16px; align-items: flex-start; padding: 22px 24px; background: #fff;
+  border: 3px solid var(--kz-ink); border-radius: 18px; box-shadow: 8px 8px 0 var(--kz-yellow);
+}
+.hof-how .n {
+  flex: none; display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+  background: var(--kz-yellow); border: 2px solid var(--kz-ink); border-radius: 12px 12px 12px 4px; font-weight: 800;
+}
+.hof-how h4 { margin: 4px 0 6px; font-size: 18px; font-weight: 700; }
+.hof-how p { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--kz-mute); }
+
+.hof-cats-wrap { max-width: 1280px; margin: 0 auto; }
+.hof-cats-sub { margin: -6px 0 36px; font-size: 17px; color: var(--kz-mute); }
+.hof-cats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+/* Each category card mirrors the winners email: black card in a frame of the category colour. */
+.hof-cat {
+  display: flex; flex-direction: column; gap: 14px; padding: 24px 26px 26px; background: #0A0A0A; color: #FFFBF0;
+  border-radius: 20px; box-shadow: 0 0 0 3px #000, 0 0 0 9px var(--cat), 10px 10px 0 9px #000;
+  margin: 9px;
+}
+.hof-cat--team { grid-column: 1 / -1; }
+.hof-cat-head { display: flex; align-items: center; gap: 16px; }
+.hof-cat h3 { margin: 0; font-size: 24px; line-height: 1.1; font-weight: 800; text-transform: uppercase; letter-spacing: 0.01em; }
+.hof-cat h3 b { color: var(--cat); font-weight: 800; }
+.hof-cat-tag {
+  width: fit-content; padding: 5px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 700;
+  background: rgba(255,251,240,.08); color: var(--cat); border: 1px solid rgba(255,251,240,.16);
+}
+.hof-cat-tag--link { text-decoration: none; transition: background .15s ease, color .15s ease; }
+.hof-cat-tag--link:hover, .hof-cat-tag--link:focus-visible { background: var(--cat); color: #000; border-color: var(--cat); }
+.hof-cat p { margin: 0; font-size: 16px; line-height: 1.6; color: #CFC6B6; }
+.hof-coin--xl {
+  width: 56px; height: 56px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.45), inset 0 -3px 0 #E6A700, 0 0 0 3px #000, 0 0 0 5px var(--cat, var(--kz-yellow));
+}
+.hof-coin--xl > span { width: 45px; height: 45px; border-width: 1.5px; }
+.hof-coin--xl img { width: 28px; height: 28px; }
+
+@media (max-width: 900px) {
+  .hof-about-inner { grid-template-columns: 1fr; gap: 40px; margin-bottom: 64px; }
+}
+@media (max-width: 560px) {
+  .hof-about { padding: 56px 20px 72px; }
+  .hof-about-why p { font-size: 16px; }
+  .hof-how li { padding: 16px; gap: 12px; box-shadow: 5px 5px 0 var(--kz-yellow); border-width: 2px; }
+  .hof-how h4 { font-size: 16px; }
+  .hof-how p { font-size: 14.5px; }
+  .hof-cats-sub { font-size: 15px; margin-bottom: 24px; }
+  .hof-cats { grid-template-columns: 1fr; gap: 16px; }
+  .hof-cat { padding: 20px 18px 22px; border-radius: 16px; box-shadow: 0 0 0 2px #000, 0 0 0 7px var(--cat), 6px 6px 0 7px #000; margin: 7px; }
+  .hof-cat h3 { font-size: 19px; }
+  .hof-cat p { font-size: 15px; }
+  .hof-coin--xl { width: 46px; height: 46px; }
+  .hof-coin--xl > span { width: 37px; height: 37px; }
+  .hof-coin--xl img { width: 23px; height: 23px; }
+}

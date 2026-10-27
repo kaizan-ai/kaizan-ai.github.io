@@ -389,3 +389,10 @@
   .kz-trust-card h4 { font-size: 15px; }
   .kz-trust-card p { font-size: 12.5px; }
 }
+
+/* CARE pillar cards are link targets (e.g. from the Hall of Fame award
+   categories): clear the sticky header, and flash the card that was linked. */
+.kz-care-card[id] { scroll-margin-top: 110px; }
+.kz-care-card.is-target { animation: kzCareTarget 1.6s ease 2; }
+@keyframes kzCareTarget { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 50% { box-shadow: 0 0 0 5px var(--theme); } }
+@media (prefers-reduced-motion: reduce) { .kz-care-card.is-target { animation: none; box-shadow: 0 0 0 4px var(--theme); } }
