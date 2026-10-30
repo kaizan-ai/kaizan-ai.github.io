@@ -79,7 +79,7 @@
 
   /* ── state ──────────────────────────────────────────────────────────── */
   var state = {
-    totalHeadcount: 50,
+    totalHeadcount: 150,
     team: 20,
     clients: 40,
     revPer: IS_US ? 70000 : 60000,

@@ -2,7 +2,7 @@
    Injected on the homepage only (render_customer_success_software with
    keep_nav).
 
-   1. Stats band count-up: each stat number ("21%", "5.4 hrs", "11M+") counts
+   1. Stats band count-up: each stat number ("26%+", "5.4 hrs", "3.9M") counts
       up from 0 to its value when the band scrolls into view, keeping its
       prefix/suffix and decimal places. Numbers stay at their real values
       without JS.

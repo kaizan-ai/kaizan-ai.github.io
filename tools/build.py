@@ -385,8 +385,8 @@ PERSONAS = {
         eyebrow='FOR · HEAD OF AI / CTO',
         role='AI and technology leaders',
         role_cap='AI and Technology Leaders',
-        h1=('Your', 'client brain.', ' In the AI tools you already use.'),
-        sub=("Turn every meeting, email, and decision into a unified client brain your AI tools "
+        h1=('Your', 'client memory.', ' In the AI tools you already use.'),
+        sub=("Turn every meeting, email, and decision into a unified client memory your AI tools "
              "can query - and a foundation for the custom products, services, and workflows your "
              "business wants to build."),
         quote_bg='radial-gradient(circle at 30% 30%, #5F7E94, #1A2D3D)',
@@ -399,7 +399,7 @@ PERSONAS = {
         quote_cta='Read the engineering architecture →',
         quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and-product-decisions-5669edac12c8',
         love=[
-            ('Your client brain, in the AI tools you already use.',
+            ('Your client memory, in the AI tools you already use.',
              "Kaizan is a client intelligence platform that unifies every meeting, email, "
              "decision, and signal into queryable context via MCP from Claude, ChatGPT, or "
              "whatever model your org has standardised on, helping client service teams "
@@ -616,7 +616,7 @@ PERSONAS = {
              "Kaizan sits alongside your prospecting stack, not on top of it. It reads from the "
              "same activity layer your team already works in and feeds the intelligence your "
              "sellers use to prepare, pitch, follow up, serve prospects more effectively, and "
-             "reduce prep friction. Those proactive actions help drive a 21% average revenue "
+             "reduce prep friction. Those proactive actions help drive a 26%+ average revenue "
              "increase per client and protect 45% of at-risk revenue before issues arise."),
         ],
         cta='See Kaizan for every client and new business.',
@@ -2085,8 +2085,8 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
-        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 3.9M client service data points</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from 3.9 million client service data points, so every suggestion is grounded in what actually works:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
@@ -2249,7 +2249,7 @@ def stats_band_html() -> str:
 
         <div>
           <div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">21%</div></div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">26%+</div></div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Average revenue increase per client</div>
           </div>
         </div>
@@ -2270,21 +2270,21 @@ def stats_band_html() -> str:
 
         <div>
           <div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">4.8%</div></div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">8%</div></div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Increase in the addressable upsell pool for existing clients</div>
           </div>
         </div>
 
         <div>
           <div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">23%</div></div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">33%</div></div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Lower cost to serve each client</div>
           </div>
         </div>
 
         <div>
           <div>
-            <div style="font-size: 62px; font-weight: 800; color: #FFB900;">11M+</div>
+            <div style="font-size: 62px; font-weight: 800; color: #FFB900;">3.9M</div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Client service data points behind every recommendation</div>
           </div>
         </div>
@@ -2302,7 +2302,7 @@ def render_home() -> str:
         ('AI Helpers on every client',
          "Specialist agents on every account, working 24/7: drafting replies, prepping QBRs, watching for risk, surfacing expansion the moment it lands."),
         ('CARE Model · Relationship health',
-         "The four-pillar framework: Client satisfaction, Activity with stakeholders, Relationship & interaction quality, Expansion strategy, scored and tracked on every account."),
+         "The four-pillar framework: Client satisfaction, Activity with stakeholders, Relationship strength, Expansion opportunities, scored and tracked on every account."),
         ('Chatbot and MCP',
          "Ask anything in natural language. Connect Kaizan to Claude, ChatGPT or any MCP-aware tool, answers with citations from the source conversations."),
     ]
@@ -2320,9 +2320,9 @@ def render_home() -> str:
          "Sentiment on every stakeholder and thread. Not RAG guesses: evidence pulled from the source conversations."),
         ('A', 'Activity with stakeholders',
          'Every meeting, email and call summarised against the people who matter; CRM kept honest automatically for agencies and consultancies.'),
-        ('R', 'Relationship & interaction quality',
+        ('R', 'Relationship strength',
          'Coverage gaps, dormant contacts, single-threaded risk and warm re-intros, handled before you ask.'),
-        ('E', 'Expansion strategy',
+        ('E', 'Expansion opportunities',
          'Upsell and cross-sell signals surfaced the moment a client raises them, not next quarter.'),
     ]
     care_html = '\n'.join(
@@ -2411,9 +2411,9 @@ def render_home() -> str:
 
     # Headline outcome stats — bold cards above the quote carousel.
     home_stats = [
-        ('23%',  'Efficiency', 'Reduce the cost-to-serve each client'),
+        ('33%',  'Efficiency', 'Reduce the cost-to-serve each client'),
         ('2×',   'Capability', 'Create unique products, services & insights'),
-        ('21%+', 'Revenue',    'Proactive personalised actions for each client'),
+        ('26%+', 'Revenue',    'Proactive personalised actions for each client'),
     ]
     stats_cards = '\n'.join(
         f'<div class="kz-statcard">'
@@ -2477,8 +2477,8 @@ def render_home() -> str:
             <div class="kz-why-icon kz-why-icon--red">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
             </div>
-            <h3 class="kz-why-card-title">11M+ points of client service signals</h3>
-            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+            <h3 class="kz-why-card-title">3.9M client service data points</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 3.9M client service data points.</p>
           </div>
         </div>
       </div>
@@ -2556,7 +2556,7 @@ def _cs_stats_band_html() -> str:
         ('<rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>'
          '<path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
-         'avg.', '21%', 'Average revenue increase per client'),
+         'avg.', '26%+', 'Average revenue increase per client'),
         ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
          'avg.', '5.4 hrs', 'Admin saved per person, every week'),
@@ -2566,12 +2566,12 @@ def _cs_stats_band_html() -> str:
          'avg.', '45%', 'Of revenue at risk protected through early signals'),
         ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
-         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+         'avg.', '8%', 'Increase in the addressable upsell pool for existing clients'),
         ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
-         'avg.', '23%', 'Lower cost to serve each client'),
+         'avg.', '33%', 'Lower cost to serve each client'),
         ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
          '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
-         None, '11M+', 'Client service data points behind every recommendation'),
+         None, '3.9M', 'Client service data points behind every recommendation'),
     ]
 
     def _stat(icon, avg_label, num, desc):
@@ -2766,10 +2766,10 @@ def _cs_integrations_faq_html() -> str:
         ('How does Kaizan find upsell opportunities?',
          'It listens for buying signals across every meeting, email and chat, '
          'such as a client asking "do you do analytics?". It then flags the '
-         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'opportunity and drafts a scoped pitch. Teams see an average 8% '
          'increase in their addressable upsell pool.'),
         ('What are the recommendations based on?',
-         "Kaizan's forecasts draw on over 11 million points of client service "
+         "Kaizan's forecasts draw on 3.9 million points of client service "
          "data, benchmarked against best-in-class client teams, plus the "
          "conversations from your own accounts."),
     ]
@@ -3022,10 +3022,10 @@ def render_product() -> str:
         ('A', 'Activity with stakeholders',
          'Volume, velocity and seniority of two-way contact. Catches drift before the client feels it.',
          'activity', '#E8432B', '9.3'),
-        ('R', 'Relationship & interaction quality',
+        ('R', 'Relationship strength',
          'Who you know, how senior, how warm. Spots thin coverage and dormant champions before the work suffers.',
          'relationship', '#7C5CFC', '7.5'),
-        ('E', 'Expansion strategy',
+        ('E', 'Expansion opportunities',
          'Where the scope can deepen: capability gaps, brief widenings, exec asks. Pulled from the language clients actually use.',
          'expansion', '#1FA591', '4.8'),
     ]
@@ -3049,8 +3049,8 @@ def render_product() -> str:
       <div class="kz-eyebrow">Client Health Model</div>
       <h2 class="kz-h2 kz-h2-lg" style="margin-top:12px;max-width:900px;">A self-learning client relationships score, <span class="kz-mark">grounded in your data.</span></h2>
       <p class="kz-lede" style="margin-top:18px;max-width:760px;">The unifying score across every Helper.
-        It uses your data to measure relationship health and client satisfaction, not someone
-        else&rsquo;s benchmark. It learns from your won pitches, kept clients and lost briefs: what
+        It measures relationship health and client satisfaction against what good looks like
+        across similar firms, and learns from your won pitches, kept clients and lost briefs what
         predicts a healthy engagement in your company. Not a biased RAG status. Re-tuned weekly
         against your data.</p>
       <div class="kz-care-grid kz-care-grid-lg" data-swipe-row id="launchZoneB" style="position:relative;margin-top:48px;">
@@ -3931,9 +3931,9 @@ def render_about() -> str:
         </p>
 
         <p>
-          <strong>We&rsquo;re building Kaizan as the first AI platform for client service &amp; account
+          <strong>We&rsquo;re building Kaizan as the first client success AI platform for client service &amp; account
           management centric companies</strong>: an organisational brain with total knowledge of every client,
-          every product and service, and what you should do next to scale your clients. By unlocking the
+          every product and service, and what you should do next to scale and protect your clients. By unlocking the
           value held in communication interactions alongside docs, reports and system updates. And benchmarked
           the across every account. It turns the collective judgement of that company into infrastructure.
           Not a dashboard. Not a copilot. <strong>The system of record for the work of serving clients</strong>
@@ -3978,8 +3978,8 @@ def render_about() -> str:
             has memory, and can spot a problem early from a single message or a change in tone: the procurement lead who went quiet on Slack is the same person
             who pushed back on pricing three quarters ago and the same person whose boss just changed on LinkedIn.
             It sees the shape of the account across
-            <strong>Client satisfaction on the work being done, Activity with stakeholders, Relationship &amp; interaction quality,
-            and Expansion strategy &mdash; the CARE framework</strong> &mdash; which updates every second
+            <strong>Client satisfaction on the work being done, Activity with stakeholders, Relationship strength,
+            and Expansion opportunities &mdash; the CARE framework</strong> &mdash; which updates every second
             and gives Agents better answers and context in which to act, whether that is between meetings or in each
             quarter&rsquo;s review and planning cycle.
           </p>
@@ -4725,7 +4725,7 @@ ROI_CALCULATOR_SECTION = '''
     <!-- proof point -->
     <div class="kzroi-proof">
       <span class="star" aria-hidden="true">★</span>
-      <span>Modelled on Kaizan clients seeing <strong>21%+ average revenue growth per client</strong>.</span>
+      <span>Modelled on Kaizan clients seeing <strong>26%+ average revenue growth per client</strong>.</span>
     </div>
 
     <!-- model toggle (left) + CTAs (right) -->
@@ -4754,7 +4754,7 @@ ROI_CALCULATOR_SECTION = '''
         <div class="kzroi-panel-title">Your client portfolio today</div>
         <div class="kzroi-panel-sub">Four things you'll know off the top of your head. We handle the rest.</div>
 
-        <div class="kzroi-num" data-key="totalHeadcount" data-min="1" data-max="5000" data-step="1">
+        <div class="kzroi-num" data-key="totalHeadcount" data-min="150" data-max="10000" data-step="50">
           <label class="kzroi-num-label">Total company headcount</label>
           <div class="kzroi-num-row">
             <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Total company headcount">−</button>
@@ -5403,9 +5403,9 @@ FAQ_DATA = [
     ]),
     ('Who Kaizan is for', [
         ('Who is Kaizan designed for?',
-         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, SaaS customer success organisations, and professional services firms. The typical buyer is a Managing Director, Head of Client Services, Chief Customer Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Customer Success Manager who owns a portfolio of 6 to 25 client relationships.'),
+         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, and other professional services firms with 150 to 10,000 employees. The typical buyer is a Managing Director, Head of Client Services, Chief Client Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Client Success Manager who owns a portfolio of 6 to 25 client relationships.'),
         ('How big does my team need to be to get value from Kaizan?',
-         'Kaizan is most useful for teams of 10 to 500 client-facing people. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
+         'Kaizan is built for companies with 150 to 10,000 employees, and is not designed for smaller firms. Larger companies typically start with 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',
          'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, turns that data into structured information, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks, and account activity updates) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work. It helps teams add context from live client work into the CRM.'),
     ]),
@@ -5413,9 +5413,9 @@ FAQ_DATA = [
         ('How does Kaizan listen to client conversations?',
          'Kaizan ingests three sources: meeting transcripts (from Zoom, Google Meet, Microsoft Teams, Gong and Chorus), email threads (from Gmail and Outlook / Microsoft 365), and chat (from Slack and Microsoft Teams chat). Audio is transcribed by a speech-to-text model with speaker diarisation. Text is parsed for participants, topics, commitments, risks, sentiment and questions.'),
         ('What does Kaizan actually output?',
-         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client satisfaction, Activity with stakeholders, Relationship & interaction quality, and Expansion strategy (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
+         'Kaizan and its AI Helpers work 24/7 on every client for all users in your company. Providing an AI Assistant for every user to make them more efficient and a health score across four dimensions - Client satisfaction, Activity with stakeholders, Relationship strength, and Expansion opportunities (the CARE model); (2) a live view of risks and opportunities with the underlying evidence cited from real conversations and interactions; (3) drafted follow-up emails, recap notes, system updates and meeting agendas in the account manager’s voice; (4) an army of AI Helpers working to complete tasks for the team as they arise, taking actions such as notes, follow-ups, or notifications only if needed, to improve client ROI, satisfaction and revenue.'),
         ('What is the CARE model?',
-         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client satisfaction measures how many stakeholders are satisfied with the work being done by your company. Activity with stakeholders measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship & interaction quality measures relationship coverage alongside sentiment and trust signals from language used in real conversations. Expansion strategy measures observed buying signals, whitespace analysis and growth intent. Each pillar contains 6 sub-sections specific to that area of the relationship, and is scored 0 to 10 in real-time, with the underlying evidence cited and explained, while also considering engagement growth over time when evaluating account health.'),
+         'CARE is Kaizan’s framework for account health and how AI Helpers measure what they need to do on each client, with four pillars. Client satisfaction measures how the client feels about the work, the partnership and the outcomes being delivered. Activity with stakeholders measures account activity through the cadence and quality of touchpoints with stakeholders. Relationship strength measures whether interactions are deepening trust or becoming transactional, from the language used in real conversations. Expansion opportunities measures whether the conditions are right to grow the relationship, and whether the team is acting on them. CARE is a leading indicator: it surfaces signals early, while there is still time to act, with the underlying evidence cited from real conversations.'),
         ('How accurate is Kaizan’s sentiment analysis?',
          'Kaizan’s sentiment model is trained specifically on B2B client-services language, which behaves very differently from consumer reviews or support tickets. Internal benchmarks across 4.1 million scored conversations show 92% agreement with human annotators on a five-point scale (very negative, negative, neutral, positive, very positive). Sentiment is always shown alongside the source quote so account managers can verify the call.'),
         ('How long does it take to set up Kaizan?',
@@ -5582,10 +5582,10 @@ RESEARCH_REPORT = dict(
         ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context: who matters, '
          'what changed this week, the shape of the next conversation.',
          '73%', 'Of top performers maintain a live stakeholder map'),
-        ('R', 'Relationship & interaction quality', 'Strategic partner or just a vendor? Whether rapport, trust and '
+        ('R', 'Relationship strength', 'Strategic partner or just a vendor? Whether rapport, trust and '
          'sentiment are where they need to be.',
          '2.1h', 'Median first response time at the top 10%'),
-        ('E', 'Expansion strategy', 'Inbound-signal capture and conversion: the quiet ask in '
+        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion: the quiet ask in '
          'passing, or the proactive suggestion of how to grow their business.',
          '82%', 'Of expansion revenue comes from prioritising commercial conversations early'),
     ],
@@ -5692,12 +5692,12 @@ AWARD_CATEGORIES = {
              'multithreaded accounts.'),
     'Trusted Partner': dict(
         slug='trusted-partner', color='#B388FF', light='#D4BDFF', dark='#5A2EC4',
-        pillar='Relationship & interaction quality', care_id='care-relationship',   # card on /product/
+        pillar='Relationship strength', care_id='care-relationship',   # card on /product/
         desc='The person clients turn to for strategic guidance. They collaborate and consult by '
              'leading deep, strategic conversations.'),
     'Growth Leader': dict(
         slug='growth-leader', color='#14C6B8', light='#7FDFD6', dark='#0B7F76',
-        pillar='Expansion strategy', care_id='care-expansion',   # card on /product/
+        pillar='Expansion opportunities', care_id='care-expansion',   # card on /product/
         desc='Steers calls toward new opportunities by constantly leading with expansion and building '
              'advocacy in the relationship.'),
 }
@@ -7242,8 +7242,8 @@ def playbooks_sections_html() -> str:
     <div style="max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 72px;">
 
       <div style="flex: 1 1 440px; min-width: 320px; display: flex; flex-direction: column; gap: 24px;">
-        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 11M+ signal data</h2>
-        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from over 11+ million signals of client service data, so every suggestion is grounded in what actually works:</p>
+        <h2 style="margin: 0; font-size: 40px; line-height: 1.15; font-weight: 500; color: #000000; letter-spacing: -0.01em;">Recommendations built on 3.9M client service data points</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4639; max-width: 46ch;">Kaizan learns from 3.9 million client service data points, so every suggestion is grounded in what actually works:</p>
         <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 4px;">
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Forecast-based recommendations for every account</span></div>
           <div style="display: flex; align-items: flex-start; gap: 12px;"><span style="flex: none; width: 22px; height: 22px; border-radius: 999px; background: #FFB900; display: flex; align-items: center; justify-content: center; margin-top: 1px;"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.2 8.2L11 1" stroke="#171511" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-size: 16px; line-height: 1.5; color: #171511;">Every client benchmarked against best-in-class teams</span></div>
@@ -7409,7 +7409,7 @@ def _cs_hero_copy_html(depth: int, home: bool = False) -> str:
         h1 = ('Kaizan does<br class="kz-hero-br"> the work that grows'
               '<br class="kz-hero-br"> every client')
         lede = ('Kaizan knows the client from every interaction, knows what great\n'
-                '            looks like, and does the work your team cannot get to.')
+                '            looks like, and does the work your team cannot get to. Built for companies with 150 to 10,000 employees.')
     else:
         h1 = 'Turn client conversations into revenue'
         lede = ('Kaizan turns every call, email and signal into the next\n'
@@ -7526,7 +7526,7 @@ def _cs_stats_band_html() -> str:
         ('<rect x="4" y="3" width="14" height="18" rx="2" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M8 8h6M8 12h6M8 16h3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>'
          '<path d="M17 15l3 3-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
-         'avg.', '21%', 'Average revenue increase per client'),
+         'avg.', '26%+', 'Average revenue increase per client'),
         ('<circle cx="12" cy="12" r="9" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M12 7v5l4 2" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>',
          'avg.', '5.4 hrs', 'Admin saved per person, every week'),
@@ -7536,12 +7536,12 @@ def _cs_stats_band_html() -> str:
          'avg.', '45%', 'Of revenue at risk protected through early signals'),
         ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
-         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+         'avg.', '8%', 'Increase in the addressable upsell pool for existing clients'),
         ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
-         'avg.', '23%', 'Lower cost to serve each client'),
+         'avg.', '33%', 'Lower cost to serve each client'),
         ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
          '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
-         None, '11M+', 'Client service data points behind every recommendation'),
+         None, '3.9M', 'Client service data points behind every recommendation'),
     ]
 
     def _stat(icon, avg_label, num, desc):
@@ -7865,10 +7865,10 @@ def _cs_integrations_faq_html() -> str:
         ('How does Kaizan find upsell opportunities?',
          'It listens for buying signals across every meeting, email and chat, '
          'such as a client asking "do you do analytics?". It then flags the '
-         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'opportunity and drafts a scoped pitch. Teams see an average 8% '
          'increase in their addressable upsell pool.'),
         ('What are the recommendations based on?',
-         "Kaizan's forecasts draw on over 11 million points of client service "
+         "Kaizan's forecasts draw on 3.9 million points of client service "
          "data, benchmarked against best-in-class client teams, plus the "
          "conversations from your own accounts."),
     ]
@@ -8045,8 +8045,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             <div class="kz-why-icon kz-why-icon--red">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9.5 3.5c-1.7 0-3 1.3-3 3 0 .3 0 .6.1.9A3 3 0 005 12.5c0 1.2.7 2.2 1.7 2.7-.1.3-.2.6-.2 1 0 1.7 1.3 3 3 3 .5 0 1-.1 1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.5 3.5c1.7 0 3 1.3 3 3 0 .3 0 .6-.1.9A3 3 0 0119 12.5c0 1.2-.7 2.2-1.7 2.7.1.3.2.6.2 1 0 1.7-1.3 3-3 3-.5 0-1-.1-1.4-.4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path><path d="M11 4v15M13 4v15" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg>
             </div>
-            <h3 class="kz-why-card-title">11M+ of client service signals</h3>
-            <p class="kz-why-card-desc">Actions suggested are based on 11M+ industry signals.</p>
+            <h3 class="kz-why-card-title">3.9M client service data points</h3>
+            <p class="kz-why-card-desc">Actions suggested are based on 3.9M client service data points.</p>
           </div>
         </div>
       </div>
