@@ -48,15 +48,15 @@ That headline number decomposes into four lenses. Together they spell CARE.
 
 ## C: Client Satisfaction
 
-How the client actually feels about you and the work, read from the sentiment behind every interaction, not the formal review. Sentiment, your teams market & sector awareness, client goal-to-activity alignment, work quality, and how proactively the team manages expectations. It also covers every commitment made: the client brain remembers what was promised, so you never miss a commitment and the client never has to chase. The reality of the relationship, not the version that surfaces in a status call.
+How the client actually feels about you and the work, read from the sentiment behind every interaction, not the formal review. Sentiment, your teams market & sector awareness, client goal-to-activity alignment, and how proactively the team manages expectations. It also covers every commitment made: the client memory remembers what was promised, so you never miss a commitment and the client never has to chase. The reality of the relationship, not the version that surfaces in a status call.
 
 ## A: Activity with Stakeholders for Client Success Teams
 
 Whether you’re reaching the people who sign the budget off. Response time, stakeholder coverage against target, decision-maker recency, time invested against tier, communication recency, and contact distribution. This is the lens that catches single-threading before it becomes a churn post-mortem; *the decision-maker who hasn’t been on a call in six weeks while day-to-day contact looks perfectly healthy.*
 
-## R: Relationship Quality
+## R: Relationship Strength
 
-The foundation; follow-through, responsiveness, advocacy. Risk trajectory, active listening, communication-style fit, advocacy signals, sentiment trend, behavioural DISC profiling and conversational depth. The signals that tell you whether trust is building or eroding. *The client who was warm and is now merely neutral matters more than the one who was always blunt.*
+The foundation; follow-through, responsiveness, advocacy. Risk trajectory, active listening, advocacy signals, sentiment trend and conversational depth. The signals that tell you whether trust is building or eroding. *The client who was warm and is now merely neutral matters more than the one who was always blunt.*
 
 ## E: Expansion
 
