@@ -2270,14 +2270,14 @@ def stats_band_html() -> str:
 
         <div>
           <div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">4.8%</div></div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">8%</div></div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Increase in the addressable upsell pool for existing clients</div>
           </div>
         </div>
 
         <div>
           <div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">23%</div></div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 6px;"><div style="font-size: 62px; font-weight: 800; color: #FFB900;">33%</div></div>
             <div style="font-size: 18px; color: #ffffff; margin-top: 8px">Lower cost to serve each client</div>
           </div>
         </div>
@@ -2411,7 +2411,7 @@ def render_home() -> str:
 
     # Headline outcome stats — bold cards above the quote carousel.
     home_stats = [
-        ('23%',  'Efficiency', 'Reduce the cost-to-serve each client'),
+        ('33%',  'Efficiency', 'Reduce the cost-to-serve each client'),
         ('2×',   'Capability', 'Create unique products, services & insights'),
         ('26%+', 'Revenue',    'Proactive personalised actions for each client'),
     ]
@@ -2566,9 +2566,9 @@ def _cs_stats_band_html() -> str:
          'avg.', '45%', 'Of revenue at risk protected through early signals'),
         ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
-         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+         'avg.', '8%', 'Increase in the addressable upsell pool for existing clients'),
         ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
-         'avg.', '23%', 'Lower cost to serve each client'),
+         'avg.', '33%', 'Lower cost to serve each client'),
         ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
          '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
          None, '3.9M', 'Client service data points behind every recommendation'),
@@ -2766,7 +2766,7 @@ def _cs_integrations_faq_html() -> str:
         ('How does Kaizan find upsell opportunities?',
          'It listens for buying signals across every meeting, email and chat, '
          'such as a client asking "do you do analytics?". It then flags the '
-         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'opportunity and drafts a scoped pitch. Teams see an average 8% '
          'increase in their addressable upsell pool.'),
         ('What are the recommendations based on?',
          "Kaizan's forecasts draw on 3.9 million points of client service "
@@ -7536,9 +7536,9 @@ def _cs_stats_band_html() -> str:
          'avg.', '45%', 'Of revenue at risk protected through early signals'),
         ('<path d="M4 15a8 8 0 0116 0" stroke="#FFB900" stroke-width="1.8"/>'
          '<path d="M4 15h16v3a2 2 0 01-2 2H6a2 2 0 01-2-2v-3z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>',
-         'avg.', '4.8%', 'Increase in the addressable upsell pool for existing clients'),
+         'avg.', '8%', 'Increase in the addressable upsell pool for existing clients'),
         ('<path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="#FFB900" stroke-width="1.6" stroke-linejoin="round"/>',
-         'avg.', '23%', 'Lower cost to serve each client'),
+         'avg.', '33%', 'Lower cost to serve each client'),
         ('<path d="M8 21h8M12 17v4M6 4h12v3a6 6 0 01-12 0V4z" stroke="#FFB900" stroke-width="1.8" stroke-linejoin="round"/>'
          '<path d="M6 6H3a3 3 0 003 3M18 6h3a3 3 0 01-3 3" stroke="#FFB900" stroke-width="1.8" stroke-linecap="round"/>',
          None, '3.9M', 'Client service data points behind every recommendation'),
@@ -7865,7 +7865,7 @@ def _cs_integrations_faq_html() -> str:
         ('How does Kaizan find upsell opportunities?',
          'It listens for buying signals across every meeting, email and chat, '
          'such as a client asking "do you do analytics?". It then flags the '
-         'opportunity and drafts a scoped pitch. Teams see an average 4.8% '
+         'opportunity and drafts a scoped pitch. Teams see an average 8% '
          'increase in their addressable upsell pool.'),
         ('What are the recommendations based on?',
          "Kaizan's forecasts draw on 3.9 million points of client service "
