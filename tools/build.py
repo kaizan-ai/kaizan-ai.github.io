@@ -3931,7 +3931,7 @@ def render_about() -> str:
         </p>
 
         <p>
-          <strong>We&rsquo;re building Kaizan as the first AI platform for client service &amp; account
+          <strong>We&rsquo;re building Kaizan as the first client success AI platform for client service &amp; account
           management centric companies</strong>: an organisational brain with total knowledge of every client,
           every product and service, and what you should do next to scale your clients. By unlocking the
           value held in communication interactions alongside docs, reports and system updates. And benchmarked
