@@ -4754,7 +4754,7 @@ ROI_CALCULATOR_SECTION = '''
         <div class="kzroi-panel-title">Your client portfolio today</div>
         <div class="kzroi-panel-sub">Four things you'll know off the top of your head. We handle the rest.</div>
 
-        <div class="kzroi-num" data-key="totalHeadcount" data-min="200" data-max="10000" data-step="50">
+        <div class="kzroi-num" data-key="totalHeadcount" data-min="150" data-max="10000" data-step="50">
           <label class="kzroi-num-label">Total company headcount</label>
           <div class="kzroi-num-row">
             <button type="button" class="kzroi-step" data-act="dec" aria-label="Decrease Total company headcount">−</button>
@@ -5403,9 +5403,9 @@ FAQ_DATA = [
     ]),
     ('Who Kaizan is for', [
         ('Who is Kaizan designed for?',
-         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, and other professional services firms with 200 to 10,000 employees. The typical buyer is a Managing Director, Head of Client Services, Chief Client Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Client Success Manager who owns a portfolio of 6 to 25 client relationships.'),
+         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, and other professional services firms with 150 to 10,000 employees. The typical buyer is a Managing Director, Head of Client Services, Chief Client Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Client Success Manager who owns a portfolio of 6 to 25 client relationships.'),
         ('How big does my team need to be to get value from Kaizan?',
-         'Kaizan is built for companies with 200 to 10,000 employees, and is not designed for smaller firms. Larger companies typically start with 2 to 3 business units in parallel rather than one global rollout.'),
+         'Kaizan is built for companies with 150 to 10,000 employees, and is not designed for smaller firms. Larger companies typically start with 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',
          'No. Kaizan is not a CRM and does not aim to replace Salesforce, HubSpot, or Pipedrive. Kaizan sits alongside the CRM, listens to the actual conversations happening with clients, turns that data into structured information, and writes structured outputs (health scores, risks, action items, recap emails, QBR decks, and account activity updates) back into the CRM and the team’s document tools. Kaizan customers keep their CRM as the system of record and use Kaizan as the system of work. It helps teams add context from live client work into the CRM.'),
     ]),
@@ -7409,7 +7409,7 @@ def _cs_hero_copy_html(depth: int, home: bool = False) -> str:
         h1 = ('Kaizan does<br class="kz-hero-br"> the work that grows'
               '<br class="kz-hero-br"> every client')
         lede = ('Kaizan knows the client from every interaction, knows what great\n'
-                '            looks like, and does the work your team cannot get to. Built for companies with 200 to 10,000 employees.')
+                '            looks like, and does the work your team cannot get to. Built for companies with 150 to 10,000 employees.')
     else:
         h1 = 'Turn client conversations into revenue'
         lede = ('Kaizan turns every call, email and signal into the next\n'
