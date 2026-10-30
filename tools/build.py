@@ -5403,7 +5403,7 @@ FAQ_DATA = [
     ]),
     ('Who Kaizan is for', [
         ('Who is Kaizan designed for?',
-         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, SaaS customer success organisations, and professional services firms. The typical buyer is a Managing Director, Head of Client Services, Chief Customer Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Customer Success Manager who owns a portfolio of 6 to 25 client relationships.'),
+         'Kaizan is designed for client-services teams: media agencies, creative agencies, consultancies, and other professional services firms. The typical buyer is a Managing Director, Head of Client Services, Chief Client Officer, or Head of AI. The typical daily user is an Account Director, Account Manager, or Client Success Manager who owns a portfolio of 6 to 25 client relationships.'),
         ('How big does my team need to be to get value from Kaizan?',
          'Kaizan is most useful for teams of 10 to 500 client-facing people. Teams over 500 typically run Kaizan in 2 to 3 business units in parallel rather than one global rollout.'),
         ('Is Kaizan a CRM replacement?',

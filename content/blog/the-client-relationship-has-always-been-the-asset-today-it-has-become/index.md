@@ -58,11 +58,11 @@ Whether you’re reaching the people who sign the budget off. Response time, sta
 
 The foundation; follow-through, responsiveness, advocacy. Risk trajectory, active listening, advocacy signals, sentiment trend and conversational depth. The signals that tell you whether trust is building or eroding. *The client who was warm and is now merely neutral matters more than the one who was always blunt.*
 
-## E: Expansion
+## E: Expansion Opportunities
 
-Where a client is ready to grow the account and support broader business growth; market signals, upsell coverage, organisational coverage, objection handling, proactive insight delivery, and a readiness gate. Crucially, **E won’t tell you to push growth into a stressed relationship unless it is expansion that creates real value.** Expansion readiness is gated behind satisfaction, relationship strength, and decision-maker access. White space you have permission to pursue, not white space that exists on paper.
+Where a client is ready to grow the account and support broader business growth; market signals, upsell coverage, objection handling, proactive insight delivery, and a readiness gate. Crucially, **E won’t tell you to push growth into a stressed relationship unless it is expansion that creates real value.** Expansion readiness is gated behind satisfaction, relationship strength, and decision-maker access. White space you have permission to pursue, not white space that exists on paper.
 
-Four lenses. Twenty-four sub-signals beneath them. One number. An operating system for real time client relationship health and the intelligence of what do to so your company grows. Pursuing the right expansion at the right time also supports profitability.
+Four lenses, one view of relationship health. An operating system for real time client relationship health and the intelligence of what do to so your company grows. Pursuing the right expansion at the right time also supports profitability.
 
 ## The methodology: how the score is actually built with Kaizan AI
 

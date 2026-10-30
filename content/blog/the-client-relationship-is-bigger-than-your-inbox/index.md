@@ -51,8 +51,8 @@ On top of that memory sits CARE, a continuously updated read on the health of ea
 
 - **Client satisfaction.** How the client actually feels behind every interaction.
 - **Activity with stakeholders.** Whether the right conversations are happening with the right people.
-- **Relationship quality.** Whether trust is building or quietly eroding.
-- **Expansion.** Whether the conditions are right to grow, and whether your team is acting on them.
+- **Relationship strength.** Whether trust is building or quietly eroding.
+- **Expansion opportunities.** Whether the conditions are right to grow, and whether your team is acting on them.
 
 These scores are derived from client language and interaction data to produce real time insights.
 
