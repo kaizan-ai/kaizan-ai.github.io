@@ -54,20 +54,43 @@
 .hof-hero .hof-h1 { color: #FFFBF0; font-size: clamp(48px, 5.6vw, 80px) !important; }
 .hof-hero .hof-lede { color: rgba(255,251,240,.75); }
 .hof-hero-wordmark { position: absolute; top: 28px; right: var(--kz-gutter); display: block; width: 130px; height: auto; }
-.hof-hero-trophy { position: relative; flex: none; margin: 0; }
-.hof-hero-trophy img { position: relative; z-index: 1; display: block; width: auto; height: 300px; }
-/* Warm pool of light under the base, and a soft shadow that spills over the
-   band's edge onto the yellow strip below, so the trophy sits on the seam. */
-.hof-hero-trophy::before {
-  /* Halo + pool of light, anchored to the band's bottom edge so none of it lands on the yellow. */
-  content: ""; position: absolute; left: -45%; right: -45%; bottom: 0; height: 125%;
-  background:
-    radial-gradient(50% 22% at 50% 100%, rgba(255,185,0,.40), rgba(255,185,0,0)),
-    radial-gradient(42% 48% at 50% 58%, rgba(255,185,0,.16), rgba(255,185,0,0));
+/* Trophy stands on a charcoal plinth whose front face fades into the band's bottom edge.
+   The plinth's top face is deep enough that the trophy's base rests on it (not on its
+   front edge), with a tight contact shadow under the base. Sizes are variables so tablet/phone just rescale them. */
+.hof-hero-trophy {
+  --h: 300px; --pw: 380px; --ph: 100px; --top: 32px;
+  position: relative; flex: none; margin: 0; display: flex; flex-direction: column; align-items: center;
 }
-.hof-hero-trophy::after {
-  content: ""; position: absolute; left: -6%; right: -6%; bottom: -26px; height: 52px; border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(120,72,0,.45), rgba(120,72,0,0));
+.hof-hero-trophy img {
+  position: relative; z-index: 2; display: block; width: auto; height: var(--h);
+  margin-bottom: calc(var(--top) * -.8);
+}
+/* Subtle warm haze behind the upper trophy; fades to nothing well inside its box so no edge shows. */
+.hof-hero-trophy::before {
+  content: ""; position: absolute; z-index: 0; left: 50%; top: 32%; width: calc(var(--h) * 1.6); height: calc(var(--h) * 1.6);
+  transform: translate(-50%, -50%); pointer-events: none;
+  background: radial-gradient(circle closest-side,
+    rgba(255,190,60,.20) 0%, rgba(255,190,60,.13) 25%, rgba(255,190,60,.06) 50%, rgba(255,190,60,.02) 72%, rgba(255,190,60,0) 100%);
+}
+.hof-plinth { position: relative; z-index: 1; width: var(--pw); height: var(--ph); }
+/* Top face in perspective. */
+.hof-plinth-top {
+  position: absolute; left: 0; right: 0; top: 0; height: var(--top);
+  background: linear-gradient(180deg, #232326, #333336);
+  clip-path: polygon(7% 0, 93% 0, 100% 100%, 0 100%);
+}
+.hof-plinth-front {
+  position: absolute; left: 0; right: 0; top: var(--top); bottom: 0;
+  background: linear-gradient(180deg, #26262A 0%, #18181A 45%, #0A0A0A 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+}
+/* Contact shadow right along the base's bottom edge (which sits at 80% of the top face's
+   depth), spilling just past its corners so the trophy reads as resting on the plinth. */
+.hof-plinth::before {
+  content: ""; position: absolute; z-index: 3; left: 14%; right: 14%;
+  top: calc(var(--top) * .8 - 4px); height: 9px; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.95), rgba(0,0,0,.6) 60%, rgba(0,0,0,0));
+  filter: blur(1.5px);
 }
 /* Winner cards sit on a full-width yellow strip under the black header. */
 .hof-band { background: var(--kz-yellow); padding: 72px var(--kz-gutter) 88px; }
@@ -176,7 +199,7 @@
 
 @media (max-width: 900px) {
   .hof-hero-trophy { margin-right: 0; }
-  .hof-hero-trophy img { height: 210px; }
+  .hof-hero-trophy { --h: 230px; --pw: 290px; --ph: 76px; --top: 24px; }
   .hof-hero-wordmark { right: 32px; width: 110px; }
   .hof-hero-wordmark { width: 110px; top: 22px; }
   .hof-profile { grid-template-columns: 1fr; gap: 36px; padding-top: 48px; }
@@ -189,7 +212,7 @@
   .hof-hero-copy { padding: 44px 0 0; align-self: stretch; }
   .hof-hero-wordmark { top: 22px; right: 20px; width: 92px; }
   .hof-hero-trophy { margin: 0 4px 0 0; }
-  .hof-hero-trophy img { height: 132px; }
+  .hof-hero-trophy { --h: 160px; --pw: 204px; --ph: 52px; --top: 17px; }
   .hof-h1 { font-size: 40px !important; }
   .hof-lede { font-size: 17px; }
   .hof-bubble { font-size: 15px; padding: 9px 16px 10px; border-radius: 16px 16px 16px 5px; }
