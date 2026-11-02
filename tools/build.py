@@ -5832,7 +5832,8 @@ def render_hall_of_fame() -> str:
               Each Kaizan Monthly Award winner shares the habits, rules and lessons that keep their clients coming back.</p>
           </div>
           <div class="hof-hero-trophy">
-            <img src="{relpath(1)}{trophy}{asset_v(trophy)}" alt="" width="520" height="655">
+            <img src="{relpath(1)}{trophy}{asset_v(trophy)}" alt="" width="671" height="752">
+            <div class="hof-plinth" aria-hidden="true"><span class="hof-plinth-top"></span><span class="hof-plinth-front"></span></div>
           </div>
         </div>
         <img class="hof-hero-wordmark" src="{relpath(1)}{wm}{asset_v(wm)}" alt="The Kaizan Awards" width="500" height="235">
