@@ -17,7 +17,7 @@ non-technical.
 2. **Branch.** `git checkout -b blog/<slug>` — never commit to `master`.
 
 3. **Write the post.** Create `content/blog/<slug>/index.md` with valid frontmatter
-   (set `draft: true`, today's date as `YYYY-MM-DD` unless told otherwise) and the body
+   (set `draft: true`, today's date as `YYYY-MM-DD` unless told otherwise, and a `topic` from `tools/blog.py` TOPICS) and the body
    as clean Markdown. Tidy the prose (smart quotes, `##` section headings, `-` lists,
    keep links) but **do not invent facts or rewrite the author's meaning**.
 
@@ -27,7 +27,7 @@ non-technical.
 
 5. **Build & preview.** Run `python3 tools/build.py --drafts`, fix any frontmatter
    warnings it prints, then `python3 -m http.server 8000` and point the user at
-   `http://localhost:8000/blog/<slug>/`. Iterate on their feedback.
+   `http://localhost:8000/blog/<topic>/<slug>/`. Iterate on their feedback.
 
 6. **Open a PR.** `git add content/blog/<slug>/`, commit, push the branch, and
    `gh pr create --title "Blog: <title>"` with a short summary + an editorial checklist

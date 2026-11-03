@@ -38,7 +38,7 @@ customers/<slug>/index.html             Case-study detail pages           (gener
 about/index.html                        CEO essay + investors             (generated)
 for/<persona-slug>/index.html           Persona pages                     (generated)
 content/blog/<slug>/index.md            BLOG POSTS — Markdown source (hand-authored)
-blog/index.html + blog/<slug>/          Blog index + post pages           (generated)
+blog/index.html + blog/<topic>/<slug>/  Blog index, topic + post pages    (generated)
 404.html                                Custom 404                        (generated)
 ```
 

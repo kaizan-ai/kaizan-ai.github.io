@@ -1,0 +1,194 @@
+{
+ "/": {
+  "h": "ac3d98ff2908",
+  "d": "2026-11-03"
+ },
+ "/blog/": {
+  "h": "b1540f562918",
+  "d": "2026-11-03"
+ },
+ "/blog/agency-profitability/": {
+  "h": "8a85caa097dd",
+  "d": "2026-11-03"
+ },
+ "/blog/ai-for-client-service/": {
+  "h": "8ffa749bcde9",
+  "d": "2026-11-03"
+ },
+ "/blog/client-health/": {
+  "h": "0c459cda902d",
+  "d": "2026-11-03"
+ },
+ "/blog/client-software/": {
+  "h": "76b09df49df6",
+  "d": "2026-11-03"
+ },
+ "/blog/playbooks-and-templates/": {
+  "h": "e4cb993b3a90",
+  "d": "2026-11-03"
+ },
+ "/blog/qa/": {
+  "h": "f68787b1492b",
+  "d": "2026-11-03"
+ },
+ "/case-studies/": {
+  "h": "b4303e554b98",
+  "d": "2026-11-03"
+ },
+ "/case-studies/jellyfish/": {
+  "h": "12d55bba6895",
+  "d": "2026-11-03"
+ },
+ "/case-studies/scale/": {
+  "h": "dc100ef5e6a0",
+  "d": "2026-11-03"
+ },
+ "/case-studies/the-kite-factory/": {
+  "h": "d7e6865a5a46",
+  "d": "2026-11-03"
+ },
+ "/case-studies/verkeer/": {
+  "h": "8193bb5d56e6",
+  "d": "2026-11-03"
+ },
+ "/for/account-manager/": {
+  "h": "b42a6b9dddb0",
+  "d": "2026-11-03"
+ },
+ "/for/head-of-ai/": {
+  "h": "bfda99c390d8",
+  "d": "2026-11-03"
+ },
+ "/for/strategy-creative-marketing/": {
+  "h": "2a64447a7d10",
+  "d": "2026-11-03"
+ },
+ "/hall-of-fame/": {
+  "h": "a7821d41120e",
+  "d": "2026-11-03"
+ },
+ "/hall-of-fame/gaetan-staples/": {
+  "h": "a5d73b7fc4b6",
+  "d": "2026-11-03"
+ },
+ "/knowledge-hub/": {
+  "h": "887bd8a3a84c",
+  "d": "2026-11-03"
+ },
+ "/product/": {
+  "h": "61a41503ff1a",
+  "d": "2026-11-03"
+ },
+ "/referral-partners/": {
+  "h": "8951ed34574d",
+  "d": "2026-11-03"
+ },
+ "/resources/": {
+  "h": "6d22718e6980",
+  "d": "2026-11-03"
+ },
+ "/resources/white-paper/": {
+  "h": "85766e16a5a7",
+  "d": "2026-11-03"
+ },
+ "/security/": {
+  "h": "63987442295f",
+  "d": "2026-11-03"
+ },
+ "/us/": {
+  "h": "e04562b71522",
+  "d": "2026-11-03"
+ },
+ "/us/blog/": {
+  "h": "f8948d7bc782",
+  "d": "2026-11-03"
+ },
+ "/us/blog/agency-profitability/": {
+  "h": "a40cb60b48ed",
+  "d": "2026-11-03"
+ },
+ "/us/blog/ai-for-client-service/": {
+  "h": "1904dd92e7bc",
+  "d": "2026-11-03"
+ },
+ "/us/blog/client-health/": {
+  "h": "e2ac912d3b24",
+  "d": "2026-11-03"
+ },
+ "/us/blog/client-software/": {
+  "h": "740bcf3e48c6",
+  "d": "2026-11-03"
+ },
+ "/us/blog/playbooks-and-templates/": {
+  "h": "ae0b6ab9a4f3",
+  "d": "2026-11-03"
+ },
+ "/us/blog/qa/": {
+  "h": "b35dc9953642",
+  "d": "2026-11-03"
+ },
+ "/us/case-studies/": {
+  "h": "2da6e25a3936",
+  "d": "2026-11-03"
+ },
+ "/us/case-studies/jellyfish/": {
+  "h": "ae89bfcbbf21",
+  "d": "2026-11-03"
+ },
+ "/us/case-studies/scale/": {
+  "h": "0bd92deb45dd",
+  "d": "2026-11-03"
+ },
+ "/us/case-studies/the-kite-factory/": {
+  "h": "bd7ecb0ea764",
+  "d": "2026-11-03"
+ },
+ "/us/case-studies/verkeer/": {
+  "h": "c40b8a362154",
+  "d": "2026-11-03"
+ },
+ "/us/for/account-manager/": {
+  "h": "55619bf69d62",
+  "d": "2026-11-03"
+ },
+ "/us/for/head-of-ai/": {
+  "h": "c6b4121b26d0",
+  "d": "2026-11-03"
+ },
+ "/us/for/strategy-creative-marketing/": {
+  "h": "b0a8aad8f488",
+  "d": "2026-11-03"
+ },
+ "/us/hall-of-fame/": {
+  "h": "97f26a23c29c",
+  "d": "2026-11-03"
+ },
+ "/us/hall-of-fame/gaetan-staples/": {
+  "h": "dc1a9e5ac2b1",
+  "d": "2026-11-03"
+ },
+ "/us/knowledge-hub/": {
+  "h": "dc869c50bbf9",
+  "d": "2026-11-03"
+ },
+ "/us/product/": {
+  "h": "1b8c93cafdeb",
+  "d": "2026-11-03"
+ },
+ "/us/referral-partners/": {
+  "h": "83a6dbdb84f5",
+  "d": "2026-11-03"
+ },
+ "/us/resources/": {
+  "h": "5634f1d63868",
+  "d": "2026-11-03"
+ },
+ "/us/resources/white-paper/": {
+  "h": "b08d43ae0cb1",
+  "d": "2026-11-03"
+ },
+ "/us/security/": {
+  "h": "cc41df7a0f26",
+  "d": "2026-11-03"
+ }
+}

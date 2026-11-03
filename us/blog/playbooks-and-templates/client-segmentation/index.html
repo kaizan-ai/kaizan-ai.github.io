@@ -1,0 +1,497 @@
+        <!doctype html>
+        <html lang="en-US">
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Consent Mode v2: deny non-essential storage until
+     consent.js reads the visitor's saved choice (or they make one). -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted'
+});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
+<!-- End Google Tag Manager -->
+
+        <title>Client Segmentation Models and How to Segment · Kaizan</title>
+<script data-kz-idx>if(/\/index\.html$/.test(location.pathname))location.replace(location.pathname.replace(/index\.html$/,"")+location.search+location.hash)</script>
+<link rel="alternate" hreflang="en-GB" href="https://kaizan.ai/blog/playbooks-and-templates/client-segmentation/"><link rel="alternate" hreflang="en-US" href="https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/"><link rel="alternate" hreflang="x-default" href="https://kaizan.ai/blog/playbooks-and-templates/client-segmentation/">
+        <meta name="description" content="Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png?v=89c819ed">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png?v=4c633a30">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
+        <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
+        <link rel="stylesheet" href="/assets/css/tokens.css?v=0739307f">
+        <link rel="stylesheet" href="/assets/css/site.css?v=d046324d">
+        <script defer src="/assets/js/site.js?v=dc33f0fc"></script>
+        <link rel="canonical" href="https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Client Segmentation: Models and How to Segment Clients">
+        <meta property="og:description" content="Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.">
+        <meta property="og:url" content="https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Client Segmentation: Models and How to Segment Clients">
+        <meta name="twitter:description" content="Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.">
+        <meta property="og:image" content="https://kaizan.ai/assets/img/blog/client-segmentation/cover.png">
+        <meta name="twitter:image" content="https://kaizan.ai/assets/img/blog/client-segmentation/cover.png">
+        <meta property="article:published_time" content="2026-07-15">
+        <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-US", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/#article", "url": "https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/us/blog/playbooks-and-templates/client-segmentation/"}, "headline": "Client Segmentation: Models and How to Segment Clients", "description": "Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.", "inLanguage": "en-US", "datePublished": "2026-07-15", "dateModified": "2026-10-09", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/client-segmentation/cover.png", "keywords": "client-segmentation, how-to-segment-clients, client-segmentation-model, client-segmentation-strategy, customer-success-segmentation"}]}</script>
+        <link rel="stylesheet" href="/assets/css/resources.css?v=e524afa8">
+        <!-- HubSpot's own direct tracking script loads only after cookie
+             consent for Marketing (see assets/js/consent.js), which also
+             sends Consent Mode updates for GTM's own tags. -->
+        <script defer src="/assets/js/consent.js?v=28628d00"></script>
+        </head>
+        <body>
+        <div class="kz-page">
+        <main class="kz-main">
+
+    <header class="kz-nav" role="banner">
+      <a class="kz-nav-logo" href="/us/">
+        <img class="icon" src="/assets/img/kaizan-icon.png?v=36c55982" alt="">
+        <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+      </a>
+      <nav class="kz-nav-links" aria-label="Primary">
+        
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" href="../../../product/" aria-expanded="false" aria-haspopup="true">
+                  Product <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../../product/">Overview</a>
+<a class="kz-drop-link" href="../../../integrations/">Integrations</a>
+                </div>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Product Guides <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/us/for/account-manager/">Client Service / Account Manager</a>
+<a class="kz-mega-link" href="/us/for/client-service-director/">Head of Client Services</a>
+<a class="kz-mega-link" href="/us/for/leadership/">Senior Leadership</a>
+<a class="kz-mega-link" href="/us/for/head-of-ai/">Head of AI / CTO</a>
+<a class="kz-mega-link" href="/us/for/project-manager/">Project Manager</a>
+<a class="kz-mega-link" href="/us/for/new-business/">New Business / Sales</a>
+<a class="kz-mega-link" href="/us/for/performance/">Performance / Operations</a>
+<a class="kz-mega-link" href="/us/for/strategy-creative-marketing/">Strategy, Creative, Marketing</a></div></span><a href="../../../pricing/">Pricing</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
+                  Resources <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../../resources/">All resources</a>
+<a class="kz-drop-link" href="../../../blog/">Blog</a>
+<a class="kz-drop-link" href="../../../resources/white-paper/">White paper</a>
+<a class="kz-drop-link" href="../../../case-studies/">Case studies</a>
+<a class="kz-drop-link" href="../../../knowledge-hub/">Knowledge Hub</a>
+<a class="kz-drop-link" href="../../../hall-of-fame/">Hall of Fame</a>
+<a class="kz-drop-link" href="../../../faq/">FAQs</a>
+<a class="kz-drop-link" href="../../../security/">Security</a>
+                </div>
+              </span><a href="../../../about/">About</a><a href="../../../referral-partners/">Partner Program</a>
+      </nav>
+      <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost kz-nav-login" href="https://app.kaizan.ai/">Login</a>
+        <a class="kz-btn kz-btn-yellow" href="mailto:hello@kaizan.ai" data-book-call>Book a demo</a>
+        <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
+      </div>
+    </header>
+    
+    <article class="kz-essay kz-post" style="padding-top:48px;">
+      <div class="kz-essay-body kz-post-body">
+        <h1 class="kz-post-title">Client Segmentation: Models and How to Segment Clients</h1>
+        <img class="kz-post-hero" src="/assets/img/blog/client-segmentation/cover.png" alt="Client Segmentation: Models and How to Segment Clients" decoding="async">
+        <p>Most client services teams treat every account the same way until something forces them not to. A big client threatens to leave, a small one quietly eats a month of the team's time, and suddenly the question is unavoidable: which clients actually deserve which level of attention?</p>
+
+<p>Client segmentation is how you answer that question deliberately rather than in a panic. Done well, it tells you where to put your best people, which relationships to protect, and where growth is hiding in plain sight. Done badly, or not at all, it leaves your team spread evenly across accounts that are anything but equal.</p>
+
+<p>This guide covers what client segmentation is, the models worth knowing, a step by step method you can run this quarter, and the mistakes that quietly undermine most attempts.</p>
+
+<h2>What is client and customer segmentation?</h2>
+
+<p>Client segmentation is a customer segmentation process that helps you group customers or clients into distinct groups based on shared characteristics, so you can serve each group with the right level of attention, the right service model, and the right commercial focus. The characteristics might be revenue, growth potential, lifecycle stage, health, or the way a client prefers to work with you. Combining multiple dimensions across your customer base often produces more valuable insights than relying on one variable alone.</p>
+
+<p>The point is not to rank clients from best to worst. It is to recognize that a client worth 200,000 a year and a client worth 5,000 a year have different needs, different risks, and different economics, and that treating them identically wastes effort on one and starves the other.</p>
+
+<p>Customer groups are not the same as customer personas: segments describe groups, while personas describe individuals.</p>
+
+<p>Good segmentation gives you three things: a clear service model for each group, a defensible way to allocate your team's time, and an early view of where retention risk and expansion opportunity actually sit.</p>
+
+<h2>Why client segmentation matters for client services teams</h2>
+
+<p>For account managers, client success teams, and agencies, segmentation is really a resourcing decision dressed up as an analysis. It shapes how the business allocates time for business growth, sharpens marketing, and focuses marketing efforts alongside client services resourcing. Every hour spent over servicing a small account is an hour not spent protecting a strategic one.</p>
+
+<p>Segmentation also changes the commercial conversation. When you can see that a handful of clients drive most of your revenue, and that a second group has high potential but low current spend, you stop managing a flat list of accounts and start managing a portfolio. That shift is where net revenue retention comes from: protecting the base, and expanding the accounts with room to grow.</p>
+
+<p>It matters for the client experience too. A well segmented book means the clients who need a hands on, senior relationship get one, and the clients who prefer a lighter, more self directed touch are not smothered with meetings they never asked for.</p>
+
+<h2>The main client segmentation models, including demographic segmentation</h2>
+
+<p>There is no single correct model. The right one depends on what decision you are trying to make. Common customer segments include demographic, geographic, psychographic, behavioral, and value-based approaches, which companies often use to create practical groupings, identify patterns in an existing customer base, inform strategy, and manage multiple segments. These are the models worth knowing, and when each one earns its place.</p>
+
+<h3>1. Value or tier based segmentation</h3>
+
+<p>The most common starting point. It is a value based approach, similar to how many businesses prioritize existing customers by financial contribution or customer lifetime. You rank clients by revenue or fees and group them into tiers, often something like strategic, key, and growth accounts, plus a long tail of smaller clients. Another value based method is RFM segmentation, which scores customers on recency, frequency, and monetary value.</p>
+
+<p><strong>Best for:</strong> allocating senior time and setting service levels. It is simple, it is defensible to leadership, and everyone understands it.</p>
+
+<p><strong>Watch out for:</strong> it only looks backward. A client can be small today and enormous tomorrow, and pure value tiering will miss them.</p>
+
+<h3>2. Value versus potential segmentation</h3>
+
+<p>A two by two that plots current value against future potential. You end up with four groups: high value and high potential (protect and grow), high value and low potential (protect and hold), low value and high potential (invest), and low value and low potential (serve efficiently).</p>
+
+<p><strong>Best for:</strong> deciding where to invest for expansion rather than just where to defend. This is usually the model that changes behavior, because it surfaces the low spend, high potential clients that flat revenue tiering ignores, helping teams spot potential customers and shape targeted strategies for product development or new products where relevant.</p>
+
+<p><strong>Watch out for:</strong> potential is a judgment, so it needs real evidence behind it, not optimism; many businesses fall back on simple assumptions when they lack that evidence, and that weakens segmentation.</p>
+
+<h3>3. Lifecycle stage segmentation</h3>
+
+<p>Groups clients by where they are in the relationship: onboarding, adoption, established, renewal, at risk. Each stage needs a different play.</p>
+
+<p><strong>Best for:</strong> designing the client journey and knowing which motion to run at any given moment.</p>
+
+<h3>4. Health or risk based segmentation</h3>
+
+<p>Groups clients by relationship health, usually a blend of signals like engagement, sentiment, usage, open issues, and behavior, using behavioral data such as product usage patterns and engagement levels to reflect the wider customer experience. Segments might be healthy, watch, and at risk.</p>
+
+<p><strong>Best for:</strong> retention. It tells your team where to intervene before a renewal conversation goes wrong, and where to provide personalized support for accounts with distinct needs before churn risk becomes obvious.</p>
+
+<p><strong>Watch out for:</strong> it is only as good as the signals feeding it. Health scores built on a single data point, or on gut feel, tend to mislead.</p>
+
+<h3>5. Needs or behavior based segmentation</h3>
+
+<p>Groups clients by what they actually want from you: strategic partnership, execution, speed, cost, and so on. This model can also include behavioral segmentation and psychographic segmentation when clients differ by how they work and what they expect. Two clients of identical size can sit in completely different segments here. In practice, psychographic segmentation looks at values, interests, and lifestyles, while behavioral segmentation looks at user behavior and specific needs that reveal distinct needs.</p>
+
+<p><strong>Best for:</strong> tailoring how you show up, and matching the right people to the right relationships.</p>
+
+<p>Most mature teams do not pick one model. They lead with value or potential to set the service tier, then layer health on top to manage risk within each tier.</p>
+
+<h2>How to segment clients: a step by step method</h2>
+
+<p>You can run a first pass on this in an afternoon. Making it stick takes a little longer.</p>
+
+<ol>
+<li><p><strong>Decide what the segmentation is for.</strong> Resourcing, retention, and expansion pull the model in different directions. Name the decision before you touch the data, because it determines which variables matter.</p></li>
+<li><p><strong>Choose your dimensions.</strong> Keep it to two or three. Revenue and growth potential is a strong default. Adding health as a third layer works well, but common options also include demographic segmentation and geographic segmentation depending on the use case. For example, demographics can use age, gender, and income, while geographic segmentation sorts clients by location, region, or climate. More than three and the segments stop being usable.</p></li>
+<li><p><strong>Gather the data.</strong> This is where most segmentation efforts stall. Revenue is easy. Potential, health, and behavior live in the relationship itself: in the calls, the emails, the tone of the last three conversations, the questions a client keeps asking. Good customer data can also come from CRM records, purchase history, customer feedback, and other demographic information where relevant. Pulling that together by hand across a full book of accounts is slow, and it goes stale the moment you finish.</p></li>
+<li><p><strong>Build the segments.</strong> Aim for three to five. Small segments can work if they are still actionable, but avoid trying to build segments so narrowly that one segment overlaps heavily with another. Fewer and the groups are too blunt to act on. More and you cannot hold a distinct service model in your head for each one. Give each segment a plain name your whole team will actually use.</p></li>
+<li><p><strong>Assign a service model to each segment.</strong> This is the step that turns analysis into action. For each segment, decide the cadence of contact, the seniority of the owner, the review rhythm, and the commercial goal. Segmentation with no differentiated service model behind it is just a spreadsheet.</p></li>
+<li><p><strong>Review on a cadence.</strong> Clients move. A client can climb from long tail to strategic in two quarters, or slide from healthy to at risk in two weeks. Re-segment quarterly at least, and let health signals move a client between segments in close to real time, because this is an ongoing process.</p></li>
+</ol>
+
+<h2>The role of client intelligence in segmentation</h2>
+
+<p>The hard part of segmentation is rarely the model. It is using regular analysis to keep the inputs accurate and current across an entire book of clients, from current customers to the broader customer base, rather than treating it as a one-off review.</p>
+
+<p>Revenue numbers are simple to pull. The signals that actually predict retention and expansion, engagement, sentiment, customer feedback, the strength of a relationship, the risks surfacing in conversations, are buried in the day to day interactions your team is already having. That is exactly the data that goes uncaptured, or gets written down in someone's notes and never seen again, even though it should be shaping personalized experiences through live insight.</p>
+
+<p>This is where a client intelligence platform changes the exercise. When the health and engagement signals from every client conversation are captured and structured automatically, segmentation stops being a quarterly manual project and becomes a live view of your book. Clients move between segments as the relationship actually changes, not months later when someone gets round to updating the spreadsheet. Kaizan is built for exactly this: turning the interactions across your client relationships into the intelligence that helps teams master customer segmentation and decide which accounts to protect, which to grow, and which are quietly at risk, including product recommendations or service actions for distinct customer groups.</p>
+
+<h2>Common client segmentation mistakes</h2>
+
+<ul>
+<li><strong>Segmenting on revenue alone.</strong> The single most common error. It over serves large but stagnant accounts and misses small accounts with real growth in them. Relying only on revenue ignores customer lifetime value and can distort targeted marketing strategies as well as service allocation.</li>
+<li><strong>Too many segments.</strong> If your team cannot recall the service model for each segment without looking it up, you have too many. Multiple segments should stay actionable and distinct rather than turning into overlapping labels.</li>
+<li><strong>No service model behind the segments.</strong> A segmentation that does not change how you actually work with each group is decoration. The whole value is in the differentiated action.</li>
+<li><strong>Setting it and forgetting it.</strong> Segmentation is an ongoing process that needs regular analysis. A segmentation built once and left untouched is wrong within a quarter. Client books move constantly.</li>
+<li><strong>Relying on gut feel for the soft variables.</strong> Potential and health are judgements, but they should be judgements backed by evidence from the relationship, not by whoever spoke loudest in the account review.</li>
+</ul>
+
+<h2>Getting started</h2>
+
+<p>If you have never formally segmented your clients, start simple. Plot your accounts on current value against growth potential, group them into four, and give each group a clear service model. For example, you might separate low-value/low-growth accounts from high-value/high-growth ones. That alone will tell you where your team's time is going versus where it should go.</p>
+
+<p>The step that separates a segmentation that sticks from one that gathers dust is the data, because it helps SaaS companies and other businesses tailor service and marketing to specific requirements. Unlike market segmentation, which looks outward, client segmentation focuses on current customers. The moment your segments depend on signals you can only gather by hand, they start to decay. Ground them in the intelligence already flowing through your client relationships, and segmentation becomes something your team lives by rather than a slide they revisit once a year.</p>
+        <div class="kz-post-back"><a href="../">← More in Playbooks and templates</a> · <a href="../../">All posts</a></div>
+      </div>
+    </article>
+    <footer class="kz-footer">
+      <div class="kz-footer-news">
+        <div class="kz-footer-news-copy">
+          <span class="kz-footer-news-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#000" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4>Get the Kaizan <span class="kz-y">newsletter</span></h4>
+          <p><strong>What’s really happening inside client relationships.</strong><br>
+          Benchmarks from real account data, playbooks from teams that keep clients longer, and practical AI for client service.</p>
+        </div>
+        <form class="kz-footer-news-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" method="post" target="_blank"
+              data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" data-newsletter novalidate>
+          <div class="kz-footer-news-row">
+            <label class="kz-sr-only" for="kz-nl-email">Work email</label>
+            <input id="kz-nl-email" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Subscribe</button>
+          </div>
+          <div class="kz-footer-news-role" data-newsletter-role>
+            <label for="kz-nl-role">Your job role</label>
+            <select id="kz-nl-role" name="ROLE" required><option value="">Select your role…</option><option>Client Service / Account Manager</option><option>Head of Client Services</option><option>Senior Leadership</option><option>Head of AI / CTO</option><option>Project Manager</option><option>New Business / Sales</option><option>Performance / Operations</option><option>Strategy, Creative, Marketing</option><option>Other</option></select>
+          </div>
+          <input type="hidden" name="tags" value="newsletter">
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_40f0f855d8" tabindex="-1" value="">
+          </div>
+          <p class="kz-footer-news-msg" role="status" aria-live="polite" hidden></p>
+          <p class="kz-consent kz-consent--dark">You can unsubscribe at any time. See our <a href="../../../privacy-policy/">Privacy Policy</a>.</p>
+        </form>
+      </div>
+      <div class="kz-footer-grid">
+        <div class="kz-footer-brand logo-light">
+          <a class="kz-nav-logo" href="/us/">
+            <img class="icon" src="/assets/img/kaizan-icon.png?v=36c55982" alt="">
+            <img class="word" src="/assets/img/kaizan-logo.png" alt="Kaizan">
+          </a>
+          <p class="blurb">Client super intelligence for professional services firms.</p>
+          <p class="footer-address">Covent Garden, London · Madison Avenue, New York</p>
+        </div>
+        <div class="col"><h4>Product</h4><a href="../../../product/">Overview</a>
+<a href="../../../integrations/">Integrations</a>
+<a href="../../../security/">Security</a></div><div class="col"><h4>For</h4><a href="../../../for/account-manager/">Account Manager</a>
+<a href="../../../for/project-manager/">Project Manager</a>
+<a href="../../../for/leadership/">Leadership</a>
+<a href="../../../for/new-business/">New Business</a></div><div class="col"><h4>Company</h4><a href="../../../about/">About</a>
+<a href="../../../security/">Security</a>
+<a href="../../../faq/">FAQ</a></div><div class="col"><h4>Get in touch</h4><a href="mailto:hello@kaizan.ai" data-book-call>Book a demo</a>
+<a href="https://app.kaizan.ai/">Login</a>
+<a href="mailto:hello@kaizan.ai">Contact</a>
+<a href="https://www.linkedin.com/company/kaizan">LinkedIn</a></div>
+      </div>
+      <div class="kz-footer-bot">
+        <span>© 2026 Kaizan Inc. · <a class="kz-locale-switch" data-locale-switch href="#" hidden></a></span>
+        <span>
+          <a href="../../../privacy-policy/">Privacy</a> ·
+          <a href="../../../license-agreement/">Terms</a> ·
+          <a href="../../../cookie-policy/">Cookies</a> ·
+          <a href="../../../data-processing-agreement/">DPA</a> ·
+          <a href="#" data-cookie-settings>Cookie settings</a>
+        </span>
+      </div>
+    </footer>
+    <link rel="stylesheet" href="/assets/css/wp-strip.css?v=475de274">
+    <div class="wp-popup" id="wp-popup" hidden>
+      <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
+        <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
+        <div class="wp-strip__in">
+        <div class="wp-strip__copy">
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free</span>
+          <h2 class="wp-strip__title" id="wp-popup-title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymized. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviors that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
+          <div class="wp-strip__pages" aria-hidden="true"><img src="/assets/img/white-paper/report-page-01.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-08.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-care.png" alt="" width="92" loading="lazy"></div>
+        </div>
+        <form class="wp-strip__form" novalidate>
+          <h3>Download the 2026 Report</h3>
+          <label class="wp-strip__field"><span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="wp-strip__err" role="alert"></div></label>
+          <label class="wp-strip__field"><span>Job title</span>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option>Head of Client Services / CS</option>
+<option>Client Success Manager</option>
+<option>Account Director / Manager</option>
+<option>Founder / CEO</option>
+<option>Head of AI / CTO</option>
+<option>VP / Commercial Leader</option>
+<option>Marketing / Operations</option>
+<option>Agency Leader</option>
+<option>Other</option>
+            </select>
+            <div class="wp-strip__err" role="alert"></div></label>
+          <button type="submit">Get the report &rarr;</button>
+          <p class="kz-consent kz-consent--dark">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
+          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+      </div>
+    </div>
+    <script defer src="/assets/js/wp-strip.js?v=68113e91"></script>
+    </main>
+</div>
+
+<div class="cb-overlay" id="cb-overlay" hidden>
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
+    <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
+      <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
+      <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
+      <button class="cb-tab" role="tab" data-tab="about" aria-selected="false" tabindex="-1">About</button>
+    </div>
+
+    <div class="cb-body">
+      <section data-panel="consent" role="tabpanel">
+        <h2 id="cb-title">This website uses cookies</h2>
+        <p>We use cookies to keep the site working, to remember your preferences and to understand which pages are useful so we can improve them. You choose which types to allow. <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">Read our privacy policy.</a></p>
+      </section>
+
+      <section data-panel="details" role="tabpanel" hidden>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-necessary"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Necessary <span class="cb-count">12</span></button>
+            <label class="cb-switch"><input type="checkbox" checked disabled aria-label="Necessary cookies, always on"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-necessary">These cookies keep the site working, for example by remembering your consent choice and keeping forms secure. The site can't work properly without them.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-preferences"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Preferences <span class="cb-count">3</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="preferences" aria-label="Preferences cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-preferences">These remember choices you make, like your language or region, so the site feels familiar next time you visit.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-statistics"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Statistics <span class="cb-count">5</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="statistics" aria-label="Statistics cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-statistics">These collect anonymous information about how visitors use the site, so we can see what works and fix what doesn't.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-marketing"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Marketing <span class="cb-count">8</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="marketing" aria-label="Marketing cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-marketing">These measure how well our campaigns perform and show you relevant ads on other websites.</p>
+        </div>
+      </section>
+
+      <section data-panel="about" role="tabpanel" hidden>
+        <p>Cookies are small text files that websites store on your device. Some are essential; others help us remember your settings or understand how the site is used.</p>
+        <p>Your choice is remembered for this browser. You can change or withdraw it at any time using <strong>Cookie settings</strong> in the page footer.</p>
+        <p>For details on who we share data with and how long we keep it, see our <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+      </section>
+    </div>
+
+    <div class="cb-foot" data-foot="consent">
+      <button class="cb-btn line" data-act="manage">Manage cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
+    </div>
+    <div class="cb-foot" data-foot="details" hidden>
+      <button class="cb-btn line" data-act="selection">Allow selection</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
+    </div>
+  </div>
+</div>
+<div class="kz-bc" data-book-call-modal hidden role="dialog" aria-modal="true" aria-labelledby="kz-bc-title">
+  <div class="kz-bc-backdrop" data-bc-close></div>
+  <div class="kz-bc-dialog">
+    <div class="kz-trial kz-bc-card">
+      <svg class="kz-trial-art" viewBox="0 0 280 150" aria-hidden="true">
+  <circle cx="140" cy="78" r="62" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.10"/>
+  <circle cx="140" cy="78" r="40" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.18"/>
+  <circle cx="140" cy="78" r="22" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+  <g stroke="currentColor" stroke-linecap="round">
+    <line x1="140" y1="78" x2="82" y2="38" stroke-width="0.8" opacity="0.32"/>
+    <line x1="140" y1="78" x2="58" y2="92" stroke-width="1.6" opacity="0.62"/>
+    <line x1="140" y1="78" x2="198" y2="30" stroke-width="1" opacity="0.42"/>
+    <line x1="140" y1="78" x2="224" y2="82" stroke-width="1.6" opacity="0.58"/>
+    <line x1="140" y1="78" x2="170" y2="128" stroke-width="0.9" opacity="0.36"/>
+    <line x1="140" y1="78" x2="98" y2="122" stroke-width="1.1" opacity="0.46"/>
+    <line x1="140" y1="78" x2="246" y2="42" stroke-width="0.6" opacity="0.22" stroke-dasharray="2 3"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="82" cy="38" r="3.5"/><circle cx="198" cy="30" r="2.5"/><circle cx="224" cy="82" r="5"/>
+    <circle cx="170" cy="128" r="2.5"/><circle cx="98" cy="122" r="4"/><circle cx="246" cy="42" r="2"/>
+  </g>
+  <circle cx="58" cy="92" r="6" fill="#FFB900" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="58" cy="92" r="2" fill="currentColor"/>
+  <circle cx="198" cy="30" r="9" fill="none" stroke="#FFB900" stroke-width="1.4" opacity="0.7"/>
+  <circle cx="140" cy="78" r="9" fill="currentColor"/>
+  <circle cx="140" cy="78" r="3.5" fill="#FFB900"/>
+  <g fill="#FFB900">
+    <circle cx="32" cy="22" r="2"/><circle cx="258" cy="118" r="2.2"/>
+    <circle cx="22" cy="108" r="1.4" opacity="0.6"/><circle cx="262" cy="62" r="1.6" opacity="0.65"/>
+    <circle cx="48" cy="138" r="1.4" opacity="0.55"/>
+  </g>
+  <path d="M 14 56 L 18 60 L 14 64 L 10 60 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+  <path d="M 268 18 L 272 22 L 268 26 L 264 22 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+</svg>
+      <button type="button" class="kz-bc-x" data-bc-close aria-label="Close">&times;</button>
+      <form class="kz-trial-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=0006efe5f0" data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=0006efe5f0"
+            data-confirm="/us/book-demo-confirmation/" method="post" target="_blank">
+        <h2 class="kz-trial-title" id="kz-bc-title">Book a call</h2>
+        <div class="kz-trial-fields">
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-PHONE" name="PHONE" type="tel" placeholder="(555) 555-0100" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+            </div>
+          </div>
+          <div class="kz-trial-field">
+            <label for="bc-MMERGE12">How did you hear about us?</label>
+            <select id="bc-MMERGE12" name="MMERGE12">
+              <option value="">Select an option</option>
+              <option value="Google Search">Google Search</option>
+<option value="LinkedIn">LinkedIn</option>
+<option value="Social Media (Facebook/Instagram/TikTok/YouTube)">Social Media (Facebook/Instagram/TikTok/YouTube)</option>
+<option value="AI Tool (Chat GPT/Claude/Gemini)">AI Tool (Chat GPT/Claude/Gemini)</option>
+<option value="Referral (Friend/Colleague/Word of Mouth)">Referral (Friend/Colleague/Word of Mouth)</option>
+<option value="Email Newsletter">Email Newsletter</option>
+<option value="Event/Conference">Event/Conference</option>
+<option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="UTMSRC" value="" data-utm="utm_source">
+<input type="hidden" name="UTMMED" value="" data-utm="utm_medium">
+<input type="hidden" name="UTMTRM" value="" data-utm="utm_term">
+<input type="hidden" name="UTMQRPLC" value="" data-utm="qr_placement">
+<input type="hidden" name="UTMCTA" value="" data-utm="utm_cta">
+<input type="hidden" name="UTMCAMP" value="" data-utm="utm_campaign">
+<input type="hidden" name="UTMCONT" value="" data-utm="utm_content">
+<input type="hidden" name="UTMCOUNTRY" value="" data-utm="utm_country">
+<input type="hidden" name="UTMUSP" value="" data-utm="utm_usp">
+<input type="hidden" name="UTMANGL" value="" data-utm="utm_angle">
+<input type="hidden" name="UTMHOOK" value="" data-utm="utm_hook">
+<input type="hidden" name="GCLID" value="" data-utm="gclid">
+<input type="hidden" name="UTMID" value="" data-utm="utm_id">
+<input type="hidden" name="UTMADGRP" value="" data-utm="utm_adgroup">
+        <div hidden><input type="hidden" name="tags" value="3789741,3789550"></div>
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_1ea9163949" tabindex="-1" value="">
+        </div>
+        <button type="submit" name="subscribe" class="kz-trial-submit">Book a call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        <p class="kz-trial-msg" data-bc-msg role="status" aria-live="polite"></p>
+        <p class="kz-trial-legal">
+          By submitting your details to Kaizan you are showing interest in our product and so we may
+          contact you about booking a call and about our product and services. Please review our
+          <a href="/us/privacy-policy/">Privacy Policy</a> for how we use your information.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<script defer src="/assets/js/book-call.js?v=8b11a2a3"></script>
+</body>
+</html>

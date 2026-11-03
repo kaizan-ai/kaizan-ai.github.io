@@ -3,6 +3,7 @@ title: "Client Segmentation: Models and How to Segment Clients"
 date: 2026-07-15
 author: Lia Grant
 category: POV
+topic: playbooks-and-templates
 excerpt: A practical guide to client segmentation for client services and account teams. Learn the main models, a step by step method, and how to match a service level to each segment.
 meta_title: Client Segmentation Models and How to Segment
 meta_description: Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.

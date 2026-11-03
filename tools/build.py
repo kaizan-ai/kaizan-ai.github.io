@@ -40,10 +40,10 @@ NAV = [
     ('Product Guides', '__personas_dropdown__'),
     ('Pricing',      'pricing/'),
     # TODO: re-enable "Clients" nav item once the customer-stories content is ready.
-    # ('Clients',      'customers/'),
+    # ('Case studies', 'case-studies/'),
     # Sentinel-ish: nav_html renders "Resources" as a hover dropdown listing
-    # RESOURCES_MENU. The trigger itself points at the first item (Our Research).
-    ('Resources',    'research/'),
+    # RESOURCES_MENU. The trigger itself points at the Knowledge Hub.
+    ('Resources',    'resources/'),
     ('About',        'about/'),
     # Plain text nav link (relative, so it resolves to /referral-partners/ on UK
     # and /us/referral-partners/ on US via normal relative paths).
@@ -77,12 +77,15 @@ PRODUCT_MENU = [
 ]
 
 # Sub-links shown in the "Resources" nav dropdown. The "Resources" trigger
-# itself points at the Our Research page (research/, set in NAV above); the
+# itself points at the Knowledge Hub (knowledge-hub/, set in NAV above); the
 # dropdown lists the other resources. FAQ maps to /faq/; Security is the
 # Trust & Security page. Third column class (is-yellow / is-mute) is reserved
 # for an optional glyph treatment.
 RESOURCES_MENU = [
+    ('All resources', 'resources/',      'is-mute'),
     ('Blog',          'blog/',           'is-mute'),
+    ('White paper',   'resources/white-paper/', 'is-mute'),
+    ('Case studies',  'case-studies/',   'is-mute'),
     ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
     ('Hall of Fame',  'hall-of-fame/',   'is-mute'),
     ('FAQs',          'faq/',            'is-mute'),
@@ -160,6 +163,8 @@ PERSONAS = {
         h1=('Get your', 'day back.', ''),
         sub=("Kaizan removes the admin and surfaces the next best action on every client - "
              "so you spend your time on the work only you can do."),
+        meta_title='AI Client Intelligence for Account Managers',
+        meta_description='Get your day back. Kaizan removes the admin and surfaces the next best action on every client, so you can focus on the work only you can do.',
         quote_bg='radial-gradient(circle at 35% 30%, #D8A056, #6E3E10)',
         quote_pull=('The Client 360 gives us an at-a-glance view of what’s going on in our clients’ '
                     'worlds. We can then come up with ideas off the back of that. Previously, we were '
@@ -169,7 +174,7 @@ PERSONAS = {
         quote_co='Collective Content',
         quote_nudge=False,
         quote_cta='Read the Collective Content case study →',
-        quote_cta_href='https://blog.kaizan.ai/from-reactive-to-proactive-how-great-client-teams-stay-ahead-3404dd582591',
+        quote_cta_href='blog/client-health/from-reactive-to-proactive-client-teams/',
         love=[
             ('Admin disappears.',
              "Notes, action capture, follow-up chasing, status updates - Kaizan handles the work "
@@ -241,7 +246,7 @@ PERSONAS = {
         quote_co='Tradedoubler',
         quote_nudge=False,
         quote_cta='Read the Tradedoubler case study →',
-        quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-driving-20-greater-operational-efficiency-across-3-500-clients-5f99fd11d1a6',
+        quote_cta_href='blog/agency-profitability/tradedoubler-20-percent-efficiency-gain/',
         love=[
             ('Onboard new team members in days, not months.',
              "Every client's history - meetings, decisions, stakeholders, context, and key client "
@@ -322,7 +327,7 @@ PERSONAS = {
         quote_co='NP Digital',
         quote_nudge=False,
         quote_cta='Read the NP Digital case study →',
-        quote_cta_href='https://blog.kaizan.ai/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive-retention-45f04f7fd0bc',
+        quote_cta_href='blog/client-health/np-digital-ai-client-retention/',
         love=[
             ('The path to doubling revenue on every client.',
              "Kaizan surfaces where each relationship could grow - unmet needs, adjacent scope, "
@@ -389,6 +394,8 @@ PERSONAS = {
         sub=("Turn every meeting, email, and decision into a unified client memory your AI tools "
              "can query - and a foundation for the custom products, services, and workflows your "
              "business wants to build."),
+        meta_title='Client Memory for Heads of AI and CTOs',
+        meta_description='Turn every meeting, email and decision into a unified client memory your AI tools can query, and a base for the products and workflows you want to build.',
         quote_bg='radial-gradient(circle at 30% 30%, #5F7E94, #1A2D3D)',
         quote_pull=('We have this huge dataset now… we can start making not just client decisions, '
                     'but product decisions.'),
@@ -397,7 +404,7 @@ PERSONAS = {
         quote_co='Tradedoubler',
         quote_nudge=False,
         quote_cta='Read the engineering architecture →',
-        quote_cta_href='https://blog.kaizan.ai/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and-product-decisions-5669edac12c8',
+        quote_cta_href='blog/ai-for-client-service/tradedoubler-quantifying-client-conversations/',
         love=[
             ('Your client memory, in the AI tools you already use.',
              "Kaizan is a client intelligence platform that unifies every meeting, email, "
@@ -481,7 +488,7 @@ PERSONAS = {
         quote_co='Verkeer',
         quote_nudge=True,
         quote_cta='Read the Verkeer case study →',
-        quote_cta_href='https://blog.kaizan.ai/cs-leader-quick-fire-q-a-hannah-carthy-verkeer-5c7cd3eb6b75',
+        quote_cta_href='blog/qa/cs-leader-qa-hannah-carthy-verkeer/',
         love=[
             ('One unified place for every project.',
              "Meetings, actions, decisions, commitments, status, and other client interactions and "
@@ -557,7 +564,7 @@ PERSONAS = {
         quote_co='PASHN',
         quote_nudge=False,
         quote_cta='Read the PASHN case study →',
-        quote_cta_href='https://blog.kaizan.ai/how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue-and-save-time-ebda9f8128b7',
+        quote_cta_href='blog/agency-profitability/pashn-protect-revenue-save-time/',
         love=[
             ('Walk into every pitch already prepared.',
              "Stakeholder intel, market context, competitor positioning, the prospect's recent "
@@ -640,7 +647,7 @@ PERSONAS = {
         quote_co='The Kite Factory',
         quote_nudge=False,
         quote_cta='Read The Kite Factory case study →',
-        quote_cta_href='https://blog.kaizan.ai/how-the-kite-factory-uses-ai-to-unify-client-data-and-improve-operational-visibility-5f18d0642db6',
+        quote_cta_href='blog/client-software/kite-factory-unify-client-data/',
         love=[
             ('See where the hours actually go.',
              "Time across calls, comms, and meetings - per client, per team, per discipline - so "
@@ -704,6 +711,8 @@ PERSONAS = {
         h1=('Spend your hours', 'on the work.', ' Not catching up to it.'),
         sub=("Every conversation, decision, and signal on every client - ready the moment the "
              "brief lands."),
+        meta_title='Client Context for Strategy, Creative and Marketing',
+        meta_description='Every conversation, decision and signal on every client, ready when the brief lands, so strategy, creative and marketing teams can start from context.',
         quote_bg='radial-gradient(circle at 35% 30%, #B5A06D, #4A3D1A)',
         quote_pull=('Being across so many clients, I really struggled to make sure I had a good '
                     'understanding across all of our different client interactions and touch '
@@ -715,7 +724,7 @@ PERSONAS = {
         quote_co_url='https://transmissionagency.com/',
         quote_nudge=True,
         quote_cta='Read the Transmission case study →',
-        quote_cta_href='https://blog.kaizan.ai/agency-leaders-who-dont-move-now-will-be-managing-the-fallout-later-9f792fe49686',
+        quote_cta_href='blog/ai-for-client-service/agency-leaders-act-on-ai-now/',
         love=[
             ('Walk into every brief with full context.',
              "Every meeting, every decision, every conversation - searchable and summarisable "
@@ -876,7 +885,7 @@ def cover(a, b, glyph):
         f"font-size='120' fill='rgba(10,10,10,0.85)' font-weight='400'>{glyph}</text>"
         f"</svg>"
     )
-    return f"data:image/svg+xml;utf8,{svg}"
+    return "data:image/svg+xml;utf8," + quote(svg, safe="%/:=,;")
 
 INSIGHTS_POSTS = [
     dict(cat='POV', t='What the top 10% of account managers do differently',
@@ -1261,9 +1270,9 @@ def nav_html(depth: int, active: str | None = None, with_mega: bool = True) -> s
                         <div class="kz-mega-label">Foundation</div>
                         <a class="kz-mega-link" href="{p}integrations/"><span class="glyph is-mute">•</span>Integrations</a>
                         <a class="kz-mega-link" href="{p}security/"><span class="glyph is-mute">•</span>Trust &amp; Security</a>
-                        <a class="kz-mega-link" href="{p}insights/"><span class="glyph is-mute">•</span>Insights &amp; research</a>
+                        <a class="kz-mega-link" href="{p}blog/"><span class="glyph is-mute">•</span>Blog</a>
                         <div class="kz-mega-label" style="margin-top:18px;">Partners</div>
-                        <a class="kz-mega-link" href="{p}customers/"><span class="glyph is-mute">•</span>Customer stories</a>
+                        <a class="kz-mega-link" href="{p}case-studies/"><span class="glyph is-mute">•</span>Case studies</a>
                       </div>
                     </div>
                   </div>
@@ -1334,7 +1343,7 @@ def footer_html(depth: int) -> str:
                      # ('Careers', f'{p}careers/'),
                      ('Security', f'{p}security/'),
                      # ('Insights', f'{p}insights/'),
-                     # ('Clients', f'{p}customers/'),
+                     # ('Case studies', f'{p}case-studies/'),
                      ('FAQ', f'{p}faq/')]),
         ('Get in touch', [('Book a demo', '/demo/'), ('Login', 'https://app.kaizan.ai/'),
                           ('Contact', 'mailto:hello@kaizan.ai'),
@@ -2344,25 +2353,25 @@ def render_home() -> str:
         dict(q='Kaizan is helping us reduce the manual tasks, the ones that take a '
                'long time but are less valuable, so we can focus on our clients.',
              name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
-             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
+             blog='client-health/gravity-global-spotting-client-drift'),
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
                'It’s money very well spent. An invaluable customer tool.',
              name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
-             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
+             blog='agency-profitability/lean-mean-client-obsessed-agencies'),
         dict(q='We’ve had numerous occasions where we’ve been able to spot and '
                'identify high-risk clients that potentially were going to leave.',
              name='Brandon Smith', role='Managing Director', co='NP Digital',
-             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
+             blog='client-health/np-digital-ai-client-retention'),
     ]
     # Blog post each persona is featured in — powers the card's "Read more" link.
     _persona_blog = {
-        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
-        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
-        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
-        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
-        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
-        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
-        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+        'Derek Grant': 'agency-profitability/tradedoubler-20-percent-efficiency-gain',
+        'Fiona Skilton': 'client-health/from-reactive-to-proactive-client-teams',
+        'Corin Ward': 'ai-for-client-service/tradedoubler-quantifying-client-conversations',
+        'Hannah Carthy': 'qa/cs-leader-qa-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'agency-profitability/pashn-protect-revenue-save-time',
+        'Gabriella Krite': 'client-software/kite-factory-unify-client-data',
+        'Alex Beddoe': 'ai-for-client-service/agency-leaders-act-on-ai-now',
     }
     _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
     for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
@@ -3440,7 +3449,7 @@ def render_persona(slug: str) -> str:
           <p class="kz-lede" style="margin-top:26px;max-width:560px;">{E(p['sub'])}</p>
           <div class="kz-flex" style="gap:10px;margin-top:28px;">
             <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
-            <a class="kz-btn kz-btn-ghost" style="padding:14px 22px;" href="../../white-paper/">Download CARE white paper</a>
+            <a class="kz-btn kz-btn-ghost" style="padding:14px 22px;" href="../../resources/white-paper/">Download CARE white paper</a>
           </div>
         </div>
         <div class="kz-persona-quote{nudge_cls}">
@@ -3556,17 +3565,17 @@ def render_customers() -> str:
           <q>{E(q)}</q>
           <div class="foot">
             {portrait(name, role, tone=tone, size='xs', depth=1)}
-            <span class="read">Read story →</span>
+            <span class="read">Read case study →</span>
           </div>
         </a>''' for co, kind, metric, tone, q, name, role, slug in cases[1:]
     )
 
     body = f'''
-    {nav_html(1, active='Clients')}
+    {nav_html(1, active='Case studies')}
 
     <!-- HERO -->
     <section class="kz-section-tight">
-      <div class="kz-eyebrow">Clients · 60+ client-services teams</div>
+      <div class="kz-eyebrow">Case studies · 60+ client-services teams</div>
       <h1 class="kz-h1" style="margin:20px 0 0;max-width:1100px;font-size:clamp(40px,4.8vw,66px);line-height:1.02;">
         The teams running Kaizan keep their clients
         <span class="kz-mark">and grow them.</span>
@@ -3603,7 +3612,7 @@ def render_customers() -> str:
 
     {footer_html(1)}
     '''
-    return page_head('Clients', 1,
+    return page_head('Case Studies', 1,
                      '60+ client-services teams running Kaizan to keep their clients and grow them.') + body + page_foot()
 
 
@@ -3619,17 +3628,17 @@ def render_case_study(slug: str) -> str:
     )
 
     body = f'''
-    {nav_html(2, active='Clients')}
+    {nav_html(2, active='Case studies')}
 
     <!-- BREADCRUMB -->
     <section class="kz-case-crumb">
-      <a href="../">← Clients</a><span class="sep">/</span><span>{E(c['co'])}</span>
+      <a href="../">← Case studies</a><span class="sep">/</span><span>{E(c['co'])}</span>
     </section>
 
     <!-- HERO -->
     <section class="kz-case-hero">
       <div>
-        <div class="kz-eyebrow">Client story · {E(c['kind'])}</div>
+        <div class="kz-eyebrow">Case study · {E(c['kind'])}</div>
         <div class="name">{E(c['co'])}</div>
         <h1 class="head">{E(c['headline'])}</h1>
         <div class="metric">{E(c['metric'].upper())}</div>
@@ -3662,7 +3671,7 @@ def render_case_study(slug: str) -> str:
 
     {footer_html(2)}
     '''
-    return page_head(f'{c["co"]} · Client story', 2, c['headline']) + body + page_foot()
+    return page_head(f'{c["co"]} · Case study', 2, c['headline']) + body + page_foot()
 
 
 def render_insights() -> str:
@@ -3746,9 +3755,9 @@ def cover_src(post: dict, depth: int) -> str:
 
 
 def og_tags(post: dict) -> str:
-    """OpenGraph/Twitter/canonical <head> tags for a blog post (depth 2).
+    """OpenGraph/Twitter/canonical <head> tags for a blog post (depth 3).
     `canonical` frontmatter (set on Medium imports) wins; else self-canonical."""
-    url = f"https://kaizan.ai/blog/{post['slug']}/"
+    url = f"https://kaizan.ai/blog/{post['topic']}/{post['slug']}/"
     img = f"https://kaizan.ai/assets/img/{post['cover_asset']}" if post.get('cover_asset') else ''
     canon = post.get('canonical') or url
     t = [
@@ -3776,20 +3785,38 @@ def resources_head(depth: int) -> str:
             f'{asset_v("assets/css/resources.css")}">')
 
 
-def render_blog_index(posts: list) -> str:
-    """The public /blog/ landing — a card grid of all published posts (depth 1)."""
-    if posts:
-        cards_html = '\n'.join(
-            f'''<a class="kz-insights-card" href="{E(p["slug"])}/">
-              <div class="cover" style="background-image:url('{cover_src(p, 1)}');"></div>
+def _blog_cards(posts: list, depth: int) -> str:
+    """Card grid for a list of posts, linking to /blog/<topic>/<slug>/ from a page at `depth`."""
+    pre = '../' * (depth - 1)
+    cards = '\n'.join(
+        f'''<a class="kz-insights-card" href="{pre}{E(p["topic"])}/{E(p["slug"])}/">
+              <div class="cover" style="background-image:url('{cover_src(p, depth)}');"></div>
               <div class="body">
                 <h3 class="title">{E(p["title"])}</h3>
                 <p class="excerpt">{E(p["excerpt"])}</p>
-                <div class="meta">{E(p["date"].upper())}</div>
+                <div class="meta">{E(blog.TOPICS.get(p["topic"], ("",))[0].upper())} · {E(p["date"].upper())}</div>
               </div>
-            </a>''' for p in posts
-        )
-        grid = f'<section class="kz-insights-grid"><div class="kz-insights-cards">{cards_html}</div></section>'
+            </a>''' for p in posts)
+    return f'<section class="kz-insights-grid"><div class="kz-insights-cards">{cards}</div></section>'
+
+
+def _blog_topic_nav(depth: int, active: str = '') -> str:
+    """Row of topic links shown under the hero of /blog/ and each /blog/<topic>/ page."""
+    pre = '../' * (depth - 1)
+    def chip(href, label, on):
+        style = ('background:#FFB900;color:#111;' if on else 'border:1px solid rgba(0,0,0,.18);color:inherit;')
+        return (f'<a href="{href}" style="display:inline-block;padding:7px 14px;border-radius:999px;'
+                f'font-size:13px;font-weight:600;text-decoration:none;{style}">{E(label)}</a>')
+    chips = [chip(pre or './', 'All posts', not active)]
+    chips += [chip(f'{pre}{t}/', label, t == active) for t, (label, _d) in blog.TOPICS.items()]
+    return ('<nav aria-label="Blog topics" style="display:flex;flex-wrap:wrap;gap:10px;'
+            'padding:0 var(--kz-gutter,24px) 28px;">' + ''.join(chips) + '</nav>')
+
+
+def render_blog_index(posts: list) -> str:
+    """The public /blog/ landing — a card grid of all published posts (depth 1)."""
+    if posts:
+        grid = _blog_cards(posts, 1)
     else:
         grid = '''<section class="kz-blog-empty">
           <div class="head">No posts yet.</div>
@@ -3808,42 +3835,110 @@ def render_blog_index(posts: list) -> str:
         How the best client teams win, keep and grow the relationships that matter.
       </p>
     </section>
+    {_blog_topic_nav(1)}
     {grid}
     {footer_html(1)}
     {_wp_popup_html()}
     '''
-    # The blog landing page is kept out of the index (noindex, follow): the posts
-    # stay crawlable through its links and the sitemap, and rank on their own.
+    # The blog landing page is indexable and listed in the sitemap (it is the hub for every post).
     return page_head('Blog', 1,
                      'Field notes, product updates and research on client relationships from the '
                      'Kaizan team.',
-                     extra_head='<meta name="robots" content="noindex, follow">\n        '
-                                + resources_head(1)) + body + page_foot()
+                     extra_head=resources_head(1)) + body + page_foot()
+
+
+def render_blog_topic(topic: str, posts: list) -> str:
+    """A topic landing page, /blog/<topic>/ (depth 2): the posts filed under one topic."""
+    label, desc = blog.TOPICS[topic]
+    body = f'''
+    {nav_html(2, active='Blog')}
+    <section class="kz-insights-hero">
+      <div class="kz-eyebrow">Blog · {E(label)}</div>
+      <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;max-width:1100px;">{E(label)}</h1>
+      <p class="kz-lede" style="margin-top:22px;max-width:680px;">{E(desc)}</p>
+    </section>
+    {_blog_topic_nav(2, topic)}
+    {_blog_cards(posts, 2)}
+    {footer_html(2)}
+    {_wp_popup_html()}
+    '''
+    return page_head(f'{label} | Blog', 2, desc, extra_head=resources_head(2)) + body + page_foot()
 
 
 def render_blog_post(post: dict) -> str:
-    """Render a single blog post page at /blog/<slug>/index.html (depth 2)."""
-    hero = (f'<img class="kz-post-hero" src="{cover_src(post, 2)}" '
+    """Render a single blog post page at /blog/<topic>/<slug>/index.html (depth 3)."""
+    hero = (f'<img class="kz-post-hero" src="{cover_src(post, 3)}" '
             f'alt="{E(post["title"])}" decoding="async">') if post.get('cover_asset') else ''
+    label = blog.TOPICS.get(post['topic'], ('',))[0]
     body = f'''
-    {nav_html(2, active='Blog')}
+    {nav_html(3, active='Blog')}
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">{E(post['title'])}</h1>
         {hero}
         {post.get('body', '<p>(empty)</p>')}
-        <div class="kz-post-back"><a href="../">← Back to all posts</a></div>
+        <div class="kz-post-back"><a href="../">← More in {E(label)}</a> · <a href="../../">All posts</a></div>
       </div>
     </article>
-    {footer_html(2)}
+    {footer_html(3)}
     {_wp_popup_html()}
     '''
     extra = og_tags(post)
     if post.get('schema'):
         extra += '\n        ' + ld_script([ld_blogposting(post)])
-    return page_head(post.get('meta_title') or post['title'], 2,
+    return page_head(post.get('meta_title') or post['title'], 3,
                      post.get('meta_description') or post.get('excerpt', ''),
-                     extra_head=extra + '\n        ' + resources_head(2)) + body + page_foot()
+                     extra_head=extra + '\n        ' + resources_head(3)) + body + page_foot()
+
+
+RESOURCES_HUB = [
+    ('The 2026 Client Service Report', 'resources/white-paper/', '#FFB900', '#FFD86B', 'WP',
+     'White paper', 'The Best vs The Rest: what separates the client service teams that keep and grow clients.'),
+    ('Blog', 'blog/', '#FFD86B', '#FFE9A8', 'Bl',
+     'Blog', 'Field notes, playbooks and product updates for client service and account teams.'),
+    ('Case studies', 'case-studies/', '#FFB900', '#FFC933', 'Cs',
+     'Case studies', 'How agencies and service firms use Kaizan to protect and grow client relationships.'),
+    ('Knowledge Hub', 'knowledge-hub/', '#FFD86B', '#FFB900', 'KH',
+     'Knowledge Hub', 'Answers to the questions client success and account managers search for most.'),
+    ('Hall of Fame', 'hall-of-fame/', '#FFB900', '#FFD86B', 'HF',
+     'Hall of Fame', 'Recognising the people and teams setting the standard in client service.'),
+    ('FAQs', 'faq/', '#FFD86B', '#FFE9A8', 'FAQ',
+     'FAQs', 'Common questions about Kaizan, how it works and how to get started.'),
+    ('Security', 'security/', '#FFB900', '#FFC933', 'Sec',
+     'Trust and security', 'How Kaizan protects your client data.'),
+]
+
+
+def render_resources() -> str:
+    """The /resources/ hub (depth 1): one card per resource section of the site."""
+    cards = '\n'.join(
+        f'''<a class="kz-insights-card" href="{relpath(1)}{E(href)}">
+              <div class="cover" style="background-image:url('{cover(a, b, g)}');"></div>
+              <div class="body">
+                <h3 class="title">{E(title)}</h3>
+                <p class="excerpt">{E(desc)}</p>
+                <div class="meta">{E(tag.upper())}</div>
+              </div>
+            </a>''' for title, href, a, b, g, tag, desc in RESOURCES_HUB)
+    body = f'''
+    {nav_html(1, active='Resources')}
+    <section class="kz-insights-hero">
+      <div class="kz-eyebrow">Resources · from the Kaizan team</div>
+      <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;max-width:1100px;">
+        Resources for <span class="kz-mark kz-mark-tight">client service</span> teams
+      </h1>
+      <p class="kz-lede" style="margin-top:22px;max-width:680px;">
+        Research, playbooks, customer stories and answers: everything we have published on keeping and growing client relationships.
+      </p>
+    </section>
+    <section class="kz-insights-grid"><div class="kz-insights-cards">{cards}</div></section>
+    {footer_html(1)}
+    {_wp_popup_html()}
+    '''
+    return page_head('Resources', 1,
+                     'Research, playbooks, case studies and answers on client relationships, '
+                     'from the team behind Kaizan.',
+                     extra_head=resources_head(1)) + body + page_foot()
 
 
 def render_about() -> str:
@@ -4271,7 +4366,7 @@ def render_july_offer() -> str:
     '''
     return page_head('Free iced coffee this July', 2,
                      "Iced coffee's on us this July: enter your email and role to get your free coffee code.",
-                     extra_head=JULY_OFFER_STYLE) + body + page_foot()
+                     extra_head='<meta name="robots" content="noindex">\n        ' + JULY_OFFER_STYLE) + body + page_foot()
 
 
 
@@ -4285,7 +4380,7 @@ def render_404() -> str:
       <div class="kz-flex" style="gap:12px;margin-top:14px;">
         <a class="kz-btn kz-btn-yellow" href="/">Back to home</a>
         <a class="kz-btn kz-btn-ghost" href="product/">Product</a>
-        <a class="kz-btn kz-btn-ghost" href="customers/">Clients</a>
+        <a class="kz-btn kz-btn-ghost" href="case-studies/">Case studies</a>
         <a class="kz-btn kz-btn-ghost" href="about/">About</a>
       </div>
     </section>
@@ -5519,7 +5614,7 @@ def render_faq() -> str:
             or book a 30-minute demo. We answer every enquiry within two working days.</p>
           <div class="kz-flex">
             <a class="kz-btn kz-btn-yellow" href="/demo/">Book a demo</a>
-            <a class="kz-btn kz-btn-ghost-light" href="../insights/">Read our insights</a>
+            <a class="kz-btn kz-btn-ghost-light" href="../blog/">Read our insights</a>
           </div>
         </div>
       </div>
@@ -5538,66 +5633,6 @@ def render_faq() -> str:
                      'Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual '
                      'contracts, outcomes, comparisons and how to work with us.',
                      extra_head=ld + '\n        ' + resources_head(1)) + body + page_foot()
-
-
-# ─────────────────────────────────────────────────────────────────────
-# RESEARCH  (Our Research — features the one published report)
-# ─────────────────────────────────────────────────────────────────────
-
-# The single published research report. No placeholders — when a second
-# report ships, add it to this list and extend render_research().
-RESEARCH_REPORT = dict(
-    eyebrow='OUR RESEARCH · THE 2026 CLIENT SERVICE REPORT',
-    title_a='The Best',
-    title_b='vs The Rest.',
-    sub='What drives higher revenue and CSAT in the top 10% of clients.',
-    lede=("A first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of "
-          "chat messages (all anonymised) comparing how client service professionals work on "
-          "the relationships that grow versus the ones that slip away."),
-    meta='Free · 15 pages · Instant download',
-    inside=[
-        'The 8 behaviours that consistently mark the top 10% of account teams',
-        'The KPIs that actually lead to happier, higher-revenue clients',
-        'The CARE framework: how the patterns cluster into four pillars',
-    ],
-    dataset=[
-        ('1M+',  'Anonymised client conversations'),
-        ('10M+', 'Emails analysed'),
-        ('15',   'Pages of research'),
-        ('8',    'Behaviours decoded'),
-    ],
-    numbers=[
-        ('2.2', '×', 'More risks surfaced at top-performing accounts than at bottom-performing ones. '
-                     'The accounts that look quiet and healthy usually are not: silence is absence, '
-                     'not stability.', 'The Risk Paradox'),
-        ('66', '%', 'Of all client-facing calls are handled by just 25% of account managers. Coverage '
-                    'across the whole portfolio is the lever most teams leave unpulled.', 'The AM Power Law'),
-        ('1.84', '×', 'More calls per account manager on top-performing clients, at the same portfolio '
-                      'size, email-to-call ratio and talk-time share. Top accounts are more of the same '
-                      'conversation, not a different one.', 'The Ideal AM Profile'),
-    ],
-    care=[
-        ('C', 'Client satisfaction', 'How happy the client is with you and the work being delivered.',
-         '4.2×', 'More proactive comms per account at the top decile'),
-        ('A', 'Activity with stakeholders', 'Stakeholder coverage and account context: who matters, '
-         'what changed this week, the shape of the next conversation.',
-         '73%', 'Of top performers maintain a live stakeholder map'),
-        ('R', 'Relationship strength', 'Strategic partner or just a vendor? Whether rapport, trust and '
-         'sentiment are where they need to be.',
-         '2.1h', 'Median first response time at the top 10%'),
-        ('E', 'Expansion opportunities', 'Inbound-signal capture and conversion: the quiet ask in '
-         'passing, or the proactive suggestion of how to grow their business.',
-         '82%', 'Of expansion revenue comes from prioritising commercial conversations early'),
-    ],
-    audiences=[
-        ('Heads of Client Services & CS', 'Set the bar for the team. Benchmark, retrain, repeat.'),
-        ('Account Directors & Managers', 'See where your book sits, and what to change on Monday.'),
-        ('Agency Leaders', 'An operating system for client-facing teams at scale.'),
-        ('Founders & CEOs', 'Retention is the lever. Here is what moves it.'),
-        ('C-level teams', '82% of expansion is inbound: the data on how to catch it.'),
-        ('Heads of AI & CTOs', 'The metrics, the tooling and the workflow. Page 28 onward.'),
-    ],
-)
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -5934,117 +5969,6 @@ def render_hall_of_fame_winner(w: dict) -> str:
     return _hof_head(f'{w["name"]} · Client Service Hall of Fame', 2, desc) + body + page_foot()
 
 
-def render_research() -> str:
-    r = RESEARCH_REPORT
-
-    inside_html = '\n'.join(
-        f'<li><span class="tick" aria-hidden="true">→</span>{E(x)}</li>' for x in r['inside']
-    )
-    dataset_html = '\n'.join(
-        f'''<div class="kz-stat-cell">
-          <div class="num">{E(num)}</div>
-          <div class="lbl">{E(lbl)}</div>
-        </div>''' for num, lbl in r['dataset']
-    )
-    numbers_html = '\n'.join(
-        f'''<div class="kz-research-num">
-          <div class="kz-display-stat n">{E(n)}<span class="u">{E(u)}</span></div>
-          <p>{E(desc)}</p>
-          <div class="kz-eyebrow src">Source · {E(src)}</div>
-        </div>''' for n, u, desc, src in r['numbers']
-    )
-    care_html = '\n'.join(
-        f'''<div class="kz-research-care-card">
-          <div class="head"><span class="badge">{E(letter)}</span>
-            <h3 class="kz-h3">{E(name)}</h3></div>
-          <p>{E(desc)}</p>
-          <div class="foot"><span class="stat">{E(stat)}</span><span class="note">{E(note)}</span></div>
-        </div>''' for letter, name, desc, stat, note in r['care']
-    )
-    aud_html = '\n'.join(
-        f'''<div class="kz-research-aud-card">
-          <h3 class="kz-h3" style="font-size:18px;">{E(name)}</h3>
-          <p>{E(desc)}</p>
-        </div>''' for name, desc in r['audiences']
-    )
-
-    body = f'''
-    {nav_html(1, active='Resources')}
-
-    <section class="kz-research-hero kz-wash-gold">
-      <div class="copy">
-        <div class="kz-eyebrow">{E(r['eyebrow'])}</div>
-        <h1 class="kz-h1 kz-h1-xl" style="margin:20px 0 0;">
-          <span class="kz-mark kz-mark-tight">{E(r['title_a'])}</span> {E(r['title_b'])}
-        </h1>
-        <p class="kz-h3" style="margin-top:22px;font-weight:500;color:var(--kz-mute);max-width:640px;">
-          {E(r['sub'])}
-        </p>
-        <p class="kz-lede" style="margin-top:18px;max-width:660px;">{E(r['lede'])}</p>
-        <ul class="kz-research-inside">{inside_html}</ul>
-        <div class="kz-flex" style="gap:12px;margin-top:32px;">
-          <a class="kz-btn kz-btn-yellow" href="#get-report">Download the report</a>
-          <a class="kz-btn kz-btn-ghost" href="/demo/">Book a demo</a>
-        </div>
-        <div class="kz-eyebrow" style="margin-top:18px;">{E(r['meta'])}</div>
-      </div>
-      <aside class="kz-research-cover" aria-hidden="true">
-        <div class="kz-research-cover-card">
-          <div class="kz-eyebrow" style="color:rgba(255,251,240,.6);">2026 REPORT</div>
-          <div class="big">The Best<br>vs<br>The Rest.</div>
-          <div class="kz-eyebrow" style="color:var(--kz-yellow);">15 PAGES · FREE</div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="kz-section-x" style="padding-top:48px;padding-bottom:8px;">
-      <div class="kz-eyebrow">What you're getting</div>
-    </section>
-    <div class="kz-stat-row">{dataset_html}</div>
-
-    <section class="kz-section">
-      <div class="kz-eyebrow">01 · Unique insights</div>
-      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 0;max-width:760px;">
-        Three numbers that say it <span class="kz-mark kz-mark-tight">all.</span>
-      </h2>
-      <div class="kz-research-nums">{numbers_html}</div>
-    </section>
-
-    <section class="kz-section" style="background:var(--kz-sand);">
-      <div class="kz-eyebrow">02 · The framework</div>
-      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 8px;max-width:820px;">
-        CARE: how the patterns cluster.
-      </h2>
-      <p class="kz-lede" style="margin-bottom:36px;">Eleven behaviours, four pillars: the structure behind every top-decile account team.</p>
-      <div class="kz-research-care" data-swipe-row>{care_html}</div>
-    </section>
-
-    <section class="kz-section">
-      <div class="kz-eyebrow">03 · Who it's for</div>
-      <h2 class="kz-h2 kz-h2-lg" style="margin:14px 0 36px;max-width:880px;">
-        If you care about client retention &amp; growth, this is for you.
-      </h2>
-      <div class="kz-research-aud kz-grid-3">{aud_html}</div>
-    </section>
-
-    <section id="get-report" class="kz-cta-band kz-cta-band-dark">
-      <div class="kz-eyebrow" style="color:var(--kz-yellow);">Get the full report</div>
-      <div class="head">The Best vs The Rest.</div>
-      <p style="color:rgba(255,251,240,.75);max-width:520px;margin:18px auto 0;font-size:16px;">
-        Free · 15 pages · straight to your inbox. Two fields, no spam.
-      </p>
-      <form class="kz-research-form" action="#" method="post" onsubmit="return false;">
-        <input type="email" name="email" placeholder="Work email" aria-label="Work email" required>
-        <button type="submit" class="kz-btn kz-btn-yellow">Get the report</button>
-      </form>
-      <p class="kz-consent kz-consent--dark kz-consent--center">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
-    </section>
-
-    {footer_html(1)}
-    '''
-    return page_head('Our Research', 1,
-                     'The 2026 Client Service Report from Kaizan: the data on what great client '
-                     'service actually looks like, drawn from 1M+ anonymised client conversations.') + body + page_foot()
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -6361,9 +6285,8 @@ def render_knowledge_hub() -> str:
     {footer_html(1)}
     '''
     return page_head('Knowledge Hub', 1,
-                     'Client success and account management FAQs: a resource hub covering client '
-                     'intelligence, onboarding, retention, client health, reviews, reporting, '
-                     'expansion, metrics and AI for account managers.',
+                     'FAQs on client success and account management: client intelligence, onboarding, '
+                     'retention, client health, reporting, expansion, metrics and AI.',
                      extra_head=resources_head(1)) + body + page_foot()
 
 
@@ -6373,7 +6296,7 @@ def render_knowledge_hub() -> str:
 
 def render_white_paper_confirmation() -> str:
     """/white-paper-confirmation/ — where the CARE white paper lead form
-    (assets/js/white-paper.js, on /white-paper/) sends the visitor after a
+    (assets/js/white-paper.js, on /resources/white-paper/) sends the visitor after a
     successful HubSpot submission, instead of showing the inline success
     state on the form itself."""
     body = f'''
@@ -6550,14 +6473,39 @@ def write_redirects():
     written = skipped = 0
     for old, new in redirects.items():
         dest = ROOT / old.strip('/') / 'index.html'
-        # never clobber a real generated page
-        if dest.exists():
+        # never clobber a real generated page, but refresh an existing stub so a changed
+        # target (e.g. a renamed blog post) takes effect
+        if dest.exists() and 'http-equiv="refresh"' not in dest.read_text(encoding='utf-8'):
             skipped += 1
             continue
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(render_redirect(new), encoding='utf-8')
         written += 1
     print(f'  ({written} redirect stub(s) written, {skipped} skipped — real page exists)')
+    write_cloudflare_redirects(redirects)
+
+
+def write_cloudflare_redirects(redirects: dict):
+    """tools/cloudflare/bulk-redirects.csv: every redirect in tools/redirects.json (UK and
+    /us/, with and without the trailing slash) as a Cloudflare Bulk Redirects row, so the site
+    can serve real 301s instead of meta-refresh stubs. See tools/cloudflare/README.md.
+    Columns: source_url, target_url, status_code, preserve_query_string, include_subdomains,
+    subpath_matching, preserve_path_suffix."""
+    rows = []
+    def add(src: str, dst: str):
+        for variant in (src.rstrip('/'), src.rstrip('/') + '/'):
+            rows.append(f'kaizan.ai{variant},{SITE_ORIGIN}{dst},301,FALSE,FALSE,FALSE,FALSE')
+    for old, new in sorted(redirects.items()):
+        add(old, new)
+        add('/us' + old, '/us' + new)
+    # GitHub Pages also serves every page at <path>/index.html; the homepage ones are listed
+    # here and nested ones are covered by the wildcard rule in the README.
+    rows.append(f'kaizan.ai/index.html,{SITE_ORIGIN}/,301,FALSE,FALSE,FALSE,FALSE')
+    rows.append(f'kaizan.ai/us/index.html,{SITE_ORIGIN}/us/,301,FALSE,FALSE,FALSE,FALSE')
+    out = Path(__file__).resolve().parent / 'cloudflare' / 'bulk-redirects.csv'
+    out.parent.mkdir(exist_ok=True)
+    out.write_text('\n'.join(rows) + '\n', encoding='utf-8')
+    print(f'  (cloudflare/bulk-redirects.csv: {len(rows)} rows)')
 
 
 # ── US "Book a call" popup ─────────────────────────────────────────────
@@ -6789,8 +6737,8 @@ def _hreflang_block(path: str) -> str:
             f'<link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}{path}">')
 
 
-_LD_KINDS = {'/customers/': 'CollectionPage', '/research/': 'CollectionPage',
-             '/knowledge-hub/': 'CollectionPage'}
+_LD_KINDS = {'/case-studies/': 'CollectionPage', '/knowledge-hub/': 'CollectionPage',
+             '/resources/': 'CollectionPage', '/blog/': 'CollectionPage'}
 
 
 def _inject_default_schema(html: str, path: str) -> str:
@@ -6816,12 +6764,32 @@ def _inject_default_schema(html: str, path: str) -> str:
     return html.replace('</head>', ld_script(nodes) + '\n</head>', 1)
 
 
+def _lastmod(path: str, html: str, ledger: dict, today: str) -> str:
+    """<lastmod> for a sitemap URL. A page that declares its own dateModified (blog
+    posts, JSON-LD) uses that. Every other page uses tools/lastmod.json, which records a
+    content hash and the date that hash was first seen, so the date moves only when the
+    page's rendered HTML actually changes (cache-busting ?v= hashes are ignored)."""
+    m = re.search(r'"dateModified": ?"(\d{4}-\d{2}-\d{2})"', html)
+    if m:
+        return m.group(1)
+    import hashlib
+    h = hashlib.md5(re.sub(r'\?v=[0-9a-f]{8}', '', html).encode('utf-8')).hexdigest()[:12]
+    rec = ledger.get(path)
+    if not rec or rec.get('h') != h:
+        rec = ledger[path] = {'h': h, 'd': today}
+    return rec['d']
+
+
 def write_sitemap():
     """sitemap.xml: every indexable, self-canonical page (UK + /us/), with
     hreflang alternates and a lastmod where the page carries a date."""
     from html import escape as esc
+    import datetime
     skip = {'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
     entries = []
+    ledger_file = Path(__file__).resolve().parent / 'lastmod.json'
+    ledger = json.loads(ledger_file.read_text(encoding='utf-8')) if ledger_file.exists() else {}
+    today = datetime.date.today().isoformat()
     for f in sorted(ROOT.rglob('*.html')):
         rel = f.relative_to(ROOT)
         if rel.parts[0] in skip or not all(re.fullmatch(r'[A-Za-z0-9._-]+', x) for x in rel.parts):
@@ -6836,7 +6804,7 @@ def write_sitemap():
         m = re.search(r'rel="canonical" href="([^"]+)"', html)
         if not m or m.group(1) != f'{SITE_ORIGIN}{path}':
             continue
-        lm = re.search(r'"dateModified": ?"(\d{4}-\d{2}-\d{2})"', html)
+        lm = _lastmod(path, html, ledger, today)
         alts = ''
         if 'hreflang=' in html:
             uk_url, us_url = SITE_ORIGIN + (base or '/'), SITE_ORIGIN + '/us' + (base or '/')
@@ -6844,11 +6812,15 @@ def write_sitemap():
                     f'<xhtml:link rel="alternate" hreflang="en-US" href="{esc(us_url)}"/>'
                     f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(uk_url)}"/>')
         entries.append(f'<url><loc>{esc(SITE_ORIGIN + path)}</loc>'
-                       + (f'<lastmod>{lm.group(1)}</lastmod>' if lm else '') + alts + '</url>')
+                       + f'<lastmod>{lm}</lastmod>' + alts + '</url>')
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + '\n'.join(entries) + '\n</urlset>\n')
     (ROOT / 'sitemap.xml').write_text(xml, encoding='utf-8')
+    # The ledger is only saved by CI (which commits it) or with --update-lastmod, so
+    # concurrent PRs never fight over it; local builds just read it.
+    if os.environ.get('CI') == 'true' or '--update-lastmod' in sys.argv:
+        ledger_file.write_text(json.dumps(dict(sorted(ledger.items())), indent=1) + '\n', encoding='utf-8')
     print(f'  (sitemap.xml: {len(entries)} URLs)')
 
 
@@ -6868,7 +6840,7 @@ def write_llms_txt():
         d = re.search(r'<meta name="description" content="([^"]*)"', html)
         title = unescape(t.group(1)).replace(' · Kaizan', '') if t else path
         line = f'- [{title}]({u})' + (f': {unescape(d.group(1))}' if d else '')
-        (posts if path.startswith('/blog/') and path != '/blog/' else pages).append(line)
+        (posts if path.startswith('/blog/') and path.count('/') == 4 else pages).append(line)
     out = ['# Kaizan', '',
            '> Kaizan is client super intelligence for professional services firms: AI that turns client '
            'conversations and data into early warnings on relationship health, churn risk and growth opportunities.',
@@ -6910,7 +6882,38 @@ def _inject_seo_head(html: str, path: str) -> str:
         html = html.replace('</title>', f'</title>\n<link rel="canonical" href="{E(self_url)}">', 1)
     if canon == self_url and 'hreflang=' not in html:
         html = html.replace('</title>', '</title>\n' + _hreflang_block(path), 1)
+    html = _inject_social_tags(html, canon)
+    if 'data-kz-idx' not in html:
+        # GitHub Pages also serves every page at <path>/index.html. Send that duplicate
+        # URL to the clean one (the Cloudflare rules in tools/cloudflare/ do it server-side).
+        html = html.replace('</title>', '</title>\n' + _INDEX_REDIRECT_JS, 1)
     return html
+
+
+_INDEX_REDIRECT_JS = ('<script data-kz-idx>if(/\\/index\\.html$/.test(location.pathname))'
+                      'location.replace(location.pathname.replace(/index\\.html$/,"")+location.search+location.hash)</script>')
+
+
+def _inject_social_tags(html: str, url: str) -> str:
+    """Give a page Open Graph + Twitter title/description tags derived from its own
+    <title> (minus the " · Kaizan" suffix) and meta description. Idempotent: a page
+    that already sets og:title (blog posts) is left as is."""
+    if 'property="og:title"' in html:
+        return html
+    t = re.search(r'<title>(.*?)</title>', html, re.S)
+    if not t:
+        return html
+    title = re.sub(r'\s*·\s*Kaizan\s*$', '', t.group(1).strip())
+    d = re.search(r'<meta\s+name="description"\s+content="([^"]*)"', html)
+    tags = ['<meta property="og:type" content="website">',
+            '<meta property="og:site_name" content="Kaizan">',
+            f'<meta property="og:title" content="{title}">',
+            f'<meta property="og:url" content="{E(url)}">',
+            '<meta name="twitter:card" content="summary">',
+            f'<meta name="twitter:title" content="{title}">']
+    if d and d.group(1):
+        tags.insert(3, f'<meta property="og:description" content="{d.group(1)}">')
+    return html.replace('</title>', '</title>\n' + '\n'.join(tags), 1)
 
 
 def _ld_us_spell(node):
@@ -6979,6 +6982,7 @@ def build_us_locale():
         uk_html = uk_html.replace('Book time with Glen →', 'Book a call')
         uk_html = re.sub(r'href="(?:(?:\.\./)*demo/|/demo/|https://kaizan\.ai/demo/)"', 'href="mailto:hello@kaizan.ai" data-book-call', uk_html)
         uk_html = book_call_inject(uk_html, 'uk')
+        uk_html = uk_html.replace('<html lang="en">', '<html lang="en-GB">', 1)
         if uk_html != f.read_text(encoding='utf-8'):
             f.write_text(uk_html, encoding='utf-8')
 
@@ -6998,7 +7002,7 @@ def build_us_locale():
         us = re.sub(r'(["\'(])(?:\.\./)*assets/', r'\1/assets/', us)
         # Absolute internal page links → /us-prefixed (home, /demo/, /for/).
         us = us.replace('href="/"', 'href="/us/"')
-        us = re.sub(r'href="/(demo|for|referral-partners)(/|")', r'href="/us/\1\2', us)
+        us = re.sub(r'href="/(demo|for|referral-partners|blog)(/|")', r'href="/us/\1\2', us)
         # Self-canonical + og:url for the US page.
         us = us.replace(f'rel="canonical" href="{SITE_ORIGIN}',
                         f'rel="canonical" href="{SITE_ORIGIN}/us')
@@ -7047,6 +7051,7 @@ def build_us_locale():
         us = re.sub(r'href="(?:(?:\.\./)*demo/|/us/demo/|https://kaizan\.ai/demo/)"',
                     'href="mailto:hello@kaizan.ai" data-book-call', us)
         us = book_call_inject(us, 'us')
+        us = us.replace('<html lang="en-GB">', '<html lang="en-US">', 1).replace('<html lang="en">', '<html lang="en-US">', 1)
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(us, encoding='utf-8')
@@ -7716,7 +7721,7 @@ def _cs_modules_html() -> str:
 def _wp_inner_html() -> str:
     """Copy + two-field form for the 2026 Client Service Report (white paper).
     Shared by the homepage strip and the blog pop-up; submits to the same
-    HubSpot form as /white-paper/ via assets/js/wp-strip.js."""
+    HubSpot form as /resources/white-paper/ via assets/js/wp-strip.js."""
     roles = ['Head of Client Services / CS', 'Client Success Manager', 'Account Director / Manager',
              'Founder / CEO', 'Head of AI / CTO', 'VP / Commercial Leader', 'Marketing / Operations',
              'Agency Leader', 'Other']
@@ -7920,24 +7925,24 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
         dict(q='Kaizan is helping us reduce the manual tasks, the ones that take a '
                'long time but are less valuable, so we can focus on our clients.',
              name='Ada Cavalmoretti', role='Group Account Director', co='Gravity Global',
-             blog='how-gravity-global-uses-ai-to-see-a-client-relationship-slipping-before-it-is-too-late'),
+             blog='client-health/gravity-global-spotting-client-drift'),
         dict(q='This tool is an absolute game-changer. Don’t even question it. '
                'It’s money very well spent. An invaluable customer tool.',
              name='Greg Gifford', role='Chief Operating Officer', co='Searchlab',
-             blog='lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies'),
+             blog='agency-profitability/lean-mean-client-obsessed-agencies'),
         dict(q='We’ve had numerous occasions where we’ve been able to spot and '
                'identify high-risk clients that potentially were going to leave.',
              name='Brandon Smith', role='Managing Director', co='NP Digital',
-             blog='how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive'),
+             blog='client-health/np-digital-ai-client-retention'),
     ]
     _persona_blog = {
-        'Derek Grant': 'how-tradedoubler-is-driving-20-greater-operational-efficiency-across',
-        'Fiona Skilton': 'from-reactive-to-proactive-how-great-client-teams-stay-ahead',
-        'Corin Ward': 'how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and',
-        'Hannah Carthy': 'cs-leader-quick-fire-q-a-hannah-carthy-verkeer',
-        'Adam Hopkinson': 'how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue',
-        'Gabriella Krite': 'how-the-kite-factory-uses-ai-to-unify-client-data-and-improve',
-        'Alex Beddoe': 'agency-leaders-who-don-t-move-now-will-be-managing-the-fallout-later',
+        'Derek Grant': 'agency-profitability/tradedoubler-20-percent-efficiency-gain',
+        'Fiona Skilton': 'client-health/from-reactive-to-proactive-client-teams',
+        'Corin Ward': 'ai-for-client-service/tradedoubler-quantifying-client-conversations',
+        'Hannah Carthy': 'qa/cs-leader-qa-hannah-carthy-verkeer',
+        'Adam Hopkinson': 'agency-profitability/pashn-protect-revenue-save-time',
+        'Gabriella Krite': 'client-software/kite-factory-unify-client-data',
+        'Alex Beddoe': 'ai-for-client-service/agency-leaders-act-on-ai-now',
     }
     _by_quote_name = {pp['quote_name']: pp for pp in PERSONAS.values()}
     for _n in ['Derek Grant', 'Fiona Skilton', 'Corin Ward', 'Hannah Carthy',
@@ -8603,8 +8608,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
 
     html = page_head('Client Success Software', 0,
                      'Kaizan is client success software that turns every call, email '
-                     'and signal into the next best action, AI Helpers that work 24/7 to grow '
-                     'client ROI, satisfaction and revenue.',
+                     'and signal into the next best action, with AI Helpers that grow '
+                     'client ROI and revenue.',
                      extra_head=extra_head) + body + page_foot()
     # page_head(depth=0) writes every asset link (favicons, tokens.css,
     # site.css, site.js) as root-relative ("assets/..."), which is only
@@ -8625,6 +8630,10 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
             r'<span class="kz-nav-logo">\1</span>',
             html, count=1, flags=re.S,
         )
+        # /client-success-software/ duplicates the homepage (same title, description and
+        # content), so it stays reachable for campaigns but is kept out of the index; the
+        # homepage is the canonical version.
+        html = html.replace('<base href="/">', '<base href="/">\n        <meta name="robots" content="noindex">', 1)
     # Homepage-only overrides: the trial form card is flat Kaizan yellow
     # (no gradient or inner shading) with a tight, close-in soft shadow, and the
     # "Why choose Kaizan" heading runs a size smaller, and the stats-band heading
@@ -8689,12 +8698,17 @@ def main():
     # 404s rather than serving stale content.
     _remove_page(ROOT / 'careers')
     write(ROOT / 'faq' / 'index.html',          render_faq())
-    write(ROOT / 'research' / 'index.html',     render_research())
+    # /research/ retired: the white paper at /resources/white-paper/ replaces it (the old URL
+    # is a redirect stub, tools/redirects.json).
+    _remove_page(ROOT / 'research')
+    write(ROOT / 'resources' / 'index.html', render_resources())
     write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
     write(ROOT / 'hall-of-fame' / 'index.html', render_hall_of_fame())
     for w in HALL_OF_FAME:
         write(ROOT / 'hall-of-fame' / w['slug'] / 'index.html', render_hall_of_fame_winner(w))
-    write(ROOT / 'customers' / 'index.html',    render_customers())
+    # /customers/ renamed to /case-studies/ (old URLs are redirect stubs in tools/redirects.json).
+    _remove_page(ROOT / 'customers')
+    write(ROOT / 'case-studies' / 'index.html', render_customers())
     # /insights/ retired — the blog now lives at /blog/. render_insights() kept
     # for easy revert; the directory is removed so it doesn't serve stale content.
     _remove_page(ROOT / 'insights')
@@ -8718,15 +8732,23 @@ def main():
 
     # Case-study detail pages
     for slug in CASE_DATA:
-        write(ROOT / 'customers' / slug / 'index.html', render_case_study(slug))
+        write(ROOT / 'case-studies' / slug / 'index.html', render_case_study(slug))
 
     # Blog — Markdown posts from content/blog/<slug>/index.md (see tools/blog.py).
     # Drafts (draft: true) are excluded unless `python3 tools/build.py --drafts`.
     posts = blog.load_posts(include_drafts='--drafts' in sys.argv)
+    # /blog/ and its images are fully generated from content/blog, so rebuild them from
+    # scratch (a renamed or retired post must not leave a stale page or image behind).
+    _remove_page(ROOT / 'blog')
+    _remove_page(ROOT / 'assets' / 'img' / 'blog')
     write(ROOT / 'blog' / 'index.html', render_blog_index(posts))
+    for topic in blog.TOPICS:
+        topic_posts = [p for p in posts if p['topic'] == topic]
+        if topic_posts:
+            write(ROOT / 'blog' / topic / 'index.html', render_blog_topic(topic, topic_posts))
     for post in posts:
         blog.copy_post_images(post['slug'])
-        write(ROOT / 'blog' / post['slug'] / 'index.html', render_blog_post(post))
+        write(ROOT / 'blog' / post['topic'] / post['slug'] / 'index.html', render_blog_post(post))
     print(f'  ({len(posts)} blog post(s) built)')
 
     # Policies — versioned legal documents from content/policies/ (see README there).
@@ -8786,7 +8808,9 @@ def main():
                                                  '/referral-partners/'), '/referral-partners/', 'uk')
     ref_usd = _resolve_ld(_inject_default_schema(_inject_seo_head(ref_usd, '/referral-partners/'),
                                                  '/referral-partners/'), '/referral-partners/', 'us').replace(
-        f'rel="canonical" href="{SITE_ORIGIN}/referral', f'rel="canonical" href="{SITE_ORIGIN}/us/referral')
+        f'rel="canonical" href="{SITE_ORIGIN}/referral', f'rel="canonical" href="{SITE_ORIGIN}/us/referral').replace(
+        f'property="og:url" content="{SITE_ORIGIN}/referral', f'property="og:url" content="{SITE_ORIGIN}/us/referral').replace(
+        '<html lang="en">', '<html lang="en-US">', 1)
     for path_rel, html in ((ROOT / 'referral-partners' / 'index.html', ref_gbp),
                            (ROOT / 'us' / 'referral-partners' / 'index.html', ref_usd)):
         path_rel.parent.mkdir(parents=True, exist_ok=True)

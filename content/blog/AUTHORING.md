@@ -32,11 +32,19 @@ content/blog/<slug>/
   chart-1.png   ← any other images you reference
 ```
 
-- `<slug>` is the URL: `content/blog/the-care-framework/` → `kaizan.ai/blog/the-care-framework/`.
-  Use lowercase words separated by hyphens.
+- `<slug>` plus the post's `topic` make the URL: topic `client-health` and folder
+  `content/blog/the-care-framework/` → `kaizan.ai/blog/client-health/the-care-framework/`.
+  Use lowercase words separated by hyphens, keep it to 60 characters or fewer, end on a whole word,
+  and write Q&A as `qa` (never `q-a`).
 - **Images live in the same folder as `index.md`.** Reference them by filename only —
   `![A chart](chart-1.png)`. The build copies them to the right place automatically; you
   never write `../../assets/...`.
+
+## Topics
+
+Every post needs a `topic`, which becomes the middle of the URL. Allowed values:
+`client-health`, `client-software`, `playbooks-and-templates`, `agency-profitability`,
+`ai-for-client-service`, `qa`. (Defined in `tools/blog.py`, `TOPICS`.)
 
 ## `index.md` template
 
@@ -46,6 +54,7 @@ title: The CARE framework, explained
 date: 2026-06-22
 author: Lia Sutton
 category: POV
+topic: client-health
 excerpt: One clear sentence — used on the blog card and as the social/preview description.
 cover: cover.jpg
 draft: true

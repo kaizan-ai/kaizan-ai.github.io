@@ -13,7 +13,7 @@ Markdown -> HTML uses the vendored, stdlib-only tools/markdown2.py.
 Authors never compute relative paths: they write `![alt](photo.jpg)` and drop
 photo.jpg next to index.md. At build time copy_post_images() copies the files to
 assets/img/blog/<slug>/ and md_to_html() rewrites the <img> src to the correct
-depth-2 path (../../assets/img/blog/<slug>/photo.jpg).
+depth-3 path (../../../assets/img/blog/<slug>/photo.jpg).
 """
 
 from __future__ import annotations
@@ -30,6 +30,23 @@ IMG_OUT_DIR = ROOT / 'assets' / 'img' / 'blog'
 
 # Allowed editorial categories (shown as the card/eyebrow label).
 CATEGORIES = ['POV', 'PRODUCT', 'FIELD NOTES', 'BENCHMARK', 'INTERVIEW', 'CUSTOMER STORY']
+
+# Allowed topics (the URL segment: /blog/<topic>/<slug>/) with their display label
+# and a one-line description used on the topic landing page.
+TOPICS = {
+    'client-health': ('Client health',
+                      'Spot churn risk early and keep client relationships healthy: signals, metrics and real-world examples.'),
+    'client-software': ('Client software',
+                        'The tools, data and systems behind client service, and how to choose, build and connect them.'),
+    'playbooks-and-templates': ('Playbooks and templates',
+                                'Practical how-to guides, frameworks and templates for client service and account teams.'),
+    'agency-profitability': ('Agency profitability',
+                             'Protect revenue, save time and grow margin across your client portfolio.'),
+    'ai-for-client-service': ('AI for client service',
+                              'How client service and account teams are using AI today, and what is coming next.'),
+    'qa': ('Q&A',
+           'Conversations with client service leaders about AI, retention and building great client teams.'),
+}
 
 MARKDOWN_EXTRAS = ['fenced-code-blocks', 'tables', 'cuddled-lists', 'strike', 'footnotes']
 
@@ -108,14 +125,14 @@ def format_date(iso: str) -> str:
 # ─────────────────────────────────────────────────────────────────────
 
 def _rewrite_img(match: re.Match, slug: str) -> str:
-    """Rewrite a bare/relative <img src> to the depth-2 blog asset path and lazy-load it."""
+    """Rewrite a bare/relative <img src> to the depth-3 blog asset path and lazy-load it."""
     tag = match.group(0)
     src_m = re.search(r'src="([^"]*)"', tag)
     if not src_m:
         return tag
     src = src_m.group(1)
     if not re.match(r'^(https?:|data:|/|\.\./)', src):
-        new_src = f"../../assets/img/blog/{slug}/{src.lstrip('./')}"
+        new_src = f"../../../assets/img/blog/{slug}/{src.lstrip('./')}"
         tag = tag.replace(f'src="{src}"', f'src="{new_src}"')
     if 'loading=' not in tag:
         tag = tag.replace('<img', '<img loading="lazy" decoding="async"', 1)
@@ -162,6 +179,9 @@ def load_posts(include_drafts: bool = False) -> list:
         missing = [k for k in ('title', 'date', 'category', 'excerpt') if not meta.get(k)]
         if missing:
             print(f"  [blog] WARN {slug}: missing frontmatter {missing}")
+        topic = str(meta.get('topic', ''))
+        if topic not in TOPICS:
+            print(f"  [blog] WARN {slug}: topic '{topic}' not in {list(TOPICS)}")
         category = str(meta.get('category', 'POV')).upper()
         if category not in CATEGORIES:
             print(f"  [blog] WARN {slug}: category '{category}' not in {CATEGORIES}")
@@ -169,6 +189,7 @@ def load_posts(include_drafts: bool = False) -> list:
         iso = str(meta.get('date', ''))
         posts.append(dict(
             slug=slug,
+            topic=topic,
             title=meta.get('title', slug.replace('-', ' ').title()),
             excerpt=meta.get('excerpt', ''),
             meta_title=meta.get('meta_title', ''),

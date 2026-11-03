@@ -2,7 +2,8 @@
 title: "How to Use AI Without Sounding Like AI"
 date: 2026-09-09
 category: POV
-excerpt: Why AI writing comes out generic, and how connecting it to your files, emails and client history (via MCP) makes the output sound like your business instead of the internet.
+topic: ai-for-client-service
+excerpt: Why AI writing comes out generic, and how connecting it to your files, emails and client history via MCP makes it sound like your business.
 cover: cover.png
 draft: false
 tags: [mcp, artificial-intelligence, ai-slop, client-intelligence, ai-for-cavemen]
