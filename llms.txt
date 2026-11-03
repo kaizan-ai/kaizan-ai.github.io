@@ -13,10 +13,10 @@
 - [Playbooks and templates | Blog](https://kaizan.ai/blog/playbooks-and-templates/): Practical how-to guides, frameworks and templates for client service and account teams.
 - [Q&A | Blog](https://kaizan.ai/blog/qa/): Conversations with client service leaders about AI, retention and building great client teams.
 - [Case Studies](https://kaizan.ai/case-studies/): 60+ client-services teams running Kaizan to keep their clients and grow them.
-- [Jellyfish · Case study](https://kaizan.ai/case-studies/jellyfish/): Standardised account health across 9 offices in a quarter.
-- [Scale Digital · Case study](https://kaizan.ai/case-studies/scale/): Expansion signals that used to take weeks now hit the desk same day.
-- [The Kite Factory · Case study](https://kaizan.ai/case-studies/the-kite-factory/): Three saves in one quarter that we would have missed.
-- [Verkeer · Case study](https://kaizan.ai/case-studies/verkeer/): How Verkeer cut QBR prep from 6 hours to 40 minutes.
+- [Jellyfish · Case study](https://kaizan.ai/case-studies/jellyfish/): Standardised account health across 9 offices in a quarter. A Jellyfish case study from Kaizan.
+- [Scale Digital · Case study](https://kaizan.ai/case-studies/scale/): Expansion signals that used to take weeks now hit the desk same day. A Scale Digital case study from Kaizan.
+- [The Kite Factory · Case study](https://kaizan.ai/case-studies/the-kite-factory/): Three saves in one quarter that we would have missed. A The Kite Factory case study from Kaizan.
+- [Verkeer · Case study](https://kaizan.ai/case-studies/verkeer/): How Verkeer cut QBR prep from 6 hours to 40 minutes. A Verkeer case study from Kaizan.
 - [Cookie Policy](https://kaizan.ai/cookie-policy/): The cookies Kaizan uses on its website and app, and how to manage them.
 - [Data Processing Agreement](https://kaizan.ai/data-processing-agreement/): How Kaizan processes personal data on behalf of its customers.
 - [Kaizan FAQs: Pricing, Integrations, Setup](https://kaizan.ai/faq/): Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual contracts, outcomes, comparisons and how to work with us.

@@ -1,82 +1,82 @@
 {
  "/": {
-  "h": "411de46bb668",
+  "h": "2394cf4d8ce8",
   "d": "2026-11-03"
  },
  "/blog/": {
-  "h": "21efee68a8d9",
+  "h": "170a810ebae4",
   "d": "2026-11-03"
  },
  "/blog/agency-profitability/": {
-  "h": "83bb5b4ed66f",
+  "h": "c97302ba7ace",
   "d": "2026-11-03"
  },
  "/blog/ai-for-client-service/": {
-  "h": "4fd88a7671d8",
+  "h": "f4011fe53c9e",
   "d": "2026-11-03"
  },
  "/blog/client-health/": {
-  "h": "f7fe1008c02a",
+  "h": "13e23a449ee4",
   "d": "2026-11-03"
  },
  "/blog/client-software/": {
-  "h": "ca2263dd053f",
+  "h": "8b32a8fd4362",
   "d": "2026-11-03"
  },
  "/blog/playbooks-and-templates/": {
-  "h": "50e008526c6a",
+  "h": "d62ec14607ec",
   "d": "2026-11-03"
  },
  "/blog/qa/": {
-  "h": "4714d01bb1d0",
+  "h": "c3426249f302",
   "d": "2026-11-03"
  },
  "/case-studies/": {
-  "h": "b4303e554b98",
+  "h": "54b897a3793a",
   "d": "2026-11-03"
  },
  "/case-studies/jellyfish/": {
-  "h": "12d55bba6895",
+  "h": "2995d0fbb584",
   "d": "2026-11-03"
  },
  "/case-studies/scale/": {
-  "h": "dc100ef5e6a0",
+  "h": "e60bc2850970",
   "d": "2026-11-03"
  },
  "/case-studies/the-kite-factory/": {
-  "h": "d7e6865a5a46",
+  "h": "23f3ffc02480",
   "d": "2026-11-03"
  },
  "/case-studies/verkeer/": {
-  "h": "8193bb5d56e6",
+  "h": "a0fea8a40fdd",
   "d": "2026-11-03"
  },
  "/for/account-manager/": {
-  "h": "b42a6b9dddb0",
+  "h": "9af732bd3fd6",
   "d": "2026-11-03"
  },
  "/for/head-of-ai/": {
-  "h": "bfda99c390d8",
+  "h": "cfe7395ac812",
   "d": "2026-11-03"
  },
  "/for/strategy-creative-marketing/": {
-  "h": "b3f37714b87e",
+  "h": "a3e00acb6ef5",
   "d": "2026-11-03"
  },
  "/hall-of-fame/": {
-  "h": "a7821d41120e",
+  "h": "d31e59c04a00",
   "d": "2026-11-03"
  },
  "/hall-of-fame/gaetan-staples/": {
-  "h": "a5d73b7fc4b6",
+  "h": "63d38752c294",
   "d": "2026-11-03"
  },
  "/knowledge-hub/": {
-  "h": "9249a0db2503",
+  "h": "e96086bc3fe9",
   "d": "2026-11-03"
  },
  "/product/": {
-  "h": "61a41503ff1a",
+  "h": "ec580e07c812",
   "d": "2026-11-03"
  },
  "/referral-partners/": {
@@ -84,95 +84,95 @@
   "d": "2026-11-03"
  },
  "/resources/": {
-  "h": "50de014a2382",
+  "h": "6758e0694f0a",
   "d": "2026-11-03"
  },
  "/resources/white-paper/": {
-  "h": "a877d6cfcfb6",
+  "h": "5d47a9d14af9",
   "d": "2026-11-03"
  },
  "/security/": {
-  "h": "63987442295f",
+  "h": "6a540fc9223c",
   "d": "2026-11-03"
  },
  "/us/": {
-  "h": "092400cc7238",
+  "h": "1ce3b9750e96",
   "d": "2026-11-03"
  },
  "/us/blog/": {
-  "h": "3af9c99d634e",
+  "h": "376c371844c6",
   "d": "2026-11-03"
  },
  "/us/blog/agency-profitability/": {
-  "h": "57b01bfc2f15",
+  "h": "3fbfca39f647",
   "d": "2026-11-03"
  },
  "/us/blog/ai-for-client-service/": {
-  "h": "8c88a51f4a88",
+  "h": "1d84b18a1506",
   "d": "2026-11-03"
  },
  "/us/blog/client-health/": {
-  "h": "8a1052c2d9c5",
+  "h": "9d27389e0d0c",
   "d": "2026-11-03"
  },
  "/us/blog/client-software/": {
-  "h": "d8ea45f22052",
+  "h": "fad5a8de1edc",
   "d": "2026-11-03"
  },
  "/us/blog/playbooks-and-templates/": {
-  "h": "6bee5bf8fa69",
+  "h": "e641fa0aa0d2",
   "d": "2026-11-03"
  },
  "/us/blog/qa/": {
-  "h": "5bc9d78e6fec",
+  "h": "5ce0147b5b5d",
   "d": "2026-11-03"
  },
  "/us/case-studies/": {
-  "h": "2da6e25a3936",
+  "h": "8c2549c7b9cc",
   "d": "2026-11-03"
  },
  "/us/case-studies/jellyfish/": {
-  "h": "ae89bfcbbf21",
+  "h": "6cbad0b69015",
   "d": "2026-11-03"
  },
  "/us/case-studies/scale/": {
-  "h": "0bd92deb45dd",
+  "h": "f2e35e548d02",
   "d": "2026-11-03"
  },
  "/us/case-studies/the-kite-factory/": {
-  "h": "bd7ecb0ea764",
+  "h": "47185cab87d2",
   "d": "2026-11-03"
  },
  "/us/case-studies/verkeer/": {
-  "h": "c40b8a362154",
+  "h": "226ef03d3a9d",
   "d": "2026-11-03"
  },
  "/us/for/account-manager/": {
-  "h": "55619bf69d62",
+  "h": "36e01580a387",
   "d": "2026-11-03"
  },
  "/us/for/head-of-ai/": {
-  "h": "c6b4121b26d0",
+  "h": "7e3126f6d401",
   "d": "2026-11-03"
  },
  "/us/for/strategy-creative-marketing/": {
-  "h": "8684d2f972e6",
+  "h": "c3b1c599b73d",
   "d": "2026-11-03"
  },
  "/us/hall-of-fame/": {
-  "h": "97f26a23c29c",
+  "h": "ef55fbbf554a",
   "d": "2026-11-03"
  },
  "/us/hall-of-fame/gaetan-staples/": {
-  "h": "dc1a9e5ac2b1",
+  "h": "df859ba3f8e7",
   "d": "2026-11-03"
  },
  "/us/knowledge-hub/": {
-  "h": "085c9bedfe90",
+  "h": "022abd822585",
   "d": "2026-11-03"
  },
  "/us/product/": {
-  "h": "1b8c93cafdeb",
+  "h": "ea1eacbe020d",
   "d": "2026-11-03"
  },
  "/us/referral-partners/": {
@@ -180,15 +180,15 @@
   "d": "2026-11-03"
  },
  "/us/resources/": {
-  "h": "7fd020f761db",
+  "h": "0da6005988b7",
   "d": "2026-11-03"
  },
  "/us/resources/white-paper/": {
-  "h": "b11a914c52ea",
+  "h": "2be49fbaaecc",
   "d": "2026-11-03"
  },
  "/us/security/": {
-  "h": "cc41df7a0f26",
+  "h": "6e420620acd1",
   "d": "2026-11-03"
  }
 }
