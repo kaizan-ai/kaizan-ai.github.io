@@ -2,6 +2,7 @@
 title: Key Principles in Strategic Client Management
 date: 2023-05-23
 category: POV
+topic: playbooks-and-templates
 excerpt: Strategic client management is an ongoing process that involves building and maintaining strong relationships with clients to achieve business objectives. It requires a…
 meta_title: Key Principles in Strategic Client Management
 meta_description: What strategic client management is, why it matters, the main challenges from time to expectations, and how to build the skills to retain and grow clients.

@@ -3,6 +3,7 @@ title: "How to Re-Engage Inactive Customers Before They Churn"
 date: 2026-07-15
 author: Lia Grant
 category: POV
+topic: playbooks-and-templates
 excerpt: A practical guide to re-engaging inactive clients and winning back churned customers. Why clients go quiet, a step by step approach, and re-engagement email examples you can use.
 cover: cover.png
 draft: false

@@ -3,7 +3,8 @@ title: How to build your own client intelligence engine
 date: 2026-10-06
 author: Pravin Paratey, CTO
 category: POV
-excerpt: The whole build, in the open. Fourteen systems, the order to build them in, and the failure mode of each one, for the head of AI who has just been asked "can we build this?"
+topic: client-software
+excerpt: Fourteen systems, the order to build them in and the failure mode of each, for the head of AI who has just been asked: can we build this?
 cover: cover.png
 draft: false
 tags: [client intelligence, build vs buy, ai engineering, evaluation, open spec]
