@@ -1403,7 +1403,7 @@ def footer_html(depth: int) -> str:
         {''.join(cols_html)}
       </div>
       <div class="kz-footer-bot">
-        <span>© 2026 Kaizan Ltd. · <a class="kz-locale-switch" data-locale-switch href="#" hidden></a></span>
+        <span>© 2026 Kaizan Ltd. · <a class="kz-locale-switch" data-locale-switch href="/us/" hidden>View US site</a></span>
         <span>
           <a href="{p}privacy-policy/">Privacy</a> ·
           <a href="{p}license-agreement/">Terms</a> ·
@@ -2403,7 +2403,8 @@ def render_home() -> str:
                  f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
-        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/" '
+                f'aria-label="Read more: {E(cq["co"])} customer story">Read more →</a>'
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
@@ -3671,7 +3672,8 @@ def render_case_study(slug: str) -> str:
 
     {footer_html(2)}
     '''
-    return page_head(f'{c["co"]} · Case study', 2, c['headline']) + body + page_foot()
+    return page_head(f'{c["co"]} · Case study', 2,
+                     f'{c["headline"]} A {c["co"]} case study from Kaizan.') + body + page_foot()
 
 
 def render_insights() -> str:
@@ -4762,8 +4764,9 @@ def pricing_offers(tiers: list, currency: str) -> list:
             offer['description'] = (f"{t['clients_pre']}{t['clients_bold']}, per client per month, annual contract. "
                                     'Unlimited users.')
         else:
-            offer['description'] = ('Custom per client rate negotiated to your portfolio, annual contract. '
-                                    'Unlimited users.')
+            # Custom-priced tier: an Offer without a price is invalid structured data,
+            # and no figure may be invented, so it stays out of the schema.
+            continue
         offers.append(offer)
     return offers
 
@@ -6982,6 +6985,9 @@ def build_us_locale():
         uk_html = uk_html.replace('Book time with Glen →', 'Book a call')
         uk_html = re.sub(r'href="(?:(?:\.\./)*demo/|/demo/|https://kaizan\.ai/demo/)"', 'href="mailto:hello@kaizan.ai" data-book-call', uk_html)
         uk_html = book_call_inject(uk_html, 'uk')
+        # Static locale-switch target (site.js still swaps it on load), so the link has
+        # text and a real href for crawlers and no-JS visitors.
+        uk_html = uk_html.replace('data-locale-switch href="/us/"', f'data-locale-switch href="/us{path}"')
         uk_html = uk_html.replace('<html lang="en">', '<html lang="en-GB">', 1)
         if uk_html != f.read_text(encoding='utf-8'):
             f.write_text(uk_html, encoding='utf-8')
@@ -7013,6 +7019,8 @@ def build_us_locale():
         us = us.replace('Book time with Glen →', 'Book a call')
         # US legal entity.
         us = us.replace('Kaizan Ltd.', 'Kaizan Inc.')
+        us = us.replace('data-locale-switch href="/us/" hidden>View US site<',
+                        f'data-locale-switch href="{path}" hidden>View UK site<')
         # US spelling.
         us = _spell_text_nodes(us)
         # Homepage: drop TradeDoubler from the client-logo belt — the brand
@@ -7971,7 +7979,8 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
                  f'src="assets/img/clients/{logo}" alt="{E(cq["co"])}">') if logo \
             else f'<span class="kz-qcard-co">{E(cq["co"])}</span>'
         logo_html = f'<span class="kz-qcard-logobox">{inner}</span>'
-        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/">Read more →</a>'
+        more = (f'<a class="kz-qcard-more" href="blog/{cq["blog"]}/" '
+                f'aria-label="Read more: {E(cq["co"])} customer story">Read more →</a>'
                 if cq.get('blog') else '')
         return (f'<figure class="kz-qcard">'
                 f'{logo_html}'
@@ -8683,6 +8692,37 @@ def render_customer_success_software(keep_nav: bool = False) -> str:
     return html
 
 
+def minify_assets():
+    """Minify assets/css + assets/js into assets/dist/ (sources stay readable) and point
+    every generated page at the minified, content-hashed copy. Runs last, after all
+    pages (UK and /us/) are written."""
+    import hashlib
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import minify
+    dist = ROOT / 'assets' / 'dist'
+    names = {}
+    for kind, fn in (('css', minify.minify_css), ('js', minify.minify_js)):
+        (dist / kind).mkdir(parents=True, exist_ok=True)
+        for src in sorted((ROOT / 'assets' / kind).glob(f'*.{kind}')):
+            data = fn(src.read_text(encoding='utf-8'))
+            (dist / kind / src.name).write_text(data, encoding='utf-8')
+            names[(kind, src.name)] = hashlib.md5(data.encode('utf-8')).hexdigest()[:8]
+    ref = re.compile(r'((?:\.\./)*/?)assets/(css|js)/([\w.-]+\.(?:css|js))\?v=[0-9a-f]{8}')
+    skip = {'.git', '.claude', 'content', 'tools', 'node_modules', 'site-structure-reports'}
+    n = 0
+    for f in ROOT.rglob('*.html'):
+        if skip & set(f.relative_to(ROOT).parts):
+            continue
+        html = f.read_text(encoding='utf-8')
+        new = ref.sub(lambda m: (f'{m.group(1)}assets/dist/{m.group(2)}/{m.group(3)}'
+                                 f'?v={names.get((m.group(2), m.group(3)), "")}')
+                      if (m.group(2), m.group(3)) in names else m.group(0), html)
+        if new != html:
+            f.write_text(new, encoding='utf-8')
+            n += 1
+    print(f'  (assets minified → assets/dist/, {n} page(s) repointed)')
+
+
 def main():
     print(f'Building Kaizan site → {ROOT}')
 
@@ -8819,6 +8859,7 @@ def main():
 
     write_sitemap()
     write_llms_txt()
+    minify_assets()
     print('Done.')
 
 
