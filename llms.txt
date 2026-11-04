@@ -34,7 +34,6 @@
 - [Client Tool Integrations: Free Standard Set](https://kaizan.ai/integrations/): All standard Kaizan integrations are free: Teams, Slack, HubSpot, Salesforce, Google Meet and more unify client data, plus the Kaizan API and custom builds.
 - [Knowledge Hub](https://kaizan.ai/knowledge-hub/): FAQs on client success and account management: client intelligence, onboarding, retention, client health, reporting, expansion, metrics and AI.
 - [Licence Agreement](https://kaizan.ai/license-agreement/): The terms on which Kaizan Limited supplies the Kaizan software.
-- [Pricing by Client Count, Free 14 Day Pilot](https://kaizan.ai/pricing/): Pricing is set by how many clients you cover, per client per month, with unlimited users on every tier. Every engagement starts with a free 14 day pilot.
 - [Privacy Policy](https://kaizan.ai/privacy-policy/): How Kaizan Limited collects, uses and protects your personal data.
 - [Product](https://kaizan.ai/product/): AI Assistant, AI Helpers, the Client Health Model and Client News, one platform for AI-first client service teams.
 - [Referral Partner Program](https://kaizan.ai/referral-partners/): Earn 15% of the first year and 7.5% of the second when you introduce a firm to Kaizan. Book a call with the partner team.
