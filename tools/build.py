@@ -5027,6 +5027,7 @@ ROI_CALCULATOR_SECTION = '''
 def render_pricing() -> str:
     p = relpath(1)
     extra_head = (
+        '<meta name="robots" content="noindex">\n        '
         f'<link rel="stylesheet" href="{p}assets/css/pricing.css{asset_v("assets/css/pricing.css")}">\n'
         f'        <link rel="stylesheet" href="{p}assets/css/roi-calculator.css{asset_v("assets/css/roi-calculator.css")}">\n'
         f'        <link rel="stylesheet" href="{p}assets/css/roi-accordion.css{asset_v("assets/css/roi-accordion.css")}">\n'
