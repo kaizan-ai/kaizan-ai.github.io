@@ -4,8 +4,8 @@
   "d": "2026-11-03"
  },
  "/blog/": {
-  "h": "170a810ebae4",
-  "d": "2026-11-03"
+  "h": "b315f18f0807",
+  "d": "2026-11-05"
  },
  "/blog/agency-profitability/": {
   "h": "c97302ba7ace",
@@ -16,12 +16,12 @@
   "d": "2026-11-03"
  },
  "/blog/client-health/": {
-  "h": "13e23a449ee4",
-  "d": "2026-11-03"
+  "h": "3e51e027fce1",
+  "d": "2026-11-05"
  },
  "/blog/client-software/": {
-  "h": "8b32a8fd4362",
-  "d": "2026-11-03"
+  "h": "a19502935fa4",
+  "d": "2026-11-05"
  },
  "/blog/playbooks-and-templates/": {
   "h": "d62ec14607ec",
@@ -88,7 +88,7 @@
   "d": "2026-11-03"
  },
  "/resources/white-paper/": {
-  "h": "abfef3cd8ad9",
+  "h": "ec959003dac9",
   "d": "2026-11-05"
  },
  "/security/": {
@@ -100,8 +100,8 @@
   "d": "2026-11-03"
  },
  "/us/blog/": {
-  "h": "376c371844c6",
-  "d": "2026-11-03"
+  "h": "2266d7ceb5cc",
+  "d": "2026-11-05"
  },
  "/us/blog/agency-profitability/": {
   "h": "3fbfca39f647",
@@ -112,12 +112,12 @@
   "d": "2026-11-03"
  },
  "/us/blog/client-health/": {
-  "h": "9d27389e0d0c",
-  "d": "2026-11-03"
+  "h": "6edfe6ba02b3",
+  "d": "2026-11-05"
  },
  "/us/blog/client-software/": {
-  "h": "fad5a8de1edc",
-  "d": "2026-11-03"
+  "h": "e66da070586e",
+  "d": "2026-11-05"
  },
  "/us/blog/playbooks-and-templates/": {
   "h": "e641fa0aa0d2",
@@ -184,7 +184,7 @@
   "d": "2026-11-03"
  },
  "/us/resources/white-paper/": {
-  "h": "66ad15f3d713",
+  "h": "2f86aa854b08",
   "d": "2026-11-05"
  },
  "/us/security/": {
