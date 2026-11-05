@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Customer retention software for agencies and service firms: five tools compared, what each costs, and what churn costs you if you do nothing.
 cover: customer-retention-software-four-types.png
-draft: true
+draft: false
 tags: [customer retention, retention software, client success, churn, agencies]
 ---
 

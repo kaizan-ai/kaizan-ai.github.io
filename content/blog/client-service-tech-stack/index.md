@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: A guide to the client service tech stack, sorted into four jobs, with 25 customer success tools compared and a way to choose that starts with your problem.
 cover: client-service-tech-stack-lanes.png
-draft: true
+draft: false
 tags: [client service, tech stack, customer success tools, client success software, client health]
 ---
 

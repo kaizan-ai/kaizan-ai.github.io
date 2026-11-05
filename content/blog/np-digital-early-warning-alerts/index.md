@@ -7,7 +7,7 @@ category: CUSTOMER STORY
 topic: client-health
 excerpt: NP Digital's Brandon Smith on why clients who leave rarely leave without warning, and what changed once his team could see the warning.
 cover: np-digital-early-warning-quote-card-social.png
-draft: true
+draft: false
 tags: [client retention, early warning, customer story, agencies, client health]
 ---
 
