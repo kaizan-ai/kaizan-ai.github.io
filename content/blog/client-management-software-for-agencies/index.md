@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Client management software covers five types of tool. Compare 12 tools by type, cost and fit, and learn how to choose in seven steps.
 cover: client-management-software-five-types.png
-draft: true
+draft: false
 tags: [client management software, agencies, crm, client success, client health, pricing]
 ---
 

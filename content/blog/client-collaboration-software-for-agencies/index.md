@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Client collaboration software shows clients your work, but not how they feel. Compare 8 tools by type and see what a portal cannot tell your team.
 cover: client-collaboration-software-8-tools-by-type.png
-draft: true
+draft: false
 tags: [client collaboration software, client portal, client dashboard, client tracking, agencies, client success]
 ---
 

@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: What account management software is, how it differs from a CRM, the features worth paying for, and 10 tools compared with real 2026 pricing.
 cover: account-management-software-10-tools-by-type.png
-draft: true
+draft: false
 tags: [account management, client software, agencies, crm, client health, account planning]
 ---
 

@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Most agencies don't need client onboarding software. Run the 60-second test, then compare Rocketlane, GUIDEcx, Dock and Arrows on pricing and fit.
 cover: client-onboarding-software-4-tools.png
-draft: true
+draft: false
 tags: [client onboarding, client software, agencies, onboarding software, client intelligence]
 ---
 

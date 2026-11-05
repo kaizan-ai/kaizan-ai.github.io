@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Software for consultancy firms covers five jobs: win, plan, deliver, bill and keep. Match your problem to a tool type before you compare vendors.
 cover: software-for-consultancies-five-job-stack-map.png
-draft: true
+draft: false
 tags: [consultancy software, client success, psa, tech stack, client retention]
 ---
 

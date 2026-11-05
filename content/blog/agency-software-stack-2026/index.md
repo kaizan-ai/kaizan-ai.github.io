@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: A guide to agency software sorted by the eight jobs a stack has to cover, from first pitch to renewal, with tools compared and costs modelled by headcount.
 cover: agency-software-stack-eight-jobs.png
-draft: true
+draft: false
 tags: [agency software, software stack, client management, psa, client intelligence, client retention]
 ---
 

@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: A CRM was built to run a sales pipeline, not hold a client relationship. See what it misses and how to add client health scoring without replacing it.
 cover: crm-vs-client-success-platform-ownership.png
-draft: true
+draft: false
 tags: [crm, client relationships, client health, salesforce, hubspot, service businesses]
 ---
 
