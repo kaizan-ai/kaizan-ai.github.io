@@ -64,12 +64,20 @@
   "d": "2026-11-03"
  },
  "/hall-of-fame/": {
-  "h": "d31e59c04a00",
-  "d": "2026-11-03"
+  "h": "fcb580e0aede",
+  "d": "2026-11-09"
+ },
+ "/hall-of-fame/dayna-nichols/": {
+  "h": "ec38b5b3346e",
+  "d": "2026-11-09"
  },
  "/hall-of-fame/gaetan-staples/": {
   "h": "63d38752c294",
   "d": "2026-11-03"
+ },
+ "/hall-of-fame/stephanie-pereira/": {
+  "h": "870486f5bc39",
+  "d": "2026-11-09"
  },
  "/knowledge-hub/": {
   "h": "e96086bc3fe9",
@@ -88,8 +96,8 @@
   "d": "2026-11-03"
  },
  "/resources/white-paper/": {
-  "h": "ec959003dac9",
-  "d": "2026-11-05"
+  "h": "265cb5f51163",
+  "d": "2026-11-09"
  },
  "/security/": {
   "h": "6a540fc9223c",
@@ -160,12 +168,20 @@
   "d": "2026-11-03"
  },
  "/us/hall-of-fame/": {
-  "h": "ef55fbbf554a",
-  "d": "2026-11-03"
+  "h": "95cde1caa055",
+  "d": "2026-11-09"
+ },
+ "/us/hall-of-fame/dayna-nichols/": {
+  "h": "ce1a91c1cd35",
+  "d": "2026-11-09"
  },
  "/us/hall-of-fame/gaetan-staples/": {
   "h": "df859ba3f8e7",
   "d": "2026-11-03"
+ },
+ "/us/hall-of-fame/stephanie-pereira/": {
+  "h": "b8084a178f9a",
+  "d": "2026-11-09"
  },
  "/us/knowledge-hub/": {
   "h": "022abd822585",
@@ -184,8 +200,8 @@
   "d": "2026-11-03"
  },
  "/us/resources/white-paper/": {
-  "h": "2f86aa854b08",
-  "d": "2026-11-05"
+  "h": "3af0fdefa4e5",
+  "d": "2026-11-09"
  },
  "/us/security/": {
   "h": "6e420620acd1",
