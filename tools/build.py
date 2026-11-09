@@ -5707,6 +5707,183 @@ HALL_OF_FAME = [
              'Knowing that Kaizan has my back if I miss anything in any client meetings!'),
         ],
     ),
+    dict(
+        slug='stephanie-pereira',
+        name='Stephanie Pereira',
+        role='Customer Success Manager',
+        company='SearchLab',
+        logo='searchlab.png',
+        photo='stephanie-pereira.jpg',
+        award='Account Excellence',
+        month='September 2026',
+        citation='Builds warm, lasting client relationships by proactively reaching out and '
+                 'building multithreaded accounts.',
+        calls=39,
+        stats=[
+            ('Proactivity', '54.8%', 'of threads and meetings started by her', 'Top 5%'),
+            ('Post-call follow-up speed', '29', 'min', 'Top 5%'),
+            ('High-sentiment moments', '69', '', 'Top 5%'),
+            ('Decision-maker attendance', '37.9%', 'of external call attendees', 'Top 10%'),
+            ('Client-facing time', '76.1%', '', 'Top 15%'),
+            ('Median reply speed', '3', 'min', 'Top 15%'),
+        ],
+        quote='Being a true partner means replying with the speed and dedication of an '
+              'internal teammate.',
+        qa=[
+            ('How did you end up in client service, and what keeps you in it?',
+             "I'm relatively new to having 'Customer Success' in my official title, but I've "
+             "actually spent the last five-plus years doing that type of work from the SEM side. "
+             "When our company officially formed a CS department in July, I decided to hesitantly "
+             "take the leap. I was a little nervous at first about dealing with tough escalations, "
+             "but it's been a really positive experience so far. My favorite part of the job is "
+             "partnering with clients to solve problems and brainstorm strategy."),
+            ("What's the client moment you're proudest of at SearchLab?",
+             'Nothing is more rewarding than watching a client scale and succeed. A highlight of '
+             'my career was partnering with a brand-new dealership and helping guide their growth. '
+             'Within just a few years, they became one of the top-performing Subaru dealerships '
+             'in the country.'),
+            ("You won Account Excellence for being proactive and keeping clients connected. "
+             "What's one small thing you do that makes clients feel genuinely looked after?",
+             'I make it a point to be exceptionally responsive. Clients want to feel heard and '
+             'know that you genuinely understand their goals. For me, being a true partner means '
+             'replying with the speed and dedication of an internal teammate.'),
+            ('Tell us about a time you reached out before a client raised a problem. What made '
+             'you pick up on it, and what happened next?',
+             "It's hard to pinpoint a specific instance, but throughout my client-facing SEM role, "
+             "I made a habit of checking campaign metrics daily, allowing me to spot downward "
+             "trends early and optimize campaigns to protect and improve results."),
+            ("How do you keep a client's confidence when the results aren't what they expected?",
+             "I always assure clients that our team is actively on the case, and I stay closely "
+             "attached until the issue is fully solved. Keeping the lines of communication open is "
+             "key. I share updates as soon as I get them so clients know they're always a top "
+             "priority."),
+            ('Where could AI make the biggest difference to how account managers look after '
+             'their clients?',
+             'I see huge potential in using AI to handle repetitive administrative work, like '
+             'turning client requests into clear task lists and drafting meeting recaps. '
+             'Automating those daily tasks would save hours and keep follow-ups fast and accurate.'),
+            ('How do you build a relationship with the decision-maker without making your '
+             'day-to-day contact feel sidelined?',
+             "I'm fortunate that most of my day-to-day contacts are the key decision-makers. "
+             "Whenever that isn't the case, I make sure to send weekly recap emails so they stay "
+             "completely in the loop on our progress and upcoming priorities."),
+            ('Where do you draw the line between being responsive and feeling like you have to '
+             'be available all the time?',
+             "I always send a quick confirmation of receipt, even a simple 'Got it, thank you' "
+             "goes a long way. If the request is complex, I'm upfront that I'm reviewing it and "
+             "will get back to them soon. It lets the client know they've been heard while buying "
+             "me the time I need to put together the right answer."),
+            ('What are your 3 pieces of advice for someone starting out in client service at an '
+             'agency?',
+             ["Care genuinely about your clients and treat their business like it's yours, "
+              "that's where real trust begins.",
+              "Back that up by actually delivering, because promises don't mean much without "
+              "results.",
+              "Above all, be honest. We're all human, and if something goes wrong, just own it "
+              "right away. Clients will trust you much more when you're candid than if you try "
+              "to spin the truth."]),
+            ("What's one piece of account-management advice you disagree with, and why?",
+             "The advice I disagree with is “The customer is always right and never say "
+             "‘no’ to a client.” If you just blindly say yes to everything, you're "
+             "not acting like a partner, you're just an order taker. Treating a client's business "
+             "like your own means caring enough about their bottom line to be completely honest "
+             "with them. Especially in SEM and Customer Success, clients often react to a slow "
+             "week or a short-term panic by making drastic changes. If I just roll over and say "
+             "yes to make them happy in the moment, their performance will tank, and at the end "
+             "of the day, that falls on us. A true partner isn't afraid to push back with real "
+             "data and say, “I hear what you're trying to do, but here's why that move will "
+             "actually hurt your numbers, and here's what we should do instead.”"),
+            ('How has AI changed the way you look after your clients, and what do you still '
+             'prefer to handle yourself?',
+             "Right now, I mostly use AI to turn my rough notes into clean, visual slide decks. "
+             "It's been a game-changer for translating complex data into something clients "
+             "actually understand, and it gives our meetings structure. While we use Kaizan for "
+             "overall meeting recordings, I still take my own notes to capture the deeper context. "
+             "AI reliably records the conversation, but it can miss the tone, underlying "
+             "priorities, and emotional weight of a client's concerns, things that are critical "
+             "for genuine partnership."),
+            ('What would you miss most if Kaizan disappeared tomorrow?',
+             'I would definitely miss having it for recap summaries and documentation. Having all '
+             'my meetings recorded in one place makes it so easy to look back, double-check '
+             'details, and stay completely organized.'),
+        ],
+    ),
+    dict(
+        slug='dayna-nichols',
+        name='Dayna Nichols',
+        role='Performance Marketing Specialist',
+        company='Scale',
+        logo='scale.png',
+        logo_scale=1.35,
+        photo='dayna-nichols.jpg',
+        award='Growth Leader',
+        month='September 2026',
+        citation='Steers calls toward new opportunities by constantly leading with expansion and '
+                 'building advocacy in the relationship.',
+        calls=40,
+        stats=[
+            ('Expansion and growth focus', '28.7%', 'of call time', 'Top 5%'),
+            ('High-sentiment moments', '43', '', 'Top 10%'),
+            ('Proactivity', '24.3%', 'of threads and meetings started by her', 'Top 15%'),
+            ('Decision-maker attendance', '27.8%', 'of external call attendees', 'Top 20%'),
+            ('Client-facing time', '68.6%', '', 'Top 25%'),
+            ('Balanced conversations', '25.0%', 'of calls', 'Top 25%'),
+        ],
+        quote='Clients should never be able to tell when I’m busy.',
+        qa=[
+            ('How did you end up in client service, and what keeps you in it?',
+             'I started out in retail, which is where I discovered how much I enjoy working with '
+             'people and building relationships. That led me into client service, and what keeps '
+             'me here is the variety. Marketing is always changing, so I get to keep learning and '
+             'growing alongside my clients.'),
+            ("What's the client moment you're proudest of?",
+             "One of my proudest moments was with G-Star RAW, when we exceeded our affiliate "
+             "revenue target by 15%. It was a real team effort with the client, and seeing the "
+             "results of the work we'd put in together made it especially rewarding."),
+            ('You were recognised for growing your accounts. How do you spot opportunities to '
+             'expand a client relationship?',
+             "I plan marketing campaigns well in advance and run regular program checks, which "
+             "helps me see where there's room to grow. Marketing is always changing, so there's "
+             "always something new to try. That's part of the fun: growth means trying new things "
+             "and expanding alongside the client."),
+            ('What do you do before every client meeting that most people skip?',
+             'I review my notes from the previous meeting and update the call agenda with any new '
+             'information and the key points we discussed last time, so we pick up exactly where '
+             'we left off.'),
+            ('How do you make a client feel looked after when things get busy?',
+             "During my busiest seasons, I make sure communication never slips. I keep my weekly "
+             "calls consistent, stay on top of my notes, and follow up quickly, even if it's just "
+             "to let a client know I'm working on something. Tools like Kaizan help me keep track "
+             "of every detail, so nothing gets missed when my schedule is full. Clients should "
+             "never be able to tell when I'm busy."),
+            ('How do you protect time for strategy and planning with clients?',
+             "Kaizan is a big part of it. I use it to create pre- and post-meeting briefs, and it "
+             "helps me better understand my clients' behaviors, which makes my strategic planning "
+             "much sharper."),
+            ('3 pieces of advice for someone starting out in account management?',
+             ['Take the time to really get to know your client and their account.',
+              'Always listen, more than you think you need to.',
+              'Stay flexible, because plans change and the best account managers adapt with them.']),
+            ("What's the biggest mistake an account manager can make?",
+             "Missing the small details. If you miss a comment or forget something a client "
+             "raised, it can look like you don't have their best interests at heart, even when "
+             "you do."),
+            ("What's the earliest sign a client relationship is going cold?",
+             "When client calls become quick and short on updates. Weekly meetings should always "
+             "involve a real conversation; that's what keeps a relationship from going cold."),
+            ('What does a great account manager do that nobody teaches?',
+             "They listen. It sounds simple, but it's easy to get so wrapped up in your own plan "
+             "that you miss a detail, or miss what the client is actually trying to achieve."),
+            ('How has AI changed the way you run your accounts?',
+             "In a number of ways, but one of my favorites is translation in call notes. Some of "
+             "my clients are based in China, and the language barrier could easily cause problems. "
+             "With translated notes, it never gets in the way. I can run my accounts confidently "
+             "without worrying about missing a comment, note, or concern."),
+            ('What would you miss most if Kaizan disappeared tomorrow?',
+             "Being able to focus fully on my calls instead of pausing to take notes. Who doesn't "
+             "love convenience?"),
+        ],
+    ),
 ]
 
 # Kaizan Awards categories: colour + icon per award, from the monthly winners
@@ -5771,7 +5948,9 @@ def _hof_byline_html(w: dict, depth: int, cls: str) -> str:
         by = _hof_byline(w)
         return f'<p class="{cls}">{E(by)}</p>' if by else ''
     src = f'assets/img/clients/{w["logo"]}'
-    logo = (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}" '
+    # logo_scale enlarges compact logos (e.g. a short wordmark) to match the others visually.
+    k = f' style="--k:{w["logo_scale"]}"' if w.get('logo_scale') else ''
+    logo = (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}"{k} '
             f'alt="{E(w["company"])}" decoding="async">')
     role = f'<span>{E(w["role"])}</span><span class="sep" aria-hidden="true">·</span>' if w['role'] else ''
     return f'<p class="{cls} hof-by-logo">{role}{logo}</p>'

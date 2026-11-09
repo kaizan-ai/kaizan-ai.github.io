@@ -267,6 +267,8 @@
 .hof-stat .lbl { font-size: 16px; font-weight: 700; }
 .hof-stat .val { font-size: clamp(48px, 5vw, 64px); line-height: 1; font-weight: 800; letter-spacing: -0.03em; }
 .hof-stat .val small { margin-left: 6px; font-size: .4em; font-weight: 700; letter-spacing: 0; }
+/* Long sub-labels ("of external call attendees") sit under the number as a caption. */
+.hof-stat .val small.is-long { display: block; margin: 8px 0 0; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--kz-mute); }
 .hof-stat .rank {
   width: fit-content; margin-top: 4px; padding: 6px 12px; background: var(--kz-ink); color: var(--kz-yellow);
   border-radius: 999px; font-size: 13px; font-weight: 700;
@@ -288,9 +290,12 @@
 /* Company logo in the byline */
 .hof-by-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
 .hof-by-logo .sep { color: var(--kz-mute-2); }
-.hof-logo { display: block; width: auto; height: 26px; }
-.hof-card-by .hof-logo { height: 20px; }
-@media (max-width: 560px) { .hof-by .hof-logo { height: 22px; } }
+.hof-logo { display: block; width: auto; height: calc(26px * var(--k, 1)); }
+.hof-card-by .hof-logo { height: calc(20px * var(--k, 1)); }
+@media (max-width: 560px) { .hof-by .hof-logo { height: calc(22px * var(--k, 1)); } }
+/* On cards the logo gets its own line under the role, so long job titles never strand the separator. */
+.hof-card-by.hof-by-logo { flex-direction: column; align-items: flex-start; gap: 8px; }
+.hof-card-by.hof-by-logo .sep { display: none; }
 
 /* ── About the Kaizan Awards (index, below the winners) ── */
 .hof-about { padding: 96px var(--kz-gutter) 110px; }
