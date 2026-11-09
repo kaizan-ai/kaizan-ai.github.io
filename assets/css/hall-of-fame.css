@@ -104,7 +104,11 @@
   box-shadow: 8px 8px 0 var(--cat, var(--kz-yellow)); transition: transform .2s ease, box-shadow .2s ease;
 }
 .hof-card:hover { transform: translate(-2px, -2px); box-shadow: 10px 10px 0 var(--cat, var(--kz-yellow)); }
-.hof-card-photo { aspect-ratio: 4 / 3; border-bottom: 3px solid var(--kz-ink); }
+/* Card head: round photo ringed in the award colour beside the name, so the company logo below gets the room. */
+.hof-card-head { display: flex; align-items: center; gap: 18px; }
+.hof-card-photo { flex: none; width: 104px; aspect-ratio: 1; border-radius: 50%; border: 3px solid var(--kz-ink); box-shadow: 0 0 0 4px var(--cat, var(--kz-yellow)); }
+.hof-card-logo { padding: 14px 0 4px; border-top: 1.5px solid var(--kz-line, #E8E2D0); }
+.hof-card-logo .hof-logo { height: calc(34px * var(--k, 1)); max-width: 100%; object-fit: contain; object-position: left center; }
 /* Award as a black strip across the top of the card. */
 .hof-card-top { background: var(--kz-ink); padding: 14px 18px 14px 16px; border-bottom: 3px solid var(--kz-ink); }
 .hof-card-top .hof-award { position: relative; width: 100%; gap: 14px; padding: 0; border-radius: 0; font-size: 22px; letter-spacing: 0.01em; }
@@ -117,10 +121,10 @@
 }
 .hof-card-top .hof-coin > span { width: 42px; height: 42px; border-width: 1.5px; }
 .hof-card-top .hof-coin img { width: 26px; height: 26px; }
-.hof-card-photo.is-initials span { font-size: 96px; }
+.hof-card-photo.is-initials span { font-size: 40px; }
 .hof-card-body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 26px; flex: 1; }
-.hof-card-name { margin: 4px 0 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
-.hof-card-by { margin: -4px 0 0; font-size: 15px; color: var(--kz-mute); }
+.hof-card-name { margin: 0 0 6px; font-size: 28px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.05; }
+.hof-card-by { margin: 0; font-size: 15px; line-height: 1.35; color: var(--kz-mute); }
 .hof-card-quote { margin: 0; font-size: 17px; line-height: 1.5; font-weight: 500; color: #3F3B2F; }
 .hof-card-more { margin-top: auto; padding-top: 6px; font-size: 15px; font-weight: 700; }
 .hof-card:hover .hof-card-more { text-decoration: underline; text-underline-offset: 3px; }
@@ -219,7 +223,9 @@
   .hof-band { padding: 40px 20px 52px; }
   .hof-grid { grid-template-columns: 1fr; gap: 24px; }
   .hof-card { box-shadow: 6px 6px 0 var(--cat, var(--kz-yellow)); }
-  .hof-card-photo.is-initials span { font-size: 72px; }
+  .hof-card-photo.is-initials span { font-size: 32px; }
+  .hof-card-photo { width: 84px; }
+  .hof-card-logo .hof-logo { height: calc(30px * var(--k, 1)); }
   .hof-card-name { font-size: 26px; }
   .hof-award { font-size: 11.5px; gap: 8px; padding-right: 12px; }
   .hof-card-top .hof-award { font-size: 19px; gap: 12px; padding-right: 0; }
@@ -267,6 +273,8 @@
 .hof-stat .lbl { font-size: 16px; font-weight: 700; }
 .hof-stat .val { font-size: clamp(48px, 5vw, 64px); line-height: 1; font-weight: 800; letter-spacing: -0.03em; }
 .hof-stat .val small { margin-left: 6px; font-size: .4em; font-weight: 700; letter-spacing: 0; }
+/* Long sub-labels ("of external call attendees") sit under the number as a caption. */
+.hof-stat .val small.is-long { display: block; margin: 8px 0 0; font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--kz-mute); }
 .hof-stat .rank {
   width: fit-content; margin-top: 4px; padding: 6px 12px; background: var(--kz-ink); color: var(--kz-yellow);
   border-radius: 999px; font-size: 13px; font-weight: 700;
@@ -288,9 +296,8 @@
 /* Company logo in the byline */
 .hof-by-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
 .hof-by-logo .sep { color: var(--kz-mute-2); }
-.hof-logo { display: block; width: auto; height: 26px; }
-.hof-card-by .hof-logo { height: 20px; }
-@media (max-width: 560px) { .hof-by .hof-logo { height: 22px; } }
+.hof-logo { display: block; width: auto; height: calc(26px * var(--k, 1)); }
+@media (max-width: 560px) { .hof-by .hof-logo { height: calc(22px * var(--k, 1)); } }
 
 /* ── About the Kaizan Awards (index, below the winners) ── */
 .hof-about { padding: 96px var(--kz-gutter) 110px; }
