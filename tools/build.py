@@ -7612,7 +7612,7 @@ def _cs_hero_copy_html(depth: int, home: bool = False) -> str:
         h1 = ('Kaizan does<br class="kz-hero-br"> the work that grows'
               '<br class="kz-hero-br"> every client')
         lede = ('Kaizan knows the client from every interaction, knows what great\n'
-                '            looks like, and does the work your team cannot get to. Built for companies with 150 to 10,000 employees.')
+                '            looks like, and does the work your team cannot get to.')
     else:
         h1 = 'Turn client conversations into revenue'
         lede = ('Kaizan turns every call, email and signal into the next\n'
