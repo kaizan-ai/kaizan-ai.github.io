@@ -5814,7 +5814,7 @@ HALL_OF_FAME = [
         role='Performance Marketing Specialist',
         company='Scale',
         logo='scale.png',
-        logo_scale=1.35,
+        logo_scale=1.6,
         photo='dayna-nichols.jpg',
         award='Growth Leader',
         month='September 2026',
@@ -5894,28 +5894,28 @@ AWARD_CATEGORIES = {
     'Client Service Team of the Month': dict(
         slug='team-of-the-month', color='#FFB900', light='#FFD133', dark='#E6A700', team=True,
         pillar='',
-        desc='The client service team with the strongest client health across their accounts: the '
-             'highest average CARE™ score, with Kaizan running across their client calls.'),
+        desc='Goes to the team whose client accounts were in the best shape that month. That means '
+             'the highest average CARE™ score, with Kaizan on their client calls.'),
     'Client Champion': dict(
         slug='client-champion', color='#4CC9F0', light='#9FE3F8', dark='#1E7CA0',
         pillar='Client satisfaction', care_id='care-satisfaction',   # card on /product/
-        desc='Puts their clients first and makes them feel looked after: they devote their time to '
-             'their clients.'),
+        desc='For the person who puts their clients first. They give clients real time and '
+             'attention, and their clients notice.'),
     'Account Excellence': dict(
         slug='account-excellence', color='#FF66C4', light='#FF9ED9', dark='#C2358F',
         pillar='Activity with stakeholders', care_id='care-activity',   # card on /product/
-        desc='Builds warm, lasting client relationships by proactively reaching out and building '
-             'multithreaded accounts.'),
+        desc="For the person who gets in touch before they're asked to, and knows lots of people "
+             "on each account rather than relying on one contact."),
     'Trusted Partner': dict(
         slug='trusted-partner', color='#B388FF', light='#D4BDFF', dark='#5A2EC4',
         pillar='Relationship strength', care_id='care-relationship',   # card on /product/
-        desc='The person clients turn to for strategic guidance. They collaborate and consult by '
-             'leading deep, strategic conversations.'),
+        desc='For the person clients call when they want advice. Their calls go past the weekly '
+             'update and into proper strategy.'),
     'Growth Leader': dict(
         slug='growth-leader', color='#14C6B8', light='#7FDFD6', dark='#0B7F76',
         pillar='Expansion opportunities', care_id='care-expansion',   # card on /product/
-        desc='Steers calls toward new opportunities by constantly leading with expansion and building '
-             'advocacy in the relationship.'),
+        desc='For the person who keeps spotting new ways to grow an account, and whose clients are '
+             'happy to recommend them.'),
 }
 
 
@@ -5942,16 +5942,20 @@ def _hof_byline(w: dict) -> str:
     return ' · '.join(x for x in (w['role'], w['company']) if x)
 
 
+def _hof_logo_img(w: dict, depth: int) -> str:
+    src = f'assets/img/clients/{w["logo"]}'
+    # logo_scale enlarges compact logos (e.g. a short wordmark) to match the others visually.
+    k = f' style="--k:{w["logo_scale"]}"' if w.get('logo_scale') else ''
+    return (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}"{k} '
+            f'alt="{E(w["company"])}" decoding="async">')
+
+
 def _hof_byline_html(w: dict, depth: int, cls: str) -> str:
     """Role, then the company logo (or its name when there's no logo)."""
     if not w.get('logo'):
         by = _hof_byline(w)
         return f'<p class="{cls}">{E(by)}</p>' if by else ''
-    src = f'assets/img/clients/{w["logo"]}'
-    # logo_scale enlarges compact logos (e.g. a short wordmark) to match the others visually.
-    k = f' style="--k:{w["logo_scale"]}"' if w.get('logo_scale') else ''
-    logo = (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}"{k} '
-            f'alt="{E(w["company"])}" decoding="async">')
+    logo = _hof_logo_img(w, depth)
     role = f'<span>{E(w["role"])}</span><span class="sep" aria-hidden="true">·</span>' if w['role'] else ''
     return f'<p class="{cls} hof-by-logo">{role}{logo}</p>'
 
@@ -5993,13 +5997,13 @@ def _hof_about_html() -> str:
             <p>{E(c["desc"])}</p>
           </div>''')
     how = [
-        ('Picked on real data', 'Winners are chosen on what actually happened with their clients, '
-                                'measured in Kaizan against the CARE™ Client Health Model. No votes, '
-                                'no nominations.'),
-        ('Every Kaizan user, globally', 'Every client service person and team using Kaizan is in the '
-                                        'running, every month.'),
-        ('Nothing to enter', 'Keep looking after your clients, and Kaizan does the rest. Winners are '
-                             'announced at the start of each month.'),
+        ('Based on real data', 'We look at what actually happened on their client calls and emails, '
+                               'scored against the CARE™ Client Health Model. Nobody votes and nobody '
+                               'gets nominated.'),
+        ('Open to everyone on Kaizan', "If you use Kaizan, wherever you are, you're in the running "
+                                       "every month."),
+        ('No need to enter', 'Just keep doing good work for your clients. We announce the winners at '
+                             'the start of each month.'),
     ]
     how_html = ''.join(f'<li><span class="n">{i}</span><div><h4>{E(t)}</h4><p>{E(d)}</p></div></li>'
                        for i, (t, d) in enumerate(how, 1))
@@ -6008,17 +6012,17 @@ def _hof_about_html() -> str:
           <div class="hof-about-why">
             <span class="hof-bubble">About the Kaizan Awards</span>
             <h2 class="hof-about-title">Why we run the Kaizan Awards</h2>
-            <p>Great client service rarely gets seen. It happens in the follow-up sent within the hour,
-              the stakeholder nobody else thought to call, the quiet question that turns into new work.</p>
-            <p>Every month the Kaizan Awards recognise the client service people and teams doing
-              outstanding work for their clients, so that work gets the credit it deserves, and so the
-              rest of us can learn how they do it.</p>
+            <p>A lot of the best client service never gets noticed. Clients feel it, but it rarely
+              shows up anywhere the rest of the business can see.</p>
+            <p>We started the Kaizan Awards to change that. Each month we pick out the people and teams
+              who did the best work for their clients, then ask them how they do it, so everyone else can
+              pick up a few ideas.</p>
           </div>
           <ol class="hof-how">{how_html}</ol>
         </div>
         <div class="hof-cats-wrap">
           <h2 class="hof-about-title">The award categories</h2>
-          <p class="hof-cats-sub">Four individual awards, one for each pillar of the CARE™ Client Health Model, plus a team award.</p>
+          <p class="hof-cats-sub">There are four individual awards, one for each part of the CARE™ Client Health Model, and one for a whole team.</p>
           <div class="hof-cats">{"".join(cards)}
           </div>
         </div>
@@ -6031,10 +6035,15 @@ def render_hall_of_fame() -> str:
     cards = '\n'.join(f'''
         <a class="hof-card" href="{w["slug"]}/" style="{_hof_cat_style(w)}">
           <div class="hof-card-top">{_hof_award_html(w, 1)}</div>
-          {_hof_photo(w, 1, "hof-card-photo")}
           <div class="hof-card-body">
-            <h2 class="hof-card-name">{E(w["name"])}</h2>
-            {_hof_byline_html(w, 1, "hof-card-by")}
+            <div class="hof-card-head">
+              {_hof_photo(w, 1, "hof-card-photo")}
+              <div>
+                <h2 class="hof-card-name">{E(w["name"])}</h2>
+                <p class="hof-card-by">{E(w["role"])}</p>
+              </div>
+            </div>
+            {f'<div class="hof-card-logo">{_hof_logo_img(w, 1)}</div>' if w.get('logo') else ''}
             <blockquote class="hof-card-quote">&ldquo;{E(w["quote"])}&rdquo;</blockquote>
             <span class="hof-card-more">Read {E(w["name"].split()[0])}&rsquo;s story &rarr;</span>
           </div>
