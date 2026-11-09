@@ -2111,6 +2111,12 @@ button { font-family: inherit; }
     position: absolute; top: 100%; left: 0; right: 0;
     background: var(--kz-paper); border-bottom: 1px solid var(--kz-line);
     padding: 12px 24px 20px;
+    /* The nav is sticky, so a menu taller than the screen could never be scrolled
+       into view: cap it at the viewport below the nav (100% = the nav's height)
+       and let it scroll on its own without dragging the page behind it. */
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
   }
   .kz-nav.is-mobile-open .kz-nav-links a { padding: 12px 0; opacity: 1; border-bottom: 1px solid var(--kz-line); text-align: left; }
   .kz-nav.is-mobile-open .kz-nav-links a:last-child { border-bottom: none; }
