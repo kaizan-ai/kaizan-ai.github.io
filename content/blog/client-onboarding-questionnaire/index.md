@@ -7,7 +7,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A 40-question client onboarding questionnaire for agencies, with a reason for every question, a filled example, and variants for creative and consulting firms.
 cover: onboarding-stakeholder-map.png
-draft: true
+draft: false
 tags: [client onboarding, onboarding questionnaire, new client onboarding, stakeholder map, agencies, account management]
 ---
 

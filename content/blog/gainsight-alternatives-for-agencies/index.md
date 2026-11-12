@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: Gainsight is built for SaaS usage data. Compare Totango/Odie, ChurnZero, Vitally, Planhat and Kaizan for agencies whose health signal lives in conversations.
 cover: gainsight-alternatives-side-by-side.png
-draft: true
+draft: false
 tags: [gainsight alternatives, customer success platform, client success, agencies, professional services, totango]
 ---
 

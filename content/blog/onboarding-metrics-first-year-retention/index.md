@@ -7,7 +7,7 @@ category: BENCHMARK
 topic: client-health
 excerpt: Kaizan's benchmark data shows the early cadence and coverage numbers that separate growing client accounts from churning ones, and how to score your own.
 cover: customer-onboarding-metrics-top-vs-bottom-cohort.png
-draft: true
+draft: false
 tags: [onboarding metrics, client retention, benchmark, client health, account management, churn]
 ---
 

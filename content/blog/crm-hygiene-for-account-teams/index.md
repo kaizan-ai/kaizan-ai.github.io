@@ -7,7 +7,7 @@ category: POV
 topic: client-software
 excerpt: CRM hygiene decays because updating a field competes with a client conversation. Learn which fields to keep clean and a six-step process that holds.
 cover: crm-hygiene-decay-curve.png
-draft: true
+draft: false
 tags: [crm hygiene, crm data quality, account management, client health, salesforce, hubspot]
 ---
 

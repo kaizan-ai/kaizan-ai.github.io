@@ -6,7 +6,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A QBR is a structured client review of value against goals. Learn what belongs on the agenda, how it differs from an EBR or MBR, and a 30-minute run of show.
 cover: qbr-cycle-diagram.png
-draft: true
+draft: false
 tags: [qbr, quarterly business review, client success, agency, ebr]
 ---
 

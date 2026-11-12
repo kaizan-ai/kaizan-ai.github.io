@@ -7,7 +7,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A 45-minute QBR format with a named owner, script and failure mode for every step, built for Heads of Client Service running a full tier of accounts.
 cover: qbr-agenda-45-minute-timeline.png
-draft: true
+draft: false
 tags: [qbr, quarterly business review, qbr agenda, client reviews, account management, client service]
 ---
 

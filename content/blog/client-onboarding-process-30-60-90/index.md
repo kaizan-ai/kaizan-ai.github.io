@@ -7,7 +7,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A client onboarding process maps a new account from signed contract to steady-state delivery across 30, 60 and 90 days. Steps, owners, scripts and a worked example.
 cover: client-onboarding-process-30-60-90-timeline.png
-draft: true
+draft: false
 tags: [client onboarding, onboarding process, 30-60-90 plan, agencies, stakeholder mapping, client success]
 ---
 

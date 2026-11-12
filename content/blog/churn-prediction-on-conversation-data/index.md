@@ -6,7 +6,7 @@ category: POV
 topic: client-health
 excerpt: Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.
 cover: churn-prediction-pipeline-diagram.png
-draft: true
+draft: false
 tags: [churn prediction, conversation data, client health, predictive analytics, retention, professional services]
 ---
 
