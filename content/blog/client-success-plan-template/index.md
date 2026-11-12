@@ -6,7 +6,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: What belongs in a client success plan for an agency account, how it differs from an account plan and a QBR deck, and three filled examples by account size.
 cover: client-success-plan-core-account-example.png
-draft: true
+draft: false
 tags: [client success plan, customer success plan, account management, client health, stakeholder map, agencies]
 ---
 

@@ -6,7 +6,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: Run three onboarding tracks instead of one, sized to what each account is worth: strategic, core and light-touch, each with its own owner, timeline and automation.
 cover: client-onboarding-three-lane-timeline.png
-draft: true
+draft: false
 tags: [client onboarding, client tiers, onboarding strategy, account management, segmentation, client success]
 ---
 

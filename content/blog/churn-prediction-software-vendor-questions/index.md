@@ -6,7 +6,7 @@ author: James Caples
 category: POV
 topic: client-software
 excerpt: Churn prediction tools split into usage-data and conversation-data models. Learn which fits your firm and the twelve questions to ask every vendor.
-draft: true
+draft: false
 tags: [churn prediction, churn management software, vendor evaluation, conversation data, data security, client health]
 ---
 

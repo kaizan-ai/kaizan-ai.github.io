@@ -7,7 +7,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A seven-step customer relationship management process for retainer accounts: build the record, map stakeholders, capture conversations, escalate risk and renew.
 cover: customer-relationship-management-process-seven-steps.png
-draft: true
+draft: false
 tags: [customer relationship management, crm process, client relationships, account management, renewals, playbook]
 ---
 

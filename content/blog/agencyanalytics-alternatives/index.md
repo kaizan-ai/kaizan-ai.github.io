@@ -6,7 +6,7 @@ category: POV
 topic: client-software
 excerpt: Honest AgencyAnalytics alternatives with current pricing, plus the relationship intelligence layer that catches what reporting dashboards cannot.
 cover: reporting-layer-vs-client-health-layer.png
-draft: true
+draft: false
 tags: [agencyanalytics, reporting tools, client health, relationship intelligence, agencies]
 ---
 

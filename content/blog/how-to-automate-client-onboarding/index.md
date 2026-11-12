@@ -6,7 +6,7 @@ category: POV
 topic: playbooks-and-templates
 excerpt: A seven-step client onboarding automation workflow for agencies and professional services firms: owners, timings, scripts to copy, and what breaks.
 cover: how-to-automate-client-onboarding-flow.png
-draft: true
+draft: false
 tags: [client onboarding, automation, workflow, agencies, professional services, playbook]
 ---
 

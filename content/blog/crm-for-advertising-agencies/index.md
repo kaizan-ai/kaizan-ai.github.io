@@ -6,7 +6,7 @@ category: POV
 topic: client-software
 excerpt: An agency CRM needs five objects beyond deals: client, brand, campaign, stakeholder and renewal. See the fields to track and how to build it.
 cover: crm-for-advertising-agencies-entity-diagram.png
-draft: true
+draft: false
 tags: [crm, advertising agencies, salesforce, hubspot, renewals, stakeholder mapping]
 ---
 

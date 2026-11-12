@@ -5,7 +5,7 @@ author: James Caples
 category: POV
 topic: playbooks-and-templates
 excerpt: How to structure and fill in a quarterly business review for an agency: the eight-part agenda, what a good answer looks like in each section, and common mistakes.
-draft: true
+draft: false
 tags: [quarterly business review, qbr, qbr template, agencies, client success, client health]
 ---
 
