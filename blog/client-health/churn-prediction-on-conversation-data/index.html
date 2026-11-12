@@ -1,0 +1,644 @@
+        <!doctype html>
+        <html lang="en-GB">
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Google Consent Mode v2: deny non-essential storage until
+     consent.js reads the visitor's saved choice (or they make one). -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'analytics_storage': 'denied',
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted'
+});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
+<!-- End Google Tag Manager -->
+<!-- RB2B -->
+<script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("VN080HZ7186J");</script>
+<!-- End RB2B -->
+
+        <title>How Churn Prediction Works on Conversation Data · Kaizan</title>
+<script data-kz-idx>if(/\/index\.html$/.test(location.pathname))location.replace(location.pathname.replace(/index\.html$/,"")+location.search+location.hash)</script>
+<link rel="alternate" hreflang="en-GB" href="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/"><link rel="alternate" hreflang="en-US" href="https://kaizan.ai/us/blog/client-health/churn-prediction-on-conversation-data/"><link rel="alternate" hreflang="x-default" href="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/">
+        <meta name="description" content="Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.">
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/img/favicon-32x32.png?v=89c819ed">
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/img/favicon-16x16.png?v=4c633a30">
+        <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
+        <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
+        <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=6007e719">
+        <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
+        <link rel="canonical" href="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="How Churn Prediction Works on Conversation Data">
+        <meta property="og:description" content="Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.">
+        <meta property="og:url" content="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="How Churn Prediction Works on Conversation Data">
+        <meta name="twitter:description" content="Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.">
+        <meta property="og:image" content="https://kaizan.ai/assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png">
+        <meta name="twitter:image" content="https://kaizan.ai/assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png">
+        <meta property="article:published_time" content="2026-11-10">
+        <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/#article", "url": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/"}, "headline": "How Churn Prediction Works on Conversation Data", "description": "Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.", "inLanguage": "en-GB", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png", "keywords": "churn prediction, conversation data, client health, predictive analytics, retention, professional services"}]}</script>
+        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=8d422e4e">
+        <!-- HubSpot's own direct tracking script loads only after cookie
+             consent for Marketing (see assets/js/consent.js), which also
+             sends Consent Mode updates for GTM's own tags. -->
+        <script defer src="../../../assets/dist/js/consent.js?v=a54ddfc4"></script>
+        </head>
+        <body>
+        <div class="kz-page">
+        <main class="kz-main">
+
+    <header class="kz-nav" role="banner">
+      <a class="kz-nav-logo" href="/">
+        <img class="icon" src="../../../assets/img/kaizan-icon.png?v=36c55982" alt="">
+        <img class="word" src="../../../assets/img/kaizan-logo.png" alt="Kaizan">
+      </a>
+      <nav class="kz-nav-links" aria-label="Primary">
+        
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" href="../../../product/" aria-expanded="false" aria-haspopup="true">
+                  Product <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../../product/">Overview</a>
+<a class="kz-drop-link" href="../../../integrations/">Integrations</a>
+                </div>
+              </span><span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;"><a class="kz-mega-trigger" aria-expanded="false">Product Guides <span class="kz-mega-caret">▾</span></a><div class="kz-mega-panel kz-mega-panel--simple" role="menu"><a class="kz-mega-link" href="/for/account-manager/">Client Service / Account Manager</a>
+<a class="kz-mega-link" href="/for/client-service-director/">Head of Client Services</a>
+<a class="kz-mega-link" href="/for/leadership/">Senior Leadership</a>
+<a class="kz-mega-link" href="/for/head-of-ai/">Head of AI / CTO</a>
+<a class="kz-mega-link" href="/for/project-manager/">Project Manager</a>
+<a class="kz-mega-link" href="/for/new-business/">New Business / Sales</a>
+<a class="kz-mega-link" href="/for/performance/">Performance / Operations</a>
+<a class="kz-mega-link" href="/for/strategy-creative-marketing/">Strategy, Creative, Marketing</a></div></span><a href="../../../pricing/">Pricing</a>
+              <span class="kz-mega-wrap" data-mega-menu style="position:relative;display:inline-block;">
+                <a class="kz-mega-trigger" aria-expanded="false" tabindex="0" role="button" aria-haspopup="true">
+                  Resources <span class="kz-mega-caret">▾</span>
+                </a>
+                <div class="kz-mega-panel kz-drop-panel" role="menu">
+                  <a class="kz-drop-link" href="../../../resources/">All resources</a>
+<a class="kz-drop-link" href="../../../blog/">Blog</a>
+<a class="kz-drop-link" href="../../../resources/white-paper/">White paper</a>
+<a class="kz-drop-link" href="../../../case-studies/">Case studies</a>
+<a class="kz-drop-link" href="../../../knowledge-hub/">Knowledge Hub</a>
+<a class="kz-drop-link" href="../../../hall-of-fame/">Hall of Fame</a>
+<a class="kz-drop-link" href="../../../faq/">FAQs</a>
+<a class="kz-drop-link" href="../../../security/">Security</a>
+                </div>
+              </span><a href="../../../about/">About</a><a href="../../../referral-partners/">Partner Programme</a>
+      </nav>
+      <div class="kz-nav-cta">
+        <a class="kz-btn kz-btn-ghost kz-nav-login" href="https://app.kaizan.ai/">Login</a>
+        <a class="kz-btn kz-btn-yellow" href="mailto:hello@kaizan.ai" data-book-call>Book a demo</a>
+        <button class="kz-nav-toggle" aria-label="Open menu" type="button"><span class="bar"></span></button>
+      </div>
+    </header>
+    
+    <article class="kz-essay kz-post" style="padding-top:48px;">
+      <div class="kz-essay-body kz-post-body">
+        <h1 class="kz-post-title">How Churn Prediction Works on Conversation Data</h1>
+        <img class="kz-post-hero" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png" alt="How Churn Prediction Works on Conversation Data" decoding="async">
+        <p>Customer churn prediction software scores the likelihood that a client relationship ends before the client says a word. On conversation data specifically, that means it reads what gets said on calls, in emails, and in chat threads, not what gets clicked inside a product. That distinction is the whole story for professional services firms, because there is no login screen to measure.</p>
+
+<p><strong>Who this is for:</strong> heads of AI and technology weighing whether to build this in-house or buy it, and heads of client service who need the business case for a churn model that actually fits how an agency or consultancy works.</p>
+
+<p><strong>Key takeaways</strong></p>
+
+<ul>
+<li>Churn prediction software for conversation-heavy businesses reads sentiment, risk mentions, response times, and stakeholder coverage, instead of product usage logs.</li>
+<li>It is not the same thing as health scoring, though the two are related. Churn prediction answers "will this account leave." Health scoring answers "what is happening, and why."</li>
+<li>Professional services firms retain 84% of clients on average, so roughly one client in six is up for renewal risk every year.</li>
+<li>A churn model is only as good as the labels it trains on: retained, expanded, and lost accounts, not just the accounts that left.</li>
+</ul>
+
+<h2>What is customer churn prediction software?</h2>
+
+<p>Customer churn prediction software is a system that assigns a risk score to each client relationship, based on patterns that preceded past departures and past renewals. It is a specific application of predictive analytics, applied to the question agencies and consultancies actually lose sleep over: which client leaves next, and is there still time to act.</p>
+
+<p>Most churn prediction tools were built for subscription software, where the inputs are logins, feature usage, and support tickets. A client services relationship has none of that. What it has instead is a stream of calls, emails, and chat messages, so a churn prediction model built for this world has to read conversation data, meaning the words said, who said them, how often, and in what tone.</p>
+
+<h3>Customer churn prediction and prevention</h3>
+
+<p>Prediction is the easy half of the phrase. A risk score with nowhere to go is a dashboard nobody opens. Customer churn prediction and prevention means the score triggers a recommended next step, such as a stakeholder to re-engage or an escalation to schedule, before the renewal conversation starts. Software that only scores risk without routing it to an owner and an action is not doing the prevention half of the job.</p>
+
+<h3>Predictive analytics customer churn</h3>
+
+<p>Predictive analytics is the broader discipline: using historical data to forecast a future outcome. Applied to customer churn, it means training a model on what retained, expanded, and lost accounts looked like in the months before the outcome was known, then scoring live accounts against those same patterns. The predictive part only holds if the model is trained on outcomes that actually happened, not assumptions about what should predict churn.</p>
+
+<h3>Where to find customer churn prediction platforms</h3>
+
+<p>Three places, with different strengths.</p>
+
+<ul>
+<li><strong>Built into a client success or client health platform.</strong> The churn score sits alongside a wider relationship health model, so a team sees the why behind the will-they-leave. Kaizan works this way: CARE scores every client relationship, and the risk read comes from the same conversation data as everything else the platform does.</li>
+<li><strong>As a module inside a SaaS-focused customer success platform</strong>, such as Gainsight, Totango, or Vitally. Strong on product usage and support ticket signals, weaker on agency-style relationships where there is no product telemetry to read.</li>
+<li><strong>As a custom build</strong>, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labeling, and maintenance that a platform already absorbs.</li>
+</ul>
+
+<p>A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see <a href="https://www.kaizan.ai/us/blog/client-software/customer-retention-software-for-agencies/">customer retention software for agencies and service firms</a>.</p>
+
+<h2>Why this matters in revenue terms</h2>
+
+<p>The average professional services firm retains 84% of its clients year over year, according to retention benchmarks compiled from Bain &amp; Company and other industry sources. That means roughly one client in six is up for renewal risk every year, in a typical firm, whether or not anyone is watching for it.</p>
+
+<p>Two findings from Kaizan's analysis of over 1 million calls and 10 million emails across client accounts change how that risk should be read.</p>
+
+<ul>
+<li><strong>Accounts that go on to grow show more risk conversation, not less.</strong> Top-performing accounts surface 2.21 times more risk phrases per year than bottom-performing ones, 15.3 versus 6.9. The healthiest relationships are not the quiet ones. A quiet risk register on an active account is a warning sign, not a green light.</li>
+<li><strong>Struggling accounts almost always say something first.</strong> About 69% of accounts that went on to struggle raised a warning sign in conversation at least once, and 38% raised the same concern repeatedly across multiple periods, which tracks with <a href="https://www.kaizan.ai/us/blog/client-health/np-digital-early-warning-alerts/">what one agency found once it could see the warning</a>: clients who leave rarely leave without warning. The problem is that nobody was listening across every call, every email, and every account at once. Catching that moment, and <a href="https://www.kaizan.ai/us/blog/playbooks-and-templates/re-engage-inactive-clients/">re-engaging before a client goes quiet for good</a>, is where most of the value sits.</li>
+</ul>
+
+<p>Firms that act on these signals early see it in the number that matters. Kaizan clients report an average 26%+ revenue increase per client, and protect an average 45% of revenue otherwise at risk, by acting on signals while there is still time rather than after the renewal is already lost.</p>
+
+<h2>The components of a churn prediction pipeline</h2>
+
+<p>A working churn prediction system on conversation data has four parts. Each does a specific job, and skipping any of them is where most builds and most off-the-shelf tools fall short.</p>
+
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png" alt="Four-stage churn prediction pipeline: signal capture, feature extraction, the model, and alerting with a recommended next action." /></p>
+
+<h3>Signal capture</h3>
+
+<p>Every call, email, and chat message tied to a client gets captured and attached to that client's record, automatically, not manually logged by an account manager who may or may not remember to do it. This is the step most agencies already fail at: account teams typically touch several separate tools per client per week, and a meaningful share of what gets said never makes it into any system of record at all.</p>
+
+<h3>Feature extraction</h3>
+
+<p>Raw conversation does not predict anything on its own. It has to be turned into signals a model can use.</p>
+
+<ul>
+<li><strong>Sentiment trend</strong> over 30, 60, and 90 days, not a single sentiment snapshot. A client who was warm and has gone neutral is a stronger signal than one who has always been blunt.</li>
+<li><strong>Risk mention frequency and trajectory.</strong> A risk raised once is not alarming. The same concern raised across four consecutive weeks is.</li>
+<li><strong>Response time and communication recency.</strong> Days since the last meaningful contact, excluding automated emails. Three weeks of silence on an active account is a signal worth reading.</li>
+<li><strong>Decision-maker recency and stakeholder coverage.</strong> When did the budget holder last engage, and is the relationship running through one person or several. Single-threaded accounts, where one contact on each side carries the whole relationship, are one of the strongest predictors of loss.</li>
+</ul>
+
+<h3>The model</h3>
+
+<p>The model is trained on what actually happened to an organization's own book of clients: who renewed, who expanded, and who left, with the conversation patterns that preceded each outcome. This matters because a generic churn model trained on someone else's accounts learns someone else's patterns. A model calibrated on an organization's own retained, expanded, and lost accounts learns what churn actually looks like in that specific client base, which is a materially different and more reliable signal.</p>
+
+<h3>Alerting and the next action</h3>
+
+<p>A risk score becomes useful the moment it reaches a person with the context to act on it, along with a suggested first move: re-engage a dormant stakeholder, schedule a save conversation, loop in a more senior contact. Without this step, prediction is just an interesting number.</p>
+
+<h2>How churn prediction differs from the terms it gets confused with</h2>
+
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-vs-health-scoring.png" alt="Comparison of churn prediction, client health scoring, CSAT and NPS surveys, and CRM win-loss reporting by what each measures and what it tells you." /></p>
+
+<table>
+<thead>
+<tr>
+  <th>Term</th>
+  <th>What it measures</th>
+  <th>Where the data comes from</th>
+  <th>What it tells you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Churn prediction software</td>
+  <td>The probability a specific account leaves</td>
+  <td>Conversation history, CRM, usage logs where they exist</td>
+  <td>Who is at risk, and roughly how urgently</td>
+</tr>
+<tr>
+  <td>Client health scoring</td>
+  <td>The overall state of the relationship across several dimensions</td>
+  <td>The same conversation data, plus relationship and growth signals</td>
+  <td>What is happening and why, not just a yes or no on churn</td>
+</tr>
+<tr>
+  <td>CSAT and NPS surveys</td>
+  <td>How a client rated the relationship at the moment they were asked</td>
+  <td>A periodic survey response</td>
+  <td>A snapshot, sampled only when someone sends the survey</td>
+</tr>
+<tr>
+  <td>CRM win-loss reporting</td>
+  <td>Why a deal or renewal was won or lost, after the fact</td>
+  <td>Notes entered once the outcome is already known</td>
+  <td>A retrospective record, not a forecast</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Churn prediction vs. health scoring: which do you need</h3>
+
+<p>These two get used interchangeably, and they are related but not the same thing. Churn prediction is a single output: a risk score, usually expressed as a probability or a band. Health scoring is a diagnostic: it breaks a relationship into the dimensions that make it strong or fragile, so a team sees which one needs attention, not just that something is wrong.</p>
+
+<p>In practice, the best churn prediction is a byproduct of good health scoring, not a replacement for it. <a href="https://www.kaizan.ai/us/product/#health-model">Kaizan's health model</a>, known externally as the Evidence-Based Client Health Standard and internally as CARE, scores every client relationship across four dimensions: how the client feels about the work, whether the right people are being engaged often enough, whether the relationship is deepening or going transactional, and whether the conditions are right to grow it. A risk read calibrated against an organization's own retained, expanded, and lost accounts sits on top of that same scoring, so the churn signal comes with the why already attached, not just a number.</p>
+
+<p>If a tool only gives a risk score with no breakdown underneath it, a team can see that an account is in trouble but not what to do about it. That is the gap a pure churn-prediction tool leaves, and the gap health scoring closes.</p>
+
+<h2>How it works in practice: a worked example</h2>
+
+<p>Take an anonymized account from Kaizan's own client portfolio, Agency Client A, scored 1.4 out of 10 overall on its most recent review period, down from 1.5 the period before. The breakdown told a clearer story than the headline number: satisfaction at 0.7, relationship strength at 2.1, activity at 2.5, and expansion readiness at 0.4. But the detail that mattered most was not any single score. It was the volume of conversation behind it. Almost nothing had been logged for the account in the review window.</p>
+
+<p>That silence was the flag, not a reassurance.</p>
+
+<blockquote>
+  <p>"We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."</p>
+  
+  <p>— Chief Operating Officer, Agency Client B</p>
+</blockquote>
+
+<p>For another agency leader, the shift showed up directly in how long it took to answer the question leadership actually asks.</p>
+
+<blockquote>
+  <p>"Kaizan is fast becoming the key input to my churn report. Something that used to take me hours now takes me minutes."</p>
+  
+  <p>— MD and Chief Client Officer, Agency Client C</p>
+</blockquote>
+
+<p>And for a CEO running a portfolio of accounts across an agency group, the churn question was really a revenue question in disguise.</p>
+
+<blockquote>
+  <p>"I just want to know, is my revenue at risk? Client health is a very big indicator for hitting those revenue numbers. And that's what I need to know."</p>
+  
+  <p>— Senior leader, Agency Client D</p>
+</blockquote>
+
+<p>The action that follows a flag like Agency Client A's is rarely dramatic. It is usually a specific stakeholder to re-engage, a senior contact to loop back in, or an honest conversation scheduled before the renewal date forces one. The value of the prediction is entirely in how much runway it buys the account team to have that conversation on their own terms.</p>
+
+<h2>How to measure churn prediction: formula and a worked calculation</h2>
+
+<p>Two measurements matter, for two different audiences.</p>
+
+<p><strong>Model quality</strong>, for the team evaluating the system: precision and recall. Precision is the share of accounts flagged as at-risk that genuinely were. Recall is the share of accounts that actually churned that the model caught in time. A model that flags half the portfolio as at-risk has high recall and useless precision, since nobody can act on half a book of clients at once. The tradeoff between the two matters more than either number alone.</p>
+
+<p><strong>Revenue protected</strong>, for the business case:</p>
+
+<p>Revenue at risk = Portfolio value × Annual attrition rate</p>
+
+<p>Revenue protected = Revenue at risk × Early-signal protection rate</p>
+
+<p>Worked example, for a 150-person professional services firm with 40 clients averaging $120,000 in annual value.</p>
+
+<ul>
+<li>Portfolio value: 40 clients times $120,000 equals $4,800,000</li>
+<li>At the professional-services average attrition rate of roughly 16%, the inverse of the commonly cited 84% average retention rate, revenue at risk equals $4,800,000 times 0.16, or $768,000 per year</li>
+<li>At a 45% early-signal protection rate, the average Kaizan clients see from acting on CARE-driven alerts, revenue protected equals $768,000 times 0.45, or $345,600 per year, recovered without closing a single new deal</li>
+</ul>
+
+<p>The 84% retention figure is an industry-wide average compiled from multiple sources and should be treated as directional for any single firm. The real number for a given book of clients depends heavily on service line, contract length, and client concentration.</p>
+
+<h2>Data requirements for churn prediction on conversation data</h2>
+
+<p>Before any model produces a usable score, four things need to be in place.</p>
+
+<ul>
+<li><strong>Enough conversation history to establish a baseline.</strong> A handful of calls tells a model very little. Three to six months of consistent capture across calls, emails, and chat gives the signal extraction something to work with.</li>
+<li><strong>Labeled outcomes to train against.</strong> The model needs examples of accounts that were retained, accounts that expanded, and accounts that were lost, not just the lost ones. Training on losses alone teaches a model what failure looks like, not what success looks like, and the two are not simply opposites.</li>
+<li><strong>Integration with the systems that hold the conversation.</strong> Email, calendar, call recording, and CRM, connected automatically rather than relying on manual logging, which is where most of the signal gets lost today.</li>
+<li><strong>A defensible data handling posture.</strong> Conversation data is sensitive client information. Any platform doing this work should be able to show SOC 2 Type II certification, encryption in transit and at rest, zero-retention commitments with any foundation model providers, and per-tenant data isolation, since none of it should be used to train a shared or public model.</li>
+</ul>
+
+<p>For a head of AI or technology taking this to a client security review, that last point is usually the one that decides the conversation. <a href="https://www.kaizan.ai/us/security/">Kaizan's security practices</a> cover this in detail, including SOC 2 Type II certification, GDPR compliance, and zero-retention API contracts with OpenAI and Anthropic.</p>
+
+<h2>Common mistakes, and what they cost</h2>
+
+<ul>
+<li><strong>Training only on accounts that already left.</strong> This produces a model that recognizes failure after the fact and struggles to generalize to accounts struggling in a new way. Train on the full spread: retained, expanded, and lost.</li>
+<li><strong>Reading quiet accounts as healthy accounts.</strong> The data says the opposite. A relationship with almost no conversation activity is one nobody has eyes on, which is a different problem from a relationship that is genuinely fine.</li>
+<li><strong>Relying on a survey for the how-do-they-feel signal.</strong> Where CSAT is actually measured, happy and struggling accounts often score close to identical. The real gap is how often anyone bothers to ask. A quarterly survey cannot catch a risk that develops over three weeks.</li>
+<li><strong>Scoring the account but not the stakeholders inside it.</strong> A relationship that looks fine in aggregate can still be running through a single contact on each side. That is a structural vulnerability a headline risk score will not show.</li>
+<li><strong>Shipping a score with no owner.</strong> If a flagged account does not land on someone's desk with a suggested next step, the prediction changes nothing.</li>
+</ul>
+
+<h2>How to get started in 30 days</h2>
+
+<ol>
+<li><strong>Week 1: connect the conversation sources.</strong> Email, calendar, call recording tools, and the CRM. This step determines whether the model has anything real to read.</li>
+<li><strong>Week 2: let a baseline build.</strong> Resist the urge to act on day-one scores. A model needs a few weeks of live conversation to separate signal from noise on a new account base.</li>
+<li><strong>Week 3: calibrate against known outcomes.</strong> Flag the accounts everyone already knows are shaky, and the ones everyone is confident about. Check whether the scores agree with what the team already knows. Disagreement here is useful information, not a failure.</li>
+<li><strong>Week 4: pilot the action loop on five accounts.</strong> Pick a small number of flagged accounts, assign an owner to each, and run the recommended next action. The point of the pilot is to prove the loop from signal to action works before rolling it across the whole portfolio.</li>
+</ol>
+
+<h2>Frequently asked questions</h2>
+
+<p><strong>What is customer churn prediction and prevention?</strong>
+Prediction is the risk score. Prevention is what happens next: a recommended action, routed to an account owner, before the renewal conversation starts. Software that only produces a score without a next step only does half the job.</p>
+
+<p><strong>What is predictive analytics for customer churn?</strong>
+It is the practice of training a model on historical outcomes, meaning which accounts were retained, expanded, or lost, and the conversation patterns that preceded each one, then applying those patterns to score live accounts.</p>
+
+<p><strong>Where can you find customer churn prediction platforms?</strong>
+Inside client success and client health platforms, where the score sits alongside a wider relationship model, as a module in SaaS-focused customer success tools built for product usage data, or as a custom build on top of CRM exports and call transcripts.</p>
+
+<p><strong>How do you measure churn prediction accuracy?</strong>
+With precision and recall for model quality, and with revenue protected, portfolio value times attrition rate times the share caught early, for the business case. Neither number means much without the other.</p>
+
+<p><strong>How is churn prediction different from health scoring?</strong>
+Churn prediction outputs a single probability that an account leaves. Health scoring breaks the relationship into the dimensions driving that risk, so a team sees what to fix, not just that something is wrong. The strongest setups use health scoring as the foundation and derive the churn read from it.</p>
+
+<p><strong>Who owns churn prediction in an agency?</strong>
+Typically the head of client service owns acting on the signal, while a head of AI or technology owns whether the underlying system meets the firm's data and security standards. Both need visibility into the same score.</p>
+
+<p><strong>Can churn prediction work without much historical data?</strong>
+It can start working within the first baseline period, three to six months of consistent conversation capture, but accuracy improves as the model sees more complete outcomes, meaning full renewal cycles rather than a handful of calls.</p>
+
+<p><strong>Does churn prediction need a CRM integration?</strong>
+It benefits from one, but conversation data, meaning calls, emails, and chat, is the primary input on relationships that do not generate product usage logs. A CRM adds account metadata and deal history. It is not a substitute for reading the conversations themselves.</p>
+
+<p><strong>Will this replace a quarterly QBR or satisfaction survey?</strong>
+No, and it should not try to. Surveys and QBRs are useful checkpoints. Churn prediction on conversation data fills the gap between them: the weeks where a relationship can shift before the next scheduled check-in arrives.</p>
+
+<hr />
+
+<p>To see how Kaizan scores churn risk on your own conversation data, <a href="https://www.kaizan.ai/us/">book a demo</a>.</p>
+        <div class="kz-post-back"><a href="../">← More in Client health</a> · <a href="../../">All posts</a></div>
+      </div>
+    </article>
+    <footer class="kz-footer">
+      <div class="kz-footer-news">
+        <div class="kz-footer-news-copy">
+          <span class="kz-footer-news-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="#000" stroke-width="2"/><path d="M4 7l8 6 8-6" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h4>Get the Kaizan <span class="kz-y">newsletter</span></h4>
+          <p><strong>What’s really happening inside client relationships.</strong><br>
+          Benchmarks from real account data, playbooks from teams that keep clients longer, and practical AI for client service.</p>
+        </div>
+        <form class="kz-footer-news-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" method="post" target="_blank"
+              data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&id=40f0f855d8&f_id=006befe5f0" data-newsletter novalidate>
+          <div class="kz-footer-news-row">
+            <label class="kz-sr-only" for="kz-nl-email">Work email</label>
+            <input id="kz-nl-email" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            <button type="submit" name="subscribe" class="kz-btn kz-btn-yellow">Subscribe</button>
+          </div>
+          <div class="kz-footer-news-role" data-newsletter-role>
+            <label for="kz-nl-role">Your job role</label>
+            <select id="kz-nl-role" name="ROLE" required><option value="">Select your role…</option><option>Client Service / Account Manager</option><option>Head of Client Services</option><option>Senior Leadership</option><option>Head of AI / CTO</option><option>Project Manager</option><option>New Business / Sales</option><option>Performance / Operations</option><option>Strategy, Creative, Marketing</option><option>Other</option></select>
+          </div>
+          <input type="hidden" name="tags" value="newsletter">
+          <!-- Mailchimp bot-prevention field, keep, do not remove -->
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_40f0f855d8" tabindex="-1" value="">
+          </div>
+          <p class="kz-footer-news-msg" role="status" aria-live="polite" hidden></p>
+          <p class="kz-consent kz-consent--dark">You can unsubscribe at any time. See our <a href="../../../privacy-policy/">Privacy Policy</a>.</p>
+        </form>
+      </div>
+      <div class="kz-footer-grid">
+        <div class="kz-footer-brand logo-light">
+          <a class="kz-nav-logo" href="/">
+            <img class="icon" src="../../../assets/img/kaizan-icon.png?v=36c55982" alt="">
+            <img class="word" src="../../../assets/img/kaizan-logo.png" alt="Kaizan">
+          </a>
+          <p class="blurb">Client super intelligence for professional services firms.</p>
+          <p class="footer-address">Covent Garden, London · Madison Avenue, New York</p>
+        </div>
+        <div class="col"><h4>Product</h4><a href="../../../product/">Overview</a>
+<a href="../../../integrations/">Integrations</a>
+<a href="../../../security/">Security</a></div><div class="col"><h4>For</h4><a href="../../../for/account-manager/">Account Manager</a>
+<a href="../../../for/project-manager/">Project Manager</a>
+<a href="../../../for/leadership/">Leadership</a>
+<a href="../../../for/new-business/">New Business</a></div><div class="col"><h4>Company</h4><a href="../../../about/">About</a>
+<a href="../../../security/">Security</a>
+<a href="../../../faq/">FAQ</a></div><div class="col"><h4>Get in touch</h4><a href="mailto:hello@kaizan.ai" data-book-call>Book a demo</a>
+<a href="https://app.kaizan.ai/">Login</a>
+<a href="mailto:hello@kaizan.ai">Contact</a>
+<a href="https://www.linkedin.com/company/kaizan">LinkedIn</a></div>
+      </div>
+      <div class="kz-footer-bot">
+        <span>© 2026 Kaizan Ltd. · <a class="kz-locale-switch" data-locale-switch href="/us/blog/client-health/churn-prediction-on-conversation-data/" hidden>View US site</a></span>
+        <span>
+          <a href="../../../privacy-policy/">Privacy</a> ·
+          <a href="../../../license-agreement/">Terms</a> ·
+          <a href="../../../cookie-policy/">Cookies</a> ·
+          <a href="../../../data-processing-agreement/">DPA</a> ·
+          <a href="#" data-cookie-settings>Cookie settings</a>
+        </span>
+      </div>
+    </footer>
+    <link rel="stylesheet" href="/assets/dist/css/wp-strip.css?v=465c7b7e">
+    <div class="wp-popup" id="wp-popup" hidden>
+      <div class="wp-popup__card wp-strip" role="dialog" aria-modal="false" aria-labelledby="wp-popup-title">
+        <button type="button" class="wp-popup__close" aria-label="Close">&times;</button>
+        <div class="wp-strip__in">
+        <div class="wp-strip__copy">
+          <span class="wp-strip__badge"><i></i>The 2026 Client Service Report &middot; Free</span>
+          <h2 class="wp-strip__title" id="wp-popup-title">What drives higher Revenue &amp; CSAT in the top 10% of clients.</h2>
+          <p>The Best vs The Rest: a first-of-its-kind benchmark drawn from 1M+ calls, 10M+ emails and thousands of chat messages, all anonymised. It compares client service professionals where relationships grow with those where they slip away, and shows the 8 behaviours that mark the top 10% of account teams, the KPIs that lead to happy clients and the CARE framework.</p>
+          <div class="wp-strip__pages" aria-hidden="true"><img src="/assets/img/white-paper/report-page-01.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-08.png" alt="" width="92" loading="lazy"><img src="/assets/img/white-paper/report-page-care.png" alt="" width="92" loading="lazy"></div>
+        </div>
+        <form class="wp-strip__form" novalidate>
+          <h3>Download the 2026 Report</h3>
+          <label class="wp-strip__field"><span>Work email</span>
+            <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+            <div class="wp-strip__err" role="alert"></div></label>
+          <label class="wp-strip__field"><span>Job title</span>
+            <select name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option>Head of Client Services / CS</option>
+<option>Client Success Manager</option>
+<option>Account Director / Manager</option>
+<option>Founder / CEO</option>
+<option>Head of AI / CTO</option>
+<option>VP / Commercial Leader</option>
+<option>Marketing / Operations</option>
+<option>Agency Leader</option>
+<option>Other</option>
+            </select>
+            <div class="wp-strip__err" role="alert"></div></label>
+          <button type="submit">Get the report &rarr;</button>
+          <p class="kz-consent kz-consent--dark">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
+          <div class="wp-strip__fail" role="alert">Something went wrong. Please try again.</div>
+        </form>
+      </div>
+      </div>
+    </div>
+    <script defer src="/assets/dist/js/wp-strip.js?v=726eade7"></script>
+    </main>
+</div>
+
+<div class="cb-overlay" id="cb-overlay" hidden>
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
+    <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
+      <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
+      <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
+      <button class="cb-tab" role="tab" data-tab="about" aria-selected="false" tabindex="-1">About</button>
+    </div>
+
+    <div class="cb-body">
+      <section data-panel="consent" role="tabpanel">
+        <h2 id="cb-title">This website uses cookies</h2>
+        <p>We use cookies to keep the site working, to remember your preferences and to understand which pages are useful so we can improve them. You choose which types to allow. <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">Read our privacy policy.</a></p>
+      </section>
+
+      <section data-panel="details" role="tabpanel" hidden>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-necessary"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Necessary <span class="cb-count">12</span></button>
+            <label class="cb-switch"><input type="checkbox" checked disabled aria-label="Necessary cookies, always on"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-necessary">These cookies keep the site working, for example by remembering your consent choice and keeping forms secure. The site can't work properly without them.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-preferences"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Preferences <span class="cb-count">3</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="preferences" aria-label="Preferences cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-preferences">These remember choices you make, like your language or region, so the site feels familiar next time you visit.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-statistics"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Statistics <span class="cb-count">5</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="statistics" aria-label="Statistics cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-statistics">These collect anonymous information about how visitors use the site, so we can see what works and fix what doesn't.</p>
+        </div>
+        <div class="cb-cat">
+          <div class="cb-cat-top">
+            <button class="cb-cat-toggle" aria-expanded="true" aria-controls="cd-marketing"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 4.5 7 9.5l5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Marketing <span class="cb-count">8</span></button>
+            <label class="cb-switch"><input type="checkbox" data-cat="marketing" aria-label="Marketing cookies"><span></span></label>
+          </div>
+          <p class="cb-cat-desc" id="cd-marketing">These measure how well our campaigns perform and show you relevant ads on other websites.</p>
+        </div>
+      </section>
+
+      <section data-panel="about" role="tabpanel" hidden>
+        <p>Cookies are small text files that websites store on your device. Some are essential; others help us remember your settings or understand how the site is used.</p>
+        <p>Your choice is remembered for this browser. You can change or withdraw it at any time using <strong>Cookie settings</strong> in the page footer.</p>
+        <p>For details on who we share data with and how long we keep it, see our <a href="https://kaizan.ai/privacy-policy/" target="_blank" rel="noopener">privacy policy</a>.</p>
+      </section>
+    </div>
+
+    <div class="cb-foot" data-foot="consent">
+      <button class="cb-btn line" data-act="manage">Manage cookies</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
+    </div>
+    <div class="cb-foot" data-foot="details" hidden>
+      <button class="cb-btn line" data-act="selection">Allow selection</button>
+      <button class="cb-btn dark" data-act="reject">Reject all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all</button>
+    </div>
+  </div>
+</div>
+<div class="kz-bc" data-book-call-modal hidden role="dialog" aria-modal="true" aria-labelledby="kz-bc-title">
+  <div class="kz-bc-backdrop" data-bc-close></div>
+  <div class="kz-bc-dialog">
+    <div class="kz-trial kz-bc-card">
+      <svg class="kz-trial-art" viewBox="0 0 280 150" aria-hidden="true">
+  <circle cx="140" cy="78" r="62" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.10"/>
+  <circle cx="140" cy="78" r="40" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.18"/>
+  <circle cx="140" cy="78" r="22" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.28"/>
+  <g stroke="currentColor" stroke-linecap="round">
+    <line x1="140" y1="78" x2="82" y2="38" stroke-width="0.8" opacity="0.32"/>
+    <line x1="140" y1="78" x2="58" y2="92" stroke-width="1.6" opacity="0.62"/>
+    <line x1="140" y1="78" x2="198" y2="30" stroke-width="1" opacity="0.42"/>
+    <line x1="140" y1="78" x2="224" y2="82" stroke-width="1.6" opacity="0.58"/>
+    <line x1="140" y1="78" x2="170" y2="128" stroke-width="0.9" opacity="0.36"/>
+    <line x1="140" y1="78" x2="98" y2="122" stroke-width="1.1" opacity="0.46"/>
+    <line x1="140" y1="78" x2="246" y2="42" stroke-width="0.6" opacity="0.22" stroke-dasharray="2 3"/>
+  </g>
+  <g fill="currentColor">
+    <circle cx="82" cy="38" r="3.5"/><circle cx="198" cy="30" r="2.5"/><circle cx="224" cy="82" r="5"/>
+    <circle cx="170" cy="128" r="2.5"/><circle cx="98" cy="122" r="4"/><circle cx="246" cy="42" r="2"/>
+  </g>
+  <circle cx="58" cy="92" r="6" fill="#FFB900" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="58" cy="92" r="2" fill="currentColor"/>
+  <circle cx="198" cy="30" r="9" fill="none" stroke="#FFB900" stroke-width="1.4" opacity="0.7"/>
+  <circle cx="140" cy="78" r="9" fill="currentColor"/>
+  <circle cx="140" cy="78" r="3.5" fill="#FFB900"/>
+  <g fill="#FFB900">
+    <circle cx="32" cy="22" r="2"/><circle cx="258" cy="118" r="2.2"/>
+    <circle cx="22" cy="108" r="1.4" opacity="0.6"/><circle cx="262" cy="62" r="1.6" opacity="0.65"/>
+    <circle cx="48" cy="138" r="1.4" opacity="0.55"/>
+  </g>
+  <path d="M 14 56 L 18 60 L 14 64 L 10 60 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+  <path d="M 268 18 L 272 22 L 268 26 L 264 22 Z" fill="#FFB900" stroke="currentColor" stroke-width="0.8"/>
+</svg>
+      <button type="button" class="kz-bc-x" data-bc-close aria-label="Close">&times;</button>
+      <form class="kz-trial-form" action="https://kaizan.us6.list-manage.com/subscribe/post?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=0005efe5f0" data-mc-json="https://kaizan.us6.list-manage.com/subscribe/post-json?u=b61e5cb1cebf0c30b44ebb455&amp;id=1ea9163949&amp;f_id=0005efe5f0"
+            data-confirm="/book-demo-confirmation/" method="post" target="_blank">
+        <h2 class="kz-trial-title" id="kz-bc-title">Book a call</h2>
+        <div class="kz-trial-fields">
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-FNAME">First name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-FNAME" name="FNAME" type="text" placeholder="Jamie" autocomplete="given-name" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-LNAME">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-LNAME" name="LNAME" type="text" placeholder="Rivera" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-EMAIL">Work email <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-EMAIL" name="EMAIL" type="email" placeholder="you@company.com" autocomplete="email" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-PHONE">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-PHONE" name="PHONE" type="tel" placeholder="07700 900000" autocomplete="tel" required>
+            </div>
+          </div>
+          <div class="kz-trial-row">
+            <div class="kz-trial-field">
+              <label for="bc-COMPNAME">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-COMPNAME" name="COMPNAME" type="text" placeholder="Acme &amp; Co." autocomplete="organization" required>
+            </div>
+            <div class="kz-trial-field">
+              <label for="bc-JOBT">Job title <span class="req" aria-hidden="true">*</span></label>
+              <input id="bc-JOBT" name="JOBT" type="text" placeholder="Head of Client Services" autocomplete="organization-title" required>
+            </div>
+          </div>
+          <div class="kz-trial-field">
+            <label for="bc-MMERGE12">How did you hear about us?</label>
+            <select id="bc-MMERGE12" name="MMERGE12">
+              <option value="">Select an option</option>
+              <option value="Google Search">Google Search</option>
+<option value="LinkedIn">LinkedIn</option>
+<option value="Social Media (Facebook/Instagram/TikTok/YouTube)">Social Media (Facebook/Instagram/TikTok/YouTube)</option>
+<option value="AI Tool (Chat GPT/Claude/Gemini)">AI Tool (Chat GPT/Claude/Gemini)</option>
+<option value="Referral (Friend/Colleague/Word of Mouth)">Referral (Friend/Colleague/Word of Mouth)</option>
+<option value="Email Newsletter">Email Newsletter</option>
+<option value="Event/Conference">Event/Conference</option>
+<option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <input type="hidden" name="UTMSRC" value="" data-utm="utm_source">
+<input type="hidden" name="UTMMED" value="" data-utm="utm_medium">
+<input type="hidden" name="UTMTRM" value="" data-utm="utm_term">
+<input type="hidden" name="UTMQRPLC" value="" data-utm="qr_placement">
+<input type="hidden" name="UTMCTA" value="" data-utm="utm_cta">
+<input type="hidden" name="UTMCAMP" value="" data-utm="utm_campaign">
+<input type="hidden" name="UTMCONT" value="" data-utm="utm_content">
+<input type="hidden" name="UTMCOUNTRY" value="" data-utm="utm_country">
+<input type="hidden" name="UTMUSP" value="" data-utm="utm_usp">
+<input type="hidden" name="UTMANGL" value="" data-utm="utm_angle">
+<input type="hidden" name="UTMHOOK" value="" data-utm="utm_hook">
+<input type="hidden" name="GCLID" value="" data-utm="gclid">
+<input type="hidden" name="UTMID" value="" data-utm="utm_id">
+<input type="hidden" name="UTMADGRP" value="" data-utm="utm_adgroup">
+        <div hidden><input type="hidden" name="tags" value="3789740,3789536"></div>
+        <div style="position:absolute;left:-5000px;" aria-hidden="true">
+          <input type="text" name="b_b61e5cb1cebf0c30b44ebb455_1ea9163949" tabindex="-1" value="">
+        </div>
+        <button type="submit" name="subscribe" class="kz-trial-submit">Book a call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        <p class="kz-trial-msg" data-bc-msg role="status" aria-live="polite"></p>
+        <p class="kz-trial-legal">
+          By submitting your details to Kaizan you are showing interest in our product and so we may
+          contact you about booking a call and about our product and services. Please review our
+          <a href="/privacy-policy/">Privacy Policy</a> for how we use your information.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<script defer src="/assets/dist/js/book-call.js?v=2ca4ffc6"></script>
+</body>
+</html>
