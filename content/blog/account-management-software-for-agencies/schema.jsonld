@@ -1,0 +1,527 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "The 10 best account management software tools compared",
+      "numberOfItems": 10,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Salesforce Sales Cloud",
+          "item": {
+            "@id": "@@PAGE@@#tool-salesforce-sales-cloud"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HubSpot Sales Hub",
+          "item": {
+            "@id": "@@PAGE@@#tool-hubspot-sales-hub"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Zoho CRM",
+          "item": {
+            "@id": "@@PAGE@@#tool-zoho-crm"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Pipedrive",
+          "item": {
+            "@id": "@@PAGE@@#tool-pipedrive"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "monday CRM",
+          "item": {
+            "@id": "@@PAGE@@#tool-monday-crm"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "DemandFarm",
+          "item": {
+            "@id": "@@PAGE@@#tool-demandfarm"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Kapta",
+          "item": {
+            "@id": "@@PAGE@@#tool-kapta"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Gainsight",
+          "item": {
+            "@id": "@@PAGE@@#tool-gainsight"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Planhat",
+          "item": {
+            "@id": "@@PAGE@@#tool-planhat"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Client intelligence platform",
+      "description": "Best for: Agencies and professional services firms running retained client portfolios. Client intelligence platform; priced by number of clients.",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-salesforce-sales-cloud",
+      "name": "Salesforce Sales Cloud",
+      "applicationCategory": "CRM",
+      "description": "Best for: Enterprises already standardised on Salesforce",
+      "url": "https://www.salesforce.com/sales/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-hubspot-sales-hub",
+      "name": "HubSpot Sales Hub",
+      "applicationCategory": "CRM",
+      "description": "Best for: Teams wanting an all-in-one, well-documented CRM for managing sales pipelines and sales processes",
+      "url": "https://www.hubspot.com/products/sales"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-zoho-crm",
+      "name": "Zoho CRM",
+      "applicationCategory": "CRM",
+      "description": "Best for: Budget-conscious small businesses and mid sized businesses",
+      "url": "https://www.zoho.com/crm/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-pipedrive",
+      "name": "Pipedrive",
+      "applicationCategory": "CRM (pipeline-led)",
+      "description": "Best for: Small sales-led teams wanting simplicity and a drag and drop interface for visual pipeline management",
+      "url": "https://www.pipedrive.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-monday-crm",
+      "name": "monday CRM",
+      "applicationCategory": "CRM (visual/work-management)",
+      "description": "Best for: Teams already running projects on monday.com",
+      "url": "https://monday.com/crm"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-demandfarm",
+      "name": "DemandFarm",
+      "applicationCategory": "Key account management",
+      "description": "Best for: Strategic key-account planning in large enterprise sales orgs",
+      "url": "https://www.demandfarm.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-kapta",
+      "name": "Kapta",
+      "applicationCategory": "Key account management",
+      "description": "Best for: Structured key-account programmes with execution workflows",
+      "url": "https://www.kapta.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-gainsight",
+      "name": "Gainsight",
+      "applicationCategory": "Customer success platform",
+      "description": "Best for: Enterprise SaaS customer success teams",
+      "url": "https://www.gainsight.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-planhat",
+      "name": "Planhat",
+      "applicationCategory": "Customer success platform",
+      "description": "Best for: Mid-market SaaS customer success teams",
+      "url": "https://www.planhat.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best account management software for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For agencies and professional services firms managing a portfolio of retained clients, Kaizan is built specifically for that shape of book. For firms already standardised on Salesforce, or managing a handful of very large enterprise accounts, Salesforce Sales Cloud or DemandFarm may fit better.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is key account management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Software built for a small number of large, strategic, multi-stakeholder accounts, with deep relationship mapping and account planning. DemandFarm and Kapta lead this category. Wrong fit for a volume book of dozens or hundreds of retained clients.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is account planning software, and what should an account plan include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It manages the living document for a client relationship: objective, stakeholder map, health, white space, renewal risk and next actions. See the worked example above.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need account management software if we already have a CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually yes, because a CRM and account management software answer different questions. The right account management software should fit your team’s workflows and the tools you already use. The exception is a firm managing a handful of very large accounts, where a key-account tool on top of the CRM may close the gap.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does account management software cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three pricing models: per seat ($12–$150/user/month), per client (Kaizan, priced by number of clients with unlimited users, price on quote), and quote-based. Run the numbers for your own ratio of staff to clients, and use free trials or demos before you choose account management software.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should we evaluate options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare customisation, onboarding, integrations and reporting against your team size, current workflows and growth plans.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there free account management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salesforce, HubSpot and Zoho CRM all have free tiers, but none includes account health scoring, risk alerting or stakeholder coverage.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does each person in the buying committee need to see?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Head of Client Service needs proof it replaces the manual spreadsheet. The Head of Ops/COO needs cost to deliver and adoption proof. The CEO/CFO needs revenue protected and expanded.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this replace our RAG spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the tool captures activity automatically and scores health continuously, yes. If it still requires manual logging, it's a prettier spreadsheet, not a replacement.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the team actually use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adoption lives or dies on whether the tool requires manual logging. An intuitive user interface matters here too, alongside automatic capture. Automatic capture tools see far higher sustained use.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can account management software integrate with existing tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, account management software integrate with email, calendar, CRM and finance tools so account data moves between the systems your team already relies on.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Account Management Software for Agencies: 10 Tools Compared",
+      "description": "What account management software is, how it differs from a CRM, the features worth paying for, and 10 tools compared with 2026 pricing for agencies.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-04",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "What account management software is, how it differs from a CRM, the features worth paying for, and 10 tools compared with 2026 pricing for agencies.",
+      "abstract": "Account management software is the system that tracks a client relationship after the sale closes: who the stakeholders are, how healthy the relationship is, what's been promised, and what's at risk. For agencies and professional services firms, the best tools go beyond a CRM's contact record to cover health scoring, stakeholder coverage and portfolio-wide risk, because a client relationship lives in meetings and inboxes, not deal stages. This guide is for a Head of Client Service building the case for a tool, or a Head of Ops/COO who has to defend the cost and the adoption risk.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-management-software-10-tools-by-type.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-04",
+      "articleSection": "Client software",
+      "keywords": [
+        "account management software",
+        "account management software for agencies",
+        "key account management software",
+        "account planning software",
+        "account management vs CRM",
+        "client health scoring",
+        "account plan example"
+      ],
+      "wordCount": 2704,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Heads of Client Service and Heads of Operations / COOs at agencies and professional services firms"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Account management software",
+          "description": "Account management software is the system that tracks a client relationship after the sale closes: who the stakeholders are, how healthy the relationship is, what's been promised, and what's at risk.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Account management",
+          "sameAs": "https://en.wikipedia.org/wiki/Account_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Key account management",
+          "sameAs": "https://en.wikipedia.org/wiki/Key_account_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Stakeholder analysis",
+          "sameAs": "https://en.wikipedia.org/wiki/Stakeholder_analysis"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/product/#health-model"
+      ],
+      "mentions": [
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        },
+        {
+          "@id": "@@PAGE@@#tool-salesforce-sales-cloud"
+        },
+        {
+          "@id": "@@PAGE@@#tool-hubspot-sales-hub"
+        },
+        {
+          "@id": "@@PAGE@@#tool-zoho-crm"
+        },
+        {
+          "@id": "@@PAGE@@#tool-pipedrive"
+        },
+        {
+          "@id": "@@PAGE@@#tool-monday-crm"
+        },
+        {
+          "@id": "@@PAGE@@#tool-demandfarm"
+        },
+        {
+          "@id": "@@PAGE@@#tool-kapta"
+        },
+        {
+          "@id": "@@PAGE@@#tool-gainsight"
+        },
+        {
+          "@id": "@@PAGE@@#tool-planhat"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-management-software-10-tools-by-type.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-management-software-10-tools-by-type.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-management-software-problem-to-type.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-management-software-problem-to-type.png",
+      "caption": "Matrix matching an account management problem to the type of software that fixes it.",
+      "description": "Matrix matching an account management problem to the type of software that fixes it.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-plan-example-one-page.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-plan-example-one-page.png",
+      "caption": "One-page account plan example with objective, stakeholder map, health, white space, renewal risk and next actions.",
+      "description": "One-page account plan example with objective, stakeholder map, health, white space, renewal risk and next actions.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What changed for NP Digital, in numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NP Digital has published qualitative results: client service managers save up to eight hours a month on manual admin, and the team has repeatedly identified high-risk clients before they left. NP Digital has not yet published a specific retention percentage or a measured lead time between a risk signal appearing and a client raising it formally. A future update may also show the harder number many readers expect: customer retention rate.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long did it take to see this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NP Digital describes this as an ongoing shift in how the team works day to day, not a one-time project with a fixed end date. The time savings and earlier risk identification were reported as results of normal use, not a pilot period, and with client retention software those early signs often appear in operations before full retention metrics are published.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What did the team have to change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The biggest change was moving away from individual account managers holding the relationship in memory and towards a shared, always-current view that the whole team, and new people joining an account, could use from day one. That shared visibility also helps protect customer experience and maintain customer support continuity when new people join an account.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What would they do differently?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based on Smith's comments, the clearest lesson is treating this as business-critical rather than a client services tool: NP Digital frames AI as central to “every facet” of the business, not a point solution for one team, which helps explain why customer retention software matters beyond one team. All NP Digital quotes are reused, with attribution, from the published case study How NP Digital Uses AI to Strengthen Client Relationships and Drive Retention on kaizan.ai.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "@@PAGE@@#np-digital",
+      "name": "NP Digital",
+      "description": "A global performance marketing agency running SEO, paid media and content programmes across multiple markets."
+    },
+    {
+      "@type": "Person",
+      "@id": "@@PAGE@@#brandon-smith",
+      "name": "Brandon Smith",
+      "jobTitle": "Managing Director",
+      "worksFor": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Quotation",
+      "@id": "@@PAGE@@#quote-1",
+      "text": "There are conversations taking place across so many platforms that we don't really have visibility over the health of a client.",
+      "creator": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "spokenByCharacter": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#article"
+      },
+      "about": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Quotation",
+      "@id": "@@PAGE@@#quote-2",
+      "text": "We've had numerous occasions where we've been able to spot and identify high-risk clients that potentially were going to leave.",
+      "creator": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "spokenByCharacter": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#article"
+      },
+      "about": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Quotation",
+      "@id": "@@PAGE@@#quote-3",
+      "text": "We see AI as critical to the future of our business, not just across client servicing, but across every facet of the business.",
+      "creator": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "spokenByCharacter": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#article"
+      },
+      "about": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Quotation",
+      "@id": "@@PAGE@@#quote-4",
+      "text": "Client retention is one of the key areas. The ability to identify where we've got high-risk clients or an opportunity to get things back on track.",
+      "creator": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "spokenByCharacter": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#article"
+      },
+      "about": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Quotation",
+      "@id": "@@PAGE@@#quote-5",
+      "text": "This gives time back to the teams to focus on strategy, and that's the most important thing in a healthy client relationship.",
+      "creator": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "spokenByCharacter": {
+        "@id": "@@PAGE@@#brandon-smith"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#article"
+      },
+      "about": {
+        "@id": "@@PAGE@@#np-digital"
+      }
+    },
+    {
+      "@type": "Report",
+      "@id": "@@ROOT@@/white-paper#benchmark-2026",
+      "name": "The Client Service Benchmark 2026",
+      "url": "@@ROOT@@/white-paper",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "author": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "NP Digital Case Study: Spotting At-Risk Clients Early",
+      "description": "How NP Digital caught at-risk clients earlier with early-warning alerts across Teams, Outlook, Slack and Google, saving some managers up to 8 hours a month.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client health",
+          "item": "@@ROOT@@/blog/client-health/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "How NP Digital caught at-risk clients earlier with early-warning alerts across Teams, Outlook, Slack and Google, saving some managers up to 8 hours a month.",
+      "abstract": "NP Digital's Brandon Smith, Managing Director, on why the clients who leave rarely leave without warning, and what changed once his team could see the warning.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-early-warning-quote-card-social.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client health",
+      "keywords": [
+        "client retention software",
+        "early-warning alerts",
+        "client churn",
+        "NP Digital case study",
+        "client health",
+        "customer retention for agencies",
+        "account health monitoring"
+      ],
+      "wordCount": 1967,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Agency leaders, Heads of Client Service and Managing Directors"
+      },
+      "about": [
+        {
+          "@id": "@@PAGE@@#np-digital"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer retention",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
+        },
+        {
+          "@type": "Thing",
+          "name": "Churn rate",
+          "sameAs": "https://en.wikipedia.org/wiki/Churn_rate"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "@@ROOT@@/white-paper#benchmark-2026"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/blog/client-health/np-digital-ai-client-retention/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#np-digital"
+        },
+        {
+          "@id": "@@PAGE@@#brandon-smith"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-early-warning-quote-card-social.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-early-warning-quote-card-social.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-early-warning-quote-card.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-early-warning-quote-card.png",
+      "caption": "Quote from Brandon Smith, Managing Director at NP Digital, on spotting high-risk clients before they leave.",
+      "description": "Quote from Brandon Smith, Managing Director at NP Digital, on spotting high-risk clients before they leave.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-time-saved-stat-card.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-time-saved-stat-card.png",
+      "caption": "Some NP Digital client service managers save up to eight hours a month.",
+      "description": "Some NP Digital client service managers save up to eight hours a month.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-how-they-did-it-five-steps.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/np-digital-early-warning-alerts/np-digital-how-they-did-it-five-steps.png",
+      "caption": "Five steps NP Digital took to see client risk earlier.",
+      "description": "Five steps NP Digital took to see client risk earlier.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

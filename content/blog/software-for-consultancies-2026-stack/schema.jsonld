@@ -1,0 +1,660 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "The 12 software tools for consultancies compared",
+      "numberOfItems": 12,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HubSpot",
+          "item": {
+            "@id": "@@PAGE@@#tool-hubspot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Salesforce",
+          "item": {
+            "@id": "@@PAGE@@#tool-salesforce"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Float",
+          "item": {
+            "@id": "@@PAGE@@#tool-float"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "monday.com",
+          "item": {
+            "@id": "@@PAGE@@#tool-monday-com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Productive",
+          "item": {
+            "@id": "@@PAGE@@#tool-productive"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Scoro",
+          "item": {
+            "@id": "@@PAGE@@#tool-scoro"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Kantata",
+          "item": {
+            "@id": "@@PAGE@@#tool-kantata"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Deltek Vantagepoint",
+          "item": {
+            "@id": "@@PAGE@@#tool-deltek-vantagepoint"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Accelo",
+          "item": {
+            "@id": "@@PAGE@@#tool-accelo"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Harvest",
+          "item": {
+            "@id": "@@PAGE@@#tool-harvest"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Planhat",
+          "item": {
+            "@id": "@@PAGE@@#tool-planhat"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-hubspot",
+      "name": "HubSpot",
+      "applicationCategory": "Win work",
+      "description": "Best for: Pipeline and marketing",
+      "url": "https://www.hubspot.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-salesforce",
+      "name": "Salesforce",
+      "applicationCategory": "Win work",
+      "description": "Best for: Complex sales and large teams",
+      "url": "https://www.salesforce.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-float",
+      "name": "Float",
+      "applicationCategory": "Plan",
+      "description": "Best for: Resource scheduling",
+      "url": "https://www.float.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-monday-com",
+      "name": "monday.com",
+      "applicationCategory": "Deliver",
+      "description": "Best for: Flexible project tracking",
+      "url": "https://monday.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-productive",
+      "name": "Productive",
+      "applicationCategory": "Bill",
+      "description": "Best for: Agency-style PSA",
+      "url": "https://productive.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-scoro",
+      "name": "Scoro",
+      "applicationCategory": "Bill",
+      "description": "Best for: Quote-to-cash in one system",
+      "url": "https://www.scoro.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-kantata",
+      "name": "Kantata",
+      "applicationCategory": "Bill",
+      "description": "Best for: Larger professional services firms",
+      "url": "https://www.kantata.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-deltek-vantagepoint",
+      "name": "Deltek Vantagepoint",
+      "applicationCategory": "Bill",
+      "description": "Best for: Project-based firms needing ERP",
+      "url": "https://www.deltek.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-accelo",
+      "name": "Accelo",
+      "applicationCategory": "Bill",
+      "description": "Best for: Client work and billing in one",
+      "url": "https://www.accelo.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-harvest",
+      "name": "Harvest",
+      "applicationCategory": "Bill",
+      "description": "Best for: Time and invoices",
+      "url": "https://www.getharvest.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-planhat",
+      "name": "Planhat",
+      "applicationCategory": "Keep",
+      "description": "Best for: Subscription customer success",
+      "url": "https://www.planhat.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Keep",
+      "description": "Best for: Client health, risk and growth. Client intelligence platform; priced by number of clients.",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What software does a consultancy need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Software for consultancy firms covers five core jobs as its key features: winning work, planning and staffing, delivering projects, billing time, and keeping clients. Most consultancies cover the first four well and run the fifth on a spreadsheet and memory. A complete stack has one tool per job, and the fifth tool protects the revenue the other four create.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does software for a consultancy cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cost depends on the pricing model. Per-seat tools charge per user per month, and rates vary by plan, so request a quote for your headcount. Per-client platforms charge by portfolio size. Kaizan is priced by number of clients, with unlimited users. Price on quote.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there free software for consultancies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for parts of the stack. HubSpot offers a free CRM for contacts and deals. Free tiers stop where consultancies need help most: multi-team permissions, utilisation reporting and client health. Kaizan offers a free 14-day pilot on your own client data, with no card and no commitment.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need it if we already have a CRM or a PSA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you cannot say which clients are at risk and why. A CRM records contacts and deals. A PSA records time, cost and margin. Neither captures the emails and calls where clients signal trouble. Keep both, and add a client success layer when the evidence sits outside your systems.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to roll out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the type. CRMs and time trackers typically go live in days but need weeks of entry before reports mean anything. PSA suites typically take weeks to months to configure. Kaizan goes live the same day through OAuth, and its free 14-day pilot delivers client health scores and findings by day 14.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the return on this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measure return in revenue protected and expansion won, not hours saved. In a modelled 200-person consultancy with 60 clients, the calculator method returns about $3.4 million in annual benefit before platform cost, which is priced on quote. Treat it as a model, not a forecast. Run the live calculator with your own numbers.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the team actually use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adoption follows effort. Tools that need manual entry get skipped. Pick tools that capture client emails and calls automatically, set permissions before launch, and pilot on five accounts for 14 days. Measure weekly active users against seats. Under 50% utilisation after 60 days means the wrong fit or a rollout that needs work. Run the numbers, and book a demo when you want to see your own clients scored.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "@@PAGE@@#howto",
+      "name": "How to choose in seven steps",
+      "inLanguage": "@@LANG@@",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Name the problem first",
+          "text": "Write one sentence: \"We lose clients without warning\" or \"We bill late.\" Use the decision table above to find the job."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Map your current stack",
+          "text": "List every tool, owner, seat count and cost. Aim to do it in 60 minutes."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count clients, not only seats",
+          "text": "Per-seat tools scale with headcount. Per-client tools scale with portfolio. Model both at your size."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Test manual entry against automatic capture",
+          "text": "If your team must type the data, adoption will decide the outcome. Choose capture that needs no extra admin."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Pilot on five accounts for 14 days",
+          "text": "Pick a mix: two healthy accounts, two uncertain, one you worry about. Check whether the tool tells you something you did not know."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Ask what each buyer needs to see",
+          "text": "The CEO wants revenue at risk. The CFO wants cost and payback. The COO wants adoption and admin time per account director."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Score the shortlist",
+          "text": "Weight the criteria, score each tool, and rank them."
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "@@ROOT@@/white-paper#benchmark-2026",
+      "name": "The Client Service Benchmark 2026",
+      "url": "@@ROOT@@/white-paper",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "author": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Software for Consultancies 2026: 12 Tools by Job to Be Done",
+      "description": "The 2026 consultancy software stack across five jobs: win, plan, deliver, bill, keep. 12 tools compared, with cost at 25, 50 and 100 clients.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "The 2026 consultancy software stack across five jobs: win, plan, deliver, bill, keep. 12 tools compared, with cost at 25, 50 and 100 clients.",
+      "abstract": "Software for consultancy firms covers five jobs: winning work, planning and staffing, delivering projects, billing time, and keeping clients. Most consultancies cover the first four well and run the fifth on a spreadsheet and memory. A complete stack has one tool per job, and the fifth tool protects the revenue the other four create.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-five-job-stack-map.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "software for consultancy",
+        "software for consultancy firms",
+        "consulting software",
+        "professional services management software",
+        "PSA software",
+        "consultancy tech stack",
+        "client success for consultancies"
+      ],
+      "wordCount": 4323,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Partners, COOs and Heads of Client Service at consultancies and professional services firms"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Software for consultancy firms",
+          "description": "Software for consultancy firms covers five jobs: winning work, planning and staffing, delivering projects, billing time, and keeping clients.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Management consulting",
+          "sameAs": "https://en.wikipedia.org/wiki/Management_consulting"
+        },
+        {
+          "@type": "Thing",
+          "name": "Professional services automation",
+          "sameAs": "https://en.wikipedia.org/wiki/Professional_services_automation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        },
+        {
+          "@id": "@@PAGE@@#howto"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "@@ROOT@@/white-paper#benchmark-2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/statistics/client-retention-statistics",
+          "name": "Agiled's compilation"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://costbench.com/software/agency-project-management/productive-io/free-plan/",
+          "name": "CostBench"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/blog/scoro-pricing",
+          "name": "Agiled"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.deltek.com/en-gb/blog/professional-services-benchmarks",
+          "name": "Deltek"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/integrations/",
+        "@@ROOT@@/security/",
+        "@@ROOT@@/product/",
+        "@@ROOT@@/pricing/",
+        "@@ROOT@@/blog/how-np-digital-uses-ai-to-strengthen-client-relationships-and-drive/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-hubspot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-salesforce"
+        },
+        {
+          "@id": "@@PAGE@@#tool-float"
+        },
+        {
+          "@id": "@@PAGE@@#tool-monday-com"
+        },
+        {
+          "@id": "@@PAGE@@#tool-productive"
+        },
+        {
+          "@id": "@@PAGE@@#tool-scoro"
+        },
+        {
+          "@id": "@@PAGE@@#tool-kantata"
+        },
+        {
+          "@id": "@@PAGE@@#tool-deltek-vantagepoint"
+        },
+        {
+          "@id": "@@PAGE@@#tool-accelo"
+        },
+        {
+          "@id": "@@PAGE@@#tool-harvest"
+        },
+        {
+          "@id": "@@PAGE@@#tool-planhat"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        },
+        {
+          "@id": "@@PAGE@@#img-5"
+        },
+        {
+          "@id": "@@PAGE@@#img-6"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-five-job-stack-map.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-five-job-stack-map.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-decision-guide.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-decision-guide.png",
+      "caption": "Decision guide matching consultancy problems to the type of software that fixes them.",
+      "description": "Decision guide matching consultancy problems to the type of software that fixes them.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-spreadsheet-vs-portfolio.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-spreadsheet-vs-portfolio.png",
+      "caption": "Before and after view of a monthly RAG spreadsheet replaced by an evidence-based client portfolio.",
+      "description": "Before and after view of a monthly RAG spreadsheet replaced by an evidence-based client portfolio.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-cost-25-50-100-clients.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-cost-25-50-100-clients.png",
+      "caption": "Illustrative annual cost of a per-seat tool at 25, 50 and 100 clients, beside a note that per-client pricing is on quote.",
+      "description": "Illustrative annual cost of a per-seat tool at 25, 50 and 100 clients, beside a note that per-client pricing is on quote.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-5",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-modeled-benefit.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-modeled-benefit.png",
+      "caption": "Chart of the modelled annual benefit for a 200-person consultancy, built from three sources.",
+      "description": "Chart of the modelled annual benefit for a 200-person consultancy, built from three sources.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-6",
+      "url": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-stack-by-firm-size.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/software-for-consultancies-2026-stack/software-for-consultancies-stack-by-firm-size.png",
+      "caption": "Stack by firm size for consultancies of 10, 50 and 200 people.",
+      "description": "Stack by firm size for consultancies of 10, 50 and 200 people.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

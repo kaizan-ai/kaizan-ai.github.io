@@ -1076,6 +1076,26 @@ def ld_blogposting(post: dict) -> dict:
     return node
 
 
+LD_ROOT = '@@ROOT@@'
+
+
+def blog_schema_nodes(post: dict) -> list:
+    """Hand-authored schema.jsonld nodes for a post, with the site-wide Organization/WebSite
+    dropped (ld_script adds the full versions), and datePublished/dateModified/headline kept in
+    step with the post's frontmatter."""
+    nodes = []
+    for n in post['schema_nodes']:
+        if n.get('@id') in (LD_ORG_ID, 'https://kaizan.ai/#website'):
+            continue
+        n = json.loads(json.dumps(n).replace('@@TITLE@@', post['title'].replace('\\', '\\\\').replace('"', '\\"')))
+        if n.get('@type') == 'BlogPosting':
+            n['datePublished'] = post['iso_date']
+        if n.get('@type') in ('BlogPosting', 'WebPage') and post.get('date_modified'):
+            n['dateModified'] = post['date_modified']
+        nodes.append(n)
+    return nodes
+
+
 def ld_script(nodes: list, ident: str = '') -> str:
     """One <script type="application/ld+json"> carrying an @graph. The Organization
     node is always included so every @id reference resolves within the page."""
@@ -3780,6 +3800,19 @@ def og_tags(post: dict) -> str:
         t.append(f'<meta name="twitter:image" content="{E(img)}">')
     if post.get('iso_date'):
         t.append(f'<meta property="article:published_time" content="{E(post["iso_date"])}">')
+    if post.get('date_modified'):
+        t.append(f'<meta property="article:modified_time" content="{E(post["date_modified"])}">')
+    t += ['<meta property="og:site_name" content="Kaizan">',
+          '<meta property="og:locale" content="en_GB">',
+          '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">',
+          f'<meta name="author" content="{E(post.get("meta_author") or "Kaizan")}">']
+    if post.get('keywords'):
+        t.append(f'<meta name="keywords" content="{E(", ".join(str(k) for k in post["keywords"]))}">')
+        t += [f'<meta property="article:tag" content="{E(str(k))}">' for k in post['keywords'][:6]]
+    t.append(f'<meta property="article:section" content="{E(blog.TOPICS.get(post["topic"], ("",))[0])}">')
+    if img:
+        alt = E(post['title'])
+        t += [f'<meta property="og:image:alt" content="{alt}">', f'<meta name="twitter:image:alt" content="{alt}">']
     return '\n        '.join(t)
 
 
@@ -3889,7 +3922,9 @@ def render_blog_post(post: dict) -> str:
     {_wp_popup_html()}
     '''
     extra = og_tags(post)
-    if post.get('schema'):
+    if post.get('schema') and post.get('schema_nodes'):
+        extra += '\n        ' + ld_script(blog_schema_nodes(post))
+    elif post.get('schema'):
         extra += '\n        ' + ld_script([ld_blogposting(post)])
     return page_head(post.get('meta_title') or post['title'], 3,
                      post.get('meta_description') or post.get('excerpt', ''),
@@ -6896,6 +6931,8 @@ US_SPELLING = {
     'strategising': 'strategizing', 'humanise': 'humanize', 'practising': 'practicing',
     'contextualise': 'contextualize', 'rationalise': 'rationalize', 'materialised': 'materialized',
     'revolutionised': 'revolutionized', 'revolutionise': 'revolutionize', 'familiarise': 'familiarize',
+    'annualise': 'annualize', 'annualised': 'annualized', 'penalise': 'penalize', 'penalised': 'penalized',
+    'towards': 'toward', 'customisable': 'customizable',
 }
 _US_SPELL_RE = re.compile(r'\b(' + '|'.join(sorted(US_SPELLING, key=len, reverse=True)) + r')\b', re.I)
 
@@ -6910,6 +6947,32 @@ def us_spell(text: str) -> str:
     return _US_SPELL_RE.sub(lambda m: _match_case(m.group(0), US_SPELLING[m.group(0).lower()]), text)
 
 
+_MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December'
+_UK_DATE_RE = re.compile(r'\b(\d{1,2})(?:st|nd|rd|th)? (' + _MONTHS + r') (\d{4})\b')
+
+
+def us_dates(html: str) -> str:
+    """'29 October 2026' -> 'October 29, 2026' in visible text (never inside tags/scripts)."""
+    parts = re.split(r'(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', html, flags=re.S | re.I)
+    for i in range(0, len(parts), 2):
+        parts[i] = re.sub(r'>([^<]+)<', lambda m: '>' + _UK_DATE_RE.sub(r'\2 \1, \3', m.group(1)) + '<', parts[i])
+    return ''.join(parts)
+
+
+_US_BLOG_LINK_RE = re.compile(
+    r'(<a\b[^>]*?\bhref=")https://(?:www\.)?kaizan\.ai(?:/((?:pricing|product|integrations|security|faq|white-paper|resources|blog|for|demo|about|'
+    r'customers|case-studies|knowledge-hub|hall-of-fame|referral-partners|client-success-software|care-framework)[^"]*))?/?"')
+
+
+def us_blog_links(html: str) -> str:
+    """Blog bodies link to https://kaizan.ai/<page>/ (UK). On the /us/ mirror, point body <a> links
+    at /us/ (head <link rel=alternate/canonical> tags are handled separately and left alone)."""
+    def sub(m):
+        rest = m.group(2) or ''
+        return m.group(1) + SITE_ORIGIN + '/us/' + rest + '"'
+    return _US_BLOG_LINK_RE.sub(sub, html)
+
+
 def _spell_text_nodes(html: str) -> str:
     # Transform visible text only; never touch <script>/<style> contents.
     parts = re.split(r'(<script\b[^>]*>.*?</script>|<style\b[^>]*>.*?</style>)', html, flags=re.S | re.I)
@@ -6918,6 +6981,12 @@ def _spell_text_nodes(html: str) -> str:
     # Also transform meta description / og:description content (attributes).
     parts_joined = ''.join(parts)
     parts_joined = re.sub(r'(name="description" content=")([^"]*)(")',
+                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    parts_joined = re.sub(r'(name="keywords" content=")([^"]*)(")',
+                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    parts_joined = re.sub(r'(property="article:tag" content=")([^"]*)(")',
+                          lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
+    parts_joined = re.sub(r'(\balt=")([^"]*)(")',
                           lambda m: m.group(1) + us_spell(m.group(2)) + m.group(3), parts_joined)
     for attr in ('property="og:description"', 'property="og:title"',
                  'name="twitter:description"', 'name="twitter:title"'):
@@ -7126,12 +7195,13 @@ def _resolve_ld(html: str, path: str, locale: str) -> str:
     swap in any US-specific builder and apply US spelling to the string values."""
     us = locale == 'us'
     page_url = f'{SITE_ORIGIN}/us{path}' if us else f'{SITE_ORIGIN}{path}'
+    root_url = f'{SITE_ORIGIN}/us' if us else SITE_ORIGIN
 
     def sub(m):
         ident, body = m.group(1), m.group(2)
         if us and ident in US_LD_BUILDERS:
             return US_LD_BUILDERS[ident]().replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US')
-        body = body.replace(LD_PAGE, page_url).replace(LD_LANG, 'en-US' if us else 'en-GB')
+        body = body.replace(LD_PAGE, page_url).replace(LD_ROOT, root_url).replace(LD_LANG, 'en-US' if us else 'en-GB')
         if us:
             body = json.dumps(_ld_us_spell(json.loads(body)), ensure_ascii=False)
         attr = f' data-kz-ld="{ident}"' if ident else ''
@@ -7215,6 +7285,9 @@ def build_us_locale():
                         f'data-locale-switch href="{path}" hidden>View UK site<')
         # US spelling.
         us = _spell_text_nodes(us)
+        if path.startswith('/blog/'):
+            us = us_dates(us_blog_links(us)).replace('<meta property="og:locale" content="en_GB">',
+                                                      '<meta property="og:locale" content="en_US">')
         # Homepage: drop TradeDoubler from the client-logo belt — the brand
         # isn't well known in the US, so it's stripped from the US marquee.
         if path == '/':

@@ -1,0 +1,843 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "Agency tools compared, category by category",
+      "numberOfItems": 24,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HubSpot",
+          "item": {
+            "@id": "@@PAGE@@#tool-hubspot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Salesforce",
+          "item": {
+            "@id": "@@PAGE@@#tool-salesforce"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pipedrive",
+          "item": {
+            "@id": "@@PAGE@@#tool-pipedrive"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Asana",
+          "item": {
+            "@id": "@@PAGE@@#tool-asana"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "ClickUp",
+          "item": {
+            "@id": "@@PAGE@@#tool-clickup"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "monday.com",
+          "item": {
+            "@id": "@@PAGE@@#tool-monday-com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Teamwork.com",
+          "item": {
+            "@id": "@@PAGE@@#tool-teamwork-com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Adobe Creative Cloud",
+          "item": {
+            "@id": "@@PAGE@@#tool-adobe-creative-cloud"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Figma",
+          "item": {
+            "@id": "@@PAGE@@#tool-figma"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Canva",
+          "item": {
+            "@id": "@@PAGE@@#tool-canva"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Krock.io",
+          "item": {
+            "@id": "@@PAGE@@#tool-krock-io"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Ziflow",
+          "item": {
+            "@id": "@@PAGE@@#tool-ziflow"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "Harvest",
+          "item": {
+            "@id": "@@PAGE@@#tool-harvest"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Toggl",
+          "item": {
+            "@id": "@@PAGE@@#tool-toggl"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "QuickBooks",
+          "item": {
+            "@id": "@@PAGE@@#tool-quickbooks"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Xero",
+          "item": {
+            "@id": "@@PAGE@@#tool-xero"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "AgencyAnalytics",
+          "item": {
+            "@id": "@@PAGE@@#tool-agencyanalytics"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Databox",
+          "item": {
+            "@id": "@@PAGE@@#tool-databox"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Google Looker Studio",
+          "item": {
+            "@id": "@@PAGE@@#tool-google-looker-studio"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Scoro",
+          "item": {
+            "@id": "@@PAGE@@#tool-scoro"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Productive",
+          "item": {
+            "@id": "@@PAGE@@#tool-productive"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Function Point",
+          "item": {
+            "@id": "@@PAGE@@#tool-function-point"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "Workamajig",
+          "item": {
+            "@id": "@@PAGE@@#tool-workamajig"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-hubspot",
+      "name": "HubSpot",
+      "applicationCategory": "CRM and new business",
+      "url": "https://www.hubspot.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-salesforce",
+      "name": "Salesforce",
+      "applicationCategory": "CRM and new business",
+      "url": "https://www.salesforce.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-pipedrive",
+      "name": "Pipedrive",
+      "applicationCategory": "CRM and new business",
+      "url": "https://www.pipedrive.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-asana",
+      "name": "Asana",
+      "applicationCategory": "Project and delivery management",
+      "url": "https://asana.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-clickup",
+      "name": "ClickUp",
+      "applicationCategory": "Project and delivery management",
+      "url": "https://clickup.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-monday-com",
+      "name": "monday.com",
+      "applicationCategory": "Project and delivery management",
+      "url": "https://monday.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-teamwork-com",
+      "name": "Teamwork.com",
+      "applicationCategory": "Project and delivery management",
+      "url": "https://www.teamwork.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-adobe-creative-cloud",
+      "name": "Adobe Creative Cloud",
+      "applicationCategory": "Creative production and review",
+      "url": "https://www.adobe.com/creativecloud.html"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-figma",
+      "name": "Figma",
+      "applicationCategory": "Creative production and review",
+      "url": "https://www.figma.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-canva",
+      "name": "Canva",
+      "applicationCategory": "Creative production and review",
+      "url": "https://www.canva.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-krock-io",
+      "name": "Krock.io",
+      "applicationCategory": "Creative production and review",
+      "url": "https://krock.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-ziflow",
+      "name": "Ziflow",
+      "applicationCategory": "Creative production and review",
+      "url": "https://www.ziflow.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-harvest",
+      "name": "Harvest",
+      "applicationCategory": "Time, resourcing and finance",
+      "url": "https://www.getharvest.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-toggl",
+      "name": "Toggl",
+      "applicationCategory": "Time, resourcing and finance",
+      "url": "https://toggl.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-quickbooks",
+      "name": "QuickBooks",
+      "applicationCategory": "Time, resourcing and finance",
+      "url": "https://quickbooks.intuit.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-xero",
+      "name": "Xero",
+      "applicationCategory": "Time, resourcing and finance",
+      "url": "https://www.xero.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-agencyanalytics",
+      "name": "AgencyAnalytics",
+      "applicationCategory": "Client reporting",
+      "url": "https://agencyanalytics.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-databox",
+      "name": "Databox",
+      "applicationCategory": "Client reporting",
+      "url": "https://databox.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-google-looker-studio",
+      "name": "Google Looker Studio",
+      "applicationCategory": "Client reporting",
+      "url": "https://lookerstudio.google.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-scoro",
+      "name": "Scoro",
+      "applicationCategory": "All-in-one PSA platforms",
+      "url": "https://www.scoro.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-productive",
+      "name": "Productive",
+      "applicationCategory": "All-in-one PSA platforms",
+      "url": "https://productive.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-function-point",
+      "name": "Function Point",
+      "applicationCategory": "All-in-one PSA platforms",
+      "url": "https://www.functionpoint.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-workamajig",
+      "name": "Workamajig",
+      "applicationCategory": "All-in-one PSA platforms",
+      "url": "https://www.workamajig.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Client intelligence and retention",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "description": "Client intelligence platform; priced by number of clients."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What tools does a digital agency need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A digital agency needs software across eight jobs: new business and CRM, onboarding, project and delivery management, creative production and review, time and resourcing, finance and invoicing, client reporting, and client intelligence for retention. Most agencies run six to ten tools covering these jobs, not one platform that does everything.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best all-in-one agency software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Scoro is the most genuinely all-in-one platform, with CRM, projects, quoting, invoicing and time tracking natively connected, starting around $17/user/month with a 5-seat minimum. Productive trades some of Scoro's CRM depth for cleaner resource planning and is usually the first recommendation for a 20 to 150-person digital or creative agency. Neither replaces dedicated depth in every category; see the all-in-one vs. best-of-breed section above for the headcount-based trade-off.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What software do creative agencies need specifically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Creative agencies need a dedicated review and approval layer (Ziflow for documents, Krock.io for video) that generic file storage can't handle, plus production tools like Adobe Creative Cloud or Figma that the rest of the stack has to integrate around rather than replace. A project management tool built for linear task lists tends to fight creative, iterative, approval-gated work rather than help it.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where should client data live when three tools all claim it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The CRM should own deal and contract data. The project tool should own tasks and delivery. Neither should also carry the unstructured layer, calls, emails, chat, that actually shows relationship health; that needs its own system that reads from both rather than competing with them. See \"Digital agency client management\" above for the full breakdown.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "All-in-one or best-of-breed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on headcount more than preference. Around 20 people, best-of-breed kept deliberately lean usually wins on cost and simplicity. Around 80 people, an all-in-one PSA starts paying for itself by removing integration overhead. Around 200 people, most firms run a hybrid: an all-in-one operational core plus dedicated depth in CRM, creative and client intelligence.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does an agency stack cost per head?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It varies widely by stack shape. A lean best-of-breed stack can run roughly $150 to $400 a month for a 20-person agency; a mid-range PSA roughly $200 to $600 a month; a heavier stack with dedicated creative tools added can run into the thousands. See the cost table above for the 20, 80 and 200-person breakdown, and note that client-intelligence tools priced per client rather than per seat scale differently from the rest of the stack.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which tools can we drop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with any tool fewer than a handful of people log into monthly, and any pair of tools quietly competing to be the \"client record\" for the same accounts, usually a CRM and a project tool each holding a partial picture. The tech stack audit section above has the four questions worth running against every line on your software bill.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the team actually use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is the real adoption risk behind every purchase in this guide. Tools that require manual status updates get treated exactly like the spreadsheet they replaced, and usage quietly drops within a quarter. Test this directly in a 14-day pilot on real accounts before signing an annual contract, and ask every vendor what updates itself versus what a person has to type.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the return on consolidating?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The return shows up in two places: the direct cost of redundant licences, and the admin hours an account team spends reconciling two or three partial systems instead of working from one. Kaizan customers, for the client-intelligence layer specifically, see an average 33% lower cost to serve each client and 5.4 hours of admin saved per person every week, which is a reasonable proxy for what consolidating any duplicated job in the stack is worth chasing.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "@@PAGE@@#howto",
+      "name": "How to choose your agency software stack in seven steps",
+      "inLanguage": "@@LANG@@",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Define the problem before the tool",
+          "text": "Write down the actual symptom: clients chasing you for status, an account director drowning in admin, a renewal lost with no warning. A tool bought to fix a vague feeling never gets adopted."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Map your current stack honestly",
+          "text": "List every tool you already pay for, including the ones nobody officially approved, from operational software to marketing tools. Most agencies find at least one pair doing the same job without realising it."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count clients, and seats, with a worked example",
+          "text": "A per-seat tool and a per-client tool can land at wildly different totals for the same agency. A 20-person agency with 6 account managers and 40 active clients pays a per-seat PSA roughly 6 times its per-seat rate; the same agency pays a per-client tool roughly 40 times its per-client rate. Run both numbers before you shortlist."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Weigh manual entry against automatic capture",
+          "text": "A tool that depends on someone remembering to log an update gets treated like the spreadsheet it replaced within a quarter. Ask every vendor, directly, what updates itself, what a person has to type, and whether integrations can automate repetitive tasks."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Pilot on five real accounts for 14 days",
+          "text": "Not a demo with sample data. Five live accounts, with the people who'll actually use it daily, before anyone signs an annual contract; a free trial only helps if you load real accounts instead of sample data."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Show the shortlist to everyone who has to live with it",
+          "text": "The Head of Client Service needs to see it won't just add admin on top of the RAG spreadsheet. The Head of Ops needs to see the team will actually open it. Whoever signs the invoice needs the three-number pitch: cost, time saved, risk reduced."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Score the shortlist against your own answers to steps 1 to 4",
+          "text": ", not a generic feature checklist. The tool with the longest feature list is rarely the one that gets used six months in."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Agency Software Stack 2026: Tools by Job, Pitch to Retention",
+      "description": "The 2026 agency tools stack across eight jobs, from new business to retention: all-in-one vs best-of-breed, cost at 20, 80 and 200 people, and tools compared.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "The 2026 agency tools stack across eight jobs, from new business to retention: all-in-one vs best-of-breed, cost at 20, 80 and 200 people, and tools compared.",
+      "abstract": "A digital agency needs software across eight jobs: new business and CRM, onboarding, project and delivery management, creative production and review, time and resourcing, finance and invoicing, client reporting, and client intelligence for retention. Most agencies run six to ten tools covering these jobs, not one platform that does everything.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-eight-jobs.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "agency software stack",
+        "agency tools",
+        "digital agency software",
+        "software for creative agencies",
+        "all-in-one agency software",
+        "agency tech stack",
+        "marketing agency tools",
+        "PSA software"
+      ],
+      "wordCount": 7518,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Agency owners, COOs and Heads of Client Service"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Agency software stack",
+          "description": "An agency software stack is the full set of tools a firm runs to win, deliver and keep client work: not one app, a connected set covering sales, delivery, creative, finance and the ongoing client relationship.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Advertising agency",
+          "sameAs": "https://en.wikipedia.org/wiki/Advertising_agency"
+        },
+        {
+          "@type": "Thing",
+          "name": "Professional services automation",
+          "sameAs": "https://en.wikipedia.org/wiki/Professional_services_automation"
+        },
+        {
+          "@type": "Thing",
+          "name": "Project management software",
+          "sameAs": "https://en.wikipedia.org/wiki/Project_management_software"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        },
+        {
+          "@id": "@@PAGE@@#howto"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/integrations/",
+        "@@ROOT@@/pricing/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-hubspot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-salesforce"
+        },
+        {
+          "@id": "@@PAGE@@#tool-pipedrive"
+        },
+        {
+          "@id": "@@PAGE@@#tool-asana"
+        },
+        {
+          "@id": "@@PAGE@@#tool-clickup"
+        },
+        {
+          "@id": "@@PAGE@@#tool-monday-com"
+        },
+        {
+          "@id": "@@PAGE@@#tool-teamwork-com"
+        },
+        {
+          "@id": "@@PAGE@@#tool-adobe-creative-cloud"
+        },
+        {
+          "@id": "@@PAGE@@#tool-figma"
+        },
+        {
+          "@id": "@@PAGE@@#tool-canva"
+        },
+        {
+          "@id": "@@PAGE@@#tool-krock-io"
+        },
+        {
+          "@id": "@@PAGE@@#tool-ziflow"
+        },
+        {
+          "@id": "@@PAGE@@#tool-harvest"
+        },
+        {
+          "@id": "@@PAGE@@#tool-toggl"
+        },
+        {
+          "@id": "@@PAGE@@#tool-quickbooks"
+        },
+        {
+          "@id": "@@PAGE@@#tool-xero"
+        },
+        {
+          "@id": "@@PAGE@@#tool-agencyanalytics"
+        },
+        {
+          "@id": "@@PAGE@@#tool-databox"
+        },
+        {
+          "@id": "@@PAGE@@#tool-google-looker-studio"
+        },
+        {
+          "@id": "@@PAGE@@#tool-scoro"
+        },
+        {
+          "@id": "@@PAGE@@#tool-productive"
+        },
+        {
+          "@id": "@@PAGE@@#tool-function-point"
+        },
+        {
+          "@id": "@@PAGE@@#tool-workamajig"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        },
+        {
+          "@id": "@@PAGE@@#img-5"
+        },
+        {
+          "@id": "@@PAGE@@#img-6"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-eight-jobs.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-eight-jobs.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-lifecycle-map.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-lifecycle-map.png",
+      "caption": "Agency lifecycle from pitch to renewal, with the software job that owns each stage.",
+      "description": "Agency lifecycle from pitch to renewal, with the software job that owns each stage.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-all-in-one-vs-best-of-breed.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-all-in-one-vs-best-of-breed.png",
+      "caption": "All-in-one versus best-of-breed agency software, and which fits agencies of 20, 80 and 200 people.",
+      "description": "All-in-one versus best-of-breed agency software, and which fits agencies of 20, 80 and 200 people.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-data-ownership.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-data-ownership.png",
+      "caption": "Three-lane data ownership: CRM owns deals, project tool owns delivery, client intelligence owns conversations.",
+      "description": "Three-lane data ownership: CRM owns deals, project tool owns delivery, client intelligence owns conversations.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-5",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-tool-strip.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-tool-strip.png",
+      "caption": "Tools compared in the agency software stack guide.",
+      "description": "Tools compared in the agency software stack guide.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-6",
+      "url": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-cost-by-headcount.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/agency-software-stack-2026/agency-software-stack-cost-by-headcount.png",
+      "caption": "Monthly cost ranges for three agency software stack shapes at 20, 80 and 200 people.",
+      "description": "Monthly cost ranges for three agency software stack shapes at 20, 80 and 200 people.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

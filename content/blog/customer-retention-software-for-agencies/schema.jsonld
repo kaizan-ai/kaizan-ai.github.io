@@ -1,0 +1,521 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "Customer retention software compared",
+      "numberOfItems": 5,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Gainsight",
+          "item": {
+            "@id": "@@PAGE@@#tool-gainsight"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ChurnZero",
+          "item": {
+            "@id": "@@PAGE@@#tool-churnzero"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Totango",
+          "item": {
+            "@id": "@@PAGE@@#tool-totango"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Planhat",
+          "item": {
+            "@id": "@@PAGE@@#tool-planhat"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-gainsight",
+      "name": "Gainsight",
+      "url": "https://www.gainsight.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-churnzero",
+      "name": "ChurnZero",
+      "url": "https://churnzero.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-totango",
+      "name": "Totango",
+      "url": "https://www.totango.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-planhat",
+      "name": "Planhat",
+      "url": "https://www.planhat.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "description": "Client intelligence platform; priced by number of clients."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best customer retention management software for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For agencies and other service firms, it's whichever tool scores relationship health from real conversations rather than product usage, since most agency clients never log into a product. Of the tools compared here, Kaizan is built specifically for that case; the other four were built for B2B SaaS.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best customer retention solutions for service firms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The strongest solutions for a service firm combine automatic capture of emails, calls and meetings with a multidimensional health score and early-risk alerting, priced per client rather than per seat. Survey tools, CRM add-ons, and even loyalty programmes may complement this in some models, but they shouldn't replace relationship-health tools or carry it alone.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best customer retention software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There's no single best tool across every business; the honest answer depends on whether your customer logs into a product (Gainsight, ChurnZero, Totango or Planhat) or talks to a person (Kaizan). The right customer retention choice depends on the shape of the relationship, not the category label.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does customer retention software cost, and what does churn cost us?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enterprise CS platforms typically run $25,000 to $250,000+ a year depending on team size. Kaizan is priced by number of clients. Price on quote. Set either against the cost of churn: a firm losing 20% of a $10 million client book annually is putting $2 million at risk every year, and it also cuts future customer lifetime value before software changes that number.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there free customer retention software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "None of the five tools here has a meaningful free tier; all are B2B platforms sold on contract. Kaizan offers a free 14-day pilot on your own data with no card required, which is the closest equivalent to testing before committing.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need it if we already have a CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if the CRM only holds what someone typed in by hand. A CRM is a system of record for contacts and deals; retention software is a system of signal for relationship health, built from data a CRM was never designed to capture, and that can increase customer retention by surfacing signals the CRM misses. Most firms run both.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long before it predicts anything useful?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A conversation-based platform like Kaizan surfaces its first signals within the first few weeks of connecting your email and calendar, since it's reading conversations that already exist rather than waiting to accumulate new usage data. Product-usage platforms generally need longer, since they're building a baseline from scratch.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this replace our RAG spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, that's the point of it. A RAG spreadsheet is a monthly snapshot filled in by hand; a conversation-based platform updates continuously from the communications already happening, catching the same risks weeks earlier and without relying on someone remembering to fill in a cell.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the return on this?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Measure it in revenue protected and expansion won, not hours saved. One Managing Director at a Kaizan client agency put it this way: \"Kaizan is fast becoming the key input to my churn report. Something that used to take me hours now takes me minutes.\" — MD and Chief Client Officer, Agency Client B. Across the Kaizan portfolio, clients see 26%+ average revenue growth per client.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "@@PAGE@@#howto",
+      "name": "How to choose customer retention software in seven steps",
+      "inLanguage": "@@LANG@@",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Start from the actual problem, not the feature list",
+          "text": "Write down, in one sentence, what you don't know today. For most Heads of Client Service it's some version of: we only find out a client is unhappy when they tell us."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Map what you already have",
+          "text": "CRM, calendar, note-taking tool, survey tool. Most firms already hold more risk signal than they think; it's just scattered across four systems nobody cross-reference. Also check how customer retention software integrate with the systems already in place and whether data can flow across them."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count clients, not seats",
+          "text": "A per-seat tool can look cheap for a five-person team running 300 self-serve accounts and expensive for a 40-person team running 25 retainer clients. Model the number that actually matters for your pricing structure before comparing sticker prices."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Separate automatic capture from manual logging",
+          "text": "A tool that depends on an account manager typing in a health score is reporting opinion dressed up as data, and automated capture usually gives a clearer view of customer experience than manual logging alone. One agency found that roughly half of its account updates never made it into the system of record at all. Ask every vendor, directly, what share of the data behind their score is captured automatically versus typed in by hand."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Pilot on five real accounts for 14 days before buying anything",
+          "text": "Not a demo with sample data, your own accounts, your own clients. This is also the fastest way to find out whether the team will actually use it."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Check what each person on the buying committee needs to see",
+          "text": "A Head of Client Service wants the spreadsheet replaced, with evidence they can defend upward, while different customer teams may need different views of account risk and relationship health. As one COO at a professional-services firm in Kaizan's own client base put it:"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Score the shortlist against the same five criteria, then date your own evaluation",
+          "text": "None of this is static. Pricing, features and even category definitions shift every few months; put a date on the comparison you build so it's clear when it was last checked, and remember the goal is to choose the right customer retention software for your needs, not just the most feature-rich option."
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "@@ROOT@@/white-paper#benchmark-2026",
+      "name": "The Client Service Benchmark 2026",
+      "url": "@@ROOT@@/white-paper",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "author": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Customer Retention Software for Agencies: 5 Tools Compared",
+      "description": "Customer retention software for agencies and service firms: five tools compared (Gainsight, ChurnZero, Totango, Planhat, Kaizan), plus cost and churn cost.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "Customer retention software for agencies and service firms: five tools compared (Gainsight, ChurnZero, Totango, Planhat, Kaizan), plus cost and churn cost.",
+      "abstract": "Customer retention software is any platform built to keep the clients a business already has, by tracking relationship health, flagging risk early and prompting action before a renewal is in danger. For agencies and other service firms, the tools that actually work score relationship health from real conversations (emails, calls, meetings), not from product logins or a quarterly survey.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-four-types.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "customer retention software",
+        "customer retention software for agencies",
+        "customer retention management software",
+        "client retention software",
+        "churn prediction",
+        "Gainsight alternatives",
+        "ChurnZero",
+        "Totango",
+        "Planhat"
+      ],
+      "wordCount": 4860,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Heads of Client Service, COOs and CEOs / CFOs at agencies and service firms"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Customer retention software",
+          "description": "Customer retention software is any platform built to keep the clients a business already has, by tracking relationship health, flagging risk early and prompting action before a renewal is in danger.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer retention",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
+        },
+        {
+          "@type": "Thing",
+          "name": "Churn rate",
+          "sameAs": "https://en.wikipedia.org/wiki/Churn_rate"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        },
+        {
+          "@id": "@@PAGE@@#howto"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "@@ROOT@@/white-paper#benchmark-2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://forge.so/agency-benchmarks",
+          "name": "forge.so",
+          "description": "Agency Benchmarks Report 2026: Margin, Growth, Retention & More"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://focus-digital.co/average-marketing-agency-churn/",
+          "name": "focus-digital.co",
+          "description": "Average Marketing Agency Churn: 2026 Report"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/statistics/client-retention-statistics",
+          "name": "agiled.app",
+          "description": "Client Retention Statistics for Agencies (2026)"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.spendhound.com/marketplace/churnzero-pricing",
+          "name": "spendhound.com",
+          "description": "ChurnZero actual pricing 2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.capterra.com/p/176981/ChurnZero/",
+          "name": "ChurnZero pricing and reviews"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://oliv.ai/blog/gainsight-pricing-cost-per-user",
+          "name": "oliv.ai",
+          "description": "Gainsight pricing and cost per user 2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://fungies.io/?p=40846",
+          "name": "fungies.io",
+          "description": "10 Best Customer Success Software for SaaS in 2026"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/pricing/",
+        "@@ROOT@@/product/",
+        "@@ROOT@@/blog/client-health/np-digital-ai-client-retention/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-gainsight"
+        },
+        {
+          "@id": "@@PAGE@@#tool-churnzero"
+        },
+        {
+          "@id": "@@PAGE@@#tool-totango"
+        },
+        {
+          "@id": "@@PAGE@@#tool-planhat"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-four-types.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-four-types.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-decision-flow.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-decision-flow.png",
+      "caption": "Decision flow matching a retention problem to the type of software that fixes it.",
+      "description": "Decision flow matching a retention problem to the type of software that fixes it.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-modelled-benefit.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/customer-retention-software-for-agencies/customer-retention-software-modelled-benefit.png",
+      "caption": "Modelled annual benefit of retention software at 150, 1,000 and 10,000 employees, split into three sources.",
+      "description": "Modelled annual benefit of retention software at 150, 1,000 and 10,000 employees, split into three sources.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}
