@@ -988,6 +988,9 @@ def gtm_head_snippet() -> str:
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NCXT2FLQ');</script>
         <!-- End Google Tag Manager -->
+        <!-- RB2B -->
+        <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("VN080HZ7186J");</script>
+        <!-- End RB2B -->
         ''')
 
 
