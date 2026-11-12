@@ -1,0 +1,571 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "The 8 best client collaboration tools for agencies, compared",
+      "numberOfItems": 8,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SuiteDash",
+          "item": {
+            "@id": "@@PAGE@@#tool-suitedash"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Clinked",
+          "item": {
+            "@id": "@@PAGE@@#tool-clinked"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Copilot",
+          "item": {
+            "@id": "@@PAGE@@#tool-copilot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Moxo",
+          "item": {
+            "@id": "@@PAGE@@#tool-moxo"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Notion",
+          "item": {
+            "@id": "@@PAGE@@#tool-notion"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Google Drive and Docs",
+          "item": {
+            "@id": "@@PAGE@@#tool-google-drive-and-docs"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Teamwork",
+          "item": {
+            "@id": "@@PAGE@@#tool-teamwork"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-suitedash",
+      "name": "SuiteDash",
+      "applicationCategory": "Portal-first, all-in-one",
+      "description": "Best for: Small agencies wanting one flat price",
+      "url": "https://suitedash.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-clinked",
+      "name": "Clinked",
+      "applicationCategory": "Portal-first",
+      "description": "Best for: Firms needing a secure, branded portal",
+      "url": "https://www.clinked.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-copilot",
+      "name": "Copilot",
+      "applicationCategory": "Portal-first",
+      "description": "Best for: Premium client experience",
+      "url": "https://assembly.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-moxo",
+      "name": "Moxo",
+      "applicationCategory": "Portal-first, workflow-led",
+      "description": "Best for: Structured approvals and onboarding",
+      "url": "https://www.moxo.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-notion",
+      "name": "Notion",
+      "applicationCategory": "Workspace with guest access",
+      "description": "Best for: Teams who like to build",
+      "url": "https://www.notion.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-google-drive-and-docs",
+      "name": "Google Drive and Docs",
+      "applicationCategory": "Shared files",
+      "description": "Best for: Agencies with few clients",
+      "url": "https://workspace.google.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-teamwork",
+      "name": "Teamwork",
+      "applicationCategory": "Project management with client users",
+      "description": "Best for: Delivery-led agencies",
+      "url": "https://www.teamwork.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Internal client success platform",
+      "description": "Best for: Seeing client health behind any portal. Client intelligence platform; priced by number of clients.",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a client portal, and how is it different from client collaboration software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client collaboration software gives agencies and their clients one shared place to work together: files, approvals, messages and progress updates. A client portal is the branded front door to that space, and the shared system behind it is often described as a client collaboration platform. Neither tells your team how the client feels. That internal view of health, risk and stakeholder coverage needs a second layer behind the portal.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best client dashboard software for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best client dashboard software depends on the audience. For clients, a portal such as SuiteDash, Clinked or Copilot shows progress and deliverables. For your own team, an internal dashboard such as Kaizan combines reporting features with health, risk, and coverage scoring drawn from real conversations. Most agencies need one of each.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is client tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client tracking is the continuous record of every interaction with a client: emails, meetings, calls and chat, tied to the people involved. Tracking done by hand goes stale. Tracking captured automatically shows when contact thins, who is missing from the conversation and which accounts need attention before the client raises it.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should clients see, and what should stay internal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clients should see progress, deliverables awaiting approval, reporting and agreed next steps. Keep client health scores, risk flags, stakeholder coverage, margin and renewal signals internal. The client lane builds trust. The internal lane protects the account. Mixing them hands clients your working notes and hides your warning signs.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do agencies actually need a client portal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Agencies need a portal when clients chase files, approvals or status in email every week, and some clients may also need a user friendly interface to adopt it quickly. Agencies with a handful of clients and a shared drive can skip it. If the real problem is losing clients without warning, a portal with a steep learning curve does not fix it either. Internal visibility does.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we stop the portal going stale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Stop depending on manual updates. Pull progress from the tools your team already uses, and capture meetings, emails and calls automatically so the status draws from real activity. Name one update owner per account, and retire any portal section nobody has opened in 30 days.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do we roll a portal out to existing clients?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilot with five accounts, never the whole book. Tell each client what changes, what stays in email and when the first update lands. Seed the portal with current files and open actions before you invite clients. Review usage after 30 days, then extend to the next group.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the team actually use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Adoption follows effort. The entire team will only use the portal if it removes work rather than adds it. Choose tools that reuse work already done, assign one owner per account and track weekly logins by account team. A portal that adds admin fails. One that removes admin and has an intuitive interface sticks.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "@@ROOT@@/white-paper#benchmark-2026",
+      "name": "The Client Service Benchmark 2026",
+      "url": "@@ROOT@@/white-paper",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "author": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Client Collaboration Software and Portals for Agencies (2026)",
+      "description": "Eight client collaboration and client portal tools for agencies compared on pricing and fit, plus what clients should see and what should stay internal.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "Eight client collaboration and client portal tools for agencies compared on pricing and fit, plus what clients should see and what should stay internal.",
+      "abstract": "Client collaboration software gives agencies and their clients one shared place to work together: files, approvals, messages and progress updates. A client portal is the branded front door to that space. Neither tells your team how the client feels. That internal view of health, risk and stakeholder coverage needs a second layer behind the portal.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-8-tools-by-type.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "client collaboration software",
+        "client portal software",
+        "client portals for agencies",
+        "client dashboard software",
+        "client tracking",
+        "SuiteDash",
+        "Clinked",
+        "Copilot",
+        "Moxo"
+      ],
+      "wordCount": 3924,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Agency owners, Heads of Client Service and COOs"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Client collaboration software",
+          "description": "Client collaboration software is the shared workspace between a service team and its clients.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Collaborative software",
+          "sameAs": "https://en.wikipedia.org/wiki/Collaborative_software"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "@@ROOT@@/white-paper#benchmark-2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.zite.com/blog/client-management-portal",
+          "name": "Zite"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.softwareadvice.com/project-management/suitedash-profile/",
+          "name": "Software Advice"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.clinked.com/pricing?unit=1",
+          "name": "Clinked pricing"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://us.fitgap.com/products/clinked",
+          "name": "Fitgap"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://copilot.app/guide/plans",
+          "name": "Copilot plans"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.copilot.com/guide/plans",
+          "name": "Copilot guide"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/blog/copilot-review",
+          "name": "Agiled"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.moxo.com/blog/moxo-pricing",
+          "name": "Moxo"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/blog/moxo-pricing",
+          "name": "Agiled"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://lifestack.ai/blog/notion-pricing",
+          "name": "Lifestack"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.teamwork.com/pricing/",
+          "name": "Teamwork pricing"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.saascrmreview.com/teamwork-review/",
+          "name": "SaaS CRM Review"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/statistics/client-retention-statistics",
+          "name": "First Page Sage via Agiled"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/integrations/",
+        "@@ROOT@@/product/",
+        "@@ROOT@@/pricing/",
+        "@@ROOT@@/blog/measuring-client-health-client-service-using-ai/",
+        "@@ROOT@@/blog/the-client-relationship-is-bigger-than-your-inbox/",
+        "@@ROOT@@/blog/stakeholder-mapping-101-why-is-it-critical-in-managing-client/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-suitedash"
+        },
+        {
+          "@id": "@@PAGE@@#tool-clinked"
+        },
+        {
+          "@id": "@@PAGE@@#tool-copilot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-moxo"
+        },
+        {
+          "@id": "@@PAGE@@#tool-notion"
+        },
+        {
+          "@id": "@@PAGE@@#tool-google-drive-and-docs"
+        },
+        {
+          "@id": "@@PAGE@@#tool-teamwork"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        },
+        {
+          "@id": "@@PAGE@@#img-5"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-8-tools-by-type.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-8-tools-by-type.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-two-lanes.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-two-lanes.png",
+      "caption": "Two-lane model for client collaboration software: client lane above, internal lane below.",
+      "description": "Two-lane model for client collaboration software: client lane above, internal lane below.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/do-you-need-a-client-portal-test.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/do-you-need-a-client-portal-test.png",
+      "caption": "Five-question test for whether an agency needs a client portal.",
+      "description": "Five-question test for whether an agency needs a client portal.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-cost-40-users.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-collaboration-software-cost-40-users.png",
+      "caption": "Annual cost of client collaboration software for a 40-person team.",
+      "description": "Annual cost of client collaboration software for a 40-person team.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-5",
+      "url": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-portal-rollout-timeline.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-collaboration-software-for-agencies/client-portal-rollout-timeline.png",
+      "caption": "Six-step rollout plan for a client portal.",
+      "description": "Six-step rollout plan for a client portal.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

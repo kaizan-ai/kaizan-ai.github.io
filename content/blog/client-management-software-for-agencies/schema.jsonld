@@ -1,0 +1,753 @@
+{
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "The 12 best client management software tools for agencies in 2026",
+      "numberOfItems": 12,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HubSpot",
+          "item": {
+            "@id": "@@PAGE@@#tool-hubspot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Salesforce",
+          "item": {
+            "@id": "@@PAGE@@#tool-salesforce"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Zoho CRM",
+          "item": {
+            "@id": "@@PAGE@@#tool-zoho-crm"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "monday CRM",
+          "item": {
+            "@id": "@@PAGE@@#tool-monday-crm"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Teamwork.com",
+          "item": {
+            "@id": "@@PAGE@@#tool-teamwork-com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Productive",
+          "item": {
+            "@id": "@@PAGE@@#tool-productive"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Scoro",
+          "item": {
+            "@id": "@@PAGE@@#tool-scoro"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "SuiteDash",
+          "item": {
+            "@id": "@@PAGE@@#tool-suitedash"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Moxo",
+          "item": {
+            "@id": "@@PAGE@@#tool-moxo"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Planhat",
+          "item": {
+            "@id": "@@PAGE@@#tool-planhat"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Airtable",
+          "item": {
+            "@id": "@@PAGE@@#tool-airtable"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-hubspot",
+      "name": "HubSpot",
+      "applicationCategory": "CRM",
+      "description": "Best for: Agencies that run sales and marketing in one system",
+      "url": "https://www.hubspot.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-salesforce",
+      "name": "Salesforce",
+      "applicationCategory": "CRM",
+      "description": "Best for: Larger firms with an admin and complex sales",
+      "url": "https://www.salesforce.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-zoho-crm",
+      "name": "Zoho CRM",
+      "applicationCategory": "CRM",
+      "description": "Best for: Small agencies on a tight budget",
+      "url": "https://www.zoho.com/crm/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-monday-crm",
+      "name": "monday CRM",
+      "applicationCategory": "CRM",
+      "description": "Best for: Teams that want visual boards",
+      "url": "https://monday.com/crm"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-teamwork-com",
+      "name": "Teamwork.com",
+      "applicationCategory": "Agency operations (PSA)",
+      "description": "Best for: Agencies that track budgets, hours and margin",
+      "url": "https://www.teamwork.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-productive",
+      "name": "Productive",
+      "applicationCategory": "Agency operations (PSA)",
+      "description": "Best for: Agencies that plan resources and budgets",
+      "url": "https://productive.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-scoro",
+      "name": "Scoro",
+      "applicationCategory": "Agency operations (PSA)",
+      "description": "Best for: Firms that want quote-to-cash in one tool",
+      "url": "https://www.scoro.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-suitedash",
+      "name": "SuiteDash",
+      "applicationCategory": "Client portal",
+      "description": "Best for: Small firms that want a white-label portal",
+      "url": "https://suitedash.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-moxo",
+      "name": "Moxo",
+      "applicationCategory": "Client portal",
+      "description": "Best for: Regulated firms with approval workflows",
+      "url": "https://www.moxo.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Client success software",
+      "description": "Best for: Agencies and professional services firms with many stakeholders per client. Client intelligence platform; priced by number of clients.",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-planhat",
+      "name": "Planhat",
+      "applicationCategory": "Client success software",
+      "description": "Best for: B2B SaaS customer success teams",
+      "url": "https://www.planhat.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-airtable",
+      "name": "Airtable",
+      "applicationCategory": "Project and work tool",
+      "description": "Best for: Teams that want to build their own tracker",
+      "url": "https://www.airtable.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is client management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client management software is a system that records every client's contacts, conversations, work and health in one place, so an agency can serve, keep and grow its clients. It covers five types of tool: CRMs, project tools, client portals, agency operations platforms and client success software. The right type depends on the problem you need to fix first.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best client management app for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The best client management app depends on your first problem. Choose a CRM such as HubSpot or Zoho CRM for deals, a PSA such as Teamwork.com or Productive for margin, a portal such as SuiteDash for files, and client success software such as Kaizan for client risk and growth.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a client management programme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A client management programme is the set of habits and software an agency uses to run client relationships: who owns each client, how often the team meets them, how conversations are recorded and how health is reviewed. The software supports the programme. It does not replace the rules.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best client service software for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client service software for agencies should capture client conversations automatically, score relationship health with evidence and show leaders which clients are at risk. Kaizan and Planhat sit in this type. Kaizan is built for agencies and professional services firms of 200 to 10,000 people. Planhat is built for B2B SaaS.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a client management workflow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A client management workflow is the repeatable sequence an account team follows for each client: onboarding, an agenda before each meeting, a recap and actions afterward, a QBR and a renewal review. Good software automates the recaps, agendas and follow-ups and leaves relationship decisions to people.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a CRM the same thing, and do we need more if we already have HubSpot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. A CRM records contacts and deals that people log. Client management software for an agency captures what clients say on calls, email and chat, and scores relationship health. Keep your CRM as the system of record. Add client success software beside it when you need to know which clients are at risk.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does client management software cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prices run from free to more than $100,000 a year. Per-seat tools cost $9 to $175 per user per month. Flat-rate portals cost $19 to $99 per month. Per-client tools such as Kaizan are priced by number of clients, with unlimited users. Kaizan's price is on quote. Competitor prices are indicative, not hard figures. Onboarding and add-ons cost extra.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there free client management software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, with limits. HubSpot's CRM is free for two seats, Zoho CRM is free for three users, Teamwork.com has a free plan and Airtable is free for five editors. Free tiers cap users, records or features, and none score client health. Limits are indicative, so confirm them. Kaizan offers a free 14-day pilot on your own data.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to roll out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CRM or portal can run within days. Agency operations platforms take weeks because budgets and rates must be loaded. Kaizan's standard onboarding takes two weeks, with 90 days of history imported, and most clients reach full team adoption within 30 days of kickoff. Account manager habits slow every rollout.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this replace our RAG spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client success software replaces the RAG spreadsheet when it scores health from conversations and cites the evidence. Run both side by side on five accounts for 14 days. If the tool catches what the spreadsheet missed, retire the sheet for those accounts and expand.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is client dashboard software?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client dashboard software shows the state of a client on one screen. An internal dashboard shows your team health, risk and activity. A client-facing dashboard shows the client deliverables and results. Choose by audience, because the two solve different problems.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "@@PAGE@@#howto",
+      "name": "How to choose client management software in seven steps",
+      "inLanguage": "@@LANG@@",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Start with the problem, not the features",
+          "text": "Write one sentence: \"We lose clients without warning\" or \"Clients chase us for files\" or \"We cannot see which retainers make money.\" Use the decision table above to find the type. A tool that wins on features and misses your sentence will sit unused."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Map your current stack",
+          "text": "List where client information lives: CRM, inbox, calendar, meeting tool, chat, spreadsheet, drive. Mark the two places where information gets lost. The right tool connects to those two first."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count clients, not seats",
+          "text": "Per-seat tools charge for headcount. Per-client tools charge for your portfolio. Run both models on your own numbers. Take an agency with 50 clients and 30 people who need access. At list price, Salesforce Enterprise costs $63,000 a year (30 users at $175 a month). Zoho CRM Professional costs $8,280 (30 users at $23 a month). Kaizan is priced by number of clients. Price on quote. It stays the same if 10 more people need access, and it rises only as you add clients. Competitor prices here are indicative list prices from third-party trackers, not hard figures. The next section shows the full comparison at 25, 50 and 100 clients."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Manual entry against automatic capture",
+          "text": "The biggest adoption risk is a tool that asks account managers to type more. Ask each vendor: what does the tool capture without a human doing anything? A COO at an agency that adopted client success software described what changed:"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Pilot on five accounts for 14 days",
+          "text": "Pick two healthy accounts, two uncertain ones and one at risk. Run the tool beside your RAG spreadsheet. Log every case where the tool saw something the spreadsheet missed. Kaizan runs a free 14-day pilot on your own data. Ask every other vendor for the same."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Give each buyer what they need to see",
+          "text": "Head of client service: proof that it replaces the RAG spreadsheet, and the evidence behind every flag. COO: the adoption plan, the admin hours removed, the fit with your stack and who maintains it. CFO: price per client, revenue at risk each year, and the payback period."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Score the shortlist",
+          "text": "Use the nine weighted criteria in the assessment above to choose the right client management software. Change the weights to match your biggest recent loss. Score two or three tools. Choose the highest score only if the pilot agrees, so you can streamline operations."
+        }
+      ]
+    },
+    {
+      "@type": "Report",
+      "@id": "@@ROOT@@/white-paper#benchmark-2026",
+      "name": "The Client Service Benchmark 2026",
+      "url": "@@ROOT@@/white-paper",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "author": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Client Management Software for Agencies: 12 Tools (2026)",
+      "description": "Client management software explained: five tool types, 12 tools compared with list prices, a 7-step buying process and a 30-day plan off the RAG spreadsheet.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-10-29",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "Client management software explained: five tool types, 12 tools compared with list prices, a 7-step buying process and a 30-day plan off the RAG spreadsheet.",
+      "abstract": "Client management software is a system that records every client's contacts, conversations, work and health in one place, so an agency can serve, keep and grow its clients. It covers five types of tool: CRMs, project tools, client portals, agency operations platforms and client success software. The right type depends on the problem you need to fix first.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-five-types.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-10-29",
+      "articleSection": "Client software",
+      "keywords": [
+        "client management software",
+        "client management software for agencies",
+        "client management app",
+        "client management platform",
+        "client dashboard software",
+        "client success software",
+        "client management workflow",
+        "RAG spreadsheet"
+      ],
+      "wordCount": 7231,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Heads of Client Service and COOs at agencies, consultancies and professional services firms"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Client management software",
+          "description": "Client management software is a system that records every client's contacts, conversations, work and health in one place, so an agency can serve, keep and grow its clients.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        },
+        {
+          "@type": "Thing",
+          "name": "Account management",
+          "sameAs": "https://en.wikipedia.org/wiki/Account_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer retention",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        },
+        {
+          "@id": "@@PAGE@@#howto"
+        }
+      ],
+      "citation": [
+        {
+          "@id": "@@ROOT@@/white-paper#benchmark-2026"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.vktr.com/the-wire/agencies-and-marketers-see-more-opportunities-in-2024-but-require-proactive-strategies-to-succeed-rswus-releases-comprehensive-2024-new-year-outlook-report-for-marketing-and-advertising-industry",
+          "name": "vktr.com",
+          "description": "45% of marketers named lack of proactivity as the top reason they reviewed new agencies"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://hbr.org/2014/10/the-value-of-keeping-the-right-customers",
+          "name": "hbr.org",
+          "description": "winning a new customer costs 5 to 25 times more than keeping an existing one"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.saasworthy.com/blog/hubspot-crm-pricing",
+          "name": "saasworthy.com",
+          "description": "free for two seats, with Sales Hub Professional around $90 per seat per month and Enterprise around $150"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://meetergo.com/en/magazine/salesforce-starter-suite-pricing",
+          "name": "meetergo.com",
+          "description": "$25 for Starter Suite, $100 for Pro Suite and $175 for Enterprise per user per month"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://meetergo.com/en/magazine/zoho-crm-pricing",
+          "name": "meetergo.com",
+          "description": "free for three users, then $14, $23, $40 or $52 per user per month on annual billing"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://saascrmreview.com/monday-com-pricing/",
+          "name": "saascrmreview.com",
+          "description": "$12, $17 or $28 per seat per month on annual billing, with a three-seat minimum"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://costbench.com/software/agency-project-management/teamwork-agency/",
+          "name": "costbench.com",
+          "description": "a free plan, with paid plans from about $9.99 per user per month"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.g2.com/products/productive/reviews?page=4",
+          "name": "g2.com",
+          "description": "Essential from about $9 per user per month, rising to about $32 on the top tier"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/blog/scoro-pricing",
+          "name": "agiled.app",
+          "description": "Core about $19.90 to $23.90, Growth about $38.90 and Performance about $59.90 per user per month"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/blog/suitedash-review",
+          "name": "agiled.app",
+          "description": "$19, $49 or $99 per month, or $180, $480 and $960 per year"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://resources.rework.com/tools/client-portal/best-suitedash-alternatives",
+          "name": "resources.rework.com",
+          "description": "a team plan reported at $500 per month or $5,000 per year"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.vendr.com/marketplace/planhat",
+          "name": "vendr.com",
+          "description": "quote-based and priced by the number of customer accounts, not seats"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://www.layer3labs.io/guides/airtable-pricing-guide",
+          "name": "layer3labs.io",
+          "description": "free for five editors, then $20 per editor per month on Team and $45 on Business with annual billing"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://agiled.app/statistics/client-retention-statistics",
+          "name": "agiled.app",
+          "description": "84% a year"
+        },
+        {
+          "@type": "CreativeWork",
+          "url": "https://pushleads.com/agency-growth-blueprint/marketing-agency-growth-benchmarks/",
+          "name": "pushleads.com",
+          "description": "60% to 70%"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/for/client-service-director/",
+        "@@ROOT@@/blog/stakeholder-mapping-101-why-is-it-critical-in-managing-client/",
+        "@@ROOT@@/faq/",
+        "@@ROOT@@/blog/client-experience-touchpoints-what-are-they-and-how-can-you-optimise/",
+        "@@ROOT@@/blog/from-reactive-to-proactive-how-great-client-teams-stay-ahead/",
+        "@@ROOT@@/blog/the-client-relationship-is-bigger-than-your-inbox/",
+        "@@ROOT@@/product/",
+        "@@ROOT@@/blog/measuring-client-health-client-service-using-ai/",
+        "@@ROOT@@/product/#health-model",
+        "@@ROOT@@/blog/how-tradedoubler-is-driving-20-greater-operational-efficiency-across/",
+        "@@ROOT@@/blog/your-data-is-yours-thats-our-policy/",
+        "@@ROOT@@/security/",
+        "@@ROOT@@/blog/mcp-vs-api-in-plain-english/",
+        "@@ROOT@@/integrations/",
+        "@@ROOT@@/pricing/"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-hubspot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-salesforce"
+        },
+        {
+          "@id": "@@PAGE@@#tool-zoho-crm"
+        },
+        {
+          "@id": "@@PAGE@@#tool-monday-crm"
+        },
+        {
+          "@id": "@@PAGE@@#tool-teamwork-com"
+        },
+        {
+          "@id": "@@PAGE@@#tool-productive"
+        },
+        {
+          "@id": "@@PAGE@@#tool-scoro"
+        },
+        {
+          "@id": "@@PAGE@@#tool-suitedash"
+        },
+        {
+          "@id": "@@PAGE@@#tool-moxo"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        },
+        {
+          "@id": "@@PAGE@@#tool-planhat"
+        },
+        {
+          "@id": "@@PAGE@@#tool-airtable"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-five-types.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-five-types.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-spreadsheet-vs-portfolio.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-spreadsheet-vs-portfolio.png",
+      "caption": "Monthly RAG spreadsheet with stale cells beside a ranked client portfolio with trends and evidence.",
+      "description": "Monthly RAG spreadsheet with stale cells beside a ranked client portfolio with trends and evidence.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-cost-25-50-100-clients.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-cost-25-50-100-clients.png",
+      "caption": "Annual list cost of six tools at 25, 50 and 100 clients. Per-seat tools rise with headcount.",
+      "description": "Annual list cost of six tools at 25, 50 and 100 clients. Per-seat tools rise with headcount.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-30-day-plan.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-management-software-for-agencies/client-management-software-30-day-plan.png",
+      "caption": "Four-phase 30-day plan for moving off the RAG spreadsheet, ending in a recorded decision at day 30.",
+      "description": "Four-phase 30-day plan for moving off the RAG spreadsheet, ending in a recorded decision at day 30.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

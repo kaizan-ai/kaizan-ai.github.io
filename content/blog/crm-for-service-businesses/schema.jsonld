@@ -1,0 +1,294 @@
+{
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a CRM for a service business miss?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CRM for a service business stores contacts, deals, and activity logs. It was built to run a sales pipeline, not to hold a client relationship. The emails, calls, and meetings where a relationship actually lives mostly never reach a CRM field, which is how a team can keep a clean CRM and still get blindsided by a client who leaves.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is client relation management, and how is it different from CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Client relation management is the ongoing discipline of understanding, serving, and growing a client relationship. CRM, customer relationship management software, is one tool that supports part of that discipline: the administrative record of contacts, deals, contact management, and contract terms. A business can run strong client relation management with a basic CRM, or a clean CRM while being genuinely blind to client sentiment. The two are not interchangeable.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does a CRM not capture?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CRM does not capture the conversation itself: the tone of a call, a concern raised twice in a month, a decision-maker who has gone quiet, a passing comment that signals an upsell opportunity. It only holds what someone chose to type into a field, and most of what matters in a relationship never gets typed in, because nobody has time to transcribe every call by hand.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which system should own the client: the CRM or the client success platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both, for different things. The CRM stays the system of record for contacts, deals, and billing. A client success platform becomes the system of truth for relationship health: risk signals, stakeholder coverage, and expansion readiness, continuously updated from actual conversations rather than manual entry.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we add client health scoring to Salesforce or HubSpot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Kaizan connects to both by OAuth with two-way sync, captures every call, email, and chat tied to a client automatically, scores the relationship against four plain-language health dimensions, and writes the score back into the CRM record your team already uses, directly to the Account object in Salesforce, or as a synced property in HubSpot, alongside other customer records.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need to replace our CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The CRM keeps doing the job it was built for: contacts, deals, and contract records. Adding relationship health scoring on top of it closes the gap without a migration project, preserves your broader CRM functionality, and writes the evidence behind each score back into the same record leadership already checks.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do account managers not update the CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mostly because they are triaging between a CRM field and an actual client conversation, and the conversation wins, which is the right call in the moment. With roughly 35 to 40% of an account handler's week already gone to admin, a non-essential update is one of the first things to slip. The fix is capturing the signal automatically rather than asking a busy person to remember to log it.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will the team actually use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is the real adoption risk with any system layered onto a CRM, and it is worth testing before committing to anything. A layer that still requires manual entry gets treated exactly like the CRM fields it was meant to fix: ignored under pressure. The honest test is whether the health score updates itself from conversations that already happen, fits current business processes, or whether it just adds another field for someone to fill in. If you want to see what a health score written back to your own CRM record looks like, book a demo.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "CRM for Service Businesses: What a CRM Misses About Clients",
+      "description": "A CRM stores contacts and deals, not the conversations where client relationships live. What it misses and how to add health scoring without replacing it.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "A CRM stores contacts and deals, not the conversations where client relationships live. What it misses and how to add health scoring without replacing it.",
+      "abstract": "A CRM for a service business stores contacts, deals, and activity logs. It was built to run a sales pipeline, not to hold a client relationship. The emails, calls, and meetings where a relationship actually lives mostly never reach a CRM field, which is how a team can keep a clean CRM and still get blindsided by a client who leaves.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/crm-vs-client-success-platform-ownership.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "CRM for service business",
+        "CRM for service businesses",
+        "CRM account management",
+        "client relation management",
+        "client health scoring",
+        "Salesforce client health",
+        "HubSpot client health"
+      ],
+      "wordCount": 3593,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Heads of Operations, Heads of Client Service and account leaders at service businesses"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Client relation management",
+          "description": "Client relation management is the ongoing discipline of understanding, serving, and growing a client relationship.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        },
+        {
+          "@type": "Thing",
+          "name": "Account management",
+          "sameAs": "https://en.wikipedia.org/wiki/Account_management"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/blog/client-software/client-relationship-bigger-than-your-inbox/",
+        "@@ROOT@@/integrations/",
+        "@@ROOT@@/product/#health-model",
+        "@@ROOT@@/pricing/"
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/crm-vs-client-success-platform-ownership.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/crm-vs-client-success-platform-ownership.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/crm-for-service-business-fields-vs-conversation.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/crm-for-service-business-fields-vs-conversation.png",
+      "caption": "Two columns: what a CRM field captures versus what the conversation layer holds.",
+      "description": "Two columns: what a CRM field captures versus what the conversation layer holds.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/client-relation-management-vs-crm.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/crm-for-service-businesses/client-relation-management-vs-crm.png",
+      "caption": "Venn diagram: CRM software is a small part of client relation management.",
+      "description": "Venn diagram: CRM software is a small part of client relation management.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}

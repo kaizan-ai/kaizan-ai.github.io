@@ -18,6 +18,7 @@ depth-3 path (../../../assets/img/blog/<slug>/photo.jpg).
 
 from __future__ import annotations
 
+import json
 import re
 import shutil
 from pathlib import Path
@@ -158,6 +159,19 @@ def _cover_asset(slug: str, meta: dict, post_dir: Path):
     return None
 
 
+def _load_schema_nodes(post_dir) -> list:
+    """Optional hand-authored JSON-LD @graph nodes for a post (schema.jsonld beside index.md).
+    URL tokens (@@PAGE@@, @@ROOT@@) and the language token are resolved per locale at build time."""
+    f = post_dir / 'schema.jsonld'
+    if not f.is_file():
+        return []
+    try:
+        return json.loads(f.read_text(encoding='utf-8')).get('@graph', [])
+    except ValueError as e:
+        print(f"  [blog] WARN {post_dir.name}: schema.jsonld is not valid JSON ({e})")
+        return []
+
+
 def load_posts(include_drafts: bool = False) -> list:
     """Load all posts from content/blog/*/index.md, newest first.
 
@@ -196,6 +210,9 @@ def load_posts(include_drafts: bool = False) -> list:
             meta_description=meta.get('meta_description', ''),
             schema=bool(meta.get('schema', not meta.get('canonical'))),
             date_modified=str(meta.get('date_modified', '')),
+            keywords=meta.get('keywords', []) if isinstance(meta.get('keywords', []), list) else [meta.get('keywords')],
+            meta_author=str(meta.get('meta_author', '')),
+            schema_nodes=_load_schema_nodes(md_path.parent),
             author=meta.get('author', 'Kaizan'),
             category=category,
             iso_date=iso,

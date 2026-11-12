@@ -1,0 +1,857 @@
+{
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": "@@PAGE@@#tools",
+      "name": "The 25 best customer success tools for client service teams, compared by job",
+      "numberOfItems": 25,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Gong",
+          "item": {
+            "@id": "@@PAGE@@#tool-gong"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Fireflies",
+          "item": {
+            "@id": "@@PAGE@@#tool-fireflies"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Otter",
+          "item": {
+            "@id": "@@PAGE@@#tool-otter"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Fathom",
+          "item": {
+            "@id": "@@PAGE@@#tool-fathom"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Microsoft Copilot",
+          "item": {
+            "@id": "@@PAGE@@#tool-microsoft-copilot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "HubSpot",
+          "item": {
+            "@id": "@@PAGE@@#tool-hubspot"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Salesforce",
+          "item": {
+            "@id": "@@PAGE@@#tool-salesforce"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Gainsight",
+          "item": {
+            "@id": "@@PAGE@@#tool-gainsight"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "ChurnZero",
+          "item": {
+            "@id": "@@PAGE@@#tool-churnzero"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Totango",
+          "item": {
+            "@id": "@@PAGE@@#tool-totango"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "Planhat",
+          "item": {
+            "@id": "@@PAGE@@#tool-planhat"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "Vitally",
+          "item": {
+            "@id": "@@PAGE@@#tool-vitally"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "ClientSuccess",
+          "item": {
+            "@id": "@@PAGE@@#tool-clientsuccess"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "Custify",
+          "item": {
+            "@id": "@@PAGE@@#tool-custify"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Kaizan",
+          "item": {
+            "@id": "@@ROOT@@/#kaizan-product"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Zapier",
+          "item": {
+            "@id": "@@PAGE@@#tool-zapier"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Make",
+          "item": {
+            "@id": "@@PAGE@@#tool-make"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "monday.com",
+          "item": {
+            "@id": "@@PAGE@@#tool-monday-com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "ClickUp",
+          "item": {
+            "@id": "@@PAGE@@#tool-clickup"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Asana",
+          "item": {
+            "@id": "@@PAGE@@#tool-asana"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Qualtrics",
+          "item": {
+            "@id": "@@PAGE@@#tool-qualtrics"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "Survicate",
+          "item": {
+            "@id": "@@PAGE@@#tool-survicate"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "AgencyAnalytics",
+          "item": {
+            "@id": "@@PAGE@@#tool-agencyanalytics"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "Looker Studio",
+          "item": {
+            "@id": "@@PAGE@@#tool-looker-studio"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "Rocketlane",
+          "item": {
+            "@id": "@@PAGE@@#tool-rocketlane"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-gong",
+      "name": "Gong",
+      "applicationCategory": "Capture",
+      "description": "Best for: Revenue teams wanting call analytics at scale",
+      "url": "https://www.gong.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-fireflies",
+      "name": "Fireflies",
+      "applicationCategory": "Capture",
+      "description": "Best for: Lightweight call capture and transcription",
+      "url": "https://fireflies.ai/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-otter",
+      "name": "Otter",
+      "applicationCategory": "Capture",
+      "description": "Best for: Teams already inside Google or Microsoft Workspace",
+      "url": "https://otter.ai/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-fathom",
+      "name": "Fathom",
+      "applicationCategory": "Capture",
+      "description": "Best for: Solo users wanting a free, simple recorder",
+      "url": "https://fathom.video/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-microsoft-copilot",
+      "name": "Microsoft Copilot",
+      "applicationCategory": "Capture",
+      "description": "Best for: Firms standardised on Microsoft 365",
+      "url": "https://copilot.microsoft.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-hubspot",
+      "name": "HubSpot",
+      "applicationCategory": "System of record",
+      "description": "Best for: Firms wanting CRM, marketing and service in one suite",
+      "url": "https://www.hubspot.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-salesforce",
+      "name": "Salesforce",
+      "applicationCategory": "System of record",
+      "description": "Best for: Enterprises with complex sales and service processes",
+      "url": "https://www.salesforce.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-gainsight",
+      "name": "Gainsight",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Large SaaS customer success orgs",
+      "url": "https://www.gainsight.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-churnzero",
+      "name": "ChurnZero",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Mid-market SaaS wanting churn prediction",
+      "url": "https://churnzero.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-totango",
+      "name": "Totango",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Enterprise CS teams tracking adoption journeys",
+      "url": "https://www.totango.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-planhat",
+      "name": "Planhat",
+      "applicationCategory": "Score and health",
+      "description": "Best for: CS teams wanting a flexible data model",
+      "url": "https://www.planhat.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-vitally",
+      "name": "Vitally",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Mid-market SaaS teams",
+      "url": "https://www.vitally.io/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-clientsuccess",
+      "name": "ClientSuccess",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Straightforward CS management for smaller teams",
+      "url": "https://www.clientsuccess.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-custify",
+      "name": "Custify",
+      "applicationCategory": "Score and health",
+      "description": "Best for: SMB to mid-market CS teams",
+      "url": "https://www.custify.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@ROOT@@/#kaizan-product",
+      "name": "Kaizan",
+      "applicationCategory": "Score and health",
+      "description": "Best for: Agencies, consultancies and professional services firms running many client relationships across dispersed teams. Client intelligence platform; priced by number of clients.",
+      "url": "@@ROOT@@/product/",
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-zapier",
+      "name": "Zapier",
+      "applicationCategory": "Act and automate",
+      "description": "Best for: Connecting tools that don't natively talk",
+      "url": "https://zapier.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-make",
+      "name": "Make",
+      "applicationCategory": "Act and automate",
+      "description": "Best for: Teams wanting more complex automation logic than Zapier",
+      "url": "https://www.make.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-monday-com",
+      "name": "monday.com",
+      "applicationCategory": "Act and automate",
+      "description": "Best for: Visual work and project tracking with CRM add-ons",
+      "url": "https://monday.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-clickup",
+      "name": "ClickUp",
+      "applicationCategory": "Act and automate",
+      "description": "Best for: All-in-one task and project management",
+      "url": "https://clickup.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-asana",
+      "name": "Asana",
+      "applicationCategory": "Act and automate",
+      "description": "Best for: Teams prioritising clean project tracking",
+      "url": "https://asana.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-qualtrics",
+      "name": "Qualtrics",
+      "applicationCategory": "Report and feedback",
+      "description": "Best for: Enterprises running formal CSAT and NPS programmes",
+      "url": "https://www.qualtrics.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-survicate",
+      "name": "Survicate",
+      "applicationCategory": "Report and feedback",
+      "description": "Best for: Lightweight, fast survey deployment",
+      "url": "https://survicate.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-agencyanalytics",
+      "name": "AgencyAnalytics",
+      "applicationCategory": "Report and feedback",
+      "description": "Best for: Agencies reporting on marketing performance to clients",
+      "url": "https://agencyanalytics.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-looker-studio",
+      "name": "Looker Studio",
+      "applicationCategory": "Report and feedback",
+      "description": "Best for: Teams wanting free, flexible dashboards",
+      "url": "https://lookerstudio.google.com/"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "@@PAGE@@#tool-rocketlane",
+      "name": "Rocketlane",
+      "applicationCategory": "Report and feedback",
+      "description": "Best for: Client onboarding project tracking",
+      "url": "https://www.rocketlane.com/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "@@PAGE@@#faq",
+      "url": "@@PAGE@@#faq",
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "inLanguage": "@@LANG@@",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best CSM software for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the customer journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is customer success automation, and which workflows should we automate first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving customer retention as well as reducing admin.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best customer success management tools for agencies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For agencies and professional services firms, the strongest customer success management tools are the ones built around conversation data (calls, email, chat) rather than product usage, since that's where the relationship signal actually lives. Gainsight and Totango are strong where there's a product to instrument; Kaizan and similar services-focused platforms are built for firms where the product is the relationship itself and teams need to guide clients towards desired outcomes.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need a customer success CRM, a spreadsheet or a platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "At around 10 clients, a CRM and careful habits are usually enough. At around 50, most firms need a dedicated customer success CRM or health-scoring layer because the spreadsheet can't keep pace. At around 200, a full platform with automatic capture and a portfolio view becomes close to essential, because no individual can track that many relationships manually, and it can support metrics like net revenue retention and gross revenue retention.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much do customer success tools cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Capture-only tools run free to roughly $20 per seat a month. Mid-market platforms are often quote-based, from several hundred to a few thousand dollars a month. Enterprise CS platforms typically run into five figures a year. Platforms priced per client rather than per seat, like Kaizan, are priced by number of clients with unlimited users, so the cost follows your client count rather than your headcount. Price on quote.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there free customer success tools?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, for the capture lane specifically: Fireflies, Otter and Fathom all offer free tiers for call recording and transcription, and Looker Studio is free for building your own dashboards. None of these free tiers includes a health score, risk alerting or automated action on what they capture; that layer is where the paid tiers and dedicated platforms earn their cost.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do we need these tools if we already have a CRM?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A CRM tells you who the client is and what you've sold them. It doesn't tell you how the relationship is doing right now, because that signal lives in calls, emails and the things clients say that never get typed into a CRM field. Most firms keep their CRM as the system of record and add a client success layer on top of it, rather than replacing one with the other; unlike customer support software, which is reactive to incoming issues, that layer is there to be proactive.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take to roll out?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For automatic-capture platforms, integrations typically connect within a day and recent history backfills within the first two weeks, so a health score monitoring customer satisfaction and customer health across the portfolio is live almost immediately. Full team adoption, where account managers rely on drafted follow-ups and the system genuinely replaces old habits, more commonly takes 30 to 45 days.",
+            "inLanguage": "@@LANG@@"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will this replace our RAG spreadsheet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It should, for the accounts it covers, but trust has to be earned first. Run the platform in parallel with the spreadsheet for the first two to three weeks, confirm the health scores match what the team already knows is true, then retire the spreadsheet account by account rather than all at once. See how Kaizan fits into the score-and-health lane of your own stack. Book a demo.",
+            "inLanguage": "@@LANG@@"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "@id": "@@PAGE@@#howto",
+      "name": "How to choose a customer success tool in seven steps",
+      "inLanguage": "@@LANG@@",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Start with the problem, not the feature list",
+          "text": "Use the decision table above. \"We don't know a client is unhappy until they tell us\" needs a different tool than \"calls get summarised and then lost.\""
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Map your current stack before adding to it",
+          "text": "List every tool that touches a client relationship today, what job each one actually does, and whether client data is split across multiple systems. Most firms find overlap they didn't know they had."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Count clients, not seats, when you price it out",
+          "text": "A per-seat tool at $40/seat/month looks cheap until you realise 12 people touch every account. Seats are unique people, so a per-seat bill follows headcount: a 30-person agency has at most 30 seats, which is $600/month for a $20/seat tool and $1,200/month for a $40/seat tool, however many accounts it covers. Per-client pricing works differently: Kaizan is priced by number of clients, so unlimited users don't add to the bill. Per-client cost follows your client count, not your headcount. Run your own numbers."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Weigh manual entry against automatic capture honestly",
+          "text": "A tool that depends on someone remembering to log a call will see the adoption numbers above within a quarter: roughly half of it simply won't happen."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Pilot on a small number of real accounts for two weeks",
+          "text": ", not a sandbox with demo data. Five accounts is enough to see whether the capture is accurate, whether data quality is good enough to trust the output, and whether the team actually opens the thing."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Know what each person in the buying committee needs to see",
+          "text": "A Head of Client Service wants evidence they can take upward and proof it replaces the spreadsheet rather than adding to it. A Head of Ops or COO wants to know the team will actually use it without extra admin, what it costs against the current stack, and whether it works for customer success managers handling day-to-day portfolios."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 7,
+          "name": "Score the shortlist against your own criteria",
+          "text": ", not a vendor comparison page."
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "@@PAGE@@#webpage",
+      "url": "@@PAGE@@",
+      "name": "Client Service Tech Stack: 25 Customer Success Tools by Job",
+      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 customer success tools compared, with what to use at 10, 50 and 200 clients.",
+      "inLanguage": "@@LANG@@",
+      "isPartOf": {
+        "@id": "https://kaizan.ai/#website"
+      },
+      "breadcrumb": {
+        "@id": "@@PAGE@@#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "@@PAGE@@#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "@@PAGE@@#img-1"
+      },
+      "dateModified": "2026-11-05",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "h1",
+          "h1 ~ p:first-of-type"
+        ]
+      },
+      "potentialAction": {
+        "@type": "ReadAction",
+        "target": [
+          "@@PAGE@@"
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "@@PAGE@@#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kaizan",
+          "item": "@@ROOT@@/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Client software",
+          "item": "@@ROOT@@/blog/client-software/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "@@TITLE@@",
+          "item": "@@PAGE@@"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://kaizan.ai/#james-caples",
+      "name": "James Caples",
+      "jobTitle": "Client Success Manager",
+      "description": "James Caples is a Client Success Manager at Kaizan. He helps client success managers chart predictable client growth with client health insight and productivity gains, and works with agency and professional services account teams on how they track, protect and grow client relationships.",
+      "worksFor": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Nottingham"
+      },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": [
+        "Client success",
+        "Client health scoring",
+        "Client management",
+        "Account management"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/james-caples/"
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "@@PAGE@@#article",
+      "mainEntityOfPage": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "url": "@@PAGE@@",
+      "headline": "@@TITLE@@",
+      "name": "@@TITLE@@",
+      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 customer success tools compared, with what to use at 10, 50 and 200 clients.",
+      "abstract": "Most agencies and professional services firms don't have a tools problem. They have a tools-that-don't-talk-to-each-other problem. A CRM holds the contact. A project tool holds the task. A spreadsheet holds the RAG status, updated once a month by whoever remembers. None of them holds the relationship.",
+      "image": [
+        "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png"
+      ],
+      "author": {
+        "@id": "https://kaizan.ai/#james-caples"
+      },
+      "publisher": {
+        "@id": "https://kaizan.ai/#organization"
+      },
+      "isPartOf": {
+        "@id": "@@PAGE@@#webpage"
+      },
+      "dateModified": "2026-11-05",
+      "articleSection": "Client software",
+      "keywords": [
+        "client service tech stack",
+        "customer success tools",
+        "customer success management tools",
+        "CSM software for agencies",
+        "customer success CRM",
+        "customer success automation",
+        "client health score"
+      ],
+      "wordCount": 4838,
+      "inLanguage": "@@LANG@@",
+      "isAccessibleForFree": true,
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Heads of Client Service, account management leads and operations leaders at agencies, consultancies and professional services firms (150 to 10,000 people)"
+      },
+      "about": [
+        {
+          "@type": "DefinedTerm",
+          "@id": "@@PAGE@@#defined-term",
+          "name": "Client service tech stack",
+          "description": "The client service tech stack is every tool your account team touches to keep a client relationship running: the system that holds the contact, the tool that captures the call, the dashboard that scores the relationship, and whatever drafts the follow-up afterward.",
+          "inDefinedTermSet": "@@ROOT@@/blog/"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer success",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_success"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer relationship management",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_relationship_management"
+        },
+        {
+          "@type": "Thing",
+          "name": "Customer retention",
+          "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
+        }
+      ],
+      "hasPart": [
+        {
+          "@id": "@@PAGE@@#faq"
+        },
+        {
+          "@id": "@@PAGE@@#howto"
+        }
+      ],
+      "relatedLink": [
+        "@@ROOT@@/product/",
+        "@@ROOT@@/for/client-service-director/",
+        "@@ROOT@@/pricing/",
+        "@@ROOT@@/product/#health-model"
+      ],
+      "mentions": [
+        {
+          "@id": "@@PAGE@@#tool-gong"
+        },
+        {
+          "@id": "@@PAGE@@#tool-fireflies"
+        },
+        {
+          "@id": "@@PAGE@@#tool-otter"
+        },
+        {
+          "@id": "@@PAGE@@#tool-fathom"
+        },
+        {
+          "@id": "@@PAGE@@#tool-microsoft-copilot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-hubspot"
+        },
+        {
+          "@id": "@@PAGE@@#tool-salesforce"
+        },
+        {
+          "@id": "@@PAGE@@#tool-gainsight"
+        },
+        {
+          "@id": "@@PAGE@@#tool-churnzero"
+        },
+        {
+          "@id": "@@PAGE@@#tool-totango"
+        },
+        {
+          "@id": "@@PAGE@@#tool-planhat"
+        },
+        {
+          "@id": "@@PAGE@@#tool-vitally"
+        },
+        {
+          "@id": "@@PAGE@@#tool-clientsuccess"
+        },
+        {
+          "@id": "@@PAGE@@#tool-custify"
+        },
+        {
+          "@id": "@@ROOT@@/#kaizan-product"
+        },
+        {
+          "@id": "@@PAGE@@#tool-zapier"
+        },
+        {
+          "@id": "@@PAGE@@#tool-make"
+        },
+        {
+          "@id": "@@PAGE@@#tool-monday-com"
+        },
+        {
+          "@id": "@@PAGE@@#tool-clickup"
+        },
+        {
+          "@id": "@@PAGE@@#tool-asana"
+        },
+        {
+          "@id": "@@PAGE@@#tool-qualtrics"
+        },
+        {
+          "@id": "@@PAGE@@#tool-survicate"
+        },
+        {
+          "@id": "@@PAGE@@#tool-agencyanalytics"
+        },
+        {
+          "@id": "@@PAGE@@#tool-looker-studio"
+        },
+        {
+          "@id": "@@PAGE@@#tool-rocketlane"
+        }
+      ],
+      "associatedMedia": [
+        {
+          "@id": "@@PAGE@@#img-2"
+        },
+        {
+          "@id": "@@PAGE@@#img-3"
+        },
+        {
+          "@id": "@@PAGE@@#img-4"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-1",
+      "url": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png",
+      "caption": "@@TITLE@@",
+      "description": "@@TITLE@@",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-2",
+      "url": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-spreadsheet-vs-dashboard.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-spreadsheet-vs-dashboard.png",
+      "caption": "Messy RAG spreadsheet beside a live client health dashboard.",
+      "description": "Messy RAG spreadsheet beside a live client health dashboard.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-3",
+      "url": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-per-seat-vs-per-client.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-per-seat-vs-per-client.png",
+      "caption": "Monthly cost of a per-seat tool rising with headcount beside a flat per-client price.",
+      "description": "Monthly cost of a per-seat tool rising with headcount beside a flat per-client price.",
+      "inLanguage": "@@LANG@@"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "@@PAGE@@#img-4",
+      "url": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-first-30-days.png",
+      "contentUrl": "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-first-30-days.png",
+      "caption": "Five-step 30-day plan for moving off the RAG spreadsheet.",
+      "description": "Five-step 30-day plan for moving off the RAG spreadsheet.",
+      "inLanguage": "@@LANG@@"
+    }
+  ]
+}
