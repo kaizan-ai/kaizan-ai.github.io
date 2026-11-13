@@ -1,0 +1,13 @@
+**Best customer success software for agencies: The verdict, before you scroll further**
+
+| Tool | Built for | Pricing model | Best for | Where it struggles for agencies |
+|---|---|---|---|---|
+| Kaizan | Agencies and professional services firms managing many high-touch client relationships | Per client per month, unlimited users | Firms that need every client conversation captured, scored, and acted on across a book of retainer or project clients | Newer category entrant than Gainsight; smaller third-party integration marketplace than Salesforce-native tools |
+| Gainsight | B2B SaaS post-sales teams managing product renewals | Per seat, enterprise contracts | Large SaaS vendors with dedicated CSM headcount and a product-usage data source | Priced and built around software seats and product telemetry, not client conversations or retainer accounts; long implementation |
+| Totango, now Odie | SaaS customer success teams tracking account health against product usage | Odie's new products start from $500/month; legacy Totango and Catalyst contracts are quote-based and no longer sold to new customers | Mid-market SaaS teams already on a Totango or Catalyst contract, or buyers wanting an AI customer-knowledge layer over existing CS data | Rebranded to Odie in September 2026 and repositioned around AI agents and an MCP server rather than a classic CS dashboard; not built for agency portfolios either way |
+| Planhat | Customer success and revenue teams wanting a flexible data layer | Custom, platform fee plus per-customer fee | Teams that want to build their own health-scoring logic from CRM and product data | No native meeting capture; agencies still need a separate note-taker and a lot of configuration before it reflects a client relationship |
+| ChurnZero | Subscription businesses fighting churn through in-app engagement | Custom, quote-based | SaaS companies that can trigger in-app messages to end users | Built around a product with logged-in users, which most agencies don't have; agency fit is indirect |
+| Vitally | Product-led SaaS CS teams wanting fast time to value | Published tiers from roughly $299/month | Lean, fast-growing software companies wanting a modern interface quickly | Thin on relationship-depth tracking (stakeholder coverage, sentiment trend) that agency account directors rely on |
+| ClientSuccess | Mid-market CS teams replacing spreadsheets with a first platform | Custom, quote-based | Simple relationship tracking and QBR prep for small CS teams | Lighter automation and AI layer; little built specifically for agency retainer or scope-based work |
+
+No single tool fits every agency. Only one on this list was built for client service teams.
