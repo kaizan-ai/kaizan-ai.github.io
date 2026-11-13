@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="/assets/dist/css/site.css?v=6007e719">
+        <link rel="stylesheet" href="/assets/dist/css/site.css?v=8db7f6bb">
         <script defer src="/assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/us/blog/client-software/crm-hygiene-for-account-teams/">
         <meta property="og:type" content="article">
@@ -59,7 +59,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta property="og:image:alt" content="CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays">
         <meta name="twitter:image:alt" content="CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays">
         <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-US", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/us/blog/client-software/crm-hygiene-for-account-teams/#article", "url": "https://kaizan.ai/us/blog/client-software/crm-hygiene-for-account-teams/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/us/blog/client-software/crm-hygiene-for-account-teams/"}, "headline": "CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays", "description": "CRM hygiene decays because updating a field competes with a client conversation. Learn which fields to keep clean and a six-step process that holds.", "inLanguage": "en-US", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/crm-hygiene-for-account-teams/crm-hygiene-decay-curve.png", "keywords": "crm hygiene, crm data quality, account management, client health, salesforce, hubspot"}]}</script>
-        <link rel="stylesheet" href="/assets/dist/css/resources.css?v=8d422e4e">
+        <script defer src="/assets/dist/js/blog-post.js?v=5dda1a75"></script>
+        <link rel="stylesheet" href="/assets/dist/css/resources.css?v=20fd7147">
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
@@ -118,18 +119,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays</h1>
-        <img class="kz-post-hero" src="/assets/img/blog/crm-hygiene-for-account-teams/crm-hygiene-decay-curve.png" alt="CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays" decoding="async">
-        <p>CRM hygiene for account teams means keeping the fields that actually drive decisions accurate and current: stakeholder contacts, deal or account stage, last-touch dates, and risk or health flags. It decays because updating those fields competes with an actual client conversation for the same few minutes, and the conversation wins.</p>
+        <img class="kz-post-hero" src="/assets/img/blog/crm-hygiene-for-account-teams/crm-hygiene-decay-curve.png?v=d4faf05a" alt="CRM Hygiene for Account Teams: What to Keep Clean and Why It Decays" decoding="async">
+        <p class="kz-lede-p">CRM hygiene for account teams means keeping the fields that actually drive decisions accurate and current: stakeholder contacts, deal or account stage, last-touch dates, and risk or health flags. It decays because updating those fields competes with an actual client conversation for the same few minutes, and the conversation wins.</p>
 
-<p><strong>Key takeaways</strong></p>
-
-<ul>
+<div class="kz-callout"><p class="kz-callout-label">Key takeaways</p><ul>
 <li>CRM hygiene decays because it is a behavior problem, not a data problem. Updating a field competes with an actual client conversation, and the conversation wins, every time, for good reason.</li>
-<li>Outside estimates of how fast CRM data goes stale vary enormously, from roughly 20% to 70% a year depending on the field and who is measuring. Treat any single number in that range as directional, not precise.</li>
-<li>In Kaizan's own benchmark data, 69% of struggling client accounts surface a warning sign in conversation at least once, and 38% do so repeatedly, long before anyone logs a risk in a CRM field.</li>
+<li>Outside estimates of how fast CRM data goes stale vary enormously, from roughly <mark class="kz-stat">20%</mark> to <mark class="kz-stat">70%</mark> a year depending on the field and who is measuring. Treat any single number in that range as directional, not precise.</li>
+<li>In Kaizan's own benchmark data, <mark class="kz-stat">69%</mark> of struggling client accounts surface a warning sign in conversation at least once, and <mark class="kz-stat">38%</mark> do so repeatedly, long before anyone logs a risk in a CRM field.</li>
 <li>A reminder email does not fix this. Cutting how much of the update depends on someone remembering to type it in does.</li>
 <li>One agency's own commercial leadership put a number on the gap directly: by his account, about half of the updates and notes his team generates never reach the system of record at all.</li>
-</ul>
+</ul></div>
 
 <p>Some teams search for this as CRM data hygiene, hoping for a checklist. There is one below. But a checklist alone will not hold, because the reason CRM records decay is rarely the fields themselves. It is what account managers are triaging against every time a field asks for two minutes they do not have.</p>
 
@@ -145,45 +144,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h3>The decay curve, with a caveat</h3>
 
-<p>Industry estimates of how fast CRM and contact data decays are all over the place. The most commonly repeated benchmark puts B2B contact data decay at around 2% a month, compounding to roughly 22% a year, a figure that traces back to older MarketingSherpa research and has been recycled across dozens of vendor blogs since. Other sources, measuring differently or counting faster-moving fields like job titles and phone numbers, claim decay as high as 60-70% a year. We could not find a single rigorous, independently audited source for either end of that range. Most of the research comes from vendors selling data-cleaning or enrichment tools, which is reason enough to treat any specific percentage as directional. What is not in dispute across any source we reviewed: the gap between what a CRM says and what is actually true about a relationship grows every month nobody actively closes it, and it grows faster the busier an account team gets.</p>
+<p>Industry estimates of how fast CRM and contact data decays are all over the place. The most commonly repeated benchmark puts B2B contact data decay at around <mark class="kz-stat">2%</mark> a month, compounding to roughly <mark class="kz-stat">22%</mark> a year, a figure that traces back to older MarketingSherpa research and has been recycled across dozens of vendor blogs since. Other sources, measuring differently or counting faster-moving fields like job titles and phone numbers, claim decay as high as 60-<mark class="kz-stat">70%</mark> a year. We could not find a single rigorous, independently audited source for either end of that range. Most of the research comes from vendors selling data-cleaning or enrichment tools, which is reason enough to treat any specific percentage as directional. What is not in dispute across any source we reviewed: the gap between what a CRM says and what is actually true about a relationship grows every month nobody actively closes it, and it grows faster the busier an account team gets.</p>
 
-<p><img loading="lazy" decoding="async" src="/assets/img/blog/crm-hygiene-for-account-teams/crm-hygiene-decay-curve.png" alt="A decay curve showing how CRM data accuracy falls over time, with the range of published estimates from roughly 22% to 70% a year." /></p>
+<p><img loading="lazy" decoding="async" src="/assets/img/blog/crm-hygiene-for-account-teams/crm-hygiene-decay-curve.png?v=d4faf05a" alt="A decay curve showing how CRM data accuracy falls over time, with the range of published estimates from roughly 22% to 70% a year." /></p>
 
 <h3>Why account managers don't update the CRM</h3>
 
-<p>Treat this as the real diagnosis, not an excuse. Independent, non-Kaizan research on sales teams found reps spend an average of 5.5 hours a week on manual CRM data entry, and a separate survey of frequent CRM users found 52% cite keeping data current as their single biggest CRM problem, with 48% pointing to data entry itself. Those figures come from sales-rep research, not account management specifically, but the mechanism is identical to what we hear from client service teams: admin and an actual client conversation are competing for the same few minutes, and whichever one has a human waiting on the other end of it wins.</p>
+<p>Treat this as the real diagnosis, not an excuse. Independent, non-Kaizan research on sales teams found reps spend an average of 5.5 hours a week on manual CRM data entry, and a separate survey of frequent CRM users found <mark class="kz-stat">52%</mark> cite keeping data current as their single biggest CRM problem, with <mark class="kz-stat">48%</mark> pointing to data entry itself. Those figures come from sales-rep research, not account management specifically, but the mechanism is identical to what we hear from client service teams: admin and an actual client conversation are competing for the same few minutes, and whichever one has a human waiting on the other end of it wins.</p>
 
 <p>We hear the same pattern directly from agencies we work with. A Head of Operations at one mid-size agency described the project management tool her team was supposed to be keeping current as the single biggest drag on her client service team that year, not because the tool was wrong, but because keeping it updated had become a second job nobody had time for:</p>
 
-<blockquote>
-  <p>"That's the thing that's really holding back our client services team. They're like, I'm not doing planning, I'm doing project management, and they shouldn't be anymore."</p>
-  
-  <p>— Head of Operations, Agency Client A</p>
-</blockquote>
+<blockquote><p>"That's the thing that's really holding back our client services team. They're like, I'm not doing planning, I'm doing project management, and they shouldn't be anymore."</p><p class="kz-quote-by">Head of Operations, Agency Client A</p></blockquote>
 
 <p>The same operations leader had already tried the obvious fix, asking the team to save client reports to a shared drive so new starters could find them, and watched it fail exactly where every manual hygiene initiative fails:</p>
 
-<blockquote>
-  <p>"Is there any way that we could save all our reports that we send over email in SharePoint? And I was like, I mean, technically, yes, but no one's going to..."</p>
-  
-  <p>— Head of Operations, Agency Client A</p>
-</blockquote>
+<blockquote><p>"Is there any way that we could save all our reports that we send over email in SharePoint? And I was like, I mean, technically, yes, but no one's going to..."</p><p class="kz-quote-by">Head of Operations, Agency Client A</p></blockquote>
 
 <p>A Chief Operating Officer at another agency described the same gap from the budget side, where the cost of a tool that still requires manual logging shows up as unused seats rather than bad data:</p>
 
-<blockquote>
-  <p>"We are paying for a lot of licenses and they are not [being] used."</p>
-  
-  <p>— Chief Operating Officer, Agency Client B</p>
-</blockquote>
+<blockquote><p>"We are paying for a lot of licenses and they are not [being] used."</p><p class="kz-quote-by">Chief Operating Officer, Agency Client B</p></blockquote>
 
 <p>And a Group Commercial Director at a third agency, mid-sized and UK-based, put a number on the underlying gap: when his team sat down to assess their own CRM discipline, their honest estimate was that about half of the updates and notes an account manager generates in a normal week never make it into the system at all.</p>
 
-<blockquote>
-  <p>"About half of our updates and notes are never logged."</p>
-  
-  <p>— Group Commercial Director, Agency Client C</p>
-</blockquote>
+<blockquote><p>"About half of our updates and notes are never logged."</p><p class="kz-quote-by">Group Commercial Director, Agency Client C</p></blockquote>
 
 <p>None of these are discipline problems. They are the predictable result of asking a busy person to manually transcribe something a system could capture on its own.</p>
 
@@ -204,65 +187,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Each step names an owner and a realistic time, because a step nobody owns does not happen, and a step with no time estimate gets deprioritized the first busy week.</p>
 
-<h3>Step 1: Decide what "clean" means before you audit anything</h3>
-
-<p><strong>Owner:</strong> Head of Ops / COO. <strong>Time:</strong> 30 minutes, once.</p>
+<ol class="kz-flow kz-flow-steps" data-flow><li class="kz-flow-item"><span class="kz-flow-label">Step 1</span><div class="kz-flow-step"><h3>Decide what "clean" means before you audit anything</h3><p><strong>Owner:</strong> Head of Ops / COO. <strong>Time:</strong> 30 minutes, once.</p>
 
 <p>Pick the five or six fields from the list above that actually matter for your team, not every field the CRM technically has. Write down, in one sentence each, what "accurate" means for each one: a stakeholder record is accurate if the named contact is still in that role and still the right person to reach; a risk flag is accurate if it would match what the account team would say out loud if asked today.</p>
 
 <p><strong>Script to use in the kickoff:</strong> "We are not trying to make the CRM perfect. We are agreeing on the five fields that actually change how we run this business, so we know what we're protecting."</p>
 
-<p><strong>Failure mode:</strong> Skipping this step and auditing everything. Teams that try to fix all fields at once lose momentum in the first week and the whole effort quietly dies.</p>
-
-<h3>Step 2: Run the baseline audit</h3>
-
-<p><strong>Owner:</strong> A nominated lead per pod or team, not the Head of Ops personally. <strong>Time:</strong> 15 to 20 minutes per account, once.</p>
+<p><strong>Failure mode:</strong> Skipping this step and auditing everything. Teams that try to fix all fields at once lose momentum in the first week and the whole effort quietly dies.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 2</span><div class="kz-flow-step"><h3>Run the baseline audit</h3><p><strong>Owner:</strong> A nominated lead per pod or team, not the Head of Ops personally. <strong>Time:</strong> 15 to 20 minutes per account, once.</p>
 
 <p>For each account, check the five or six fields against step 1's definition of accurate. Mark each one clean, stale, or missing. Do not fix anything yet. The point of this pass is to see the actual size of the problem before anyone starts arguing about causes.</p>
 
-<p><strong>Failure mode:</strong> Combining the audit with the fix. Teams that try to correct every stale field as they find it never finish the audit, and never get the baseline number that makes the business case for step 4.</p>
-
-<h3>Step 3: Name the behavior problem out loud</h3>
-
-<p><strong>Owner:</strong> Head of Ops / COO, in a team meeting. <strong>Time:</strong> 10 minutes.</p>
+<p><strong>Failure mode:</strong> Combining the audit with the fix. Teams that try to correct every stale field as they find it never finish the audit, and never get the baseline number that makes the business case for step 4.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 3</span><div class="kz-flow-step"><h3>Name the behavior problem out loud</h3><p><strong>Owner:</strong> Head of Ops / COO, in a team meeting. <strong>Time:</strong> 10 minutes.</p>
 
 <p>Share the audit results from step 2 without blame. The framing that works: "This isn't about anyone not caring. It's that updating this field competes with an actual client conversation, and the conversation should win. We're going to stop asking you to choose."</p>
 
 <p><strong>Script to use:</strong> "If keeping the CRM honest genuinely required you to skip a client call, you'd be right to skip the CRM. We're changing what the CRM asks of you, not asking you to try harder."</p>
 
-<p><strong>Failure mode:</strong> Running this as a discipline conversation instead. The moment a hygiene initiative reads as "try harder," account managers tune it out, correctly, because they already know the real constraint is time.</p>
-
-<h3>Step 4: Turn on automatic capture for the fields that decay fastest</h3>
-
-<p><strong>Owner:</strong> Head of Ops / COO, with whoever owns the CRM admin. <strong>Time:</strong> Half a day to connect; ongoing after that with no manual work.</p>
+<p><strong>Failure mode:</strong> Running this as a discipline conversation instead. The moment a hygiene initiative reads as "try harder," account managers tune it out, correctly, because they already know the real constraint is time.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 4</span><div class="kz-flow-step"><h3>Turn on automatic capture for the fields that decay fastest</h3><p><strong>Owner:</strong> Head of Ops / COO, with whoever owns the CRM admin. <strong>Time:</strong> Half a day to connect; ongoing after that with no manual work.</p>
 
 <p>Stakeholder contact, last-touch date, and sentiment or risk signal are the three fields most likely to be stale and most capturable from conversation data without anyone typing anything. If you run Kaizan alongside Salesforce or HubSpot, this step is largely a connection, not a project: both integrations run two-way sync by OAuth. In HubSpot, the sync covers deals, contacts, notes, activity, and custom properties. In Salesforce, the relationship health score, scored against <a href="https://www.kaizan.ai/us/product/#health-model">The Evidence-Based Client Health Standard</a>, writes back directly to the Account object. Every call, email, and chat thread tied to an account is captured and attributed automatically, and the evidence behind a risk flag links back to the specific conversation that triggered it, so nobody has to take a score on faith.</p>
 
-<p><strong>Failure mode:</strong> Automating the fields that were never the problem (deal stage, renewal date, which the CRM already handles well) and leaving the ones that actually decay, stakeholder and sentiment, as manual fields. Automation only helps if it targets where the hygiene problem actually lives.</p>
-
-<h3>Step 5: Assign one owner per account for what has to stay human</h3>
-
-<p><strong>Owner:</strong> Head of Client Service, assigning by account. <strong>Time:</strong> 15 minutes per account, once, then folded into normal account ownership.</p>
+<p><strong>Failure mode:</strong> Automating the fields that were never the problem (deal stage, renewal date, which the CRM already handles well) and leaving the ones that actually decay, stakeholder and sentiment, as manual fields. Automation only helps if it targets where the hygiene problem actually lives.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 5</span><div class="kz-flow-step"><h3>Assign one owner per account for what has to stay human</h3><p><strong>Owner:</strong> Head of Client Service, assigning by account. <strong>Time:</strong> 15 minutes per account, once, then folded into normal account ownership.</p>
 
 <p>Not everything should be automated. Judgment calls, like whether a risk flag is serious enough to escalate, or whether an expansion signal is real or a client being polite, need a named human to make the call and be accountable for it. Automatic capture should feed that person evidence. It should not make the decision for them.</p>
 
 <p><strong>Script to use with the team:</strong> "The system tells you when a decision-maker has gone quiet or a risk phrase has shown up twice. You decide what that means and what we do about it. We're not automating the judgment, just the noticing."</p>
 
-<p><strong>Failure mode:</strong> Treating automatic capture as a replacement for account ownership rather than an input to it. A health score nobody is accountable for acting on is just a new field that will decay exactly like the old one, except leadership will trust it more by mistake.</p>
-
-<h3>Step 6: Set a review cadence and a scorecard</h3>
-
-<p><strong>Owner:</strong> Head of Ops / COO. <strong>Time:</strong> 30 minutes a month.</p>
+<p><strong>Failure mode:</strong> Treating automatic capture as a replacement for account ownership rather than an input to it. A health score nobody is accountable for acting on is just a new field that will decay exactly like the old one, except leadership will trust it more by mistake.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 6</span><div class="kz-flow-step"><h3>Set a review cadence and a scorecard</h3><p><strong>Owner:</strong> Head of Ops / COO. <strong>Time:</strong> 30 minutes a month.</p>
 
 <p>Pick a cadence, monthly is typical, and a small set of numbers to check: percentage of accounts with a current stakeholder record, percentage with a sentiment or risk flag updated in the last 30 days, and the number of accounts where no senior contact has happened in over six weeks. This is the scorecard that makes hygiene visible to leadership without anyone combing through individual records.</p>
 
-<p><strong>Failure mode:</strong> Reviewing the scorecard without a next action attached. A number that goes unaddressed for two cycles in a row stops being read at all.</p>
-
+<p><strong>Failure mode:</strong> Reviewing the scorecard without a next action attached. A number that goes unaddressed for two cycles in a row stops being read at all.</p></div></li></ol>
 <h2>A worked example, end to end</h2>
 
 <p>This is an illustrative example built from patterns we see across agency clients, not one specific account.</p>
 
-<p>A 40-person account management team at a mid-size agency runs its book through HubSpot, with project status tracked separately in Asana. The baseline audit (step 2) finds that 60% of stakeholder records are more than a year old, and the custom "account health" field, added eighteen months earlier with good intentions, has not been touched on 70% of accounts since it was created.</p>
+<p>A 40-person account management team at a mid-size agency runs its book through HubSpot, with project status tracked separately in Asana. The baseline audit (step 2) finds that <mark class="kz-stat">60%</mark> of stakeholder records are more than a year old, and the custom "account health" field, added eighteen months earlier with good intentions, has not been touched on <mark class="kz-stat">70%</mark> of accounts since it was created.</p>
 
 <p>The team does not start by fixing the field. It starts by naming the behavior problem (step 3): the health field was added as one more thing to remember, on top of an already full week, and nobody disputes that it lost to client work every time. The team connects automatic capture (step 4), and within the first week, stakeholder records and a live sentiment signal start updating themselves from the calls and emails already happening, with no new typing required from anyone. The Head of Client Service assigns an owner per account (step 5) specifically for acting on the flags that now arrive automatically: a quiet decision-maker, a risk phrase appearing twice in a month, an unanswered scope question. The COO reviews the scorecard (step 6) at the next monthly leadership meeting and for the first time can say, with evidence rather than a gut feel, which ten accounts actually need attention this month.</p>
 
@@ -285,7 +245,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Track the same scorecard from step 6 over at least two cycles before judging it. The signal to watch is not whether every field is perfect; it is whether the baseline number keeps moving without anyone having to run a manual push to move it.</p>
 
-<p>For scale, these are Kaizan's own portfolio averages, published on our pricing page, not a guarantee for any single firm: clients see <strong>26%+ average revenue growth per client</strong>, <strong>45% of at-risk revenue protected</strong> through earlier signals, <strong>33% lower cost to serve</strong> each client, and <strong>5.4 hours of admin saved per person, per week</strong>, time that used to go into exactly this kind of manual update. The size of the gain for any one firm depends on how much of the relationship currently lives outside any system at all, which is precisely what the baseline audit in step 2 measures.</p>
+<p>For scale, these are Kaizan's own portfolio averages, published on our pricing page, not a guarantee for any single firm: clients see <strong><mark class="kz-stat">26%+</mark> average revenue growth per client</strong>, <strong><mark class="kz-stat">45%</mark> of at-risk revenue protected</strong> through earlier signals, <strong><mark class="kz-stat">33%</mark> lower cost to serve</strong> each client, and <strong>5.4 hours of admin saved per person, per week</strong>, time that used to go into exactly this kind of manual update. The size of the gain for any one firm depends on how much of the relationship currently lives outside any system at all, which is precisely what the baseline audit in step 2 measures.</p>
 
 <h2>What to automate, and what must stay human</h2>
 
@@ -303,29 +263,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Treating the scorecard as a one-off report.</strong> Symptom: it's accurate the month it launches and ignored after that. Fix: a fixed monthly cadence with a named owner, per step 6.</li>
 </ul>
 
-<h2>Frequently asked questions</h2>
-
-<p><strong>How long does this take?</strong>
-The baseline audit (step 2) runs 15 to 20 minutes per account. Connecting automatic capture (step 4) is typically half a day of setup, after which it runs with no ongoing manual time. The full six-step process, across a team of 30 to 50 accounts, usually lands within two to three weeks from kickoff to a working monthly cadence.</p>
-
-<p><strong>Who should own it?</strong>
-The Head of Ops or COO owns the initiative and the monthly scorecard. The Head of Client Service owns assigning a human decision-maker to every automated flag. No single account manager should own the whole process; it will not survive them going on leave or leaving the business.</p>
-
-<p><strong>What if the client refuses or ignores it?</strong>
-This process runs entirely on your side of the relationship. Nothing here requires a client to do anything differently. The one place clients notice is a faster, better-informed response, not a new ask on their time.</p>
-
-<p><strong>How do we know it worked?</strong>
-Track the scorecard from step 6 for at least two full cycles. Look for the baseline numbers moving on their own, not because someone ran a manual push that month.</p>
-
-<p><strong>What should we automate?</strong>
-Stakeholder contact, last-touch dates, and risk or sentiment signals, in that order, because they decay fastest and are the most capturable directly from conversation data. Judgment calls, escalation decisions, and the relationship itself should stay with a named person.</p>
-
-<p><strong>Will the team actually use it?</strong>
-That is the real adoption risk with any hygiene initiative, and it's worth testing rather than assuming. A fix that still asks someone to manually log something gets treated exactly like the fields it was meant to replace: skipped under pressure. The honest test is whether the record updates itself from conversations that already happen, or whether it just adds one more thing to remember.</p>
-
-<p><strong>Is CRM hygiene the same as CRM data quality?</strong>
-They're used interchangeably in most conversations, and for the purposes of this guide, treat them the same. Where some teams draw a line, data quality refers to the state of the records at a point in time, while hygiene refers to the ongoing practice of keeping them that way. The practice is the harder problem, which is why this guide is built around behavior and ownership rather than a one-time cleanup.</p>
-
+<section class="kz-faq"><h2>Frequently asked questions</h2><details class="kz-faq-item"><summary><h3>How long does this take?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>The baseline audit (step 2) runs 15 to 20 minutes per account. Connecting automatic capture (step 4) is typically half a day of setup, after which it runs with no ongoing manual time. The full six-step process, across a team of 30 to 50 accounts, usually lands within two to three weeks from kickoff to a working monthly cadence.</p></div></details><details class="kz-faq-item"><summary><h3>Who should own it?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>The Head of Ops or COO owns the initiative and the monthly scorecard. The Head of Client Service owns assigning a human decision-maker to every automated flag. No single account manager should own the whole process; it will not survive them going on leave or leaving the business.</p></div></details><details class="kz-faq-item"><summary><h3>What if the client refuses or ignores it?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>This process runs entirely on your side of the relationship. Nothing here requires a client to do anything differently. The one place clients notice is a faster, better-informed response, not a new ask on their time.</p></div></details><details class="kz-faq-item"><summary><h3>How do we know it worked?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Track the scorecard from step 6 for at least two full cycles. Look for the baseline numbers moving on their own, not because someone ran a manual push that month.</p></div></details><details class="kz-faq-item"><summary><h3>What should we automate?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Stakeholder contact, last-touch dates, and risk or sentiment signals, in that order, because they decay fastest and are the most capturable directly from conversation data. Judgment calls, escalation decisions, and the relationship itself should stay with a named person.</p></div></details><details class="kz-faq-item"><summary><h3>Will the team actually use it?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>That is the real adoption risk with any hygiene initiative, and it's worth testing rather than assuming. A fix that still asks someone to manually log something gets treated exactly like the fields it was meant to replace: skipped under pressure. The honest test is whether the record updates itself from conversations that already happen, or whether it just adds one more thing to remember.</p></div></details><details class="kz-faq-item"><summary><h3>Is CRM hygiene the same as CRM data quality?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>They're used interchangeably in most conversations, and for the purposes of this guide, treat them the same. Where some teams draw a line, data quality refers to the state of the records at a point in time, while hygiene refers to the ongoing practice of keeping them that way. The practice is the harder problem, which is why this guide is built around behavior and ownership rather than a one-time cleanup.</p></div></details></section>
 <hr />
 
 <p>Want to see what automatic capture looks like against your own book of accounts? <a href="https://www.kaizan.ai/us/">Book a demo</a>.</p>

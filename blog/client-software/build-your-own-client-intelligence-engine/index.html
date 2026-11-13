@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=6007e719">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-software/build-your-own-client-intelligence-engine/">
         <meta property="og:type" content="article">
@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta property="og:image:alt" content="How to build your own client intelligence engine">
         <meta name="twitter:image:alt" content="How to build your own client intelligence engine">
         <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/blog/client-software/build-your-own-client-intelligence-engine/#article", "url": "https://kaizan.ai/blog/client-software/build-your-own-client-intelligence-engine/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/blog/client-software/build-your-own-client-intelligence-engine/"}, "headline": "How to build your own client intelligence engine", "description": "Fourteen systems, the order to build them in and the failure mode of each, for the head of AI who has just been asked: can we build this?", "inLanguage": "en-GB", "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/build-your-own-client-intelligence-engine/cover.png", "keywords": "client intelligence, build vs buy, ai engineering, evaluation, open spec"}]}</script>
-        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=8d422e4e">
+        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=20fd7147">
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
@@ -118,14 +118,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">How to build your own client intelligence engine</h1>
-        <img class="kz-post-hero" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/cover.png" alt="How to build your own client intelligence engine" decoding="async">
-        <p>We exist to empower client service and delivery professionals everywhere. That mission is bigger than our product. So if you have looked at Kaizan and concluded you would rather build it yourself: <strong>good. Go and build it.</strong> Here is the whole thing: fourteen systems, the order to build them in, and the failure mode of each one. No sales gate, no redactions. We would rather you succeeded with your own engine than bought ours for the wrong reasons.</p>
+        <img class="kz-post-hero" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/cover.png?v=8161fd78" alt="How to build your own client intelligence engine" decoding="async">
+        <p class="kz-lede-p">We exist to empower client service and delivery professionals everywhere. That mission is bigger than our product. So if you have looked at Kaizan and concluded you would rather build it yourself: <strong>good. Go and build it.</strong> Here is the whole thing: fourteen systems, the order to build them in, and the failure mode of each one. No sales gate, no redactions. We would rather you succeeded with your own engine than bought ours for the wrong reasons.</p>
 
 <p>This is written for the head of AI who has just been asked "can we build this?" It is the scope, the sequencing and the traps, in the order you will hit them. Where it helps, we name tools and suppliers. Treat those as a starting list, not a recommendation. The market moves monthly.</p>
 
 <h2>What you are signing up for</h2>
 
-<table>
+<div class="kz-table"><table>
 <thead>
 <tr>
   <th></th>
@@ -165,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <td>Two of the fourteen, consent and permissions, are legal problems wearing engineering clothes.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 
 <p>Figures are our estimate for a mid-sized professional services firm reaching production across a full client portfolio, based on how long each layer took us. Your mileage will vary with how much of the stack you buy. We have published the estimate rather than hidden it, because the number is the useful part.</p>
 
@@ -175,13 +175,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Most internal builds fail because they start at the inference layer and discover the data problem six months in. By then the demo has been shown to the board and the budget is committed to the wrong shape of work. Start with the data.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-1.png" alt="How client intelligence gets scoped (a large inference layer over a thin data layer) versus what it actually is (a thin inference layer on top of capture, resolution, memory and permissions work)" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-1.png?v=c8420b2b" alt="How client intelligence gets scoped (a large inference layer over a thin data layer) versus what it actually is (a thin inference layer on top of capture, resolution, memory and permissions work)" /></p>
 
 <p><em>Fig. 1: The scoping error. The two stacks contain the same feature. The difference is everything under it. Teams that scope the left-hand picture discover the right-hand one at month six, with the timeline already public.</em></p>
 
 <h2>The build, in order</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-2.png" alt="Dependency map of the fourteen systems: capture feeds transcription and unified comms, which feed the memory layer, routing and accuracy, which gate the proactive helpers, integrations and proof of outcome. Permissions, security, tenant consent and cross-network benchmarks sit underneath the whole pipeline." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-2.png?v=e84fb83f" alt="Dependency map of the fourteen systems: capture feeds transcription and unified comms, which feed the memory layer, routing and accuracy, which gate the proactive helpers, integrations and proof of outcome. Permissions, security, tenant consent and cross-network benchmarks sit underneath the whole pipeline." /></p>
 
 <p><em>Fig. 2: Dependency order. The pipeline is mostly serial, which is the part that resists being parallelised across a big team. You cannot buy your way to month twelve by adding engineers at month three. Stage one is every channel and tool, not just calls: transcripts, email threads, chat and the CRM, project and ticketing tools around them, resolved onto one client timeline. Transcripts alone is an LLM over recordings, which your people can already do today.</em></p>
 
@@ -230,7 +230,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Three systems, and the only three that every later system depends on. Stage one is every channel and tool your people and clients live in: transcripts, threads, chats and tool data, captured and unified together. Build these badly and everything above them is confidently wrong.</p>
 
-<h3>01. Capture. Calls, threads, chat and tools across every channel</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>01. Capture. Calls, threads, chat and tools across every channel</h3>
 
 <p><strong>What you are building.</strong> Capture of every channel your people and your clients actually live in, not just calls. Meetings: a system that knows which ones matter, gets a recorder into them across Teams, Google Meet and Zoom, and recovers when it doesn't. Written comms: email threads and chat, pulled in at the same time and from the same day. Tools: the CRM, project, ticketing and support systems where client work is actually recorded, connected through OAuth-managed integrations rather than one-off scrapers.</p>
 
@@ -262,9 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>You get a partial view. One platform is covered and the client who insists on Teams is invisible. Single-player recording produces three copies of the same meeting, each summarised differently, each counted as a separate interaction in the health score.</p>
 
-<p>Missed captures go unnoticed until the account lead asks why last week's escalation isn't in the record. Every layer above this one inherits the gaps.</p>
-
-<h3>02. Transcription that survives a real client call</h3>
+<p>Missed captures go unnoticed until the account lead asks why last week's escalation isn't in the record. Every layer above this one inherits the gaps.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>02. Transcription that survives a real client call</h3>
 
 <p><strong>What you are building.</strong> Accurate, speaker-attributed text with client vocabulary spelled correctly and the right words attributed to the right people.</p>
 
@@ -294,9 +292,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Misattribution. The client's frustration gets pinned on the wrong speaker, or the wrong target. A client venting about another supplier reads as a client venting about you, and the health score drops on a relationship that is fine.</p>
 
-<p>An action item lands on the wrong person and nobody does it. And once an account lead sees one of these, they stop trusting all of it, including the parts that were right.</p>
-
-<h3>03. Unified client comms. No manual assignment, no duplicates</h3>
+<p>An action item lands on the wrong person and nobody does it. And once an account lead sees one of these, they stop trusting all of it, including the parts that were right.</p></li><li class="kz-card"><span class="kz-card-n">03</span><h3>03. Unified client comms. No manual assignment, no duplicates</h3>
 
 <p><strong>What you are building.</strong> One timeline per client with emails, calls, chats and tool activity attached to the right client and the right stakeholder, without anyone tagging anything. This is where the channels captured in §1 and §2 become one picture rather than three silos.</p>
 
@@ -309,7 +305,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Build a coverage monitor.</strong> Which clients have no activity in the data for fourteen days, and is that because the relationship went quiet, or because ingestion did?</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-3.png" alt="Entity resolution pipeline: an inbound record passes through deterministic matching; hits attach to a canonical person and organisation, misses fall through to probabilistic matching, which attaches above a confidence threshold or otherwise goes to a review queue. Four hard cases feed the probabilistic layer." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-3.png?v=1bec9d4f" alt="Entity resolution pipeline: an inbound record passes through deterministic matching; hits attach to a canonical person and organisation, misses fall through to probabilistic matching, which attaches above a confidence threshold or otherwise goes to a review queue. Four hard cases feed the probabilistic layer." /></p>
 
 <p><em>Fig. 3: Entity resolution. The deterministic layer is a weekend. The probabilistic layer and the four hard cases are the quarter. The review queue is the honest measure of how well the two layers above it are doing.</em></p>
 
@@ -321,13 +317,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Two clients under one parent company merge into a single blurred record. A contact who moved firms carries their old client's history into the new one. Duplicated threads inflate activity scores, so a neglected client looks healthy.</p>
 
-<p>Manual tagging means the busiest account leads, who have the most at-risk clients, are the ones with the least data. The engine ends up describing your team's filing habits rather than the relationship.</p>
-
+<p>Manual tagging means the busiest account leads, who have the most at-risk clients, are the ones with the least data. The engine ends up describing your team's filing habits rather than the relationship.</p></li></ol>
 <h2>Phase II: Make it mean something</h2>
 
 <p>The data exists. Now it has to become institutional memory that survives people leaving, and outputs somebody will act on without checking the transcript.</p>
 
-<h3>04. One brain. Persistent memory and stakeholder context</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>04. One brain. Persistent memory and stakeholder context</h3>
 
 <p><strong>What you are building.</strong> Institutional memory. Not a store of summaries, but a model of each client relationship that persists across people and time.</p>
 
@@ -342,7 +337,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Handle contradictions.</strong> Two sources disagreeing about a fact needs a resolution rule and a record of what you decided.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-4.png" alt="Memory architecture: an append-only event log derives three stores (relational, vector and graph), and an agentic layer above queries all three to compose an answer" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-4.png?v=dc972319" alt="Memory architecture: an append-only event log derives three stores (relational, vector and graph), and an agentic layer above queries all three to compose an answer" /></p>
 
 <p><em>Fig. 4: Three shapes, one brain. The common shortcut is to treat the vector store as the memory. It answers "what was said recently" well and "what was promised in March" not at all, which is the question that actually loses accounts.</em></p>
 
@@ -362,9 +357,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The system remembers what happened on Tuesday and forgets what was promised in March. A new account lead inherits a client with no usable history. Sentiment without a target produces alerts nobody can act on.</p>
 
-<p>Retrieval returns the most recent conversation rather than the relevant one, and recommendations are made against objectives the client stopped caring about two quarters ago.</p>
-
-<h3>05. Multi-LLM routing for the task at hand</h3>
+<p>Retrieval returns the most recent conversation rather than the relevant one, and recommendations are made against objectives the client stopped caring about two quarters ago.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>05. Multi-LLM routing for the task at hand</h3>
 
 <p><strong>What you are building.</strong> A model layer that picks the right model for extraction, classification, reasoning and drafting, and keeps working when a provider changes.</p>
 
@@ -392,9 +385,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>A provider outage takes down every feature at once. A silent model update changes the tone of every client email overnight and nobody knows why until a client replies.</p>
 
-<p>Costs scale linearly with clients because everything runs on the most expensive model. Extraction quality is mediocre because the model chosen for drafting is doing the extraction.</p>
-
-<h3>06. Accuracy. Prompts vs an agentic system that learns</h3>
+<p>Costs scale linearly with clients because everything runs on the most expensive model. Extraction quality is mediocre because the model chosen for drafting is doing the extraction.</p></li><li class="kz-card"><span class="kz-card-n">03</span><h3>06. Accuracy. Prompts vs an agentic system that learns</h3>
 
 <p><strong>What you are building.</strong> Outputs an account lead will act on without checking the transcript. And a definition of "great" the system can be measured against. <strong>This is the section most teams skip, and the one that decides whether the other thirteen were worth building.</strong></p>
 
@@ -409,7 +400,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Close the loop.</strong> Use preference data to tune prompts, rerankers or fine-tunes on a schedule. Then measure whether quality improved on the evals, not just whether acceptance went up.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-5.png" alt="The evaluation loop: practitioners label real examples into a golden set; every prompt or model change is scored against it at a gate; passing changes ship to account leads with citations, failing changes do not ship; feedback flows back into the golden set" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-5.png?v=ecb998b2" alt="The evaluation loop: practitioners label real examples into a golden set; every prompt or model change is scored against it at a gate; passing changes ship to account leads with citations, failing changes do not ship; feedback flows back into the golden set" /></p>
 
 <p><em>Fig. 5: The gate is the product. Without it you are shipping prompt changes on vibes and finding out from users. The loop is unglamorous, it never appears in a demo, and it is the difference between a system people trust and a system people quietly stop opening.</em></p>
 
@@ -428,8 +419,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>You ship changes blind. A prompt tweak that improves one output type degrades another and you find out from users. Hallucinated commitments make it into client-facing emails.</p>
 
-<p>Without a shared definition of great, every account lead judges the system by their own standard and the loudest opinion wins. Adoption plateaus at the people who like it and never reaches the people who need it.</p>
-
+<p>Without a shared definition of great, every account lead judges the system by their own standard and the loudest opinion wins. Adoption plateaus at the people who like it and never reaches the people who need it.</p></li></ol>
 <h2>Phase III: Make it useful</h2>
 
 <p>A system that is accurate and unused has failed. This phase is about reaching people where they already work, and being honest about the one capability you cannot build alone.</p>
@@ -483,7 +473,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Three systems that produce no visible features and can each end the programme on their own. Two of them are legal problems in engineering clothes. All three are cheaper to design in than to retrofit.</p>
 
-<h3>09. Permissions and access rights by client, tier and user</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>09. Permissions and access rights by client, tier and user</h3>
 
 <p><strong>What you are building.</strong> Need-to-know, enforced at the data layer.</p>
 
@@ -496,7 +486,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Log every read.</strong> Who saw what and when, queryable for a client audit. You will be asked.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-6.png" alt="Two retrieval orders compared: filtering after the vector search means other clients' chunks have already entered the model context, which is a leak; filtering before the search, by scoping the index to permitted clients, means only permitted chunks are ever retrieved" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-6.png?v=59a539ea" alt="Two retrieval orders compared: filtering after the vector search means other clients' chunks have already entered the model context, which is a leak; filtering before the search, by scoping the index to permitted clients, means only permitted chunks are ever retrieved" /></p>
 
 <p><em>Fig. 6: One edge, moved. The leaking version passes every functional test: the answer is correct and the user is authenticated. Nothing fails until someone reads an answer citing a client they have never worked on.</em></p>
 
@@ -508,9 +498,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>A junior on one account sees the commercials of another. A client's confidential conversation surfaces in an answer for a competitor client served by the same team.</p>
 
-<p>One leak of this kind ends the programme, and possibly the client relationship, and you will hear about it from the client's legal team rather than your own.</p>
-
-<h3>10. Security</h3>
+<p>One leak of this kind ends the programme, and possibly the client relationship, and you will hear about it from the client's legal team rather than your own.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>10. Security</h3>
 
 <p><strong>What you are building.</strong> The controls that let a client's IT team say yes.</p>
 
@@ -538,9 +526,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Procurement blocks the rollout at your biggest client. A deletion request can't be honoured because transcript chunks live in a vector index nobody thought about.</p>
 
-<p>A model provider retains client conversations for training under default terms, and you have breached your own client contracts without knowing it.</p>
-
-<h3>11. Microsoft and Google permissions at machine level</h3>
+<p>A model provider retains client conversations for training under default terms, and you have breached your own client contracts without knowing it.</p></li><li class="kz-card"><span class="kz-card-n">03</span><h3>11. Microsoft and Google permissions at machine level</h3>
 
 <p><strong>What you are building.</strong> The consent, scopes and verification needed to access calendars, mail and meetings inside your clients' tenants.</p>
 
@@ -561,13 +547,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Your bot is blocked from half your client meetings by a tenant policy you didn't know existed. Over-broad scopes fail a client's security review and you are asked to re-architect.</p>
 
-<p>A token expires quietly and three weeks of a key client's calendar goes uncaptured. Recording without proper consent in the wrong jurisdiction is a legal problem, not a product one.</p>
-
+<p>A token expires quietly and three weeks of a key client's calendar goes uncaptured. Recording without proper consent in the wrong jurisdiction is a legal problem, not a product one.</p></li></ol>
 <h2>Phase V: Make it count</h2>
 
 <p>Getting the intelligence out of one application and into the ecosystem you are actually building, and being able to answer the board's only question.</p>
 
-<h3>12. Integrations with field-level mapping and decisioning</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>12. Integrations with field-level mapping and decisioning</h3>
 
 <p><strong>What you are building.</strong> Two-way sync with CRM, project and ticketing tools that keeps systems consistent.</p>
 
@@ -594,9 +579,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The CRM and the intelligence layer disagree about the renewal date and nobody knows which is right. An automatic write-back overwrites a field a salesperson corrected by hand.</p>
 
-<p>A downstream schema change breaks sync silently and the CRM is a month stale before anyone notices.</p>
-
-<h3>13. API management and endpoint development</h3>
+<p>A downstream schema change breaks sync silently and the CRM is a month stale before anyone notices.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>13. API management and endpoint development</h3>
 
 <p><strong>What you are building.</strong> The interface your proprietary AI ecosystem consumes.</p>
 
@@ -617,9 +600,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The intelligence is trapped in one application. Every internal team that wants it builds their own scraper or export. Breaking changes ship without versioning and downstream systems fail on a Monday morning.</p>
 
-<p>The "AI ecosystem" you set out to feed never gets fed.</p>
-
-<h3>14. Proving it worked</h3>
+<p>The "AI ecosystem" you set out to feed never gets fed.</p></li><li class="kz-card"><span class="kz-card-n">03</span><h3>14. Proving it worked</h3>
 
 <p><strong>What you are building.</strong> The evidence that the system moved revenue.</p>
 
@@ -640,15 +621,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Twelve months in, you can't say whether it worked. Anecdotes stand in for evidence.</p>
 
-<p>The budget conversation becomes a matter of opinion, and the project is judged on how much people like it rather than on what it did for the client portfolio.</p>
-
+<p>The budget conversation becomes a matter of opinion, and the project is judged on how much people like it rather than on what it did for the client portfolio.</p></li></ol>
 <h2>The people this takes, and the people who have done it</h2>
 
 <p><strong>Fourteen systems need eight disciplines that rarely sit in one team.</strong></p>
 
 <p>Which model you call is one box of fourteen (§5), and the easiest one to swap. The rest is a scaled-systems problem, a data problem, an evaluation problem and two legal problems. That is a hiring plan, not a prompt.</p>
 
-<table>
+<div class="kz-table"><table>
 <thead>
 <tr>
   <th>Covers</th>
@@ -698,7 +678,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <td>Attribution, counterfactuals, proof that a recommendation moved revenue or retention.</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 
 <h3>What an agency has to hire</h3>
 
@@ -714,7 +694,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p><strong>Month 3: The demo lands.</strong> A prompt over a transcript produces a genuinely impressive summary. It is shown to the board. A date gets committed to. The data work has not started, and nobody in the room knows that yet.</p>
 
-<p><strong>Month 6: The data problem arrives.</strong> Coverage is at 40%. Teams meetings aren't captured, two clients share a parent company and have merged into one record, and the health scores are visibly wrong to the people who know those accounts. Engineering effort silently re-routes from features to plumbing.</p>
+<p><strong>Month 6: The data problem arrives.</strong> Coverage is at <mark class="kz-stat">40%</mark>. Teams meetings aren't captured, two clients share a parent company and have merged into one record, and the health scores are visibly wrong to the people who know those accounts. Engineering effort silently re-routes from features to plumbing.</p>
 
 <p><strong>Month 9: Trust goes before coverage does.</strong> An account lead is shown a risk flag built on a misattributed sentence. They mention it to two colleagues. Usage among senior people, the ones with the at-risk accounts, stops recovering, and the usage chart stays flat while the team keeps shipping.</p>
 

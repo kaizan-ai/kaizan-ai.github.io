@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=6007e719">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-software/crm-for-advertising-agencies/">
         <meta property="og:type" content="article">
@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta property="og:image:alt" content="CRM for Advertising Agencies: What to Track Beyond Deals">
         <meta name="twitter:image:alt" content="CRM for Advertising Agencies: What to Track Beyond Deals">
         <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/blog/client-software/crm-for-advertising-agencies/#article", "url": "https://kaizan.ai/blog/client-software/crm-for-advertising-agencies/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/blog/client-software/crm-for-advertising-agencies/"}, "headline": "CRM for Advertising Agencies: What to Track Beyond Deals", "description": "An agency CRM needs five objects beyond deals: client, brand, campaign, stakeholder and renewal. See the fields to track and how to build it.", "inLanguage": "en-GB", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png", "keywords": "crm, advertising agencies, salesforce, hubspot, renewals, stakeholder mapping"}]}</script>
-        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=8d422e4e">
+        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=20fd7147">
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
@@ -118,8 +118,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">CRM for Advertising Agencies: What to Track Beyond Deals</h1>
-        <img class="kz-post-hero" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png" alt="CRM for Advertising Agencies: What to Track Beyond Deals" decoding="async">
-        <p>A standard CRM assumes one deal closes one account. An advertising agency account rarely works that way: one client can own several brands, each brand runs its own campaigns, and each campaign carries its own stakeholders and renewal date.</p>
+        <img class="kz-post-hero" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png?v=47ee91f7" alt="CRM for Advertising Agencies: What to Track Beyond Deals" decoding="async">
+        <p class="kz-lede-p">A standard CRM assumes one deal closes one account. An advertising agency account rarely works that way: one client can own several brands, each brand runs its own campaigns, and each campaign carries its own stakeholders and renewal date.</p>
 
 <p>This guide sets out the five objects an agency CRM needs beyond the standard account, contact and deal: client, brand, campaign, stakeholder and renewal. It covers the fields that belong to each, the fields that actually predict a renewal, how to build the model in Salesforce or HubSpot, and what still won't fit in a CRM no matter how it's configured.</p>
 
@@ -147,9 +147,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p><strong>Renewal.</strong> The commercial event itself: the date, the named owner, the contract it sits under, and the probability of it closing. A renewal usually attaches to the client's master contract, but a brand with its own statement of work needs its own renewal record, because its clock runs on a different date.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png" alt="Entity diagram showing how a Client holds many Brands, each Brand runs many Campaigns, Stakeholders are tagged across Brands and Campaigns, and Renewals attach to a Client or Brand contract." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png?v=47ee91f7" alt="Entity diagram showing how a Client holds many Brands, each Brand runs many Campaigns, Stakeholders are tagged across Brands and Campaigns, and Renewals attach to a Client or Brand contract." /></p>
 
-<table>
+<div class="kz-table"><table>
 <thead>
 <tr>
   <th>Object</th>
@@ -190,7 +190,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <td>Named owner, notice period, probability</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 
 <p>In practice, one client record unfolds like this:</p>
 
@@ -282,11 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The third is tracking the renewal at the right object. A master contract renewal and a single brand's statement-of-work renewal are different events, with different notice periods and different people in the room. Attach both to the Client record and the brand-level one gets missed, because it comes due on a different calendar from the one everyone's watching.</p>
 
-<blockquote>
-  <p>For me, it's a relationship builder. I've been doing this for 30 years. I'm a pick-up-the-phone, I'm-going-to-come-and-see-you kind of person, and we don't live in that world any more.</p>
-  
-  <p>— MD and Chief Client Officer, Agency Client C (full-service advertising agency)</p>
-</blockquote>
+<blockquote><p>For me, it's a relationship builder. I've been doing this for 30 years. I'm a pick-up-the-phone, I'm-going-to-come-and-see-you kind of person, and we don't live in that world any more.</p><p class="kz-quote-by">MD and Chief Client Officer, Agency Client C (full-service advertising agency)</p></blockquote>
 
 <p>The fields in a CRM don't build that relationship. They just need to be structured so the team can see where it's thinning before a renewal date forces the conversation.</p>
 
@@ -310,19 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>An agency doesn't need to rip out Salesforce or HubSpot to get this. It needs the CRM holding the right five objects, and something reading the conversations that happen around them.</p>
 
-<h2>Frequently asked questions</h2>
-
-<p><strong>What should an advertising agency track in its CRM beyond deals?</strong>
-Five objects: the client (the commercial parent and master contract), the brand (the business unit actually being served), the campaign (one brief, one flight, one deliverable set), the stakeholder (a named contact with a role, tagged to a brand or campaign), and the renewal (the date, owner, and contract it attaches to). Standard CRM objects only cover three of these.</p>
-
-<p><strong>Can Salesforce or HubSpot handle a client-brand-campaign hierarchy out of the box?</strong>
-Not natively. Both platforms support custom objects that can model it. Salesforce allows custom objects on every edition from Professional upward. HubSpot restricts custom objects to its Enterprise tier, capped at 10 per portal. Either platform can model this; neither ships it as a default.</p>
-
-<p><strong>Is a CRM enough to predict which clients will renew?</strong>
-A well-structured CRM tells you the facts: who the stakeholders are, when the contract is due, who owns the renewal. It doesn't tell you that a decision-maker has gone quiet for six weeks, or that a brand manager mentioned a budget freeze on a call. Those signals come from the conversations themselves, which is why most agencies pair their CRM with a layer that reads calls and emails directly.</p>
-
-<p><strong>Should a renewal be tracked at the client level or the brand level?</strong>
-Both, when a brand runs its own statement of work. A master contract renewal and a brand-level SOW renewal are different events with different notice periods and different stakeholders. Attaching both to a single Client-level record is the most common reason a brand-level renewal gets missed.</p>
+<section class="kz-faq"><h2>Frequently asked questions</h2><details class="kz-faq-item"><summary><h3>What should an advertising agency track in its CRM beyond deals?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Five objects: the client (the commercial parent and master contract), the brand (the business unit actually being served), the campaign (one brief, one flight, one deliverable set), the stakeholder (a named contact with a role, tagged to a brand or campaign), and the renewal (the date, owner, and contract it attaches to). Standard CRM objects only cover three of these.</p></div></details><details class="kz-faq-item"><summary><h3>Can Salesforce or HubSpot handle a client-brand-campaign hierarchy out of the box?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Not natively. Both platforms support custom objects that can model it. Salesforce allows custom objects on every edition from Professional upward. HubSpot restricts custom objects to its Enterprise tier, capped at 10 per portal. Either platform can model this; neither ships it as a default.</p></div></details><details class="kz-faq-item"><summary><h3>Is a CRM enough to predict which clients will renew?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>A well-structured CRM tells you the facts: who the stakeholders are, when the contract is due, who owns the renewal. It doesn't tell you that a decision-maker has gone quiet for six weeks, or that a brand manager mentioned a budget freeze on a call. Those signals come from the conversations themselves, which is why most agencies pair their CRM with a layer that reads calls and emails directly.</p></div></details><details class="kz-faq-item"><summary><h3>Should a renewal be tracked at the client level or the brand level?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Both, when a brand runs its own statement of work. A master contract renewal and a brand-level SOW renewal are different events with different notice periods and different stakeholders. Attaching both to a single Client-level record is the most common reason a brand-level renewal gets missed.</p></div></details></section>
         <div class="kz-post-back"><a href="../">← More in Client software</a> · <a href="../../">All posts</a></div>
       </div>
     </article>

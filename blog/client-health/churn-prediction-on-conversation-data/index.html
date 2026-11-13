@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=6007e719">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/">
         <meta property="og:type" content="article">
@@ -59,7 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta property="og:image:alt" content="How Churn Prediction Works on Conversation Data">
         <meta name="twitter:image:alt" content="How Churn Prediction Works on Conversation Data">
         <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "BlogPosting", "@id": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/#article", "url": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/"}, "headline": "How Churn Prediction Works on Conversation Data", "description": "Churn prediction software for services firms reads calls, emails and chat, not product logins. See how the pipeline works, how to measure it and how to start.", "inLanguage": "en-GB", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "author": {"@type": "Person", "name": "Lia Grant"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "isPartOf": {"@id": "https://kaizan.ai/blog/"}, "image": "https://kaizan.ai/assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png", "keywords": "churn prediction, conversation data, client health, predictive analytics, retention, professional services"}]}</script>
-        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=8d422e4e">
+        <link rel="stylesheet" href="../../../assets/dist/css/resources.css?v=20fd7147">
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
@@ -118,19 +118,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">How Churn Prediction Works on Conversation Data</h1>
-        <img class="kz-post-hero" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png" alt="How Churn Prediction Works on Conversation Data" decoding="async">
-        <p>Customer churn prediction software scores the likelihood that a client relationship ends before the client says a word. On conversation data specifically, that means it reads what gets said on calls, in emails, and in chat threads, not what gets clicked inside a product. That distinction is the whole story for professional services firms, because there is no login screen to measure.</p>
+        <img class="kz-post-hero" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png?v=aa3c9967" alt="How Churn Prediction Works on Conversation Data" decoding="async">
+        <p class="kz-lede-p">Customer churn prediction software scores the likelihood that a client relationship ends before the client says a word. On conversation data specifically, that means it reads what gets said on calls, in emails, and in chat threads, not what gets clicked inside a product. That distinction is the whole story for professional services firms, because there is no login screen to measure.</p>
 
 <p><strong>Who this is for:</strong> heads of AI and technology weighing whether to build this in-house or buy it, and heads of client service who need the business case for a churn model that actually fits how an agency or consultancy works.</p>
 
-<p><strong>Key takeaways</strong></p>
-
-<ul>
+<div class="kz-callout"><p class="kz-callout-label">Key takeaways</p><ul>
 <li>Churn prediction software for conversation-heavy businesses reads sentiment, risk mentions, response times, and stakeholder coverage, instead of product usage logs.</li>
 <li>It is not the same thing as health scoring, though the two are related. Churn prediction answers "will this account leave." Health scoring answers "what is happening, and why."</li>
-<li>Professional services firms retain 84% of clients on average, so roughly one client in six is up for renewal risk every year.</li>
+<li>Professional services firms retain <mark class="kz-stat">84%</mark> of clients on average, so roughly one client in six is up for renewal risk every year.</li>
 <li>A churn model is only as good as the labels it trains on: retained, expanded, and lost accounts, not just the accounts that left.</li>
-</ul>
+</ul></div>
 
 <h2>What is customer churn prediction software?</h2>
 
@@ -138,15 +136,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Most churn prediction tools were built for subscription software, where the inputs are logins, feature usage, and support tickets. A client services relationship has none of that. What it has instead is a stream of calls, emails, and chat messages, so a churn prediction model built for this world has to read conversation data, meaning the words said, who said them, how often, and in what tone.</p>
 
-<h3>Customer churn prediction and prevention</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>Customer churn prediction and prevention</h3>
 
-<p>Prediction is the easy half of the phrase. A risk score with nowhere to go is a dashboard nobody opens. Customer churn prediction and prevention means the score triggers a recommended next step, such as a stakeholder to re-engage or an escalation to schedule, before the renewal conversation starts. Software that only scores risk without routing it to an owner and an action is not doing the prevention half of the job.</p>
+<p>Prediction is the easy half of the phrase. A risk score with nowhere to go is a dashboard nobody opens. Customer churn prediction and prevention means the score triggers a recommended next step, such as a stakeholder to re-engage or an escalation to schedule, before the renewal conversation starts. Software that only scores risk without routing it to an owner and an action is not doing the prevention half of the job.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>Predictive analytics customer churn</h3>
 
-<h3>Predictive analytics customer churn</h3>
-
-<p>Predictive analytics is the broader discipline: using historical data to forecast a future outcome. Applied to customer churn, it means training a model on what retained, expanded, and lost accounts looked like in the months before the outcome was known, then scoring live accounts against those same patterns. The predictive part only holds if the model is trained on outcomes that actually happened, not assumptions about what should predict churn.</p>
-
-<h3>Where to find customer churn prediction platforms</h3>
+<p>Predictive analytics is the broader discipline: using historical data to forecast a future outcome. Applied to customer churn, it means training a model on what retained, expanded, and lost accounts looked like in the months before the outcome was known, then scoring live accounts against those same patterns. The predictive part only holds if the model is trained on outcomes that actually happened, not assumptions about what should predict churn.</p></li><li class="kz-card"><span class="kz-card-n">03</span><h3>Where to find customer churn prediction platforms</h3>
 
 <p>Three places, with different strengths.</p>
 
@@ -156,32 +150,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>As a custom build</strong>, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labeling, and maintenance that a platform already absorbs.</li>
 </ul>
 
-<p>A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see <a href="https://www.kaizan.ai/us/blog/client-software/customer-retention-software-for-agencies/">customer retention software for agencies and service firms</a>.</p>
-
+<p>A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see <a href="https://www.kaizan.ai/us/blog/client-software/customer-retention-software-for-agencies/">customer retention software for agencies and service firms</a>.</p></li></ol>
 <h2>Why this matters in revenue terms</h2>
 
-<p>The average professional services firm retains 84% of its clients year over year, according to retention benchmarks compiled from Bain &amp; Company and other industry sources. That means roughly one client in six is up for renewal risk every year, in a typical firm, whether or not anyone is watching for it.</p>
+<p>The average professional services firm retains <mark class="kz-stat">84%</mark> of its clients year over year, according to retention benchmarks compiled from Bain &amp; Company and other industry sources. That means roughly one client in six is up for renewal risk every year, in a typical firm, whether or not anyone is watching for it.</p>
 
 <p>Two findings from Kaizan's analysis of over 1 million calls and 10 million emails across client accounts change how that risk should be read.</p>
 
 <ul>
 <li><strong>Accounts that go on to grow show more risk conversation, not less.</strong> Top-performing accounts surface 2.21 times more risk phrases per year than bottom-performing ones, 15.3 versus 6.9. The healthiest relationships are not the quiet ones. A quiet risk register on an active account is a warning sign, not a green light.</li>
-<li><strong>Struggling accounts almost always say something first.</strong> About 69% of accounts that went on to struggle raised a warning sign in conversation at least once, and 38% raised the same concern repeatedly across multiple periods, which tracks with <a href="https://www.kaizan.ai/us/blog/client-health/np-digital-early-warning-alerts/">what one agency found once it could see the warning</a>: clients who leave rarely leave without warning. The problem is that nobody was listening across every call, every email, and every account at once. Catching that moment, and <a href="https://www.kaizan.ai/us/blog/playbooks-and-templates/re-engage-inactive-clients/">re-engaging before a client goes quiet for good</a>, is where most of the value sits.</li>
+<li><strong>Struggling accounts almost always say something first.</strong> About <mark class="kz-stat">69%</mark> of accounts that went on to struggle raised a warning sign in conversation at least once, and <mark class="kz-stat">38%</mark> raised the same concern repeatedly across multiple periods, which tracks with <a href="https://www.kaizan.ai/us/blog/client-health/np-digital-early-warning-alerts/">what one agency found once it could see the warning</a>: clients who leave rarely leave without warning. The problem is that nobody was listening across every call, every email, and every account at once. Catching that moment, and <a href="https://www.kaizan.ai/us/blog/playbooks-and-templates/re-engage-inactive-clients/">re-engaging before a client goes quiet for good</a>, is where most of the value sits.</li>
 </ul>
 
-<p>Firms that act on these signals early see it in the number that matters. Kaizan clients report an average 26%+ revenue increase per client, and protect an average 45% of revenue otherwise at risk, by acting on signals while there is still time rather than after the renewal is already lost.</p>
+<p>Firms that act on these signals early see it in the number that matters. Kaizan clients report an average <mark class="kz-stat">26%+</mark> revenue increase per client, and protect an average <mark class="kz-stat">45%</mark> of revenue otherwise at risk, by acting on signals while there is still time rather than after the renewal is already lost.</p>
 
 <h2>The components of a churn prediction pipeline</h2>
 
 <p>A working churn prediction system on conversation data has four parts. Each does a specific job, and skipping any of them is where most builds and most off-the-shelf tools fall short.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png" alt="Four-stage churn prediction pipeline: signal capture, feature extraction, the model, and alerting with a recommended next action." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png?v=aa3c9967" alt="Four-stage churn prediction pipeline: signal capture, feature extraction, the model, and alerting with a recommended next action." /></p>
 
-<h3>Signal capture</h3>
+<ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>Signal capture</h3>
 
-<p>Every call, email, and chat message tied to a client gets captured and attached to that client's record, automatically, not manually logged by an account manager who may or may not remember to do it. This is the step most agencies already fail at: account teams typically touch several separate tools per client per week, and a meaningful share of what gets said never makes it into any system of record at all.</p>
-
-<h3>Feature extraction</h3>
+<p>Every call, email, and chat message tied to a client gets captured and attached to that client's record, automatically, not manually logged by an account manager who may or may not remember to do it. This is the step most agencies already fail at: account teams typically touch several separate tools per client per week, and a meaningful share of what gets said never makes it into any system of record at all.</p></li><li class="kz-card"><span class="kz-card-n">02</span><h3>Feature extraction</h3>
 
 <p>Raw conversation does not predict anything on its own. It has to be turned into signals a model can use.</p>
 
@@ -190,21 +181,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Risk mention frequency and trajectory.</strong> A risk raised once is not alarming. The same concern raised across four consecutive weeks is.</li>
 <li><strong>Response time and communication recency.</strong> Days since the last meaningful contact, excluding automated emails. Three weeks of silence on an active account is a signal worth reading.</li>
 <li><strong>Decision-maker recency and stakeholder coverage.</strong> When did the budget holder last engage, and is the relationship running through one person or several. Single-threaded accounts, where one contact on each side carries the whole relationship, are one of the strongest predictors of loss.</li>
-</ul>
+</ul></li><li class="kz-card"><span class="kz-card-n">03</span><h3>The model</h3>
 
-<h3>The model</h3>
+<p>The model is trained on what actually happened to an organization's own book of clients: who renewed, who expanded, and who left, with the conversation patterns that preceded each outcome. This matters because a generic churn model trained on someone else's accounts learns someone else's patterns. A model calibrated on an organization's own retained, expanded, and lost accounts learns what churn actually looks like in that specific client base, which is a materially different and more reliable signal.</p></li><li class="kz-card"><span class="kz-card-n">04</span><h3>Alerting and the next action</h3>
 
-<p>The model is trained on what actually happened to an organization's own book of clients: who renewed, who expanded, and who left, with the conversation patterns that preceded each outcome. This matters because a generic churn model trained on someone else's accounts learns someone else's patterns. A model calibrated on an organization's own retained, expanded, and lost accounts learns what churn actually looks like in that specific client base, which is a materially different and more reliable signal.</p>
-
-<h3>Alerting and the next action</h3>
-
-<p>A risk score becomes useful the moment it reaches a person with the context to act on it, along with a suggested first move: re-engage a dormant stakeholder, schedule a save conversation, loop in a more senior contact. Without this step, prediction is just an interesting number.</p>
-
+<p>A risk score becomes useful the moment it reaches a person with the context to act on it, along with a suggested first move: re-engage a dormant stakeholder, schedule a save conversation, loop in a more senior contact. Without this step, prediction is just an interesting number.</p></li></ol>
 <h2>How churn prediction differs from the terms it gets confused with</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-vs-health-scoring.png" alt="Comparison of churn prediction, client health scoring, CSAT and NPS surveys, and CRM win-loss reporting by what each measures and what it tells you." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-vs-health-scoring.png?v=5e8f1524" alt="Comparison of churn prediction, client health scoring, CSAT and NPS surveys, and CRM win-loss reporting by what each measures and what it tells you." /></p>
 
-<table>
+<div class="kz-table"><table>
 <thead>
 <tr>
   <th>Term</th>
@@ -239,7 +225,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <td>A retrospective record, not a forecast</td>
 </tr>
 </tbody>
-</table>
+</table></div>
 
 <h3>Churn prediction vs. health scoring: which do you need</h3>
 
@@ -255,27 +241,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>That silence was the flag, not a reassurance.</p>
 
-<blockquote>
-  <p>"We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."</p>
-  
-  <p>— Chief Operating Officer, Agency Client B</p>
-</blockquote>
+<blockquote><p>"We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."</p><p class="kz-quote-by">Chief Operating Officer, Agency Client B</p></blockquote>
 
 <p>For another agency leader, the shift showed up directly in how long it took to answer the question leadership actually asks.</p>
 
-<blockquote>
-  <p>"Kaizan is fast becoming the key input to my churn report. Something that used to take me hours now takes me minutes."</p>
-  
-  <p>— MD and Chief Client Officer, Agency Client C</p>
-</blockquote>
+<blockquote><p>"Kaizan is fast becoming the key input to my churn report. Something that used to take me hours now takes me minutes."</p><p class="kz-quote-by">MD and Chief Client Officer, Agency Client C</p></blockquote>
 
 <p>And for a CEO running a portfolio of accounts across an agency group, the churn question was really a revenue question in disguise.</p>
 
-<blockquote>
-  <p>"I just want to know, is my revenue at risk? Client health is a very big indicator for hitting those revenue numbers. And that's what I need to know."</p>
-  
-  <p>— Senior leader, Agency Client D</p>
-</blockquote>
+<blockquote><p>"I just want to know, is my revenue at risk? Client health is a very big indicator for hitting those revenue numbers. And that's what I need to know."</p><p class="kz-quote-by">Senior leader, Agency Client D</p></blockquote>
 
 <p>The action that follows a flag like Agency Client A's is rarely dramatic. It is usually a specific stakeholder to re-engage, a senior contact to loop back in, or an honest conversation scheduled before the renewal date forces one. The value of the prediction is entirely in how much runway it buys the account team to have that conversation on their own terms.</p>
 
@@ -295,11 +269,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <ul>
 <li>Portfolio value: 40 clients times $120,000 equals $4,800,000</li>
-<li>At the professional-services average attrition rate of roughly 16%, the inverse of the commonly cited 84% average retention rate, revenue at risk equals $4,800,000 times 0.16, or $768,000 per year</li>
-<li>At a 45% early-signal protection rate, the average Kaizan clients see from acting on CARE-driven alerts, revenue protected equals $768,000 times 0.45, or $345,600 per year, recovered without closing a single new deal</li>
+<li>At the professional-services average attrition rate of roughly <mark class="kz-stat">16%</mark>, the inverse of the commonly cited <mark class="kz-stat">84%</mark> average retention rate, revenue at risk equals $4,800,000 times 0.16, or $768,000 per year</li>
+<li>At a <mark class="kz-stat">45%</mark> early-signal protection rate, the average Kaizan clients see from acting on CARE-driven alerts, revenue protected equals $768,000 times 0.45, or $345,600 per year, recovered without closing a single new deal</li>
 </ul>
 
-<p>The 84% retention figure is an industry-wide average compiled from multiple sources and should be treated as directional for any single firm. The real number for a given book of clients depends heavily on service line, contract length, and client concentration.</p>
+<p>The <mark class="kz-stat">84%</mark> retention figure is an industry-wide average compiled from multiple sources and should be treated as directional for any single firm. The real number for a given book of clients depends heavily on service line, contract length, and client concentration.</p>
 
 <h2>Data requirements for churn prediction on conversation data</h2>
 
@@ -333,35 +307,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Week 4: pilot the action loop on five accounts.</strong> Pick a small number of flagged accounts, assign an owner to each, and run the recommended next action. The point of the pilot is to prove the loop from signal to action works before rolling it across the whole portfolio.</li>
 </ol>
 
-<h2>Frequently asked questions</h2>
-
-<p><strong>What is customer churn prediction and prevention?</strong>
-Prediction is the risk score. Prevention is what happens next: a recommended action, routed to an account owner, before the renewal conversation starts. Software that only produces a score without a next step only does half the job.</p>
-
-<p><strong>What is predictive analytics for customer churn?</strong>
-It is the practice of training a model on historical outcomes, meaning which accounts were retained, expanded, or lost, and the conversation patterns that preceded each one, then applying those patterns to score live accounts.</p>
-
-<p><strong>Where can you find customer churn prediction platforms?</strong>
-Inside client success and client health platforms, where the score sits alongside a wider relationship model, as a module in SaaS-focused customer success tools built for product usage data, or as a custom build on top of CRM exports and call transcripts.</p>
-
-<p><strong>How do you measure churn prediction accuracy?</strong>
-With precision and recall for model quality, and with revenue protected, portfolio value times attrition rate times the share caught early, for the business case. Neither number means much without the other.</p>
-
-<p><strong>How is churn prediction different from health scoring?</strong>
-Churn prediction outputs a single probability that an account leaves. Health scoring breaks the relationship into the dimensions driving that risk, so a team sees what to fix, not just that something is wrong. The strongest setups use health scoring as the foundation and derive the churn read from it.</p>
-
-<p><strong>Who owns churn prediction in an agency?</strong>
-Typically the head of client service owns acting on the signal, while a head of AI or technology owns whether the underlying system meets the firm's data and security standards. Both need visibility into the same score.</p>
-
-<p><strong>Can churn prediction work without much historical data?</strong>
-It can start working within the first baseline period, three to six months of consistent conversation capture, but accuracy improves as the model sees more complete outcomes, meaning full renewal cycles rather than a handful of calls.</p>
-
-<p><strong>Does churn prediction need a CRM integration?</strong>
-It benefits from one, but conversation data, meaning calls, emails, and chat, is the primary input on relationships that do not generate product usage logs. A CRM adds account metadata and deal history. It is not a substitute for reading the conversations themselves.</p>
-
-<p><strong>Will this replace a quarterly QBR or satisfaction survey?</strong>
-No, and it should not try to. Surveys and QBRs are useful checkpoints. Churn prediction on conversation data fills the gap between them: the weeks where a relationship can shift before the next scheduled check-in arrives.</p>
-
+<section class="kz-faq"><h2>Frequently asked questions</h2><details class="kz-faq-item"><summary><h3>What is customer churn prediction and prevention?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Prediction is the risk score. Prevention is what happens next: a recommended action, routed to an account owner, before the renewal conversation starts. Software that only produces a score without a next step only does half the job.</p></div></details><details class="kz-faq-item"><summary><h3>What is predictive analytics for customer churn?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>It is the practice of training a model on historical outcomes, meaning which accounts were retained, expanded, or lost, and the conversation patterns that preceded each one, then applying those patterns to score live accounts.</p></div></details><details class="kz-faq-item"><summary><h3>Where can you find customer churn prediction platforms?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Inside client success and client health platforms, where the score sits alongside a wider relationship model, as a module in SaaS-focused customer success tools built for product usage data, or as a custom build on top of CRM exports and call transcripts.</p></div></details><details class="kz-faq-item"><summary><h3>How do you measure churn prediction accuracy?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>With precision and recall for model quality, and with revenue protected, portfolio value times attrition rate times the share caught early, for the business case. Neither number means much without the other.</p></div></details><details class="kz-faq-item"><summary><h3>How is churn prediction different from health scoring?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Churn prediction outputs a single probability that an account leaves. Health scoring breaks the relationship into the dimensions driving that risk, so a team sees what to fix, not just that something is wrong. The strongest setups use health scoring as the foundation and derive the churn read from it.</p></div></details><details class="kz-faq-item"><summary><h3>Who owns churn prediction in an agency?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>Typically the head of client service owns acting on the signal, while a head of AI or technology owns whether the underlying system meets the firm's data and security standards. Both need visibility into the same score.</p></div></details><details class="kz-faq-item"><summary><h3>Can churn prediction work without much historical data?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>It can start working within the first baseline period, three to six months of consistent conversation capture, but accuracy improves as the model sees more complete outcomes, meaning full renewal cycles rather than a handful of calls.</p></div></details><details class="kz-faq-item"><summary><h3>Does churn prediction need a CRM integration?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>It benefits from one, but conversation data, meaning calls, emails, and chat, is the primary input on relationships that do not generate product usage logs. A CRM adds account metadata and deal history. It is not a substitute for reading the conversations themselves.</p></div></details><details class="kz-faq-item"><summary><h3>Will this replace a quarterly QBR or satisfaction survey?</h3><span class="ic" aria-hidden="true">+</span></summary><div class="kz-faq-a"><p>No, and it should not try to. Surveys and QBRs are useful checkpoints. Churn prediction on conversation data fills the gap between them: the weeks where a relationship can shift before the next scheduled check-in arrives.</p></div></details></section>
 <hr />
 
 <p>To see how Kaizan scores churn risk on your own conversation data, <a href="https://www.kaizan.ai/us/">book a demo</a>.</p>
