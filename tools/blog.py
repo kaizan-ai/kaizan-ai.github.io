@@ -125,6 +125,14 @@ def format_date(iso: str) -> str:
 # Markdown -> HTML
 # ─────────────────────────────────────────────────────────────────────
 
+def _img_v(path: Path) -> str:
+    """"?v=<hash8>" from the image's content, so browsers refetch a replaced image."""
+    import hashlib
+    if not path.is_file():
+        return ''
+    return '?v=' + hashlib.md5(path.read_bytes()).hexdigest()[:8]
+
+
 def _rewrite_img(match: re.Match, slug: str) -> str:
     """Rewrite a bare/relative <img src> to the depth-3 blog asset path and lazy-load it."""
     tag = match.group(0)
@@ -133,17 +141,297 @@ def _rewrite_img(match: re.Match, slug: str) -> str:
         return tag
     src = src_m.group(1)
     if not re.match(r'^(https?:|data:|/|\.\./)', src):
-        new_src = f"../../../assets/img/blog/{slug}/{src.lstrip('./')}"
+        name = src.lstrip('./')
+        new_src = f"../../../assets/img/blog/{slug}/{name}{_img_v(CONTENT_DIR / slug / name)}"
         tag = tag.replace(f'src="{src}"', f'src="{new_src}"')
     if 'loading=' not in tag:
         tag = tag.replace('<img', '<img loading="lazy" decoding="async"', 1)
     return tag
 
 
+_CALLOUT_H2 = re.compile(r'^(the short (answer|version)|key takeaways|tl;?dr|in short)\b', re.I)
+_FAQ_H2 = re.compile(r'\b(frequently asked questions|faqs?)\s*$', re.I)
+
+
+def _h2_text(h2: str) -> str:
+    return re.sub(r'<[^>]+>', '', h2).strip()
+
+
+_SEQ = r'(?:Day|Days|Week|Weeks|Month|Months|Step|Stage|Phase|Minute|Quarter)\s[-\d][^<:.]{0,12}'
+_DAY_RUN = re.compile(r'(?:<p><strong>%s\.</strong>.*?</p>\s*){3,}' % _SEQ, re.S)
+_STEP_H3 = re.compile(r'<h3>(%s)[:.]\s*(.*?)</h3>' % _SEQ, re.S)
+
+
+def _flows(html: str) -> str:
+    """Turn sequences into a scroll-animated timeline (.kz-flow, driven by blog-post.js):
+    3+ paragraphs led by "**Day 6.**"-style labels, and 3+ consecutive "### Step 1: …" sections."""
+    def day_run(m):
+        items = re.findall(r'<p><strong>(%s)\.</strong>\s*(.*?)</p>' % _SEQ, m.group(0), re.S)
+        lis = ''.join(f'<li class="kz-flow-item"><span class="kz-flow-label">{lab}</span>'
+                      f'<div class="kz-flow-card"><p>{txt}</p></div></li>' for lab, txt in items)
+        return f'<ol class="kz-flow" data-flow>{lis}</ol>\n'
+    html = _DAY_RUN.sub(day_run, html)
+
+    chunks = re.split(r'(?=<h[23][ >])', html)
+    out, run = [], []
+
+    def flush():
+        if len(run) >= 3:
+            items = ''
+            for c in run:
+                m = _STEP_H3.match(c)
+                items += (f'<li class="kz-flow-item"><span class="kz-flow-label">{m.group(1)}</span>'
+                          f'<div class="kz-flow-step"><h3>{m.group(2)}</h3>{c[m.end():].strip()}</div></li>')
+            out.append(f'<ol class="kz-flow kz-flow-steps" data-flow>{items}</ol>\n')
+        else:
+            out.extend(run)
+        run.clear()
+
+    for c in chunks:
+        if _STEP_H3.match(c):
+            run.append(c)
+        else:
+            flush()
+            out.append(c)
+    flush()
+    return ''.join(out)
+
+
+def _cards(section: str) -> str:
+    """Inside one h2 section, 3+ h3 sub-sections become numbered cards (.kz-cards)."""
+    if 'kz-flow-steps' in section:
+        return section  # its h3s are already timeline steps
+    chunks = re.split(r'(?=<h3[ >])', section)
+    head, subs = chunks[0], chunks[1:]
+    if len(subs) < 3:
+        return section
+    cards = ''.join(
+        f'<li class="kz-card"><span class="kz-card-n">{n:02d}</span>{c.strip()}</li>'
+        for n, c in enumerate(subs, 1))
+    return f'{head}<ol class="kz-cards">{cards}</ol>\n'
+
+
+_STAT = re.compile(r'(?<![\w$£€.])(\d+(?:\.\d+)?(?:%|x\b|×)(?:\+)?)')
+
+
+def _stats(html: str) -> str:
+    """Highlight figures like 69%, 2.5x in body paragraphs and list items (not links, code or tables)."""
+    def in_block(m):
+        parts = re.split(r'(<[^>]+>)', m.group(0))
+        depth = 0
+        for i, p in enumerate(parts):
+            if p.startswith('<'):
+                if re.match(r'<(a|code)\b', p):
+                    depth += 1
+                elif re.match(r'</(a|code)>', p):
+                    depth -= 1
+            elif depth == 0:
+                parts[i] = _STAT.sub(r'<mark class="kz-stat">\1</mark>', p)
+        return ''.join(parts)
+    # Leave tables and preformatted blocks alone.
+    pieces = re.split(r'(<table>.*?</table>|<pre>.*?</pre>)', html, flags=re.S)
+    for i in range(0, len(pieces), 2):
+        pieces[i] = re.sub(r'<(p|li)\b[^>]*>.*?</\1>', in_block, pieces[i], flags=re.S)
+    return ''.join(pieces)
+
+
+LOGO_DIR = ROOT / 'assets' / 'img' / 'logos'
+# Tool name (as written in a table) -> logo file in assets/img/logos/.
+_LOGOS = {
+    'Kaizan': '../kaizan-icon.png', 'HubSpot': 'hubspot.svg', 'Salesforce': 'salesforce.svg',
+    'Pipedrive': 'pipedrive.png', 'Zoho CRM': 'zoho-crm.svg', 'monday.com': 'monday.svg',
+    'monday CRM': 'monday.svg', 'SuiteDash': 'suitedash.svg', 'Moxo': 'moxo.svg',
+    'Productive': 'productive.svg', 'Scoro': 'scoro.svg', 'Gainsight': 'gainsight.svg',
+    'Planhat': 'planhat.svg', 'ChurnZero': 'churnzero.png', 'Vitally': 'vitally.svg',
+    'Totango': 'totango.svg', 'Odie': 'odie.svg', 'AgencyAnalytics': 'agencyanalytics.svg',
+    'Looker Studio': 'looker.svg', 'Databox': 'databox.svg', 'Swydo': 'swydo.svg',
+    'DashThis': 'dashthis.svg', 'Whatagraph': 'whatagraph.svg', 'ClientSuccess': 'clientsuccess.svg',
+    'Notion': 'notion.svg', 'Asana': 'asana.svg', 'ClickUp': 'clickup.svg', 'Wrike': 'wrike.svg',
+    'Airtable': 'airtable.svg', 'Slack': 'slack.svg', 'Teamwork': 'teamwork.svg', 'Jira': 'jira.svg',
+    'Rocketlane': 'rocketlane.svg', 'GUIDEcx': 'guidecx.svg', 'Typeform': 'typeform.svg',
+    'Content Snare': 'content-snare.svg', 'Qualtrics': 'qualtrics.svg', 'Gong': 'gong.svg',
+    'Fathom': 'fathom.svg', 'Otter': 'otter.svg', 'Fireflies': 'fireflies.svg', 'Zapier': 'zapier.svg',
+    'Make': 'make.svg', 'Float': 'float.svg', 'Harvest': 'harvest.svg', 'Toggl': 'toggl.svg',
+    'Xero': 'xero.svg', 'QuickBooks': 'quickbooks.svg', 'Kantata': 'kantata.svg', 'Deltek': 'deltek.svg',
+    'Accelo': 'accelo.svg', 'Workamajig': 'workamajig.svg', 'Figma': 'figma.svg', 'Canva': 'canva.svg',
+    'Dock': 'dock.svg', 'ChatGPT': 'chatgpt.svg', 'Claude': 'claude.svg', 'Gemini': 'gemini.png',
+    'Microsoft Teams': 'microsoft-teams.svg', 'Zoom': 'zoom.svg', 'Gmail': 'gmail.svg',
+    'Outlook': 'outlook.svg', 'Google Drive': 'google-drive.svg', 'SharePoint': 'sharepoint.svg',
+}
+
+
+def _logo_ratio(path: Path) -> float:
+    """Width / height of a logo, from its SVG viewBox or PNG header."""
+    data = path.read_bytes()
+    if path.suffix == '.png':
+        import struct
+        w, h = struct.unpack('>II', data[16:24])
+        return w / h
+    m = re.search(rb'viewBox="([^"]+)"', data)
+    v = [float(x) for x in re.split(r'[ ,]+', m.group(1).decode().strip())]
+    return v[2] / v[3]
+
+
+def _logo_cell(cell_html: str) -> str:
+    """If a table cell starts with a known tool name, put its logo in front.
+    Wordmark logos (wide) replace the name; icon logos sit beside it."""
+    text = re.sub(r'<[^>]+>', '', cell_html).strip()
+    if len(text) > 40:
+        return cell_html
+    for name in sorted(_LOGOS, key=len, reverse=True):
+        if re.match(re.escape(name) + r'(?![\w.])', text, re.I):
+            path = (LOGO_DIR / _LOGOS[name]).resolve()
+            if not path.is_file():
+                return cell_html
+            src = '../../../assets/img/' + str(path.relative_to(ROOT / 'assets' / 'img'))
+            rest = text[len(name):].strip()
+            rest_html = f'<span class="kz-tl-note">{rest}</span>' if rest else ''
+            if _logo_ratio(path) >= 2:
+                logo = f'<img class="kz-tl-wm" src="{src}" alt="{text[:len(name)]}">'
+            else:
+                logo = f'<img class="kz-tl-icon" src="{src}" alt="">{text[:len(name)]}'
+            return f'<span class="kz-tl">{logo}</span>{rest_html}'
+    return cell_html
+
+
+def _tables(html: str) -> str:
+    """Logos in the first column and header row; flag the Kaizan row and column."""
+    def table(m):
+        t = m.group(0)
+        t = re.sub(r'(<tr>\s*<td[^>]*>)(.*?)(</td>)', lambda c: c.group(1) + _logo_cell(c.group(2)) + c.group(3), t, flags=re.S)
+        t = re.sub(r'(<th[^>]*>)(.*?)(</th>)', lambda c: c.group(1) + _logo_cell(c.group(2)) + c.group(3), t, flags=re.S)
+        t = re.sub(r'<tr>(\s*<td[^>]*><span class="kz-tl"><img[^>]*kaizan-icon)', r'<tr class="kz-row-kaizan">\1', t)
+        t = re.sub(r'<tr>(\s*<td[^>]*>\s*Kaizan\b)', r'<tr class="kz-row-kaizan">\1', t)
+        t = re.sub(r'<th([^>]*)>(<span class="kz-tl"><img[^>]*>Kaizan)', r'<th\1 class="kz-th-kaizan">\2', t)
+        heads = re.findall(r'<th\b[^>]*>', t)
+        col = next((i for i, h in enumerate(heads) if 'kz-th-kaizan' in h), None)
+        if col is not None:
+            def row(r):
+                n = [-1]
+                def cell(c):
+                    n[0] += 1
+                    return '<td class="kz-col-kaizan"' if n[0] == col else c.group(0)
+                return re.sub(r'<td(?=[\s>])', cell, r.group(0))
+            t = re.sub(r'<tr\b[^>]*>.*?</tr>', row, t, flags=re.S)
+        return t
+    return re.sub(r'<table>.*?</table>', table, html, flags=re.S)
+
+
+def _faq_items(section: str) -> str:
+    """FAQ questions as the site's accordion (<details class="kz-faq-item">, styled in
+    site.css/resources.css). A question is an <h3>, or a paragraph led by a bold "...?";
+    everything up to the next question is its answer."""
+    m = re.match(r'(<h2[^>]*>.*?</h2>)(.*)', section, re.S)
+    if not m:
+        return section
+    head, body = m.group(1), m.group(2)
+    blocks = [b.group(0) for b in re.finditer(r'<(h3|p|ul|ol|blockquote|div|table|pre)\b.*?</\1>', body, re.S)]
+    intro, items, outro = [], [], []
+    for b in blocks:
+        q = re.match(r'<h3[^>]*>(.*?)</h3>$', b, re.S)
+        if q:
+            items.append([q.group(1).strip(), []])
+            continue
+        q = re.match(r'<p>\s*<strong>([^<]*\?)</strong>\s*(.*)</p>$', b, re.S)
+        if q:
+            items.append([q.group(1).strip(), [f'<p>{q.group(2).strip()}</p>'] if q.group(2).strip() else []])
+            continue
+        if items and re.match(r'<p>\s*<em>.*</em>\s*</p>$', b, re.S):
+            outro.append(b)  # an italic source note closes the section, not the last answer
+            continue
+        (items[-1][1] if items else intro).append(b)
+    if len(items) < 2:
+        return section
+    acc = ''.join(
+        f'<details class="kz-faq-item"><summary><h3>{q}</h3><span class="ic" aria-hidden="true">+</span>'
+        f'</summary><div class="kz-faq-a">{"".join(a)}</div></details>' for q, a in items)
+    return head + ''.join(intro) + acc + ''.join(outro)
+
+
+PEOPLE_DIR = ROOT / 'assets' / 'img' / 'people' / 'quotes'
+
+
+def _quotes(html: str) -> str:
+    """Quotes signed "— Name, Title, Company": the attribution becomes a caption, and a
+    named person with a headshot in assets/img/people/quotes/<name-slug>.jpg gets a quote card."""
+    def quote(m):
+        q = m.group(0)
+        sig = re.search(r'\s*<p>\s*(?:—|&#8212;|&mdash;)\s*(.*?)</p>\s*</blockquote>$', q, re.S)
+        if not sig:
+            return q
+        body = q[:sig.start()].replace('<blockquote>', '', 1).strip()
+        who = sig.group(1).strip()
+        name, _, role = who.partition(',')
+        photo = PEOPLE_DIR / f'{slugify(name)}.jpg'
+        if photo.is_file():
+            src = f'../../../assets/img/people/quotes/{photo.name}{_img_v(photo)}'
+            return (f'<figure class="kz-quote-card"><blockquote>{body}</blockquote>'
+                    f'<figcaption><img class="kz-qc-photo" src="{src}" alt="{name.strip()}" loading="lazy">'
+                    f'<span><strong>{name.strip()}</strong><span>{role.strip()}</span></span></figcaption></figure>')
+        return f'<blockquote>{body}<p class="kz-quote-by">{who}</p></blockquote>'
+    return re.sub(r'<blockquote>.*?</blockquote>', quote, html, flags=re.S)
+
+
+def _emails(html: str) -> str:
+    """Script blocks that start with "Subject:" render as an email (subject line, body in the
+    normal font, [placeholders] marked); any other preformatted block becomes a light card."""
+    def block(m):
+        inner = re.sub(r'</?code[^>]*>', '', m.group(1)).strip('\n')
+        ph = lambda t: re.sub(r'\[([^\]\n]{1,60})\]', r'<span class="kz-ph">[\1]</span>', t)
+        sm = re.match(r'Subject:\s*(.*?)\n(.*)$', inner, re.S)
+        if not sm:
+            return f'<div class="kz-snippet">{inner}</div>'
+        return ('<div class="kz-email"><div class="kz-email-bar"><span class="kz-email-dots"><i></i><i></i><i></i></span>'
+                '<span>New message</span></div>'
+                f'<div class="kz-email-subj"><span class="kz-email-k">Subject</span>{ph(sm.group(1).strip())}</div>'
+                f'<div class="kz-email-body">{ph(sm.group(2).strip())}</div></div>')
+    return re.sub(r'<pre>(.*?)</pre>', block, html, flags=re.S)
+
+
+def _decorate(html: str) -> str:
+    """Make long posts easier on the eye: a lede, sequences as timelines, sub-sections as
+    cards, highlighted figures, pale summary/FAQ panels, and tables that scroll on phones."""
+    html = re.sub(r'^\s*<p>', '<p class="kz-lede-p">', html, count=1)
+    html = _emails(html)
+    html = _flows(html)
+    html = _quotes(html)
+    html = _stats(html)
+    secs = re.split(r'(?=<h2[ >])', html)
+    for i, s in enumerate(secs):
+        m = re.match(r'(<h2[^>]*>.*?</h2>)', s, re.S)
+        title = _h2_text(m.group(1)) if m else ''
+        if not (_FAQ_H2.search(title) or _CALLOUT_H2.match(title)):
+            secs[i] = _cards(s)
+    html = ''.join(secs)
+    # "**Key takeaways**" followed by a list -> a callout panel.
+    html = re.sub(
+        r'<p><strong>(Key takeaways|The short answer:?|In short:?)</strong></p>\s*(<(ul|ol)>.*?</\3>)',
+        lambda m: f'<div class="kz-callout"><p class="kz-callout-label">{m.group(1).rstrip(":")}</p>{m.group(2)}</div>',
+        html, flags=re.S)
+    # An h2 section (heading up to the next h2) -> callout or FAQ panel.
+    parts = re.split(r'(?=<h2[ >])', html)
+    for i, part in enumerate(parts):
+        m = re.match(r'(<h2[^>]*>.*?</h2>)(.*)', part, re.S)
+        if not m:
+            continue
+        title = _h2_text(m.group(1))
+        if _CALLOUT_H2.match(title):
+            parts[i] = f'<section class="kz-callout">{part.strip()}</section>\n'
+        elif _FAQ_H2.search(title):
+            # A closing line after an <hr> belongs to the post, not the FAQ.
+            faq, hr, rest = part.partition('<hr')
+            parts[i] = f'<section class="kz-faq">{_faq_items(faq.strip())}</section>\n' + (hr + rest if hr else '')
+    html = ''.join(parts)
+    html = _tables(html)
+    html = re.sub(r'<table>(.*?)</table>', r'<div class="kz-table"><table>\1</table></div>', html, flags=re.S)
+    return html
+
+
 def md_to_html(body_md: str, slug: str) -> str:
     html = markdown2.markdown(body_md, extras=MARKDOWN_EXTRAS)
     html = re.sub(r'<img\b[^>]*>', lambda m: _rewrite_img(m, slug), html)
-    return str(html).strip()
+    html = _decorate(str(html))
+    return html.strip()
 
 
 # ─────────────────────────────────────────────────────────────────────

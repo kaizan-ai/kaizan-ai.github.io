@@ -3774,7 +3774,8 @@ def cover_src(post: dict, depth: int) -> str:
     """Cover image src for a post page at the given depth: the colocated asset if
     present (assets/img/blog/<slug>/...), else a generated gradient fallback."""
     if post.get('cover_asset'):
-        return relpath(depth) + 'assets/img/' + post['cover_asset']
+        rel = 'assets/img/' + post['cover_asset']
+        return relpath(depth) + rel + asset_v(rel)
     glyph = (post.get('title') or 'KZ').strip()[:2].upper() or 'KZ'
     return cover('#FFB900', '#FFD86B', glyph)
 
@@ -3926,6 +3927,9 @@ def render_blog_post(post: dict) -> str:
         extra += '\n        ' + ld_script(blog_schema_nodes(post))
     elif post.get('schema'):
         extra += '\n        ' + ld_script([ld_blogposting(post)])
+    if 'data-flow' in post.get('body', ''):
+        extra += (f'\n        <script defer src="{relpath(3)}assets/js/blog-post.js'
+                  f'{asset_v("assets/js/blog-post.js")}"></script>')
     return page_head(post.get('meta_title') or post['title'], 3,
                      post.get('meta_description') or post.get('excerpt', ''),
                      extra_head=extra + '\n        ' + resources_head(3)) + body + page_foot()
@@ -9046,13 +9050,15 @@ def main():
     # scratch (a renamed or retired post must not leave a stale page or image behind).
     _remove_page(ROOT / 'blog')
     _remove_page(ROOT / 'assets' / 'img' / 'blog')
+    # Copy images before any page is rendered: cover URLs carry a content hash of the copy.
+    for post in posts:
+        blog.copy_post_images(post['slug'])
     write(ROOT / 'blog' / 'index.html', render_blog_index(posts))
     for topic in blog.TOPICS:
         topic_posts = [p for p in posts if p['topic'] == topic]
         if topic_posts:
             write(ROOT / 'blog' / topic / 'index.html', render_blog_topic(topic, topic_posts))
     for post in posts:
-        blog.copy_post_images(post['slug'])
         write(ROOT / 'blog' / post['topic'] / post['slug'] / 'index.html', render_blog_post(post))
     print(f'  ({len(posts)} blog post(s) built)')
 
