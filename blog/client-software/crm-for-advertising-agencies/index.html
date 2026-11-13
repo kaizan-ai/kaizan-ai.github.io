@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=d213fdee">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-software/crm-for-advertising-agencies/">
         <meta property="og:type" content="article">
@@ -147,7 +147,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p><strong>Renewal.</strong> The commercial event itself: the date, the named owner, the contract it sits under, and the probability of it closing. A renewal usually attaches to the client's master contract, but a brand with its own statement of work needs its own renewal record, because its clock runs on a different date.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png?v=47ee91f7" alt="Entity diagram showing how a Client holds many Brands, each Brand runs many Campaigns, Stakeholders are tagged across Brands and Campaigns, and Renewals attach to a Client or Brand contract." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png?v=47ee91f7" alt="Entity diagram showing how a Client holds many Brands, each Brand runs many Campaigns, Stakeholders are tagged across Brands and Campaigns, and Renewals attach to a Client or Brand contract." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>CRM for advertising agencies: one hierarchy, two objects that cut across it</strong></p>
+
+<p><strong>The hierarchy (solid lines: has many)</strong></p>
+
+<ul>
+<li>Client: Acme Group
+<ul>
+<li>Brand: Acme Snacks
+<ul>
+<li>Campaign: Spring retail launch</li>
+<li>Campaign: In-store sampling programme</li>
+</ul></li>
+<li>Brand: Acme Beverages
+<ul>
+<li>Campaign: Always-on social</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p><strong>The two objects that cut across it (dashed lines)</strong></p>
+
+<ul>
+<li><strong>Renewal:</strong> attaches to Client or Brand contract (attaches to Acme Group and Acme Snacks)</li>
+<li><strong>Stakeholder:</strong> tagged to Brand or Campaign (tagged to Acme Beverages and Always-on social)</li>
+</ul>
+
+<p>Dashed line: the object cross-cuts the hierarchy. Solid line: has many.</p></div></details>
 
 <div class="kz-table"><table>
 <thead>

@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=d213fdee">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-software/client-service-tech-stack/">
         <meta property="og:type" content="article">
@@ -126,7 +126,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">The Client Service Tech Stack: Customer Success Tools By Job To Be Done, With The Tools Compared</h1>
-        <img class="kz-post-hero" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png?v=63132264" alt="The Client Service Tech Stack: Customer Success Tools By Job To Be Done, With The Tools Compared" decoding="async">
+        <img class="kz-post-hero" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png?v=63132264" alt="The Client Service Tech Stack: Customer Success Tools By Job To Be Done, With The Tools Compared" decoding="async"><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>The four jobs in a client service tech stack: four lanes, left to right</strong></p>
+
+<ol>
+<li><strong>Capture.</strong> Get the conversation into a system. Fireflies, Otter, Fathom.</li>
+<li><strong>System of record.</strong> Hold the contact, deal and contract. HubSpot, Salesforce.</li>
+<li><strong>Score and health.</strong> Judge whether the relationship is strengthening or weakening. Kaizan, Gainsight, Planhat.</li>
+<li><strong>Act and automate.</strong> Do something with the score. Zapier, Make, Asana.</li>
+</ol>
+
+<p><strong>Lighter strip: report and feedback.</strong> Report and survey. Qualtrics, AgencyAnalytics, Looker Studio.</p>
+
+<p>Kaizan captures, scores and acts, and writes back to the CRM.</p></div></details>
         <p class="kz-lede-p">Most agencies and professional services firms don't have a tools problem. They have a tools-that-don't-talk-to-each-other problem. A CRM holds the contact. A project tool holds the task. A spreadsheet holds the RAG status, updated once a month by whoever remembers. None of them holds the relationship.</p>
 
 <p><strong>Customer success tools</strong> are the software that captures, scores, acts on and reports what's actually happening inside a client relationship: the calls, the emails, the quiet stakeholder, the risk nobody wrote down. This guide sorts the market into four jobs, compares 25 tools against each one, and gives you a way to choose that starts with your problem, not a vendor's feature list.</p>
@@ -200,7 +211,137 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </table></div></li></ol>
 <h2>Why Agencies Outgrow Spreadsheets And Their CRM</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-spreadsheet-vs-dashboard.png?v=fb77c483" alt="Messy RAG spreadsheet beside a live client health dashboard." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-spreadsheet-vs-dashboard.png?v=fb77c483" alt="Messy RAG spreadsheet beside a live client health dashboard." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>A monthly RAG spreadsheet beside a live health score</strong></p>
+
+<p>Illustration, not the product UI. Illustrative data.</p>
+
+<p><strong>Before: last updated by whoever remembered</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>Client</th>
+  <th>Owner</th>
+  <th>RAG</th>
+  <th>Last updated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Client 1</td>
+  <td>Owner A</td>
+  <td>Green</td>
+  <td>2 days ago</td>
+</tr>
+<tr>
+  <td>Client 2</td>
+  <td>Owner B</td>
+  <td>Amber</td>
+  <td>6 weeks ago (stale)</td>
+</tr>
+<tr>
+  <td>Client 3</td>
+  <td>Owner C</td>
+  <td>Green</td>
+  <td>1 week ago</td>
+</tr>
+<tr>
+  <td>Client 4</td>
+  <td>Owner A</td>
+  <td>Green</td>
+  <td>5 weeks ago (stale)</td>
+</tr>
+<tr>
+  <td>Client 5</td>
+  <td>Owner B</td>
+  <td>Red</td>
+  <td>4 weeks ago (stale)</td>
+</tr>
+<tr>
+  <td>Client 6</td>
+  <td>Owner C</td>
+  <td>Amber</td>
+  <td>3 days ago</td>
+</tr>
+<tr>
+  <td>Client 7</td>
+  <td>Owner A</td>
+  <td>Green</td>
+  <td>4 weeks ago (stale)</td>
+</tr>
+<tr>
+  <td>Client 8</td>
+  <td>Owner B</td>
+  <td>Green</td>
+  <td>2 weeks ago</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>After: scored from every call, email and message</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Client</th>
+  <th>Health score, lowest first</th>
+  <th>Trend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Client 4</td>
+  <td>31</td>
+  <td>Down ("Budget review moved to Q1. Wants options." Call, 12 Oct)</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Client 5</td>
+  <td>38</td>
+  <td>Down</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Client 2</td>
+  <td>44</td>
+  <td>Flat</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Client 7</td>
+  <td>52</td>
+  <td>Down</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Client 6</td>
+  <td>61</td>
+  <td>Flat</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Client 3</td>
+  <td>70</td>
+  <td>Up</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Client 8</td>
+  <td>79</td>
+  <td>Flat</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Client 1</td>
+  <td>86</td>
+  <td>Up</td>
+</tr>
+</tbody>
+</table>
+
+<p>The monthly RAG spreadsheet is backward-looking. Client 4 is still green on the left.</p></div></details>
 
 <p>A spreadsheet is free, familiar, and fine for a handful of clients. It breaks for four reasons, all structural rather than a training problem.</p>
 
@@ -528,7 +669,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table></div>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-per-seat-vs-per-client.png?v=041d1d4e" alt="Monthly cost of a per-seat tool rising with headcount beside a flat per-client price." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-per-seat-vs-per-client.png?v=041d1d4e" alt="Monthly cost of a per-seat tool rising with headcount beside a flat per-client price." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Monthly cost, USD, by number of people who need access: per-seat cost grows with headcount</strong></p>
+
+<p>Illustrative. Monthly cost by people who need access (0 to 100):</p>
+
+<table>
+<thead>
+<tr>
+  <th>People who need access</th>
+  <th>Per seat, $20 a month</th>
+  <th>Per seat, $40 a month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>10</td>
+  <td>$200</td>
+  <td>$400</td>
+</tr>
+<tr>
+  <td>30</td>
+  <td>$600</td>
+  <td>$1,200</td>
+</tr>
+<tr>
+  <td>60</td>
+  <td>$1,200</td>
+  <td>$2,400</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>Per client, price on quote:</strong> per-client pricing is set by your number of clients, not your headcount. Price on quote. Position illustrative. The level depends on your client count.</li>
+</ul>
+
+<p><strong>Read it this way:</strong> Per-seat cost grows with headcount. Per-client cost follows your client count.</p>
+
+<p>Seats are unique people, so a per-seat bill follows headcount. Run your own numbers.</p></div></details>
 
 <p>Kaizan is priced by number of clients, with no additional cost as the team using it grows. A per-seat enterprise CS platform at the same client count can cost less or more depending entirely on how many seats you need, which is exactly why step three above (count clients, not seats) matters before you compare two quotes.</p>
 
@@ -543,7 +721,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h2>Your First 30 Days Moving Off The Spreadsheet</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-first-30-days.png?v=0b748093" alt="Five-step 30-day plan for moving off the RAG spreadsheet." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/client-service-tech-stack/client-service-tech-stack-first-30-days.png?v=0b748093" alt="Five-step 30-day plan for moving off the RAG spreadsheet." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Moving off the RAG spreadsheet: your first 30 days</strong></p>
+
+<ol>
+<li><strong>Days 1 to 3.</strong> Connect email, calendar and call recording. Leave the spreadsheet alone and run both in parallel.</li>
+<li><strong>Days 4 to 7.</strong> Backfill recent history so the system has context, not just today's conversations.</li>
+<li><strong>Week 2.</strong> Review the health scores or risk flags against what the team already knows. Trust is built or lost here.</li>
+<li><strong>Week 3.</strong> Turn on drafted follow-ups for internal recaps only. Nothing client-facing.</li>
+<li><strong>Week 4 (gate).</strong> Retire the spreadsheet for the pilot accounts. Keep it for the rest until rollout is confirmed.</li>
+</ol>
+
+<p>Run both in parallel first. Retire the spreadsheet for the pilot accounts before the rest of the portfolio.</p></div></details>
 
 <ol>
 <li><strong>Days 1 to 3:</strong> connect email, calendar and call recording. Don't touch the spreadsheet yet; let both run in parallel.</li>

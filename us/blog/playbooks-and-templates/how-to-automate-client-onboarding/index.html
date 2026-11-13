@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="/assets/dist/css/site.css?v=8db7f6bb">
+        <link rel="stylesheet" href="/assets/dist/css/site.css?v=d213fdee">
         <script defer src="/assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/us/blog/playbooks-and-templates/how-to-automate-client-onboarding/">
         <meta property="og:type" content="article">
@@ -126,7 +126,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>This is written for the person who owns the process (Head of Operations, COO) and the person who owns the relationship (Head of Client Service). Where the two want different things from client onboarding automation, we say so.</p>
 
-<p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/client-onboarding-manual-vs-automated.png?v=7cb6c3a6" alt="Side-by-side comparison of a manual client onboarding process and an automated one, showing the repeatable steps that move to workflow tools." /></p>
+<p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/client-onboarding-manual-vs-automated.png?v=7cb6c3a6" alt="Side-by-side comparison of a manual client onboarding process and an automated one, showing the repeatable steps that move to workflow tools." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Manual vs automated client onboarding: the same onboarding, run two ways</strong></p>
+
+<p><strong>Manual: lives in someone's head</strong></p>
+
+<ul>
+<li><strong>Email threads:</strong> intake details buried across replies</li>
+<li><strong>Sticky notes:</strong> chasing access, remembered by one person</li>
+<li><strong>Spreadsheet checklist:</strong> updated whenever someone remembers</li>
+</ul>
+
+<p>"What do I do first?" asked again with every new client.</p>
+
+<p><strong>Automated: one signature fires the sequence</strong></p>
+
+<ol>
+<li>Contract signed</li>
+<li>Intake form + reminder</li>
+<li>Kickoff booked</li>
+<li>Access requested</li>
+<li>Scope confirmed by a person</li>
+</ol>
+
+<p>The step worth keeping partly manual: a person reads the scope before it goes out.</p>
+
+<p>Automate the admin. Keep the kickoff call, the scope conversation and the first escalation human.</p></div></details>
 
 <h2>When to automate client onboarding, and when not to</h2>
 
@@ -149,7 +173,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h2>The client onboarding automation workflow, step by step</h2>
 
-<p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/how-to-automate-client-onboarding-flow.png?v=81d655e7" alt="Flow diagram of the seven-step client onboarding automation workflow, from contract signature through to the 30, 60 and 90-day health checks." /></p>
+<p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/how-to-automate-client-onboarding-flow.png?v=81d655e7" alt="Flow diagram of the seven-step client onboarding automation workflow, from contract signature through to the 30, 60 and 90-day health checks." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Client onboarding automation workflow: seven steps, each with an owner and a clock</strong></p>
+
+<p>Starts the clock: contract signed in the system of record.</p>
+
+<ol>
+<li><strong>Trigger the workflow the moment the contract is signed.</strong> Owner: Sales or account lead. Time: Instant.</li>
+<li><strong>Send the intake form and start collecting assets.</strong> Owner: Account manager or onboarding coordinator. Time: Within minutes.</li>
+<li><strong>Schedule the kickoff call without the back-and-forth.</strong> Owner: Whoever runs the call. Time: Same day as signature.</li>
+<li><strong>Provision access and tools before day one.</strong> Owner: Operations or IT. Time: 24 to 48 hours.</li>
+<li><strong>Confirm scope in writing against the signed contract.</strong> Owner: The account lead. Time: Before the kickoff call.</li>
+<li><strong>Run the internal kickoff and assign ownership.</strong> Owner: Delivery or account lead. Time: Within 48 hours.</li>
+<li><strong>Set the first 30, 60 and 90-day health check.</strong> Owner: Account lead, Head of Client Service. Time: Scheduled at kickoff.</li>
+</ol>
+
+<p>No single tool does all seven. Most firms connect two or three systems they already own.</p></div></details>
 
 <p>Each step below names an owner and a time estimate, so it can be delegated rather than just read.</p>
 
@@ -157,7 +195,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>The signed contract, not the handshake or the Slack message, should be what starts the clock. Connect your e-signature tool (DocuSign, PandaDoc) to your CRM so a completed signature creates the client record and fires the rest of the sequence automatically. Most CRMs (HubSpot, Salesforce) support this natively. Where they don't, Zapier or Make sits in between.</p>
 
-<p><strong>Failure mode:</strong> Sales closes the deal on a call and tells delivery "verbally." Nothing fires because nothing was signed in the system of record. Fix this by refusing to start delivery work until the trigger has fired, not when someone says it's fine.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 2</span><div class="kz-flow-step"><h3>Send the intake form and start collecting assets</h3><p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/client-intake-form-example.png?v=6e1f95e6" alt="Example of a client intake form collecting stakeholder names and roles, billing contact, brand assets and platform access." /></p>
+<p><strong>Failure mode:</strong> Sales closes the deal on a call and tells delivery "verbally." Nothing fires because nothing was signed in the system of record. Fix this by refusing to start delivery work until the trigger has fired, not when someone says it's fine.</p></div></li><li class="kz-flow-item"><span class="kz-flow-label">Step 2</span><div class="kz-flow-step"><h3>Send the intake form and start collecting assets</h3><p><img loading="lazy" decoding="async" src="/assets/img/blog/how-to-automate-client-onboarding/client-intake-form-example.png?v=6e1f95e6" alt="Example of a client intake form collecting stakeholder names and roles, billing contact, brand assets and platform access." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Step 2 of the automation flow: collect it once, before kickoff</strong></p>
+
+<p>It takes about 10 minutes. Illustrative. 5 field groups.</p>
+
+<p>Build it in: Typeform, Content Snare, your CRM's native forms.</p>
+
+<p>Sent within minutes of signature. One automated reminder at 48 hours, a flag to the account owner at 96 hours.</p>
+
+<p><strong>Welcome aboard: client intake form</strong></p>
+
+<p>Illustrative layout, not a real product screen. If anything's missing, just flag it and we'll pick it up live on the call.</p>
+
+<ol>
+<li>Stakeholder names and roles</li>
+<li>Billing contact</li>
+<li>Brand assets</li>
+<li>Platform logins</li>
+<li>Service-specific questions</li>
+</ol>
+
+<p>Route the submission straight into the client folder and notify the account team automatically.</p></div></details>
 
 <p><strong>Owner:</strong> Account manager or a dedicated onboarding coordinator. <strong>Time:</strong> Sent within minutes. Most clients return it within 48 to 72 hours with one automated reminder.</p>
 

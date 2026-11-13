@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=d213fdee">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-software/build-your-own-client-intelligence-engine/">
         <meta property="og:type" content="article">
@@ -118,7 +118,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <article class="kz-essay kz-post" style="padding-top:48px;">
       <div class="kz-essay-body kz-post-body">
         <h1 class="kz-post-title">How to build your own client intelligence engine</h1>
-        <img class="kz-post-hero" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/cover.png?v=8161fd78" alt="How to build your own client intelligence engine" decoding="async">
+        <img class="kz-post-hero" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/cover.png?v=8161fd78" alt="How to build your own client intelligence engine" decoding="async"><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>How to build your own client intelligence engine</strong></p>
+
+<p>OPEN SPEC · BUILD GUIDE</p>
+
+<p>14 systems · 5 phases · every failure mode</p></div></details>
         <p class="kz-lede-p">We exist to empower client service and delivery professionals everywhere. That mission is bigger than our product. So if you have looked at Kaizan and concluded you would rather build it yourself: <strong>good. Go and build it.</strong> Here is the whole thing: fourteen systems, the order to build them in, and the failure mode of each one. No sales gate, no redactions. We would rather you succeeded with your own engine than bought ours for the wrong reasons.</p>
 
 <p>This is written for the head of AI who has just been asked "can we build this?" It is the scope, the sequencing and the traps, in the order you will hit them. Where it helps, we name tools and suppliers. Treat those as a starting list, not a recommendation. The market moves monthly.</p>
@@ -175,13 +179,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Most internal builds fail because they start at the inference layer and discover the data problem six months in. By then the demo has been shown to the board and the budget is committed to the wrong shape of work. Start with the data.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-1.png?v=c8420b2b" alt="How client intelligence gets scoped (a large inference layer over a thin data layer) versus what it actually is (a thin inference layer on top of capture, resolution, memory and permissions work)" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-1.png?v=c8420b2b" alt="How client intelligence gets scoped (a large inference layer over a thin data layer) versus what it actually is (a thin inference layer on top of capture, resolution, memory and permissions work)" /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>How it gets scoped</strong></p>
+
+<p>“an LLM over our transcripts”</p>
+
+<ul>
+<li><strong>Inference / prompts:</strong> summaries, drafts, a chat box. 6 weeks, 2 engineers</li>
+<li><strong>Data</strong> (“we’ll wire that up”)</li>
+</ul>
+
+<p>Ships a demo. Impresses the board. Stalls at three accounts.</p>
+
+<p><strong>What it actually is</strong></p>
+
+<p>mass sits below the waterline</p>
+
+<ul>
+<li>Inference / prompts (§5, §6)</li>
+<li>Memory &amp; stakeholder graph (§4)</li>
+<li>Entity resolution &amp; unified comms (§3)</li>
+<li>Transcription &amp; diarisation (§2)</li>
+<li>Capture across every platform (§1)</li>
+<li>Permissions, security, consent (§9–§11)</li>
+</ul>
+
+<p>Every layer inherits the gaps of the layer beneath it.</p></div></details>
 
 <p><em>Fig. 1: The scoping error. The two stacks contain the same feature. The difference is everything under it. Teams that scope the left-hand picture discover the right-hand one at month six, with the timeline already public.</em></p>
 
 <h2>The build, in order</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-2.png?v=e84fb83f" alt="Dependency map of the fourteen systems: capture feeds transcription and unified comms, which feed the memory layer, routing and accuracy, which gate the proactive helpers, integrations and proof of outcome. Permissions, security, tenant consent and cross-network benchmarks sit underneath the whole pipeline." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-2.png?v=e84fb83f" alt="Dependency map of the fourteen systems: capture feeds transcription and unified comms, which feed the memory layer, routing and accuracy, which gate the proactive helpers, integrations and proof of outcome. Permissions, security, tenant consent and cross-network benchmarks sit underneath the whole pipeline." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>DATA PLANE: every channel and tool your people and clients live in, unified at stage one</strong></p>
+
+<ol>
+<li><strong>Capture:</strong> comms + tools</li>
+<li><strong>Transcripts:</strong> who said it</li>
+<li><strong>Resolution:</strong> one timeline</li>
+<li><strong>One brain:</strong> memory + graph</li>
+<li><strong>Routing:</strong> model per task</li>
+</ol>
+
+<p><strong>INFERENCE PLANE</strong></p>
+
+<ul>
+<li><strong>6 Accuracy:</strong> evals + citations (gates every change)</li>
+<li><strong>7 Helpers:</strong> proactive, in-tool</li>
+<li><strong>12–13 API:</strong> + integrations</li>
+<li><strong>14 Proof:</strong> did it move £</li>
+</ul>
+
+<p>outcomes feed the next recommendation</p>
+
+<p>9 Permissions · 10 Security · 11 Tenant consent &amp; scopes · 8 Cross-network benchmarks: every box above sits inside this boundary, and retrofitting it is a re-architecture</p>
+
+<p>Nothing to the right of a box can be built well on a broken box to its left.</p></div></details>
 
 <p><em>Fig. 2: Dependency order. The pipeline is mostly serial, which is the part that resists being parallelised across a big team. You cannot buy your way to month twelve by adding engineers at month three. Stage one is every channel and tool, not just calls: transcripts, email threads, chat and the CRM, project and ticketing tools around them, resolved onto one client timeline. Transcripts alone is an LLM over recordings, which your people can already do today.</em></p>
 
@@ -305,7 +356,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Build a coverage monitor.</strong> Which clients have no activity in the data for fourteen days, and is that because the relationship went quiet, or because ingestion did?</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-3.png?v=1bec9d4f" alt="Entity resolution pipeline: an inbound record passes through deterministic matching; hits attach to a canonical person and organisation, misses fall through to probabilistic matching, which attaches above a confidence threshold or otherwise goes to a review queue. Four hard cases feed the probabilistic layer." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-3.png?v=1bec9d4f" alt="Entity resolution pipeline: an inbound record passes through deterministic matching; hits attach to a canonical person and organisation, misses fall through to probabilistic matching, which attaches above a confidence threshold or otherwise goes to a review queue. Four hard cases feed the probabilistic layer." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><ol>
+<li><strong>Inbound record:</strong> email / call / chat</li>
+<li><strong>Deterministic match:</strong> domain · address · ID. cheap, exact, incomplete
+<ul>
+<li>hit: <strong>Canonical person + organisation</strong></li>
+<li>miss: <strong>Probabilistic match:</strong> name variants, signature, embedding similarity</li>
+</ul></li>
+<li><strong>Probabilistic match</strong>
+<ul>
+<li>above threshold: <strong>Canonical person + organisation</strong></li>
+<li>otherwise: <strong>Review queue</strong> (keep this small, or it becomes manual tagging)</li>
+</ul></li>
+</ol>
+
+<p><strong>BREAKS NAIVE MATCHING</strong></p>
+
+<ul>
+<li>two clients, one parent co.</li>
+<li>a contact moves firms</li>
+<li>your staff on client domains</li>
+<li>shared inboxes &amp; lists</li>
+</ul>
+
+<p>each one is its own rule</p></div></details>
 
 <p><em>Fig. 3: Entity resolution. The deterministic layer is a weekend. The probabilistic layer and the four hard cases are the quarter. The review queue is the honest measure of how well the two layers above it are doing.</em></p>
 
@@ -337,7 +411,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Handle contradictions.</strong> Two sources disagreeing about a fact needs a resolution rule and a record of what you decided.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-4.png?v=dc972319" alt="Memory architecture: an append-only event log derives three stores (relational, vector and graph), and an agentic layer above queries all three to compose an answer" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-4.png?v=dc972319" alt="Memory architecture: an append-only event log derives three stores (relational, vector and graph), and an agentic layer above queries all three to compose an answer" /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Append-only event log: source of truth</strong></p>
+
+<p>replayable, so the three stores below can always be rebuilt</p>
+
+<p>derives:</p>
+
+<ul>
+<li><strong>Relational:</strong> facts, dates, permissions (facts)</li>
+<li><strong>Vector:</strong> semantic recall over transcripts &amp; docs (meaning)</li>
+<li><strong>Graph:</strong> stakeholders, influence, history (who knows who)</li>
+</ul>
+
+<p><strong>Agentic layer: composes the answer</strong></p>
+
+<p>keep it decoupled from all three stores</p>
+
+<p>One store is not a memory.</p></div></details>
 
 <p><em>Fig. 4: Three shapes, one brain. The common shortcut is to treat the vector store as the memory. It answers "what was said recently" well and "what was promised in March" not at all, which is the question that actually loses accounts.</em></p>
 
@@ -400,7 +490,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Close the loop.</strong> Use preference data to tune prompts, rerankers or fine-tunes on a schedule. Then measure whether quality improved on the evals, not just whether acceptance went up.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-5.png?v=ecb998b2" alt="The evaluation loop: practitioners label real examples into a golden set; every prompt or model change is scored against it at a gate; passing changes ship to account leads with citations, failing changes do not ship; feedback flows back into the golden set" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-5.png?v=ecb998b2" alt="The evaluation loop: practitioners label real examples into a golden set; every prompt or model change is scored against it at a gate; passing changes ship to account leads with citations, failing changes do not ship; feedback flows back into the golden set" /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><ol>
+<li><strong>Your best practitioners label</strong> hundreds of real cases</li>
+<li><strong>Golden set:</strong> per task, with rubrics</li>
+<li><strong>Prompt / model change</strong></li>
+<li><strong>Score the change:</strong> every prompt &amp; model</li>
+<li><strong>gate</strong>
+<ul>
+<li>pass: <strong>Ships to account leads</strong> with citations attached</li>
+<li>fail: does not ship, however good the demo looked</li>
+</ul></li>
+</ol>
+
+<p>Do not optimise acceptance alone. Users accept flattering outputs.</p>
+
+<p>feedback as labelled data: edits, dismissals, acceptances, stored against the prompt version that produced them</p></div></details>
 
 <p><em>Fig. 5: The gate is the product. Without it you are shipping prompt changes on vibes and finding out from users. The loop is unglamorous, it never appears in a demo, and it is the difference between a system people trust and a system people quietly stop opening.</em></p>
 
@@ -486,7 +590,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><strong>Log every read.</strong> Who saw what and when, queryable for a client audit. You will be asked.</li>
 </ul>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-6.png?v=59a539ea" alt="Two retrieval orders compared: filtering after the vector search means other clients' chunks have already entered the model context, which is a leak; filtering before the search, by scoping the index to permitted clients, means only permitted chunks are ever retrieved" /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/build-your-own-client-intelligence-engine/fig-6.png?v=59a539ea" alt="Two retrieval orders compared: filtering after the vector search means other clients' chunks have already entered the model context, which is a leak; filtering before the search, by scoping the index to permitted clients, means only permitted chunks are ever retrieved" /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Filter after search: leaks</strong></p>
+
+<ol>
+<li>Query</li>
+<li>Search whole index: all clients, all teams</li>
+<li>Top-k chunks: incl. other clients’ (another client’s commercials, already inside the model context)</li>
+<li>Filter results: too late, already read</li>
+</ol>
+
+<p><strong>Filter before search: safe</strong></p>
+
+<ol>
+<li>Query</li>
+<li>Resolve permissions: client/team/user/tier</li>
+<li>Search scoped index: permitted data only</li>
+<li>Answer: nothing the user can’t see</li>
+</ol>
+
+<p>The only edge that moves is where the permission check sits. That is the whole difference.</p></div></details>
 
 <p><em>Fig. 6: One edge, moved. The leaking version passes every functional test: the answer is correct and the user is authenticated. Nothing fails until someone reads an answer citing a client they have never worked on.</em></p>
 

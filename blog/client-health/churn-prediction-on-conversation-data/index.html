@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=8db7f6bb">
+        <link rel="stylesheet" href="../../../assets/dist/css/site.css?v=d213fdee">
         <script defer src="../../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/blog/client-health/churn-prediction-on-conversation-data/">
         <meta property="og:type" content="article">
@@ -168,7 +168,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>A working churn prediction system on conversation data has four parts. Each does a specific job, and skipping any of them is where most builds and most off-the-shelf tools fall short.</p>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png?v=aa3c9967" alt="Four-stage churn prediction pipeline: signal capture, feature extraction, the model, and alerting with a recommended next action." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-pipeline-diagram.png?v=aa3c9967" alt="Four-stage churn prediction pipeline: signal capture, feature extraction, the model, and alerting with a recommended next action." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Churn prediction on conversation data: How a churn prediction pipeline reads conversation data</strong></p>
+
+<ul>
+<li><strong>Input:</strong> Calls, emails, chat</li>
+</ul>
+
+<ol>
+<li><strong>Signal capture.</strong> Every call, email and chat attached to the client record.</li>
+<li><strong>Feature extraction.</strong> Raw conversation turned into signals a model can use.</li>
+<li><strong>The model.</strong> Trained on your own retained, expanded and lost accounts.</li>
+<li><strong>Alerting and next action.</strong> A score, an owner and a suggested first move.</li>
+</ol>
+
+<ul>
+<li><strong>Output:</strong> Account owner acts</li>
+</ul>
+
+<p><strong>Inside feature extraction</strong></p>
+
+<ul>
+<li>Sentiment trend (30/60/90 days)</li>
+<li>Response time and recency</li>
+<li>Risk-mention frequency</li>
+<li>Decision-maker recency and stakeholder coverage</li>
+</ul>
+
+<p>Prediction only pays off when the score reaches an owner with a next step.</p></div></details>
 
 <ol class="kz-cards"><li class="kz-card"><span class="kz-card-n">01</span><h3>Signal capture</h3>
 
@@ -188,7 +214,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>A risk score becomes useful the moment it reaches a person with the context to act on it, along with a suggested first move: re-engage a dormant stakeholder, schedule a save conversation, loop in a more senior contact. Without this step, prediction is just an interesting number.</p></li></ol>
 <h2>How churn prediction differs from the terms it gets confused with</h2>
 
-<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-vs-health-scoring.png?v=5e8f1524" alt="Comparison of churn prediction, client health scoring, CSAT and NPS surveys, and CRM win-loss reporting by what each measures and what it tells you." /></p>
+<p><img loading="lazy" decoding="async" src="../../../assets/img/blog/churn-prediction-on-conversation-data/churn-prediction-vs-health-scoring.png?v=5e8f1524" alt="Comparison of churn prediction, client health scoring, CSAT and NPS surveys, and CRM win-loss reporting by what each measures and what it tells you." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>Churn prediction on conversation data: Churn prediction vs health scoring</strong></p>
+
+<table>
+<thead>
+<tr>
+  <th></th>
+  <th>Churn prediction</th>
+  <th>Health scoring</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Output</td>
+  <td>One output: a risk score, a probability or a band</td>
+  <td>Four dimensions: Satisfaction, Activity with stakeholders, Relationship strength, Expansion readiness</td>
+</tr>
+<tr>
+  <td>The question it answers</td>
+  <td>"Will this account leave?"</td>
+  <td>"What is happening, and why?"</td>
+</tr>
+</tbody>
+</table>
+
+<p>Both are fed by the same conversation data: calls, emails and chat.</p>
+
+<p>The best churn prediction is a byproduct of good health scoring, not a replacement for it.</p></div></details>
 
 <div class="kz-table"><table>
 <thead>
