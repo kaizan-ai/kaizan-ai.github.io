@@ -2068,6 +2068,27 @@ button { font-family: inherit; }
   }
   .kz-post-body .kz-post-hero { width: min(1100px, calc(100vw - 2 * var(--kz-gutter))); max-width: none;
     position: relative; left: 50%; transform: translateX(-50%); }
+  /* Tables with many columns get the graphics' width too, so they show in full. */
+  .kz-post-body > .kz-table.kz-table-wide, .kz-post-body section > .kz-table.kz-table-wide {
+    width: min(1100px, calc(100vw - 2 * var(--kz-gutter))); max-width: none;
+    position: relative; left: 50%; transform: translateX(-50%); margin-left: 0; margin-right: 0;
+  }
+  .kz-post-body .kz-table.kz-table-wide table { min-width: 0; }
+}
+/* Many-column tables: tighter cells and smaller logos so every column fits without scrolling. */
+.kz-post-body .kz-table-wide th, .kz-post-body .kz-table-wide td { padding: 11px 9px; font-size: 14px; }
+.kz-post-body .kz-table-wide th { font-size: 12px; }
+.kz-post-body .kz-table-wide td:first-child { min-width: 0; }
+.kz-post-body .kz-table-wide .kz-tl { padding: 4px 8px; gap: 6px; }
+.kz-post-body .kz-table-wide .kz-tl-wm { height: 15px; max-width: 84px; }
+.kz-post-body .kz-table-wide .kz-tl img[src*="vitally"] { height: 26px; max-width: 92px; }
+@media (max-width: 1200px) {
+  .kz-post-body .kz-table-wide th, .kz-post-body .kz-table-wide td { padding: 10px 7px; font-size: 13.5px; }
+  .kz-post-body .kz-table-wide .kz-tl { padding: 3px 6px; gap: 4px; font-size: 12px; }
+  .kz-post-body .kz-table-wide .kz-tl-wm { height: 13px; max-width: 72px; }
+  .kz-post-body .kz-table-wide .kz-tl-icon { height: 16px; }
+}
+@media (min-width: 900px) {
   /* The title spans the same width as the graphics and starts at their left edge. */
   .kz-post-body .kz-post-title { width: min(1100px, calc(100vw - 2 * var(--kz-gutter))); max-width: none;
     position: relative; left: 50%; transform: translateX(-50%); }
@@ -2102,6 +2123,32 @@ button { font-family: inherit; }
   background: #FFF3C4; border: 1.5px solid rgba(255,185,0,.6); border-radius: 14px; padding: 18px 22px;
   font-size: 16px; line-height: 1.7; white-space: pre-wrap; font-weight: 600;
 }
+/* "Show text in this graphic": the image's words as copyable page text (tools/blog.py). */
+.kz-post-body .kz-imgtext { margin: -6px 0 6px; }
+.kz-post-body .kz-imgtext summary {
+  list-style: none; display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+  font-size: 14px; font-weight: 700; color: var(--kz-mute); padding: 4px 0;
+}
+.kz-post-body .kz-imgtext summary::-webkit-details-marker { display: none; }
+.kz-post-body .kz-imgtext summary .ic {
+  width: 24px; height: 24px; border-radius: 50%; background: var(--kz-yellow); border: 1.5px solid var(--kz-ink);
+  display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: var(--kz-ink);
+}
+.kz-post-body .kz-imgtext[open] summary .ic { font-size: 0; background: var(--kz-ink); }
+.kz-post-body .kz-imgtext[open] summary .ic::before { content: '\2212'; font-size: 15px; color: var(--kz-yellow); }
+.kz-post-body .kz-imgtext summary:hover { color: var(--kz-ink); }
+.kz-post-body .kz-imgtext-body {
+  margin-top: 10px; background: #fff; border: 1.5px solid rgba(0,0,0,.14); border-radius: 14px; padding: 18px 22px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.kz-post-body .kz-imgtext-body p, .kz-post-body .kz-imgtext-body li { font-size: 16px; line-height: 1.65; }
+.kz-post-body .kz-imgtext-body ul, .kz-post-body .kz-imgtext-body ol { font-size: 16px; gap: 6px; }
+.kz-post-body .kz-imgtext-body table { font-size: 14.5px; }
+.kz-post-body .kz-imgtext-body table { width: 100%; border-collapse: collapse; display: block; overflow-x: auto; }
+.kz-post-body .kz-imgtext-body th, .kz-post-body .kz-imgtext-body td {
+  padding: 8px 10px; vertical-align: top; text-align: left; border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.kz-post-body .kz-imgtext-body th { font-weight: 700; background: none; color: var(--kz-ink); text-transform: none; letter-spacing: 0; }
 /* Opening paragraph as a lede. */
 .kz-post-body .kz-lede-p { font-size: 21px; line-height: 1.65; font-weight: 500; }
 /* Section headings get a short gold bar above them. */

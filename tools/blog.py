@@ -201,6 +201,9 @@ def _cards(section: str) -> str:
     """Inside one h2 section, 3+ h3 sub-sections become numbered cards (.kz-cards)."""
     if 'kz-flow-steps' in section:
         return section  # its h3s are already timeline steps
+    for t in re.findall(r'<table>(.*?)</table>', section, re.S):
+        if len(re.findall(r'<th\b', t.split('</tr>', 1)[0])) >= 5:
+            return section  # a many-column table needs the full width, not a card
     chunks = re.split(r'(?=<h3[ >])', section)
     head, subs = chunks[0], chunks[1:]
     if len(subs) < 3:
@@ -423,14 +426,47 @@ def _decorate(html: str) -> str:
             parts[i] = f'<section class="kz-faq">{_faq_items(faq.strip())}</section>\n' + (hr + rest if hr else '')
     html = ''.join(parts)
     html = _tables(html)
-    html = re.sub(r'<table>(.*?)</table>', r'<div class="kz-table"><table>\1</table></div>', html, flags=re.S)
+    def wrap(m):
+        cols = len(re.findall(r'<th\b', m.group(1).split('</tr>', 1)[0]))
+        cls = 'kz-table kz-table-wide' if cols >= 5 else 'kz-table'
+        return f'<div class="{cls}"><table>{m.group(1)}</table></div>'
+    html = re.sub(r'<table>(.*?)</table>', wrap, html, flags=re.S)
     return html
+
+
+def image_text_html(slug: str, image_name: str) -> str:
+    """The "Show text in this graphic" dropdown for an image, from <image>.text.md beside it
+    in the post folder: the graphic's words as real page text people can copy and bots can read."""
+    src = CONTENT_DIR / slug / (Path(image_name).stem + '.text.md')
+    if not src.is_file():
+        return ''
+    inner = str(markdown2.markdown(src.read_text(encoding='utf-8'), extras=MARKDOWN_EXTRAS)).strip()
+    return ('<details class="kz-imgtext"><summary><span>Show text in this graphic</span>'
+            '<span class="ic" aria-hidden="true">+</span></summary>'
+            f'<div class="kz-imgtext-body">{inner}</div></details>')
+
+
+def _image_texts(html: str, slug: str, held: list) -> str:
+    """Put a placeholder for each standalone image's text dropdown straight after it. The
+    dropdown itself is held back and put in after _decorate, so it stays plain text (no logo
+    pills, cards or highlights from the post-body treatment)."""
+    def add(m):
+        name = re.search(r'/assets/img/blog/[^/]+/([^"?]+)', m.group(0))
+        dropdown = image_text_html(slug, name.group(1)) if name else ''
+        if not dropdown:
+            return m.group(0)
+        held.append(dropdown)
+        return m.group(0) + f'<!--kz-imgtext-{len(held) - 1}-->'
+    return re.sub(r'<p>\s*<img\b[^>]*>\s*</p>', add, html)
 
 
 def md_to_html(body_md: str, slug: str) -> str:
     html = markdown2.markdown(body_md, extras=MARKDOWN_EXTRAS)
     html = re.sub(r'<img\b[^>]*>', lambda m: _rewrite_img(m, slug), html)
-    html = _decorate(str(html))
+    held = []
+    html = _image_texts(str(html), slug, held)
+    html = _decorate(html)
+    html = re.sub(r'<!--kz-imgtext-(\d+)-->', lambda m: held[int(m.group(1))], html)
     return html.strip()
 
 

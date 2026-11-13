@@ -3908,6 +3908,11 @@ def render_blog_post(post: dict) -> str:
     """Render a single blog post page at /blog/<topic>/<slug>/index.html (depth 3)."""
     hero = (f'<img class="kz-post-hero" src="{cover_src(post, 3)}" '
             f'alt="{E(post["title"])}" decoding="async">') if post.get('cover_asset') else ''
+    if hero:
+        # The cover's text version, unless the same graphic also appears in the body (it gets one there).
+        cover_name = post['cover_asset'].rsplit('/', 1)[-1]
+        if f'/{cover_name}' not in post.get('body', ''):
+            hero += blog.image_text_html(post['slug'], cover_name)
     label = blog.TOPICS.get(post['topic'], ('',))[0]
     body = f'''
     {nav_html(3, active='Blog')}
