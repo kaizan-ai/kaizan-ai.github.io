@@ -3927,6 +3927,9 @@ def render_blog_post(post: dict) -> str:
         extra += '\n        ' + ld_script(blog_schema_nodes(post))
     elif post.get('schema'):
         extra += '\n        ' + ld_script([ld_blogposting(post)])
+    if 'data-flow' in post.get('body', ''):
+        extra += (f'\n        <script defer src="{relpath(3)}assets/js/blog-post.js'
+                  f'{asset_v("assets/js/blog-post.js")}"></script>')
     return page_head(post.get('meta_title') or post['title'], 3,
                      post.get('meta_description') or post.get('excerpt', ''),
                      extra_head=extra + '\n        ' + resources_head(3)) + body + page_foot()

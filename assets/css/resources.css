@@ -10,13 +10,12 @@
   font-size: clamp(40px, 4.8vw, 66px); line-height: 1.0;
   font-weight: 800; letter-spacing: -0.02em; text-wrap: balance;
 }
-/* Post titles use the site title size (see the h1 rule in site.css) and span
-   the full content width, centred on the ~760px reading column, so long
-   titles take as few lines as possible. */
-.kz-post-title {
-  width: min(1288px, calc(100vw - 2 * var(--kz-gutter)));
-  position: relative; left: 50%; transform: translateX(-50%);
-}
+/* Post titles sit in the ~760px reading column, aligned with the text below,
+   a step smaller than page titles so long titles still wrap well. */
+/* !important to beat the site-wide h1 standard (site.css), which is sized for full-width heroes. */
+h1.kz-post-title { font-size: clamp(32px, 3.4vw, 46px) !important; line-height: 1.08 !important; margin-bottom: 6px; }
+@media (min-width: 900px) { h1.kz-post-title { font-size: clamp(40px, 3.9vw, 56px) !important; } }
+@media (max-width: 768px) { h1.kz-post-title { font-size: 30px !important; } }
 @media (max-width: 480px) { .kz-h1, .kz-post-title { font-size: 34px; } }
 .kz-h1 .kz-mark { background: transparent; padding: 0; display: inline; }
 .kz-h2 { font-weight: 700; letter-spacing: -0.02em; }
