@@ -125,6 +125,14 @@ def format_date(iso: str) -> str:
 # Markdown -> HTML
 # ─────────────────────────────────────────────────────────────────────
 
+def _img_v(path: Path) -> str:
+    """"?v=<hash8>" from the image's content, so browsers refetch a replaced image."""
+    import hashlib
+    if not path.is_file():
+        return ''
+    return '?v=' + hashlib.md5(path.read_bytes()).hexdigest()[:8]
+
+
 def _rewrite_img(match: re.Match, slug: str) -> str:
     """Rewrite a bare/relative <img src> to the depth-3 blog asset path and lazy-load it."""
     tag = match.group(0)
@@ -133,7 +141,8 @@ def _rewrite_img(match: re.Match, slug: str) -> str:
         return tag
     src = src_m.group(1)
     if not re.match(r'^(https?:|data:|/|\.\./)', src):
-        new_src = f"../../../assets/img/blog/{slug}/{src.lstrip('./')}"
+        name = src.lstrip('./')
+        new_src = f"../../../assets/img/blog/{slug}/{name}{_img_v(CONTENT_DIR / slug / name)}"
         tag = tag.replace(f'src="{src}"', f'src="{new_src}"')
     if 'loading=' not in tag:
         tag = tag.replace('<img', '<img loading="lazy" decoding="async"', 1)
