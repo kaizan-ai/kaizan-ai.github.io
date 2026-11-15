@@ -7058,7 +7058,7 @@ def write_sitemap():
     hreflang alternates and a lastmod where the page carries a date."""
     from html import escape as esc
     import datetime
-    skip = {'room', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
+    skip = {'room', 'dealroom', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
     entries = []
     ledger_file = Path(__file__).resolve().parent / 'lastmod.json'
     ledger = json.loads(ledger_file.read_text(encoding='utf-8')) if ledger_file.exists() else {}
@@ -7230,7 +7230,7 @@ def build_us_locale():
 
 
     # 'room': private deal rooms are built separately and never mirrored or given SEO tags.
-    skip_top = {'us', 'room', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
+    skip_top = {'us', 'room', 'dealroom', 'assets', 'node_modules', 'content', 'tools', '.git', '.github', '.claude'}
 
     def _safe(rel: Path) -> bool:
         # Only real page paths — guards against stray/garbage files in the tree.
@@ -9136,7 +9136,7 @@ def main():
 
     # Private deal rooms (/room/<slug>/): noindex, unlinked, skipped by the sitemap.
     import deal_rooms
-    print(f"  (deal rooms: {deal_rooms.build(include_drafts='--drafts' in sys.argv)} built → /room/)")
+    print(f"  (deal rooms: {deal_rooms.build(include_drafts='--drafts' in sys.argv)} built → /room/ and top-level paths)")
 
     write_sitemap()
     write_llms_txt()
