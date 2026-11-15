@@ -362,7 +362,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
   <!-- ===================== START ===================== -->
   <section class="page" id="start">
     <div class="band" style="padding:18px 24px 22px;margin-bottom:18px">
-      <h1 style="font-size:clamp(1.3rem,2.4vw,1.7rem)">The client success platform to proactively manage and grow your clients.</h1>
+      <h1 style="font-size:clamp(1.3rem,2.4vw,1.7rem)">The Client Success Platform to proactively manage and grow your clients.</h1>
     </div>
 
     <div id="v-hero"></div>
@@ -2575,7 +2575,7 @@ function renderStatic() {
   const MAPC = [["var(--k-gold)","#141210"]];
   document.getElementById("map").innerHTML = DEAL.map.map((m, i) => `<li class="step" style="--i:${i};--c:${MAPC[i % MAPC.length][0]};--ct:${MAPC[i % MAPC.length][1]}" tabindex="0" role="button" aria-pressed="false"><div class="who-col"><div class="d"><span class="tick" aria-hidden="true">✓ </span>${esc(m.d)}</div><div class="own">${esc(m.own)}</div></div><div class="what"><strong>${esc(m.t)}</strong>${esc(m.w)}${m.date ? " <strong style='display:inline;color:var(--gold-dark)'>" + esc(m.date) + "</strong>" : ""}</div></li>`).join("");
   document.querySelectorAll("#map .step").forEach(li => { const t = () => { const on = li.classList.toggle("on"); li.setAttribute("aria-pressed", on); }; li.addEventListener("click", t); li.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } }); });
-  document.getElementById("v-hero").innerHTML = DEAL.heroVideoFile ? `<div class="video"><video controls preload="metadata" playsinline src="${esc(DEAL.heroVideoFile)}" title="Kaizan"></video></div>` : videoSlot(DEAL.heroVideoEmbed, "A day with Kaizan, 60–90 seconds", "The hook. Every persona asking Kaizan for what they need. Marketing to produce.");
+  document.getElementById("v-hero").innerHTML = DEAL.heroVideoFile ? `<div class="video"><video id="hero-film" controls preload="auto" playsinline src="${esc(DEAL.heroVideoFile)}" title="Kaizan"></video></div>` : videoSlot(DEAL.heroVideoEmbed, "A day with Kaizan, 60–90 seconds", "The hook. Every persona asking Kaizan for what they need. Marketing to produce.");
   document.getElementById("v-founder").innerHTML = DEAL.founderVideoEmbed ? videoSlot(DEAL.founderVideoEmbed, "Glen, 15 seconds", "Why I built Kaizan.") : "";
   document.getElementById("v-demo").innerHTML = DEAL.demoVideoFile ? `<div class="video"><video controls preload="metadata" playsinline src="${esc(DEAL.demoVideoFile)}" title="Kaizan product demo"></video></div>` : videoSlot(DEAL.demoVideoEmbed, "How it works, under 60 seconds", "The overarching animation: data in, memory, CARE™, what to do next, agents act.");
   document.querySelectorAll(".share-btn").forEach(b => b.addEventListener("click", () => sharePage(b)));
@@ -2630,14 +2630,23 @@ window.addEventListener("hashchange", route);
 const KEY = "kaizan-deal-room-visitor";
 function getVisitor() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } }
 function setVisitor(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} }
-function openRoom(v) { document.getElementById("gate").classList.add("hidden"); document.getElementById("who-name").textContent = v.name.split(" ")[0] || "you"; route(); }
+function openRoom(v) { document.getElementById("gate").classList.add("hidden"); document.getElementById("who-name").textContent = v.name.split(" ")[0] || "you"; route(); playHero(); }
+/* Start the film as soon as the room opens. With sound when the browser allows it (the sign-in
+   click counts as permission); otherwise muted, and the controls let the visitor turn sound on. */
+function playHero() {
+  const f = document.getElementById("hero-film");
+  if (!f || !document.getElementById("start").classList.contains("active")) return;
+  f.muted = false;
+  const p = f.play();
+  if (p && p.catch) p.catch(() => { f.muted = true; f.play().catch(() => {}); });
+}
 document.getElementById("g-go").addEventListener("click", () => {
   const name = document.getElementById("g-name").value.trim(), email = document.getElementById("g-email").value.trim(), role = document.getElementById("g-role").value;
   const ok = name && /.+@.+\..+/.test(email) && role;
   document.getElementById("g-err").style.display = ok ? "none" : "block";
   if (!ok) return;
   const v = { name, email, role }; setVisitor(v); trackVisit("gate_complete", v);
-  if (role !== "start" && (!location.hash || location.hash === "#start")) location.hash = "#" + role;
+  // Everyone lands on Start here (the film) after signing in; the role pages are one click away in the menu.
   openRoom(v);
 });
 document.getElementById("switch-user").addEventListener("click", e => { e.preventDefault(); try { localStorage.removeItem(KEY); } catch {} location.reload(); });
