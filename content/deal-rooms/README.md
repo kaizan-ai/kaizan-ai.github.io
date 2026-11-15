@@ -6,8 +6,9 @@ can open it, so keep contract terms and anything confidential out of room files.
 
 ## The general room
 
-`rooms/kaizan-<code>.json` has no prospect set, so it shows general wording (no call quotes, target or
-"prepared for" note) and can be sent to anyone. Its address is `https://kaizan.ai/room/kaizan-<code>/`.
+`rooms/dealroom.json` has no prospect set, so it shows general wording (no call quotes, target or
+"prepared for" note) and can be sent to anyone. Its `"path": "dealroom"` publishes it at
+`https://kaizan.ai/dealroom/` instead of under /room/.
 
 ## Make a room for a prospect
 
