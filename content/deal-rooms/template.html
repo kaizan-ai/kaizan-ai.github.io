@@ -362,7 +362,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
   <!-- ===================== START ===================== -->
   <section class="page" id="start">
     <div class="band" style="padding:18px 24px 22px;margin-bottom:18px">
-      <h1 style="font-size:clamp(1.3rem,2.4vw,1.7rem)">The client success platform to proactively manage and grow your clients.</h1>
+      <h1 style="font-size:clamp(1.3rem,2.4vw,1.7rem)">The Client Success Platform to proactively manage and grow your clients.</h1>
     </div>
 
     <div id="v-hero"></div>
@@ -2637,7 +2637,7 @@ document.getElementById("g-go").addEventListener("click", () => {
   document.getElementById("g-err").style.display = ok ? "none" : "block";
   if (!ok) return;
   const v = { name, email, role }; setVisitor(v); trackVisit("gate_complete", v);
-  if (role !== "start" && (!location.hash || location.hash === "#start")) location.hash = "#" + role;
+  // Everyone lands on Start here (the film) after signing in; the role pages are one click away in the menu.
   openRoom(v);
 });
 document.getElementById("switch-user").addEventListener("click", e => { e.preventDefault(); try { localStorage.removeItem(KEY); } catch {} location.reload(); });
