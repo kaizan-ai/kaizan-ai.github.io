@@ -380,7 +380,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
       <div class="card stat"><div class="n">30%</div><div class="l">Fewer client escalations in 90 days</div><div class="s">Gravity Global</div></div>
       <div class="card stat"><div class="n">90 days</div><div class="l">To an audit, a plan per client and every Account Manager live</div><div class="s"><a href="#pilot">The pilot and the first 90 days</a></div></div>
     </div>
-    <div class="pager"><span></span><a href="#outcomes"><span class="deal-only">Next: your outcomes</span><span class="general-only">Next: how Kaizan grows revenue</span></a></div>
+    <div class="pager"><span></span><a href="#play">Next: play, client memory</a></div>
   </section>
 
   <!-- ===================== OUTCOMES ===================== -->
@@ -405,7 +405,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
     </ul>
 
     <div class="actions"><a class="btn btn-primary deal-book" href="#">Start your pilot now</a><a class="btn btn-secondary" href="#pilot">How the pilot runs</a></div>
-    <div class="pager"><a href="#start">Back: start here</a><a href="#roles">Next: pages for each role</a></div>
+    <div class="pager"><a href="#play">Back: play, client memory</a><a href="#roles">Next: pages for each role</a></div>
   </section>
 
   <!-- ===================== ROLES HUB ===================== -->
@@ -456,7 +456,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
     <h2>What it connects to</h2>
     <p>Email and calendar, video calls, Slack and your CRM. Your IT lead approves each scope before anything is read. <span class="chip chip-edit">AE: add integration logos</span></p>
     <p>Feature-level detail is on the Questions page under <a href="#faq">Feature focus</a>.</p>
-    <div class="pager"><a href="#roles">Back: for your role</a><a href="#play">Next: play, client memory</a></div>
+    <div class="pager"><a href="#roles">Back: for your role</a><a href="#proof">Next: proof</a></div>
   </section>
 
   <!-- ===================== PLAY: CLIENT MEMORY ===================== -->
@@ -465,7 +465,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
     <p class="lede">A 15-minute interactive tour of how Kaizan remembers every client and works on their objectives around the clock. Press play, use the arrows, finish the quiz.</p>
     <div class="actions" style="margin-top:0"><button class="btn btn-primary" id="play-window">Open in its own window</button><button class="btn btn-secondary" id="play-full">Full screen here</button></div>
     <div class="tour-wrap"><iframe id="tour" title="Kaizan Never Forgets, client tour" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
-    <div class="pager"><a href="#how">Back: how it works</a><a href="#proof">Next: proof</a></div>
+    <div class="pager"><a href="#start">Back: start here</a><a href="#outcomes"><span class="deal-only">Next: your outcomes</span><span class="general-only">Next: how Kaizan grows revenue</span></a></div>
   </section>
 
   <!-- ===================== PROOF ===================== -->
@@ -482,7 +482,7 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
     <h2>Reference calls</h2>
     <p>Reference calls can be arranged with a customer in a comparable role and sector. Ask your contact.</p>
     <div class="actions"><a class="btn btn-primary deal-ae-mail" href="#">Ask for a reference call</a></div>
-    <div class="pager"><a href="#play">Back: play, client memory</a><a href="#pilot">Next: the pilot and the first 90 days</a></div>
+    <div class="pager"><a href="#how">Back: how it works</a><a href="#pilot">Next: the pilot and the first 90 days</a></div>
   </section>
 
   <!-- ===================== PILOT ===================== -->
@@ -2604,7 +2604,7 @@ async function sharePage(btn) {
 }
 
 /* ---------- Navigation ---------- */
-const NAV = [["start","Start here"],["outcomes", DEAL.prospect ? "Your outcomes" : "How Kaizan grows revenue"],["roles","For your role", PERSONAS.map(p => ["role-" + p.id, p.nav])],["how","How it works"],["play","Play: Client Memory"],["proof","Proof"],["pilot","The pilot and first 90 days"],["pricing","Pricing and packaging"],["faq","Questions"],["next","Next steps"]];
+const NAV = [["start","Start here"],["play","Play: Client Memory"],["outcomes", DEAL.prospect ? "Your outcomes" : "How Kaizan grows revenue"],["roles","For your role", PERSONAS.map(p => ["role-" + p.id, p.nav])],["how","How it works"],["proof","Proof"],["pilot","The pilot and first 90 days"],["pricing","Pricing and packaging"],["faq","Questions"],["next","Next steps"]];
 function buildNav(el, flat) {
   let h = "";
   for (const [id, label, kids] of NAV) { h += `<a href="#${id}" data-id="${id}">${label}</a>`; if (kids) for (const [kid, kl] of kids) h += `<a href="#${kid}" data-id="${kid}" class="${flat ? "" : "sub-a"}">${kl}</a>`; }
