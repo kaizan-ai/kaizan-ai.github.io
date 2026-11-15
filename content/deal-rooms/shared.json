@@ -1,0 +1,127 @@
+{
+  "heroVideoEmbed": "",
+  "heroVideoFile": "../../assets/video/deal-room/kaizan-film.mp4",
+  "founderVideoEmbed": "",
+  "demoVideoEmbed": "",
+  "demoVideoFile": "../../assets/video/deal-room/product-demo.mp4",
+  "memoryDemoUrl": "",
+  "docs": {
+    "trustCentre": "https://security.kaizan.ai/",
+    "terms": "https://help.kaizan.ai/en/articles/6045324-license-agreement",
+    "privacy": "https://help.kaizan.ai/en/articles/6028739-privacy-policy",
+    "dpa": "https://help.kaizan.ai/en/articles/6762868-data-processing-agreement"
+  },
+  "personaVideos": {
+    "ceo": "../../assets/video/deal-room/role-ceo.mp4",
+    "ops": "../../assets/video/deal-room/role-ops.mp4",
+    "cs": "../../assets/video/deal-room/role-client-service.mp4",
+    "am": "../../assets/video/deal-room/role-client-teams.mp4",
+    "sm": "../../assets/video/deal-room/role-sales-marketing.mp4",
+    "ai": "../../assets/video/deal-room/role-ai.mp4",
+    "it": "../../assets/video/deal-room/role-it-security.mp4"
+  },
+  "caseStudyVideos": {
+    "ceo": "../../assets/video/deal-room/case-ceo-np-digital.mp4",
+    "ops": "../../assets/video/deal-room/case-ops-kite-factory.mp4",
+    "cs": "../../assets/video/deal-room/case-cs-tradedoubler.mp4",
+    "am": "../../assets/video/deal-room/case-am-collective-content.mp4",
+    "sm": "../../assets/video/deal-room/case-sm-transmission.mp4",
+    "ai": "../../assets/video/deal-room/case-ai-tradedoubler.mp4",
+    "it": ""
+  },
+  "caseStudyPeople": {
+    "ceo": {
+      "name": "Brandon Smith",
+      "title": "Managing Director",
+      "company": "NP Digital",
+      "photo": "../../assets/img/deal-room/brandon-smith.jpg",
+      "logo": "../../assets/img/deal-room/logo-np-digital.png"
+    },
+    "ops": {
+      "name": "Gabriella Krite",
+      "title": "Managing Partner, Operations",
+      "company": "The Kite Factory",
+      "photo": "../../assets/img/deal-room/gabriella-krite.jpg",
+      "logo": "../../assets/img/deal-room/logo-kite-factory.png"
+    },
+    "ai": {
+      "name": "Corin Ward",
+      "title": "Head of AI",
+      "company": "Tradedoubler",
+      "photo": "../../assets/img/deal-room/corin-ward.jpg",
+      "logo": "../../assets/img/deal-room/logo-tradedoubler.png"
+    },
+    "cs": {
+      "name": "Derek Grant",
+      "title": "VP Operations & General Manager UK/US",
+      "company": "Tradedoubler",
+      "photo": "../../assets/img/deal-room/derek-grant.jpg",
+      "logo": "../../assets/img/deal-room/logo-tradedoubler.png"
+    },
+    "am": {
+      "name": "Fiona Skilton",
+      "title": "Client Service Director",
+      "company": "Collective Content",
+      "photo": "../../assets/img/deal-room/fiona-skilton.jpg",
+      "logo": "../../assets/img/deal-room/logo-collective-content.png"
+    },
+    "sm": {
+      "name": "Alex Beddoe",
+      "title": "Head of Biddable Media",
+      "company": "Transmission",
+      "photo": "../../assets/img/deal-room/alex-beddoe.jpg",
+      "logo": "../../assets/img/deal-room/logo-transmission.png"
+    }
+  },
+  "map": [
+    {
+      "d": "Day 0",
+      "own": "You and Kaizan",
+      "t": "Kickoff, 45 minutes",
+      "w": "Sponsor, pilot clients, proof criteria, who gets access.",
+      "date": ""
+    },
+    {
+      "d": "Day 1–2",
+      "own": "Your IT lead and Kaizan",
+      "t": "Connect the channels",
+      "w": "Email, calendar, video, Slack for the pilot teams. Scopes approved by IT first.",
+      "date": ""
+    },
+    {
+      "d": "Day 3",
+      "own": "Kaizan",
+      "t": "Historic read complete",
+      "w": "Client records built. First health scores and open commitments visible.",
+      "date": ""
+    },
+    {
+      "d": "Day 3–12",
+      "own": "Your Account Managers",
+      "t": "Live on real clients",
+      "w": "Briefs before meetings, follow-ups after, alerts between.",
+      "date": ""
+    },
+    {
+      "d": "Day 7",
+      "own": "You and Kaizan",
+      "t": "Midpoint check",
+      "w": "What is landing, what is noise. Security review and DPA start in parallel.",
+      "date": ""
+    },
+    {
+      "d": "Day 14",
+      "own": "Sponsor and Kaizan",
+      "t": "Review against the criteria",
+      "w": "Results per criterion, revenue gaps found. Commercial proposal on the table.",
+      "date": ""
+    },
+    {
+      "d": "Day 21",
+      "own": "You",
+      "t": "Decision",
+      "w": "Contract signed or not. Nothing waits on paperwork.",
+      "date": ""
+    }
+  ]
+}
