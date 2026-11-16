@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="/assets/dist/css/site.css?v=d213fdee">
+        <link rel="stylesheet" href="/assets/dist/css/site.css?v=b234c1e3">
         <script defer src="/assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/us/blog/client-software/mcp-vs-api-in-plain-english/">
         <meta property="og:type" content="article">
@@ -154,11 +154,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>An MCP server also offers a fixed set of things it can do, and a developer still decided what those are. The vending machine does not disappear. Three things change about it.</p>
 
-<p><strong>The machine describes itself.</strong> Everything it can do comes with a plain-language label the AI reads at the moment you ask your question. So any AI tool that speaks MCP can walk up to any system that speaks MCP and work out what is on offer, without anyone writing code for that specific pair. Twenty builds becomes nine.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>The machine describes itself</strong></p><p class="kz-lead-b">Everything it can do comes with a plain-language label the AI reads at the moment you ask your question. So any AI tool that speaks MCP can walk up to any system that speaks MCP and work out what is on offer, without anyone writing code for that specific pair. Twenty builds becomes nine.</p></div>
 
-<p><strong>The AI presses several buttons in a row.</strong> This is the part that actually feels like magic. One button gets you a client's meeting history. Another gets you what they committed to. Another gets you how the relationship has been trending. No single button answers "why is this account wobbling", but a sequence of them does, and nobody had to anticipate that sequence and build a report for it.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>The AI presses several buttons in a row</strong></p><p class="kz-lead-b">This is the part that actually feels like magic. One button gets you a client's meeting history. Another gets you what they committed to. Another gets you how the relationship has been trending. No single button answers "why is this account wobbling", but a sequence of them does, and nobody had to anticipate that sequence and build a report for it.</p></div>
 
-<p><strong>What comes back is written for a reader.</strong> An API answers in a format built for another piece of software to process. MCP answers in a form the AI can reason about, which is why it can act on the answer rather than just display it.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>What comes back is written for a reader</strong></p><p class="kz-lead-b">An API answers in a format built for another piece of software to process. MCP answers in a form the AI can reason about, which is why it can act on the answer rather than just display it.</p></div>
 
 <p>So you do not stop being limited by what your systems can do. You stop being limited to the combinations somebody thought of twelve months ago. That is a smaller-sounding difference than it is.</p>
 
@@ -188,13 +188,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <h2>Four things to keep in mind</h2>
 
-<p><strong>MCP does not replace APIs.</strong> It mostly sits on top of them. The API still moves the data. MCP is what makes that data make sense to an AI, and what saves you a bespoke build for every tool you want to connect.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>MCP does not replace APIs</strong></p><p class="kz-lead-b">It mostly sits on top of them. The API still moves the data. MCP is what makes that data make sense to an AI, and what saves you a bespoke build for every tool you want to connect.</p></div>
 
-<p><strong>It does not replace your security questions.</strong> If anything, ask more of them. When the AI is choosing what to access rather than following a fixed script, you want to know exactly what it can and cannot reach.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>It does not replace your security questions</strong></p><p class="kz-lead-b">If anything, ask more of them. When the AI is choosing what to access rather than following a fixed script, you want to know exactly what it can and cannot reach.</p></div>
 
-<p><strong>Ask specifically about prompt injection.</strong> This is the one risk that is genuinely new. Because the AI reads text to decide what to do next, text it reads can try to instruct it. A malicious line buried in a document or an email can attempt to talk your AI into fetching something it should not, or sending it somewhere it should not go. A hardcoded integration cannot be talked into anything. Ask any vendor how they handle this before you connect anything.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Ask specifically about prompt injection</strong></p><p class="kz-lead-b">This is the one risk that is genuinely new. Because the AI reads text to decide what to do next, text it reads can try to instruct it. A malicious line buried in a document or an email can attempt to talk your AI into fetching something it should not, or sending it somewhere it should not go. A hardcoded integration cannot be talked into anything. Ask any vendor how they handle this before you connect anything.</p></div>
 
-<p><strong>It is only as good as what is underneath.</strong> Connect an AI to a folder of raw meeting transcripts and you get a fast way to search transcripts. Connect it to a system that has already tracked every commitment, scored every relationship and flagged every risk, and you get something far more useful.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>It is only as good as what is underneath</strong></p><p class="kz-lead-b">Connect an AI to a folder of raw meeting transcripts and you get a fast way to search transcripts. Connect it to a system that has already tracked every commitment, scored every relationship and flagged every risk, and you get something far more useful.</p></div>
 
 <h2>What this looks like with Kaizan</h2>
 

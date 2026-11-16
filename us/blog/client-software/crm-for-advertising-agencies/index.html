@@ -38,7 +38,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="/assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="/assets/dist/css/site.css?v=d213fdee">
+        <link rel="stylesheet" href="/assets/dist/css/site.css?v=b234c1e3">
         <script defer src="/assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="canonical" href="https://kaizan.ai/us/blog/client-software/crm-for-advertising-agencies/">
         <meta property="og:type" content="article">
@@ -137,15 +137,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>A client CRM stops being useful the moment it only has room for three objects. An advertising agency needs five, each with its own owner and its own fields.</p>
 
-<p><strong>Client.</strong> The commercial entity that holds the master contract. This is the name on the agency's own revenue report and the logo in a case study. It's the parent record everything else rolls up to.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Client</strong></p><p class="kz-lead-b">The commercial entity that holds the master contract. This is the name on the agency's own revenue report and the logo in a case study. It's the parent record everything else rolls up to.</p></div>
 
-<p><strong>Brand.</strong> The business unit the agency is actually briefed by, day to day. A client with one product line has one brand. A client with a portfolio can have a dozen, each run by a different internal marketing lead.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Brand</strong></p><p class="kz-lead-b">The business unit the agency is actually briefed by, day to day. A client with one product line has one brand. A client with a portfolio can have a dozen, each run by a different internal marketing lead.</p></div>
 
-<p><strong>Campaign.</strong> One brief, one flight, one deliverable set, with its own start and end date. A single brand can run several campaigns in parallel, across different channels, at different stages of production.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Campaign</strong></p><p class="kz-lead-b">One brief, one flight, one deliverable set, with its own start and end date. A single brand can run several campaigns in parallel, across different channels, at different stages of production.</p></div>
 
-<p><strong>Stakeholder.</strong> A named person tagged to a brand, a campaign, or both, with a role: decision-maker, day-to-day contact, procurement, legal or compliance, finance, executive sponsor. One stakeholder can sit across several brands when their role spans the account.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Stakeholder</strong></p><p class="kz-lead-b">A named person tagged to a brand, a campaign, or both, with a role: decision-maker, day-to-day contact, procurement, legal or compliance, finance, executive sponsor. One stakeholder can sit across several brands when their role spans the account.</p></div>
 
-<p><strong>Renewal.</strong> The commercial event itself: the date, the named owner, the contract it sits under, and the probability of it closing. A renewal usually attaches to the client's master contract, but a brand with its own statement of work needs its own renewal record, because its clock runs on a different date.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>Renewal</strong></p><p class="kz-lead-b">The commercial event itself: the date, the named owner, the contract it sits under, and the probability of it closing. A renewal usually attaches to the client's master contract, but a brand with its own statement of work needs its own renewal record, because its clock runs on a different date.</p></div>
 
 <p><img loading="lazy" decoding="async" src="/assets/img/blog/crm-for-advertising-agencies/crm-for-advertising-agencies-entity-diagram.png?v=47ee91f7" alt="Entity diagram showing how a Client holds many Brands, each Brand runs many Campaigns, Stakeholders are tagged across Brands and Campaigns, and Renewals attach to a Client or Brand contract." /></p><details class="kz-imgtext"><summary><span>Show text in this graphic</span><span class="ic" aria-hidden="true">+</span></summary><div class="kz-imgtext-body"><p><strong>CRM for advertising agencies: one hierarchy, two objects that cut across it</strong></p>
 
@@ -225,15 +225,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li><strong>Brand:</strong> Acme Snacks
 <ul>
-<li><strong>Campaign:</strong> Spring retail launch</li>
-<li><strong>Campaign:</strong> In-store sampling program</li>
+<li class="kz-lead-li"><strong class="kz-lead-t">Campaign</strong><span class="kz-lead-b">Spring retail launch</span></li>
+<li class="kz-lead-li"><strong class="kz-lead-t">Campaign</strong><span class="kz-lead-b">In-store sampling program</span></li>
 </ul></li>
 <li><strong>Brand:</strong> Acme Beverages
 <ul>
-<li><strong>Campaign:</strong> Always-on social</li>
+<li class="kz-lead-li"><strong class="kz-lead-t">Campaign</strong><span class="kz-lead-b">Always-on social</span></li>
 </ul></li>
-<li><strong>Renewal:</strong> master contract, owner the Acme account director, due January 2027</li>
-<li><strong>Renewal:</strong> Acme Beverages statement of work, owner the Acme Beverages brand lead, due September 2026</li>
+<li class="kz-lead-li"><strong class="kz-lead-t">Renewal</strong><span class="kz-lead-b">master contract, owner the Acme account director, due January 2027</span></li>
+<li class="kz-lead-li"><strong class="kz-lead-t">Renewal</strong><span class="kz-lead-b">Acme Beverages statement of work, owner the Acme Beverages brand lead, due September 2026</span></li>
 </ul></li>
 </ul>
 
@@ -316,9 +316,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <p>Most agencies already run Salesforce or HubSpot. The fix here isn't new software. It's a different object structure inside the CRM already paid for.</p>
 
-<p><strong>In Salesforce.</strong> Custom objects are available on every edition that supports them at all, not only Enterprise. Professional Edition supports up to 50 custom objects, Enterprise up to 200, and Unlimited up to 2,000, so the five-object model in this guide fits comfortably even on Professional. Build Brand as a custom object with a lookup to Account (Client). Build Campaign as a custom object related to Brand, or repurpose Salesforce's native Campaign object if the team already uses it for marketing attribution. Model Stakeholder as Contact records joined to Brand and Campaign through a junction object carrying a Role picklist, so one person can sit on several brands without duplicating their record. Track Renewal as an Opportunity record type attached to Brand or Account, with a required Owner field and its own Close Date, kept separate from any other renewal on the account.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>In Salesforce</strong></p><p class="kz-lead-b">Custom objects are available on every edition that supports them at all, not only Enterprise. Professional Edition supports up to 50 custom objects, Enterprise up to 200, and Unlimited up to 2,000, so the five-object model in this guide fits comfortably even on Professional. Build Brand as a custom object with a lookup to Account (Client). Build Campaign as a custom object related to Brand, or repurpose Salesforce's native Campaign object if the team already uses it for marketing attribution. Model Stakeholder as Contact records joined to Brand and Campaign through a junction object carrying a Role picklist, so one person can sit on several brands without duplicating their record. Track Renewal as an Opportunity record type attached to Brand or Account, with a required Owner field and its own Close Date, kept separate from any other renewal on the account.</p></div>
 
-<p><strong>In HubSpot.</strong> The native Company, Contact and Deal objects won't stretch this far on their own. HubSpot's custom objects sit behind the Enterprise tier and are capped at 10 custom objects per portal, so plan the object count carefully before committing to this model. Within that limit, build Brand as a custom object associated to Company. Campaign can reuse HubSpot's native Campaigns tool if brand-level reporting isn't required, or a custom object if it is. Model Stakeholder as Contacts with a custom Role property, associated to Brand through HubSpot's native object associations. Track Renewal as a Deal associated to Brand (or Company), with a mandatory Deal Owner property and a Renewal Date property kept separate from Close Date.</p>
+<div class="kz-lead"><p class="kz-lead-t"><strong>In HubSpot</strong></p><p class="kz-lead-b">The native Company, Contact and Deal objects won't stretch this far on their own. HubSpot's custom objects sit behind the Enterprise tier and are capped at 10 custom objects per portal, so plan the object count carefully before committing to this model. Within that limit, build Brand as a custom object associated to Company. Campaign can reuse HubSpot's native Campaigns tool if brand-level reporting isn't required, or a custom object if it is. Model Stakeholder as Contacts with a custom Role property, associated to Brand through HubSpot's native object associations. Track Renewal as a Deal associated to Brand (or Company), with a mandatory Deal Owner property and a Renewal Date property kept separate from Close Date.</p></div>
 
 <p>Whichever platform the agency runs, one decision matters more than any field name: which object level owns the renewal, client or brand. A master contract renewal and a single brand's statement-of-work renewal are different events with different notice periods, and this is usually where a renewal gets missed. Confirm the exact object and property limits against the agency's own Salesforce or HubSpot edition before committing to a rollout timeline, since both platforms revise these limits from time to time. Kaizan connects natively to both platforms, reading the CRM records this guide describes rather than asking a team to maintain a second copy of them (<a href="https://www.kaizan.ai/us/integrations/">see integrations</a>).</p>
 
