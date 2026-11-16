@@ -154,3 +154,14 @@ h1.kz-post-title { font-size: clamp(32px, 3.4vw, 46px) !important; line-height: 
 @media (prefers-reduced-motion: reduce) {
   .kz-insights-card, .kz-insights-card:hover { transition: none; transform: none; }
 }
+
+/* Feature posts (layout: feature) on the blog grid: a sticker over the card's corner. */
+.kz-insights-card.is-featured { position: relative; overflow: visible; }
+.kz-insights-card.is-featured .cover { border-radius: 13px 13px 0 0; }
+.kz-card-sticker {
+  position: absolute; z-index: 2; top: -14px; left: -12px; transform: rotate(-5deg);
+  display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px 7px 11px; border-radius: 999px;
+  background: #0A0A0A; color: #fff; font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--kz-yellow);
+}
+.kz-card-sticker::before { content: '★'; color: var(--kz-yellow); font-size: 14px; letter-spacing: 0; }

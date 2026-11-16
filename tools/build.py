@@ -3828,7 +3828,8 @@ def _blog_cards(posts: list, depth: int) -> str:
     """Card grid for a list of posts, linking to /blog/<topic>/<slug>/ from a page at `depth`."""
     pre = '../' * (depth - 1)
     cards = '\n'.join(
-        f'''<a class="kz-insights-card" href="{pre}{E(p["topic"])}/{E(p["slug"])}/">
+        f'''<a class="kz-insights-card{' is-featured' if p.get('layout') == 'feature' else ''}" href="{pre}{E(p["topic"])}/{E(p["slug"])}/">
+              {'<span class="kz-card-sticker">Featured</span>' if p.get('layout') == 'feature' else ''}
               <div class="cover" style="background-image:url('{cover_src(p, depth)}');"></div>
               <div class="body">
                 <h3 class="title">{E(p["title"])}</h3>
@@ -3904,8 +3905,78 @@ def render_blog_topic(topic: str, posts: list) -> str:
     return page_head(f'{label} | Blog', 2, desc, extra_head=resources_head(2)) + body + page_foot()
 
 
+def render_blog_feature(post: dict) -> str:
+    """A "feature" post (frontmatter `layout: feature`): a full-screen film-still hero with the
+    title, a long-read body with numbered sections and pull quotes, and the section headed
+    `closing` set as a closing panel with the booking call to action."""
+    p, slug = relpath(3), post['slug']
+    hero_rel = f"assets/img/blog/{slug}/{post['hero']}"
+    body = post.get('body', '')
+    closing = ''
+    if post.get('closing'):
+        m = re.search(r'<h2[^>]*>\s*' + re.escape(E(post['closing']).replace('&#x27;', "'")) + r'\s*</h2>(.*?)(?=<h2[ >]|$)',
+                      body, re.S)
+        if m:
+            body = body[:m.start()] + body[m.end():]
+            closing = f'''
+        <section class="kz-feat-close">
+          <h2>{E(post['closing'])}</h2>
+          {m.group(1).strip()}
+          <div class="kz-feat-close-cta">
+            <a class="kz-feat-btn kz-feat-btn-primary" href="{p}demo/">Book a demo</a>
+            <a class="kz-feat-btn" href="{p}product/">Explore the platform</a>
+          </div>
+        </section>'''
+    secs = re.split(r'(?=<h2[ >])', body)
+    for i in range(2, len(secs), 2):
+        sec, tail = secs[i], ''
+        m = re.search(r'\s*(<figure class="kz-post-video.*?</figure>)\s*$', sec, re.S)
+        if m:
+            sec, tail = sec[:m.start()], m.group(1)
+        secs[i] = f'<section class="kz-feat-band">{sec.strip()}</section>\n{tail}'
+    body = ''.join(secs)
+    film = re.search(r'<figure class="kz-post-video kz-film" id="([^"]+)"', body)
+    minutes = max(1, round(post.get('words', 0) / 230))
+    meta = [E(post.get('date', '')), f'{minutes} min read'] + (['Includes a 2-minute film'] if film else [])
+    watch = (f'<a class="kz-feat-watch" href="#{film.group(1)}"><span class="kz-feat-watch-ic" aria-hidden="true"></span>'
+             'Watch the film</a>') if film else ''
+    label = blog.TOPICS.get(post['topic'], ('',))[0]
+    page = f'''
+    {nav_html(3, active='Blog')}
+    <article class="kz-post kz-feature">
+      <header class="kz-feat-hero">
+        <img class="kz-feat-hero-img" src="{p}{hero_rel}{asset_v(hero_rel)}" alt="" fetchpriority="high" decoding="async">
+        <div class="kz-feat-hero-in">
+          <h1 class="kz-feat-title">{E(post['title'])}</h1>
+          {f'<p class="kz-feat-dek">{E(post["dek"])}</p>' if post.get('dek') else ''}
+          <div class="kz-feat-meta">{''.join(f'<span>{x}</span>' for x in meta)}</div>
+          {watch}
+        </div>
+      </header>
+      <div class="kz-essay-body kz-post-body kz-feat-body">
+        {body}
+        {closing}
+        <div class="kz-post-back"><a href="../">← More in {E(label)}</a> · <a href="../../">All posts</a></div>
+      </div>
+    </article>
+    {footer_html(3)}
+    '''
+    extra = og_tags(post)
+    if post.get('schema'):
+        extra += '\n        ' + ld_script([ld_blogposting(post)])
+    extra += f'\n        <script defer src="{p}assets/js/blog-post.js{asset_v("assets/js/blog-post.js")}"></script>'
+    # feature.css after resources.css, so it wins over the standard post styles.
+    extra += ('\n        ' + resources_head(3) +
+              f'\n        <link rel="stylesheet" href="{p}assets/css/feature.css{asset_v("assets/css/feature.css")}">')
+    return page_head(post.get('meta_title') or post['title'], 3,
+                     post.get('meta_description') or post.get('excerpt', ''),
+                     extra_head=extra) + page + page_foot()
+
+
 def render_blog_post(post: dict) -> str:
     """Render a single blog post page at /blog/<topic>/<slug>/index.html (depth 3)."""
+    if post.get('layout') == 'feature':
+        return render_blog_feature(post)
     hero = (f'<img class="kz-post-hero" src="{cover_src(post, 3)}" '
             f'alt="{E(post["title"])}" decoding="async">') if post.get('cover_asset') else ''
     if hero:
@@ -3932,7 +4003,7 @@ def render_blog_post(post: dict) -> str:
         extra += '\n        ' + ld_script(blog_schema_nodes(post))
     elif post.get('schema'):
         extra += '\n        ' + ld_script([ld_blogposting(post)])
-    if 'data-flow' in post.get('body', ''):
+    if 'data-flow' in post.get('body', '') or 'kz-film' in post.get('body', ''):
         extra += (f'\n        <script defer src="{relpath(3)}assets/js/blog-post.js'
                   f'{asset_v("assets/js/blog-post.js")}"></script>')
     return page_head(post.get('meta_title') or post['title'], 3,
