@@ -313,6 +313,21 @@ th { background: var(--k-butter); }
 .prop-pills span { color: #fff; font-size: .78rem; font-weight: 700; padding: 4px 10px; border-radius: 10px 10px 10px 2px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .chip-edit, .chip-confirm { display: none !important; }
+.card.stat .s:has(.stat-logo) { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card.stat .stat-logo { height: 26px; width: auto; max-width: 140px; object-fit: contain; display: block; }
+.day.flow.how-flow li.step { grid-template-columns: 290px 1fr; }
+.day.flow.how-flow .d { display: inline-flex; align-items: center; gap: 12px; padding: 7px 16px 7px 7px; font-size: 1rem; max-width: 270px; }
+.day.flow.how-flow .d .n { flex: none; width: 42px; height: 42px; border-radius: 50%; background: #141210; color: var(--k-gold);
+  display: grid; place-items: center; font-size: 1.35rem; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums;
+  box-shadow: 0 0 0 2.5px #fff, 0 0 0 6px var(--c, var(--k-gold)); margin-left: 3px; }
+/* Each step has its own colour: the ring on its number, its card's shadow and the dot that joins them. */
+.day.flow.how-flow .what { box-shadow: 5px 5px 0 var(--c, var(--k-gold)); }
+.day.flow.how-flow li.step:hover .what { box-shadow: 8px 8px 0 var(--c, var(--k-gold)); }
+.day.flow.how-flow .what::after { background: var(--c, var(--k-gold)); }
+.day.flow.how-flow .d .lbl { color: #141210; font-weight: 800; }
+.day.flow.how-flow .what::before { left: -268px; width: 266px; }
+.prop-wrap { margin: 22px 0 8px; max-width: 640px; }
+@media (max-width: 560px) { .day.flow.how-flow li.step { grid-template-columns: 1fr; } }
 body.general .deal-only, body:not(.general) .general-only { display: none !important; }
 </style>
 </head>
@@ -334,9 +349,9 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
       <option value="role-ops">COO or Head of Ops</option>
       <option value="role-ai">Head of AI or CTO</option>
       <option value="role-cs">Head of Client Service</option>
-      <option value="role-am">Client teams: Account Directors and Account Managers</option>
-      <option value="role-sm">Sales and marketing teams</option>
-      <option value="role-it">IT and security</option>
+      <option value="role-am">Client Teams: Account Directors and Account Managers</option>
+      <option value="role-sm">Sales and Marketing Teams</option>
+      <option value="role-it">IT and Security</option>
       <option value="start">Something else</option>
     </select>
     <div class="err" id="g-err">Please add your name, a work email and your role.</div>
@@ -426,17 +441,17 @@ body.general .deal-only, body:not(.general) .general-only { display: none !impor
     <div id="v-demo"></div>
 
     <h2>How it works, step by step</h2>
-    <div class="grid three">
-      <div class="card"><h3 style="margin-top:0">1. One secure client memory</h3><p style="font-size:.92rem;margin:0">Conversations, emails, messages and the work being delivered, brought into one memory per client. Deduplicated, stakeholders resolved, permissions preserved.</p></div>
-      <div class="card"><h3 style="margin-top:0">2. Continuously updated</h3><p style="font-size:.92rem;margin:0">Who said what, what was promised, what was delivered, what the client wants and how that has changed. The memory stays with the firm when people move on.</p></div>
-      <div class="card"><h3 style="margin-top:0">3. CARE™ scores the relationship</h3><p style="font-size:.92rem;margin:0">Relationship scoring across 24 dimensions from the real communications, benchmarked against comparable firms. It identifies risks, delivery friction and growth opportunities.</p></div>
-      <div class="card"><h3 style="margin-top:0">4. Clear actions for the account team</h3><p style="font-size:.92rem;margin:0">Each signal has a defined next action, for example notifying the account lead when a decision-maker has been inactive for a month, or flagging a scope gap when delivery exceeds the contract. Actions are informed by what works across comparable firms.</p></div>
-      <div class="card" style="--acc:var(--k-coral)"><h3 style="margin-top:0">5. Agents do the routine work</h3><p style="font-size:.92rem;margin:0">Briefs, follow-ups, alerts and upsell recommendations are produced automatically. The result is more consistent client service and a lower cost to serve each client.</p></div>
+    <ul class="day flow how-flow">
+      <li class="step" style="--i:0;--c:var(--k-blue)"><div class="who-col"><div class="d"><span class="n">1</span><span class="lbl">One secure client memory</span></div></div><div class="what">Conversations, emails, messages and the work being delivered, brought into one memory per client. Deduplicated, stakeholders resolved, permissions preserved.</div></li>
+      <li class="step" style="--i:1;--c:var(--k-teal)"><div class="who-col"><div class="d"><span class="n">2</span><span class="lbl">Continuously updated</span></div></div><div class="what">Who said what, what was promised, what was delivered, what the client wants and how that has changed. The memory stays with the firm when people move on.</div></li>
+      <li class="step" style="--i:2;--c:var(--k-coral)"><div class="who-col"><div class="d"><span class="n">3</span><span class="lbl">CARE™ scores the relationship</span></div></div><div class="what">Relationship scoring across 24 dimensions from the real communications, benchmarked against comparable firms. It identifies risks, delivery friction and growth opportunities.</div></li>
+      <li class="step" style="--i:3;--c:var(--k-purple)"><div class="who-col"><div class="d"><span class="n">4</span><span class="lbl">Clear actions for the account team</span></div></div><div class="what">Each signal has a defined next action, for example notifying the account lead when a decision-maker has been inactive for a month, or flagging a scope gap when delivery exceeds the contract. Actions are informed by what works across comparable firms.</div></li>
+      <li class="step" style="--i:4;--c:var(--k-blue)"><div class="who-col"><div class="d"><span class="n">5</span><span class="lbl">Agents do the routine work</span></div></div><div class="what">Briefs, follow-ups, alerts and upsell recommendations are produced automatically. The result is more consistent client service and a lower cost to serve each client.</div></li>
+    </ul>
+    <div class="prop-wrap">
       <div class="card prop-card" style="--acc:#141210"><h3 style="margin-top:0">What is proprietary?</h3><div class="prop-pills"><span style="background:var(--k-blue)">Client memory</span><span style="background:var(--k-coral)">CARE™ scoring</span><span style="background:var(--k-teal)">Benchmarks</span></div><p style="font-size:.92rem;margin:0">The client memory, the CARE™ scoring model and the benchmarks from comparable firms. The recommended actions are derived from all three.</p></div>
     </div>
 
-    <h2>Memory on every client</h2>
-    <div id="memory-demo"></div>
 
     <h2>How Kaizan compares</h2>
     <p>Kaizan sits alongside your CRM and project tools rather than replacing them.</p>
@@ -1742,12 +1757,12 @@ body{ font-weight:500 }
     <div class="callgame">
       <div class="transcript" id="tx">
         <div class="row" style="justify-content:space-between"><b style="font-size:14px"><span class="ms" style="color:var(--gold-ink)">videocam</span> Acme QBR · transcript</b><button class="btn sm" id="txPlay"><span class="ms">highlight</span>Extract</button></div>
-        <div class="tl" data-m="agr|Agreement|We will send the SOC 2 report by Friday"><span class="t">00:04</span><span class="sp">You</span><span>We’ll get the SOC 2 report over to you by Friday.</span></div>
-        <div class="tl"><span class="t">00:06</span><span class="sp">Dana</span><span>Great. How was everyone’s weekend?</span></div>
-        <div class="tl" data-m="comm|Style|Dana wants the numbers first, then the recommendation"><span class="t">00:11</span><span class="sp">Dana</span><span>Honestly, just show me the numbers first, then tell me what you recommend.</span></div>
-        <div class="tl" data-m="dom|Domain fact|Acme's fiscal year ends in March"><span class="t">00:18</span><span class="sp">Marcus</span><span>Remember our fiscal year closes in March, so budget lands in February.</span></div>
-        <div class="tl" data-m="obs|Moment|Dana mentioned training for a half marathon"><span class="t">00:27</span><span class="sp">Dana</span><span>Sorry I’m slow today, half-marathon training this week!</span></div>
-        <div class="tl"><span class="t">00:31</span><span class="sp">Marcus</span><span>Can you share your screen?</span></div>
+        <div class="tl" data-m="agr|Agreement|We will send the SOC 2 report by Friday"><span class="lbl">00:04</span><span class="sp">You</span><span>We’ll get the SOC 2 report over to you by Friday.</span></div>
+        <div class="tl"><span class="lbl">00:06</span><span class="sp">Dana</span><span>Great. How was everyone’s weekend?</span></div>
+        <div class="tl" data-m="comm|Style|Dana wants the numbers first, then the recommendation"><span class="lbl">00:11</span><span class="sp">Dana</span><span>Honestly, just show me the numbers first, then tell me what you recommend.</span></div>
+        <div class="tl" data-m="dom|Domain fact|Acme's fiscal year ends in March"><span class="lbl">00:18</span><span class="sp">Marcus</span><span>Remember our fiscal year closes in March, so budget lands in February.</span></div>
+        <div class="tl" data-m="obs|Moment|Dana mentioned training for a half marathon"><span class="lbl">00:27</span><span class="sp">Dana</span><span>Sorry I’m slow today, half-marathon training this week!</span></div>
+        <div class="tl"><span class="lbl">00:31</span><span class="sp">Marcus</span><span>Can you share your screen?</span></div>
         <div class="extracted" id="txOut"><span class="small">Press Extract to see what Kaizan keeps. Only durable facts are kept.</span></div>
       </div>
       <div class="krb" id="krb">
@@ -2385,7 +2400,7 @@ const PERSONAS = [
     day:[["Monday review","CARE™ score per client, per Account Manager. Cadence of contact. Open commitments and overdue actions."],["Alerts","A client with no contact for 18 days whose last email mentioned budget, raised before it becomes a call from the client."],["Market changes","A client’s competitor launches a new offer, so the Account Manager goes into the next meeting prepared."],["Quarterly","Solution suggestions per client based on the client’s stated goals, and scope gaps between what was agreed and what was delivered."]],
     share:"Client teams are the daily users. The COO page covers rollout.", caseWho:"Head of Client Service case study",
     pager:["role-ai","role-am"] },
-  { id:"am", nav:"Client teams", badge:"For client teams: Account Directors and Account Managers",
+  { id:"am", nav:"Client Teams", badge:"For Client Teams: Account Directors and Account Managers",
     h1:"Prepared for every client meeting",
     lede:"Briefs, follow-up drafts and alerts are delivered to you. No separate login is needed.",
     tile:"The brief, the follow-up, the alerts. Your day.",
@@ -2394,7 +2409,7 @@ const PERSONAS = [
     day:[["Before","A brief before each meeting: what was promised last time, what is open, the client’s stated goals and what has changed in their business."],["After","A follow-up email drafted from the meeting, with actions and owners, for you to review and send."],["Between","Draft emails for clients you have not spoken to in three weeks, ready to edit and send."],["Market changes","A note when a client’s competitor makes a move, in time for the next call."]],
     share:"The Head of Client Service page covers the portfolio view.", caseWho:"Client team case study",
     pager:["role-cs","role-sm"] },
-  { id:"sm", nav:"Sales and marketing teams", badge:"For sales and marketing teams",
+  { id:"sm", nav:"Sales and Marketing Teams", badge:"For Sales and Marketing Teams",
     h1:"Client insight for marketing. Clean handover for sales.",
     lede:"Marketing sees what clients say and what is being delivered, as it happens, and turns it into assets for paid, owned and earned channels. Sales hands over to client service with the full conversation intact and learns what resonated and which objections came up.",
     tile:"Live client voice for marketing. Clean handovers for sales.",
@@ -2412,7 +2427,7 @@ const PERSONAS = [
     day:[["Client Record","Every channel unified around a single client. Deduplicated. Stakeholders resolved. Permissions carried through."],["Client Intelligence","Commitments, actions, risks, delivery friction, objectives and growth opportunities extracted, tagged and labelled, organisation-wide."],["CARE™","Relationship scoring across 24 dimensions, benchmarked against comparable firms, with trajectory. The benchmarks are not reproducible from a single firm’s data."],["Access","Read-only REST API and MCP, with an organisation key or per-user keys scoped to what each person can see. Bulk export to your warehouse."]],
     share:"The IT and security page covers data handling. API documentation and a sandbox on your own data are available on request.", caseWho:"Head of AI case study: Director of AI, TradeDoubler",
     pager:["role-ops","role-cs"] },
-  { id:"it", nav:"IT and security", badge:"For IT and security",
+  { id:"it", nav:"IT and Security", badge:"For IT and Security",
     h1:"Security, data and compliance",
     lede:"Kaizan processes client communications with AI models. The questions most security reviews ask are answered below, with links to the trust centre, licence agreement, DPA and privacy policy.",
     tile:"Data, models, access, certifications.",
@@ -2569,7 +2584,6 @@ function renderStatic() {
     ["api","API and MCP","Your own AI tools using the same permissioned client intelligence."]
   ];
   document.getElementById("features").innerHTML = FEATURES.map(f => `<details><summary>${esc(f[1])}</summary><p>${esc(f[2])}</p></details>`).join("");
-  document.getElementById("memory-demo").innerHTML = DEAL.memoryDemoUrl ? `<div class="video"><iframe src="${esc(DEAL.memoryDemoUrl)}" title="Memory on every client" allowfullscreen></iframe></div>` : videoSlot("", "Memory on every client", "Sid’s asset, the relevant part. Interactive if it embeds, video if not.");
   document.getElementById("target-n").textContent = DEAL.targetNumber;
   document.getElementById("target-l").textContent = DEAL.targetLabel;
   const MAPC = [["var(--k-gold)","#141210"]];
@@ -2611,6 +2625,7 @@ function buildNav(el, flat) {
   el.innerHTML = h;
 }
 function route() {
+  statLogos();
   const id = (location.hash || "#start").slice(1);
   const el = document.getElementById(id);
   const target = el && el.classList.contains("page") ? id : "start";
@@ -2630,6 +2645,27 @@ window.addEventListener("hashchange", route);
 const KEY = "kaizan-deal-room-visitor";
 function getVisitor() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } }
 function setVisitor(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} }
+/* Stat cards that credit a client show the client's logo instead of the name. */
+const CLIENT_LOGOS = {
+  "Gravity Global": "/assets/img/deal-room/logo-gravity-global.svg?v=7695f0bf",
+  "Kite Factory": "/assets/img/deal-room/logo-kite-factory.png?v=50904de4",
+  "The Kite Factory": "/assets/img/deal-room/logo-kite-factory.png?v=50904de4",
+  "NP Digital": "/assets/img/deal-room/logo-np-digital.png?v=31964634",
+  "Tradedoubler": "/assets/img/deal-room/logo-tradedoubler.png?v=0868a0a9",
+  "Collective Content": "/assets/img/deal-room/logo-collective-content.png?v=6475c4d7",
+  "Transmission": "/assets/img/deal-room/logo-transmission.png?v=d46779d9"
+};
+function statLogos() {
+  document.querySelectorAll(".card.stat .s").forEach(el => {
+    if (el.dataset.logo) return;
+    const text = el.textContent.trim();
+    const name = Object.keys(CLIENT_LOGOS).sort((a, b) => b.length - a.length).find(n => text === n || text.startsWith(n + ","));
+    if (!name) return;
+    el.dataset.logo = "1";
+    const rest = text.slice(name.length).replace(/^,\s*/, "");
+    el.innerHTML = `<img class="stat-logo" src="${CLIENT_LOGOS[name]}" alt="${esc(name)}">` + (rest ? `<span>${esc(rest)}</span>` : "");
+  });
+}
 function openRoom(v) { document.getElementById("gate").classList.add("hidden"); document.getElementById("who-name").textContent = v.name.split(" ")[0] || "you"; route(); playHero(); }
 /* Start the film as soon as the room opens. With sound when the browser allows it (the sign-in
    click counts as permission); otherwise muted, and the controls let the visitor turn sound on. */
