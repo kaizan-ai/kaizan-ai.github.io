@@ -528,23 +528,47 @@ def _image_texts(html: str, slug: str, held: list) -> str:
     return re.sub(r'<p>\s*<img\b[^>]*>\s*</p>', add, html)
 
 
+def _has_audio(path: Path) -> bool:
+    """True when an MP4 carries a sound track (an 'hdlr' box of type 'soun' in its header;
+    our videos are encoded with the header at the front)."""
+    if not path.is_file():
+        return False
+    with path.open('rb') as f:
+        head = f.read(4_000_000)
+    return re.search(rb'hdlr.{8}soun', head, re.S) is not None
+
+
 def _videos(html: str, slug: str) -> str:
-    """`![Headline](video.mp4)` on its own line -> a "See it in Kaizan" label and the headline,
-    a silent product video that plays when it scrolls into view (<name>-poster.jpg beside it is
-    the still), and a link to the product page under it."""
+    """`![Headline](video.mp4 "Label")` on its own line -> the label (default "See it in Kaizan")
+    and the headline, the video (<name>-poster.jpg beside it is the still), and a Book a demo
+    link under it. A silent video plays as it scrolls into view, with no volume control; one
+    with sound waits for a click on its play button and plays with sound."""
     def vid(m):
         src = m.group(1)
         alt = re.search(r'alt="([^"]*)"', m.group(0))
+        title = re.search(r'title="([^"]*)"', m.group(0))
         name = re.search(r'/([^/?]+)\.mp4', src).group(1)
         poster = CONTENT_DIR / slug / f'{name}-poster.jpg'
         poster_attr = (f' poster="../../../assets/img/blog/{slug}/{poster.name}{_img_v(poster)}"'
                        if poster.is_file() else '')
         label = alt.group(1) if alt else ''
-        head = (f'<figcaption class="kz-video-head"><span class="kz-video-kicker">See it in Kaizan</span>'
+        kicker = title.group(1) if title else 'See it in Kaizan'
+        head = (f'<figcaption class="kz-video-head"><span class="kz-video-kicker">{kicker}</span>'
                 f'<strong>{label}</strong></figcaption>') if label else ''
+        link = ('<a class="kz-video-link" href="../../../demo/">See it on your own clients '
+                '<span aria-hidden="true">→</span></a>')
+        if _has_audio(CONTENT_DIR / slug / f'{name}.mp4'):
+            # A film gets its headline but no label above it.
+            head = f'<figcaption class="kz-video-head"><strong>{label}</strong></figcaption>' if label else ''
+            return (f'<figure class="kz-post-video kz-film" id="{name}">{head}<div class="kz-film-frame">'
+                    f'<video src="{src}"{poster_attr} playsinline controls controlslist="nodownload noplaybackrate" '
+                    f'disablepictureinpicture preload="metadata" aria-label="{label}"></video>'
+                    '<button class="kz-film-play" type="button" aria-label="Play the film with sound">'
+                    '<span class="kz-film-play-ic" aria-hidden="true"></span><span>Play with sound</span></button>'
+                    f'</div>{link}</figure>')
         return (f'<figure class="kz-post-video">{head}<video src="{src}"{poster_attr} muted loop playsinline '
                 f'controls controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" data-play-inview data-play-resume aria-label="{label}"></video>'
-                '<a class="kz-video-link" href="../../../demo/">See it on your own clients <span aria-hidden="true">→</span></a></figure>')
+                f'{link}</figure>')
     return re.sub(r'<p>\s*<img\b[^>]*src="([^"]+\.mp4[^"]*)"[^>]*>\s*</p>', vid, html)
 
 
@@ -634,6 +658,13 @@ def load_posts(include_drafts: bool = False) -> list:
             body=md_to_html(body_md, slug),
             canonical=meta.get('canonical', ''),
             tags=meta.get('tags', []),
+            # A "feature" post gets a full-screen hero (the `hero` image) and a closing panel
+            # for the section headed `closing`.
+            layout=str(meta.get('layout', '')),
+            hero=str(meta.get('hero', '')),
+            closing=str(meta.get('closing', '')),
+            dek=str(meta.get('dek', '')),
+            words=len(re.findall(r'\w+', body_md)),
             draft=draft,
         ))
     posts.sort(key=lambda p: p['iso_date'], reverse=True)
