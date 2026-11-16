@@ -126,9 +126,13 @@ Close with two or three commitments, each with a named owner and a date, not a g
 
 This is a composite account, built from patterns that repeat across agency relationships, not one named client.
 
-A 40-person B2B agency runs this exact quarterly business review format with a mid-market software client. Two quarters run smoothly. In Step 0 of the third quarter, the account lead pulls the full call history instead of working from last month's deck and notices the client's procurement lead has been copied into three recent email threads who was never on a call before. Nobody flagged it, because on its own it looked like routine copying, not a signal.
+A 40-person B2B agency runs this exact quarterly business review format with a mid-market software client. Two quarters run smoothly.
 
-Step 4 of the review turns out to matter more than anyone expected going in. The account lead asks the stakeholder question directly: "we haven't had procurement on a call yet, should they be here next time." The client's day-to-day contact admits procurement is reviewing the renewal budget next month, a fact that had never surfaced on a status call because nobody had asked the right question in the right structured moment. Step 5's commitments get rebuilt on the spot: a follow-up call with procurement, owned by the account lead, scheduled for the following week, well before the client's own internal review.
+**Step 0.** In the third quarter's prep, the account lead pulls the full call history instead of working from last month's deck and notices the client's procurement lead has been copied into three recent email threads who was never on a call before. Nobody flagged it, because on its own it looked like routine copying, not a signal.
+
+**Step 4.** The stakeholder check turns out to matter more than anyone expected going in. The account lead asks the stakeholder question directly: "we haven't had procurement on a call yet, should they be here next time." The client's day-to-day contact admits procurement is reviewing the renewal budget next month, a fact that had never surfaced on a status call because nobody had asked the right question in the right structured moment.
+
+**Step 5.** The commitments get rebuilt on the spot: a follow-up call with procurement, owned by the account lead, scheduled for the following week, well before the client's own internal review.
 
 The lesson generalizes past this one account. The signal wasn't hidden. It was sitting in an email cc line nobody went back to reread, and a stakeholder check that existed as a named, timed step in the format rather than an afterthought is what gave it somewhere to surface.
 

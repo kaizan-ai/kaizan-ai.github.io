@@ -106,6 +106,8 @@ If a tool only gives a risk score with no breakdown underneath it, a team can se
 
 Take an anonymized account from Kaizan's own client portfolio, Agency Client A, scored 1.4 out of 10 overall on its most recent review period, down from 1.5 the period before. The breakdown told a clearer story than the headline number: satisfaction at 0.7, relationship strength at 2.1, activity at 2.5, and expansion readiness at 0.4. But the detail that mattered most was not any single score. It was the volume of conversation behind it. Almost nothing had been logged for the account in the review window.
 
+![Watch one account go from quiet conversations to a risk flag](video.mp4)
+
 That silence was the flag, not a reassurance.
 
 > "We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."

@@ -77,6 +77,8 @@ A scoring field bolted onto HubSpot or Salesforce. Cheap, because it's a feature
 
 ## Why Agencies And Service Firms Outgrow Spreadsheets And Their CRM
 
+![See a risk alert land before the QBR, not after it](video.mp4)
+
 ### The Monthly RAG Spreadsheet Problem
 
 Most support teams still run health as a red-amber-green spreadsheet, filled in once a month by the account lead for day-to-day account monitoring. It's backward-looking by design: it reports how an account felt a few weeks ago, filtered through whoever filled it in that day, and it's usually optimistic, because nobody wants to be the one marking their own account red in front of leadership.
@@ -96,8 +98,6 @@ The most counterintuitive finding in Kaizan's own benchmark research directly un
 That pattern holds even inside accounts that are already struggling: roughly 38% of accounts that went on to churn had the **same** risk theme recur across multiple review periods before anyone acted on it. The warning was rarely a single comment. It was the same comment, ignored twice. So teams need to analyse customer feedback in ongoing conversations, and read customer sentiment over time, not just count silent periods.
 
 **Source: Kaizan,** [**The Client Service Benchmark 2026**](https://kaizan.ai/resources/white-paper/)**, Finding 07 (the Risk Paradox) and Finding 06.**
-
-## The Features That Actually Matter In Customer Retention Software
 
 ## The Key Features That Actually Matter In Customer Retention Software
 

@@ -98,9 +98,15 @@ If you only remember one distinction from this table: the word people reach for 
 
 This is a composite account, built from patterns that show up across agency relationships, not one named client.
 
-A 60-person marketing agency runs a QBR with a mid-market retail client every quarter. For two quarters, the reviews go fine: the deck covers deliverables, the client nods, nobody pushes back. In the third quarter's prep, the account lead pulls the last three months of call notes and email threads before building the deck, rather than working from memory, and notices something the monthly RAG spreadsheet never would have caught: the client's day-to-day marketing manager has mentioned budget pressure twice in passing, not as a formal complaint, once in a call and once in an email thread about an unrelated deliverable. Neither mention made it onto a status report, because neither one looked, on its own, like a problem.
+A 60-person marketing agency runs a QBR with a mid-market retail client every quarter.
 
-The account lead puts it on the QBR agenda directly, as its own line rather than folding it into a general "how's it going" question, and brings a proposed scope adjustment rather than waiting for the client to raise it. The client's actual budget holder, who had skipped the previous two reviews, attends this one because the invitation explicitly flagged a budget conversation. The adjustment gets agreed in the room. The account renews at the original annual value six months later, and the account lead credits the save specifically to catching the signal before it reached the client's own internal budget review, not to anything in that quarter's delivery.
+**Quarters 1-2.** The reviews go fine: the deck covers deliverables, the client nods, nobody pushes back.
+
+**Quarter 3, prep.** The account lead pulls the last three months of call notes and email threads before building the deck, rather than working from memory, and notices something the monthly RAG spreadsheet never would have caught: the client's day-to-day marketing manager has mentioned budget pressure twice in passing, not as a formal complaint, once in a call and once in an email thread about an unrelated deliverable. Neither mention made it onto a status report, because neither one looked, on its own, like a problem.
+
+**Quarter 3, the QBR.** The account lead puts it on the QBR agenda directly, as its own line rather than folding it into a general "how's it going" question, and brings a proposed scope adjustment rather than waiting for the client to raise it. The client's actual budget holder, who had skipped the previous two reviews, attends this one because the invitation explicitly flagged a budget conversation. The adjustment gets agreed in the room.
+
+**Quarter 5, renewal.** The account renews at the original annual value six months later, and the account lead credits the save specifically to catching the signal before it reached the client's own internal budget review, not to anything in that quarter's delivery.
 
 The lesson generalizes past this one account: a QBR built from the actual conversation history catches what a QBR built from memory or a monthly spreadsheet misses, and it does so precisely because the signal usually isn't hidden. It's scattered across calls and emails nobody went back to reread.
 
@@ -135,6 +141,8 @@ These same three numbers double as what you take upstairs. A decision-maker atte
 ## A 30-minute QBR, start to finish
 
 ![A 30-minute QBR timeline: context, value delivered, risks and stakeholders, next-quarter priorities, and a confirm-and-close step.](qbr-30-minute-timeline.png)
+
+![How Kaizan builds your QBR from the calls you've already had](video.mp4)
 
 Most QBR advice assumes you have 60 to 90 minutes. Agencies running these monthly, for a full tier of accounts, rarely have that much time to spare per client. Here's a run of show that fits in half an hour and still covers all five components above.
 

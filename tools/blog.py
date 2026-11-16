@@ -55,6 +55,7 @@ _MONTHS = ['January', 'February', 'March', 'April', 'May', 'June',
            'July', 'August', 'September', 'October', 'November', 'December']
 
 _IMG_EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif', '.svg', '.avif'}
+_VIDEO_EXTS = {'.mp4'}
 
 
 # ─────────────────────────────────────────────────────────────────────
@@ -157,9 +158,21 @@ def _h2_text(h2: str) -> str:
     return re.sub(r'<[^>]+>', '', h2).strip()
 
 
-_SEQ = r'(?:Day|Days|Week|Weeks|Month|Months|Step|Stage|Phase|Minute|Quarter)\s[-\d][^<:.]{0,12}'
+_SEQ = r'(?:Day|Days|Week|Weeks|Month|Months|Step|Stage|Phase|Minute|Quarter|Quarters)\s[-\d][^<:.]{0,12}'
 _DAY_RUN = re.compile(r'(?:<p><strong>%s\.</strong>.*?</p>\s*){3,}' % _SEQ, re.S)
 _STEP_H3 = re.compile(r'<h3>(%s)[:.]\s*(.*?)</h3>' % _SEQ, re.S)
+
+
+_VIDEO_FIG = re.compile(r'\s*<figure class="kz-post-video">.*?</figure>\s*', re.S)
+
+
+def _lift_videos(chunks: list) -> str:
+    """Take every video out of a run of steps or cards (videos never sit inside one); they go after it."""
+    figs = []
+    for i, c in enumerate(chunks):
+        figs += [f.strip() for f in _VIDEO_FIG.findall(c)]
+        chunks[i] = _VIDEO_FIG.sub('\n', c)
+    return ''.join(f + '\n' for f in figs)
 
 
 def _flows(html: str) -> str:
@@ -177,12 +190,13 @@ def _flows(html: str) -> str:
 
     def flush():
         if len(run) >= 3:
+            tail = _lift_videos(run)
             items = ''
             for c in run:
                 m = _STEP_H3.match(c)
                 items += (f'<li class="kz-flow-item"><span class="kz-flow-label">{m.group(1)}</span>'
                           f'<div class="kz-flow-step"><h3>{m.group(2)}</h3>{c[m.end():].strip()}</div></li>')
-            out.append(f'<ol class="kz-flow kz-flow-steps" data-flow>{items}</ol>\n')
+            out.append(f'<ol class="kz-flow kz-flow-steps" data-flow>{items}</ol>\n' + tail)
         else:
             out.extend(run)
         run.clear()
@@ -208,10 +222,11 @@ def _cards(section: str) -> str:
     head, subs = chunks[0], chunks[1:]
     if len(subs) < 3:
         return section
+    tail = _lift_videos(subs)
     cards = ''.join(
         f'<li class="kz-card"><span class="kz-card-n">{n:02d}</span>{c.strip()}</li>'
         for n, c in enumerate(subs, 1))
-    return f'{head}<ol class="kz-cards">{cards}</ol>\n'
+    return f'{head}<ol class="kz-cards">{cards}</ol>\n' + tail
 
 
 _STAT = re.compile(r'(?<![\w$£€.])(\d+(?:\.\d+)?(?:%|x\b|×)(?:\+)?)')
@@ -391,12 +406,65 @@ def _emails(html: str) -> str:
     return re.sub(r'<pre>(.*?)</pre>', block, html, flags=re.S)
 
 
+# The explanation after a bold point may hold more bold keywords, but not a second bold label
+# ("**Owner:** … **Time:** …" lines stay as they are).
+_LEAD_REST = r'((?:(?!<strong>[^<]*:</strong>|</p>|</?li\b|<[uo]l\b).)+?)'
+_LEAD_P = re.compile(r'<p><strong>([^<]{3,160}?)</strong>\s*' + _LEAD_REST + r'</p>', re.S)
+_LEAD_LI = re.compile(r'<li>\s*(?:<p>)?<strong>([^<]{3,160}?)</strong>\s*' + _LEAD_REST
+                      + r'\s*(?:</p>)?\s*</li>', re.S)
+
+
+def _lead_parts(head: str, rest: str, loose: bool):
+    """(heading, explanation) for a bold-led line, or None to leave it as it is. A bold point
+    ending in . ? ! or : always qualifies. One that runs on into its sentence ("**Sentiment
+    trend** over 30 days…") qualifies when loose, or when a comma or dash follows it; the
+    explanation then starts with a capital."""
+    rest = rest.strip()
+    if re.search(r'[.?!:]$', head):
+        return head.rstrip(':.'), rest  # headings carry no full stop, like the run-on ones
+    if not (loose or re.match(r'[,;—–]', rest)) or len(head.split()) < 2:
+        return None
+    rest = re.sub(r'^[,;:—–-]\s*', '', rest)
+    return head, rest[:1].upper() + rest[1:]
+
+
+def _leads(html: str) -> str:
+    """"**A bold point.** The explanation" -> the point as a small heading, the explanation below
+    it behind a yellow bar, for paragraphs and bullet points alike."""
+    def lead(m):
+        parts = _lead_parts(m.group(1), m.group(2), loose=False)
+        if not parts:
+            return m.group(0)
+        return (f'<div class="kz-lead"><p class="kz-lead-t"><strong>{parts[0]}</strong></p>'
+                f'<p class="kz-lead-b">{parts[1]}</p></div>')
+    html = _LEAD_P.sub(lead, html)
+
+    def lead_li(m, loose=False):
+        parts = _lead_parts(m.group(1), m.group(2), loose)
+        if not parts:
+            return m.group(0)
+        return (f'<li class="kz-lead-li"><strong class="kz-lead-t">{parts[0]}</strong>'
+                f'<span class="kz-lead-b">{parts[1]}</span></li>')
+    html = _LEAD_LI.sub(lead_li, html)
+    # Keep each list consistent: once one bullet is a bold point, every bold-led bullet is.
+    def tidy_list(m):
+        if 'kz-lead-li' not in m.group(0):
+            return m.group(0)
+        out = _LEAD_LI.sub(lambda x: lead_li(x, loose=True), m.group(0))
+        return re.sub(r'<li><strong>([^<]+)</strong></li>',
+                      r'<li class="kz-lead-li"><strong class="kz-lead-t">\1</strong></li>', out)
+    return re.sub(r'<(ul|ol)>(?:(?!<[uo]l\b).)*?</\1>', tidy_list, html, flags=re.S)
+
+
 def _decorate(html: str) -> str:
     """Make long posts easier on the eye: a lede, sequences as timelines, sub-sections as
     cards, highlighted figures, pale summary/FAQ panels, and tables that scroll on phones."""
     html = re.sub(r'^\s*<p>', '<p class="kz-lede-p">', html, count=1)
     html = _emails(html)
     html = _flows(html)
+    # Bold-led paragraphs, except in the FAQ, where a bold "…?" paragraph is a question.
+    html = ''.join(sec if _FAQ_H2.search(_h2_text(sec.split('</h2>', 1)[0])) else _leads(sec)
+                   for sec in re.split(r'(?=<h2[ >])', html))
     html = _quotes(html)
     html = _stats(html)
     secs = re.split(r'(?=<h2[ >])', html)
@@ -460,9 +528,30 @@ def _image_texts(html: str, slug: str, held: list) -> str:
     return re.sub(r'<p>\s*<img\b[^>]*>\s*</p>', add, html)
 
 
+def _videos(html: str, slug: str) -> str:
+    """`![Headline](video.mp4)` on its own line -> a "See it in Kaizan" label and the headline,
+    a silent product video that plays when it scrolls into view (<name>-poster.jpg beside it is
+    the still), and a link to the product page under it."""
+    def vid(m):
+        src = m.group(1)
+        alt = re.search(r'alt="([^"]*)"', m.group(0))
+        name = re.search(r'/([^/?]+)\.mp4', src).group(1)
+        poster = CONTENT_DIR / slug / f'{name}-poster.jpg'
+        poster_attr = (f' poster="../../../assets/img/blog/{slug}/{poster.name}{_img_v(poster)}"'
+                       if poster.is_file() else '')
+        label = alt.group(1) if alt else ''
+        head = (f'<figcaption class="kz-video-head"><span class="kz-video-kicker">See it in Kaizan</span>'
+                f'<strong>{label}</strong></figcaption>') if label else ''
+        return (f'<figure class="kz-post-video">{head}<video src="{src}"{poster_attr} muted loop playsinline '
+                f'controls controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata" data-play-inview data-play-resume aria-label="{label}"></video>'
+                '<a class="kz-video-link" href="../../../demo/">See it on your own clients <span aria-hidden="true">→</span></a></figure>')
+    return re.sub(r'<p>\s*<img\b[^>]*src="([^"]+\.mp4[^"]*)"[^>]*>\s*</p>', vid, html)
+
+
 def md_to_html(body_md: str, slug: str) -> str:
     html = markdown2.markdown(body_md, extras=MARKDOWN_EXTRAS)
     html = re.sub(r'<img\b[^>]*>', lambda m: _rewrite_img(m, slug), html)
+    html = _videos(str(html), slug)
     held = []
     html = _image_texts(str(html), slug, held)
     html = _decorate(html)
@@ -559,5 +648,5 @@ def copy_post_images(slug: str) -> None:
     out_dir = IMG_OUT_DIR / slug
     out_dir.mkdir(parents=True, exist_ok=True)
     for f in src_dir.iterdir():
-        if f.is_file() and f.suffix.lower() in _IMG_EXTS:
+        if f.is_file() and f.suffix.lower() in _IMG_EXTS | _VIDEO_EXTS:
             shutil.copy2(f, out_dir / f.name)

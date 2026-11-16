@@ -141,11 +141,15 @@ Renewal prep should pull from the record built in steps 1 through 6, the health 
 
 This is a composite account, built from patterns that show up across many client relationships, not a single named client.
 
-A 40-person client-side marketing team signs a 12-month retainer with a mid-size agency. In week one, the Account Director builds the single record (Step 1) and maps six stakeholders, flagging the CMO as the actual decision-maker despite most day-to-day contact running through a marketing manager (Step 2). For the first two quarters, every call gets a same-day note (Step 3), and every commitment gets a same-day recap (Step 4), which the client starts to visibly expect and rely on.
+A 40-person client-side marketing team signs a 12-month retainer with a mid-size agency.
 
-In month five, the monthly health review (Step 5) shows the relationship-strength score dipping for two periods running, even though the satisfaction score looks fine on the surface. The call notes show why: the marketing manager has mentioned budget pressure twice in casual conversation, not as a formal complaint, which is exactly the kind of signal a RAG spreadsheet filled in from memory would miss. The team escalates it internally the same week it recurs, and sends a proactive message acknowledging the pressure and proposing a scope adjustment before the client has to ask (Step 6).
+**Week 1.** The Account Director builds the single record (Step 1) and maps six stakeholders, flagging the CMO as the actual decision-maker despite most day-to-day contact running through a marketing manager (Step 2).
 
-At month nine, renewal prep starts (Step 7). Instead of building a recap from memory, the Account Director pulls nine months of health history, the full action log, and the stakeholder map, which together show a relationship that dipped once, was caught early, and recovered. The renewal conversation opens from that evidence rather than from hope. The account renews at the original scope, and the outcome, plus the lesson about surfacing budget signals earlier, gets written back into the record for the team member who inherits the account next cycle.
+**Months 1-6.** Every call gets a same-day note (Step 3), and every commitment gets a same-day recap (Step 4), which the client starts to visibly expect and rely on.
+
+**Month 5.** The monthly health review (Step 5) shows the relationship-strength score dipping for two periods running, even though the satisfaction score looks fine on the surface. The call notes show why: the marketing manager has mentioned budget pressure twice in casual conversation, not as a formal complaint, which is exactly the kind of signal a RAG spreadsheet filled in from memory would miss. The team escalates it internally the same week it recurs, and sends a proactive message acknowledging the pressure and proposing a scope adjustment before the client has to ask (Step 6).
+
+**Month 9.** Renewal prep starts (Step 7). Instead of building a recap from memory, the Account Director pulls nine months of health history, the full action log, and the stakeholder map, which together show a relationship that dipped once, was caught early, and recovered. The renewal conversation opens from that evidence rather than from hope. The account renews at the original scope, and the outcome, plus the lesson about surfacing budget signals earlier, gets written back into the record for the team member who inherits the account next cycle.
 
 ## How to tell whether the process is working
 

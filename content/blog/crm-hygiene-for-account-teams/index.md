@@ -138,13 +138,23 @@ Pick a cadence, monthly is typical, and a small set of numbers to check: percent
 
 **Failure mode:** Reviewing the scorecard without a next action attached. A number that goes unaddressed for two cycles in a row stops being read at all.
 
+![Your CRM, updated from client calls with no typing](video.mp4)
+
 ## A worked example, end to end
 
 This is an illustrative example built from patterns we see across agency clients, not one specific account.
 
-A 40-person account management team at a mid-size agency runs its book through HubSpot, with project status tracked separately in Asana. The baseline audit (step 2) finds that 60% of stakeholder records are more than a year old, and the custom "account health" field, added eighteen months earlier with good intentions, has not been touched on 70% of accounts since it was created.
+A 40-person account management team at a mid-size agency runs its book through HubSpot, with project status tracked separately in Asana.
 
-The team does not start by fixing the field. It starts by naming the behavior problem (step 3): the health field was added as one more thing to remember, on top of an already full week, and nobody disputes that it lost to client work every time. The team connects automatic capture (step 4), and within the first week, stakeholder records and a live sentiment signal start updating themselves from the calls and emails already happening, with no new typing required from anyone. The Head of Client Service assigns an owner per account (step 5) specifically for acting on the flags that now arrive automatically: a quiet decision-maker, a risk phrase appearing twice in a month, an unanswered scope question. The COO reviews the scorecard (step 6) at the next monthly leadership meeting and for the first time can say, with evidence rather than a gut feel, which ten accounts actually need attention this month.
+**Step 2.** The baseline audit finds that 60% of stakeholder records are more than a year old, and the custom "account health" field, added eighteen months earlier with good intentions, has not been touched on 70% of accounts since it was created.
+
+**Step 3.** The team does not start by fixing the field. It starts by naming the behavior problem: the health field was added as one more thing to remember, on top of an already full week, and nobody disputes that it lost to client work every time.
+
+**Step 4.** The team connects automatic capture, and within the first week, stakeholder records and a live sentiment signal start updating themselves from the calls and emails already happening, with no new typing required from anyone.
+
+**Step 5.** The Head of Client Service assigns an owner per account specifically for acting on the flags that now arrive automatically: a quiet decision-maker, a risk phrase appearing twice in a month, an unanswered scope question.
+
+**Step 6.** The COO reviews the scorecard at the next monthly leadership meeting and for the first time can say, with evidence rather than a gut feel, which ten accounts actually need attention this month.
 
 Nothing in that sequence required a CRM migration. The CRM stayed exactly where it was. What changed was how much of its accuracy depended on someone remembering to type something in.
 

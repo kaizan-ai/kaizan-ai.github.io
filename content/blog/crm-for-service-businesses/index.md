@@ -107,6 +107,8 @@ That "additional stuff" is the health score, the risk flag, and the stakeholder 
 
 If you already run a CRM for a service business, the fix for many small businesses and larger service firms is additive, not a replacement project. You do not need to rip out your CRM to close this gap. The practical move for most service businesses is to feed relationship health back into the system leadership already looks at, so nobody has to open a second tab to find out what is going on.
 
+![Client health scores, written straight back into your CRM](video.mp4)
+
 Here is what that looks like in practice, based on [Kaizan's published integration behaviour](https://kaizan.ai/integrations/) with the two CRMs most service businesses run:
 
 1. **Connect the CRM by OAuth.** Both the HubSpot and Salesforce integrations run on two-way sync, so the connection reads existing records, writes back to them, and fits alongside your existing tools.
