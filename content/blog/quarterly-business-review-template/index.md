@@ -74,6 +74,8 @@ Every action needs an owner and a date, not a general sense of direction. Leave 
 
 The honest version of most QBR prep is an account lead scrolling back through three months of emails and call notes the night before, trying to remember which stakeholder went quiet and when. One agency's Director of AI, Agency Client A, described building an internal tool that pulled Kaizan data straight into their existing QBR process: deck generation that used to take roughly four hours of manual pulling and formatting dropped to about a minute once the health score, risk signals and stakeholder activity fed in automatically rather than being reconstructed from memory each time.
 
+![Your QBR deck, compiled from client conversations automatically](video.mp4)
+
 That's the mechanism behind the note on the health snapshot slide above. If your team runs Kaizan, the relationship health boxes, the stakeholder coverage table and the risk register in this template don't need rebuilding from scratch every quarter: they reflect what [Kaizan's AI Assistant](https://www.kaizan.ai/us/product/#ai-assistant) has already captured from every call, email and chat on the account, continuously, not just in the week before a review. One agency's MD and Chief Client Officer, Agency Client B, put it plainly when describing the same shift in a different report built the same way:
 
 > "Kaizan is fast becoming the key input to my churn report. Something that used to take me hours now takes me minutes."

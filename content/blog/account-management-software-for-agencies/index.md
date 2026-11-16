@@ -59,6 +59,8 @@ Four patterns show up in almost every agency that goes looking for account manag
 
 Not every feature on a vendor's homepage earns its keep. When comparing **account management software solutions**, these are the ones that actually change what a team can do.
 
+![Every client's health and risk, across your whole book](video.mp4)
+
 **Automatic capture across calls, email and chat.** The single biggest predictor of whether a tool gets used: does someone have to type the update in, or does the system capture it from the meeting and the inbox on its own, reducing **routine tasks** and manual **follow ups**. Manual entry is where every account-management rollout quietly dies, because the moment things get busy, logging is the first thing to slip.
 
 **Health scoring and early risk alerts.** A score that updates from real conversations, not a quarterly survey, and flags risk while there's still time to act rather than at renewal, with **ai driven insights** from account data. In Kaizan's benchmark dataset, accounts in the top cohort for health and growth surfaced 2.2x more risk mentions per year than the bottom cohort, not because they had more problems, but because more was being said out loud and more of it was being captured. A quiet risk register on an active account is a warning sign, not a green light.

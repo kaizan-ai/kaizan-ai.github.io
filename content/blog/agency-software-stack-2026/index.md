@@ -131,8 +131,6 @@ This is the job every other category in this list leaves open. A CRM records dea
 
 **The AI and integration layer** is the newest addition to the stack, and the fastest-moving. Most teams now have ai powered assistants and ai tools open all day (ChatGPT, Claude, Microsoft Copilot), separate from whatever tools run delivery. The gap that creates: an assistant with no connection to actual client data can draft a plausible-sounding email, but it can't tell you what was actually discussed on last week's call. Tools built on MCP (Model Context Protocol) close that gap by letting your existing AI assistant query your own client data directly, with sources, rather than replacing the assistant with yet another login, while workflow automation can automate repetitive tasks between systems without extra manual work.
 
-### The Features That Matter, Whichever Job You're Buying For
-
 ### The Key Features That Matter, Whichever Job You're Buying For
 
 - **Automatic capture over manual entry.** Any feature that depends on someone remembering to type something in gets used for two weeks and then quietly abandoned. The honest question for every vendor demo: what updates itself, and what does a human have to type?
@@ -277,6 +275,8 @@ Gabriella Krite, Managing Partner of Operations at The Kite Factory, described t
 Kaizan customers see 26%+ average revenue growth per client across their portfolio, alongside 45% of revenue at risk protected through early signals, 5.4 hours of admin saved per person every week, and a 33% lower cost to serve each client, all drawn from Kaizan's own portfolio data. Kaizan is priced by number of clients, with unlimited users. Price on quote. That matters directly for the all-in-one-versus-best-of-breed question above: because Kaizan prices per client rather than per seat, growing your account team doesn't change the bill, only growing your client portfolio does, and reducing manual work strengthens a successful agency by freeing teams to focus on growth and service. Every engagement starts with a free 14-day pilot on your own data, with [CARE scores and findings back within 14 days](https://kaizan.ai/pricing/).
 
 This doesn't replace the other seven categories in this guide. It's the layer that sits across whichever CRM and project tools you already run, closing the one job a stack otherwise leaves entirely to memory and a monthly spreadsheet.
+
+![One client account: the health score, the risks and the evidence behind them](video.mp4)
 
 ## How We Assessed These Tools
 

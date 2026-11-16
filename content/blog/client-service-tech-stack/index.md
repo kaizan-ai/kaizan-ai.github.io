@@ -126,8 +126,6 @@ This list sorts 25 tools by the job they do, not by marketing category, because 
 | **Custify** | SMB to mid-market CS teams | Quote-based | Smaller ecosystem of integrations than the category leaders |
 | **Kaizan** | Agencies, consultancies and professional services firms running many client relationships across dispersed teams | Kaizan is priced by number of clients. Price on quote. [Full pricing](https://kaizan.ai/pricing/) | Priced per client, not per seat, which suits firms where many people touch one account but is a different model to budget for than a per-seat tool |
 
-### Score And Health: Customer Success Management Tools For Customer Success Teams
-
 ### Act And Automate: Turning A Score Into A Task
 
 | Tool | Best for | Pricing model | Real limitation |
@@ -223,6 +221,8 @@ Kaizan is priced by number of clients, with no additional cost as the team using
 ## An Example: What Changed When An Agency Added A Client Intelligence Layer
 
 Greg Gifford, Chief Operating Officer at SearchLab, described the problem most agencies don't know they have until it's solved: "We didn't realise that there was a problem of the throughput of connecting everything together and having a searchable place to go for each client that improves customer relationships. We didn't realise we needed it, but once we had it, we were like, oh my God, we were missing the boat."
+
+![From client call to health score to follow-up, with no admin in between](video.mp4)
 
 The effect wasn't just time saved. It showed up in how the agency talks about its own budget: "It is the one tool that whenever we have efficiency discussions or cost cutting discussions or budget discussions, it is never even on the table to discuss [Kaizan], because it is absolutely vital to everything that we do, and we cannot live without it." SearchLab also uses the layer directly against churn risk: "We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."
 

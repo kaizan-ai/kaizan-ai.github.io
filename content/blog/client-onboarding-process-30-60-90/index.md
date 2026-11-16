@@ -84,6 +84,8 @@ The handover step is the one teams skip, because nothing forces it. Without an e
 
 The following is an illustrative composite, built from the pattern above rather than one named client, to show what the plan looks like filled in rather than described.
 
+![Spot a quiet decision-maker before day 30](video.mp4)
+
 **Day -5.** The handover call surfaces that sales verbally promised a monthly in-person review the client hadn't asked for twice. The Account Director flags it in the brief so delivery doesn't under- or over-deliver against a promise nobody wrote down.
 
 **Day 1.** Kickoff runs to the agenda in the Scripts section below. The client names a second decision-maker (finance) the sales process never surfaced.

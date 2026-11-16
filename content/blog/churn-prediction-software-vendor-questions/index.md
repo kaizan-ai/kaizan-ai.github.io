@@ -90,6 +90,8 @@ These are the questions worth asking every vendor on a shortlist, including the 
 7. **Can you see the evidence behind a score, or just the number?** A score with no evidence is unauditable. If an account manager cannot click through to the call or email that moved the number, nobody can sanity-check the model, coach against it, or defend it to a client-facing team that does not trust a black box.
 8. **What happens when the model is wrong?** Every model produces false positives and false negatives. Ask for an honest estimate of each, and ask what a team is supposed to do when the score and their own judgment disagree. A vendor with no answer here has not thought about it.
 
+![Ask why a score dropped, and see the call that explains it](video.mp4)
+
 ### On data handling and governance
 
 This is the section a Head of AI or Technology lead will not let a vendor skip, and the one a churn-prediction vendor page is least likely to answer unprompted.

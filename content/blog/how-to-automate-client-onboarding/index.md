@@ -119,9 +119,15 @@ No single tool does all seven. Most firms connect two or three systems they alre
 
 The firm below is a composite, built to show how the seven steps run together. It is not a named client.
 
-A 40-person performance marketing agency signs a $12,000-a-month retainer. The contract is signed in DocuSign on a Tuesday afternoon. Within two minutes, a webhook creates the client record in HubSpot, which fires the welcome email with the intake form and a Calendly link. By Wednesday morning, the client has booked Friday for kickoff and returned the intake form missing only the ad account access, which an automated reminder catches at the 48-hour mark.
+A 40-person performance marketing agency signs a $12,000-a-month retainer.
 
-Thursday, operations spins up the Slack channel and the ClickUp project from a template, and the account lead reviews the auto-generated scope confirmation against the original proposal, catching one line item sales had promised verbally that wasn't in the contract. That gets resolved before the client ever sees it. The internal kickoff happens Thursday afternoon. The client kickoff runs Friday with the whole team aligned on ownership. The 30, 60 and 90-day reviews go into the calendar before anyone leaves that call.
+**Day 1 (Tuesday).** The contract is signed in DocuSign in the afternoon. Within two minutes, a webhook creates the client record in HubSpot, which fires the welcome email with the intake form and a Calendly link.
+
+**Day 2 (Wednesday).** By the morning, the client has booked Friday for kickoff and returned the intake form missing only the ad account access, which an automated reminder catches at the 48-hour mark.
+
+**Day 3 (Thursday).** Operations spins up the Slack channel and the ClickUp project from a template, and the account lead reviews the auto-generated scope confirmation against the original proposal, catching one line item sales had promised verbally that wasn't in the contract. That gets resolved before the client ever sees it. The internal kickoff happens that afternoon.
+
+**Day 4 (Friday).** The client kickoff runs with the whole team aligned on ownership. The 30, 60 and 90-day reviews go into the calendar before anyone leaves that call.
 
 Where it broke down in an earlier, pre-automation version of this same agency: access requests went out once and were never followed up, so the account team spent the first two weeks unable to see the ad accounts they were meant to be managing, and the client's first impression was that the agency "didn't seem ready."
 

@@ -2089,14 +2089,63 @@ button { font-family: inherit; }
   .kz-post-body .kz-table-wide .kz-tl-icon { height: 16px; }
 }
 @media (min-width: 900px) {
-  /* The title spans the same width as the graphics and starts at their left edge. */
-  .kz-post-body .kz-post-title { width: min(1100px, calc(100vw - 2 * var(--kz-gutter))); max-width: none;
+  /* The title spans the same width as the graphics and starts at their left edge, when a
+     graphic sits right under it; otherwise it lines up with the text. */
+  .kz-post-body .kz-post-title:has(+ .kz-post-hero, + p > img:only-child) { width: min(1100px, calc(100vw - 2 * var(--kz-gutter))); max-width: none;
     position: relative; left: 50%; transform: translateX(-50%); }
   /* Never taller than the screen: a tall graphic shrinks to fit and stays centred. */
   .kz-post-body > p:has(> img:only-child) > img, .kz-post-body .kz-post-hero {
     max-height: calc(100vh - 110px); object-fit: contain;
   }
   .kz-post-body > p:has(> img:only-child) > img { width: auto; max-width: 100%; display: block; margin: 0 auto; }
+}
+/* Bold-led paragraphs (tools/blog.py _leads): the point on its own line, the explanation
+   below it behind a yellow bar. */
+.kz-post-body .kz-lead { margin: 0; }  /* spacing comes from the post body's gap */
+.kz-post-body .kz-lead > .kz-lead-t { margin: 0 0 6px !important; font-size: 1.08em; line-height: 1.4; }
+.kz-post-body .kz-lead > .kz-lead-b { margin: 0 !important; padding: 2px 0 2px 16px; border-left: 3px solid var(--kz-yellow); }
+.kz-post-body .kz-lead-li > .kz-lead-t { display: block; margin: 0 0 6px; font-size: 1.04em; line-height: 1.45; }
+.kz-post-body .kz-lead-li > .kz-lead-b { display: block; padding: 2px 0 2px 16px; border-left: 3px solid var(--kz-yellow); }
+.kz-post-body li.kz-lead-li + li.kz-lead-li { margin-top: 10px; }
+/* Product videos (tools/blog.py _videos): framed like the graphics, as wide as them when
+   they sit straight in the post, never taller than the screen. */
+/* A full-width black strip behind each video, so it reads as its own moment in the article. */
+.kz-post-body .kz-post-video {
+  margin: 26px 0; padding: 44px 0 40px; background: #0A0A0A;
+  box-shadow: 0 0 0 100vmax #0A0A0A; clip-path: inset(0 -100vmax);
+}
+.kz-post-body .kz-post-video video { border-color: #2a2a2a !important; }
+.kz-post-body .kz-post-video .kz-video-head strong { color: #fff !important; }
+.kz-post-body .kz-post-video .kz-video-link { color: #fff; }
+.kz-post-body .kz-post-video .kz-video-link:hover { color: #fff; background: none; border-bottom-color: #fff; }
+.kz-post-body .kz-post-video .kz-video-link { text-decoration: none; }
+.kz-post-body .kz-video-head { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 0 0 14px; text-align: left; }
+.kz-post-body .kz-video-kicker {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 7px;
+  background: var(--kz-yellow); color: var(--kz-ink); border-radius: 999px; padding: 4px 12px 4px 10px;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+.kz-post-body .kz-video-kicker::before { content: ''; border-left: 8px solid currentColor;
+  border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.kz-post-body .kz-video-head strong { font-size: clamp(20px, 2vw, 24px); line-height: 1.3; font-weight: 700; color: var(--kz-ink); }
+.kz-post-body .kz-video-link {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-weight: 700; font-size: 16px;
+  color: var(--kz-ink); text-decoration: none; border-bottom: 2px solid var(--kz-yellow); padding-bottom: 2px;
+}
+.kz-post-body .kz-video-link:hover { border-bottom-color: var(--kz-ink); }
+.kz-post-body .kz-video-link span { transition: transform .15s; }
+.kz-post-body .kz-video-link:hover span { transform: translateX(3px); }
+.kz-post-body .kz-post-video video {
+  display: block; width: 100%; height: auto; max-height: calc(100vh - 110px); background: #111;
+  border: 2px solid var(--kz-ink); border-radius: 14px; box-shadow: 6px 6px 0 var(--kz-yellow);
+}
+/* The videos have no sound, so no volume or mute control to suggest otherwise. */
+.kz-post-video video::-webkit-media-controls-mute-button,
+.kz-post-video video::-webkit-media-controls-volume-slider,
+.kz-post-video video::-webkit-media-controls-volume-control-container { display: none !important; }
+@media (min-width: 900px) {
+  .kz-post-body > .kz-post-video { width: min(1000px, calc(100vw - 2 * var(--kz-gutter)));
+    position: relative; left: 50%; transform: translateX(-50%); }
 }
 /* Email scripts (tools/blog.py _emails): a message window, not a code block. */
 .kz-post-body .kz-email {
