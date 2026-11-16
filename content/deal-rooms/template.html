@@ -313,6 +313,8 @@ th { background: var(--k-butter); }
 .prop-pills span { color: #fff; font-size: .78rem; font-weight: 700; padding: 4px 10px; border-radius: 10px 10px 10px 2px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 .chip-edit, .chip-confirm { display: none !important; }
+.card.stat .s:has(.stat-logo) { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.card.stat .stat-logo { height: 26px; width: auto; max-width: 140px; object-fit: contain; display: block; }
 .day.flow.how-flow li.step { grid-template-columns: 290px 1fr; }
 .day.flow.how-flow .d { display: inline-flex; align-items: center; gap: 12px; padding: 7px 16px 7px 7px; font-size: 1rem; max-width: 270px; }
 .day.flow.how-flow .d .n { flex: none; width: 42px; height: 42px; border-radius: 50%; background: #141210; color: var(--k-gold);
@@ -2623,6 +2625,7 @@ function buildNav(el, flat) {
   el.innerHTML = h;
 }
 function route() {
+  statLogos();
   const id = (location.hash || "#start").slice(1);
   const el = document.getElementById(id);
   const target = el && el.classList.contains("page") ? id : "start";
@@ -2642,6 +2645,27 @@ window.addEventListener("hashchange", route);
 const KEY = "kaizan-deal-room-visitor";
 function getVisitor() { try { return JSON.parse(localStorage.getItem(KEY) || "null"); } catch { return null; } }
 function setVisitor(v) { try { localStorage.setItem(KEY, JSON.stringify(v)); } catch {} }
+/* Stat cards that credit a client show the client's logo instead of the name. */
+const CLIENT_LOGOS = {
+  "Gravity Global": "../../assets/img/deal-room/logo-gravity-global.svg",
+  "Kite Factory": "../../assets/img/deal-room/logo-kite-factory.png",
+  "The Kite Factory": "../../assets/img/deal-room/logo-kite-factory.png",
+  "NP Digital": "../../assets/img/deal-room/logo-np-digital.png",
+  "Tradedoubler": "../../assets/img/deal-room/logo-tradedoubler.png",
+  "Collective Content": "../../assets/img/deal-room/logo-collective-content.png",
+  "Transmission": "../../assets/img/deal-room/logo-transmission.png"
+};
+function statLogos() {
+  document.querySelectorAll(".card.stat .s").forEach(el => {
+    if (el.dataset.logo) return;
+    const text = el.textContent.trim();
+    const name = Object.keys(CLIENT_LOGOS).sort((a, b) => b.length - a.length).find(n => text === n || text.startsWith(n + ","));
+    if (!name) return;
+    el.dataset.logo = "1";
+    const rest = text.slice(name.length).replace(/^,\s*/, "");
+    el.innerHTML = `<img class="stat-logo" src="${CLIENT_LOGOS[name]}" alt="${esc(name)}">` + (rest ? `<span>${esc(rest)}</span>` : "");
+  });
+}
 function openRoom(v) { document.getElementById("gate").classList.add("hidden"); document.getElementById("who-name").textContent = v.name.split(" ")[0] || "you"; route(); playHero(); }
 /* Start the film as soon as the room opens. With sound when the browser allows it (the sign-in
    click counts as permission); otherwise muted, and the controls let the visitor turn sound on. */
