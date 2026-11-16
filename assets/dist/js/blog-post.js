@@ -28,3 +28,18 @@ if (!ticking) { ticking = true; window.requestAnimationFrame(fill); }
 window.addEventListener('resize', fill);
 fill();
 })();
+(function () {
+'use strict';
+document.querySelectorAll('.kz-film').forEach(function (fig) {
+var v = fig.querySelector('video'), btn = fig.querySelector('.kz-film-play');
+if (!v || !btn) return;
+fig.classList.add('js-kz-film');
+btn.addEventListener('click', function () {
+v.muted = false;
+var p = v.play();
+if (p && p.catch) p.catch(function () {});
+});
+v.addEventListener('play', function () { fig.classList.add('is-playing'); });
+v.addEventListener('ended', function () { fig.classList.remove('is-playing'); });
+});
+})();
