@@ -32,3 +32,10 @@ To take a room down, delete its file and merge.
 - `shared.json`: what every room shows: the film and demo, role and case study videos, case study people, IT
   document links and the mutual action plan steps.
 - Videos and images: `assets/video/deal-room/` and `assets/img/deal-room/`.
+
+## Replacing a video
+
+Overwrite the file in `assets/video/deal-room/` under the same name and merge. The room links the
+file with a `?v=` content hash, but the build only re-runs for changes under `content/`,
+`tools/`, `assets/css/` and `assets/js/`: include a small change under `content/` (this
+README will do) in the same PR, so the hash updates and visitors get the new video.
