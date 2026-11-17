@@ -1829,6 +1829,17 @@ def trial_done_inner_html() -> str:
             14-day trial set up.</p>'''
 
 
+FEATURE_FILM = 'blog/ai-for-client-service/future-of-client-service/#film'
+
+
+def watch_video_btn(depth: int, cls: str = 'kz-hero-pill', style: str = '') -> str:
+    """Hero button under "Book a demo", styled exactly like it (pass that button's classes and
+    style): opens the Kaizan video on its feature post."""
+    style_attr = f' style="{style}"' if style else ''
+    return (f'<a class="{cls} kz-watch-btn" href="{relpath(depth)}{FEATURE_FILM}"{style_attr}>'
+            '<span class="kz-watch-btn-ic" aria-hidden="true"></span>Watch the video</a>')
+
+
 def trial_hero_copy_html(depth: int) -> str:
     """The hero headline/lede/checks/CTA-stack that sits beside the trial card
     on the home hero. Shared with render_confirmation() so the /confirmation/
@@ -3226,8 +3237,9 @@ def render_product() -> str:
           Client News shares market intel that affects clients.
           Together they form a system of truth and action for your client teams.
         </p>
-        <div class="cta">
-          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo →</a>
+        <div class="cta kz-cta-stack">
+          <a class="kz-btn kz-btn-yellow" style="padding:14px 22px;" href="/demo/">Book a demo</a>
+          {watch_video_btn(1, 'kz-btn kz-btn-yellow', 'padding:14px 22px;')}
         </div>
       </div>
       <div class="kz-pillar-bubbles kz-reveal-row" data-reveal-row>
@@ -7791,6 +7803,7 @@ def _cs_hero_copy_html(depth: int, home: bool = False) -> str:
           <p class="kz-hero-v2-lede">{lede}</p>
           <div class="kz-hero-v2-cta">
             <a class="kz-hero-pill" href="{p}demo/">Book a demo</a>
+            {watch_video_btn(depth) if home else ''}
           </div>
         </div>
       </div>'''

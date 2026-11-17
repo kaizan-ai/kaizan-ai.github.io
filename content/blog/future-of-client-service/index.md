@@ -1,5 +1,5 @@
 ---
-title: The future of client service
+title: The Future of Client Service
 date: 2026-11-16
 author: Kaizan
 category: POV
@@ -7,6 +7,7 @@ topic: ai-for-client-service
 layout: feature
 hero: hero.jpg
 closing: This is what Kaizan does
+dek: What if AI agents helped you achieve more for every client?
 excerpt: Agencies and consultancies are being asked to do more for the same fee. The firms pulling ahead are building one client memory that everything else draws on.
 cover: cover.jpg
 draft: false
