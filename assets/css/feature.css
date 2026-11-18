@@ -20,7 +20,7 @@
 }
 .kz-feat-hero-in {
   position: relative; z-index: 1; width: 100%; max-width: 1180px; margin: 0 auto;
-  padding: 120px var(--kz-gutter, 24px) 76px;
+  padding: 120px 24px 76px;  /* not the site gutter: it grows on wide screens and this box is already centred */
   animation: kz-feat-rise .9s .15s cubic-bezier(.2,.7,.2,1) both;
 }
 .kz-feat-kicker {
@@ -38,7 +38,7 @@
 .kz-feat-meta { display: flex; flex-wrap: wrap; gap: 6px 0; margin-top: 26px; color: rgba(255,255,255,.66); font-size: 14.5px; font-weight: 600; }
 .kz-feat-meta span + span::before { content: '·'; margin: 0 12px; color: var(--kz-yellow); }
 .kz-feat-watch {
-  display: inline-flex; align-items: center; gap: 12px; margin-top: 34px; padding: 15px 26px 15px 18px;
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 28px; padding: 15px 26px 15px 18px;
   background: var(--kz-yellow); color: #0A0A0A !important; border-radius: 999px; text-decoration: none !important;
   font-size: 17px; font-weight: 800; box-shadow: 0 10px 30px rgba(255,185,0,.25); transition: transform .2s, box-shadow .2s;
 }
@@ -54,8 +54,9 @@
 
 /* ── Long-read body ───────────────────────────────────────────────── */
 .kz-feature .kz-feat-body { padding-top: 72px; max-width: 680px; }  /* ~70 characters a line */
-.kz-feature .kz-feat-body > .kz-lede-p { font-size: 22px; line-height: 1.6; font-weight: 500; }
-.kz-feature .kz-feat-body > p { font-size: 19px; line-height: 1.75; }
+.kz-feature .kz-feat-body > .kz-lede-p { font-size: 23px; line-height: 1.65; font-weight: 500; }
+.kz-feature .kz-feat-body > p { font-size: 23px; line-height: 1.65; letter-spacing: -0.005em; }
+.kz-feature .kz-feat-body { gap: 28px; }
 .kz-feature .kz-feat-body > h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.12; margin-top: 64px; }
 
 /* Pull quotes: big, bold, a gold quote mark, no box. */
@@ -78,7 +79,7 @@
   background: var(--kz-yellow-soft); box-shadow: 0 0 0 100vmax var(--kz-yellow-soft); clip-path: inset(0 -100vmax);
 }
 .kz-feature .kz-feat-band > h2 { font-size: clamp(30px, 3vw, 40px); line-height: 1.12; margin-top: 56px; }
-.kz-feature .kz-feat-band > p { font-size: 19px; line-height: 1.75; }
+.kz-feature .kz-feat-band > p { font-size: 23px; line-height: 1.65; }
 /* The band runs straight into the film's black strip, with no cream gap between. */
 .kz-feature .kz-feat-band:has(+ .kz-film) { margin-bottom: 0; }
 .kz-feature .kz-feat-band + .kz-film { margin-top: -24px; }
@@ -129,7 +130,7 @@
   .kz-feat-hero::after { background: linear-gradient(0deg, rgba(10,10,10,.96) 0%, rgba(10,10,10,.75) 55%, rgba(10,10,10,.25) 100%); }
   .kz-feat-hero-in { padding: 96px 20px 44px; }
   .kz-feature .kz-feat-body { padding-top: 44px; }
-  .kz-feature .kz-feat-body > p { font-size: 17.5px; }
+  .kz-feature .kz-feat-body > p, .kz-feature .kz-feat-body > .kz-lede-p { font-size: 19px; }
   .kz-feature .kz-feat-body > blockquote { padding-left: 44px; }
   .kz-feature .kz-feat-body > blockquote::before { font-size: 72px; }
   .kz-post-body .js-kz-film .kz-film-play { padding: 10px 18px 10px 10px; font-size: 15px; gap: 10px; }
@@ -142,3 +143,44 @@
 .kz-feature .kz-feat-body { padding-bottom: 96px; }
 .kz-feature .kz-post-back { margin-top: 24px; }
 @media (max-width: 700px) { .kz-feature .kz-feat-body { padding-bottom: 64px; } }
+
+/* The button sits under the title and subheading, above the date line, so it shows without scrolling. */
+.kz-feat-watch + .kz-feat-dek { margin-top: 24px; }
+.kz-feat-hero { align-items: center; }
+
+/* Author sign-off under the essay. */
+.kz-feature .kz-feat-signoff { display: flex; align-items: center; gap: 16px; margin-top: 8px;
+  width: fit-content; min-width: 180px; }
+.kz-feature .kz-feat-signoff-txt { display: flex; flex-direction: column; gap: 2px; }
+.kz-feature .kz-feat-signoff-photo { width: 64px; height: 64px; border-radius: 50% !important; object-fit: cover;
+  border: 1.5px solid var(--kz-yellow) !important; margin: 0 !important; flex: none; }
+.kz-feature .kz-feat-signoff strong { font-size: 19px; }
+.kz-feature .kz-feat-signoff span { color: #5b574b; font-size: 16px; }
+.kz-feature .kz-feat-end-cta { margin-top: 16px; }
+/* Shorter laptop screens: a smaller title and less padding keep "Watch the film" well above the fold. */
+@media (max-height: 860px) and (min-width: 701px) {
+  .kz-feat-hero { min-height: calc(100vh - 86px); }
+  .kz-feat-hero-in { padding-top: 56px; padding-bottom: 56px; }
+  .kz-feat-title { font-size: clamp(44px, min(7.4vw, 11vh), 112px) !important; }
+  .kz-feat-title::after { margin-top: 22px; }
+  .kz-feat-dek { margin-top: 18px; }
+}
+
+/* Very short windows (small laptops, bookmarks bars): the hero hugs its content. */
+@media (max-height: 720px) and (min-width: 701px) {
+  .kz-feat-hero { min-height: 0; }
+  .kz-feat-hero-in { padding-top: 40px; padding-bottom: 40px; }
+  .kz-feat-title { font-size: clamp(40px, min(7vw, 10vh), 96px) !important; }
+}
+
+/* Wide screens: the photo sits to the right, with solid dark under the title, so the
+   text never lands on the bright TV however wide the window. */
+@media (min-width: 1500px) {
+  .kz-feat-hero-img { left: auto; right: 0; width: max(62%, calc(100% - (100vw - 1180px) / 2 - 560px)); object-position: 40% 35%; }
+  .kz-feat-hero::after {
+    background:
+      linear-gradient(90deg, #0A0A0A 0%, #0A0A0A calc(100% - max(62%, calc(100% - (100vw - 1180px) / 2 - 560px))),
+        rgba(10,10,10,.55) calc(100% - max(62%, calc(100% - (100vw - 1180px) / 2 - 560px)) + 220px), rgba(10,10,10,.08) 85%, rgba(10,10,10,0) 100%),
+      linear-gradient(0deg, rgba(10,10,10,.8) 0%, rgba(10,10,10,0) 40%);
+  }
+}
