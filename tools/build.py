@@ -3953,6 +3953,18 @@ def render_blog_feature(post: dict) -> str:
     watch = (f'<a class="kz-feat-watch" href="#{film.group(1)}"><span class="kz-feat-watch-ic" aria-hidden="true"></span>'
              'Watch the film</a>') if film else ''
     label = blog.TOPICS.get(post['topic'], ('',))[0]
+    # `signoff: Name | Title` -> the author's sign-off under the essay.
+    who = [x.strip() for x in post.get('signoff', '').split('|') if x.strip()]
+    photo = ''
+    if post.get('signoff_photo'):  # `signoff_photo: glen.jpg` in the post folder -> a round headshot
+        rel = f"assets/img/blog/{slug}/{post['signoff_photo']}"
+        photo = f'<img class="kz-feat-signoff-photo" src="{p}{rel}{asset_v(rel)}" alt="{E(who[0]) if who else ""}" width="64" height="64">'
+    signoff = (f'<div class="kz-feat-signoff">{photo}<div class="kz-feat-signoff-txt"><strong>{E(who[0])}</strong>'
+               + ''.join(f'<span>{E(x)}</span>' for x in who[1:]) + '</div></div>') if who else ''
+    # Without a closing panel, the essay still ends on the booking buttons.
+    cta = (f'<div class="kz-feat-close-cta kz-feat-end-cta">'
+           f'<a class="kz-feat-btn kz-feat-btn-primary" href="{p}demo/">Book a demo</a>'
+           f'<a class="kz-feat-btn" href="{p}product/">Explore the platform</a></div>')
     page = f'''
     {nav_html(3, active='Blog')}
     <article class="kz-post kz-feature">
@@ -3960,14 +3972,15 @@ def render_blog_feature(post: dict) -> str:
         <img class="kz-feat-hero-img" src="{p}{hero_rel}{asset_v(hero_rel)}" alt="" fetchpriority="high" decoding="async">
         <div class="kz-feat-hero-in">
           <h1 class="kz-feat-title">{E(post['title'])}</h1>
+          {watch}
           {f'<p class="kz-feat-dek">{E(post["dek"])}</p>' if post.get('dek') else ''}
           <div class="kz-feat-meta">{''.join(f'<span>{x}</span>' for x in meta)}</div>
-          {watch}
         </div>
       </header>
       <div class="kz-essay-body kz-post-body kz-feat-body">
         {body}
-        {closing}
+        {signoff}
+        {closing or cta}
         <div class="kz-post-back"><a href="../">← More in {E(label)}</a> · <a href="../../">All posts</a></div>
       </div>
     </article>
