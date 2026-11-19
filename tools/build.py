@@ -6027,6 +6027,73 @@ HALL_OF_FAME = [
              "love convenience?"),
         ],
     ),
+    dict(
+        slug='leo-berggren',
+        name='Leo Berggren',
+        role='Client Development Manager',
+        company='Tradedoubler',
+        logo='tradedoubler.png',
+        logo_scale=0.7,   # wordmark fills its file edge to edge
+        photo='leo-berggren.jpg',
+        award='Growth Leader',
+        month='October 2026',
+        citation='Steers calls toward new opportunities by constantly leading with expansion and '
+                 'building advocacy in the relationship.',
+        calls=12,
+        stats=[
+            ('Expansion and growth focus', '24%', 'of call time', 'Top 5%'),
+            ('Balanced conversations', '60%', 'of calls', 'Top 5%'),
+            ('Proactivity', '28%', 'of threads and meetings started by him', 'Top 10%'),
+            ('Contribution on balanced calls', '83%', 'of balanced calls', 'Top 15%'),
+            ('New stakeholder contacts', '5', '', 'Top 25%'),
+            ('Stakeholder reach', '42', 'client contacts', 'Top 30%'),
+        ],
+        quote='Sometimes the best thing to do is nothing and just listen.',
+        qa=[
+            ('How did you end up in client service, and what keeps you in it?',
+             'I love the relationships you build in this industry. Meeting new people and '
+             'developing meaningful connections is one of the most rewarding parts of client '
+             'service.'),
+            ("What's the client moment you're proudest of?",
+             'Hard to choose one, but a highlight is always seeing an advertiser performing well '
+             'once they get going with Tradedoubler, and getting positive feedback!'),
+            ('What tells you a client is ready to talk about doing more?',
+             "Once you know the client's needs and demands, you can understand what really fits "
+             "for them. There is no exact moment, but if you know your client well you always "
+             "have a chance of creating more opportunities."),
+            ('How do you bring up a new idea without it feeling like a sales pitch?',
+             'I most often bring it up as a soft subject in meetings, so they can learn a bit more '
+             'about the opportunity before I present it in more depth.'),
+            ('How do you balance listening with sharing your own ideas on a call?',
+             "Nothing I've really thought about! Most of my calls flow naturally, and we both "
+             "share our ideas about how we can thrive. Keeping to a monologue and presenting "
+             "ideas can easily be counterproductive."),
+            ("What's the smallest thing a client said that led to a bigger opportunity?",
+             'That they are happy with the partnership. If the client is happy, we are happy! '
+             'That often leads to more openness to new opportunities.'),
+            ('How do new relationships inside a client help you find room to grow?',
+             'Building new relationships gives me fresh perspectives and helps uncover new ways '
+             'to support the client and grow together.'),
+            ('How do you turn a happy client into someone who champions your work internally?',
+             'Make them feel valued and understand what they are trying to achieve. Sometimes '
+             'the best thing to do is nothing and just listen 😉'),
+            ('When is trying to grow an account the wrong move?',
+             'In affiliate, never. Scaling the overall sales and volume is always the best way '
+             'forward!'),
+            ('What are your 3 pieces of advice for someone starting out in account management?',
+             ['Listen and learn.',
+              'Always aim to understand the client and work towards their KPIs.',
+              'Most importantly, just be yourself!']),
+            ("What's one piece of client service advice you disagree with, and why?",
+             "“The client is always right.” Good client service means listening carefully, "
+             "but also using your expertise to challenge assumptions and recommend the best "
+             "solution."),
+            ('How has AI changed the way you spot opportunities in your accounts?',
+             "There have been so many changes in the world of AI in such a short time. A tool "
+             "like Kaizan has helped me keep track of tasks and follow up on the opportunities "
+             "I have ongoing."),
+        ],
+    ),
 ]
 
 # Kaizan Awards categories: colour + icon per award, from the monthly winners
@@ -6087,7 +6154,7 @@ def _hof_byline(w: dict) -> str:
 
 def _hof_logo_img(w: dict, depth: int) -> str:
     src = f'assets/img/clients/{w["logo"]}'
-    # logo_scale enlarges compact logos (e.g. a short wordmark) to match the others visually.
+    # logo_scale resizes logos (e.g. a short wordmark, or one with no padding) to match the others visually.
     k = f' style="--k:{w["logo_scale"]}"' if w.get('logo_scale') else ''
     return (f'<img class="hof-logo" src="{relpath(depth)}{src}{asset_v(src)}"{k} '
             f'alt="{E(w["company"])}" decoding="async">')
