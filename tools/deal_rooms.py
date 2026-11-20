@@ -27,7 +27,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / 'content' / 'deal-rooms'
 OUT = ROOT / 'room'
-# Rooms may set "path" to publish at a top-level address instead, e.g. "dealroom" -> /dealroom/.
+# Rooms may set "path" to publish at a top-level address instead, e.g. "demo-room" -> /demo-room/.
+# Removing such a room leaves its folder behind: delete that folder in the same PR.
 TOP_LEVEL = 'path'
 
 # Per-prospect fields, with the defaults a new room file starts from.
@@ -71,7 +72,7 @@ def _versioned(m: re.Match) -> str:
         import hashlib
         path = ROOT / rel
         _hashes[rel] = ('?v=' + hashlib.md5(path.read_bytes()).hexdigest()[:8]) if path.is_file() else ''
-    return '/' + rel + _hashes[rel]  # root-relative: works at /room/<slug>/ and /dealroom/
+    return '/' + rel + _hashes[rel]  # root-relative: works at /room/<slug>/ and top-level paths
 
 
 def build(include_drafts: bool = False) -> int:
