@@ -4,12 +4,6 @@ Private sales rooms at `kaizan.ai/room/<slug>/`. They are never indexed, never l
 never in the sitemap. Only someone with the link can find a room, but anyone the link is forwarded to
 can open it, so keep contract terms and anything confidential out of room files.
 
-## The general room
-
-`rooms/dealroom.json` has no prospect set, so it shows general wording (no call quotes, target or
-"prepared for" note) and can be sent to anyone. Its `"path": "dealroom"` publishes it at
-`https://kaizan.ai/dealroom/` instead of under /room/.
-
 ## Make a room for a prospect
 
 1. `python3 tools/deal_rooms.py new "Acme Agency"` creates `rooms/acme-agency-<code>.json`. The random code
