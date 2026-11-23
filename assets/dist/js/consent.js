@@ -87,10 +87,12 @@ switches.forEach(function (s) { s.checked = !!saved[s.dataset.cat]; });
 showTab(tab || 'consent');
 overlay.hidden = false;
 overlay.classList.remove('cb-in'); void overlay.offsetWidth; overlay.classList.add('cb-in');
-if (focus) dialog.focus({ preventScroll: true });
+document.documentElement.style.overflow = 'hidden';
+dialog.focus();
 }
 function close() {
 overlay.hidden = true;
+document.documentElement.style.overflow = '';
 }
 function announce(v) {
 syncConsentMode(v);
@@ -126,8 +128,15 @@ document.getElementById(c.getAttribute('aria-controls')).hidden = expanded;
 overlay.addEventListener('keydown', function (e) {
 if (e.target.classList.contains('cb-tab') && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
 var i = tabs.indexOf(e.target), n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
-showTab(n.dataset.tab); n.focus();
+showTab(n.dataset.tab); n.focus(); return;
 }
+if (e.key !== 'Tab') return;
+var f = [].slice.call(dialog.querySelectorAll('button,input,a[href]')).filter(function (el) {
+return !el.disabled && el.offsetParent !== null; });
+if (!f.length) return;
+var first = f[0], last = f[f.length - 1];
+if (e.shiftKey && (document.activeElement === first || document.activeElement === dialog)) { e.preventDefault(); last.focus(); }
+else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 document.addEventListener('click', function (e) {
 var t = e.target.closest && e.target.closest('[data-cookie-settings]');

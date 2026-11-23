@@ -46,13 +46,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/apple-touch-icon.png?v=8b4221ca">
         <link rel="mask-icon" href="../../assets/img/safari-pinned-tab.svg" color="#FFB900">
         <link rel="stylesheet" href="../../assets/dist/css/tokens.css?v=87f318d4">
-        <link rel="stylesheet" href="../../assets/dist/css/site.css?v=5462777d">
+        <link rel="stylesheet" href="../../assets/dist/css/site.css?v=548e0ac5">
         <script defer src="../../assets/dist/js/site.js?v=d0c1906f"></script>
         <link rel="stylesheet" href="../../assets/dist/css/persona.css?v=28191b97"><script defer src="../../assets/dist/js/persona.js?v=dfb8b73c"></script><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://kaizan.ai/#organization", "name": "Kaizan", "url": "https://kaizan.ai/", "logo": {"@type": "ImageObject", "url": "https://kaizan.ai/assets/img/kaizan-schema-logo.png", "width": 1200, "height": 1200}, "foundingDate": "2021", "foundingLocation": {"@type": "Place", "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"}}, "founder": [{"@type": "Person", "name": "Glen Calvert"}, {"@type": "Person", "name": "Pravin Paratey"}], "contactPoint": {"@type": "ContactPoint", "email": "hello@kaizan.ai", "contactType": "customer support"}, "sameAs": ["https://x.com/Kaizan_ai", "https://www.facebook.com/KaizanApp/", "https://www.instagram.com/kaizan_ai/", "https://www.youtube.com/@kaizan-ai", "https://www.linkedin.com/company/70937532/"]}, {"@type": "WebSite", "@id": "https://kaizan.ai/#website", "name": "Kaizan", "url": "https://kaizan.ai/", "inLanguage": "en-GB", "publisher": {"@id": "https://kaizan.ai/#organization"}}, {"@type": "WebPage", "@id": "https://kaizan.ai/for/client-service-director/#webpage", "url": "https://kaizan.ai/for/client-service-director/", "name": "AI Portfolio Risk Alerts for Service Directors", "description": "Spot client dissatisfaction before the renewal call, onboard new team members in days and see portfolio patterns no single account manager can.", "inLanguage": "en-GB", "isPartOf": {"@id": "https://kaizan.ai/#website"}, "publisher": {"@id": "https://kaizan.ai/#organization"}, "dateModified": "2026-10-09"}, {"@type": "FAQPage", "@id": "https://kaizan.ai/for/client-service-director/#faq", "mainEntity": [{"@type": "Question", "name": "How quickly can a new starter get up to speed on a client they’ve never worked on?", "acceptedAnswer": {"@type": "Answer", "text": "From day one. Every meeting, decision, stakeholder and commitment on the account is searchable, with summaries on demand. Most directors tell us a new joiner contributes meaningfully inside their first week instead of the usual quarter."}}, {"@type": "Question", "name": "How does Kaizan know when a client is unhappy - what signals does it use?", "acceptedAnswer": {"@type": "Answer", "text": "Kaizan reads across the full conversational record - meetings, email and chat - for sentiment shifts, escalation language, stakeholder withdrawal and slipping commitment cadence. Risk signals surface on each client with the underlying evidence, giving teams answers through analysis so you act on context rather than a score in isolation."}}, {"@type": "Question", "name": "Can we tune what counts as a risk for our business?", "acceptedAnswer": {"@type": "Answer", "text": "Risk thresholds, signals and weightings are configurable to your portfolio. We calibrate during rollout so alerts match how your team actually thinks about account health - not a generic model."}}, {"@type": "Question", "name": "How does it handle sensitive conversations - an AM venting, an internal disagreement?", "acceptedAnswer": {"@type": "Answer", "text": "Internal conversations stay internal. Permissions, redaction rules and workspace boundaries are configurable so sensitive content doesn't surface outside the people it's meant for, and there are explicit controls for excluding 1:1s and team-only meetings."}}]}]}</script>
         <!-- HubSpot's own direct tracking script loads only after cookie
              consent for Marketing (see assets/js/consent.js), which also
              sends Consent Mode updates for GTM's own tags. -->
-        <script defer src="../../assets/dist/js/consent.js?v=a54ddfc4"></script>
+        <script defer src="../../assets/dist/js/consent.js?v=4d1cb07a"></script>
         </head>
         <body>
         <div class="kz-page">
@@ -332,7 +332,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <div class="cb-overlay" id="cb-overlay" hidden>
-  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="false" aria-labelledby="cb-title" tabindex="-1">
+  <div class="cb-dialog" id="cb-dialog" role="dialog" aria-modal="true" aria-labelledby="cb-title" tabindex="-1">
+    <div class="cb-head">
+      <span class="cb-logo-lockup"><img class="cb-logo-icon" src="https://kaizan.ai/assets/img/kaizan-icon.png" alt="" width="36" height="36"><img class="cb-logo-img" src="https://kaizan.ai/assets/img/kaizan-logo.png" alt="Kaizan" width="135" height="24"></span>
+    </div>
+
     <div class="cb-tabs" role="tablist" aria-label="Cookie preferences">
       <button class="cb-tab" role="tab" data-tab="consent" aria-selected="true">Consent</button>
       <button class="cb-tab" role="tab" data-tab="details" aria-selected="false" tabindex="-1">Details</button>
@@ -384,14 +388,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="cb-foot" data-foot="consent">
-      <button class="cb-btn line" data-act="manage">Manage cookies</button>
-      <button class="cb-btn dark" data-act="reject">Reject all</button>
-      <button class="cb-btn fill" data-act="accept">Allow all</button>
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
+      <button class="cb-btn line" data-act="manage">Manage cookies &rsaquo;</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
     </div>
     <div class="cb-foot" data-foot="details" hidden>
+      <button class="cb-btn fill" data-act="reject">Reject all</button>
       <button class="cb-btn line" data-act="selection">Allow selection</button>
-      <button class="cb-btn dark" data-act="reject">Reject all</button>
-      <button class="cb-btn fill" data-act="accept">Allow all</button>
+      <button class="cb-btn fill" data-act="accept">Allow all cookies</button>
     </div>
   </div>
 </div>
