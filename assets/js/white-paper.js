@@ -190,6 +190,10 @@
       submitBtn.disabled = true;
       submitBtn.innerHTML = 'Submitting…';
 
+      // Open the PDF tab now, while this is still the user's click (popup blockers
+      // reject window.open after an async call); it's pointed at the PDF on success.
+      var pdfTab = window.open('', '_blank');
+
       var payload = {
         fields: [
           { objectTypeId: '0-1', name: 'email', value: emailVal },
@@ -213,8 +217,13 @@
         // Thank-you copy lives on its own page (render_white_paper_confirmation()
         // in tools/build.py) so the URL reflects the conversion and the visitor
         // can't resubmit by refreshing.
+        // PDF opens in the new tab; this tab goes to the confirmation page so
+        // conversion tracking on that URL is unchanged. If the tab was blocked, the
+        // confirmation page has a download link.
+        if (pdfTab) pdfTab.location.href = 'https://kaizan.ai/assets/white-paper/kaizan-white-paper.pdf';
         window.location.href = 'https://kaizan.ai/white-paper-confirmation';
       }).catch(function () {
+        if (pdfTab) pdfTab.close();
         formError.classList.add('is-visible');
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalHTML;
