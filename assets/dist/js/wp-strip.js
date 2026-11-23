@@ -33,6 +33,7 @@ if (eErr || rErr) { (eErr ? email : role).focus(); return; }
 if (btn.disabled) return;
 var label = btn.innerHTML;
 btn.disabled = true; btn.innerHTML = 'Submitting\u2026';
+var pdfTab = window.open('', '_blank');
 var fields = [
 { objectTypeId: '0-1', name: 'email', value: email.value.trim() },
 { objectTypeId: '0-1', name: 'jobtitle', value: role.value }
@@ -53,8 +54,10 @@ hutk: (document.cookie.match(/hubspotutk=([^;]+)/) || [])[1] }
 if (!res.ok) throw new Error('HubSpot ' + res.status);
 if (window.dataLayer) window.dataLayer.push({ event: 'white_paper_download', form_id: 'wp-strip', role: role.value });
 try { localStorage.setItem('kz-wp-popup', String(Date.now() + 14 * 864e5)); } catch (e) {}
+if (pdfTab) pdfTab.location.href = 'https://kaizan.ai/assets/white-paper/kaizan-white-paper.pdf';
 window.location.href = 'https://kaizan.ai/white-paper-confirmation';
 }).catch(function () {
+if (pdfTab) pdfTab.close();
 fail.classList.add('is-visible');
 btn.disabled = false; btn.innerHTML = label;
 });

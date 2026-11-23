@@ -160,6 +160,7 @@ if (!submitBtn || submitBtn.disabled) return;
 var originalHTML = submitBtn.innerHTML;
 submitBtn.disabled = true;
 submitBtn.innerHTML = 'Submitting…';
+var pdfTab = window.open('', '_blank');
 var payload = {
 fields: [
 { objectTypeId: '0-1', name: 'email', value: emailVal },
@@ -179,8 +180,10 @@ form_id: form.id || 'unknown',
 role: roleVal
 });
 }
+if (pdfTab) pdfTab.location.href = 'https://kaizan.ai/assets/white-paper/kaizan-white-paper.pdf';
 window.location.href = 'https://kaizan.ai/white-paper-confirmation';
 }).catch(function () {
+if (pdfTab) pdfTab.close();
 formError.classList.add('is-visible');
 submitBtn.disabled = false;
 submitBtn.innerHTML = originalHTML;
