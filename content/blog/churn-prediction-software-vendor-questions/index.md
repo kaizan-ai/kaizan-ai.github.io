@@ -10,13 +10,13 @@ draft: false
 tags: [churn prediction, churn management software, vendor evaluation, conversation data, data security, client health]
 ---
 
-Churn prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a customer does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
+Churn prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a client does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
 
 ## The two kinds of churn prediction software, hiding under one label
 
 Almost half of marketers, 45%, name a lack of proactivity as the top reason they put an agency or service firm under review ([RSW/US, 2024 Agency New Business Outlook Report](https://www.rswus.com/)). Churn prediction software exists to close that gap: score the relationship before the client decides to leave, not after. But "churn prediction" describes two genuinely different products, built for two genuinely different businesses.
 
-**Usage-data models** were built for product-led SaaS. They score risk from what a customer does inside a piece of software: logins, feature adoption, seat utilization, support ticket volume, NPS surveys. Gainsight, ChurnZero, Totango and similar tools sit in this category. The model works because the product generates a constant stream of behavioral exhaust, and that exhaust is a reasonable proxy for how the relationship is going.
+**Usage-data models** were built for product-led SaaS. They score risk from what a client does inside a piece of software: logins, feature adoption, seat utilization, support ticket volume, NPS surveys. Gainsight, ChurnZero, Totango and similar tools sit in this category. The model works because the product generates a constant stream of behavioral exhaust, and that exhaust is a reasonable proxy for how the relationship is going.
 
 **Conversation-data models** were built for relationship-led services: agencies, consultancies, managed service providers, anyone whose "product" is a team of people, not software a client logs into. There is no login data to score, because the client never logs into anything. These models instead score risk from the calls, emails, chat threads and meeting notes that make up the relationship itself. Kaizan's CARE model is one example: it scores client satisfaction, activity with stakeholders, relationship strength and expansion signals from the team's own conversations, re-tuned weekly against what has actually predicted a kept client, a lost client or a won pitch at that firm ([kaizan.ai/product](https://www.kaizan.ai/us/product/#health-model)).
 
@@ -121,7 +121,7 @@ The category split (usage-data versus conversation-data churn models) reflects h
 ## Frequently asked questions
 
 **What's the difference between usage-data and conversation-data churn prediction?**
-Churn prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a customer does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
+Churn prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a client does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
 
 **Which type should we choose?**
 Choose a usage-data model if your clients log into a product you built. Choose a conversation-data model if your "product" is a team of people and the relationship runs through calls, emails and meetings instead. Most firms know which one describes them the moment they hear the distinction.

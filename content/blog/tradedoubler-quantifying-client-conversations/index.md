@@ -86,7 +86,7 @@ This allows AI and product leaders to:
 
 - prioritise based on scale, not opinion
 
-This kind of structured insight helps teams monitor performance and understand customer behaviour.
+This kind of structured insight helps teams monitor performance and understand client behaviour.
 
 What was previously anecdotal becomes measurable and actionable.
 
@@ -114,7 +114,7 @@ One of the most powerful outcomes has been the ability to use conversation data 
 
 With access to a growing dataset of client interactions, Tradedoubler can now:
 
-- identify recurring feature requests across markets by analysing patterns in customer interactions
+- identify recurring feature requests across markets by analysing patterns in client interactions
 
 - build data-backed product business cases to better allocate resources
 

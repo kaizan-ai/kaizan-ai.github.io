@@ -1,31 +1,31 @@
 ---
-title: How a B2B Customer Journey Map can be utilised in Professional Services
-meta_title: B2B Customer Journey Maps for Professional Services
+title: How a B2B Client Journey Map can be utilised in Professional Services
+meta_title: B2B Client Journey Maps for Professional Services
 date: 2023-06-29
 category: POV
 topic: playbooks-and-templates
-excerpt: How a B2B customer journey map helps professional services firms understand and improve their clients' experience.
+excerpt: How a B2B client journey map helps professional services firms understand and improve their clients' experience.
 cover: img-1.png
 draft: false
 ---
 
-A customer journey map is a powerful tool for understanding your clients’ experiences. By visualising the steps that a client takes when interacting with your company, it can help you to understand and improve the service you provide.
+A client journey map is a powerful tool for understanding your clients’ experiences. By visualising the steps that a client takes when interacting with your company, it can help you to understand and improve the service you provide.
 
-## Why Is Customer Journey Mapping Important?
+## Why Is Client Journey Mapping Important?
 
-According to the Aberdeen Group, companies that actively manage the customer journey see their return on marketing investment [increase by 24.9% year-on-year](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf) while [reducing service costs by 21.2%](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf). Customer journey mapping is an important tool as it allows businesses to see the experience from the clients’s perspective. This helps businesses identify flaws in the client experience and improve their processes.
+According to the Aberdeen Group, companies that actively manage the client journey see their return on marketing investment [increase by 24.9% year-on-year](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf) while [reducing service costs by 21.2%](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf). Client journey mapping is an important tool as it allows businesses to see the experience from the clients’s perspective. This helps businesses identify flaws in the client experience and improve their processes.
 
 The question of perspective is a critical one. People working inside a business often have a strong grasp on what their processes look like *from the inside*. They understand why processes work the way they do, which ones look efficient to them, and how it feels to work with the process.
 
-Customer journey mapping flips this perspective, forcing businesses and their teams to consider the experience from a client’s point of view. This leads to a clearer grasp of the client journey, understanding their needs and wants. The map goes to the outer boundaries of the process, from a client hearing about the company to the point where they complete a purchase, instead of only considering the time where they are in contact with your team.
+Client journey mapping flips this perspective, forcing businesses and their teams to consider the experience from a client’s point of view. This leads to a clearer grasp of the client journey, understanding their needs and wants. The map goes to the outer boundaries of the process, from a client hearing about the company to the point where they complete a purchase, instead of only considering the time where they are in contact with your team.
 
-As well as providing a change of perspective, customer journey mapping can create a valuable tool for your teams. The maps themselves become a visual reference that employees can use as a reminder of the client experience. Concerned about why fewer clients are calling about the latest product upgrade? Then look at the customer journey map to see where they might be giving up.
+As well as providing a change of perspective, client journey mapping can create a valuable tool for your teams. The maps themselves become a visual reference that employees can use as a reminder of the client experience. Concerned about why fewer clients are calling about the latest product upgrade? Then look at the client journey map to see where they might be giving up.
 
 By understanding the clients’s journey, businesses can find ways to improve their processes, as well as develop targeted marketing and sales strategies that are more likely to succeed.
 
-## What Are the Benefits of Customer Journey Mapping?
+## What Are the Benefits of Client Journey Mapping?
 
-Customer journey mapping provides a more objective view of the client journey than the usual insider perspectives. By taking a journey through the client lifecycle, it increases understanding and identifies areas that need to be improved.
+Client journey mapping provides a more objective view of the client journey than the usual insider perspectives. By taking a journey through the client lifecycle, it increases understanding and identifies areas that need to be improved.
 
 This brings a number of benefits:
 
@@ -33,27 +33,27 @@ This brings a number of benefits:
 
 The processes for acquiring and managing new clients are seldom as efficient as they could be. Steps are included because they seem correct to the business or because they used to work, without proper consideration for their usefulness in bringing on board clients in current circumstances.
 
-Customer journey mapping highlights steps in the process that don’t benefit the client or optimise the client experience. You can then remove these steps. This is also an opportunity to put the process in a rational order, to improve the overall experience.
+Client journey mapping highlights steps in the process that don’t benefit the client or optimise the client experience. You can then remove these steps. This is also an opportunity to put the process in a rational order, to improve the overall experience.
 
 A focus on the client experience draws attention to inbound marketing, how it can be improved, and how it connects to the other processes within the business. This can lead to more efficient lead generation without the extra effort of outbound marketing.
 
 ## Improve the client experience and touchpoints
 
-[80% of customers](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the product the company provides. Customer journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
+[80% of clients](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the product the company provides. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
 
-Mapping a customer journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [33% of customers](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) consider changing brands after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
+Mapping a client journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [33% of clients](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) consider changing brands after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
 
 ## Increase client satisfaction and client retention
 
-Customer journey mapping isn’t just about bringing new clients on board, it’s about keeping your current clients happy.
+Client journey mapping isn’t just about bringing new clients on board, it’s about keeping your current clients happy.
 
-A better client experience means greater client satisfaction, which increases client retention. Mapping out the journey for clients with different experiences lets you shape the journey to their needs. A more personalised range of customer journeys will leave your clients feeling like they are prioritised and working with a client focussed partner.
+A better client experience means greater client satisfaction, which increases client retention. Mapping out the journey for clients with different experiences lets you shape the journey to their needs. A more personalised range of client journeys will leave your clients feeling like they are prioritised and working with a client focussed partner.
 
-The more effective process you can build from customer mapping will improve client experiences, satisfaction, and retention. So how do you go about creating this map?
+The more effective process you can build from client mapping will improve client experiences, satisfaction, and retention. So how do you go about creating this map?
 
-## How to Create a Customer Journey Map
+## How to Create a Client Journey Map
 
-A customer journey map is a visual artefact that shows the different stages a customer goes through when engaging with a company, from the initial awareness stage to the final purchase and post-purchase stages. It can be a flow chart, an illustrated diagram, or a process map. However it looks visually, the steps in creating it are the same:
+A client journey map is a visual artefact that shows the different stages a client goes through when engaging with a company, from the initial awareness stage to the final purchase and post-purchase stages. It can be a flow chart, an illustrated diagram, or a process map. However it looks visually, the steps in creating it are the same:
 
 1. Recruit the right participants.
 
@@ -77,7 +77,7 @@ Let’s look at those steps in more detail:
 
 ## 1. Recruit your mapping team
 
-Ideally, any business process mapping should involve all relevant teams who are involved across the customer journey and at every stage of the process; from customer support teams to product teams and technical specialists. Without their perspectives, you won’t understand the reality of the client experience or the practicalities of time, budget, and attention that goes into it.
+Ideally, any business process mapping should involve all relevant teams who are involved across the client journey and at every stage of the process; from customer support teams to product teams and technical specialists. Without their perspectives, you won’t understand the reality of the client experience or the practicalities of time, budget, and attention that goes into it.
 
 That said, practicalities will limit participation. Busy team members might not be available for the whole time needed for a mapping activity. Negotiate with team leaders to get the colleagues you need, pointing out the benefits that the mapping exercise could bring to them in the long run. Plan your mapping time around who will be available, when, and for how long.
 
@@ -125,7 +125,7 @@ The first thing that you and your mapping group should do is to identify your cl
 
 As with data sources, there are a lot of options.
 
-If you’re not sure where clients are likely to find you, then Google search and Google analytics data can be useful in identifying where and how you’re seen. But that’s just the start. You should try to map out all the touchpoints in the customer journey, through to the customer buying your product or independently using a subscription service.
+If you’re not sure where clients are likely to find you, then Google search and Google analytics data can be useful in identifying where and how you’re seen. But that’s just the start. You should try to map out all the touchpoints in the client journey, through to the client buying your product or independently using a subscription service.
 
 As you identify the touchpoints, put them in order on the process flow diagram you’re building, with space to rearrange them and add extra details as the map grows. This might mean using sticky notes on a wall, scribbling on a set of flip charts, or moving text boxes around a screen, whatever works best for you.
 
@@ -141,7 +141,7 @@ The case for reducing actions by your team is fairly self-explanatory: less work
 
 Next, map out the client’s emotions and needs at each stage of their journey.
 
-Though some people disparage talking about emotions, understanding them is crucial to success. Clients find rational reasons to explain their purchasing decisions, but those decisions are determined by how the client feels. If their experience with you is negative then they’re going to go to your competitors. If you can make them feel positive about working with you, then they’ll seek opportunities to do it again. Look at how clients feel about their experiences along the customer journey and record this on the map.
+Though some people disparage talking about emotions, understanding them is crucial to success. Clients find rational reasons to explain their purchasing decisions, but those decisions are determined by how the client feels. If their experience with you is negative then they’re going to go to your competitors. If you can make them feel positive about working with you, then they’ll seek opportunities to do it again. Look at how clients feel about their experiences along the client journey and record this on the map.
 
 Clients’ emotions will be shaped by their needs and what you do to fulfil them. The better you can meet their needs, the more likely you are to impress them. While each client has an overarching need within the process, such as buying a new accounting system, they also have specific needs at different stages, such as receiving an accurate cost estimate or getting a quick response to their messages. It’s worth mapping out these needs to see which of them are being met.
 
@@ -167,20 +167,20 @@ Once you’ve identified all the pain points, look for solutions to the problems
 
 By this point, you should have a good grasp of what the journey looks like for the client. It’s also important to make space for issues that directly relate to running the business. In particular, you should identify the teams and resources involved at each stage.
 
-Most of the time, this is straightforward: you can look at a step in the process, identify which team deals with it, and ask them what resources they use. If this is ever unclear, then you’ve found an area of ambiguity which may need to be improved. Get the relevant colleagues to make a decision now about who has ownership of the process at that point, to make sure that no part of the customer journey is neglected.
+Most of the time, this is straightforward: you can look at a step in the process, identify which team deals with it, and ask them what resources they use. If this is ever unclear, then you’ve found an area of ambiguity which may need to be improved. Get the relevant colleagues to make a decision now about who has ownership of the process at that point, to make sure that no part of the client journey is neglected.
 
-To make the map more user-friendly colour code or mark out which parts of the journey sit with each team. This helps relevant teams easily identify the part of the customer journey that they impact and have responsibility for.
+To make the map more user-friendly colour code or mark out which parts of the journey sit with each team. This helps relevant teams easily identify the part of the client journey that they impact and have responsibility for.
 
 ## 9. Rinse and repeat…
 
-Having mapped the customer journey across one experience or marketing channel, it’s worth repeating the exercise for other clients.
+Having mapped the client journey across one experience or marketing channel, it’s worth repeating the exercise for other clients.
 
-Fortunately, the work you’ve already done will help. A lot of customer journeys will be variations on the same theme, and you can use the touchpoints from one map as the basis for analysing multiple client journeys. Even where there are variations, you’ll be able to save time by taking a lot of the data and analysis from one map to another.
+Fortunately, the work you’ve already done will help. A lot of client journeys will be variations on the same theme, and you can use the touchpoints from one map as the basis for analysing multiple client journeys. Even where there are variations, you’ll be able to save time by taking a lot of the data and analysis from one map to another.
 
-Try to map out all the major variations on your customer journey, so that you can understand and plan for your common types of clients.
+Try to map out all the major variations on your client journey, so that you can understand and plan for your common types of clients.
 
-If you can, repeat the customer journey one more time by taking it yourself. This will show you the reality of what you’ve mapped out, and maybe even draw attention to details you missed.
+If you can, repeat the client journey one more time by taking it yourself. This will show you the reality of what you’ve mapped out, and maybe even draw attention to details you missed.
 
-## Understanding the Customer Journey to Improve the Client Experience
+## Understanding the Client Journey to Improve the Client Experience
 
-The better you understand your client’s experiences, the better you can meet their needs. A customer journey map is a valuable way of understanding those experiences, and a mapping exercise is a powerful way to engage multiple teams in seeing the clients’ point of view. By considering not only the practicalities but the emotional journey your clients go through, you can improve their experience and your overall relationship with them.
+The better you understand your client’s experiences, the better you can meet their needs. A client journey map is a valuable way of understanding those experiences, and a mapping exercise is a powerful way to engage multiple teams in seeing the clients’ point of view. By considering not only the practicalities but the emotional journey your clients go through, you can improve their experience and your overall relationship with them.

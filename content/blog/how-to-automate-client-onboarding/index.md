@@ -12,7 +12,7 @@ tags: [client onboarding, automation, workflow, agencies, professional services,
 
 Automating client onboarding means using workflow tools and triggers, not more headcount, to handle the repeatable parts of bringing on a new client: sending the intake form, scheduling the kickoff, provisioning access, and confirming scope. The kickoff call, the scope conversation, and the first escalation stay with a person.
 
-If you run a marketing agency, consultancy, or any professional services firm where a new client triggers the same dozen tasks every time, this guide gives you the actual customer onboarding automation workflow. Seven steps, who owns each one, how long it takes, the wording to copy, and what breaks if you automate the wrong part.
+If you run a marketing agency, consultancy, or any professional services firm where a new client triggers the same dozen tasks every time, this guide gives you the actual client onboarding automation workflow. Seven steps, who owns each one, how long it takes, the wording to copy, and what breaks if you automate the wrong part.
 
 This is written for the person who owns the process (Head of Operations, COO) and the person who owns the relationship (Head of Client Service). Where the two want different things from client onboarding automation, we say so.
 
@@ -20,7 +20,7 @@ This is written for the person who owns the process (Head of Operations, COO) an
 
 ## When to automate client onboarding, and when not to
 
-Customer onboarding automation earns its keep once you're bringing on more than one or two clients a month, or once onboarding touches more than three separate tools (CRM, contract, project management, shared drive). Below that volume, a good checklist and a diligent account manager will outperform a workflow nobody maintains.
+Client onboarding automation earns its keep once you're bringing on more than one or two clients a month, or once onboarding touches more than three separate tools (CRM, contract, project management, shared drive). Below that volume, a good checklist and a diligent account manager will outperform a workflow nobody maintains.
 
 Automate when:
 

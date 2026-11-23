@@ -29,7 +29,7 @@ Some teams search for this as CRM account management, hoping to find one system 
 
 ## What Customer Relationship Management (CRM) For A Service Business Is Actually Built To Do
 
-A CRM earns its place. It is the one list everyone agrees on: who the client is, who signed the contract, what is in the pipeline, what was invoiced, what is renewing and when, functioning as the shared customer database for the business. For an advertising agency, a consultancy, or any other service business in the wider service industry running dozens or hundreds of client relationships at once, that list is not optional. Finance needs it. New business needs it. Leadership needs it as one of the core CRM tools they rely on for a single number they can defend upward.
+A CRM earns its place. It is the one list everyone agrees on: who the client is, who signed the contract, what is in the pipeline, what was invoiced, what is renewing and when, functioning as the shared client database for the business. For an advertising agency, a consultancy, or any other service business in the wider service industry running dozens or hundreds of client relationships at once, that list is not optional. Finance needs it. New business needs it. Leadership needs it as one of the core CRM tools they rely on for a single number they can defend upward.
 
 None of that is the complaint here. The complaint is what gets asked of a CRM once it is in place: to also tell you how a relationship is actually doing. That is a different job, and it is not one a system built around fields and pipeline stages was ever designed to do.
 
@@ -39,13 +39,13 @@ None of that is the complaint here. The complaint is what gets asked of a CRM on
 
 ### Where The Relationship Actually Happens
 
-[A client relationship does not happen inside a CRM](https://kaizan.ai/blog/client-software/client-relationship-bigger-than-your-inbox/). It happens on a call where a decision-maker goes quiet for the first time in six weeks. It happens in an email thread where a client raises the same concern twice in a month. It happens in a Slack message, a passing comment on a QBR call, a "by the way" at the end of a meeting, or in customer inquiries that never make it into the notes.
+[A client relationship does not happen inside a CRM](https://kaizan.ai/blog/client-software/client-relationship-bigger-than-your-inbox/). It happens on a call where a decision-maker goes quiet for the first time in six weeks. It happens in an email thread where a client raises the same concern twice in a month. It happens in a Slack message, a passing comment on a QBR call, a "by the way" at the end of a meeting, or in client inquiries that never make it into the notes.
 
-None of that has a field. A CRM has a stage, an amount, a close date, and a free-text notes box that most people skip, while much of the real customer communications still sit outside structured fields. The actual texture of the relationship, tone, hesitation, what was said and what was left unsaid, has nowhere to go.
+None of that has a field. A CRM has a stage, an amount, a close date, and a free-text notes box that most people skip, while much of the real client communications still sit outside structured fields. The actual texture of the relationship, tone, hesitation, what was said and what was left unsaid, has nowhere to go.
 
 ### The Data That Never Reaches A Field
 
-One agency's internal CRM project makes the point cleanly. A commercial director we spoke with was building a homegrown CRM to centralise customer information and customer records alongside client emails, meeting notes, and account signals for his team's roughly 200 client relationships. He was candid about the gap he was trying to close: account managers were not consistently maintaining the system. The placements, pipelines, and status updates were all structurally present in the CRM. The actual account signals, rate pressure, early frustration, a client testing the market, plus stray customer details and service records, were not, because nobody had built a way to capture them without someone manually typing them in.
+One agency's internal CRM project makes the point cleanly. A commercial director we spoke with was building a homegrown CRM to centralise client information and client records alongside client emails, meeting notes, and account signals for his team's roughly 200 client relationships. He was candid about the gap he was trying to close: account managers were not consistently maintaining the system. The placements, pipelines, and status updates were all structurally present in the CRM. The actual account signals, rate pressure, early frustration, a client testing the market, plus stray client details and service records, were not, because nobody had built a way to capture them without someone manually typing them in.
 
 That is not a training problem. It is what happens whenever a system depends on a busy person remembering to log something that did not feel urgent at the time.
 
@@ -79,9 +79,9 @@ Outside estimates of how much CRM data goes stale or unentered vary a great deal
 
 ![Venn diagram: CRM software is a small part of client relation management.](client-relation-management-vs-crm.png)
 
-The two terms get used interchangeably, and that is part of the problem. Client relation management is the discipline: the ongoing work of understanding, serving, and growing a client relationship, in plain English, managing customer relationships, across however many people and tools touch that client. A CRM, customer relationship management software, is one tool that supports part of that discipline: the record-keeping part.
+The two terms get used interchangeably, and that is part of the problem. Client relation management is the discipline: the ongoing work of understanding, serving, and growing a client relationship, in plain English, managing client relationships, across however many people and tools touch that client. A CRM, customer relationship management software, is one tool that supports part of that discipline: the record-keeping part.
 
-Think of it as two overlapping circles rather than one. CRM software covers the administrative core of client relation management, contacts, deals, contract terms, billing history. What it does not cover is the larger circle across the full customer journey: the sentiment, stakeholder coverage, and risk signal that actually determine whether a relationship grows or quietly ends. A service business can run excellent client relation management with a mediocre CRM, and a business can also run a pristine CRM while being genuinely blind to how its clients feel. The software is not the discipline. It is infrastructure for one slice of the work required to build strong customer relationships.
+Think of it as two overlapping circles rather than one. CRM software covers the administrative core of client relation management, contacts, deals, contract terms, billing history. What it does not cover is the larger circle across the full client journey: the sentiment, stakeholder coverage, and risk signal that actually determine whether a relationship grows or quietly ends. A service business can run excellent client relation management with a mediocre CRM, and a business can also run a pristine CRM while being genuinely blind to how its clients feel. The software is not the discipline. It is infrastructure for one slice of the work required to build strong client relationships.
 
 ## Which System Should Own The Client: CRM Or Client Success Platform
 
@@ -101,7 +101,7 @@ A COO at one agency we work with made the ownership question concrete in a singl
 >
 > — Chief Operating Officer, Agency Client A
 
-That "additional stuff" is the health score, the risk flag, and the stakeholder map, the layer that sits on top of the CRM rather than competing with it and helps leadership monitor customer satisfaction too.
+That "additional stuff" is the health score, the risk flag, and the stakeholder map, the layer that sits on top of the CRM rather than competing with it and helps leadership monitor client satisfaction too.
 
 ## Adding Client Health Scoring And Workflow Automation To Salesforce Or HubSpot
 
@@ -114,7 +114,7 @@ Here is what that looks like in practice, based on [Kaizan's published integrati
 1. **Connect the CRM by OAuth.** Both the HubSpot and Salesforce integrations run on two-way sync, so the connection reads existing records, writes back to them, and fits alongside your existing tools.
 2. **Kaizan ingests the conversation layer.** Every call, email, and chat thread tied to that client gets captured and attributed to the account automatically, no manual tagging required.
 3. **The health score gets calculated continuously**, scored against [The Evidence-Based Client Health Standard](https://kaizan.ai/product/#health-model) (Kaizan's name for its CARE methodology), covering four plain-language dimensions: Client Satisfaction, Activity with Stakeholders, Relationship Strength, and Expansion Opportunities.
-4. **The score writes back into the record you already use alongside other customer data.** In Salesforce, the health score writes back to the Account object directly. In HubSpot, the sync covers deals, contacts, notes, activity, and custom properties, so the score and any flagged risk can live as a property on the record your team already opens.
+4. **The score writes back into the record you already use alongside other client data.** In Salesforce, the health score writes back to the Account object directly. In HubSpot, the sync covers deals, contacts, notes, activity, and custom properties, so the score and any flagged risk can live as a property on the record your team already opens.
 5. **The evidence stays attached, not buried.** A risk flag on the CRM record links back to the specific call or email that triggered it, so a Head of Client Service checking an account in Salesforce or HubSpot can see not just a score, but why.
 
 What this does not require is choosing between tools. The CRM keeps its job as the contract and pipeline record. The health score, and the evidence behind it, becomes a property on that same record instead of creating duplicate data entry between systems.
@@ -129,9 +129,9 @@ The fix is not a better onboarding deck on why the CRM matters. It is reducing h
 
 ## Signs Your CRM Is Missing The Client Relationship
 
-If any of these sound familiar, the CRM is doing its job as a system of record and simply was never asked to do the other job needed to increase customer loyalty.
+If any of these sound familiar, the CRM is doing its job as a system of record and simply was never asked to do the other job needed to increase client loyalty.
 
-- You cannot answer "what's actually going on with [client]?" in under a minute without pulling up scattered customer communications across emails, Slack, and a call recording first.
+- You cannot answer "what's actually going on with [client]?" in under a minute without pulling up scattered client communications across emails, Slack, and a call recording first.
 - The CRM says a relationship is healthy, and then a client raises a cancellation out of nowhere on a call nobody flagged.
 - Updates live wherever the account manager who wrote them happened to be that day: a notebook, a personal doc, a Slack DM, occasionally the CRM.
 - When an account director leaves or goes on leave, the context leaves with them, and a new hire rebuilds it from scratch.
@@ -144,7 +144,7 @@ Kaizan's own benchmark data backs up how common the first two points are. Across
 
 For a Head of Ops or COO, the CRM-gap problem is not an abstract visibility issue. It shows up as cost to serve, as time, and as revenue that was recoverable and was not recovered because nobody saw it coming, all of which holds back broader business growth.
 
-Kaizan's [client portfolio](https://kaizan.ai/pricing/) sees, on average, and leadership also gets dashboards that make customer trends across the portfolio easier to spot:
+Kaizan's [client portfolio](https://kaizan.ai/pricing/) sees, on average, and leadership also gets dashboards that make client trends across the portfolio easier to spot:
 
 - **26%+ average revenue growth per client**, driven by catching expansion signals and risk earlier than a CRM-only workflow would.
 - **45% of at-risk revenue protected** through early signals surfaced before a renewal conversation goes wrong.
@@ -176,7 +176,7 @@ Closing this gap on an existing CRM for a service business takes six steps, in t
 
 **Which system should own the client: the CRM or the client success platform?** Both, for different things. The CRM stays the system of record for contacts, deals, and billing. A client success platform becomes the system of truth for relationship health: risk signals, stakeholder coverage, and expansion readiness, continuously updated from actual conversations rather than manual entry.
 
-**Can we add client health scoring to Salesforce or HubSpot?** Yes. Kaizan connects to both by OAuth with two-way sync, captures every call, email, and chat tied to a client automatically, scores the relationship against four plain-language health dimensions, and writes the score back into the CRM record your team already uses, directly to the Account object in Salesforce, or as a synced property in HubSpot, alongside other customer records.
+**Can we add client health scoring to Salesforce or HubSpot?** Yes. Kaizan connects to both by OAuth with two-way sync, captures every call, email, and chat tied to a client automatically, scores the relationship against four plain-language health dimensions, and writes the score back into the CRM record your team already uses, directly to the Account object in Salesforce, or as a synced property in HubSpot, alongside other client records.
 
 **Do we need to replace our CRM?** No. The CRM keeps doing the job it was built for: contacts, deals, and contract records. Adding relationship health scoring on top of it closes the gap without a migration project, preserves your broader CRM functionality, and writes the evidence behind each score back into the same record leadership already checks.
 

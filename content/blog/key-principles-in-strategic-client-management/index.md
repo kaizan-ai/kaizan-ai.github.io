@@ -50,11 +50,11 @@ It enables teams to focus on the client and their needs. The strategy should ide
 
 Strategic client management is important because it allows a business to build and maintain strong relationships with its key clients. This is critical to both maintaining and increasing revenue streams.
 
-Through strategic client management, a business can better understand the needs and wants of its clients, use insights to understand what customers need, and then tailor its products and services to meet those needs. Profiling and planning for specific clients will help you shape your work for them, which increases client satisfaction. Having a forward-looking strategy instead of just a series of reactions means that you will be ahead of the ball, constantly impressing clients by providing the things they hadn’t yet said they needed. Strategising your communications means that you’ll approach clients in a way that suits them, whether they recognise it or not.
+Through strategic client management, a business can better understand the needs and wants of its clients, use insights to understand what clients need, and then tailor its products and services to meet those needs. Profiling and planning for specific clients will help you shape your work for them, which increases client satisfaction. Having a forward-looking strategy instead of just a series of reactions means that you will be ahead of the ball, constantly impressing clients by providing the things they hadn’t yet said they needed. Strategising your communications means that you’ll approach clients in a way that suits them, whether they recognise it or not.
 
 All of this leads to greater client loyalty, as you’re providing the services the client wants in a way that suits them. Loyalty protects your revenue streams from competitors trying to sell their own products and services to the client. It also means that the client is more likely to recommend you to others, which can expand your markets.
 
-In addition, strategic client management can help you to identify and capitalise on new business opportunities. By building profiles of your clients, you can understand their interests and identify gaps in what they’re getting, creating opportunities to support growth by delivering meaningful value to each strategic customer through additional services or new products for similar client groups.
+In addition, strategic client management can help you to identify and capitalise on new business opportunities. By building profiles of your clients, you can understand their interests and identify gaps in what they’re getting, creating opportunities to support growth by delivering meaningful value to each strategic client through additional services or new products for similar client groups.
 
 Client management is important for any business with substantial long-term clients. But like any area in business, it comes with challenges.
 
@@ -140,11 +140,11 @@ Whether you’re going to be at a training event or a networking one, to make th
 
 ## Experience
 
-Perhaps the most valuable way of learning, and the one that lets you make use of all those books and courses, is the practical experience of working in the client management field and building expertise with each strategic customer.
+Perhaps the most valuable way of learning, and the one that lets you make use of all those books and courses, is the practical experience of working in the client management field and building expertise with each strategic client.
 
 Look for opportunities to gain experience working with a wide range of clients, so that you sharpen different tools in your mental toolkit. It’s common to seek out comfortable situations, including clients that you find it easy to work with, and managers will often assign team members to the kind of work where they’ve already proved they can excel rather than giving them ownership of more complex accounts. But if you want to improve then you’ll need to push yourself and to ask for a wide range of clients to give you better experience.
 
-If possible, try to gain experience working with clients in a variety of industries and sectors so you learn how different customers create different forms of risk and value. The more different experiences and perspectives you get, the more sophisticated and multi-faceted your understanding will become. You’ll get to understand what’s fundamental to client management across the board, what’s specific to different sectors, and how to adapt when working with a client whose work differs from those you’re used to.
+If possible, try to gain experience working with clients in a variety of industries and sectors so you learn how different clients create different forms of risk and value. The more different experiences and perspectives you get, the more sophisticated and multi-faceted your understanding will become. You’ll get to understand what’s fundamental to client management across the board, what’s specific to different sectors, and how to adapt when working with a client whose work differs from those you’re used to.
 
 The wider the range of clients you work with, and the wider the range of experiences you get, the better you’ll be able to understand clients’ needs and how to best meet them.
 

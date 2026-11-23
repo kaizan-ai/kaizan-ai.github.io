@@ -29,9 +29,9 @@ We make Kaizan, and Kaizan is on this list. We say where it fits and where it do
 
 ## What Is Client Collaboration Software, And How Does It Differ From A Client Portal?
 
-Client collaboration software is the shared workspace between a service team and its clients. It handles customer collaboration, document sharing, approvals, messaging and task visibility, so clients stop chasing status over email. A client portal is the branded, login-protected entry point to that workspace, usually with your logo, your domain and a separate login for each client contact.
+Client collaboration software is the shared workspace between a service team and its clients. It handles client collaboration, document sharing, approvals, messaging and task visibility, so clients stop chasing status over email. A client portal is the branded, login-protected entry point to that workspace, usually with your logo, your domain and a separate login for each client contact.
 
-Vendors sell the two as one product, often positioning it as a collaboration platform or customer collaboration platform, which is why shortlists go wrong. Buyers compare portal polish and miss the question underneath: what do you do with everything your team learns about the client that never belongs in a portal?
+Vendors sell the two as one product, often positioning it as a collaboration platform or client collaboration platform, which is why shortlists go wrong. Buyers compare portal polish and miss the question underneath: what do you do with everything your team learns about the client that never belongs in a portal?
 
 Project management tools organise your team's work and sometimes add client seats. CRMs record contacts and deals. Neither is built for the client-facing surface, and neither tracks how the relationship is going. Our guide to client management software for agencies sorts the full market by type. This page covers the collaboration and portal slice.
 
@@ -210,7 +210,7 @@ A mid-relationship rollout needs a plan, an owner and a script.
 3. **Seed the portal.** Owner: account team. Time: half a day. Load current files, relevant project details, open approvals and the next three dates before clients are invited.
 4. **Tell the client.** Owner: account director. Time: a 15-minute call and one email. Use the script below so they have one collaboration tool for updates, files and approvals.
 5. **Name one update owner per account.** Owner: account manager. Time: 20 minutes a week. Pull the update from captured activity, not from memory.
-6. **Review at 30 days.** Owner: Head of Ops or COO. Check logins by contact, sections opened and customer conversations still arriving by email if the portal is not yet replacing old habits. Then extend to the next ten accounts.
+6. **Review at 30 days.** Owner: Head of Ops or COO. Check logins by contact, sections opened and client conversations still arriving by email if the portal is not yet replacing old habits. Then extend to the next ten accounts.
 
 Script for the client call: “From Monday you will have one place for files, approvals and weekly progress. Email still works for anything urgent. You will get a short update every Friday. If a section is not useful, tell us and we will change it.”
 
