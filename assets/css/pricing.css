@@ -347,3 +347,43 @@
 @media (prefers-reduced-motion: reduce) {
   .kzp-tier.hero, .kzp-tier.changed, .kzp-tier.hero:hover, .kzp-tier.changed:hover { transform: none; }
 }
+
+/* ── Packages, no price figures ────────────────────────────────────────
+   Three cards like the deal room's pricing page: ink frame with a hard
+   offset shadow. Yellow leads; blue and orange are small pops. */
+.kzp-packs {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px; align-items: stretch; padding-top: 4px;
+}
+.kzp-pack {
+  --accent: var(--kz-yellow, #FFB900);
+  background: #FFFFFF; border: 2px solid #0A0A0A; border-radius: 16px;
+  box-shadow: 8px 8px 0 var(--accent);
+  padding: 26px 26px 28px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.kzp-pack:hover { transform: translate(-3px, -3px); box-shadow: 11px 11px 0 var(--accent); }
+.kzp-pack-blue { --accent: #4A5BD9; }
+.kzp-pack-orange { --accent: #D9612B; }
+.kzp-pack-name { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+.kzp-pack-priced { color: var(--kz-mute, #57534E); font-size: 0.88rem; font-weight: 500; margin: 4px 0 0; }
+.kzp-pack-h {
+  font-size: 0.98rem; font-weight: 800; margin: 22px 0 10px;
+  padding-top: 18px; border-top: 2px dashed var(--kz-line, #D6D3D1);
+}
+.kzp-pack ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.kzp-pack li {
+  display: flex; gap: 9px; align-items: flex-start;
+  font-size: 0.94rem; line-height: 1.45; font-weight: 500; color: #1C1917;
+}
+.kzp-pack li::before { content: "✓"; color: #946200; font-weight: 800; flex-shrink: 0; }
+.kzp-pack li strong { font-weight: 800; }
+.kzp-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 44px; }
+.kzp-actions .kzp-btn { display: inline-flex; width: auto; padding: 13px 22px; border-radius: 999px; text-decoration: none; }
+.kzp-packs + .kzp-actions + .kzp-foot { margin-top: 28px; }
+@media (max-width: 980px) {
+  .kzp-packs { grid-template-columns: 1fr; max-width: 640px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kzp-pack, .kzp-pack:hover { transition: none; transform: none; }
+}

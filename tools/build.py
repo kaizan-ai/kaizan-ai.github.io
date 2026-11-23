@@ -3313,8 +3313,8 @@ def render_product() -> str:
         Priced by number of clients, with unlimited users.
       </h2>
       <p class="kz-lede" style="margin-top:14px;max-width:720px;">
-        Pricing is public and set by the number of clients you cover: per client per month on an
-        annual contract, with unlimited users on every tier and a free 14-day pilot first. Book a
+        Pricing is set by the number of clients you cover, on an annual contract, with unlimited
+        users on every plan and a free 14-day pilot first. Talk to us for a price on your own figures. Book a
         demo to plan for the next quarter, align to revenue goals, and improve cost-to-serve
         efficiency. <a href="/" style="color:var(--kz-ink);font-weight:600;">Start my free trial →</a>
       </p>
@@ -4859,27 +4859,71 @@ PRICING_TIERS_US = [
 ]
 
 
-def us_pricing_section() -> str:
-    """The USD <section class="kzp"> for /us/pricing/. Injected by build_us_locale
-    in place of the mirrored GBP section. CTAs point at the US booking; the CARE
-    link and 'View UK pricing' link resolve correctly from /us/pricing/."""
-    tiers_html = '\n'.join(tier_card(t, '../', '/us/demo/') for t in PRICING_TIERS_US)
+# What each package includes, as on the deal room's pricing page. No figures:
+# prices are quoted by the team, so every card ends in a conversation.
+PACKAGES = [
+    dict(name='1. App and agents', priced='Priced per client', accent='yellow',
+         gets=['Every client with AI switched on, cheaper per client as you add more.',
+               'Meeting and email assistant, CARE™ scoring, benchmarks against comparable firms.',
+               'Agents working 24/7 on each client’s account plan: briefs, follow-ups, alerts, upsell finding.',
+               'Portfolio view for leaders, all your connected tools, unlimited users.',
+               'Basic Client Memory API and MCP access, standard integrations.',
+               'Dedicated Account Manager and a 90-day plan.'],
+         moves=['Number of clients you switch AI on for. Prospects and new business are free and don’t count.',
+                'A discount for a prepaid annual contract.']),
+    dict(name='2. Client Memory', priced='Priced by access', accent='blue',
+         gets=['<strong>Access.</strong> Read endpoints, CARE™ history and moments, MCP, webhooks. Included in every plan.',
+               '<strong>Build.</strong> Write-back, admin controls for joiners and leavers, client and competitor news, call mechanics.',
+               '<strong>Total.</strong> Benchmark data across comparable firms and bespoke endpoints.'],
+         moves=['Call volume above the included limit.',
+                'Your agents calling Kaizan’s agents.',
+                'API keys are permissioned, so a developer’s key only sees what that developer should.']),
+    dict(name='3. Professional services', priced='Priced per build', accent='orange',
+         gets=['Custom integrations built and maintained by us, for teams without developer time.',
+               'Workflow automation into your own systems. Write-back to all your tools.',
+               'A forward deployed engineer for a scoped build over three months.'],
+         moves=['Scope and days. Fixed price agreed before we start.']),
+]
+
+
+def pricing_section(demo_href: str = '/demo/') -> str:
+    """The <section class="kzp"> for /pricing/ and /us/pricing/ (build_us_locale
+    swaps it in with the US booking link). Packages only, no price figures."""
+    def ul(items):
+        return '<ul>' + ''.join(f'<li><span>{i}</span></li>' for i in items) + '</ul>'
+    cards = '\n'.join(f'''<div class="kzp-pack kzp-pack-{k['accent']}">
+          <h2 class="kzp-pack-name">{E(k['name'])}</h2>
+          <p class="kzp-pack-priced">{E(k['priced'])}</p>
+          <h3 class="kzp-pack-h">What you get</h3>
+          {ul(k['gets'])}
+          <h3 class="kzp-pack-h">What moves the price</h3>
+          {ul(k['moves'])}
+        </div>''' for k in PACKAGES)
     return f'''<section class="kzp">
       <div class="kzp-wrap">
-        <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14-day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
+        <h1 class="kzp-h1">Pricing and packaging</h1>
+        <p class="kzp-sub">The app and agents that deliver outcomes on every client. Access to Client Memory for your own tools and agents. And our team when you want something built. Annual subscription, unlimited users, priced by clients under management. Talk to us for a price built on your own figures.</p>
         <div class="kzp-badges">
-          <span class="kzp-tag">✓ New: 14-day pilot, free of charge</span>
+          <span class="kzp-tag">✓ Free 14 day pilot on your own data</span>
           <span class="kzp-tag">✓ Unlimited users on every plan</span>
         </div>
-        <div class="kzp-grid" data-swipe-row>{tiers_html}</div>
-        <p class="kzp-foot">All prices in USD, exclusive of applicable sales tax, calculated at checkout by billing state. Annual contract, unlimited users on every tier for a range of company sizes. Billed in USD through Kaizan&rsquo;s New York entity. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately. <a href="/pricing/">View GBP / UK pricing &rarr;</a></p>
+        <div class="kzp-packs">{cards}</div>
+        <div class="kzp-actions">
+          <a class="kzp-btn kzp-btn-primary" href="{demo_href}" target="_blank" rel="noopener">Talk to us about pricing</a>
+          <a class="kzp-btn kzp-btn-outline" href="{demo_href}" target="_blank" rel="noopener">Start your free pilot</a>
+        </div>
+        <p class="kzp-foot">Every engagement starts with a free 14 day pilot. Your price and business case are prepared on your own figures. Fair use limits apply on storage, API calls and integration volumes.</p>
       </div>
     </section>'''
 
 
-PRICING_DESC = ('Pricing is set by how many clients you cover, per client per month, '
-                'with unlimited users on every tier. Every engagement starts with a free 14 day pilot.')
+def us_pricing_section() -> str:
+    """/us/pricing/ version of pricing_section, booking through the US demo page."""
+    return pricing_section('/us/demo/')
+
+
+PRICING_DESC = ('What Kaizan includes: the app and agents, Client Memory and professional services. '
+                'Priced by clients under management, with unlimited users. Every engagement starts with a free 14 day pilot.')
 
 
 def pricing_offers(tiers: list, currency: str) -> list:
@@ -4935,9 +4979,9 @@ PRICING_HELPERS = [
 
 
 # The ROI calculator is a self-contained widget (scoped #kaizan-roi markup +
-# assets/css/roi-calculator.css + assets/js/roi-calculator.js). It replaces the
-# old tier-cards pricing page — the tiers/cost are shown inside the calculator.
-# PRICING_TIERS / PRICING_HELPERS above are now unused but kept for reference.
+# assets/css/roi-calculator.css + assets/js/roi-calculator.js). It shows tier
+# prices, so it came off /pricing/ when prices stopped being published; kept
+# for reference. PRICING_TIERS now only feeds the free pilot into the schema.
 #
 # Lead capture is a HubSpot form (EU portal 144688314) rendered into
 # #kzroi-hubspot-form by roi-calculator.js. On successful submit, the JS unlocks
@@ -5175,51 +5219,15 @@ def render_pricing() -> str:
     p = relpath(1)
     extra_head = (
         '<meta name="robots" content="noindex">\n        '
-        f'<link rel="stylesheet" href="{p}assets/css/pricing.css{asset_v("assets/css/pricing.css")}">\n'
-        f'        <link rel="stylesheet" href="{p}assets/css/roi-calculator.css{asset_v("assets/css/roi-calculator.css")}">\n'
-        f'        <link rel="stylesheet" href="{p}assets/css/roi-accordion.css{asset_v("assets/css/roi-accordion.css")}">\n'
-        f'        <script charset="utf-8" defer src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>\n'
-        f'        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>\n'
-        f'        <script defer src="{p}assets/js/roi-calculator.js{asset_v("assets/js/roi-calculator.js")}"></script>'
+        f'<link rel="stylesheet" href="{p}assets/css/pricing.css{asset_v("assets/css/pricing.css")}">'
     )
-    tiers_html = '\n'.join(tier_card(t, p) for t in PRICING_TIERS)
-    pricing_section = f'''
-    <section class="kzp">
-      <div class="kzp-wrap">
-        <h1 class="kzp-h1">Priced by the size of the portfolio we help you grow.</h1>
-        <p class="kzp-sub">Every engagement starts with a free 14 day pilot on your own data. After that, the rate is set by how many clients you cover, so you can quickly see whether it fits your budget. Unlimited users on every tier.</p>
-        <div class="kzp-badges">
-          <span class="kzp-tag">✓ New: 14 day pilot, free of charge</span>
-          <span class="kzp-tag">✓ Unlimited users on every plan</span>
-        </div>
-        <div class="kzp-grid" data-swipe-row>{tiers_html}</div>
-        <p class="kzp-foot">All prices GBP, annual contract. Unlimited users on every tier for a range of company sizes. Fair use limits apply on storage, API calls and integration volumes. Custom AI helpers, integrations and bespoke engineering quoted separately.</p>
-      </div>
-    </section>'''
-    chevron = ('<svg class="kzacc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-               'stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
-               '<polyline points="6 9 12 15 18 9"></polyline></svg>')
-    accordion = f'''
-    <section class="kzp-calc">
-      <details class="kzacc">
-        <summary class="kzacc-summary">
-          <div>
-            <p class="kzacc-title">Worried this costs more than it saves? See the maths.</p>
-            <p class="kzacc-sub">Takes 30 seconds. No email required.</p>
-          </div>
-          {chevron}
-        </summary>
-        <div class="kzacc-body">
-          {ROI_CALCULATOR_SECTION}
-        </div>
-      </details>
-    </section>'''
-    body = nav_html(1, active='Pricing') + pricing_section + accordion + footer_html(1)
+    body = nav_html(1, active='Pricing') + pricing_section() + footer_html(1)
     price_desc = PRICING_DESC
+    # Only the free pilot carries a price in the schema; everything else is quoted.
     price_ld = ld_script([ld_webpage('Pricing', price_desc),
-                          ld_software(price_desc, offers=pricing_offers(PRICING_TIERS, 'GBP'))],
+                          ld_software(price_desc, offers=pricing_offers(PRICING_TIERS[:1], 'GBP'))],
                          ident='pricing')
-    return page_head('Pricing by Client Count, Free 14 Day Pilot', 1, price_desc,
+    return page_head('Pricing and Packaging, Free 14 Day Pilot', 1, price_desc,
                      extra_head=extra_head + '\n        ' + price_ld) + body + page_foot()
 
 
@@ -5675,7 +5683,7 @@ FAQ_DATA = [
     ]),
     ('Pricing and contracts', [
         ('How is Kaizan priced?',
-         'Kaizan is priced based on the number of clients you have, there are no limits to the number of seats or users. List pricing and a calculator are at kaizan.ai/pricing.'),
+         'Kaizan is priced based on the number of clients you have, there are no limits to the number of seats or users. What each package includes is at kaizan.ai/pricing, and the team quotes a price on your own figures.'),
         ('Is there a free trial?',
          'Yes. Every engagement starts with a free 14-day pilot on your own client data, with no card and no commitment, so you can assess the ROI and value received.'),
         ('What is the typical contract length?',
@@ -7294,7 +7302,7 @@ def write_llms_txt():
 # id), for schema that carries locale-specific facts such as USD prices.
 US_LD_BUILDERS: dict = {}
 US_LD_BUILDERS['pricing'] = lambda: ld_script(
-    [ld_webpage('Pricing', PRICING_DESC), ld_software(PRICING_DESC, offers=pricing_offers(PRICING_TIERS_US, 'USD'))],
+    [ld_webpage('Pricing', PRICING_DESC), ld_software(PRICING_DESC, offers=pricing_offers(PRICING_TIERS_US[:1], 'USD'))],
     ident='pricing')
 _LD_RE = re.compile(r'<script type="application/ld\+json"(?: data-kz-ld="(\w+)")?>(.*?)</script>', re.S)
 
