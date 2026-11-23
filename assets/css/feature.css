@@ -15,7 +15,11 @@
 .kz-feat-hero::after {
   content: ''; position: absolute; inset: 0; pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(10,10,10,.95) 0%, rgba(10,10,10,.86) 36%, rgba(10,10,10,.6) 55%, rgba(10,10,10,.12) 82%, rgba(10,10,10,0) 100%),
+    /* eased stops, so the black melts into the photo with no visible band */
+    linear-gradient(90deg, rgba(10,10,10,.95) 0%, rgba(10,10,10,.93) 20%, rgba(10,10,10,.89) 30%,
+      rgba(10,10,10,.83) 38%, rgba(10,10,10,.75) 45%, rgba(10,10,10,.65) 52%, rgba(10,10,10,.54) 59%,
+      rgba(10,10,10,.42) 66%, rgba(10,10,10,.3) 73%, rgba(10,10,10,.19) 80%, rgba(10,10,10,.1) 87%,
+      rgba(10,10,10,.03) 94%, rgba(10,10,10,0) 100%),
     linear-gradient(0deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,0) 45%);
 }
 .kz-feat-hero-in {
@@ -28,7 +32,7 @@
   padding: 6px 14px; font-size: 12.5px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
 }
 .kz-feat-title {
-  margin: 22px 0 0; color: #fff; max-width: 9.5ch;
+  margin: 22px 0 0; color: #fff; max-width: 15ch; text-wrap: balance;  /* two even lines */
   font-size: clamp(48px, 7.4vw, 112px) !important; font-weight: 800 !important; line-height: .96 !important; letter-spacing: -0.035em !important;
 }
 .kz-feat-title::after {
@@ -178,9 +182,23 @@
 @media (min-width: 1500px) {
   .kz-feat-hero-img { left: auto; right: 0; width: max(62%, calc(100% - (100vw - 1180px) / 2 - 560px)); object-position: 40% 35%; }
   .kz-feat-hero::after {
+    --e: calc(100% - max(62%, calc(100% - (100vw - 1180px) / 2 - 560px)));  /* where the photo starts */
     background:
-      linear-gradient(90deg, #0A0A0A 0%, #0A0A0A calc(100% - max(62%, calc(100% - (100vw - 1180px) / 2 - 560px))),
-        rgba(10,10,10,.55) calc(100% - max(62%, calc(100% - (100vw - 1180px) / 2 - 560px)) + 220px), rgba(10,10,10,.08) 85%, rgba(10,10,10,0) 100%),
+      /* solid under the title, then an eased fade across the photo */
+      linear-gradient(90deg, #0A0A0A 0%,
+        rgba(10,10,10,1) calc(var(--e) + (100% - var(--e)) * 0),
+        rgba(10,10,10,0.97) calc(var(--e) + (100% - var(--e)) * 0.06),
+        rgba(10,10,10,0.9) calc(var(--e) + (100% - var(--e)) * 0.12),
+        rgba(10,10,10,0.8) calc(var(--e) + (100% - var(--e)) * 0.18),
+        rgba(10,10,10,0.68) calc(var(--e) + (100% - var(--e)) * 0.25),
+        rgba(10,10,10,0.55) calc(var(--e) + (100% - var(--e)) * 0.32),
+        rgba(10,10,10,0.42) calc(var(--e) + (100% - var(--e)) * 0.39),
+        rgba(10,10,10,0.3) calc(var(--e) + (100% - var(--e)) * 0.46),
+        rgba(10,10,10,0.2) calc(var(--e) + (100% - var(--e)) * 0.53),
+        rgba(10,10,10,0.12) calc(var(--e) + (100% - var(--e)) * 0.6),
+        rgba(10,10,10,0.06) calc(var(--e) + (100% - var(--e)) * 0.68),
+        rgba(10,10,10,0.02) calc(var(--e) + (100% - var(--e)) * 0.78),
+        rgba(10,10,10,0) calc(var(--e) + (100% - var(--e)) * 1)),
       linear-gradient(0deg, rgba(10,10,10,.8) 0%, rgba(10,10,10,0) 40%);
   }
 }
