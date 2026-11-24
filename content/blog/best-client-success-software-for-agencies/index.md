@@ -6,14 +6,14 @@ author: James Caples
 category: POV
 topic: client-software
 excerpt: No single customer success software fits every agency. Compare Kaizan, Gainsight, Odie, Planhat, ChurnZero, Vitally and ClientSuccess on agency fit.
-cover: best-customer-success-software-side-by-side.png
+cover: best-client-success-software-side-by-side.png
 draft: false
 tags: [customer success software, client success platform, agencies, professional services, gainsight, software comparison]
 ---
 
 **The short answer:** there is no single best customer success software for every agency. Gainsight and Totango were built for SaaS renewal teams managing product seats, not retainers. Vitally and ClientSuccess are faster to launch but thinner on agency-specific workflows like scope and billable hours. Kaizan is the one built from the ground up for client service teams at marketing, advertising, and professional services firms, priced per client rather than per seat. The table below gives you the verdict in one look; the rest of this page shows our method and the evidence behind it.
 
-![Verdict summary: which customer success tools suit agencies and professional services firms, and where each struggles.](best-customer-success-software-for-agencies-verdict.png)
+![Verdict summary: which customer success tools suit agencies and professional services firms, and where each struggles.](best-client-success-software-for-agencies-verdict.png)
 
 *Research note on this page: we could not find, and will not claim, independent lab testing of every tool below. Nobody publishes that, including us. What follows is desk research against each vendor's own public pricing and product pages, published review themes on G2 and Capterra, and a transparent scoring rubric we built and applied to Kaizan the same way we applied it to everyone else, dated below. Anywhere we quote a client, we say whether they are named with permission or kept anonymous.*
 
@@ -69,7 +69,7 @@ ClientSuccess leans into simplicity: a straightforward health dashboard and QBR 
 
 ## Side by side, on the criteria that actually decide it
 
-![Side-by-side comparison of Kaizan, Gainsight, Totango (now Odie), Planhat, ChurnZero, Vitally and ClientSuccess on the criteria that decide agency fit.](best-customer-success-software-side-by-side.png)
+![Side-by-side comparison of Kaizan, Gainsight, Totango (now Odie), Planhat, ChurnZero, Vitally and ClientSuccess on the criteria that decide agency fit.](best-client-success-software-side-by-side.png)
 
 | Criterion | Kaizan | Gainsight | Totango (now Odie) | Planhat | ChurnZero | Vitally | ClientSuccess |
 | --- | --- | --- | --- | --- | --- | --- | --- |

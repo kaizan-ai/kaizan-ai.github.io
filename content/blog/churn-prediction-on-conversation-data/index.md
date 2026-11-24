@@ -43,7 +43,7 @@ Three places, with different strengths.
 - **As a module inside a SaaS-focused customer success platform**, such as Gainsight, Totango, or Vitally. Strong on product usage and support ticket signals, weaker on agency-style relationships where there is no product telemetry to read.
 - **As a custom build**, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labeling, and maintenance that a platform already absorbs.
 
-A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see [client retention software for agencies and service firms](https://www.kaizan.ai/us/blog/client-software/customer-retention-software-for-agencies/).
+A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see [client retention software for agencies and service firms](https://www.kaizan.ai/us/blog/client-software/client-retention-software-for-agencies/).
 
 ## Why this matters in revenue terms
 

@@ -5,7 +5,7 @@
 | Kaizan | Every call, email and chat, auto-joined | Captured automatically | Days | Per client, unlimited users |
 | Gainsight | Product usage, CRM | CSM logs manually | 2 to 4 months | Per seat, enterprise |
 | Totango, now Odie | Usage, CRM; Odie: AI agents via MCP | CSM logs manually (legacy) | 4 to 8 weeks (legacy) | Odie from $500/month |
-| Planhat | CRM and product data you connect | Ops or data team configures | 4 to 8 weeks | Platform plus per-customer fee |
+| Planhat | CRM and product data you connect | Ops or data team configures | 4 to 8 weeks | Platform plus per-client fee |
 | ChurnZero | In-app product events | Product and marketing teams | 4 to 8 weeks | Custom quote |
 | Vitally | Product usage, some call recording | CSM logs notes; some automated | 2 to 3 weeks | From roughly $299/month |
 | ClientSuccess | CRM and logged notes | CSM logs manually | Days to a few weeks | Custom quote |

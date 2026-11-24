@@ -1,4 +1,4 @@
-**Customer onboarding metrics · Kaizan benchmark: Top cohort vs bottom cohort: the same strategy, run more often**
+**Client onboarding metrics · Kaizan benchmark: Top cohort vs bottom cohort: the same strategy, run more often**
 
 | Metric | Bottom cohort | Top cohort | Difference |
 |---|---|---|---|

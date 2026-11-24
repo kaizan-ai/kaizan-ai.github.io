@@ -6,7 +6,7 @@ author: James Caples
 category: POV
 topic: playbooks-and-templates
 excerpt: A seven-step customer relationship management process for retainer accounts: build the record, map stakeholders, capture conversations, escalate risk and renew.
-cover: customer-relationship-management-process-seven-steps.png
+cover: client-relationship-management-process-seven-steps.png
 draft: false
 tags: [customer relationship management, crm process, client relationships, account management, renewals, playbook]
 ---
@@ -29,7 +29,7 @@ It is not the right frame for a one-off transactional sale, where the relationsh
 
 ## The customer relationship management process in seven steps
 
-![The seven steps of the customer relationship management process for retainer accounts, from building one client record through to renewal.](customer-relationship-management-process-seven-steps.png)
+![The seven steps of the customer relationship management process for retainer accounts, from building one client record through to renewal.](client-relationship-management-process-seven-steps.png)
 
 ### Step 1: Build one client record before the first real conversation
 

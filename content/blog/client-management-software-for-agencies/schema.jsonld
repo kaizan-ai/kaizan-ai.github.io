@@ -539,7 +539,7 @@
         },
         {
           "@type": "Thing",
-          "name": "Customer retention",
+          "name": "Client retention",
           "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
         }
       ],
@@ -565,7 +565,7 @@
           "@type": "CreativeWork",
           "url": "https://hbr.org/2014/10/the-value-of-keeping-the-right-customers",
           "name": "hbr.org",
-          "description": "winning a new customer costs 5 to 25 times more than keeping an existing one"
+          "description": "winning a new client costs 5 to 25 times more than keeping an existing one"
         },
         {
           "@type": "CreativeWork",
@@ -625,7 +625,7 @@
           "@type": "CreativeWork",
           "url": "https://www.vendr.com/marketplace/planhat",
           "name": "vendr.com",
-          "description": "quote-based and priced by the number of customer accounts, not seats"
+          "description": "quote-based and priced by the number of client accounts, not seats"
         },
         {
           "@type": "CreativeWork",

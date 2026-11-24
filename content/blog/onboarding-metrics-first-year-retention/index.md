@@ -6,7 +6,7 @@ author: James Caples
 category: BENCHMARK
 topic: client-health
 excerpt: Kaizan's benchmark data shows the early cadence and coverage numbers that separate growing client accounts from churning ones, and how to score your own.
-cover: customer-onboarding-metrics-top-vs-bottom-cohort.png
+cover: client-onboarding-metrics-top-vs-bottom-cohort.png
 draft: false
 tags: [onboarding metrics, client retention, benchmark, client health, account management, churn]
 ---
@@ -74,7 +74,7 @@ CSAT measurement rate = sentiment or satisfaction checks run / account-months co
 | CSAT or sentiment checks per account per year | Under 14 | 14-41 | 41+ |
 | Stakeholders engaged per account | Under 142 | 142-242 | 242+ |
 
-![Self-scoring scorecard for onboarding metrics, showing how to score each metric 0, 1 or 2 against the bottom and top cohort levels.](customer-onboarding-metrics-self-scoring.png)
+![Self-scoring scorecard for onboarding metrics, showing how to score each metric 0, 1 or 2 against the bottom and top cohort levels.](client-onboarding-metrics-self-scoring.png)
 
 A score of 7 or more across the five rows puts an account in top-cohort territory on the behaviours this benchmark can actually measure. Anything under 4 is worth a closer look this week, not next quarter.
 

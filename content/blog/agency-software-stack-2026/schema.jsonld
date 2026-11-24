@@ -459,7 +459,7 @@
           "name": "What is the return on consolidating?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The return shows up in two places: the direct cost of redundant licences, and the admin hours an account team spends reconciling two or three partial systems instead of working from one. Kaizan customers, for the client-intelligence layer specifically, see an average 33% lower cost to serve each client and 5.4 hours of admin saved per person every week, which is a reasonable proxy for what consolidating any duplicated job in the stack is worth chasing.",
+            "text": "The return shows up in two places: the direct cost of redundant licences, and the admin hours an account team spends reconciling two or three partial systems instead of working from one. Kaizan clients, for the client-intelligence layer specifically, see an average 33% lower cost to serve each client and 5.4 hours of admin saved per person every week, which is a reasonable proxy for what consolidating any duplicated job in the stack is worth chasing.",
             "inLanguage": "@@LANG@@"
           }
         }

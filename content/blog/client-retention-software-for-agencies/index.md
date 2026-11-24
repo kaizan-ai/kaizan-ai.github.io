@@ -5,7 +5,7 @@ author: James Caples
 category: POV
 topic: client-software
 excerpt: Client retention software for agencies and service firms: five tools compared, what each costs, and what churn costs you if you do nothing.
-cover: customer-retention-software-four-types.png
+cover: client-retention-software-four-types.png
 draft: false
 tags: [client retention, retention software, client success, churn, agencies]
 meta_title: "Client Retention Software for Agencies: 5 Tools Compared"
@@ -73,7 +73,7 @@ A scoring field bolted onto HubSpot or Salesforce. Cheap, because it's a feature
 | We just want a read on how happy clients are, twice a year, nothing more | A survey or NPS tool |
 | We want one more field on the CRM we already run, not another system | A CRM health-score add-on |
 
-![Decision flow matching a retention problem to the type of software that fixes it.](customer-retention-software-decision-flow.png)
+![Decision flow matching a retention problem to the type of software that fixes it.](client-retention-software-decision-flow.png)
 
 ## Why Agencies And Service Firms Outgrow Spreadsheets And Their CRM
 
@@ -196,7 +196,7 @@ Kaizan publishes a live ROI calculator at [kaizan.ai/us/pricing](https://kaizan.
 | 1,000 employees | 133 | 267 | £2,841,426/yr | £1,081,350 | £768,960 | £991,116 (+19.2 FTE) |
 | 10,000 employees | 500 (calculator maximum) | 2,000 (calculator maximum) | £17,586,000/yr | £8,100,000 | £5,760,000 | £3,726,000 (+72.0 FTE) |
 
-![Modelled annual benefit of retention software at 150, 1,000 and 10,000 employees, split into three sources.](customer-retention-software-modelled-benefit.png)
+![Modelled annual benefit of retention software at 150, 1,000 and 10,000 employees, split into three sources.](client-retention-software-modelled-benefit.png)
 
 **These figures come from actually running Kaizan's own published calculator in its "Expected" scenario, not from an estimate. The 150-employee row uses the calculator's own defaults; the 1,000 and 10,000-employee rows scale the client-delivery-team size and client count proportionally to headcount, holding average client value and attrition constant, and the 10,000-employee row is capped at the calculator's own maximum inputs (500 client-facing staff, 2,000 clients). All three rows are shown before platform cost. This is an illustrative model, not a forecast for any specific firm; run your own numbers at the link above.**
 

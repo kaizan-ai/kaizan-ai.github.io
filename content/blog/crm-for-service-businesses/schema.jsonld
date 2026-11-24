@@ -50,7 +50,7 @@
           "name": "Can we add client health scoring to Salesforce or HubSpot?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Kaizan connects to both by OAuth with two-way sync, captures every call, email, and chat tied to a client automatically, scores the relationship against four plain-language health dimensions, and writes the score back into the CRM record your team already uses, directly to the Account object in Salesforce, or as a synced property in HubSpot, alongside other customer records.",
+            "text": "Yes. Kaizan connects to both by OAuth with two-way sync, captures every call, email, and chat tied to a client automatically, scores the relationship against four plain-language health dimensions, and writes the score back into the CRM record your team already uses, directly to the Account object in Salesforce, or as a synced property in HubSpot, alongside other client records.",
             "inLanguage": "@@LANG@@"
           }
         },
