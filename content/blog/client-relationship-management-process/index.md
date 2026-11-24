@@ -6,7 +6,7 @@ author: James Caples
 category: POV
 topic: playbooks-and-templates
 excerpt: A seven-step customer relationship management process for retainer accounts: build the record, map stakeholders, capture conversations, escalate risk and renew.
-cover: customer-relationship-management-process-seven-steps.png
+cover: client-relationship-management-process-seven-steps.png
 draft: false
 tags: [customer relationship management, crm process, client relationships, account management, renewals, playbook]
 ---
@@ -15,7 +15,7 @@ A customer relationship management process is the sequence a client-facing team 
 
 **Key takeaways**
 
-- The five-step customer relationship management process most blogs describe is a sales funnel. It was built to turn a lead into a customer, and it stops there. An agency, consultancy, or professional services firm managing retainer accounts needs a process that keeps running for years, not one that ends at conversion.
+- The five-step customer relationship management process most blogs describe is a sales funnel. It was built to turn a lead into a client, and it stops there. An agency, consultancy, or professional services firm managing retainer accounts needs a process that keeps running for years, not one that ends at conversion.
 - Every step below names an owner and a time estimate, so it can be assigned, not just read.
 - Proactivity is the step teams skip most, and it is also the top reason clients leave. 45% of marketers name "lack of proactivity" as the number one reason they review a new agency, ahead of creative or strategy complaints.
 - Struggling accounts usually warn you first. In Kaizan's own benchmark data, roughly 69% of accounts later flagged as at risk had already surfaced a warning sign in conversation at least once, and 38% did so repeatedly. The signal is rarely missing. It is rarely noticed.
@@ -29,7 +29,7 @@ It is not the right frame for a one-off transactional sale, where the relationsh
 
 ## The customer relationship management process in seven steps
 
-![The seven steps of the customer relationship management process for retainer accounts, from building one client record through to renewal.](customer-relationship-management-process-seven-steps.png)
+![The seven steps of the customer relationship management process for retainer accounts, from building one client record through to renewal.](client-relationship-management-process-seven-steps.png)
 
 ### Step 1: Build one client record before the first real conversation
 

@@ -70,7 +70,7 @@ The tier-by-stage matrix below is the artefact to agree before anything else get
 
 ![A three-lane timeline showing the check-in cadence and milestones for the strategic, core and standard onboarding tracks over 90 days.](client-onboarding-three-lane-timeline.png)
 
-## Customer onboarding best practices: size the stakes before you tier
+## Client onboarding best practices: size the stakes before you tier
 
 The best-practice argument for tiering is a numbers argument, not a service-design preference. Professional services firms retain somewhere in the region of 83-85% of clients a year on average, with First Page Sage's 2026 analysis of over 10,000 firms putting the figure at 84%, and several other 2025-2026 studies converging in the same range. Figures like this vary by source and methodology, so treat the range as directional rather than a single agreed number, but the direction is consistent: a typical firm loses something close to 1 in 6 accounts annually, even before a bad year.
 
@@ -78,7 +78,7 @@ That revenue isn't lost evenly. It concentrates in accounts that were never give
 
 Here's an illustrative worked example, built for this guide rather than drawn from a single client's real numbers (every input below is a stated assumption, not a survey finding): a 300-person agency with 40% of its headcount client-facing (120 people), running a portfolio worth $20M a year. At 16% average attrition, that's $3.2M of revenue at risk annually before anyone intervenes. If the top tier holds a reasonably typical 35-40% of total portfolio revenue across perhaps 12-15 accounts, as is common in agencies that already tier by value, that's upward of $1.1M-$1.3M riding on a small enough group of relationships that giving them a different first 90 days, rather than the same templated kickoff as everyone else, is not a hard case to make internally.
 
-Kaizan's own published portfolio mechanics put a number on what's recoverable once a firm is actively managing that risk rather than discovering it late: Kaizan clients see 26%+ average revenue growth per client, and the platform's own ROI model credits roughly 45% of revenue at risk as protected through early signal, both figures drawn from Kaizan's own customer portfolio, not the illustrative example above. The same math scales whether a firm sits at the 150-employee end of this range or the 10,000-employee end; only the absolute dollars change, not the argument for treating the top band of accounts differently from day one.
+Kaizan's own published portfolio mechanics put a number on what's recoverable once a firm is actively managing that risk rather than discovering it late: Kaizan clients see 26%+ average revenue growth per client, and the platform's own ROI model credits roughly 45% of revenue at risk as protected through early signal, both figures drawn from Kaizan's own client portfolio, not the illustrative example above. The same math scales whether a firm sits at the 150-employee end of this range or the 10,000-employee end; only the absolute dollars change, not the argument for treating the top band of accounts differently from day one.
 
 ## A worked example, end to end: one Tier 1 onboarding
 
@@ -165,7 +165,7 @@ A client onboarding strategy by tier runs three onboarding tracks instead of one
 **What are the best client onboarding strategies for a growing agency?**
 The strategies that hold up as a firm grows are the ones that scale down as cleanly as they scale up: a templated, mostly automated track for the bulk of the book, with a deliberately heavier, senior-owned track reserved for the accounts carrying the most revenue or risk. Trying to run one uniform process past roughly 15-20 concurrent clients is the most common reason onboarding quality becomes inconsistent.
 
-**What are customer onboarding best practices once you've tiered?**
+**What are client onboarding best practices once you've tiered?**
 Agree the tier definitions in writing before building anything else. Give each tier a named owner, a stated timeline, and an explicit list of what's withheld at the tiers below, rather than leaving the gap unspoken. Measure stakeholder coverage, contact frequency and satisfaction by tier, not just whether the client technically went live, and revisit tier assignments on a fixed cadence rather than leaving them static.
 
 **How long should onboarding take for each tier?**

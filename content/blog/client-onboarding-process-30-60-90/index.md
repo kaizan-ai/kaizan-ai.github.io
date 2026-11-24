@@ -11,7 +11,7 @@ draft: false
 tags: [client onboarding, onboarding process, 30-60-90 plan, agencies, stakeholder mapping, client success]
 ---
 
-A client onboarding process, also called a customer onboarding process, is the structured plan that takes a new account from signed contract to steady-state delivery, usually mapped across 30, 60 and 90 days. Done well, it locks scope in writing, maps every stakeholder on the client side, and gets the team proactively flagging risks before the client has to raise them first. This guide is for agencies, consultancies and other professional services firms running retainer or project-based client relationships. It gives you the steps, who owns each one, how long it takes, the exact wording to copy, and a worked example.
+A client onboarding process, also called a client onboarding process, is the structured plan that takes a new account from signed contract to steady-state delivery, usually mapped across 30, 60 and 90 days. Done well, it locks scope in writing, maps every stakeholder on the client side, and gets the team proactively flagging risks before the client has to raise them first. This guide is for agencies, consultancies and other professional services firms running retainer or project-based client relationships. It gives you the steps, who owns each one, how long it takes, the exact wording to copy, and a worked example.
 
 
 ## When this applies, and when it doesn't
@@ -200,10 +200,10 @@ A client onboarding workflow is the repeatable sequence of steps, owners and tim
 **What is customer success onboarding?**
 Customer success onboarding is the process of getting a new account to its first measurable value and into a sustainable contact cadence, rather than just getting the contract signed. For agencies, that means a written definition of success agreed with the client by day 7-14, and a cadence of proactive contact that continues well past the kickoff call.
 
-**What are the customer onboarding steps, in order?**
+**What are the client onboarding steps, in order?**
 The core steps are: the internal sales-to-delivery handover, the client kickoff call, building the stakeholder map, connecting systems of record, agreeing written success criteria, a 30-day check-in, a 60-day review, a first QBR, and a formal handover to steady-state delivery. Each step needs an owner and a time estimate, not just a description.
 
-**What are the customer onboarding process steps a team should document?**
+**What are the client onboarding process steps a team should document?**
 Document who owns each step, how long it takes, the artefact it produces (a stakeholder map, a written success-criteria email, a QBR deck), and the failure mode if it's skipped. A documented process survives staff changes; an undocumented one lives in one account director's head and leaves with them.
 
 **What is a client onboarding process, specifically for agencies?**

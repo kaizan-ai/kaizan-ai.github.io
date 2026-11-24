@@ -6,12 +6,12 @@ author: James Caples
 category: BENCHMARK
 topic: client-health
 excerpt: Kaizan's benchmark data shows the early cadence and coverage numbers that separate growing client accounts from churning ones, and how to score your own.
-cover: customer-onboarding-metrics-top-vs-bottom-cohort.png
+cover: client-onboarding-metrics-top-vs-bottom-cohort.png
 draft: false
 tags: [onboarding metrics, client retention, benchmark, client health, account management, churn]
 ---
 
-Customer onboarding metrics are the handful of early cadence and coverage numbers, contact frequency with decision-makers, account-level call volume, how often risk gets surfaced, how often sentiment gets measured, that separate accounts heading toward growth from accounts heading toward churn. In Kaizan's own data, the gap between the two groups opens in the first months of a relationship and rarely closes on its own.
+Client onboarding metrics are the handful of early cadence and coverage numbers, contact frequency with decision-makers, account-level call volume, how often risk gets surfaced, how often sentiment gets measured, that separate accounts heading toward growth from accounts heading toward churn. In Kaizan's own data, the gap between the two groups opens in the first months of a relationship and rarely closes on its own.
 
 **Five findings worth acting on**
 
@@ -26,7 +26,7 @@ Customer onboarding metrics are the handful of early cadence and coverage number
 
 The figures below come from [Kaizan's 2026 Client Service Report](https://www.kaizan.ai/us/resources/white-paper/), drawn from over 1 million anonymised client-service calls, 10 million emails and thousands of chat messages, analysed across a 12-month period. The accounts in the sample are agency and professional-services clients using Kaizan.
 
-**Cohort definition.** "Top cohort" and "bottom cohort" are the accounts with the highest and lowest CSAT and revenue growth in the sample, not a fixed day-90 cut of new logos. We don't yet have a published breakout that isolates behaviour in the first 90 days specifically from behaviour later in a mature relationship, so what follows should be read as: these are the customer onboarding metrics that separate growing, satisfied relationships from shrinking, dissatisfied ones, and the pattern is visible, and actionable, from the first weeks of a new account onward.
+**Cohort definition.** "Top cohort" and "bottom cohort" are the accounts with the highest and lowest CSAT and revenue growth in the sample, not a fixed day-90 cut of new logos. We don't yet have a published breakout that isolates behaviour in the first 90 days specifically from behaviour later in a mature relationship, so what follows should be read as: these are the client onboarding metrics that separate growing, satisfied relationships from shrinking, dissatisfied ones, and the pattern is visible, and actionable, from the first weeks of a new account onward.
 
 **What this is not.** This is a correlational comparison, not a controlled study. It tells you what top and bottom-performing accounts look like side by side, not that doing X in week one causes Y a year later. We also don't have a segmented cut of this data by firm size, service line or account tier, only the two-cohort comparison above. If you're building a tiering model and need that cut, it's the single most useful addition we could make to this page.
 
@@ -34,7 +34,7 @@ One more honesty note: the underlying report carries an internal inconsistency o
 
 ## The benchmark in full
 
-| Customer onboarding metric | Bottom cohort | Top cohort | Gap |
+| Client onboarding metric | Bottom cohort | Top cohort | Gap |
 | --- | --- | --- | --- |
 | Calls per account per month | 2.3 | 5.8 | 2.5x |
 | Decision-maker calls per account per month | 0.92 | 1.67 | 1.81x |
@@ -74,7 +74,7 @@ CSAT measurement rate = sentiment or satisfaction checks run / account-months co
 | CSAT or sentiment checks per account per year | Under 14 | 14-41 | 41+ |
 | Stakeholders engaged per account | Under 142 | 142-242 | 242+ |
 
-![Self-scoring scorecard for onboarding metrics, showing how to score each metric 0, 1 or 2 against the bottom and top cohort levels.](customer-onboarding-metrics-self-scoring.png)
+![Self-scoring scorecard for onboarding metrics, showing how to score each metric 0, 1 or 2 against the bottom and top cohort levels.](client-onboarding-metrics-self-scoring.png)
 
 A score of 7 or more across the five rows puts an account in top-cohort territory on the behaviours this benchmark can actually measure. Anything under 4 is worth a closer look this week, not next quarter.
 
@@ -114,7 +114,7 @@ If you're building your own client health view rather than benchmarking against 
 
 ## Frequently asked questions
 
-**What's a good number for these customer onboarding metrics?**
+**What's a good number for these client onboarding metrics?**
 Roughly 5-6 calls per account per month, 1.5-2 decision-maker calls a month, 15+ risk phrases logged a year, and sentiment checked 3-4 times a quarter puts an account in top-cohort territory on Kaizan's benchmark. Below half those levels is worth a closer look.
 
 **How was this measured?**

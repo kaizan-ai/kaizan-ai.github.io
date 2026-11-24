@@ -8,7 +8,7 @@ cover: img-1.png
 draft: false
 ---
 
-A client advisory board (CAB) is a group of clients that a company consults to provide feedback and advice on its products, services, and strategy. CABs are usually composed of senior executives from a variety of companies and industries. They may also include VIP users or strategic customers.
+A client advisory board (CAB) is a group of clients that a company consults to provide feedback and advice on its products, services, and strategy. CABs are usually composed of senior executives from a variety of companies and industries. They may also include VIP users or strategic clients.
 
 In this article, we’ll discuss:
 
@@ -68,11 +68,11 @@ Clients who feel valued and appreciated are more likely to be loyal to a company
 
 One of the biggest challenges for any company, and one of the best way to generate success, is by identifying and resolving causes of dissatisfaction. Satisfied clients are more likely to remain as clients and to recommend the company to others.
 
-A client advisory board can help a company identify areas where customers are dissatisfied and make changes to improve satisfaction. It’s common for clients to have things they’re dissatisfied with but which they’re wary of raising, or to be unsure how to feed back to the company. A CAB is the ideal forum to bring up these issues.
+A client advisory board can help a company identify areas where clients are dissatisfied and make changes to improve satisfaction. It’s common for clients to have things they’re dissatisfied with but which they’re wary of raising, or to be unsure how to feed back to the company. A CAB is the ideal forum to bring up these issues.
 
 ## Enhanced Client Feedback
 
-Of course, a CAB isn’t just about negative information, it can be about positives too. A client advisory board is a great venue to gather valuable feedback on a company’s performance and its clients’ experiences, good or bad. The company can then use this information to improve its products, services, and overall customer experience.
+Of course, a CAB isn’t just about negative information, it can be about positives too. A client advisory board is a great venue to gather valuable feedback on a company’s performance and its clients’ experiences, good or bad. The company can then use this information to improve its products, services, and overall client experience.
 
 ## Greater Market Insight
 

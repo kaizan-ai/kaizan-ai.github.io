@@ -41,7 +41,7 @@ Try this test on your own stack. Ask: what did the client's finance director say
 
 An agency's relationship with a client is not one contact and one contract. A retainer has a day-to-day lead, a marketing director, a procurement owner and a finance approver. Each one forms a view of the work, which is why [stakeholder mapping](https://kaizan.ai/blog/stakeholder-mapping-101-why-is-it-critical-in-managing-client/) comes first. Delivery, billing and renewal run on different calendars. Software built around a single buyer misses most of this.
 
-The scale is real. Kaizan's own customer base describes its typical daily user as an account director or account manager who owns a portfolio of [6 to 25 client relationships](https://kaizan.ai/faq/). At that load, managing clients across multiple clients gets harder without a shared record that protects customer relationships with existing clients.
+The scale is real. Kaizan's own client base describes its typical daily user as an account director or account manager who owns a portfolio of [6 to 25 client relationships](https://kaizan.ai/faq/). At that load, managing clients across multiple clients gets harder without a shared record that protects client relationships with existing clients.
 
 ## The Five Types Of Client Management Software
 
@@ -134,7 +134,7 @@ Leaders get a view filtered through the account manager. A Head of International
 
 The warnings exist. In Kaizan's 2026 benchmark, 18 of 26 struggling accounts, about 69%, [raised their own warning signs in conversation at least once](https://kaizan.ai/white-paper). The sample is small and the finding is directional. The point holds: the signal lives in conversations, and a field-based record never sees it.
 
-Keeping a client costs far less than replacing one. Harvard Business Review reports that, depending on the study and the industry, [winning a new customer costs 5 to 25 times more than keeping an existing one](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers).
+Keeping a client costs far less than replacing one. Harvard Business Review reports that, depending on the study and the industry, [winning a new client costs 5 to 25 times more than keeping an existing one](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers).
 
 ## Must-Have Features Of A Client Management Platform
 
@@ -142,7 +142,7 @@ Judge every tool on the job each feature does for your team. A long feature list
 
 ### One Client Record
 
-The job: stop hunting across five tools before a call. Kaizan calls this [client memory](https://kaizan.ai/product/), a permissioned, always-current client database for each client’s details and communication history that the account team and the firm's own AI tools can question. Ask any vendor to show one client's last 30 days of customer communications in that record without asking a colleague.
+The job: stop hunting across five tools before a call. Kaizan calls this [client memory](https://kaizan.ai/product/), a permissioned, always-current client database for each client’s details and communication history that the account team and the firm's own AI tools can question. Ask any vendor to show one client's last 30 days of client communications in that record without asking a colleague.
 
 ### Client Tracking: Emails, Meetings And Calls Captured Automatically
 
@@ -216,7 +216,7 @@ Kaizan publishes this guide, and Kaizan is one of the 12 tools. We assessed it b
 | SuiteDash | Client portal | Small firms that want a white-label portal | Flat rate. $19, $49 or $99 per month, unlimited users | Zoom, WordPress, PayPal | Shows work to clients. Does not score health |
 | Moxo | Client portal | Regulated firms with approval workflows | Flat team plan reported at $500 per month, unlimited seats | Structured workflows and approvals | Highest entry price among the portals we checked |
 | Kaizan | Client success software | Agencies and professional services firms with many stakeholders per client | Per client. Priced by number of clients. Price on quote. Unlimited users | [CRM, email, calendar, meeting, chat and work tools](https://kaizan.ai/integrations/) | Needs conversation data. Annual contract only |
-| Planhat | Client success software | B2B SaaS customer success teams | Quote-based, by customer account count | Confirm the connector list with the vendor | Built around SaaS customer lifecycles |
+| Planhat | Client success software | B2B SaaS customer success teams | Quote-based, by client account count | Confirm the connector list with the vendor | Built around SaaS client lifecycles |
 | Airtable | Project and work tool | Teams that want to build their own tracker | Per editor. Free for 5 editors. Team $20 per month on annual billing | Synced tables, automations, Portals add-on | You build and maintain it. Holds what you enter |
 
 ### HubSpot
@@ -259,11 +259,11 @@ Kaizan publishes this guide, and Kaizan is one of the 12 tools. We assessed it b
 
 **What it is:** a **popular client management software** option for agencies, though more specifically client success software for marketing agencies and professional services firms. It captures every client meeting, email and message into client memory for **managing client interactions**, scores each relationship against [The Evidence-Based Client Health Standard](https://kaizan.ai/product/#health-model) (CARE), and gives the account team the next action to approve or decline. **Best for:** agencies where one client has several stakeholders and the relationship lives in calls and inboxes. **Standout:** risk and growth signals with the quote behind each, giving teams **valuable insights**, and the same client memory available to your own AI tools through [API and MCP](https://kaizan.ai/blog/mcp-vs-api-in-plain-english/). **Pricing:** Kaizan is priced by number of clients. Price on quote. Users are unlimited. Contracts are annual, and every engagement starts with [a free 14-day pilot on your own data](https://kaizan.ai/pricing/). **Limits:** it needs conversation data to work. Accounts that block recording or private chat capture produce thin scores. It is not a CRM and sits beside one. Per-client pricing rises as your portfolio grows. **Agency verdict:** choose it when the problem is losing clients without warning. Choose a CRM, a PSA or a portal when the problem is deals, margin or files.
 
-**Reported results:** Kaizan reports an average 26%+ revenue growth per client across its customer portfolio, an average 33% lower cost to serve and an average 40% cut in manual admin by **automating routine tasks**, which frees teams for higher-value work such as **marketing strategies**. Its calculator credits an average 45% of at-risk revenue as protected. These are Kaizan's own figures, not independent measurements, so test them in the pilot.
+**Reported results:** Kaizan reports an average 26%+ revenue growth per client across its client portfolio, an average 33% lower cost to serve and an average 40% cut in manual admin by **automating routine tasks**, which frees teams for higher-value work such as **marketing strategies**. Its calculator credits an average 45% of at-risk revenue as protected. These are Kaizan's own figures, not independent measurements, so test them in the pilot.
 
 ### Planhat
 
-**What it is:** a customer platform for customer success teams, covering health scores, accounts and revenue signals. **Best for:** B2B SaaS companies managing customer lifecycles. **Standout:** depth for subscription businesses. **Pricing:** [quote-based and priced by the number of customer accounts, not seats](https://www.vendr.com/marketplace/planhat). Public trackers report typical annual contracts from about $17,500 to about $40,000, with implementation extra. **Limits:** it is built around SaaS customer lifecycles, so agency retainers with many stakeholders and calls as the main signal are a looser fit. **Agency verdict:** choose it if you run a SaaS product. Choose software built for professional services if you sell retainers.
+**What it is:** a customer platform for customer success teams, covering health scores, accounts and revenue signals. **Best for:** B2B SaaS companies managing client lifecycles. **Standout:** depth for subscription businesses. **Pricing:** [quote-based and priced by the number of client accounts, not seats](https://www.vendr.com/marketplace/planhat). Public trackers report typical annual contracts from about $17,500 to about $40,000, with implementation extra. **Limits:** it is built around SaaS client lifecycles, so agency retainers with many stakeholders and calls as the main signal are a looser fit. **Agency verdict:** choose it if you run a SaaS product. Choose software built for professional services if you sell retainers.
 
 ### Airtable
 
@@ -354,7 +354,7 @@ Kaizan's pricing calculator method gives this result in its Expected mode:
 | Capacity recovered (9 admin hours a week per person, 60% handed back) | £596,160 |
 | Total modelled benefit | £2,036,160 |
 
-This is a model, not a result, and it is meant to show how stronger customer retention can protect revenue and support better sales figures. The agency size, revenue per client and team size are examples we chose. The shares come from the [pricing calculator](https://kaizan.ai/pricing/). Run your own numbers there. Kaizan is priced by number of clients, with price on quote.
+This is a model, not a result, and it is meant to show how stronger client retention can protect revenue and support better sales figures. The agency size, revenue per client and team size are examples we chose. The shares come from the [pricing calculator](https://kaizan.ai/pricing/). Run your own numbers there. Kaizan is priced by number of clients, with price on quote.
 
 ## Which Client Management Software Fits A 10, 50 And 200+ Person Agency?
 

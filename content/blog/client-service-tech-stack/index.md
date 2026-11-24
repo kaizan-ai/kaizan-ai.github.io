@@ -36,7 +36,7 @@ Most of what gets sold as a complete stack is actually one lane wearing a trench
 
 ## The Four Jobs In A Client Service Tech Stack
 
-Every tool in this category does one (sometimes two) of four jobs. Naming the job first, and mapping it to stages across the customer lifecycle, is the fastest way to see what you're missing.
+Every tool in this category does one (sometimes two) of four jobs. Naming the job first, and mapping it to stages across the client lifecycle, is the fastest way to see what you're missing.
 
 ### Capture
 
@@ -48,7 +48,7 @@ Where the contact, the deal, the contract and the account history live. This is 
 
 ### Score And Health
 
-Turning captured conversations into a judgement: is this relationship getting stronger or weaker, and why. This is the layer most agencies don't have, and the one a monthly RAG spreadsheet tries and fails to replace, because it turns captured signals into a view of customer health that surfaces early risk signals and renewal risk.
+Turning captured conversations into a judgement: is this relationship getting stronger or weaker, and why. This is the layer most agencies don't have, and the one a monthly RAG spreadsheet tries and fails to replace, because it turns captured signals into a view of client health that surfaces early risk signals and renewal risk.
 
 ### Act And Automate
 
@@ -72,7 +72,7 @@ A spreadsheet is free, familiar, and fine for a handful of clients. It breaks fo
 
 **The monthly RAG spreadsheet is backward-looking.** Someone sits down once a month, recalls the last four weeks from memory, and colours a cell. By the time it's amber, the client has usually already raised the issue, or decided not to.
 
-**The relationship lives across conversations and systems, not just CRM fields.** A CRM logs the deal. It does not hold the relevant customer data from calls, emails, support threads, and billing history, like the budget freeze mentioned three weeks ago or the decision-maker who hasn't replied to anything in a month. [Agency Client](https://kaizan.ai/product/), a Head of Client Service at a mid-sized digital agency, put it plainly in a persona interview: half of the updates and notes from client calls never get logged anywhere at all.
+**The relationship lives across conversations and systems, not just CRM fields.** A CRM logs the deal. It does not hold the relevant client data from calls, emails, support threads, and billing history, like the budget freeze mentioned three weeks ago or the decision-maker who hasn't replied to anything in a month. [Agency Client](https://kaizan.ai/product/), a Head of Client Service at a mid-sized digital agency, put it plainly in a persona interview: half of the updates and notes from client calls never get logged anywhere at all.
 
 **When an account director leaves, the context leaves with them.** Nobody else was on every call. The replacement starts from zero, and the client notices.
 
@@ -122,7 +122,7 @@ This list sorts 25 tools by the job they do, not by marketing category, because 
 | **Totango** | Enterprise CS teams tracking adoption journeys | Quote-based | Steep setup; strongest where there's a product to instrument, less so for pure services firms |
 | **Planhat** | CS teams wanting a flexible data model | Quote-based | Flexibility means more configuration work before it's useful |
 | **Vitally** | Mid-market SaaS teams | Starts around $600/month for small teams, scales up | SaaS-first design; conversation capture for agencies is not the core use case |
-| **ClientSuccess** | Straightforward CS management for smaller teams | Quote-based; pricing may vary by seats and by **customer account** | Lighter feature set than Gainsight-tier platforms |
+| **ClientSuccess** | Straightforward CS management for smaller teams | Quote-based; pricing may vary by seats and by **client account** | Lighter feature set than Gainsight-tier platforms |
 | **Custify** | SMB to mid-market CS teams | Quote-based | Smaller ecosystem of integrations than the category leaders |
 | **Kaizan** | Agencies, consultancies and professional services firms running many client relationships across dispersed teams | Kaizan is priced by number of clients. Price on quote. [Full pricing](https://kaizan.ai/pricing/) | Priced per client, not per seat, which suits firms where many people touch one account but is a different model to budget for than a per-seat tool |
 
@@ -162,15 +162,15 @@ Pricing and feature claims above were checked against each vendor's own publishe
 4. **Drafted follow-ups and CRM updates.** This is where the controls matter: a draft that a person reviews and sends is different from an email that goes out unreviewed. Kaizan's own quality bar for this, confirmed internally, requires at least 80% of drafted outputs to be accepted without edits before a capability ships to every account.
 5. **QBR and account brief prep.** Compiling the deck or the brief from real conversation history, reviewed before the meeting, not generated live in it.
 
-What should stay human, at every stage: the decision to escalate a relationship, the judgement call in a difficult conversation, and anything going to a client that hasn't been read by a person first. Automation should clear the admin around those moments and help teams anticipate customer needs sooner, not replace the moments themselves.
+What should stay human, at every stage: the decision to escalate a relationship, the judgement call in a difficult conversation, and anything going to a client that hasn't been read by a person first. Automation should clear the admin around those moments and help teams anticipate client needs sooner, not replace the moments themselves.
 
 ## Customer Success CRM, Spreadsheet Or Platform: What To Use At 10, 50 And 200 Clients
 
-There's no universal answer here, but there are real thresholds where the tool that worked stops working. These are drawn from patterns in Kaizan's own customer conversations across firms at each size, not from a formal study, so treat them as a starting point rather than a rule.
+There's no universal answer here, but there are real thresholds where the tool that worked stops working. These are drawn from patterns in Kaizan's own client conversations across firms at each size, not from a formal study, so treat them as a starting point rather than a rule.
 
 **At around 10 clients:** a CRM (or even a well-kept spreadsheet) plus email and calendar is usually enough. One person, or a small team, can hold the context in their heads. Teams should usually stick with spreadsheets and other basic tools for the first two to three months before buying software. The risk here isn't the tool, it's that nothing is written down anywhere other than memory.
 
-**At around 50 clients:** the spreadsheet starts lying. Updates lag, RAG statuses go stale between the monthly review cycle, and the first account director departure costs the firm real institutional knowledge. This is usually the point where firms add a dedicated **customer success CRM** or client success layer on top of their existing CRM, because the system of record alone can't answer "how is this relationship doing" and the spreadsheet can't keep up with the volume or support the entire customer journey.
+**At around 50 clients:** the spreadsheet starts lying. Updates lag, RAG statuses go stale between the monthly review cycle, and the first account director departure costs the firm real institutional knowledge. This is usually the point where firms add a dedicated **customer success CRM** or client success layer on top of their existing CRM, because the system of record alone can't answer "how is this relationship doing" and the spreadsheet can't keep up with the volume or support the entire client journey.
 
 **At around 200 clients:** a manual process breaks. A portfolio view becomes non-negotiable, because no individual leader can hold 200 relationships in their head, and the firm needs automatic capture, scoring and alerting just to know where to look each week. This is also typically where multi-team segmentation and tiered account permissions start to matter, because a 200-client portfolio usually spans several teams or offices.
 
@@ -188,7 +188,7 @@ Kaizan is built for firms with somewhere between 150 and 10,000 employees, where
 
 ## What Customer Success Tools Cost
 
-Pricing in this category runs across three models, and they don't compare cleanly without converting to a common unit because vendors may price by seats, feature depth, or customer volume.
+Pricing in this category runs across three models, and they don't compare cleanly without converting to a common unit because vendors may price by seats, feature depth, or client volume.
 
 | Band | What's typical | Example |
 | --- | --- | --- |
@@ -213,28 +213,28 @@ Kaizan is priced by number of clients, with no additional cost as the team using
 ![Five-step 30-day plan for moving off the RAG spreadsheet.](client-service-tech-stack-first-30-days.png)
 
 1. **Days 1 to 3:** connect email, calendar and call recording. Don't touch the spreadsheet yet; let both run in parallel.
-2. **Days 4 to 7:** backfill recent history so the system has customer history and context, not just conversations from today onward.
+2. **Days 4 to 7:** backfill recent history so the system has client history and context, not just conversations from today onward.
 3. **Week 2:** start reviewing the health scores or risk flags against what the team already knows, including support history and other account context. This is where trust gets built or lost; if the system flags something the team already knew about, that's a win, not a redundancy.
 4. **Week 3:** turn on drafted follow-ups for internal recaps only, nothing client-facing yet.
 5. **Week 4:** retire the spreadsheet for the pilot accounts. Keep it running for the rest of the portfolio until the rollout is confirmed.
 
 ## An Example: What Changed When An Agency Added A Client Intelligence Layer
 
-Greg Gifford, Chief Operating Officer at SearchLab, described the problem most agencies don't know they have until it's solved: "We didn't realise that there was a problem of the throughput of connecting everything together and having a searchable place to go for each client that improves customer relationships. We didn't realise we needed it, but once we had it, we were like, oh my God, we were missing the boat."
+Greg Gifford, Chief Operating Officer at SearchLab, described the problem most agencies don't know they have until it's solved: "We didn't realise that there was a problem of the throughput of connecting everything together and having a searchable place to go for each client that improves client relationships. We didn't realise we needed it, but once we had it, we were like, oh my God, we were missing the boat."
 
 ![From client call to health score to follow-up, with no admin in between](video.mp4)
 
 The effect wasn't just time saved. It showed up in how the agency talks about its own budget: "It is the one tool that whenever we have efficiency discussions or cost cutting discussions or budget discussions, it is never even on the table to discuss [Kaizan], because it is absolutely vital to everything that we do, and we cannot live without it." SearchLab also uses the layer directly against churn risk: "We're trying to be proactive in predicting which clients might be a churn risk, and Kaizan is a huge part of helping to identify that."
 
-At Gravity Global, the shift showed up in a specific recurring task. Ada Cavalmoretti, Group Account Director, described the change plainly: it reduces the manual tasks that take a long time but aren't valuable, freeing the team to put that time back into higher-value customer interactions. A colleague's churn reporting, separately, went from something that used to take hours to something that now takes minutes.
+At Gravity Global, the shift showed up in a specific recurring task. Ada Cavalmoretti, Group Account Director, described the change plainly: it reduces the manual tasks that take a long time but aren't valuable, freeing the team to put that time back into higher-value client interactions. A colleague's churn reporting, separately, went from something that used to take hours to something that now takes minutes.
 
 A fair counter-example, if you're building the case for change internally: this only works when the whole account team adopts it together. A partial rollout, where only one or two people on a client use the system while the rest still work from memory and a shared inbox, produces a patchy health score that's less trustworthy than the spreadsheet it replaced, because half the conversations never get captured. The fix isn't the tool; it's rolling out to a whole pod or client team at once rather than one person at a time.
 
 ## Frequently Asked Questions
 
-**What is the best CSM software for agencies?** There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the customer journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.
+**What is the best CSM software for agencies?** There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the client journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.
 
-**What is customer success automation, and which workflows should we automate first?** Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving customer retention as well as reducing admin.
+**What is customer success automation, and which workflows should we automate first?** Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving client retention as well as reducing admin.
 
 **What are the best customer success management tools for agencies?** For agencies and professional services firms, the strongest customer success management tools are the ones built around conversation data (calls, email, chat) rather than product usage, since that's where the relationship signal actually lives. Gainsight and Totango are strong where there's a product to instrument; Kaizan and similar services-focused platforms are built for firms where the product is the relationship itself and teams need to guide clients towards desired outcomes.
 
@@ -246,7 +246,7 @@ A fair counter-example, if you're building the case for change internally: this 
 
 **Do we need these tools if we already have a CRM?** A CRM tells you who the client is and what you've sold them. It doesn't tell you how the relationship is doing right now, because that signal lives in calls, emails and the things clients say that never get typed into a CRM field. Most firms keep their CRM as the system of record and add a client success layer on top of it, rather than replacing one with the other; unlike customer support software, which is reactive to incoming issues, that layer is there to be proactive.
 
-**How long does it take to roll out?** For automatic-capture platforms, integrations typically connect within a day and recent history backfills within the first two weeks, so a health score monitoring customer satisfaction and customer health across the portfolio is live almost immediately. Full team adoption, where account managers rely on drafted follow-ups and the system genuinely replaces old habits, more commonly takes 30 to 45 days.
+**How long does it take to roll out?** For automatic-capture platforms, integrations typically connect within a day and recent history backfills within the first two weeks, so a health score monitoring client satisfaction and client health across the portfolio is live almost immediately. Full team adoption, where account managers rely on drafted follow-ups and the system genuinely replaces old habits, more commonly takes 30 to 45 days.
 
 **Will this replace our RAG spreadsheet?** It should, for the accounts it covers, but trust has to be earned first. Run the platform in parallel with the spreadsheet for the first two to three weeks, confirm the health scores match what the team already knows is true, then retire the spreadsheet account by account rather than all at once.
 

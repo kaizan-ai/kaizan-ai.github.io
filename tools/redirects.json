@@ -6,7 +6,7 @@
  "/ai-operational-efficiency-tradedoubler": "/blog/agency-profitability/tradedoubler-20-percent-efficiency-gain/",
  "/blog-posts/a-guide-to-segmentation-in-client-success": "/blog/playbooks-and-templates/client-segmentation/",
  "/blog-posts/cs-leader-quick-fire-q-a-hannah-carthy": "/blog/qa/cs-leader-qa-hannah-carthy-verkeer/",
- "/blog-posts/how-a-b2b-customer-journey-map-can-be-utilised-in-professional-services": "/blog/playbooks-and-templates/b2b-customer-journey-map/",
+ "/blog-posts/how-a-b2b-customer-journey-map-can-be-utilised-in-professional-services": "/blog/playbooks-and-templates/b2b-client-journey-map/",
  "/blog-posts/how-can-ai-be-used-to-optimise-partnerships-with-resellers": "/blog/ai-for-client-service/ai-for-reseller-partnerships/",
  "/blog-posts/how-to-re-engage-inactive-clients": "/blog/playbooks-and-templates/re-engage-inactive-clients/",
  "/blog-posts/stakeholder-mapping-101-why-is-it-critical-in-managing-client-relationships": "/blog/playbooks-and-templates/stakeholder-mapping-101/",
@@ -14,7 +14,7 @@
  "/cs-leader-quick-fire-qa-mark-raymond-anything-is-possible": "/blog/qa/cs-leader-qa-mark-raymond/",
  "/csl-2025-ai-predictions-the-kite-factory": "/blog/client-software/kite-factory-unify-client-data/",
  "/digital-entertainment-and-media-platform-azerion-discusses-implementing-ai-operationally": "/blog/ai-for-client-service/azerion-ai-in-client-services/",
- "/how-a-b2b-customer-journey-map-can-be-utilised-in-professional-services": "/blog/playbooks-and-templates/b2b-customer-journey-map/",
+ "/how-a-b2b-customer-journey-map-can-be-utilised-in-professional-services": "/blog/playbooks-and-templates/b2b-client-journey-map/",
  "/how-can-ai-be-used-to-optimise-partnerships-with-resellers": "/blog/ai-for-client-service/ai-for-reseller-partnerships/",
  "/how-to-create-a-client-advisory-board": "/blog/playbooks-and-templates/create-a-client-advisory-board/",
  "/how-to-re-engage-inactive-clients": "/blog/playbooks-and-templates/re-engage-inactive-clients/",
@@ -138,7 +138,7 @@
  "/blog/the-client-relationship-is-bigger-than-your-inbox": "/blog/client-software/client-relationship-bigger-than-your-inbox/",
  "/blog/your-data-is-yours-thats-our-policy": "/blog/client-software/your-data-is-yours/",
  "/blog/client-segmentation": "/blog/playbooks-and-templates/client-segmentation/",
- "/blog/how-a-b2b-customer-journey-map-can-be-utilised-in-professional": "/blog/playbooks-and-templates/b2b-customer-journey-map/",
+ "/blog/how-a-b2b-customer-journey-map-can-be-utilised-in-professional": "/blog/playbooks-and-templates/b2b-client-journey-map/",
  "/blog/how-to-create-a-client-advisory-board": "/blog/playbooks-and-templates/create-a-client-advisory-board/",
  "/blog/key-principles-in-strategic-client-management": "/blog/playbooks-and-templates/key-principles-in-strategic-client-management/",
  "/blog/re-engage-inactive-clients": "/blog/playbooks-and-templates/re-engage-inactive-clients/",
@@ -158,5 +158,9 @@
  "/blog/cs-leader-quick-fire-q-a-hannah-carthy-verkeer": "/blog/qa/cs-leader-qa-hannah-carthy-verkeer/",
  "/blog/cs-leader-quick-fire-q-a-mark-raymond-anything-is-possible": "/blog/qa/cs-leader-qa-mark-raymond/",
  "/blog/q-a-using-ai-to-increase-alignment-in-multi-market-client-service": "/blog/qa/qa-ai-multi-market-alignment/",
- "/insights": "/blog/"
+ "/insights": "/blog/",
+ "/blog/playbooks-and-templates/b2b-customer-journey-map": "/blog/playbooks-and-templates/b2b-client-journey-map/",
+ "/blog/client-software/best-customer-success-software-for-agencies": "/blog/client-software/best-client-success-software-for-agencies/",
+ "/blog/playbooks-and-templates/customer-relationship-management-process": "/blog/playbooks-and-templates/client-relationship-management-process/",
+ "/blog/client-software/customer-retention-software-for-agencies": "/blog/client-software/client-retention-software-for-agencies/"
 }

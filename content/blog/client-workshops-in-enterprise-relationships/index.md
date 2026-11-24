@@ -45,7 +45,7 @@ Client workshops come in different forms, each designed to serve a specific purp
 
 4. **Innovation Workshop:** These workshops encourage clients and the business to brainstorm and generate innovative ideas, often related to new products, services, or process improvements.
 
-5. **Feedback and Improvement Workshop:** These workshops are focused on gathering feedback from clients about their experiences with the company’s products, services, or processes. It helps identify areas for improvement and enhancements, and can surface input from customers or users to improve offerings.
+5. **Feedback and Improvement Workshop:** These workshops are focused on gathering feedback from clients about their experiences with the company’s products, services, or processes. It helps identify areas for improvement and enhancements, and can surface input from clients or users to improve offerings.
 
 6. **Client Onboarding Workshop:** Client onboarding workshops assist new clients with proper onboarding at the beginning of the relationship. They cover essential information, practical details, procedures, and best practices to ensure a smooth set-up.
 

@@ -9,7 +9,7 @@ excerpt: Ada Cavalmoretti, Group Account Director at Gravity Global, shares how 
 meta_description: Gravity Global’s Ada Cavalmoretti on spotting the quiet signals of a slipping client relationship, confirming instinct with data and protecting time.
 cover: cover.png
 draft: false
-tags: [client-relationship, artificial-intelligence, advertising, customer-retention, account-management]
+tags: [client-relationship, artificial-intelligence, advertising, client-retention, account-management]
 schema: true
 date_modified: 2026-10-09
 ---

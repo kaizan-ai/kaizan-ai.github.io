@@ -16,7 +16,7 @@ meta_description: Mark Raymond, co-founder of Anything is Possible, on deliverin
 *Mark Raymond @ Anything is Possible*
 
 **Tell us about your company, role and what you’re responsible for?**  
-I’m the co-founder of Anything is Possible, a media, creative and tech agency. I head up the client management team in the agency, serving customers and overseeing accounts across the business.
+I’m the co-founder of Anything is Possible, a media, creative and tech agency. I head up the client management team in the agency, serving clients and overseeing accounts across the business.
 
 **What advice would you like to share for aspiring leaders looking to deliver a world-class client experience?**  
 Make it as easy and frictionless as possible clients to work with us. Ensure consistency and quality across every touch point and interaction, with a relentless focus on delivering effectiveness. Build long-term relationships that strengthen retention over time.

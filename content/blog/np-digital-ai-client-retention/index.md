@@ -8,7 +8,7 @@ topic: client-health
 excerpt: Brandon Smith, Managing Director at NP Digital, shares how AI is helping client teams gain visibility across relationships, save time, and protect revenue.
 cover: img-1.png
 draft: false
-tags: [digital-marketing-agency, digital-marketing, ai, customer-retention, client-relationship]
+tags: [digital-marketing-agency, digital-marketing, ai, client-retention, client-relationship]
 ---
 
 **Brandon Smith, Managing Director at NP Digital, shares how AI is helping client teams gain visibility across relationships, save time, and protect revenue.**

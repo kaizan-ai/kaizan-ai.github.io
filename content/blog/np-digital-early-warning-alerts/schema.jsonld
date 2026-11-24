@@ -14,7 +14,7 @@
           "name": "What changed for NP Digital, in numbers?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "NP Digital has published qualitative results: client service managers save up to eight hours a month on manual admin, and the team has repeatedly identified high-risk clients before they left. NP Digital has not yet published a specific retention percentage or a measured lead time between a risk signal appearing and a client raising it formally. A future update may also show the harder number many readers expect: customer retention rate.",
+            "text": "NP Digital has published qualitative results: client service managers save up to eight hours a month on manual admin, and the team has repeatedly identified high-risk clients before they left. NP Digital has not yet published a specific retention percentage or a measured lead time between a risk signal appearing and a client raising it formally. A future update may also show the harder number many readers expect: client retention rate.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -32,7 +32,7 @@
           "name": "What did the team have to change?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The biggest change was moving away from individual account managers holding the relationship in memory and towards a shared, always-current view that the whole team, and new people joining an account, could use from day one. That shared visibility also helps protect customer experience and maintain customer support continuity when new people join an account.",
+            "text": "The biggest change was moving away from individual account managers holding the relationship in memory and towards a shared, always-current view that the whole team, and new people joining an account, could use from day one. That shared visibility also helps protect client experience and maintain customer support continuity when new people join an account.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -41,7 +41,7 @@
           "name": "What would they do differently?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Based on Smith's comments, the clearest lesson is treating this as business-critical rather than a client services tool: NP Digital frames AI as central to “every facet” of the business, not a point solution for one team, which helps explain why customer retention software matters beyond one team. All NP Digital quotes are reused, with attribution, from the published case study How NP Digital Uses AI to Strengthen Client Relationships and Drive Retention on kaizan.ai.",
+            "text": "Based on Smith's comments, the clearest lesson is treating this as business-critical rather than a client services tool: NP Digital frames AI as central to “every facet” of the business, not a point solution for one team, which helps explain why client retention software matters beyond one team. All NP Digital quotes are reused, with attribution, from the published case study How NP Digital Uses AI to Strengthen Client Relationships and Drive Retention on kaizan.ai.",
             "inLanguage": "@@LANG@@"
           }
         }
@@ -286,7 +286,7 @@
         "client churn",
         "NP Digital case study",
         "client health",
-        "customer retention for agencies",
+        "client retention for agencies",
         "account health monitoring"
       ],
       "wordCount": 1967,
@@ -302,7 +302,7 @@
         },
         {
           "@type": "Thing",
-          "name": "Customer retention",
+          "name": "Client retention",
           "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
         },
         {

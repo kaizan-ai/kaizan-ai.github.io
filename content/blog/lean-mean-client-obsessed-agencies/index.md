@@ -60,7 +60,7 @@ His read on the future is measured rather than breathless. As the models "figure
 
 Here's where the conversation got specific. When we asked where AI has delivered the biggest boost, the answer wasn't content generation or automated reporting. It was client understanding, and it came through Kaizan by giving the team more transparency into the client relationship.
 
-> "The biggest boost from AI and client understanding has come from Kaizan. Just having the insight of being attached to all client communication, having those watchwords to look for, either positive things or negative things, having the customer sentiment, having the alerts of, 'Hey, this person hasn't been on a call and you marked that you wanted them on a call once a quarter.' The level of detail we can get around the client relationship is just unbelievable. I would never even have thought this was possible five or six years ago."
+> "The biggest boost from AI and client understanding has come from Kaizan. Just having the insight of being attached to all client communication, having those watchwords to look for, either positive things or negative things, having the client sentiment, having the alerts of, 'Hey, this person hasn't been on a call and you marked that you wanted them on a call once a quarter.' The level of detail we can get around the client relationship is just unbelievable. I would never even have thought this was possible five or six years ago."
 
 Those insights help the team prove when a relationship is healthy and when it's starting to drift. To appreciate why that lands so hard, you have to understand what came before it.
 
@@ -94,7 +94,7 @@ One clarification he was eager to make: this is not just another AI note-taker.
 
 His summary?
 
-> "This tool is an absolute game-changer. Don't even question it. It's money very well spent. An invaluable customer tool."
+> "This tool is an absolute game-changer. Don't even question it. It's money very well spent. An invaluable client tool."
 
 ## Job replacement vs. job enhancement
 

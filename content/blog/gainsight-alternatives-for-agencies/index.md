@@ -31,14 +31,14 @@ The Gainsight customer success platform is built for SaaS companies with product
 | Totango (now Odie) | Mid-market SaaS wanting faster setup than Gainsight | Modular SuccessBLOCs, Unison AI churn engine | Published from $500/mo (Customer Knowledge Engine) and $1,500/mo (Customer Operating System) since the September 2026 rebrand | Still telemetry-first; the rebrand simplified packaging, not the underlying data model |
 | ChurnZero | Subscription SaaS focused purely on churn prevention | Health scores, in-app engagement, playbooks | Seat-based, roughly $40k–51k/year at mid-market (buyer-reported median) | Built for product-led motions with in-app messaging, not relationship-led account work |
 | Vitally | Lean SaaS CS teams who want modern UX | Customer 360, CSM project management | Custom, roughly $30k–150k/year | Best-reviewed UX of the enterprise group; same telemetry assumption underneath |
-| Planhat | Data-heavy B2B revenue teams wanting CS, CRM and PSA together | Unified customer data platform | Platform fee plus a per-customer rate, roughly $20k–50k+/year | Closest of the five to agency-friendly, but still assumes a data warehouse behind it |
+| Planhat | Data-heavy B2B revenue teams wanting CS, CRM and PSA together | Unified client data platform | Platform fee plus a per-client rate, roughly $20k–50k+/year | Closest of the five to agency-friendly, but still assumes a data warehouse behind it |
 | Kaizan | Agencies and professional services firms running relationship-led accounts | Calls, emails and meetings, scored against The Evidence-Based Client Health Standard | Per client covered, from £99/client/month, unlimited users | Built for firms whose health signal is conversational, not logged in a product |
 
 ## What each option actually is
 
 ### Gainsight
 
-The Gainsight customer success platform is the enterprise standard in this category, and the one most "CS platform" searches end up comparing everything else against. It is a product family, not a single tool: Gainsight CS is the flagship, with Product Experience, Customer Community and Customer Education sold alongside it. Gainsight CS runs on health scores built from product usage data, CRM fields and support signals, then automates the playbooks a CS team runs against them, renewal workflows, risk alerts, QBR prep. It is a per-seat product aimed at CS teams who already have a CS Ops function to run it.
+The Gainsight customer success platform is the enterprise standard in this category, and the one most "CS platform" searches end up comparing everything else against. It is a product family, not a single tool: Gainsight CS is the flagship, with Product Experience, Client Community and Client Education sold alongside it. Gainsight CS runs on health scores built from product usage data, CRM fields and support signals, then automates the playbooks a CS team runs against them, renewal workflows, risk alerts, QBR prep. It is a per-seat product aimed at CS teams who already have a CS Ops function to run it.
 
 ### Totango (now Odie)
 
@@ -81,7 +81,7 @@ The practical consequence shows up in the research. [RSW/US's 2024 Agency New Bu
 | What it predicts | Renewal risk and expansion from usage trends | Churn and expansion via the Unison AI engine | Churn, via engagement and billing signals | Account health and renewal risk | Account health, commercial and services risk together | Relationship health across satisfaction, stakeholder activity, relationship strength and expansion readiness |
 | Reporting | Deep, configurable dashboards; steep learning curve | Pre-built SuccessBLOCs dashboards | In-app and CS dashboards | Clean, modern dashboards | Combined commercial and CS dashboards | Portfolio view plus per-client dashboards, built for account teams, not CS Ops |
 | Integrations | Salesforce, SAP, product analytics, broad marketplace | Salesforce, HubSpot, Slack, Zendesk, Intercom | CRM, billing, in-app messaging | Salesforce, HubSpot, Stripe, Segment, Snowflake | CRM, finance systems, data warehouses | Google and Microsoft calendar and email, Slack, Teams, Zoom, Salesforce, HubSpot, [MCP](https://www.kaizan.ai/us/integrations/) |
-| Price model | Per seat | Per seat / flat platform fee since the Odie rebrand | Per seat | Custom, typically per seat | Platform fee plus per-customer rate | Per client covered, unlimited users |
+| Price model | Per seat | Per seat / flat platform fee since the Odie rebrand | Per seat | Custom, typically per seat | Platform fee plus per-client rate | Per client covered, unlimited users |
 | Time to value | Weeks of implementation and data modelling before first useful output | Faster than Gainsight; still needs clean usage data | Needs product-event tracking in place first | Faster setup, same data prerequisite | Needs a data integration project first | Live the same day via OAuth; a 14-day free pilot on your own data |
 
 The pattern across every row: four of the five enterprise options need a working data pipeline before they tell you anything. Kaizan needs a calendar and an inbox.
@@ -102,7 +102,7 @@ Totango's modular SuccessBLOCs were always meant to get a CS team live faster th
 
 #### Totango churn prevention: how it actually works
 
-Totango's churn prevention runs on its Customer Health Score system, which blends engagement data, usage patterns and account-specific criteria into a single risk score, then triggers SuccessBLOCs playbooks (renewal sequences, expansion outreach, re-engagement campaigns) when that score moves. The Unison AI engine, built from Totango's 2024 acquisition of Parative AI, layers predictive churn and expansion modelling on top. It's a capable system for a product-led business with usage data to feed it. For an agency whose "churn signal" is a client going quiet on email for three weeks, there's no usage pattern to analyse, so the prevention engine has nothing to run on.
+Totango's churn prevention runs on its Client Health Score system, which blends engagement data, usage patterns and account-specific criteria into a single risk score, then triggers SuccessBLOCs playbooks (renewal sequences, expansion outreach, re-engagement campaigns) when that score moves. The Unison AI engine, built from Totango's 2024 acquisition of Parative AI, layers predictive churn and expansion modelling on top. It's a capable system for a product-led business with usage data to feed it. For an agency whose "churn signal" is a client going quiet on email for three weeks, there's no usage pattern to analyse, so the prevention engine has nothing to run on.
 
 ### ChurnZero: wins for product-led SaaS, breaks for anyone without an in-app surface
 

@@ -1,4 +1,4 @@
-**Customer story · NP Digital: Risk caught earlier**
+**Client story · NP Digital: Risk caught earlier**
 
 > "We've had numerous occasions where we've been able to spot and identify high-risk clients that potentially were going to leave."
 

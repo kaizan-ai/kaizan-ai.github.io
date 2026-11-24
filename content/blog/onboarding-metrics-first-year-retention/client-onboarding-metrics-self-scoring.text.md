@@ -1,4 +1,4 @@
-**Customer onboarding metrics: Score your last 90 days**
+**Client onboarding metrics: Score your last 90 days**
 
 Score each metric 0, 1 or 2, then add them up. Total: 0 to 10.
 

@@ -67,7 +67,7 @@ The first step is to identify who your stakeholders are. This step involves cond
 
 In a project context, it helps to separate internal and external stakeholders so you can assess their influence and involvement clearly.
 
-A client team’s approach to stakeholder mapping will be different from that of a project. Instead of examining a wide spread of interested parties, you would focus on clients, including existing customers and new stakeholders that emerge during an account’s lifecycle. You can extract a list directly from your CRM or client engagement software like Kaizan.
+A client team’s approach to stakeholder mapping will be different from that of a project. Instead of examining a wide spread of interested parties, you would focus on clients, including existing clients and new stakeholders that emerge during an account’s lifecycle. You can extract a list directly from your CRM or client engagement software like Kaizan.
 
 ## 2. Identify Your Stakeholders’ Interests
 
@@ -81,17 +81,17 @@ Once you’ve identified your stakeholders and their interests, the next step is
 
 One common method for categorising stakeholders is to use the MEDDIC sales qualification process. This is a framework used by businesses to categorise prospects and potential customers. Let’s explore each category in more detail:
 
-- **Metrics Questions.** Metrics are the quantifiable measures of the value that your product or service provides to your customers. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
+- **Metrics Questions.** Metrics are the quantifiable measures of the value that your product or service provides to your clients. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
 
 - **Economic Buyer.** The person who is the overall decision maker; they have the knowledge, perspective, and energy to commit to a meaningful purchase.
 
 - **Decision Process.** A decision process will include the person who makes a decision, the potential customer’s timeline, and any formal approval processes.
 
-- **Decision Criteria.** This is the criteria on which a purchase decision is made. This usually falls into three categories:   **1. Technical Criteria.** Does your solution have the technical capability to do what the customer needs?**2. Economic Criteria.** Does your solution deliver the expected ROI?  **3. Relationship Criteria.** Have you created a collaborative partnership with the customer?
+- **Decision Criteria.** This is the criteria on which a purchase decision is made. This usually falls into three categories:   **1. Technical Criteria.** Does your solution have the technical capability to do what the client needs?**2. Economic Criteria.** Does your solution deliver the expected ROI?  **3. Relationship Criteria.** Have you created a collaborative partnership with the client?
 
 - **Identify Pain.** The potential customer must have evident business pain before pursuing a solution, and it’s vital to understand these pain points and then identify how your solution can relieve it.
 
-- **Champion.** Champions are respected stakeholders within your customers’ business who meet very distinct criteria:   1. They have Power and Influence  2. They are selling internally for you   3. They have a vested interest in your success
+- **Champion.** Champions are respected stakeholders within your clients’ business who meet very distinct criteria:   1. They have Power and Influence  2. They are selling internally for you   3. They have a vested interest in your success
 
 If you’re looking at clients rather than a project, then categorisation is likely to work differently. They are all directly affected by your work, just to different extents, so your primary stakeholders may be day-to-day client contacts and decision-makers, while secondary stakeholders may include adjacent teams or external partners with indirect influence. You might categorise them using another division, depending on what is most appropriate for your business:
 

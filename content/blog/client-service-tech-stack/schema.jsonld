@@ -426,7 +426,7 @@
           "name": "What is the best CSM software for agencies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the customer journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.",
+            "text": "There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the client journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -435,7 +435,7 @@
           "name": "What is customer success automation, and which workflows should we automate first?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving customer retention as well as reducing admin.",
+            "text": "Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving client retention as well as reducing admin.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -489,7 +489,7 @@
           "name": "How long does it take to roll out?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For automatic-capture platforms, integrations typically connect within a day and recent history backfills within the first two weeks, so a health score monitoring customer satisfaction and customer health across the portfolio is live almost immediately. Full team adoption, where account managers rely on drafted follow-ups and the system genuinely replaces old habits, more commonly takes 30 to 45 days.",
+            "text": "For automatic-capture platforms, integrations typically connect within a day and recent history backfills within the first two weeks, so a health score monitoring client satisfaction and client health across the portfolio is live almost immediately. Full team adoption, where account managers rely on drafted follow-ups and the system genuinely replaces old habits, more commonly takes 30 to 45 days.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -710,7 +710,7 @@
         },
         {
           "@type": "Thing",
-          "name": "Customer retention",
+          "name": "Client retention",
           "sameAs": "https://en.wikipedia.org/wiki/Customer_retention"
         }
       ],

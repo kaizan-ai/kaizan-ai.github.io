@@ -10,7 +10,7 @@ draft: false
 tags: [churn prediction, conversation data, client health, predictive analytics, retention, professional services]
 ---
 
-Customer churn prediction software scores the likelihood that a client relationship ends before the client says a word. On conversation data specifically, that means it reads what gets said on calls, in emails, and in chat threads, not what gets clicked inside a product. That distinction is the whole story for professional services firms, because there is no login screen to measure.
+Client churn prediction software scores the likelihood that a client relationship ends before the client says a word. On conversation data specifically, that means it reads what gets said on calls, in emails, and in chat threads, not what gets clicked inside a product. That distinction is the whole story for professional services firms, because there is no login screen to measure.
 
 **Who this is for:** heads of AI and technology weighing whether to build this in-house or buy it, and heads of client service who need the business case for a churn model that actually fits how an agency or consultancy works.
 
@@ -21,21 +21,21 @@ Customer churn prediction software scores the likelihood that a client relations
 - Professional services firms retain 84% of clients on average, so roughly one client in six is up for renewal risk every year.
 - A churn model is only as good as the labels it trains on: retained, expanded, and lost accounts, not just the accounts that left.
 
-## What is customer churn prediction software?
+## What is client churn prediction software?
 
-Customer churn prediction software is a system that assigns a risk score to each client relationship, based on patterns that preceded past departures and past renewals. It is a specific application of predictive analytics, applied to the question agencies and consultancies actually lose sleep over: which client leaves next, and is there still time to act.
+Client churn prediction software is a system that assigns a risk score to each client relationship, based on patterns that preceded past departures and past renewals. It is a specific application of predictive analytics, applied to the question agencies and consultancies actually lose sleep over: which client leaves next, and is there still time to act.
 
 Most churn prediction tools were built for subscription software, where the inputs are logins, feature usage, and support tickets. A client services relationship has none of that. What it has instead is a stream of calls, emails, and chat messages, so a churn prediction model built for this world has to read conversation data, meaning the words said, who said them, how often, and in what tone.
 
-### Customer churn prediction and prevention
+### Client churn prediction and prevention
 
-Prediction is the easy half of the phrase. A risk score with nowhere to go is a dashboard nobody opens. Customer churn prediction and prevention means the score triggers a recommended next step, such as a stakeholder to re-engage or an escalation to schedule, before the renewal conversation starts. Software that only scores risk without routing it to an owner and an action is not doing the prevention half of the job.
+Prediction is the easy half of the phrase. A risk score with nowhere to go is a dashboard nobody opens. Client churn prediction and prevention means the score triggers a recommended next step, such as a stakeholder to re-engage or an escalation to schedule, before the renewal conversation starts. Software that only scores risk without routing it to an owner and an action is not doing the prevention half of the job.
 
-### Predictive analytics customer churn
+### Predictive analytics client churn
 
-Predictive analytics is the broader discipline: using historical data to forecast a future outcome. Applied to customer churn, it means training a model on what retained, expanded, and lost accounts looked like in the months before the outcome was known, then scoring live accounts against those same patterns. The predictive part only holds if the model is trained on outcomes that actually happened, not assumptions about what should predict churn.
+Predictive analytics is the broader discipline: using historical data to forecast a future outcome. Applied to client churn, it means training a model on what retained, expanded, and lost accounts looked like in the months before the outcome was known, then scoring live accounts against those same patterns. The predictive part only holds if the model is trained on outcomes that actually happened, not assumptions about what should predict churn.
 
-### Where to find customer churn prediction platforms
+### Where to find client churn prediction platforms
 
 Three places, with different strengths.
 
@@ -43,7 +43,7 @@ Three places, with different strengths.
 - **As a module inside a SaaS-focused customer success platform**, such as Gainsight, Totango, or Vitally. Strong on product usage and support ticket signals, weaker on agency-style relationships where there is no product telemetry to read.
 - **As a custom build**, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labeling, and maintenance that a platform already absorbs.
 
-A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see [customer retention software for agencies and service firms](https://www.kaizan.ai/us/blog/client-software/customer-retention-software-for-agencies/).
+A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see [client retention software for agencies and service firms](https://www.kaizan.ai/us/blog/client-software/client-retention-software-for-agencies/).
 
 ## Why this matters in revenue terms
 
@@ -176,13 +176,13 @@ For a head of AI or technology taking this to a client security review, that las
 
 ## Frequently asked questions
 
-**What is customer churn prediction and prevention?**
+**What is client churn prediction and prevention?**
 Prediction is the risk score. Prevention is what happens next: a recommended action, routed to an account owner, before the renewal conversation starts. Software that only produces a score without a next step only does half the job.
 
-**What is predictive analytics for customer churn?**
+**What is predictive analytics for client churn?**
 It is the practice of training a model on historical outcomes, meaning which accounts were retained, expanded, or lost, and the conversation patterns that preceded each one, then applying those patterns to score live accounts.
 
-**Where can you find customer churn prediction platforms?**
+**Where can you find client churn prediction platforms?**
 Inside client success and client health platforms, where the score sits alongside a wider relationship model, as a module in SaaS-focused customer success tools built for product usage data, or as a custom build on top of CRM exports and call transcripts.
 
 **How do you measure churn prediction accuracy?**
