@@ -1,11 +1,11 @@
 ---
-title: Best Customer Success Software for Agencies and Professional Services, Tested and Scored
-meta_title: Best Customer Success Software for Agencies (2026)
+title: Best Client Success Software for Agencies and Professional Services, Tested and Scored
+meta_title: Best Client Success Software for Agencies (2026)
 date: 2026-11-10
 author: James Caples
 category: POV
 topic: client-software
-excerpt: No single customer success software fits every agency. Compare Kaizan, Gainsight, Odie, Planhat, ChurnZero, Vitally and ClientSuccess on agency fit.
+excerpt: No single client success software fits every agency. Compare Kaizan, Gainsight, Odie, Planhat, ChurnZero, Vitally and ClientSuccess on agency fit.
 cover: best-client-success-software-side-by-side.png
 draft: false
 tags: [customer success software, client success platform, agencies, professional services, gainsight, software comparison]
