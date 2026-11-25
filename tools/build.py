@@ -4090,6 +4090,216 @@ def render_resources() -> str:
                      extra_head=resources_head(1)) + body + page_foot()
 
 
+# Mailchimp audience for the Client Health Playbook form. UK values from the Mailchimp embed; the
+# US audience swaps in via build_us_locale() once its embed is supplied.
+PB_MC = dict(u='b61e5cb1cebf0c30b44ebb455', id='d42e1256b5', f_id='0019efe5f0', tags='3789539,3789538')
+PB_MC_US_F_ID = '003aefe5f0'  # same audience and tags as UK; its own signup form id (from the US embed)
+PB_UTM = [('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'), ('UTMQRPLC', 'qr_placement'),
+          ('UTMCTA', 'utm_cta'), ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
+          ('UTMCOUNTRY', 'utm_country'), ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'),
+          ('UTMHOOK', 'utm_hook'), ('GCLID', 'gclid'), ('UTMID', 'utm_id'), ('UTMADGRP', 'utm_adgroup')]
+
+
+def render_client_health_playbook() -> str:
+    """/resources/client-health-playbook/ (depth 2): gated landing page for The Client Health
+    Playbook. Styles in assets/css/playbook.css, form in assets/js/playbook.js. Source copy is
+    UK English; the /us/ mirror is respelt automatically by build_us_locale()."""
+    roles = ['Head of Client Services / CS', 'Account Director / Manager', 'Agency Leader',
+             'Founder / CEO', 'C-level (COO, CFO, CRO)', 'Head of AI / CTO', 'Other']
+    options = '\n'.join(f'<option>{E(r)}</option>' for r in roles)
+    css = f'<link rel="stylesheet" href="{relpath(2)}assets/css/playbook.css{asset_v("assets/css/playbook.css")}">'
+    js = f'<script defer src="{relpath(2)}assets/js/playbook.js{asset_v("assets/js/playbook.js")}"></script>'
+
+    def point(colour, text):
+        return f'<li><i style="background:{colour}"></i><span>{text}</span></li>'
+
+    def number(colour, big, text, note):
+        return (f'<div class="pb-num" style="background:{colour}"><b>{big}</b>'
+                f'<div><strong>{text}</strong><span>{note}</span></div></div>')
+
+    mc_q = f"?u={PB_MC['u']}&id={PB_MC['id']}&f_id={PB_MC['f_id']}"
+    mc_post = 'https://kaizan.us6.list-manage.com/subscribe/post' + mc_q.replace('&', '&amp;')
+    mc_json = 'https://kaizan.us6.list-manage.com/subscribe/post-json' + mc_q.replace('&', '&amp;')
+    utm_inputs = ''.join(f'<input type="hidden" name="{n}" data-utm="{k}" value="">' for n, k in PB_UTM)
+
+    habits = [
+        ('#FFB900', 'Centralise every channel into one view', 'The goal is a view of the account, not an archive.'),
+        ('#06D6A0', 'Standardise the process across every team', 'Standardise the judgement, not just the report.'),
+        ('#4CC9F0', 'Reinvest time saved on admin into watching', 'Point the freed time at early signals: reduced engagement, vaguer feedback.'),
+        ('#FF6B6B', 'Watch for underlying sentiment, not status', 'A polite or collaborative tone is not the same as a safe one.'),
+        ('#B388FF', 'Make &ldquo;at risk&rdquo; a shared definition, not tribal knowledge', 'Write it down on one page the whole team can act on.'),
+    ]
+    habits_html = '\n'.join(
+        f'<div class="pb-habit"><b style="background:{c}">{i}</b><div><strong>{t}</strong><span>{d}</span></div></div>'
+        for i, (c, t, d) in enumerate(habits, 1))
+
+    pillars = [
+        ('#B388FF', 'C', 'Client Satisfaction', '41 vs 14', 'CSAT checks a year, top against bottom accounts'),
+        ('#4CC9F0', 'A', 'Activity with Stakeholders', '1.67 vs 0.92', 'decision-maker calls a month, top against bottom'),
+        ('#FF6B6B', 'R', 'Relationship Strength', '15.3 vs 6.9', 'risks surfaced a year, top against bottom accounts'),
+        ('#06D6A0', 'E', 'Expansion Opportunities', 'Built on the rest', 'expansion depends on the other three pillars being healthy'),
+    ]
+    pillars_html = '\n'.join(
+        f'<div class="pb-pillar" style="background:{c}"><div><b>{l}</b><strong>{n}</strong></div>'
+        f'<div><em>{big}</em><span>{d}</span></div></div>' for c, l, n, big, d in pillars)
+
+    audience = [
+        ('#FFB900', 'Senior leadership', 'See what is really happening across the book of business, without the filter.'),
+        ('#06D6A0', 'COOs', 'Give every team the same method, so results can be compared.'),
+        ('#4CC9F0', 'Heads of AI or CTOs', 'Understand where a generic AI tool breaks, and what to build on instead.'),
+        ('#FF6B6B', 'Account managers', 'Turn a hunch into evidence and a conversation you can have.'),
+        ('#B388FF', 'Client service teams', 'Start with one account and a checklist you can run this week.'),
+    ]
+    audience_html = '\n'.join(
+        f'<div style="border-top-color:{c}"><strong>{t}</strong><span>{d}</span></div>' for c, t, d in audience)
+
+    stats = [('26', 'pages of playbook'), ('5', 'habits of the best teams'), ('4', 'CARE pillars'),
+             ('1M+', 'calls analysed, anonymised'), ('10M', 'emails analysed, anonymised')]
+    stats_html = '\n'.join(f'<div><b>{n}</b><span>{l}</span></div>' for n, l in stats)
+
+    chart = '''<svg viewBox="0 0 720 340" role="img" aria-label="Chart: a status report stays flat at on track while underlying sentiment declines. The window opens at the first sign of drift and closes at the decision to leave.">
+            <rect x="330" y="30" width="140" height="250" fill="#FFB900" fill-opacity="0.16"/>
+            <line x1="330" y1="30" x2="330" y2="280" stroke="#FFB900" stroke-dasharray="4 5"/>
+            <line x1="470" y1="30" x2="470" y2="280" stroke="#FFB900" stroke-dasharray="4 5"/>
+            <text x="400" y="52" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="2.5" fill="#FFB900">THE WINDOW</text>
+            <line x1="0" y1="72" x2="720" y2="72" stroke="#FFFBF0" stroke-dasharray="7 6" stroke-width="1.8"/>
+            <text x="0" y="58" font-size="14" font-weight="600" fill="#FFFBF0">Status report: on track</text>
+            <text x="0" y="116" font-size="14" font-weight="600" fill="#FFB900">Underlying sentiment</text>
+            <polyline points="0,76 120,80 240,96 330,126 470,184 590,226 720,248" fill="none" stroke="#FFB900" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="330" cy="126" r="10" fill="#000" stroke="#FFB900" stroke-width="5"/>
+            <circle cx="470" cy="184" r="10" fill="#FF6B6B" stroke="#000" stroke-width="3"/>
+            <line x1="0" y1="280" x2="720" y2="280" stroke="#6E665A"/>
+            <text x="330" y="308" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFBF0">First sign of drift</text>
+            <text x="470" y="308" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFBF0">Decision to leave</text>
+          </svg>'''
+
+    body = f'''
+    {nav_html(2, active='Resources')}
+    <div class="pb">
+    <section class="pb-hero">
+      <div class="pb-in">
+        <div class="pb-hero__copy">
+          <div class="pb-eyebrow">The Client Health Playbook &middot; Kaizan</div>
+          <h1>See client risk before it&rsquo;s <span>too late.</span></h1>
+          <div class="pb-rule"></div>
+          <p class="pb-hero__sub">How teams that solved the problem did it, what the benchmark says separates slipping accounts from healthy ones, and a plan you can start today.</p>
+          <ul class="pb-points">
+            {point('#FFB900', 'Five habits of client teams that solved the problem, and the trap that catches each')}
+            {point('#06D6A0', 'Top and bottom accounts side by side, from more than 1M calls and 10M emails')}
+            {point('#4CC9F0', 'CARE: four pillars for scoring client relationship health')}
+            {point('#FF6B6B', 'A do-it-yourself plan for any account, using tools you already have')}
+          </ul>
+        </div>
+
+        <div class="pb-form" id="form">
+          <form id="pb-form-el" novalidate method="post" target="_blank" action="{mc_post}" data-mc-json="{mc_json}">
+            <div class="pb-eyebrow">The 2026 playbook</div>
+            <h2>Download the playbook</h2>
+            <p class="pb-form__sub">Enter your details and the PDF opens straight away.</p>
+            <div class="pb-field"><label for="pb-email">Work email <span aria-hidden="true">*</span></label>
+              <input id="pb-email" type="email" name="EMAIL" autocomplete="email" placeholder="you@company.com" required>
+              <div class="pb-err" role="alert"></div></div>
+            <div class="pb-field"><label for="pb-role">Job title <span aria-hidden="true">*</span></label>
+              <select id="pb-role" name="JOBT" required>
+                <option value="" disabled selected>Select your role</option>
+                {options}
+              </select>
+              <div class="pb-err" role="alert"></div></div>
+            {utm_inputs}
+            <input type="hidden" name="tags" value="{PB_MC['tags']}">
+            <div aria-hidden="true" style="position:absolute;left:-5000px"><input type="text" name="b_{PB_MC['u']}_{PB_MC['id']}" tabindex="-1" value=""></div>
+            <button type="submit" class="pb-btn">Get the playbook</button>
+            <div class="pb-fail" role="alert">Something went wrong. Please try again.</div>
+            <p class="pb-consent">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
+          </form>
+          <div class="pb-done" role="status" tabindex="-1" hidden>
+            <div class="pb-done__tick"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 13.5 L10.5 19 L21 7.5" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <h2>Your playbook is ready.</h2>
+            <p class="pb-form__sub">We&rsquo;ve also sent a copy to <span data-pb-email></span>.</p>
+            <a class="pb-btn" href="/assets/playbook/client-health-playbook-uk.pdf" target="_blank" rel="noopener">Download the playbook (PDF)</a>
+            <div class="pb-done__next">
+              <div class="pb-eyebrow">Or skip the manual stage</div>
+              <p>Put every step on autopilot with the Kaizan 14-day free trial.</p>
+              <a href="/demo/">Start your 14-day free trial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-stats"><div class="pb-in">
+      {stats_html}
+    </div></section>
+
+    <section class="pb-sec"><div class="pb-in">
+      <div class="pb-eyebrow">01 &middot; Unique insights</div>
+      <h2>Most teams learn a client is unhappy <span class="pb-hl">too late</span> to change the outcome.</h2>
+      <p class="pb-lede">The cause is rarely a lack of care. It is how relationship health gets measured: monthly, from memory, one account manager at a time. Three numbers from the playbook.</p>
+      <div class="pb-nums">
+        {number('#FFB900', '45%', 'of marketers named lack of proactivity as the number one reason they reviewed agencies.', 'RSW/US, 2024 New Year Outlook')}
+        {number('#06D6A0', '2.2&times;', 'more risks logged by top accounts than bottom accounts: 15.3 against 6.9 a year.', 'A quiet risk register is the warning sign')}
+        {number('#4CC9F0', '7.1', 'CSAT where measured, for top and bottom accounts alike. Top accounts are measured 41 times a year, bottom 14.', 'The CSAT gap is a measurement gap')}
+      </div>
+    </div></section>
+
+    <section class="pb-sec pb-dark"><div class="pb-in pb-window">
+      <div class="pb-window__copy">
+        <div class="pb-eyebrow">02 &middot; The window</div>
+        <h2>Relationships erode. They rarely snap.</h2>
+        <p>Status updates say a project is on track. The sentiment underneath says otherwise. Between the first sign of drift and a client&rsquo;s decision to leave, there is a window.</p>
+        <p>Visibility gives you the opportunity to act while it&rsquo;s still open.</p>
+      </div>
+      {chart}
+    </div></section>
+
+    <section class="pb-sec"><div class="pb-in">
+      <div class="pb-eyebrow">03 &middot; What&rsquo;s inside</div>
+      <h2>What the best client teams do <span class="pb-hl">differently</span></h2>
+      <p class="pb-lede">Five habits from client service leaders who solved the problem in practice. None of them started with a perfect system. Each comes with the trap that catches teams who adopt it half-heartedly.</p>
+      <div class="pb-habits">
+        {habits_html}
+      </div>
+    </div></section>
+
+    <section class="pb-sec pb-dark"><div class="pb-in">
+      <div class="pb-eyebrow">04 &middot; The CARE framework</div>
+      <h2 style="max-width:900px">CARE: a <span class="pb-hl">leading indicator</span>, not a retrospective score</h2>
+      <p class="pb-lede">Four pillars, each assessed on its own, because strength in one does not make up for weakness in another. The playbook shows the benchmark behind each.</p>
+      <div class="pb-care">
+        {pillars_html}
+      </div>
+    </div></section>
+
+    <section class="pb-sec"><div class="pb-in">
+      <div class="pb-eyebrow">05 &middot; Who it&rsquo;s for</div>
+      <h2>If you care about client retention and growth, <span class="pb-hl">this is for you.</span></h2>
+      <div class="pb-aud">
+        {audience_html}
+        <div class="pb-aud__tag"><em>Industry</em><strong>Professional services</strong></div>
+      </div>
+    </div></section>
+
+    <section class="pb-cta"><div class="pb-in">
+      <div class="pb-cta__text">
+        <h2>Start with <span>one account.</span></h2>
+        <p>Gather the context for one account, run it through AI, and see how much of the picture you can build today.</p>
+      </div>
+      <a class="pb-btn" href="#form">Get the playbook</a>
+    </div></section>
+
+    <div class="pb-sources"><div class="pb-in">
+      Sources: Kaizan, The Client Service Benchmark 2026, Vol. 01, May 2026 &middot; Kaizan customer averages, kaizan.ai, November 2026 &middot; RSW/US, 2024 New Year Outlook (coverage on vktr.com). Benchmark figures cover 12 months of anonymised calls, emails and chat messages.
+    </div></div>
+    </div>
+    {footer_html(2)}
+    {js}
+    '''
+    return page_head('The Client Health Playbook', 2,
+                     'See client risk before it is too late. A free playbook on the habits of the best client '
+                     'teams, the CARE framework and a plan you can start today.',
+                     extra_head=css) + body + page_foot()
+
+
 def render_about() -> str:
     body = f'''
     {nav_html(1, active='About')}
@@ -7510,6 +7720,8 @@ def build_us_locale():
         us = re.sub(r'href="(?:(?:\.\./)*demo/|/us/demo/|https://kaizan\.ai/demo/)"',
                     'href="mailto:hello@kaizan.ai" data-book-call', us)
         us = book_call_inject(us, 'us')
+        us = us.replace('/assets/playbook/client-health-playbook-uk.pdf', '/assets/playbook/client-health-playbook-us.pdf')
+        us = us.replace(f"f_id={PB_MC['f_id']}", f"f_id={PB_MC_US_F_ID}")  # playbook form: US Mailchimp signup form
         us = us.replace('<html lang="en-GB">', '<html lang="en-US">', 1).replace('<html lang="en">', '<html lang="en-US">', 1)
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -9194,6 +9406,7 @@ def main():
     # is a redirect stub, tools/redirects.json).
     _remove_page(ROOT / 'research')
     write(ROOT / 'resources' / 'index.html', render_resources())
+    write(ROOT / 'resources' / 'client-health-playbook' / 'index.html', render_client_health_playbook())
     write(ROOT / 'knowledge-hub' / 'index.html', render_knowledge_hub())
     write(ROOT / 'hall-of-fame' / 'index.html', render_hall_of_fame())
     for w in HALL_OF_FAME:
