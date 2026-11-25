@@ -4090,10 +4090,10 @@ def render_resources() -> str:
                      extra_head=resources_head(1)) + body + page_foot()
 
 
-# Mailchimp audience for the Client Health Playbook form. UK values from the Mailchimp embed; the
-# US audience swaps in via build_us_locale() once its embed is supplied.
-PB_MC = dict(u='b61e5cb1cebf0c30b44ebb455', id='d42e1256b5', f_id='0019efe5f0', tags='3789539,3789538')
-PB_MC_US_F_ID = '003aefe5f0'  # same audience and tags as UK; its own signup form id (from the US embed)
+# Mailchimp signup form for the Client Health Playbook. UK values from the Mailchimp embed; the
+# US form id and tag are swapped in by build_us_locale().
+PB_MC = dict(u='b61e5cb1cebf0c30b44ebb455', id='1ea9163949', f_id='0039efe5f0', tags='3789536')
+PB_MC_US = dict(f_id='0038efe5f0', tags='3789550')  # US signup form id + tag (from the US Mailchimp embed)
 PB_UTM = [('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'), ('UTMQRPLC', 'qr_placement'),
           ('UTMCTA', 'utm_cta'), ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
           ('UTMCOUNTRY', 'utm_country'), ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'),
@@ -7721,7 +7721,9 @@ def build_us_locale():
                     'href="mailto:hello@kaizan.ai" data-book-call', us)
         us = book_call_inject(us, 'us')
         us = us.replace('/assets/playbook/client-health-playbook-uk.pdf', '/assets/playbook/client-health-playbook-us.pdf')
-        us = us.replace(f"f_id={PB_MC['f_id']}", f"f_id={PB_MC_US_F_ID}")  # playbook form: US Mailchimp signup form
+        if 'id="pb-form-el"' in us:  # playbook form: US Mailchimp signup form and tag
+            us = us.replace(f"f_id={PB_MC['f_id']}", f"f_id={PB_MC_US['f_id']}")
+            us = us.replace(f'name="tags" value="{PB_MC["tags"]}"', f'name="tags" value="{PB_MC_US["tags"]}"')
         us = us.replace('<html lang="en-GB">', '<html lang="en-US">', 1).replace('<html lang="en">', '<html lang="en-US">', 1)
         out = us_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
