@@ -6927,11 +6927,11 @@ def render_client_health_playbook_confirmation() -> str:
 
     <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
       <div style="max-width:520px;width:100%;text-align:center;">
-        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>Your playbook is ready</div>
-        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks for downloading.</h1>
+        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>On its way</div>
+        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks, check your inbox.</h1>
         <p class="kz-lede" style="margin-top:16px;">
-          The Client Health Playbook should have opened in a new tab. If it didn&rsquo;t,
-          you can download it below.
+          We&rsquo;ve sent the Client Health Playbook to your email address, it should land in
+          the next few minutes. If it didn&rsquo;t open in a new tab, you can download it below.
         </p>
         <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
           <a class="kz-btn kz-btn-yellow" href="/assets/playbook/client-health-playbook-uk.pdf" target="_blank" rel="noopener">Download the playbook</a>
