@@ -131,11 +131,30 @@
 
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 
-  function getUtmFields() {
+  // UTM attribution, same sessionStorage store and keys as trial-form.js / book-call.js: a URL carrying
+  // any tracking parameter replaces the saved set; otherwise the tab's saved values are used.
+  var UTM_STORE = 'kz-utm';
+  var UTM_ALL = ['utm_source', 'utm_medium', 'utm_term', 'qr_placement', 'utm_cta', 'utm_campaign', 'utm_content',
+    'utm_country', 'utm_usp', 'utm_angle', 'utm_hook', 'gclid', 'utm_id', 'utm_adgroup'];
+  function getUtmValues() {
+    var saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{}') || {}; } catch (e) {}
     var params = new URLSearchParams(window.location.search);
+    var fromUrl = UTM_ALL.some(function (k) { return params.has(k); });
+    if (fromUrl) {
+      UTM_ALL.forEach(function (k) { saved[k] = (params.get(k) || '').slice(0, 255); });
+      try { sessionStorage.setItem(UTM_STORE, JSON.stringify(saved)); } catch (e) {}
+    }
+    return saved;
+  }
+
+  getUtmValues(); // capture on arrival
+
+  function getUtmFields() {
+    var utm = getUtmValues();
     var fields = [];
     UTM_KEYS.forEach(function (key) {
-      var value = params.get(key);
+      var value = utm[key];
       if (value) fields.push({ objectTypeId: '0-1', name: key, value: value });
     });
     return fields;
