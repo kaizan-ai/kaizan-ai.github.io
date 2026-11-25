@@ -4201,10 +4201,11 @@ def render_client_health_playbook() -> str:
         </div>
 
         <div class="pb-form" id="form">
-          <form id="pb-form-el" novalidate method="post" target="_blank" action="{mc_post}" data-mc-json="{mc_json}">
+          <form id="pb-form-el" novalidate method="post" target="_blank" action="{mc_post}" data-mc-json="{mc_json}"
+                data-confirm="/client-health-playbook-confirmation/" data-pdf="/assets/playbook/client-health-playbook-uk.pdf">
             <div class="pb-eyebrow">The 2026 playbook</div>
             <h2>Download the playbook</h2>
-            <p class="pb-form__sub">Enter your details and the PDF opens straight away.</p>
+            <p class="pb-form__sub">Enter your details and the PDF opens in a new tab.</p>
             <div class="pb-field"><label for="pb-email">Work email <span aria-hidden="true">*</span></label>
               <input id="pb-email" type="email" name="EMAIL" autocomplete="email" placeholder="you@company.com" required>
               <div class="pb-err" role="alert"></div></div>
@@ -4221,17 +4222,6 @@ def render_client_health_playbook() -> str:
             <div class="pb-fail" role="alert">Something went wrong. Please try again.</div>
             <p class="pb-consent">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
           </form>
-          <div class="pb-done" role="status" tabindex="-1" hidden>
-            <div class="pb-done__tick"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 13.5 L10.5 19 L21 7.5" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h2>Your playbook is ready.</h2>
-            <p class="pb-form__sub">We&rsquo;ve also sent a copy to <span data-pb-email></span>.</p>
-            <a class="pb-btn" href="/assets/playbook/client-health-playbook-uk.pdf" target="_blank" rel="noopener">Download the playbook (PDF)</a>
-            <div class="pb-done__next">
-              <div class="pb-eyebrow">Or skip the manual stage</div>
-              <p>Put every step on autopilot with the Kaizan 14-day free trial.</p>
-              <a href="/demo/">Start your 14-day free trial</a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -6927,6 +6917,36 @@ def render_knowledge_hub() -> str:
 # WRITE
 # ─────────────────────────────────────────────────────────────────────
 
+def render_client_health_playbook_confirmation() -> str:
+    """/client-health-playbook-confirmation/ (UK; /us/ is mirrored) - where the Client Health Playbook
+    form (assets/js/playbook.js) sends the visitor after a successful signup, like the white paper's
+    /white-paper-confirmation/. The PDF opens in a new tab from the form; the link here is the fallback
+    if the tab was blocked (the /us/ build swaps in the US PDF)."""
+    body = f'''
+    {nav_html(1)}
+
+    <section class="kz-section-tight" style="min-height:60vh;display:flex;align-items:center;justify-content:center;padding:80px 0;">
+      <div style="max-width:520px;width:100%;text-align:center;">
+        <div class="kz-trial-badge" style="justify-content:center;"><span class="dot"></span>Your playbook is ready</div>
+        <h1 class="kz-h1" style="margin-top:18px;font-size:34px;">Thanks for downloading.</h1>
+        <p class="kz-lede" style="margin-top:16px;">
+          The Client Health Playbook should have opened in a new tab. If it didn&rsquo;t,
+          you can download it below.
+        </p>
+        <div style="margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a class="kz-btn kz-btn-yellow" href="/assets/playbook/client-health-playbook-uk.pdf" target="_blank" rel="noopener">Download the playbook</a>
+          <a class="kz-btn kz-btn-ghost" href="/">Back to homepage</a>
+        </div>
+      </div>
+    </section>
+
+    {footer_html(1)}
+    '''
+    return page_head('Thanks for downloading the playbook', 1,
+                     "The Client Health Playbook is ready to download.",
+                     extra_head='<meta name="robots" content="noindex">') + body + page_foot()
+
+
 def render_white_paper_confirmation() -> str:
     """/white-paper-confirmation/ — where the CARE white paper lead form
     (assets/js/white-paper.js, on /resources/white-paper/) sends the visitor after a
@@ -7740,6 +7760,7 @@ def build_us_locale():
                     'href="mailto:hello@kaizan.ai" data-book-call', us)
         us = book_call_inject(us, 'us')
         us = us.replace('/assets/playbook/client-health-playbook-uk.pdf', '/assets/playbook/client-health-playbook-us.pdf')
+        us = us.replace('data-confirm="/client-health-playbook-confirmation/"', 'data-confirm="/us/client-health-playbook-confirmation/"')
         if 'id="pb-form-el"' in us:  # playbook form: US Mailchimp signup form and tag
             us = us.replace(f"f_id={PB_MC['f_id']}", f"f_id={PB_MC_US['f_id']}")
             us = us.replace(f'name="tags" value="{PB_MC["tags"]}"', f'name="tags" value="{PB_MC_US["tags"]}"')
@@ -9445,6 +9466,7 @@ def main():
     write(ROOT / 'confirmation' / 'index.html', render_confirmation())
     write(ROOT / 'book-demo-confirmation' / 'index.html', render_book_demo_confirmation())
     write(ROOT / 'white-paper-confirmation' / 'index.html', render_white_paper_confirmation())
+    write(ROOT / 'client-health-playbook-confirmation' / 'index.html', render_client_health_playbook_confirmation())
     write(ROOT / 'client-success-software' / 'index.html',
                                                  render_customer_success_software())
     write(ROOT / '404.html',                    render_404())
