@@ -4097,7 +4097,7 @@ def render_resources() -> str:
 # Mailchimp signup form for the Client Health Playbook. UK values from the Mailchimp embed; the
 # US form id and tag are swapped in by build_us_locale().
 PB_MC = dict(u='b61e5cb1cebf0c30b44ebb455', id='1ea9163949', f_id='0039efe5f0', tags='3789801,3789536')
-PB_MC_US = dict(f_id='0038efe5f0', tags='3789550')  # US signup form id + tag (from the US Mailchimp embed)
+PB_MC_US = dict(f_id='0038efe5f0', tags='3789802,3789550')  # US signup form id + tag (from the US Mailchimp embed)
 PB_UTM = [('UTMSRC', 'utm_source'), ('UTMMED', 'utm_medium'), ('UTMTRM', 'utm_term'), ('UTMQRPLC', 'qr_placement'),
           ('UTMCTA', 'utm_cta'), ('UTMCAMP', 'utm_campaign'), ('UTMCONT', 'utm_content'),
           ('UTMCOUNTRY', 'utm_country'), ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'),
