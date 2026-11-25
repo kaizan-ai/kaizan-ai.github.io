@@ -3,7 +3,7 @@
     {
       "@type": "ItemList",
       "@id": "@@PAGE@@#tools",
-      "name": "The 25 best customer success tools for client service teams, compared by job",
+      "name": "The 25 best client success tools for client service teams, compared by job",
       "numberOfItems": 25,
       "itemListOrder": "https://schema.org/ItemListUnordered",
       "itemListElement": [
@@ -270,7 +270,7 @@
       "@id": "@@PAGE@@#tool-gainsight",
       "name": "Gainsight",
       "applicationCategory": "Score and health",
-      "description": "Best for: Large SaaS customer success orgs",
+      "description": "Best for: Large SaaS client success orgs",
       "url": "https://www.gainsight.com/"
     },
     {
@@ -423,16 +423,16 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the best CSM software for agencies?",
+          "name": "What is the best account management software for agencies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "There isn't a single best CSM software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the client journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.",
+            "text": "There isn't a single best account management software for every agency, because the right one depends on the job you're missing: capture, system of record, scoring, or automation. For agencies specifically, where the signal lives in calls and email rather than product usage data, a platform built to manage the client journey in conversation-driven relationships (like Kaizan) tends to fit better than a SaaS-first CS tool built around usage logs.",
             "inLanguage": "@@LANG@@"
           }
         },
         {
           "@type": "Question",
-          "name": "What is customer success automation, and which workflows should we automate first?",
+          "name": "What is client success automation, and which workflows should we automate first?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Customer success automation means using software to handle the repeatable admin around a client relationship: capturing calls, drafting follow-ups, updating the CRM, flagging risk. Start with capture and internal summaries, since nothing client-facing goes out unreviewed, and only automate drafted client-facing emails once you've confirmed accuracy on internal-only tasks first, with the goal of improving client retention as well as reducing admin.",
@@ -441,25 +441,25 @@
         },
         {
           "@type": "Question",
-          "name": "What are the best customer success management tools for agencies?",
+          "name": "What are the best client success management tools for agencies?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For agencies and professional services firms, the strongest customer success management tools are the ones built around conversation data (calls, email, chat) rather than product usage, since that's where the relationship signal actually lives. Gainsight and Totango are strong where there's a product to instrument; Kaizan and similar services-focused platforms are built for firms where the product is the relationship itself and teams need to guide clients towards desired outcomes.",
+            "text": "For agencies and professional services firms, the strongest client success management tools are the ones built around conversation data (calls, email, chat) rather than product usage, since that's where the relationship signal actually lives. Gainsight and Totango are strong where there's a product to instrument; Kaizan and similar services-focused platforms are built for firms where the product is the relationship itself and teams need to guide clients towards desired outcomes.",
             "inLanguage": "@@LANG@@"
           }
         },
         {
           "@type": "Question",
-          "name": "Do we need a customer success CRM, a spreadsheet or a platform?",
+          "name": "Do we need a client success CRM, a spreadsheet or a platform?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "At around 10 clients, a CRM and careful habits are usually enough. At around 50, most firms need a dedicated customer success CRM or health-scoring layer because the spreadsheet can't keep pace. At around 200, a full platform with automatic capture and a portfolio view becomes close to essential, because no individual can track that many relationships manually, and it can support metrics like net revenue retention and gross revenue retention.",
+            "text": "At around 10 clients, a CRM and careful habits are usually enough. At around 50, most firms need a dedicated client success CRM or health-scoring layer because the spreadsheet can't keep pace. At around 200, a full platform with automatic capture and a portfolio view becomes close to essential, because no individual can track that many relationships manually, and it can support metrics like net revenue retention and gross revenue retention.",
             "inLanguage": "@@LANG@@"
           }
         },
         {
           "@type": "Question",
-          "name": "How much do customer success tools cost?",
+          "name": "How much do client success tools cost?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Capture-only tools run free to roughly $20 per seat a month. Mid-market platforms are often quote-based, from several hundred to a few thousand dollars a month. Enterprise CS platforms typically run into five figures a year. Platforms priced per client rather than per seat, like Kaizan, are priced by number of clients with unlimited users, so the cost follows your client count rather than your headcount. Price on quote.",
@@ -468,7 +468,7 @@
         },
         {
           "@type": "Question",
-          "name": "Are there free customer success tools?",
+          "name": "Are there free client success tools?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes, for the capture lane specifically: Fireflies, Otter and Fathom all offer free tiers for call recording and transcription, and Looker Studio is free for building your own dashboards. None of these free tiers includes a health score, risk alerting or automated action on what they capture; that layer is where the paid tiers and dedicated platforms earn their cost.",
@@ -480,7 +480,7 @@
           "name": "Do we need these tools if we already have a CRM?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A CRM tells you who the client is and what you've sold them. It doesn't tell you how the relationship is doing right now, because that signal lives in calls, emails and the things clients say that never get typed into a CRM field. Most firms keep their CRM as the system of record and add a client success layer on top of it, rather than replacing one with the other; unlike customer support software, which is reactive to incoming issues, that layer is there to be proactive.",
+            "text": "A CRM tells you who the client is and what you've sold them. It doesn't tell you how the relationship is doing right now, because that signal lives in calls, emails and the things clients say that never get typed into a CRM field. Most firms keep their CRM as the system of record and add a client success layer on top of it, rather than replacing one with the other; unlike client support software, which is reactive to incoming issues, that layer is there to be proactive.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -507,7 +507,7 @@
     {
       "@type": "HowTo",
       "@id": "@@PAGE@@#howto",
-      "name": "How to choose a customer success tool in seven steps",
+      "name": "How to choose a client success tool in seven steps",
       "inLanguage": "@@LANG@@",
       "step": [
         {
@@ -544,7 +544,7 @@
           "@type": "HowToStep",
           "position": 6,
           "name": "Know what each person in the buying committee needs to see",
-          "text": "A Head of Client Service wants evidence they can take upward and proof it replaces the spreadsheet rather than adding to it. A Head of Ops or COO wants to know the team will actually use it without extra admin, what it costs against the current stack, and whether it works for customer success managers handling day-to-day portfolios."
+          "text": "A Head of Client Service wants evidence they can take upward and proof it replaces the spreadsheet rather than adding to it. A Head of Ops or COO wants to know the team will actually use it without extra admin, what it costs against the current stack, and whether it works for account managers handling day-to-day portfolios."
         },
         {
           "@type": "HowToStep",
@@ -558,8 +558,8 @@
       "@type": "WebPage",
       "@id": "@@PAGE@@#webpage",
       "url": "@@PAGE@@",
-      "name": "Client Service Tech Stack: 25 Customer Success Tools by Job",
-      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 customer success tools compared, with what to use at 10, 50 and 200 clients.",
+      "name": "Client Service Tech Stack: 25 Client Success Tools by Job",
+      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 client success tools compared, with what to use at 10, 50 and 200 clients.",
       "inLanguage": "@@LANG@@",
       "isPartOf": {
         "@id": "https://kaizan.ai/#website"
@@ -658,7 +658,7 @@
       "url": "@@PAGE@@",
       "headline": "@@TITLE@@",
       "name": "@@TITLE@@",
-      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 customer success tools compared, with what to use at 10, 50 and 200 clients.",
+      "description": "The client service tech stack in four jobs (capture, record, score, act): 25 client success tools compared, with what to use at 10, 50 and 200 clients.",
       "abstract": "Most agencies and professional services firms don't have a tools problem. They have a tools-that-don't-talk-to-each-other problem. A CRM holds the contact. A project tool holds the task. A spreadsheet holds the RAG status, updated once a month by whoever remembers. None of them holds the relationship.",
       "image": [
         "https://kaizan.ai/assets/img/blog/client-service-tech-stack/client-service-tech-stack-lanes.png"
@@ -676,11 +676,11 @@
       "articleSection": "Client software",
       "keywords": [
         "client service tech stack",
-        "customer success tools",
-        "customer success management tools",
-        "CSM software for agencies",
-        "customer success CRM",
-        "customer success automation",
+        "client success tools",
+        "client success management tools",
+        "account management software for agencies",
+        "client success CRM",
+        "client success automation",
         "client health score"
       ],
       "wordCount": 4838,

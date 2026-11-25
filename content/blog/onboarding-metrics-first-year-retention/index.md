@@ -5,13 +5,13 @@ date: 2026-11-10
 author: James Caples
 category: BENCHMARK
 topic: client-health
-excerpt: Kaizan's benchmark data shows the early cadence and coverage numbers that separate growing client accounts from churning ones, and how to score your own.
+excerpt: Kaizan's benchmark data shows the early cadence and coverage numbers that separate growing client accounts from ones heading out the door, and how to score your own.
 cover: client-onboarding-metrics-top-vs-bottom-cohort.png
 draft: false
-tags: [onboarding metrics, client retention, benchmark, client health, account management, churn]
+tags: [onboarding metrics, client retention, benchmark, client health, account management, client attrition]
 ---
 
-Client onboarding metrics are the handful of early cadence and coverage numbers, contact frequency with decision-makers, account-level call volume, how often risk gets surfaced, how often sentiment gets measured, that separate accounts heading toward growth from accounts heading toward churn. In Kaizan's own data, the gap between the two groups opens in the first months of a relationship and rarely closes on its own.
+Client onboarding metrics are the handful of early cadence and coverage numbers, contact frequency with decision-makers, account-level call volume, how often risk gets surfaced, how often sentiment gets measured, that separate accounts heading toward growth from accounts heading toward client loss. In Kaizan's own data, the gap between the two groups opens in the first months of a relationship and rarely closes on its own.
 
 **Five findings worth acting on**
 
@@ -25,7 +25,7 @@ Client onboarding metrics are the handful of early cadence and coverage numbers,
 
 The figures below come from [Kaizan's 2026 Client Service Report](https://www.kaizan.ai/us/resources/white-paper/), drawn from over 1 million anonymised client-service calls, 10 million emails and thousands of chat messages, analysed across a 12-month period. The accounts in the sample are agency and professional-services clients using Kaizan.
 
-**Cohort definition.** "Top cohort" and "bottom cohort" are the accounts with the highest and lowest CSAT and revenue growth in the sample, not a fixed day-90 cut of new logos. We don't yet have a published breakout that isolates behaviour in the first 90 days specifically from behaviour later in a mature relationship, so what follows should be read as: these are the client onboarding metrics that separate growing, satisfied relationships from shrinking, dissatisfied ones, and the pattern is visible, and actionable, from the first weeks of a new account onward.
+**Cohort definition.** "Top cohort" and "bottom cohort" are the accounts with the highest and lowest CSAT and revenue growth in the sample, not a fixed day-90 cut of new clients. We don't yet have a published breakout that isolates behaviour in the first 90 days specifically from behaviour later in a mature relationship, so what follows should be read as: these are the client onboarding metrics that separate growing, satisfied relationships from shrinking, dissatisfied ones, and the pattern is visible, and actionable, from the first weeks of a new account onward.
 
 **What this is not.** This is a correlational comparison, not a controlled study. It tells you what top and bottom-performing accounts look like side by side, not that doing X in week one causes Y a year later. We also don't have a segmented cut of this data by firm size, service line or account tier, only the two-cohort comparison above. If you're building a tiering model and need that cut, it's the single most useful addition we could make to this page.
 

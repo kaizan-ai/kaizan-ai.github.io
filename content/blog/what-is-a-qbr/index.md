@@ -32,7 +32,7 @@ Most people searching "what is a QBR" already run something they call a business
 
 A QBR is not an admin task you owe a client. It is one of the few guaranteed moments each quarter where someone senior on the client side sits across from someone senior on yours, with time set aside to talk about the relationship rather than the task list, keeping both parties on the same page about business goals as well as relationship status. That makes it one of the most consequential meetings an account team runs, and one of the easiest to let slide into a status read-out.
 
-The stakes are real. Agency client retention is commonly cited in the 80 to 90% range annually, which means even a well-run book is losing one client in ten most years. Executive engagement is widely linked to that number: McKinsey research, cited widely across customer success literature, found B2B clients with strong executive engagement are around 2.5 times more likely to renew. Treat that figure as directional rather than exact, since it comes from outside Kaizan's own dataset, but the direction matches what shows up in agency client conversations too: the accounts that survive a rocky patch are usually the ones where a senior person on the client side already trusts a senior person on yours, because a QBR gave them the room to build trust and improve client satisfaction before problems escalate.
+The stakes are real. Agency client retention is commonly cited in the 80 to 90% range annually, which means even a well-run book is losing one client in ten most years. Executive engagement is widely linked to that number: McKinsey research, cited widely across client success literature, found B2B clients with strong executive engagement are around 2.5 times more likely to renew. Treat that figure as directional rather than exact, since it comes from outside Kaizan's own dataset, but the direction matches what shows up in agency client conversations too: the accounts that survive a rocky patch are usually the ones where a senior person on the client side already trusts a senior person on yours, because a QBR gave them the room to build trust and improve client satisfaction before problems escalate.
 
 Kaizan's own benchmark data, drawn from over a million client service calls and ten million emails across agency accounts, backs this up from a different angle. Across the accounts in that dataset, the engagement gap between the best-performing and weakest-performing client relationships was rarely about which decision-makers an account team had identified. Both groups had mapped roughly the same share of stakeholders. The gap was frequency: the strongest accounts got nearly twice as many calls and twice as many emails with the actual decision-maker as the weakest ones. A QBR is one of the only forcing functions that guarantees that contact happens at all, for the accounts where the day-to-day relationship has drifted down to a single junior contact over time.
 
@@ -76,7 +76,7 @@ Kaizan's benchmark data shows the client-to-team contact ratio holds remarkably 
 
 ### Priorities and commitments for the next period
 
-Close every QBR with action plans that set clear expectations, owners, and dates, not a general sense of direction. An expansion conversation belongs here too, but only when the first four components are solid. Pushing growth into a relationship that's still shaky on satisfaction or trust rarely lands well, and usually reads to the client as exactly the wrong moment to be asked for more budget.
+Close every QBR with action plans that set clear expectations, owners, and dates, not a general sense of direction. A growth conversation belongs here too, but only when the first four components are solid. Pushing growth into a relationship that's still shaky on satisfaction or trust rarely lands well, and usually reads to the client as exactly the wrong moment to be asked for more budget.
 
 ## QBR vs the terms it gets confused with
 
@@ -88,7 +88,7 @@ Close every QBR with action plans that set clear expectations, owners, and dates
 | How often | Quarterly, or monthly for top-tier agency accounts | Annually or semi-annually | Monthly | Once, timed to the contract | Weekly or biweekly |
 | What it covers | Value vs. goals, risk, performance metrics, next-quarter plan | Strategic partnership, business impact, the renewal case | Operational metrics, delivery tracking | Commercial terms, scope, price | Task progress |
 | Typical length | 30 to 60 minutes | 45 to 60 minutes | 30 to 45 minutes | Varies | 15 to 30 minutes |
-| What gets decided | Next quarter's priorities | Strategic direction, expansion green light | Operational fixes | Contract terms | Little beyond the task list |
+| What gets decided | Next quarter's priorities | Strategic direction, growth green light | Operational fixes | Contract terms | Little beyond the task list |
 
 A few distinctions worth stating plainly. An EBR is not just a QBR with more senior people invited. It runs less often, covers strategic direction rather than quarterly detail, and exists specifically to build the case for renewal at the executive level, which is why some teams run one QBR a quarter and one EBR a year with the same account. An MBR is internal-facing far more often than external: it's how a leadership team reviews its own department's numbers, not how an agency reviews a client relationship, though some agencies run a lightweight MBR-style check-in with a client between QBRs. A renewal call is a commercial negotiation, not a relationship review, and walking into one without the evidence from your last few QBRs is how teams end up negotiating from a position of hope rather than a position of proof. And a weekly status update is not a QBR run more often. It's a different job: tracking tasks, not reviewing a relationship, while qbrs serve to align strategic discussion with operational review.
 
@@ -98,7 +98,7 @@ If you only remember one distinction from this table: the word people reach for 
 
 This is a composite account, built from patterns that show up across agency relationships, not one named client.
 
-A 60-person marketing agency runs a QBR with a mid-market retail client every quarter.
+A 60-person marketing agency runs a QBR with a tier 2 retail client every quarter.
 
 **Quarters 1-2.** The reviews go fine: the deck covers deliverables, the client nods, nobody pushes back.
 
@@ -149,7 +149,7 @@ Most QBR advice assumes you have 60 to 90 minutes. Many companies run them on a 
 - **0 to 5 minutes: Context and headline.** One slide. Where the relationship stands overall, and the one thing this quarter's review is really about. Not a recap of the last meeting.
 - **5 to 15 minutes: Value delivered against goals.** The evidence, in the client's language, of what moved against what they asked for. This is where most of the room's attention should go.
 - **15 to 23 minutes: Risks, blockers and stakeholder check.** Name what's not working, including anything your team flagged before the client did. Confirm who's actually been in the conversation this quarter, on both sides.
-- **23 to 28 minutes: Next quarter's priorities.** Two or three commitments, each with an owner and a date. This is also where strategies for the next quarter and any new strategies should be agreed. An expansion conversation belongs here, if and only if the first three sections gave you a genuine opening for it.
+- **23 to 28 minutes: Next quarter's priorities.** Two or three commitments, each with an owner and a date. This is also where strategies for the next quarter and any new strategies should be agreed. A growth conversation belongs here, if and only if the first three sections gave you a genuine opening for it.
 - **28 to 30 minutes: Confirm and close.** Read the actions back. Confirm the next review date before everyone leaves the room, so the agreed actions also set clear objectives for the next review.
 
 Set the timeboxes before the meeting starts and hold them. A 30-minute QBR with no clock becomes a 60-minute one soon enough, and the discipline of the format is most of what makes it work.
@@ -201,7 +201,7 @@ A QBR without the actual decision-maker in the room is trying to do that work bl
 
 ## QBR glossary: quick definitions
 
-![QBR glossary cards: quick definitions of EBR, MBR, RAG status, stakeholder map, executive sponsor, action item, expansion opportunity and single-threading.](qbr-glossary-cards.png)
+![QBR glossary cards: quick definitions of EBR, MBR, RAG status, stakeholder map, executive sponsor, action item, growth opportunity and single-threading.](qbr-glossary-cards.png)
 
 - **EBR (Executive Business Review).** A strategic, executive-level review, usually annual or semi-annual, focused on business impact and the renewal case rather than quarterly detail.
 - **MBR (Monthly Business Review).** A monthly, usually internal, operational review of metrics and delivery.
@@ -209,7 +209,7 @@ A QBR without the actual decision-maker in the room is trying to do that work bl
 - **Stakeholder map.** A list of everyone on the client side who matters to the relationship, by role and influence, with the actual decision-maker explicitly named.
 - **Executive sponsor.** The senior person on each side, agency and client, who isn't in the day-to-day work but who owns the relationship at a strategic level.
 - **Action item.** A commitment made during a review, with a named owner and a date, tracked until it's closed.
-- **Expansion opportunity.** A signal that the conditions are right to grow an account, whitespace, a stated new initiative, a budget cycle opening up, that only belongs on the agenda once the relationship's underlying health supports the conversation.
+- **Growth opportunity.** A signal that the conditions are right to grow an account, whitespace, a stated new initiative, a budget cycle opening up, that only belongs on the agenda once the relationship's underlying health supports the conversation.
 - **Single-threading.** When only one person on either side carries the whole relationship. One of the most reliable predictors of a lost account, and one of the easiest things for a QBR's stakeholder check to catch.
 
 ## Frequently asked questions
@@ -224,7 +224,7 @@ Searched as "QBR meaning in business" or "QBR meaning business," the answer is t
 It's the meeting where you stop reporting what you did and start reviewing what it achieved. If your current version of this is a monthly status email or a RAG spreadsheet update, a QBR replaces the memory-based scoring with an evidence-based conversation, built from the actual record of the relationship.
 
 **What's the difference between a QBR and an EBR?**
-A QBR runs more often, usually quarterly or monthly, and covers the detail of value delivered and next-quarter priorities. An EBR runs less often, usually annually, sits at a more senior level, and exists mainly to build the strategic case for renewal or expansion. Many agencies run both with the same account, at different cadences.
+A QBR runs more often, usually quarterly or monthly, and covers the detail of value delivered and next-quarter priorities. An EBR runs less often, usually annually, sits at a more senior level, and exists mainly to build the strategic case for renewal or scope expansion. Many agencies run both with the same account, at different cadences.
 
 **How long should a QBR be?**
 Most run 30 to 60 minutes. Agencies running QBRs monthly, across a full tier of accounts, often compress to a 30-minute format to make the cadence sustainable, which is why this guide includes a 30-minute run of show above.

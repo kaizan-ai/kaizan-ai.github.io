@@ -13,6 +13,6 @@ Signed.
 
 - The question it answers: is this relationship healthy, and do we know before the client tells us?
 - Watches the relationship for the years that follow.
-- A decision-maker gone quiet, Sentiment sliding, Expansion opportunity
+- A decision-maker gone quiet, Sentiment sliding, Upsell opportunity
 
 Complements, not alternatives. Most firms eventually need both.

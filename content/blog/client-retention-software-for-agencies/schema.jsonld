@@ -124,7 +124,7 @@
           "name": "How much does client retention software cost, and what does churn cost us?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Enterprise CS platforms typically run $25,000 to $250,000+ a year depending on team size. Kaizan is priced by number of clients. Price on quote. Set either against the cost of churn: a firm losing 20% of a $10 million client book annually is putting $2 million at risk every year, and it also cuts future client lifetime value before software changes that number.",
+            "text": "Enterprise CS platforms typically run $25,000 to $250,000+ a year depending on team size. Kaizan is priced by number of clients. Price on quote. Set either against the cost of client attrition: a firm losing 20% of a $10 million client book annually is putting $2 million at risk every year, and it also cuts future client lifetime value before software changes that number.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -456,7 +456,7 @@
           "@type": "CreativeWork",
           "url": "https://fungies.io/?p=40846",
           "name": "fungies.io",
-          "description": "10 Best Customer Success Software for SaaS in 2026"
+          "description": "10 Best Client Success Software for SaaS in 2026"
         }
       ],
       "relatedLink": [

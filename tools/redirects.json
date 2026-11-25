@@ -24,7 +24,7 @@
  "/qa-using-ai-to-increase-alignment-in-multi-market-client-service-teams": "/blog/qa/qa-ai-multi-market-alignment/",
  "/stakeholder-mapping-101why-is-it-critical-in-managing-client-relationships": "/blog/playbooks-and-templates/stakeholder-mapping-101/",
  "/the-new-frontier-of-client-services-is-ai-first": "/blog/ai-for-client-service/new-frontier-ai-first-client-services/",
- "/the-role-of-client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-enterprise-relationships/",
+ "/the-role-of-client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/",
  "/12-tips-for-facilitating-a-client-workshop": "/blog/",
  "/a-guide-to-consultative-sales": "/blog/",
  "/a-guide-to-managing-client-relationships-remotely": "/blog/",
@@ -143,7 +143,7 @@
  "/blog/key-principles-in-strategic-client-management": "/blog/playbooks-and-templates/key-principles-in-strategic-client-management/",
  "/blog/re-engage-inactive-clients": "/blog/playbooks-and-templates/re-engage-inactive-clients/",
  "/blog/stakeholder-mapping-101-why-is-it-critical-in-managing-client": "/blog/playbooks-and-templates/stakeholder-mapping-101/",
- "/blog/the-role-of-client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-enterprise-relationships/",
+ "/blog/the-role-of-client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/",
  "/blog/how-pashn-uses-ai-to-strengthen-client-relationships-protect-revenue": "/blog/agency-profitability/pashn-protect-revenue-save-time/",
  "/blog/how-tradedoubler-is-driving-20-greater-operational-efficiency-across": "/blog/agency-profitability/tradedoubler-20-percent-efficiency-gain/",
  "/blog/lean-mean-and-client-obsessed-what-ai-is-really-changing-inside-agencies": "/blog/agency-profitability/lean-mean-client-obsessed-agencies/",
@@ -162,5 +162,9 @@
  "/blog/playbooks-and-templates/b2b-customer-journey-map": "/blog/playbooks-and-templates/b2b-client-journey-map/",
  "/blog/client-software/best-customer-success-software-for-agencies": "/blog/client-software/best-client-success-software-for-agencies/",
  "/blog/playbooks-and-templates/customer-relationship-management-process": "/blog/playbooks-and-templates/client-relationship-management-process/",
- "/blog/client-software/customer-retention-software-for-agencies": "/blog/client-software/client-retention-software-for-agencies/"
+ "/blog/client-software/customer-retention-software-for-agencies": "/blog/client-software/client-retention-software-for-agencies/",
+ "/blog/client-health/churn-prediction-on-conversation-data": "/blog/client-health/client-attrition-prediction-on-conversation-data/",
+ "/blog/client-software/churn-prediction-software-vendor-questions": "/blog/client-software/attrition-management-software-vendor-questions/",
+ "/blog/playbooks-and-templates/client-success-plan-template": "/blog/playbooks-and-templates/client-roadmap-template/",
+ "/blog/playbooks-and-templates/client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/"
 }

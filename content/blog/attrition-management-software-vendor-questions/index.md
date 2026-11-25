@@ -1,24 +1,24 @@
 ---
-title: "Churn Management Software: What to Ask Vendors About Data and Models"
-meta_title: "Churn Prediction Software: What to Ask Vendors"
+title: "Attrition Management Software: What to Ask Vendors About Data and Models"
+meta_title: "Attrition Prediction Software: What to Ask Vendors"
 date: 2026-11-10
 author: James Caples
 category: POV
 topic: client-software
-excerpt: Churn prediction tools split into usage-data and conversation-data models. Learn which fits your firm and the twelve questions to ask every vendor.
+excerpt: Client attrition prediction tools split into usage-data and conversation-data models. Learn which fits your firm and the twelve questions to ask every vendor.
 draft: false
-tags: [churn prediction, churn management software, vendor evaluation, conversation data, data security, client health]
+tags: [attrition prediction, attrition management software, vendor evaluation, conversation data, data security, client health]
 ---
 
-Churn prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a client does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
+Client attrition prediction software scores the risk that a client leaves, but two different kinds of model hide under that label. Usage-data models watch what a client does inside a product: logins, features, seats. Conversation-data models watch what a client says in calls, emails and chat. Ask any vendor which one they built, before you ask about price.
 
-## The two kinds of churn prediction software, hiding under one label
+## The two kinds of attrition prediction software, hiding under one label
 
-Almost half of marketers, 45%, name a lack of proactivity as the top reason they put an agency or service firm under review ([RSW/US, 2024 Agency New Business Outlook Report](https://www.rswus.com/)). Churn prediction software exists to close that gap: score the relationship before the client decides to leave, not after, so teams can predict churn and reduce client churn. But "churn prediction" describes two genuinely different products, built for two genuinely different businesses.
+Almost half of marketers, 45%, name a lack of proactivity as the top reason they put an agency or service firm under review ([RSW/US, 2024 Agency New Business Outlook Report](https://www.rswus.com/)). Client attrition prediction software exists to close that gap: score the relationship before the client decides to leave, not after, so teams can predict client attrition and reduce client attrition. But "attrition prediction" describes two genuinely different products, built for two genuinely different businesses.
 
 **Usage-data models** were built for product-led SaaS. They score risk from what a client does inside a piece of software: logins, feature adoption, seat utilisation, support ticket volume, NPS surveys, using client behaviour and client data as the basis for the score. Gainsight, ChurnZero, Totango and similar tools sit in this category. The model works because the product generates a constant stream of behavioural exhaust, and that exhaust is a reasonable proxy for how the relationship is going.
 
-**Conversation-data models** were built for relationship-led services: agencies, consultancies, managed service providers, anyone whose "product" is a team of people, not software a client logs into. There is no login data to score, because the client never logs into anything. These models instead score risk from the calls, emails, chat threads and meeting notes that make up the relationship itself, treating them as client feedback and relationship-level churn signals. Kaizan's CARE model is one example: it scores client satisfaction, activity with stakeholders, relationship strength and expansion signals from the team's own conversations, re-tuned weekly against what has actually predicted a kept client, a lost client or a won pitch at that firm ([kaizan.ai/product](https://www.kaizan.ai/us/product/#health-model)).
+**Conversation-data models** were built for relationship-led services: agencies, consultancies, managed service providers, anyone whose "product" is a team of people, not software a client logs into. There is no login data to score, because the client never logs into anything. These models instead score risk from the calls, emails, chat threads and meeting notes that make up the relationship itself, treating them as client feedback and relationship-level attrition signals. Kaizan's CARE model is one example: it scores client satisfaction, activity with stakeholders, relationship strength and expansion signals from the team's own conversations, re-tuned weekly against what has actually predicted a kept client, a lost client or a won pitch at that firm ([kaizan.ai/product](https://www.kaizan.ai/us/product/#health-model)).
 
 A Chief Operating Officer at one agency client described the shift this way:
 
@@ -28,7 +28,7 @@ A Chief Operating Officer at one agency client described the shift this way:
 
 The table below is the fast version of this whole article. Everything after it is detail.
 
-| Criterion | Usage-data churn models | Conversation-data churn models |
+| Criterion | Usage-data attrition models | Conversation-data attrition models |
 | --- | --- | --- |
 | Built for | Product-led SaaS with login, feature and seat data | Relationship-led services: agencies, consultancies, managed services |
 | Primary signal | Product telemetry, tickets, NPS surveys | Calls, emails, chat, meeting notes |
@@ -37,13 +37,13 @@ The table below is the fast version of this whole article. Everything after it i
 | Typical vendors | Gainsight, ChurnZero, Totango, Vitally, Planhat | A smaller set of conversation-intelligence platforms, including Kaizan |
 | Where it breaks | No usage data exists when the "product" is people's time | Weaker signal if a firm genuinely does have rich product usage to score |
 
-If your firm bills for people's time and expertise rather than software seats, a usage-data model has nothing to watch. If your firm ships a product with its own telemetry, a conversation-data model is reading half the relationship. Most buyers land clearly on one side once they ask the question directly, which is exactly why so few churn-prediction vendor pages ask it.
+If your firm bills for people's time and expertise rather than software seats, a usage-data model has nothing to watch. If your firm ships a product with its own telemetry, a conversation-data model is reading half the relationship. Most buyers land clearly on one side once they ask the question directly, which is exactly why so few client attrition-prediction vendor pages ask it.
 
 ## Where each one wins, and where each breaks
 
 ### Choose a usage-data model when your clients live inside your product
 
-If clients log into a dashboard, an app or a portal every week, usage data is real evidence. A drop in logins, a dormant seat, a support ticket spike: these are observable facts in client behaviour data across the client journey inside the product, not interpretations of the relationship. Usage-data churn models are mature, well-benchmarked and the right default for SaaS companies with a genuine self-serve or product-led usage layer.
+If clients log into a dashboard, an app or a portal every week, usage data is real evidence. A drop in logins, a dormant seat, a support ticket spike: these are observable facts in client behaviour data across the client journey inside the product, not interpretations of the relationship. Usage-data attrition models are mature, well-benchmarked and the right default for SaaS companies with a genuine self-serve or product-led usage layer.
 
 Where they break: a services business has no usage layer to watch. An agency, a consultancy or an outsourced team cannot infer relationship health from login frequency, because there is no login. Forcing a usage-data model onto a relationship business produces a score with nothing real underneath it, which is the single most common buying mistake in this category. When telemetry is strong, this kind of tooling can also help identify at risk clients early.
 
@@ -61,19 +61,19 @@ A second agency leader described the practical effect of moving from gut feel to
 
 ## Do you need both?
 
-Most firms need exactly one. The overlap case is narrower than vendors in this space like to suggest, but it is real: a company that sells software with genuine usage telemetry and also runs a high-touch services or implementation team alongside it. A platform business with embedded customer success teams managing ongoing client relationships is the clearest example. There, a usage-data model can watch the product side, and a conversation-data model can watch the relationship side, and the two answer different questions about the same account, with a dedicated customer success platform sometimes sitting alongside churn prediction rather than replacing it.
+Most firms need exactly one. The overlap case is narrower than vendors in this space like to suggest, but it is real: a company that sells software with genuine usage telemetry and also runs a high-touch services or implementation team alongside it. A platform business with embedded client success teams managing ongoing client relationships is the clearest example. There, a usage-data model can watch the product side, and a conversation-data model can watch the relationship side, and the two answer different questions about the same account, with a dedicated client success platform sometimes sitting alongside attrition prediction rather than replacing it.
 
 For a pure services business, running both is rarely worth the cost. A usage-data model with no usage to score will return a flat or meaningless signal, and a second tool is a second thing for the account team to check, log into and trust. If your firm's clients do not use a shared product, the usage-data half of a "run both" stack is dead weight.
 
-## The question list: what to ask any churn prediction vendor
+## The question list: what to ask any attrition prediction vendor
 
-These are the questions worth asking every vendor on a shortlist, including churn management platform and client churn software options, though the main focus here is still prediction vendors. A vendor that dodges three or more of these is telling you something.
+These are the questions worth asking every vendor on a shortlist, including attrition management platform and client attrition software options, though the main focus here is still prediction vendors. A vendor that dodges three or more of these is telling you something.
 
-![Twelve churn prediction vendor questions grouped into three sets: on the data, on the model, and on data handling and governance.](churn-prediction-vendor-questions-twelve.png)
+![Twelve attrition prediction vendor questions grouped into three sets: on the data, on the model, and on data handling and governance.](attrition-management-vendor-questions-twelve.png)
 
 ### On the data
 
-1. **What data actually feeds the score?** Get the literal list of client data the vendor uses to predict churn: calls, emails, chat, CRM fields, tickets, surveys. A vague answer ("all your client data") usually means the model leans harder on whatever is easiest to collect, not whatever is most predictive.
+1. **What data actually feeds the score?** Get the literal list of client data the vendor uses to predict client attrition: calls, emails, chat, CRM fields, tickets, surveys. A vague answer ("all your client data") usually means the model leans harder on whatever is easiest to collect, not whatever is most predictive.
 2. **Does the model need the client to do anything?** Usage-data tools need the client logging in. Conversation-data tools need the team's own calls and emails to be captured, which usually means a meeting bot or email integration, not client participation.
 3. **Is the signal observed or self-reported?** A survey score is an opinion a client chose to give you, often when they were already unhappy enough to say so, or too polite to. A conversation signal is something the team actually said or heard. One client, reflecting on the shift, put it plainly:
 
@@ -94,7 +94,7 @@ These are the questions worth asking every vendor on a shortlist, including chur
 
 ### On data handling and governance
 
-This is the section a Head of AI or Technology lead will not let a vendor skip, and the one a churn-prediction vendor page is least likely to answer unprompted.
+This is the section a Head of AI or Technology lead will not let a vendor skip, and the one a client attrition-prediction vendor page is least likely to answer unprompted.
 
 9. **Is our data ever used to train someone else's model?** The answer you want is a flat no, with per-tenant isolation and a zero-retention agreement with any underlying foundation model provider. Kaizan, for example, runs zero-retention contracts with its model providers and never aggregates client data into a shared or foundation model ([kaizan.ai/security](https://www.kaizan.ai/us/security/)).
 10. **What certifications and audits back that up?** SOC 2 Type II, ISO 27001, GDPR and CCPA compliance, and a quarterly third-party penetration test are the baseline for any vendor handling client communications at scale. Ask for the report, not just the logo.
@@ -116,14 +116,14 @@ A 14-day pilot on your own data, before any commercial conversation, is the fast
 
 ## How we approached this
 
-The category split (usage-data versus conversation-data churn models) reflects how churn prediction tools are actually built and marketed as of November 2026, checked against vendor sites and product documentation at the time of writing. The Kaizan-specific figures and quotes are sourced from Kaizan's own published materials: [The Client Service Benchmark 2026](https://www.kaizan.ai/us/resources/white-paper/) (analysis of over a million calls and ten million emails across Kaizan's client portfolio, anonymised, 12-month period), the [security and trust centre](https://www.kaizan.ai/us/security/), and the [product page](https://www.kaizan.ai/us/product/). Client quotes are used with the anonymity level each speaker's company agreed to. Pricing is confirmed current as of November 2026; recheck before relying on it, since vendor pricing changes without much notice in this category.
+The category split (usage-data versus conversation-data attrition models) reflects how attrition prediction tools are actually built and marketed as of November 2026, checked against vendor sites and product documentation at the time of writing. The Kaizan-specific figures and quotes are sourced from Kaizan's own published materials: [The Client Service Benchmark 2026](https://www.kaizan.ai/us/resources/white-paper/) (analysis of over a million calls and ten million emails across Kaizan's client portfolio, anonymised, 12-month period), the [security and trust centre](https://www.kaizan.ai/us/security/), and the [product page](https://www.kaizan.ai/us/product/). Client quotes are used with the anonymity level each speaker's company agreed to. Pricing is confirmed current as of November 2026; recheck before relying on it, since vendor pricing changes without much notice in this category.
 
 ## Frequently asked questions
 
-**What's the difference between churn management software and a product analytics tool?**
-Product analytics tools look at telemetry such as logins, feature adoption, usage frequency, and drop-off points. In that sense, a usage-data system is one form of churn software built around product telemetry, while conversation-data systems focus on relationship evidence from emails, meetings, messages, and account activity.
+**What's the difference between attrition management software and a product analytics tool?**
+Product analytics tools look at telemetry such as logins, feature adoption, usage frequency, and drop-off points. In that sense, a usage-data system is one form of client attrition software built around product telemetry, while conversation-data systems focus on relationship evidence from emails, meetings, messages, and account activity.
 
-Churn management software can include product usage signals, but it usually goes further by combining multiple signals to show risk, recommend actions, and help teams intervene before revenue is lost. Both approaches aim to reduce client churn, but they do so from different data sources.
+Client attrition management software can include product usage signals, but it usually goes further by combining multiple signals to show risk, recommend actions, and help teams intervene before revenue is lost. Both approaches aim to reduce client attrition, but they do so from different data sources.
 
 For software companies with self-serve or product-led growth, product analytics may be enough to flag risk. For agencies, consultancies, and other service businesses, however, the real warning signs often appear in client communication long before they show up in usage data.
 
@@ -131,30 +131,30 @@ For software companies with self-serve or product-led growth, product analytics 
 Choose a usage-data model if your clients log into a product you built. Choose a conversation-data model if your "product" is a team of people and the relationship runs through calls, emails and meetings instead. Most firms know which one describes them the moment they hear the distinction.
 
 **Can we use both?**
-A few do, but most don't. Traditional churn management software is built to reduce client loss using product analytics, billing signals, and automated retention plays. Kaizan overlaps on retention outcomes, but from the service side: relationship quality, communication patterns, stakeholder risk, and delivery signals across client accounts.
+A few do, but most don't. Traditional attrition management software is built to reduce client loss using product analytics, billing signals, and automated retention plays. Kaizan overlaps on retention outcomes, but from the service side: relationship quality, communication patterns, stakeholder risk, and delivery signals across client accounts.
 
-Using both only makes sense if you need broader churn management across both product usage and service interactions. That setup is more common when a company wants coordinated coverage across the client lifecycle. In practice, companies with a SaaS product plus a services or account-management layer may use both: one platform to monitor in-app behaviour and another to track the human side of the relationship.
+Using both only makes sense if you need broader attrition management across both product usage and service interactions. That setup is more common when a company wants coordinated coverage across the client lifecycle. In practice, companies with a SaaS product plus a services or account-management layer may use both: one platform to monitor in-app behaviour and another to track the human side of the relationship.
 
-**Can you switch from a CRM or CS tool to churn management software without disrupting the team?**
+**Can you switch from a CRM or CS tool to attrition management software without disrupting the team?**
 Yes — if the rollout is phased and the new platform keeps the account context your team already relies on. When switching, make sure the migration preserves history on existing clients and the way accounts are currently reviewed, so teams don't lose visibility mid-handoff. The goal is stronger client retention, not just a new score.
 
-Start by mapping what your current system tracks: account health notes, renewal dates, support signals, product usage, and ownership. Then decide what needs to move, what can be archived, and what should be restructured. The best transitions usually begin with one segment or team, prove the workflow, and then expand.
+Start by mapping what your current system tracks: account health notes, retainer renewal dates, support signals, product usage, and ownership. Then decide what needs to move, what can be archived, and what should be restructured. The best transitions usually begin with one segment or team, prove the workflow, and then expand.
 
-It also helps to define the operating model before launch. Who reviews risk? How often are accounts reassessed? What actions should happen when a score changes? If those decisions are clear, adoption tends to be much smoother.
+It also helps to define the operating model before launch. Who reviews risk? How often are accounts reassessed? What actions should happen when a score changes? If those decisions are clear, uptake tends to be much smoother.
 
-**Where is product-led or relationship-led churn software the wrong choice?**
-Product-led churn software is the wrong fit when retention risk sits outside the product, like in service quality, stakeholder alignment, renewals, or commercial conversations. It is also the wrong fit when there is no telemetry to monitor client experience or adoption inside a product.
+**Where is product-led or relationship-led client attrition software the wrong choice?**
+Product-led client attrition software is the wrong fit when retention risk sits outside the product, like in service quality, stakeholder alignment, retainer renewals, or commercial conversations. It is also the wrong fit when there is no telemetry to monitor client experience or adoption inside a product.
 
-Relationship-led churn software is the wrong fit when usage data inside a product is the clearest signal of decline or expansion. It is also the wrong fit when there are too few interactions to read meaningful client churn risk from conversations alone.
+Relationship-led client attrition software is the wrong fit when usage data inside a product is the clearest signal of decline or growth. It is also the wrong fit when there are too few interactions to read meaningful client attrition risk from conversations alone.
 
 **How often should an AI retention model be retrained?**
 There is no single schedule that fits every team. In practice, retraining depends on how quickly your client base, product, pricing, and service model change.
 
 A good rule of thumb is to retrain when the patterns behind risk are no longer stable, not just because a set amount of time has passed. Many teams review model performance quarterly and retrain only when accuracy starts to slip or the business has changed in a meaningful way.
 
-It also helps to separate score refresh cadence from retraining: you may update risk scores daily or weekly using new activity data without rebuilding the model itself, and teams should watch churn rate over time to confirm the model stays useful.
+It also helps to separate score refresh cadence from retraining: you may update risk scores daily or weekly using new activity data without rebuilding the model itself, and teams should watch attrition rate over time to confirm the model stays useful.
 
-For fast-moving SaaS businesses, retraining may happen more often than in firms with longer contracts and slower account cycles. Some firms also review retraining impact against monthly churn rate instead of relying only on vendor claims.
+For fast-moving SaaS businesses, retraining may happen more often than in firms with longer contracts and slower account cycles. Some firms also review retraining impact against monthly attrition rate instead of relying only on vendor claims.
 
 The right cadence is the one that keeps the model relevant without creating unnecessary operational overhead.
 

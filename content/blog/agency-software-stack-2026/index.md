@@ -4,7 +4,7 @@ date: 2026-11-05
 author: James Caples
 category: POV
 topic: client-software
-excerpt: A guide to agency software sorted by the eight jobs a stack has to cover, from first pitch to renewal, with tools compared and costs modelled by headcount.
+excerpt: A guide to agency software sorted by the eight jobs a stack has to cover, from first pitch to retainer renewal, with tools compared and costs modelled by headcount.
 cover: agency-software-stack-eight-jobs.png
 draft: false
 tags: [agency software, software stack, client management, psa, client intelligence, client retention]
@@ -17,7 +17,7 @@ meta_author: James Caples
 
 A digital agency needs software across eight jobs: new business and CRM, onboarding, project and delivery management, creative production and review, time and resourcing, finance and invoicing, client reporting, and client intelligence for retention. Most agencies run six to ten tools covering these jobs, not one platform that does everything.
 
-This guide sorts the agency software market by the job each tool does, from the first pitch to the renewal conversation, so you can find the gap in your own stack instead of reading another flat top-10 list. We've mapped the tools by lifecycle stage, built a cost comparison by headcount, and been explicit about where even the best all-in-one suites stop.
+This guide sorts the agency software market by the job each tool does, from the first pitch to the retainer renewal conversation, so you can find the gap in your own stack instead of reading another flat top-10 list. We've mapped the tools by lifecycle stage, built a cost comparison by headcount, and been explicit about where even the best all-in-one suites stop.
 
 **Key takeaways**
 
@@ -41,7 +41,7 @@ An agency software stack is the full set of tools a firm runs to win, deliver an
 
 Every agency, regardless of discipline, runs client work through the same five stages: pitch, onboard, deliver, report, and renew. Mapping software to stages instead of buzzwords is the fastest way to find out what's actually missing in yours.
 
-![Agency lifecycle from pitch to renewal, with the software job that owns each stage.](agency-software-stack-lifecycle-map.png)
+![Agency lifecycle from pitch to retainer renewal, with the software job that owns each stage.](agency-software-stack-lifecycle-map.png)
 
 | Stage | What has to happen | The job category that owns it |
 | --- | --- | --- |
@@ -49,11 +49,11 @@ Every agency, regardless of discipline, runs client work through the same five s
 | Onboard | Contracts, kickoff, first 30 to 90 days live | Onboarding (often a CRM or PM template, sometimes dedicated software) |
 | Deliver | Tasks, timelines, creative production, approvals | Project and delivery management, creative production and review |
 | Report | Time, budgets, client-facing reporting | Time and resourcing, finance and invoicing, client reporting |
-| Renew | Relationship health, risk, expansion, the renewal conversation | Client intelligence and retention |
+| Renew | Relationship health, risk, scope expansion, the retainer renewal conversation | Client intelligence and retention |
 
 Two more categories run underneath all five stages rather than owning a single one of them: **internal and client communications** (Slack, Teams, email, video calls) and, increasingly, an **AI and integration layer** that connects everything else together. We cover both further down.
 
-Most stack audits stop at "deliver" and "report," because that's where agencies feel the most daily pain. The stage that gets skipped almost every time is "renew," and it's the one with the most revenue sitting behind it: a renewal lost with no warning costs more than any admin inefficiency the rest of the stack was bought to fix.
+Most stack audits stop at "deliver" and "report," because that's where agencies feel the most daily pain. The stage that gets skipped almost every time is "renew," and it's the one with the most revenue sitting behind it: a retainer lost with no warning costs more than any admin inefficiency the rest of the stack was bought to fix.
 
 ## Why Agencies Outgrow Spreadsheets And Their Current Stack
 
@@ -77,7 +77,7 @@ The fix for all four isn't a bigger spreadsheet. It's deciding which job each to
 
 The job: track the pipeline from first conversation to signed contract, and hold the account's institutional memory afterward.
 
-What matters: a pipeline view built around retainers and project-based deals rather than one-off transactions, proposal and e-signature tooling, and clean integration into whatever runs delivery once the deal closes, with a CRM supporting pipeline management after that first conversation and contact management as deals move towards signature; some teams also want customer relationship management features that continue to support client relationships after the handoff. A CRM with no delivery handoff just moves the "where did this information go" problem one stage later.
+What matters: a pipeline view built around retainers and project-based deals rather than one-off transactions, proposal and e-signature tooling, and clean integration into whatever runs delivery once the deal closes, with a CRM supporting pipeline management after that first conversation and contact management as deals move towards signature; some teams also want client relationship management features that continue to support client relationships after the handoff. A CRM with no delivery handoff just moves the "where did this information go" problem one stage later.
 
 ### 2. Onboarding
 
@@ -123,7 +123,7 @@ What matters: a reporting platform that consolidates marketing data from multipl
 
 The job: know whether a relationship is strengthening or slipping, across every account, before the client has to tell you.
 
-This is the job every other category in this list leaves open. A CRM records deals. A project tool records tasks. Neither one tells you that a decision-maker has gone quiet for six weeks, or that sentiment on a call dipped before the client said anything explicit. This is where client intelligence or customer success software sits: it helps keep clients informed, supports stronger client communication, and, in the best setups, can consolidate client data from the CRM, project tool, and communication channels rather than creating another silo. It's covered in full further down.
+This is the job every other category in this list leaves open. A CRM records deals. A project tool records tasks. Neither one tells you that a decision-maker has gone quiet for six weeks, or that sentiment on a call dipped before the client said anything explicit. This is where client intelligence or client success software sits: it helps keep clients informed, supports stronger client communication, and, in the best setups, can consolidate client data from the CRM, project tool, and communication channels rather than creating another silo. It's covered in full further down.
 
 ### Underneath All Eight: Communications And The AI Layer
 
@@ -149,7 +149,7 @@ Every agency operations guide has an opinion on this, and most of them dodge the
 
 **All-in-one wins on:** one login, one system of record, one vendor relationship, and no integration maintenance between tools that were never built to talk to each other, which can simplify agency operations by reducing switching between platforms. The real cost is depth: an all-in-one's CRM is rarely as good as a dedicated CRM, and its reporting is rarely as flexible as a dedicated reporting tool. You're trading best-in-class for good-enough-everywhere.
 
-**Best-of-breed wins on:** depth in every job, since each tool is built to do one thing well, often with deeper SEO tools or other specialist layers when those jobs matter. The real cost is integration debt: someone has to own the connections between tools, and when a vendor changes its API or you swap one tool out, the whole chain can break. It also means more logins for the team to actually use, which is its own adoption risk.
+**Best-of-breed wins on:** depth in every job, since each tool is built to do one thing well, often with deeper SEO tools or other specialist layers when those jobs matter. The real cost is integration debt: someone has to own the connections between tools, and when a vendor changes its API or you swap one tool out, the whole chain can break. It also means more logins for the team to actually use, which is its own uptake risk.
 
 ### The Decision By Agency Size
 
@@ -187,7 +187,7 @@ This is the question that comes up in nearly every stack audit we're part of, an
 
 **The CRM thinks it owns the relationship.** It has the deal history, the contacts, maybe some notes. What it doesn't have: the content of the calls, the sentiment on the last three QBRs, or what was actually said when a decision-maker raised a concern that never made it into a logged activity.
 
-**The project tool thinks it owns delivery.** It has the tasks and the timeline. What it doesn't have: whether the client is happy with how delivery is going, or whether a pattern of missed deadlines is about to become a renewal problem.
+**The project tool thinks it owns delivery.** It has the tasks and the timeline. What it doesn't have: whether the client is happy with how delivery is going, or whether a pattern of missed deadlines is about to become a retainer renewal problem.
 
 **Someone's inbox thinks it owns everything else.** The most important context in a client relationship, the throwaway comment on a call that signals risk, the unprompted mention of a competitor, the casual "by the way" that turns into a scope conversation three weeks later, usually lives nowhere except one person's memory and their sent-mail folder. When that person goes on leave, or leaves the firm, that context leaves with them.
 
@@ -284,7 +284,7 @@ We compared each category on five things: what job it's actually built to do ver
 
 ## How To Choose Your Agency Software Stack In Seven Steps
 
-1. **Define the problem before the tool.** Write down the actual symptom: clients chasing you for status, an account director drowning in admin, a renewal lost with no warning. A tool bought to fix a vague feeling never gets adopted.
+1. **Define the problem before the tool.** Write down the actual symptom: clients chasing you for status, an account director drowning in admin, a retainer lost with no warning. A tool bought to fix a vague feeling never gets adopted.
 2. **Map your current stack honestly.** List every tool you already pay for, including the ones nobody officially approved, from operational software to **marketing tools**. Most agencies find at least one pair doing the same job without realising it.
 3. **Count clients, and seats, with a worked example.** A per-seat tool and a per-client tool can land at wildly different totals for the same agency. A 20-person agency with 6 account managers and 40 active clients pays a per-seat PSA roughly 6 times its per-seat rate; the same agency pays a per-client tool roughly 40 times its per-client rate. Run both numbers before you shortlist.
 4. **Weigh manual entry against automatic capture.** A tool that depends on someone remembering to log an update gets treated like the spreadsheet it replaced within a quarter. Ask every vendor, directly, what updates itself, what a person has to type, and whether integrations can automate repetitive tasks.
@@ -341,7 +341,7 @@ Most agencies have never actually audited their own stack; tools get added proje
 
 **Which tools can we drop?** Start with any tool fewer than a handful of people log into monthly, and any pair of tools quietly competing to be the "client record" for the same accounts, usually a CRM and a project tool each holding a partial picture. The tech stack audit section above has the four questions worth running against every line on your software bill.
 
-**Will the team actually use it?** This is the real adoption risk behind every purchase in this guide. Tools that require manual status updates get treated exactly like the spreadsheet they replaced, and usage quietly drops within a quarter. Test this directly in a 14-day pilot on real accounts before signing an annual contract, and ask every vendor what updates itself versus what a person has to type.
+**Will the team actually use it?** This is the real uptake risk behind every purchase in this guide. Tools that require manual status updates get treated exactly like the spreadsheet they replaced, and usage quietly drops within a quarter. Test this directly in a 14-day pilot on real accounts before signing an annual contract, and ask every vendor what updates itself versus what a person has to type.
 
 **What is the return on consolidating?** The return shows up in two places: the direct cost of redundant licences, and the admin hours an account team spends reconciling two or three partial systems instead of working from one. Kaizan clients, for the client-intelligence layer specifically, see an average 33% lower cost to serve each client and 5.4 hours of admin saved per person every week, which is a reasonable proxy for what consolidating any duplicated job in the stack is worth chasing.
 

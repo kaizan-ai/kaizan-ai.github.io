@@ -9,7 +9,7 @@ meta_title: Client Segmentation Models and How to Segment
 meta_description: Learn the main client segmentation models, a step by step method for how to segment clients, and how to match a service model to each segment.
 cover: cover.png
 draft: false
-tags: [client-segmentation, how-to-segment-clients, client-segmentation-model, client-segmentation-strategy, customer-success-segmentation]
+tags: [client-segmentation, how-to-segment-clients, client-segmentation-model, client-segmentation-strategy, client-success-segmentation]
 schema: true
 date_modified: 2026-10-09
 ---
@@ -28,13 +28,13 @@ The point is not to rank clients from best to worst. It is to recognise that a c
 
 Client groups are not the same as client personas: segments describe groups, while personas describe individuals.
 
-Good segmentation gives you three things: a clear service model for each group, a defensible way to allocate your team's time, and an early view of where retention risk and expansion opportunity actually sit.
+Good segmentation gives you three things: a clear service model for each group, a defensible way to allocate your team's time, and an early view of where retention risk and growth opportunity actually sit.
 
 ## Why client segmentation matters for client services teams
 
 For account managers, client success teams, and agencies, segmentation is really a resourcing decision dressed up as an analysis. It shapes how the business allocates time for business growth, sharpens marketing, and focuses marketing efforts alongside client services resourcing. Every hour spent over servicing a small account is an hour not spent protecting a strategic one.
 
-Segmentation also changes the commercial conversation. When you can see that a handful of clients drive most of your revenue, and that a second group has high potential but low current spend, you stop managing a flat list of accounts and start managing a portfolio. That shift is where net revenue retention comes from: protecting the base, and expanding the accounts with room to grow.
+Segmentation also changes the commercial conversation. When you can see that a handful of clients drive most of your revenue, and that a second group has high potential but low current spend, you stop managing a flat list of accounts and start managing a portfolio. That shift is where revenue retention comes from: protecting the base, and expanding the accounts with room to grow.
 
 It matters for the client experience too. A well segmented book means the clients who need a hands on, senior relationship get one, and the clients who prefer a lighter, more self directed touch are not smothered with meetings they never asked for.
 
@@ -54,21 +54,21 @@ The most common starting point. It is a value based approach, similar to how man
 
 A two by two that plots current value against future potential. You end up with four groups: high value and high potential (protect and grow), high value and low potential (protect and hold), low value and high potential (invest), and low value and low potential (serve efficiently).
 
-**Best for:** deciding where to invest for expansion rather than just where to defend. This is usually the model that changes behaviour, because it surfaces the low spend, high potential clients that flat revenue tiering ignores, helping teams spot potential customers and shape targeted strategies for product development or new products where relevant.
+**Best for:** deciding where to invest for scope growth rather than just where to defend. This is usually the model that changes behaviour, because it surfaces the low spend, high potential clients that flat revenue tiering ignores, helping teams spot potential clients and shape targeted strategies for new service lines or offers where relevant.
 
 **Watch out for:** potential is a judgement, so it needs real evidence behind it, not optimism; many businesses fall back on simple assumptions when they lack that evidence, and that weakens segmentation.
 
 ### 3. Lifecycle stage segmentation
 
-Groups clients by where they are in the relationship: onboarding, adoption, established, renewal, at risk. Each stage needs a different play.
+Groups clients by where they are in the relationship: onboarding, early results, established, renewal, at risk. Each stage needs a different play.
 
 **Best for:** designing the client journey and knowing which motion to run at any given moment.
 
 ### 4. Health or risk based segmentation
 
-Groups clients by relationship health, usually a blend of signals like engagement, sentiment, usage, open issues, and behaviour, using behavioural data such as product usage patterns and engagement levels to reflect the wider client experience. Segments might be healthy, watch, and at risk.
+Groups clients by relationship health, usually a blend of signals like engagement, sentiment, results against KPIs, open issues, and behaviour, using behavioural data such as meeting attendance, response patterns and engagement levels to reflect the wider client experience. Segments might be healthy, watch, and at risk.
 
-**Best for:** retention. It tells your team where to intervene before a renewal conversation goes wrong, and where to provide personalised support for accounts with distinct needs before churn risk becomes obvious.
+**Best for:** retention. It tells your team where to intervene before a renewal conversation goes wrong, and where to provide personalised support for accounts with distinct needs before attrition risk becomes obvious.
 
 **Watch out for:** it is only as good as the signals feeding it. Health scores built on a single data point, or on gut feel, tend to mislead.
 
@@ -84,7 +84,7 @@ Most mature teams do not pick one model. They lead with value or potential to se
 
 You can run a first pass on this in an afternoon. Making it stick takes a little longer.
 
-1. **Decide what the segmentation is for.** Resourcing, retention, and expansion pull the model in different directions. Name the decision before you touch the data, because it determines which variables matter.
+1. **Decide what the segmentation is for.** Resourcing, retention, and growth pull the model in different directions. Name the decision before you touch the data, because it determines which variables matter.
 
 2. **Choose your dimensions.** Keep it to two or three. Revenue and growth potential is a strong default. Adding health as a third layer works well, but common options also include demographic segmentation and geographic segmentation depending on the use case. For example, demographics can use age, gender, and income, while geographic segmentation sorts clients by location, region, or climate. More than three and the segments stop being usable.
 
@@ -100,9 +100,9 @@ You can run a first pass on this in an afternoon. Making it stick takes a little
 
 The hard part of segmentation is rarely the model. It is using regular analysis to keep the inputs accurate and current across an entire book of clients, from current clients to the broader client base, rather than treating it as a one-off review.
 
-Revenue numbers are simple to pull. The signals that actually predict retention and expansion, engagement, sentiment, client feedback, the strength of a relationship, the risks surfacing in conversations, are buried in the day to day interactions your team is already having. That is exactly the data that goes uncaptured, or gets written down in someone's notes and never seen again, even though it should be shaping personalised experiences through live insight.
+Revenue numbers are simple to pull. The signals that actually predict retention and growth, engagement, sentiment, client feedback, the strength of a relationship, the risks surfacing in conversations, are buried in the day to day interactions your team is already having. That is exactly the data that goes uncaptured, or gets written down in someone's notes and never seen again, even though it should be shaping personalised experiences through live insight.
 
-This is where a client intelligence platform changes the exercise. When the health and engagement signals from every client conversation are captured and structured automatically, segmentation stops being a quarterly manual project and becomes a live view of your book. Clients move between segments as the relationship actually changes, not months later when someone gets round to updating the spreadsheet. Kaizan is built for exactly this: turning the interactions across your client relationships into the intelligence that helps teams master client segmentation and decide which accounts to protect, which to grow, and which are quietly at risk, including product recommendations or service actions for distinct client groups.
+This is where a client intelligence platform changes the exercise. When the health and engagement signals from every client conversation are captured and structured automatically, segmentation stops being a quarterly manual project and becomes a live view of your book. Clients move between segments as the relationship actually changes, not months later when someone gets round to updating the spreadsheet. Kaizan is built for exactly this: turning the interactions across your client relationships into the intelligence that helps teams master client segmentation and decide which accounts to protect, which to grow, and which are quietly at risk, including service recommendations or actions for distinct client groups.
 
 ## Common client segmentation mistakes
 
@@ -116,5 +116,5 @@ This is where a client intelligence platform changes the exercise. When the heal
 
 If you have never formally segmented your clients, start simple. Plot your accounts on current value against growth potential, group them into four, and give each group a clear service model. For example, you might separate low-value/low-growth accounts from high-value/high-growth ones. That alone will tell you where your team's time is going versus where it should go.
 
-The step that separates a segmentation that sticks from one that gathers dust is the data, because it helps SaaS companies and other businesses tailor service and marketing to specific requirements. Unlike market segmentation, which looks outward, client segmentation focuses on current clients. The moment your segments depend on signals you can only gather by hand, they start to decay. Ground them in the intelligence already flowing through your client relationships, and segmentation becomes something your team lives by rather than a slide they revisit once a year.
+The step that separates a segmentation that sticks from one that gathers dust is the data, because it helps agencies and other businesses tailor service and marketing to specific requirements. Unlike market segmentation, which looks outward, client segmentation focuses on current clients. The moment your segments depend on signals you can only gather by hand, they start to decay. Ground them in the intelligence already flowing through your client relationships, and segmentation becomes something your team lives by rather than a slide they revisit once a year.
 

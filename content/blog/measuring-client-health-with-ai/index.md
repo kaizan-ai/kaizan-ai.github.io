@@ -15,15 +15,15 @@ In this article, we’ll explore how businesses can use AI to measure client ser
 
 Monitoring client health can act as an early warning system for potential issues or challenges which may impact the relationship with a client. By leveraging data or using indicators of dissatisfaction or disengagement, businesses can proactively address any problems and prevent them from escalating into a more complex issue.
 
-Measuring client service levels on an ongoing basis allows a business to gauge how satisfied its clients are with the products or services they receive. Satisfied clients are more likely to become repeat buyers and advocates for the business, leading to increased client loyalty and positive word-of-mouth referrals. This is important for any business, as acquiring a new client has been estimated at anywhere between [five and 25 times as costly](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers) as retaining an existing one.
+Measuring client service levels on an ongoing basis allows a business to gauge how satisfied its clients are with the services they receive. Satisfied clients are more likely to become repeat buyers and advocates for the business, leading to increased client loyalty and positive word-of-mouth referrals. This is important for any business, as acquiring a new client has been estimated at anywhere between [five and 25 times as costly](https://hbr.org/2014/10/the-value-of-keeping-the-right-customers) as retaining an existing one.
 
 There are a number of processes and technologies that businesses can use to measure client health effectively, these include:
 
-- CRM (Customer Relationship Management) Software
+- CRM (Client Relationship Management) Software
 
 - Client Feedback Management Systems
 
-- SaaS usage Metrics and Analytics
+- Service Delivery Metrics and Analytics
 
 - AI (Artificial Intelligence) tools designed for Client Service Teams
 
@@ -51,9 +51,9 @@ Generative AI offers a number of techniques that businesses can use to measure c
 
 2. **Sentiment Analysis:** Sentiment analysis is a natural language processing (NLP) technique that analyses client feedback, reviews, and interactions to determine the sentiment (positive, negative, neutral) of clients. This helps to gauge overall client satisfaction and identify areas that need improvement.
 
-3. **Client Churn Prediction:** AI can predict the likelihood of a client churning or discontinuing their services based on historical data, usage patterns, and client behaviour. These data points act as leading indicators of client churn which enables businesses’ to create proactive retention strategies to retain clients before they churn.
+3. **Client Attrition Prediction:** AI can predict the likelihood of a client leaving or discontinuing their services based on historical data, engagement patterns, and client behaviour. These data points act as leading indicators of client attrition which enables businesses’ to create proactive retention strategies to retain clients before they leave.
 
-4. **Client Segmentation**: AI can segment clients based on various attributes such as usage patterns, demographics, preferences, and behaviour. This helps in tailoring services to specific client segments and addressing their unique needs.
+4. **Client Segmentation**: AI can segment clients based on various attributes such as engagement patterns, demographics, preferences, and behaviour. This helps in tailoring services to specific client segments and addressing their unique needs.
 
 5. **Image and Video Analysis:** For digital communications with clients AI can analyse facial expressions and images in videos to capture client emotions and sentiment. These data points can be useful in measuring client sentiment and overall client satisfaction.
 
@@ -65,7 +65,7 @@ Generative AI offers a number of techniques that businesses can use to measure c
 
 ## Which Client Health Metrics should I track?
 
-Measuring client health metrics is crucial for businesses to assess the overall satisfaction and success of their clients. These metrics provide valuable insights into the relationship between the business and its clients, helping identify areas of improvement and potential risks. While the specific metrics to measure may vary depending on the nature of the business and its products or services, here are some essential client health metrics that businesses should consider:
+Measuring client health metrics is crucial for businesses to assess the overall satisfaction and success of their clients. These metrics provide valuable insights into the relationship between the business and its clients, helping identify areas of improvement and potential risks. While the specific metrics to measure may vary depending on the nature of the business and its services, here are some essential client health metrics that businesses should consider:
 
 - **Client Engagement:** Frequency of contact between the client service team and client team.
 
@@ -77,7 +77,7 @@ Measuring client health metrics is crucial for businesses to assess the overall 
 
 - **Decision Maker Coverage:** The frequency of contact between client service team and client decision maker.
 
-- **CSM Response Time:** The average response time between client service team and client.
+- **Account Manager Response Time:** The average response time between client service team and client.
 
 - **Stakeholder Coverage:** The frequency of contact between client service team and key stakeholders.
 
@@ -89,13 +89,13 @@ These metrics that can be captured by client engagement tools such as [Kaizan](h
 
 Another framework that can be used to capture client health metrics when working with multiple decision-makers and key stakeholders is the **MEDDIC** framework. By leveraging the MEDDIC framework, a client success team can:
 
-- Effectively prioritise clients based on their strategic importance and potential for expansion.
+- Effectively prioritise clients based on their strategic importance and potential for scope expansion.
 
-- Identify at-risk clients early on and proactively address their concerns to prevent churn.
+- Identify at-risk clients early on and proactively address their concerns to prevent client attrition.
 
 - Tailor their approach to meet the unique needs and goals of each client.
 
-- Demonstrate the value and ROI of their product or service to key stakeholders.
+- Demonstrate the value and ROI of their service to key stakeholders.
 
 - Align the client success strategy with the client’s business objectives for long-term success.
 
@@ -109,9 +109,9 @@ The definition of the MEDDIC acronym is:
 
 4. **Decision Process:** Understanding the step-by-step process the client follows when making purchasing decisions, including the stakeholders involved and potential roadblocks that could arise.
 
-5. **Identify Pain:** Discovering the specific challenges, pain points, or problems the client is facing that your product or service can solve effectively.
+5. **Identify Pain:** Discovering the specific challenges, pain points, or problems the client is facing that your service can solve effectively.
 
-6. **Champion:** Finding an internal champion within the client’s organisation who supports your solution and is willing to advocate for your product or service to other stakeholders.
+6. **Champion:** Finding an internal champion within the client’s organisation who supports your solution and is willing to advocate for your service to other stakeholders.
 
 ## Final Thoughts
 

@@ -19,7 +19,7 @@ The question of perspective is a critical one. People working inside a business 
 
 Client journey mapping flips this perspective, forcing businesses and their teams to consider the experience from a client’s point of view. This leads to a clearer grasp of the client journey, understanding their needs and wants. The map goes to the outer boundaries of the process, from a client hearing about the company to the point where they complete a purchase, instead of only considering the time where they are in contact with your team.
 
-As well as providing a change of perspective, client journey mapping can create a valuable tool for your teams. The maps themselves become a visual reference that employees can use as a reminder of the client experience. Concerned about why fewer clients are calling about the latest product upgrade? Then look at the client journey map to see where they might be giving up.
+As well as providing a change of perspective, client journey mapping can create a valuable tool for your teams. The maps themselves become a visual reference that employees can use as a reminder of the client experience. Concerned about why fewer clients are calling about the latest service upgrade? Then look at the client journey map to see where they might be giving up.
 
 By understanding the clients’s journey, businesses can find ways to improve their processes, as well as develop targeted marketing and sales strategies that are more likely to succeed.
 
@@ -39,7 +39,7 @@ A focus on the client experience draws attention to inbound marketing, how it ca
 
 ## Improve the client experience and touchpoints
 
-[80% of clients](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the product the company provides. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
+[80% of clients](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the service the company provides. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
 
 Mapping a client journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [33% of clients](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) consider changing brands after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
 
@@ -77,7 +77,7 @@ Let’s look at those steps in more detail:
 
 ## 1. Recruit your mapping team
 
-Ideally, any business process mapping should involve all relevant teams who are involved across the client journey and at every stage of the process; from customer support teams to product teams and technical specialists. Without their perspectives, you won’t understand the reality of the client experience or the practicalities of time, budget, and attention that goes into it.
+Ideally, any business process mapping should involve all relevant teams who are involved across the client journey and at every stage of the process; from client support teams to service delivery teams and technical specialists. Without their perspectives, you won’t understand the reality of the client experience or the practicalities of time, budget, and attention that goes into it.
 
 That said, practicalities will limit participation. Busy team members might not be available for the whole time needed for a mapping activity. Negotiate with team leaders to get the colleagues you need, pointing out the benefits that the mapping exercise could bring to them in the long run. Plan your mapping time around who will be available, when, and for how long.
 
@@ -105,7 +105,7 @@ There are a number of potential sources you could use, including:
 
 - figures on clients’ spend or revenue per client
 
-- talking to customer service reps about common calls
+- talking to client service reps about common calls
 
 - transcripts of the calls themselves
 
@@ -121,11 +121,11 @@ There are a number of potential sources you could use, including:
 
 Four steps in, and it’s finally time to start the mapping itself.
 
-The first thing that you and your mapping group should do is to identify your client touchpoints. These are all the interactions your theoretical client has with your brand, product, or service, any point where they might form an opinion of your business. This includes seeing ads, reading reviews, talking with your employees, using your website…
+The first thing that you and your mapping group should do is to identify your client touchpoints. These are all the interactions your theoretical client has with your brand or services, any point where they might form an opinion of your business. This includes seeing ads, reading reviews, talking with your employees, using your website…
 
 As with data sources, there are a lot of options.
 
-If you’re not sure where clients are likely to find you, then Google search and Google analytics data can be useful in identifying where and how you’re seen. But that’s just the start. You should try to map out all the touchpoints in the client journey, through to the client buying your product or independently using a subscription service.
+If you’re not sure where clients are likely to find you, then Google search and Google analytics data can be useful in identifying where and how you’re seen. But that’s just the start. You should try to map out all the touchpoints in the client journey, through to the client buying your services or independently using a self-serve resource.
 
 As you identify the touchpoints, put them in order on the process flow diagram you’re building, with space to rearrange them and add extra details as the map grows. This might mean using sticky notes on a wall, scribbling on a set of flip charts, or moving text boxes around a screen, whatever works best for you.
 
@@ -135,7 +135,7 @@ You now have the bare bones of your map, but there’s a lot to flesh out.
 
 Once you’ve listed the touchpoints, it’s useful to mark which of them involve user actions, whether by your client or your team. This will allow you to consider whether the actions are really needed, or whether there’s space for improvement.
 
-The case for reducing actions by your team is fairly self-explanatory: less work means more efficiency. But it’s also useful to minimise the steps a client needs to take to buy your products. The more they have to do, the less likely they are to complete the process, and the less likely it is that you’ll get their business. Right now, you’re only mapping those actions, but knowing they’re there means you can change them later.
+The case for reducing actions by your team is fairly self-explanatory: less work means more efficiency. But it’s also useful to minimise the steps a client needs to take to buy your services. The more they have to do, the less likely they are to complete the process, and the less likely it is that you’ll get their business. Right now, you’re only mapping those actions, but knowing they’re there means you can change them later.
 
 ## 6. Map needs and emotions
 

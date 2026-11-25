@@ -75,7 +75,7 @@ Not every field in a CRM decays at the same rate, and not every field matters th
 
 - **Stakeholder contacts and roles.** Who is the actual decision-maker today, not six months ago. This is usually the fastest-decaying field, because people change roles more often than any other CRM fact changes, and inaccurate contact details create missed opportunities.
 - **Last meaningful contact date.** When did a senior person on your side last genuinely engage this stakeholder, not just cc them. A quiet decision-maker is one of the clearest early warning signs a relationship holds.
-- **Deal or account stage and renewal date.** The one field most CRMs get right by default, because finance and new business both depend on it. Still worth auditing for accounts that quietly slipped a stage.
+- **Deal or account stage and retainer renewal date.** The one field most CRMs get right by default, because finance and new business both depend on it. Still worth auditing for accounts that quietly slipped a stage.
 - **Risk or sentiment flags.** Whatever field is supposed to hold "is this account okay." In most CRMs we see, this field is either missing, badly out of date, or filled in only after a client has already raised the problem out loud.
 - **Action items and owners.** What was promised, to whom, and whether it happened. The field most likely to be technically present and practically useless, because it depends entirely on someone remembering to close the loop.
 - **Custom health or scoring properties.** Any property meant to summarise relationship health for a leadership rollup. Worth checking separately, because accurate data matters here: leadership uses these fields for decisions, and a stale health score is more dangerous than no health score because it creates false confidence.
@@ -118,13 +118,13 @@ Share the audit results from step 2 without blame. The framing that works: "This
 
 Stakeholder contact, last-touch date, and sentiment or risk signal are the three fields most likely to be stale and most capturable from conversation data without anyone typing anything. If you run Kaizan alongside Salesforce or HubSpot, this step is largely a connection, not a project: both integrations run two-way sync by OAuth. In HubSpot, the sync covers deals, contacts, notes, activity, and custom properties. In Salesforce, the relationship health score, scored against [The Evidence-Based Client Health Standard](https://www.kaizan.ai/us/product/#health-model), writes back directly to the Account object. Every call, email, and chat thread tied to an account is captured and attributed automatically, and the evidence behind a risk flag links back to the specific conversation that triggered it, so nobody has to take a score on faith.
 
-**Failure mode:** Automating the fields that were never the problem (deal stage, renewal date, which the CRM already handles well) and leaving the ones that actually decay, stakeholder and sentiment, as manual fields. Automation only helps if it targets where the hygiene problem actually lives.
+**Failure mode:** Automating the fields that were never the problem (deal stage, retainer renewal date, which the CRM already handles well) and leaving the ones that actually decay, stakeholder and sentiment, as manual fields. Automation only helps if it targets where the hygiene problem actually lives.
 
 ### Step 5: Assign one owner per account for what has to stay human
 
 **Owner:** Head of Client Service, assigning by account. **Time:** 15 minutes per account, once, then folded into normal account ownership.
 
-Not everything should be automated. Judgement calls, like whether a risk flag is serious enough to escalate, or whether an expansion signal is real or a client being polite, need a named human to make the call and be accountable for it. Automatic capture should feed that person evidence. It should not make the decision for them.
+Not everything should be automated. Judgement calls, like whether a risk flag is serious enough to escalate, or whether a scope expansion signal is real or a client being polite, need a named human to make the call and be accountable for it. Automatic capture should feed that person evidence. It should not make the decision for them.
 
 **Script to use with the team:** "The system tells you when a decision-maker has gone quiet or a risk phrase has shown up twice. You decide what that means and what we do about it. We're not automating the judgement, just the noticing."
 
@@ -171,7 +171,7 @@ Three more, beyond the ones embedded in the steps above, that come up often enou
 Maintaining clean CRM data takes continuous improvement, not a one-off push.
 
 **Escalating a stale risk flag to a client-facing conversation:**
-"I noticed [stakeholder] hasn't been on a call with us in six weeks and the last two mentions of [topic] came up without a clear resolution. Want me to loop in before the renewal conversation, or do you already have this in hand?"
+"I noticed [stakeholder] hasn't been on a call with us in six weeks and the last two mentions of [topic] came up without a clear resolution. Want me to loop in before the retainer renewal conversation, or do you already have this in hand?"
 
 ## How to tell whether it worked
 
@@ -183,7 +183,7 @@ For scale, these are Kaizan's own portfolio averages, published on our pricing p
 
 **Automate:** capturing the conversation itself (calls, emails, chat threads), attributing it to the right account, using data validation to standardise fields during capture, flagging a risk phrase or a quiet decision-maker, keeping a relationship health score current without anyone opening a form, and catching duplicate records before they distort the CRM.
 
-**Keep human:** Even with automation supporting effective crm hygiene, deciding whether a flagged risk is serious enough to escalate, deciding how to word a difficult client conversation, deciding whether an expansion signal is worth a pitch this quarter, and owning the relationship itself. A system that notices faster than a person could is an advantage. A system that decides instead of a person is a liability nobody signed up for.
+**Keep human:** Even with automation supporting effective crm hygiene, deciding whether a flagged risk is serious enough to escalate, deciding how to word a difficult client conversation, deciding whether a scope expansion signal is worth a pitch this quarter, and owning the relationship itself. A system that notices faster than a person could is an advantage. A system that decides instead of a person is a liability nobody signed up for.
 
 ## Pitfalls
 

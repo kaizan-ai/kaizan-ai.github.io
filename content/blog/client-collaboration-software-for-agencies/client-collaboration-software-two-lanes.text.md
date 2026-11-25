@@ -14,6 +14,6 @@
 - Risk flags
 - Stakeholder coverage
 - Time invested and margin
-- Renewal and expansion signals
+- Retainer renewal and upsell signals
 
 The client lane builds trust. The internal lane protects the account.

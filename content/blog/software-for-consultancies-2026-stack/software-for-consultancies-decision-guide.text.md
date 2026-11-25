@@ -2,7 +2,7 @@
 
 | If this is true | You have a gap in | Start with |
 |---|---|---|
-| We lose clients and learn about it at renewal | Keep | Client success platform |
+| We lose clients and learn about it at retainer renewal | Keep | Client success platform |
 | Pipeline lives in spreadsheets and inboxes | Win work | CRM |
 | Consultants are double-booked or idle | Plan | Resource planning or PSA |
 | Projects run late and over budget | Deliver | Work management or PSA |

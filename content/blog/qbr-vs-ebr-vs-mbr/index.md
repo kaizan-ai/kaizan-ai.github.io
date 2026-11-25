@@ -29,7 +29,7 @@ A QBR, quarterly business review, is a structured meeting between an agency and 
 
 ### What is an EBR?
 
-An EBR, executive business review, takes that same relationship up a level. It is a strategic, executive-only conversation, usually annual or twice yearly, built to discuss future plans and broader company direction, and to make the case for renewal or expansion rather than to review the last quarter's delivery in detail. Plenty of agencies run one QBR a quarter and one EBR a year on the same account, with different people in the room and a different question on the table.
+An EBR, executive business review, takes that same relationship up a level. It is a strategic, executive-only conversation, usually annual or twice yearly, built to discuss future plans and broader company direction, and to make the case for renewal or scope expansion rather than to review the last quarter's delivery in detail. Plenty of agencies run one QBR a quarter and one EBR a year on the same account, with different people in the room and a different question on the table.
 
 ### What is an MBR?
 
@@ -41,11 +41,11 @@ The table above settles who's in the room and how often. This one settles what a
 
 | Criterion | QBR | EBR | MBR |
 | --- | --- | --- | --- |
-| What gets reviewed | Goals vs. delivery, risks, stakeholder coverage | Strategic fit, growth case, relationship trajectory | Tickets, SLAs, utilisation, delivery metrics |
+| What gets reviewed | Goals vs. delivery, risks, stakeholder coverage | Strategic fit, growth case, relationship trajectory | Change requests, SLAs, utilisation, delivery metrics |
 | Who preps it | Account lead | Account lead with the Head of Client Service | Delivery or operations lead |
 | Typical length | 30 to 60 minutes | 45 to 60 minutes | 30 to 45 minutes |
 | Prep time, built from memory and a spreadsheet | 2 to 4 hours per account | 4 to 8 hours, plus a narrative deck | 1 to 2 hours |
-| First useful output | A next-quarter plan with named owners and dates | A renewal or expansion decision | A fixed delivery issue |
+| First useful output | A next-quarter plan with named owners and dates | A renewal or scope expansion decision | A fixed delivery issue |
 | Reports up to | Head of Client Service | The client's executive sponsor, and your own leadership | Delivery lead, internally |
 
 The prep-time row is the one worth sitting with. None of this time is the actual meeting. It's the hour or two beforehand spent reconstructing three months of calls and emails from memory, a RAG spreadsheet and whatever made it into someone's notes, when the job should be to ensure stakeholders have a current picture instead of relying on memory, which is also the exact point where a quiet risk goes missing. The [Evidence-Based Client Health Standard](https://www.kaizan.ai/us/product/), Kaizan's name for the CARE-based relationship health model, exists to cut that reconstruction time by scoring Client Satisfaction, Activity, Relationship Strength and Expansion Opportunities continuously from the real conversation history, so the review starts from a current shared view that supports better communication and collaboration instead of a memory exercise.
@@ -82,11 +82,11 @@ The trigger for moving an account between these defaults is usually a health sig
 >
 > — Chief Operating Officer, Agency Client A
 
-That's the same logic in reverse for expansion: don't wait for the scheduled EBR if the account is already telling you it's ready sooner.
+That's the same logic in reverse for growth: don't wait for the scheduled EBR if the account is already telling you it's ready sooner.
 
 ## Do you need all three?
 
-Most accounts don't, and that's the point: the aim is quality, not simply to check a box. The stack above isn't three meetings bolted onto every client. It's one review cadence, tiered by account, where the MBR stays internal for most of the book and the EBR only appears where the relationship has genuinely earned it. If you're running a monthly RAG spreadsheet today, this doesn't ask you to add a QBR, an EBR and an MBR on top of it. It replaces the spreadsheet's job, guessing at account health from memory, with a continuous picture, and then lets you decide which of the three reviews each account actually needs from that picture, based on account usage after the deal rather than from habit.
+Most accounts don't, and that's the point: the aim is quality, not simply to check a box. The stack above isn't three meetings bolted onto every client. It's one review cadence, tiered by account, where the MBR stays internal for most of the book and the EBR only appears where the relationship has genuinely earned it. If you're running a monthly RAG spreadsheet today, this doesn't ask you to add a QBR, an EBR and an MBR on top of it. It replaces the spreadsheet's job, guessing at account health from memory, with a continuous picture, and then lets you decide which of the three reviews each account actually needs from that picture, based on how the account engages after the deal rather than from habit.
 
 The reason this works across a whole book rather than one account at a time is visibility that doesn't depend on being on every call. A Head of International Client Team we work with, Agency Client B, described what that changes:
 
@@ -116,7 +116,7 @@ The comparison above draws on two sources: the practical difference between QBR,
 ## Frequently asked questions
 
 **What's a QBR (quarterly business review)?**
-A QBR, or quarterly business review, is a structured meeting held every three months between a business and its client, client, or internal team. It is used to review performance, discuss progress against goals, identify challenges, and align on priorities for the next quarter. It also gives both parties a platform for open communication about progress, priorities, and how the vendor can better support the client.
+A QBR, or quarterly business review, is a structured meeting held every three months between a business and its client or internal team. It is used to review performance, discuss progress against goals, identify challenges, and align on priorities for the next quarter. It also gives both parties a platform for open communication about progress, priorities, and how the vendor can better support the client.
 
 **How do I choose between a QBR and a monthly or weekly client review?**
 Use a QBR when the conversation needs to step back and focus on outcomes, priorities, risks, and opportunities across the relationship, rather than day-to-day delivery updates. Use monthly or weekly reviews for project status, immediate issues, actions, timelines, and routine coordination.
@@ -141,10 +141,10 @@ A strong QBR usually includes agreed goals, performance against targets, key win
 Traditionally, QBRs are held every quarter. In practice, the right cadence depends on the complexity of the account, the pace of change, the contract stage, and the client's expectations. Some teams use quarterly reviews for strategic accounts and lighter monthly or milestone-based reviews for others.
 
 **Who should attend a QBR?**
-That depends on the account, but attendees often include the account manager, client lead, delivery or customer success owner, and relevant client stakeholders. For more strategic reviews, it can also make sense to include senior sponsors or decision-makers on both sides.
+That depends on the account, but attendees often include the account manager, client lead, delivery or client success owner, and relevant client stakeholders. For more strategic reviews, it can also make sense to include senior sponsors or decision-makers on both sides.
 
-**Are QBRs only for customer success teams?**
-No. QBRs are used across customer success, account management, client services, consulting, and agency teams—anywhere ongoing relationships, retention, delivery quality, and expansion matter. The format may change by industry, but the purpose is the same: create alignment, show value, and improve the next phase of the relationship.
+**Are QBRs only for client success teams?**
+No. QBRs are used across client success, account management, client services, consulting, and agency teams—anywhere ongoing relationships, retention, delivery quality, and growth matter. The format may change by industry, but the purpose is the same: create alignment, show value, and improve the next phase of the relationship.
 
 **Can you switch a QBR to an EBR?**
 Yes. Many companies do this as they move from a service or support-led review to a more strategic conversation with senior stakeholders. For example, switching usually means changing the deck, the audience, and the prep so the review stays focused on the right outcome. The key is not just changing the name, but changing the content, the audience, and the objective behind the meeting.

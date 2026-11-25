@@ -11,12 +11,12 @@ meta_title: "The Client Relationship Is Bigger Than Your Inbox"
 meta_description: "A generic AI assistant only knows what you paste in. See how Kaizan builds memory from every client conversation and flags relationship risk early."
 schema: true
 date_modified: 2026-10-09
-tags: [ai-for-cavemen, artificial-intelligence, client-intelligence, client-relationship, churn]
+tags: [ai-for-cavemen, artificial-intelligence, client-intelligence, client-relationship, client-attrition]
 ---
 
 Your client does not just talk to you.
 
-They talk to your strategist. They email your account director. They raise a concern on a call you were not on, then never raise it again. They mention a budget shift in passing, and the one person who heard it is on annual leave when renewal comes round.
+They talk to your strategist. They email your account director. They raise a concern on a call you were not on, then never raise it again. They mention a budget shift in passing, and the one person who heard it is on annual leave when the retainer renewal comes round.
 
 The relationship lives across all of it. A generic AI assistant sees one slice of it, and only the slice you remembered to paste in.
 
@@ -30,7 +30,7 @@ Twenty different conversations can be running on a single client before you go i
 
 ## What a partial picture costs client service teams
 
-Churn does not arrive as a surprise. It arrives as a series of small signals that form a trend nobody joined up.
+Client loss does not arrive as a surprise. It arrives as a series of small signals that form a trend nobody joined up.
 
 A stakeholder goes quiet. Sentiment cools on one workstream while the headline numbers stay green. The person who championed you internally moves on and the new contact never gets briefed. Each of those sits in a different inbox, a different call recording, a different head. Better analysis of relationship data can close that gap before the risk is obvious.
 
@@ -73,7 +73,7 @@ That is the difference between an assistant that answers from what you gave it a
 
 Knowing a relationship is slipping is useful. Acting on it is what protects the revenue.
 
-Kaizan's AI Helpers act like AI agents, handling repetitive tasks that never fit into a human week. They flag the accounts that need attention early so teams can move relationships forward before the signal becomes a conversation. They surface the expansion conditions your team would otherwise miss, using custom workflows and tools to solve those follow-up actions. They take the low value work off expensive people, so time goes back into the client relationships that matter most for business growth and client service success.
+Kaizan's AI Helpers act like AI agents, handling repetitive tasks that never fit into a human week. They flag the accounts that need attention early so teams can move relationships forward before the signal becomes a conversation. They surface the scope expansion conditions your team would otherwise miss, using custom workflows and tools to solve those follow-up actions. They take the low value work off expensive people, so time goes back into the client relationships that matter most for business growth and client service success.
 
 See clearly, then act early. In that order.
 

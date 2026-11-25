@@ -20,7 +20,7 @@ A good QBR follows the same eight-part structure, because the shape of a good QB
 3. **Wins and challenges.** What went well, and what needed attention, side by side.
 4. **Stakeholder coverage.** Who's engaged, who's gone quiet, and who holds the budget.
 5. **Risks and mitigations.** Named risks, likely impact, and what's being done about each one.
-6. **Where this account can grow.** Expansion signals and a suggested next step for each.
+6. **Where this account can grow.** Growth signals and a suggested next step for each.
 7. **Action items and next steps.** Owners and dates for next quarter, plus space for the client's own priorities.
 8. **Appendix: agency metrics sheet.** A one-page reference the account team fills in before the meeting and keeps on file, including the performance data used in the review.
 
@@ -54,7 +54,7 @@ Name the risk plainly, link it to the agreed goals, state its likely impact on t
 
 ### Where this account can grow
 
-Only fill this section in when the relationship can support it. An expansion pitch dropped into a strained account reads as a sales call, not a partnership, and most clients can tell the difference instantly. For each opportunity, name the signal that triggered it (something the client actually said or did, not a guess) and a next step that becomes a concrete plan with an owner and timing, not just a proposal handoff. Save the proposal for the follow-up.
+Only fill this section in when the relationship can support it. A growth pitch dropped into a strained account reads as a sales call, not a partnership, and most clients can tell the difference instantly. For each opportunity, name the signal that triggered it (something the client actually said or did, not a guess) and a next step that becomes a concrete plan with an owner and timing, not just a proposal handoff. Save the proposal for the follow-up.
 
 ### Agreed actions
 

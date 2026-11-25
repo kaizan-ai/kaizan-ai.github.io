@@ -33,7 +33,7 @@ Client management software gathers what an agency knows about each client: the p
 
 ### Client Management Software Vs CRM
 
-A CRM system is the record of contacts and deals, with contact management as its core job. It was built to move a prospect through a sales pipeline, and it holds what a salesperson types into a field. Unlike CRM software, broader client management software starts after the deal closes. It follows the relationship through delivery, renewal and expansion.
+A CRM system is the record of contacts and deals, with contact management as its core job. It was built to move a prospect through a sales pipeline, and it holds what a salesperson types into a field. Unlike CRM software, broader client management software starts after the deal closes. It follows the relationship through delivery, renewal and scope expansion.
 
 Try this test on your own stack. Ask: what did the client's finance director say on last Tuesday's call? A CRM answers only if someone logged the call. Client success software answers because it captured the call. Client relation management, the CRM side of this story, is a narrower topic with its own guide.
 
@@ -216,7 +216,7 @@ Kaizan publishes this guide, and Kaizan is one of the 12 tools. We assessed it b
 | SuiteDash | Client portal | Small firms that want a white-label portal | Flat rate. $19, $49 or $99 per month, unlimited users | Zoom, WordPress, PayPal | Shows work to clients. Does not score health |
 | Moxo | Client portal | Regulated firms with approval workflows | Flat team plan reported at $500 per month, unlimited seats | Structured workflows and approvals | Highest entry price among the portals we checked |
 | Kaizan | Client success software | Agencies and professional services firms with many stakeholders per client | Per client. Priced by number of clients. Price on quote. Unlimited users | [CRM, email, calendar, meeting, chat and work tools](https://kaizan.ai/integrations/) | Needs conversation data. Annual contract only |
-| Planhat | Client success software | B2B SaaS customer success teams | Quote-based, by client account count | Confirm the connector list with the vendor | Built around SaaS client lifecycles |
+| Planhat | Client success software | B2B SaaS client success teams | Quote-based, by client account count | Confirm the connector list with the vendor | Built around SaaS client lifecycles |
 | Airtable | Project and work tool | Teams that want to build their own tracker | Per editor. Free for 5 editors. Team $20 per month on annual billing | Synced tables, automations, Portals add-on | You build and maintain it. Holds what you enter |
 
 ### HubSpot
@@ -263,7 +263,7 @@ Kaizan publishes this guide, and Kaizan is one of the 12 tools. We assessed it b
 
 ### Planhat
 
-**What it is:** a customer platform for customer success teams, covering health scores, accounts and revenue signals. **Best for:** B2B SaaS companies managing client lifecycles. **Standout:** depth for subscription businesses. **Pricing:** [quote-based and priced by the number of client accounts, not seats](https://www.vendr.com/marketplace/planhat). Public trackers report typical annual contracts from about $17,500 to about $40,000, with implementation extra. **Limits:** it is built around SaaS client lifecycles, so agency retainers with many stakeholders and calls as the main signal are a looser fit. **Agency verdict:** choose it if you run a SaaS product. Choose software built for professional services if you sell retainers.
+**What it is:** a client platform for client success teams, covering health scores, accounts and revenue signals. **Best for:** B2B SaaS companies managing client lifecycles. **Standout:** depth for subscription businesses. **Pricing:** [quote-based and priced by the number of client accounts, not seats](https://www.vendr.com/marketplace/planhat). Public trackers report typical annual contracts from about $17,500 to about $40,000, with implementation extra. **Limits:** it is built around SaaS client lifecycles, so agency retainers with many stakeholders and calls as the main signal are a looser fit. **Agency verdict:** choose it if you run a SaaS product. Choose software built for professional services if you sell retainers.
 
 ### Airtable
 
@@ -349,7 +349,7 @@ Kaizan's pricing calculator method gives this result in its Expected mode:
 | Line | Annual value |
 | --- | --- |
 | Revenue at risk from 16% attrition | £1,920,000 |
-| Revenue protected from churn (45% of at-risk revenue) | £864,000 |
+| Revenue protected from client attrition (45% of at-risk revenue) | £864,000 |
 | Revenue from white space (8% pool, 60% counted) | £576,000 |
 | Capacity recovered (9 admin hours a week per person, 60% handed back) | £596,160 |
 | Total modelled benefit | £2,036,160 |
