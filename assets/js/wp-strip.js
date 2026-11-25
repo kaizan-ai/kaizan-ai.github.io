@@ -8,6 +8,24 @@
     'protonmail.com','gmx.com','gmx.de','mail.com','yandex.com','zoho.com','fastmail.com',
     'tutanota.com','duck.com','hey.com'];
 
+  // UTM attribution, same sessionStorage store and keys as trial-form.js / book-call.js: a URL carrying
+  // any tracking parameter replaces the saved set; otherwise the tab's saved values are used.
+  var UTM_STORE = 'kz-utm';
+  var UTM_ALL = ['utm_source', 'utm_medium', 'utm_term', 'qr_placement', 'utm_cta', 'utm_campaign', 'utm_content',
+    'utm_country', 'utm_usp', 'utm_angle', 'utm_hook', 'gclid', 'utm_id', 'utm_adgroup'];
+  function getUtmValues() {
+    var saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{}') || {}; } catch (e) {}
+    var params = new URLSearchParams(window.location.search);
+    var fromUrl = UTM_ALL.some(function (k) { return params.has(k); });
+    if (fromUrl) {
+      UTM_ALL.forEach(function (k) { saved[k] = (params.get(k) || '').slice(0, 255); });
+      try { sessionStorage.setItem(UTM_STORE, JSON.stringify(saved)); } catch (e) {}
+    }
+    return saved;
+  }
+  getUtmValues(); // capture on arrival, so values survive navigating to another page before submitting
+
   function emailError(v) {
     if (!v) return 'Please enter your work email.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'That doesn\u2019t look like a valid email.';
@@ -45,9 +63,9 @@
         { objectTypeId: '0-1', name: 'email', value: email.value.trim() },
         { objectTypeId: '0-1', name: 'jobtitle', value: role.value }
       ];
-      var params = new URLSearchParams(window.location.search);
+      var utm = getUtmValues();
       ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function (k) {
-        if (params.get(k)) fields.push({ objectTypeId: '0-1', name: k, value: params.get(k) });
+        if (utm[k]) fields.push({ objectTypeId: '0-1', name: k, value: utm[k] });
       });
       fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + PORTAL + '/' + GUID, {
         method: 'POST',
