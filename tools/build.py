@@ -85,6 +85,7 @@ RESOURCES_MENU = [
     ('All resources', 'resources/',      'is-mute'),
     ('Blog',          'blog/',           'is-mute'),
     ('White paper',   'resources/white-paper/', 'is-mute'),
+    ('Client Health Playbook', 'resources/client-health-playbook/', 'is-mute'),
     ('Case studies',  'case-studies/',   'is-mute'),
     ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
     ('Hall of Fame',  'hall-of-fame/',   'is-mute'),
@@ -4044,6 +4045,8 @@ def render_blog_post(post: dict) -> str:
 RESOURCES_HUB = [
     ('The 2026 Client Service Report', 'resources/white-paper/', '#FFB900', '#FFD86B', 'WP',
      'White paper', 'The Best vs The Rest: what separates the client service teams that keep and grow clients.'),
+    ('The Client Health Playbook', 'resources/client-health-playbook/', '#FFD86B', '#FFB900', 'CH',
+     'Playbook', 'See client risk before it is too late: the habits of the best client teams, the CARE framework and a plan you can start today.'),
     ('Blog', 'blog/', '#FFD86B', '#FFE9A8', 'Bl',
      'Blog', 'Field notes, playbooks and product updates for client service and account teams.'),
     ('Case studies', 'case-studies/', '#FFB900', '#FFC933', 'Cs',
