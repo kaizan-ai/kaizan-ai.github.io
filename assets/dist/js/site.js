@@ -1,5 +1,32 @@
 (function () {
 'use strict';
+var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_term', 'qr_placement', 'utm_cta', 'utm_campaign',
+'utm_content', 'utm_country', 'utm_usp', 'utm_angle', 'utm_hook', 'gclid', 'utm_id', 'utm_adgroup'];
+function initUtmCarry() {
+var saved = {};
+try { saved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) {}
+var q = new URLSearchParams(window.location.search);
+if (UTM_KEYS.some(function (k) { return q.has(k); })) {
+var replaceSet = UTM_KEYS.some(function (k) { return k !== 'gclid' && q.has(k); });
+UTM_KEYS.forEach(function (k) {
+if (replaceSet) saved[k] = (q.get(k) || '').slice(0, 255);
+else if (q.has(k)) saved[k] = q.get(k).slice(0, 255);
+});
+try { sessionStorage.setItem('kz-utm', JSON.stringify(saved)); } catch (e) {}
+}
+if (!window.history || !history.replaceState) return;
+function tidyUrl() {
+try {
+var u = new URL(window.location.href);
+u.searchParams.delete('_gl');
+UTM_KEYS.forEach(function (k) { if (saved[k] && !u.searchParams.has(k)) u.searchParams.set(k, saved[k]); });
+if (u.href !== window.location.href) history.replaceState(history.state, '', u.href);
+} catch (e) {}
+}
+if (document.readyState === 'complete') setTimeout(tidyUrl, 1500);
+else window.addEventListener('load', function () { setTimeout(tidyUrl, 1500); });
+}
+initUtmCarry();
 function initMobileNav() {
 document.querySelectorAll('.kz-nav').forEach(function (nav) {
 var toggle = nav.querySelector('.kz-nav-toggle');
