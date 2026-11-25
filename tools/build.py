@@ -4728,6 +4728,340 @@ def render_july_offer() -> str:
 
 
 
+# ─────────────────────────────────────────────────────────────────────
+# DARUMA — December 2026 gift campaign at /daruma/. Account directors and heads
+# of client services request a Daruma doll for their desk, set one client goal
+# for 2027 and colour in the first eye. The insert card's QR links to #share.
+#
+# Requests go to the Mailchimp "Lead magnets" audience (d42e1256b5) through its
+# classic embedded form (f_id 003fefe5f0; without one the endpoint 404s), submitted
+# via JSONP from assets/js/daruma.js like the footer newsletter. Fields use the
+# audience's merge tags: FNAME, LNAME, EMAIL, JOBT, COMPNAME, ADDRESS (address
+# type) and the UTM fields. DARUMA_MC_TAG is the numeric ID of the daruma tag
+# (Mailchimp only takes tag IDs); empty sends the request untagged.
+DARUMA_MC_JSON = ('https://kaizan.us6.list-manage.com/subscribe/post-json'
+                  '?u=b61e5cb1cebf0c30b44ebb455&id=d42e1256b5&f_id=003fefe5f0')
+DARUMA_MC_HONEYPOT = 'b_b61e5cb1cebf0c30b44ebb455_d42e1256b5'
+DARUMA_MC_TAG = '3789804'
+DARUMA_HASHTAG = '#KaizanDaruma'
+DARUMA_CLOSES = ''   # e.g. 'Friday 11 December'; empty leaves the closing date out
+
+
+def daruma_svg(cls: str = '', left: bool = False, right: bool = False, interactive: bool = False) -> str:
+    """The Daruma, drawn like the insert card: red body, cream face, blank eyes.
+    `left`/`right` are the doll's own eyes (its left is the viewer's right)."""
+    def eye(side, cx, on):
+        pupil = f'<circle class="dm-pupil{" is-on" if on else ""}" cx="{cx}" cy="90" r="10"/>'
+        ring = f'<circle class="dm-eye-ring" cx="{cx}" cy="90" r="15"/>'
+        if not interactive:
+            return ring + pupil
+        return (f'<g class="dm-eye" data-eye="{side}" role="button" tabindex="0" '
+                f'aria-label="Colour in its {side} eye" aria-pressed="{"true" if on else "false"}">'
+                f'<circle class="dm-eye-hit" cx="{cx}" cy="90" r="22"/>{ring}{pupil}</g>')
+    stripes = ''.join(f'<rect x="{x}" y="150" width="9" height="34" rx="4.5"/>' for x in range(60, 140, 14))
+    return f'''<svg class="dm-doll {cls}" viewBox="0 0 200 224" role="img" aria-label="A red Daruma doll with blank eyes">
+          <ellipse class="dm-shadow" cx="100" cy="216" rx="70" ry="7"/>
+          <g class="dm-body-g">
+            <path class="dm-body" d="M100 8C158 8 188 62 188 124C188 184 152 212 100 212C48 212 12 184 12 124C12 62 42 8 100 8Z"/>
+            <g class="dm-stripes">{stripes}</g>
+            <ellipse class="dm-face" cx="100" cy="94" rx="60" ry="50"/>
+            <path class="dm-brow" d="M50 70Q70 52 92 66M108 66Q130 52 150 70"/>
+            {eye("right", 76, right)}{eye("left", 124, left)}
+            <path class="dm-beard" d="M66 124Q82 110 98 122M102 122Q118 110 134 124"/>
+          </g>
+        </svg>'''
+
+
+def render_daruma() -> str:
+    p = relpath(1)
+    css, js = 'assets/css/daruma.css', 'assets/js/daruma.js'
+    closes = f' Requests close {E(DARUMA_CLOSES)}.' if DARUMA_CLOSES else ''
+    steps = [
+        ('Choose one client goal for 2027.', dict()),
+        ('Colour in its left eye (your right as you face it).', dict(left=True)),
+        ('Keep it on your desk all year.', dict(left=True)),
+        ('Hit the goal, then colour in the other eye.', dict(left=True, right=True)),
+    ]
+    steps_html = ''.join(f'''
+          <li class="dm-step">
+            <div class="dm-step-doll">{daruma_svg("dm-doll--sm", **kw)}</div>
+            <span class="dm-step-n">{i}</span>
+            <p>{E(t)}</p>
+          </li>''' for i, (t, kw) in enumerate(steps, 1))
+    goals = ['Keep every renewal', 'Grow a key account', 'Get closer to what clients really need']
+    goals_html = ''.join(f'<li>{E(g)}</li>' for g in goals)
+    box = [
+        ('A Daruma doll', 'Blank eyes, ready for your goal.'),
+        ('A card on the Daruma', 'What it is and how the two eyes work.'),
+        ('A short note on kaizen', 'The Japanese idea of continuous improvement.'),
+        ('A note from us', 'Why our name comes from kaizen.'),
+    ]
+    box_html = ''.join(f'<li><span class="dm-box-n">{i}</span><div><h4>{E(t)}</h4><p>{E(d)}</p></div></li>'
+                       for i, (t, d) in enumerate(box, 1))
+    chapters = [
+        ('c. 500 AD', 'The monk who sat for nine years',
+         'Daruma is the Japanese name for Bodhidharma, the monk who brought Zen Buddhism to China. '
+         'Legend says he sat facing a cave wall in meditation for nine years, until his arms and legs '
+         'wasted away. That&rsquo;s why the doll is round, with no arms or legs.',
+         'bodhidharma-yoshitoshi-1887.jpg', 'Bodhidharma, Tsukioka Yoshitoshi, 1887',
+         'A woodblock print of Bodhidharma in a red robe, meditating under a full moon'),
+        ('1600s&ndash;1700s', 'The toy that always gets back up',
+         'Self-righting toys called <i>okiagari-koboshi</i>, &ldquo;little monks who get back up&rdquo;, '
+         'were popular around Kyoto and Osaka by the mid-1600s. Zen painters like Hakuin Ekaku painted '
+         'Daruma again and again, and the two ideas met: a tough, unshakeable monk who can&rsquo;t be '
+         'knocked down.',
+         'daruma-hakuin.jpg', 'Portrait of Daruma, Hakuin Ekaku, 1700s',
+         'An ink painting of Daruma with a heavy brow and beard'),
+        ('1760s', 'Takasaki and the first Daruma dolls',
+         'At the Shorinzan Daruma Temple in Takasaki, north-west of Tokyo, the head priest Togaku carved '
+         'wooden moulds so local people could make papier-m&acirc;ch&eacute; Daruma themselves and sell '
+         'them as New Year charms. Takasaki still makes about 80% of Japan&rsquo;s Daruma today.',
+         'takasaki-darumaji-shrine.jpg', 'Daruma at Shorinzan Darumaji, Takasaki',
+         'Red Daruma dolls of many sizes stacked at a temple shrine'),
+        ('Today', 'One eye now, one eye later',
+         'People buy a Daruma with blank eyes at New Year. They set a goal and paint in its left eye, '
+         'then paint the right eye when the goal is done. At the end of the year old Daruma go back to '
+         'the temple to be thanked and burned, and a new one comes home.',
+         'takasaki-darumaji-dolls.jpg', 'Daruma at Shorinzan Darumaji, Takasaki',
+         'A close-up of red Daruma dolls with painted gold patterns and eyes'),
+    ]
+    chapters_html = ''.join(f'''
+            <li class="dm-chapter">
+              <figure class="dm-chapter-fig">
+                <img src="{p}assets/img/daruma/{img}{asset_v('assets/img/daruma/' + img)}" alt="{alt}" loading="lazy" decoding="async">
+                <figcaption>{cap}</figcaption>
+              </figure>
+              <div class="dm-chapter-text">
+                <span class="dm-chapter-date">{date}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </li>''' for date, title, text, img, cap, alt in chapters)
+    def _dm_icon(paths):
+        return ('<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" '
+                f'stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{paths}</svg>')
+    steps_icon = _dm_icon('<path d="M3 20h5v-5h5v-5h5V5h3"/>')
+    people_icon = _dm_icon('<circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>'
+                           '<circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c2.9.4 5 2.8 5 5.8"/>')
+    loop_icon = _dm_icon('<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/>')
+    post_text = ('My 2027 client goal is set and the first eye is coloured in. '
+                 f'Thanks @Kaizan for the Daruma. {DARUMA_HASHTAG}')
+    li_url = 'https://www.linkedin.com/feed/?shareActive=true&text=' + quote(post_text)
+
+    def field(name, label, typ='text', auto='', req=True, wide=False, hint=''):
+        opt = '' if req else ' <span class="dm-opt">(optional)</span>'
+        return f'''
+              <div class="dm-field{" dm-field--wide" if wide else ""}">
+                <label for="dm-{name}">{label}{opt}</label>
+                <input id="dm-{name}" name="{name}" type="{typ}"{f' autocomplete="{auto}"' if auto else ''}{" required" if req else ""}{f' placeholder="{hint}"' if hint else ''}>
+                <span class="dm-err" aria-live="polite"></span>
+              </div>'''
+
+    # The form shows who you are first; the address half opens with "Continue", so the
+    # card starts the same height as "What's in the box" beside it.
+    fields_you = ''.join([
+        field('firstname', 'First name', auto='given-name'),
+        field('lastname', 'Last name', auto='family-name'),
+        field('email', 'Work email', 'email', 'email', wide=True, hint='you@agency.com'),
+        field('jobtitle', 'Job title', auto='organization-title'),
+        field('company', 'Company', auto='organization'),
+    ])
+    fields_post = ''.join([
+        field('address1', 'Address', auto='address-line1', wide=True),
+        field('address2', 'Address line 2', auto='address-line2', req=False, wide=True),
+        field('city', 'Town or city', auto='address-level2'),
+        field('zip', 'Postcode', auto='postal-code'),
+    ])
+
+    body = f'''
+    {nav_html(1)}
+    <main class="dm">
+      <section class="dm-hero">
+        <div class="dm-hero-inner">
+          <div class="dm-hero-copy">
+            <h1 class="dm-h1">A Daruma for your 2027 client goal.</h1>
+            <p class="dm-lede">A Japanese good-luck charm for setting a goal and sticking with it. Its eyes
+              are blank on purpose. Tell us where your desk is and request one, free.</p>
+            <div class="dm-cta">
+              <a class="kz-btn kz-btn-yellow dm-pill" href="#request">Get your Daruma</a>
+              <a class="kz-btn kz-btn-ghost dm-pill" href="#how">How it works</a>
+            </div>
+            <p class="dm-small">Free &middot; UK addresses &middot; Posted in December</p>
+          </div>
+          <div class="dm-hero-art">
+            <div class="dm-stage">{daruma_svg("dm-doll--hero", interactive=True)}</div>
+            <p class="dm-tip" aria-live="polite">Set your goal: tap its left eye.</p>
+            <button type="button" class="dm-again" hidden>Start again</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-how" id="how">
+        <div class="dm-wrap">
+          <h2 class="dm-h2">Two eyes, one goal.</h2>
+          <p class="dm-sub">Daruma start the year with blank eyes. You give them their first one.</p>
+          <ol class="dm-steps">{steps_html}
+          </ol>
+          <div class="dm-goals">
+            <span class="dm-goals-label">Need a goal?</span>
+            <ul>{goals_html}</ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-story" id="story">
+        <div class="dm-wrap">
+          <header class="dm-story-head">
+            <div>
+              <span class="dm-kicker">The story of the Daruma</span>
+              <h2 class="dm-story-h2">Fall down seven times, get up eight.</h2>
+              <p class="dm-story-lede">That&rsquo;s <i>nana korobi ya oki</i>, the Japanese proverb every Daruma
+                carries. Give one a push and its weighted base rocks it straight back up. Here&rsquo;s how a
+                Zen monk became Japan&rsquo;s favourite way to set a goal.</p>
+            </div>
+            <p class="dm-vert" lang="ja" aria-hidden="true">七転び八起き</p>
+          </header>
+          <ol class="dm-chapters">{chapters_html}
+          </ol>
+          <aside class="dm-face-guide">
+            <div class="dm-face-doll">{daruma_svg("dm-doll--guide")}</div>
+            <div>
+              <h3>Read the face</h3>
+              <ul>
+                <li><b>Eyebrows</b> shaped like cranes, and <b>a beard</b> like a turtle&rsquo;s shell. In
+                  Japan the crane is said to live a thousand years and the turtle ten thousand, so the face
+                  is a wish for a long life.</li>
+                <li><b>Red</b> for the robe Bodhidharma wore. In Japan red is also thought to keep bad luck away.</li>
+                <li><b>Blank eyes</b> until the owner gives it a goal. A Daruma with one eye still to
+                  paint is a goal in progress.</li>
+              </ul>
+            </div>
+          </aside>
+          <p class="dm-credits">Images: Tsukioka Yoshitoshi, <i>Bodhidharma</i>, 1887 (public domain).
+            Hakuin Ekaku, <i>Portrait of Daruma</i>, The Metropolitan Museum of Art (public domain).
+            Daruma at Shorinzan Darumaji, Takasaki, by puffyjet,
+            <a href="https://creativecommons.org/licenses/by/2.0/" rel="noopener" target="_blank">CC BY 2.0</a>, via Wikimedia Commons.
+            Further reading: <a href="https://en.wikipedia.org/wiki/Daruma_doll" rel="noopener" target="_blank">Daruma doll on Wikipedia</a>.</p>
+        </div>
+      </section>
+
+      <section class="dm-kaizen" id="kaizen">
+        <div class="dm-wrap">
+          <h2 class="dm-h2">The Daruma holds the goal. Kaizen gets you there.</h2>
+          <p class="dm-sub">Kaizen is the Japanese idea that steady, everyday improvement beats the rare big
+            overhaul.</p>
+          <div class="dm-kaizen-grid">
+            <div class="dm-card dm-def">
+              <div class="dm-kanji" lang="ja">改善</div>
+              <p class="dm-word"><b>kaizen</b> <span>/&#712;ka&#618;.z&#603;n/</span></p>
+              <p class="dm-pos"><i>noun &middot; from Japanese</i> kai <i>(change)</i> + zen <i>(good)</i></p>
+              <ol>
+                <li><b>Change for the better.</b></li>
+                <li>Continuous improvement: big results from small changes, made every day by everyone.</li>
+              </ol>
+            </div>
+            <ul class="dm-principles">
+              <li>
+                <span class="dm-p-icon" aria-hidden="true">{steps_icon}</span>
+                <div><h3>Small steps, every day</h3>
+                  <p>No big launches or once-a-year resets. A small improvement today, another tomorrow, and
+                    they add up.</p></div>
+              </li>
+              <li>
+                <span class="dm-p-icon" aria-hidden="true">{people_icon}</span>
+                <div><h3>Everyone improves</h3>
+                  <p>It isn&rsquo;t only for managers. Everyone, from the front line to the CEO, spots what
+                    could be better and fixes it.</p></div>
+              </li>
+              <li>
+                <span class="dm-p-icon" aria-hidden="true">{loop_icon}</span>
+                <div><h3>Question what already works</h3>
+                  <p>Good enough is a starting point. Even when things run well, there&rsquo;s a small way
+                    to make them better.</p></div>
+              </li>
+            </ul>
+          </div>
+          <ol class="dm-history">
+            <li><b>1950s</b><span>Japanese manufacturers rebuild after the war. Toyota makes daily, small
+              improvement part of how its factories run.</span></li>
+            <li><b>1986</b><span>Masaaki Imai&rsquo;s book <i>Kaizen</i> takes the idea to the rest of the
+              world.</span></li>
+            <li><b>Today</b><span>Kaizen is used everywhere from hospitals to software teams, wherever small
+              changes can add up.</span></li>
+          </ol>
+          <div class="dm-ours">
+            <div>
+              <h2>Our name comes from <mark>kaizen</mark>.</h2>
+              <p>We bring the same idea to client relationships: small, steady improvements to every one of
+                them, every day.</p>
+            </div>
+            <a class="kz-btn kz-btn-yellow dm-pill" href="{p}product/">See how Kaizan works</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-request" id="request">
+        <div class="dm-wrap">
+          <h2 class="dm-h2">Get your Daruma.</h2>
+          <p class="dm-sub">We&rsquo;ll post it to your desk in December, in time to set your goal for the
+            new year.</p>
+          <div class="dm-request-grid">
+            <div class="dm-box">
+              <h3>What&rsquo;s in the box</h3>
+              <ol class="dm-box-list">{box_html}</ol>
+            </div>
+            <div class="dm-form-card" id="dm-form-card">
+              <form id="dm-form" class="dm-form" novalidate data-mc-json="{E(DARUMA_MC_JSON)}" data-mc-tag="{E(DARUMA_MC_TAG)}" data-mc-honeypot="{E(DARUMA_MC_HONEYPOT)}">
+                <h3 class="dm-form-title">Your details</h3>
+                <div class="dm-fields">{fields_you}
+                </div>
+                <button type="button" class="dm-continue" aria-expanded="false" aria-controls="dm-more">Continue: where should we post it?</button>
+                <div class="dm-more" id="dm-more" hidden>
+                  <div class="dm-fields">{fields_post}
+                  </div>
+                  <button type="submit" class="kz-btn kz-btn-yellow dm-pill dm-submit">Send me a Daruma</button>
+                  <p class="dm-fine">UK addresses only. One per person, while stocks last. Every request is checked before we post.{closes}</p>
+                  <p class="kz-consent">By submitting your details to Kaizan you are showing interest in our product and so we may contact you from time to time about our product and services. You may unsubscribe from these communications at any time. Please review our <a href="https://kaizan.ai/privacy-policy/">Privacy Policy</a> for information on how to unsubscribe and our privacy practices.</p>
+                  <p class="dm-form-error" role="alert" hidden></p>
+                </div>
+              </form>
+              <div class="dm-sent" id="dm-sent" hidden tabindex="-1">
+                {daruma_svg("dm-doll--sent", left=True)}
+                <h3>Request received.</h3>
+                <p>Thanks. We&rsquo;ll check your details, and if we can send one, your Daruma will be posted<span class="dm-sent-city"></span> in December.
+                  When it arrives, pick your goal and colour in the first eye.</p>
+                <a class="dm-link" href="#share">Then show us yours &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dm-share" id="share">
+        <div class="dm-wrap dm-share-inner">
+          <h2 class="dm-h2">Got yours? Show us your goal.</h2>
+          <p class="dm-sub">Post a photo of your Daruma with its first eye coloured in, say what your 2027
+            client goal is, and tag it.</p>
+          <button type="button" class="dm-tag" data-copy="{E(DARUMA_HASHTAG)}">
+            <span>{E(DARUMA_HASHTAG)}</span><small>Copy</small>
+          </button>
+          <div class="dm-cta dm-cta--center">
+            <a class="kz-btn kz-btn-black dm-pill" href="{E(li_url)}" target="_blank" rel="noopener">Post on LinkedIn</a>
+          </div>
+          <p class="dm-small">Hit your goal? Colour in the second eye and post it again.</p>
+        </div>
+      </section>
+    </main>
+    {footer_html(1)}
+    '''
+    head = (f'<link rel="stylesheet" href="{p}{css}{asset_v(css)}">'
+            f'<script defer src="{p}{js}{asset_v(js)}"></script>')
+    return page_head('A Daruma for your 2027 client goal', 1,
+                     'Request a free Daruma doll for your desk. Set one client goal for 2027, colour in '
+                     'the first eye, and the second when you hit it. UK addresses, posted in December.',
+                     extra_head=head) + body + page_foot()
+
+
 def render_404() -> str:
     body = f'''
     {nav_html(0)}
@@ -9473,6 +9807,7 @@ def main():
 
     # Marketing / campaign landing pages
     write(ROOT / 'marketing' / 'july-offer' / 'index.html', render_july_offer())
+    write(ROOT / 'daruma' / 'index.html', render_daruma())
 
     # Persona pages
     for slug in PERSONAS:
