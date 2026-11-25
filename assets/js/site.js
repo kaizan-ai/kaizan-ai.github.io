@@ -4,75 +4,40 @@
 (function () {
   'use strict';
 
-  // ── Campaign tracking carried on every page ──────────────────────────
+  // ── Campaign tracking shown on every page ────────────────────────────
   // The UTM / click-id values from the landing URL are kept for the tab's session (sessionStorage
-  // 'kz-utm', the store the forms read) and shown in the address bar of every page we serve:
-  //   - this page's URL gets any saved value it lacks (history.replaceState, no reload);
-  //   - same-site links are given the saved values, so the next page opens with them;
-  //   - Google's link decorator `_gl` parameter is dropped once the page has loaded.
+  // 'kz-utm', the store the forms read). Once a page has loaded, its address bar is given any saved
+  // value it lacks (history.replaceState, no reload) and Google's link-decorator `_gl` parameter is
+  // dropped. This runs AFTER load on purpose: links are not decorated and the URL is only changed
+  // once the page view has been sent, so analytics (GA4) sees the campaign on the landing page only
+  // and does not re-attribute later pages to it.
   // Rule (same as the forms): a URL with any utm_* / qr_* parameter replaces the saved set; a URL with
   // only a click id (gclid) just updates that key.
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_term', 'qr_placement', 'utm_cta', 'utm_campaign',
     'utm_content', 'utm_country', 'utm_usp', 'utm_angle', 'utm_hook', 'gclid', 'utm_id', 'utm_adgroup'];
-  var utmSaved = {};
-  function utmCapture() {
-    try { utmSaved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) { utmSaved = {}; }
+  function initUtmCarry() {
+    var saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) {}
     var q = new URLSearchParams(window.location.search);
-    var any = UTM_KEYS.some(function (k) { return q.has(k); });
-    if (any) {
+    if (UTM_KEYS.some(function (k) { return q.has(k); })) {
       var replaceSet = UTM_KEYS.some(function (k) { return k !== 'gclid' && q.has(k); });
       UTM_KEYS.forEach(function (k) {
-        if (replaceSet) utmSaved[k] = (q.get(k) || '').slice(0, 255);
-        else if (q.has(k)) utmSaved[k] = q.get(k).slice(0, 255);
+        if (replaceSet) saved[k] = (q.get(k) || '').slice(0, 255);
+        else if (q.has(k)) saved[k] = q.get(k).slice(0, 255);
       });
-      try { sessionStorage.setItem('kz-utm', JSON.stringify(utmSaved)); } catch (e) {}
+      try { sessionStorage.setItem('kz-utm', JSON.stringify(saved)); } catch (e) {}
     }
-  }
-  function utmApply(url) {            // url: URL object; adds saved values it does not already carry
-    UTM_KEYS.forEach(function (k) {
-      if (utmSaved[k] && !url.searchParams.has(k)) url.searchParams.set(k, utmSaved[k]);
-    });
-    return url;
-  }
-  function utmHasSaved() { return UTM_KEYS.some(function (k) { return utmSaved[k]; }); }
-  function utmLinkable(a) {
-    if (!a || !a.href || a.hasAttribute('data-no-utm') || a.hasAttribute('download')) return false;
-    if (!/^https?:$/.test(a.protocol) || a.origin !== window.location.origin) return false;
-    if (/^\/assets\//.test(a.pathname) || /\.(pdf|png|jpe?g|gif|svg|webp|mp4|zip|xml|txt)$/i.test(a.pathname)) return false;
-    var raw = a.getAttribute('href') || '';
-    return raw.charAt(0) !== '#' && !(a.pathname === window.location.pathname && a.search === window.location.search && a.hash);
-  }
-  function utmDecorateLink(a) {
-    if (!utmLinkable(a)) return;
-    var u = utmApply(new URL(a.href));
-    if (u.href !== a.href) a.href = u.href;
-  }
-  function initUtmCarry() {
-    utmCapture();
-    if (!utmHasSaved() || !window.history || !history.replaceState) return;
-    try {
-      var cur = new URL(window.location.href);
-      var next = utmApply(new URL(cur.href));
-      if (next.href !== cur.href) history.replaceState(history.state, '', next.href);
-    } catch (e) {}
-    // Drop `_gl` after the Google tag has had time to read it (same-site navigation does not need it).
-    function dropGl() {
+    if (!window.history || !history.replaceState) return;
+    function tidyUrl() {
       try {
         var u = new URL(window.location.href);
-        if (u.searchParams.has('_gl')) { u.searchParams.delete('_gl'); history.replaceState(history.state, '', u.href); }
+        u.searchParams.delete('_gl');
+        UTM_KEYS.forEach(function (k) { if (saved[k] && !u.searchParams.has(k)) u.searchParams.set(k, saved[k]); });
+        if (u.href !== window.location.href) history.replaceState(history.state, '', u.href);
       } catch (e) {}
     }
-    if (document.readyState === 'complete') setTimeout(dropGl, 1500);
-    else window.addEventListener('load', function () { setTimeout(dropGl, 1500); });
-  }
-  function initUtmLinks() {
-    if (!utmHasSaved()) return;
-    Array.prototype.forEach.call(document.querySelectorAll('a[href]'), utmDecorateLink);
-    // Links added later, and any the page script changes, are covered at click time.
-    document.addEventListener('click', function (e) {
-      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-      if (a) utmDecorateLink(a);
-    }, true);
+    if (document.readyState === 'complete') setTimeout(tidyUrl, 1500);
+    else window.addEventListener('load', function () { setTimeout(tidyUrl, 1500); });
   }
   initUtmCarry();
 
@@ -725,7 +690,6 @@
     initVideoLightbox();
     initSwipeRows();
     initPbThread();
-    initUtmLinks();
     initNewsletter();
     initNewsBubble();
   }
