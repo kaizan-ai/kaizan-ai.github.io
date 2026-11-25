@@ -1,5 +1,5 @@
 ---
-title: "QBR Agenda and Format: A 45-Minute Run of Show"
+title: "Quarterly Business Review Format: QBR Agenda and a 45-Minute Run of Show"
 meta_title: "QBR Agenda and Format: A 45-Minute Run of Show"
 date: 2026-11-10
 author: James Caples
@@ -28,7 +28,7 @@ This builds on the five components of a QBR and the 30-minute version covered in
 
 Not every account needs this exact shape. Use the 45-minute quarterly business review format when an account has grown past one deliverables list but hasn't yet earned the executive-level time of a full Executive Business Review. In practice, that's most mid-tier retained accounts: big enough that a status email isn't enough, not yet big enough to justify 60 to 90 minutes of a client's VP's calendar every quarter.
 
-Stretch to 60 minutes for your top-tier accounts, where the stakes and the stakeholder count both justify the extra time. Compress to 20 minutes for your smallest retained accounts, where a 45-minute format would be over-serving the relationship relative to its size. The mistake isn't picking the wrong number of minutes. It's running one format for every account out of habit, rather than matching the format to what the account actually needs this quarter.
+Stretch to 60 minutes for your top-tier accounts, where the stakes and the stakeholder count both justify the extra time. Compress to 20 minutes for your smallest retained accounts, where a 45-minute format would be over-serving the relationship relative to its size. The mistake isn't picking the wrong number of minutes. It's running one format for every account out of habit, rather than matching the format to the account's business goals and client needs for the quarter.
 
 ## The 45-minute run of show, step by step
 
@@ -44,7 +44,7 @@ Seven steps, in order. The clock starts at Step 1. Step 0 happens before the roo
 
 **Time:** 30 to 45 minutes.
 
-What to do: pull every call and email since the last review, not just what made it into last month's status report. Specifically check for two things Kaizan's benchmark research flags as the clearest markers of a strong account team, because both are answerable yes or no at the call level: did the last few calls name the client's own stated goal, and did anyone bring outside context the client didn't already have, a competitor move, a sector shift, something from outside their own four walls. Teams that do this consistently see it roughly 1.4 times and 20 times more often respectively than teams that don't. *(Kaizan, The Client Service Benchmark 2026, Vol. 01, Finding 02, a portfolio-wide benchmark, not a guarantee for any one account.)*
+What to do: pull every call and email since the last review and gather the relevant data needed for the qbr meeting, not just what made it into last month's status report. Specifically check for two things Kaizan's benchmark research flags as the clearest markers of a strong account team, because both are answerable yes or no at the call level: did the last few calls name the client's own stated goal, and did anyone bring outside context the client didn't already have, a competitor move, a sector shift, something from outside their own four walls. Teams that do this consistently see it roughly 1.4 times and 20 times more often respectively than teams that don't, and this review should cover what changed since the last quarter or past quarter, not just what appeared in a monthly status report. *(Kaizan, The Client Service Benchmark 2026, Vol. 01, Finding 02, a portfolio-wide benchmark, not a guarantee for any one account.)*
 
 **Script, the pre-read email, sent the same day:**
 
@@ -53,7 +53,7 @@ Subject: [Client] quarterly review, [date], agenda attached
 
 Hi [name],
 
-Agenda for Thursday attached. Three things on it: where we've landed against [specific goal from their own language], one thing we want to flag before it becomes a problem, and what we'd propose for next quarter.
+Agenda for Thursday attached. Three things on it: where we've landed against [specific goal from their own language], using the data tied to that goal, one thing we want to flag before it becomes a problem, and what we'd propose for next quarter.
 
 Anything you'd want added before we meet?
 ```
@@ -134,9 +134,9 @@ A 40-person B2B agency runs this exact quarterly business review format with a m
 
 **Step 5.** The commitments get rebuilt on the spot: a follow-up call with procurement, owned by the account lead, scheduled for the following week, well before the client's own internal review.
 
-The lesson generalizes past this one account. The signal wasn't hidden. It was sitting in an email cc line nobody went back to reread, and a stakeholder check that existed as a named, timed step in the format rather than an afterthought is what gave it somewhere to surface.
+The lesson generalises past this one account. The signal wasn't hidden. It was sitting in an email cc line nobody went back to reread, and a stakeholder check that existed as a named, timed step in the format rather than an afterthought is what gave it somewhere to surface.
 
-## Scripts and wording to copy
+## Scripts and wording to copy: quarterly business review template
 
 Two more, beyond the ones already embedded in the steps above.
 
@@ -179,11 +179,11 @@ Three numbers, tracked across the whole book, not just one account.
 
 **Time-in-room discipline.** The share of reviews that actually held to 45 minutes. *Worked example:* an account team runs 20 QBRs in a quarter on this format. 13 finish at or under 45 minutes. 13 ÷ 20 = 65%. A number below that is worth treating as a signal that Step 2 or Step 5 is running long, usually because the deck has more slides than the format has minutes.
 
-Measuring any of these by hand means going back through calendar invites and call recordings after the fact, which is exactly the kind of admin that quietly stops happening once a quarter gets busy. Kaizan's own [AI Assistant](https://www.kaizan.ai/us/product/#ai-assistant) scores every call continuously against the [Evidence-Based Client Health Standard](https://www.kaizan.ai/us/blog/client-software/client-relationship-is-an-operating-system/), so stakeholder coverage and decision-maker contact are visible between reviews, not just reconstructed from memory the night before one.
+Measuring any of these by hand means going back through calendar invites and call recordings after the fact, which is exactly the kind of admin that quietly stops happening once a quarter gets busy. Kaizan's own [AI Assistant](https://www.kaizan.ai/us/product/#ai-assistant) scores every call continuously against the [Evidence-Based Client Health Standard](https://www.kaizan.ai/us/blog/client-software/client-relationship-is-an-operating-system/), so stakeholder coverage and decision-maker contact are visible between reviews, helping teams identify potential risks early instead of naming them only once everyone is already in the room.
 
 ## What to automate, and what has to stay human
 
-The prep in Step 0 is the part worth automating first: pulling the full call and email history, checking who's been contacted and how recently, and surfacing what changed since the last review. None of that requires judgment. All of it requires time that a busy account lead will quietly stop spending once the quarter gets tight, which is exactly when the review is most likely to slip back into a memory-based status update.
+The prep in Step 0 is the part worth automating first: pulling the full call and email history, checking who's been contacted and how recently, checking the health of client relationships, and surfacing what changed since the last review. None of that requires judgement. All of it requires time that a busy account lead will quietly stop spending once the quarter gets tight, which is exactly when the review is most likely to slip back into a memory-based status update.
 
 A Senior Client Partner at one of the agencies we work with, Agency Client B, put the distinction plainly:
 
@@ -191,13 +191,13 @@ A Senior Client Partner at one of the agencies we work with, Agency Client B, pu
 >
 > — Senior Client Partner, Agency Client B
 
-What has to stay human is everything inside the room: naming the risk in Step 3, reading how the client actually reacts to it, and deciding in the moment whether Step 5's expansion conversation has genuinely been earned this quarter or should wait. A Chief Operating Officer at a third agency we work with, Agency Client C, described why that judgment call matters:
+What has to stay human is everything inside the room: naming the risk in Step 3, reading how the client actually reacts to it, deciding in the moment whether Step 5's expansion conversation has genuinely been earned this quarter or should wait, and asking whether other key stakeholders or a broader team should be included next time. A Chief Operating Officer at a third agency we work with, Agency Client C, described why that judgement call matters:
 
-> "You're relying on human error and you're relying on them not looking at things with rose colored glasses. [The system] is impartial and will say, hey, look guys, this guy's not happy."
+> "You're relying on human error and you're relying on them not looking at things with rose coloured glasses. [The system] is impartial and will say, hey, look guys, this guy's not happy."
 >
 > — Chief Operating Officer, Agency Client C
 
-The impartial read is the input. The decision on what to do with it in the room is still the account lead's call. Teams running on this kind of automated prep report saving meaningfully on the admin side, Kaizan's own client base averages 5.4 hours of admin saved per person every week, with an average 26%+ revenue growth per client across the portfolio once that time goes back into the relationship rather than the paperwork around it.
+The impartial read is the input. The decision on what to do with it in the room is still the account lead's call, especially because once a relationship goes single-threaded you can lose visibility with senior leadership and other decision-makers. Teams running on this kind of automated prep report saving meaningfully on the admin side, Kaizan's own client base averages 5.4 hours of admin saved per person every week, with an average 26%+ revenue growth per client across the portfolio once that time goes back into the relationship rather than the paperwork around it.
 
 ## Common pitfalls, and what they cost
 
@@ -207,7 +207,7 @@ The impartial read is the input. The decision on what to do with it in the room 
 
 **No timekeeper.** A 45-minute format with nobody watching the clock becomes a 70-minute one by the third quarter. Name one person, usually the account lead, to hold the timeboxes out loud.
 
-**Closing without the read-back.** Skipping the 41-to-45 minute block to save time is the single easiest way to turn today's clear commitments into next quarter's repeated, unresolved agenda item.
+**Closing without the read-back.** Skipping the 41-to-45 minute block to save time is the single easiest way to turn today's clear commitments into next quarter's repeated, unresolved agenda item. Close with two or three commitments that support your strategic priorities and future goals for the upcoming quarter. If expansion is on the table, keep it tied to evidence already covered, since earned expansion discussions can uncover growth opportunities and support strategic growth when the relationship is healthy. In the script, end by asking whether those commitments match the client's specific goals and client goals for next quarter.
 
 **Treating Step 0 as optional when the quarter gets busy.** This is the step that gets cut first under pressure, and it's the one that determines whether the other six minutes are built from the real relationship or from whoever's memory happened to be freshest that week.
 
@@ -217,10 +217,14 @@ The impartial read is the input. The decision on what to do with it in the room 
 The quarterly business review format that works for most agency accounts runs 45 minutes: a 4-minute headline, 14 minutes on value delivered against goals, 10 minutes on risks and stakeholder coverage, 8 minutes on next-quarter commitments, and a close that locks owners, dates and the next review date before anyone leaves the room.
 
 **How long does this qbr format take to prepare?**
-Budget 30 to 45 minutes for Step 0, pulling the real call and email history rather than working from memory or last month's deck. That's the only prep step; the rest of the format runs inside the 45-minute meeting itself.
+Preparation usually takes one to two weeks, depending on how much information you need to pull together. In most cases, that means collecting relevant data, supporting documents, and financial reports before the meeting so the review is accurate and easy to discuss.
 
-**Who should own the QBR agenda and format?**
-One person, usually the account lead, owns the prep, the invitation and the follow-through on every commitment. A format with no single owner tends to drift into whichever shape is easiest to build that week, usually a deliverables recap.
+**Who should own the quarterly business review?**
+In most agencies, the account lead or client partner should own the quarterly business review format because they have the clearest view of goals, delivery, relationship health, and next steps. They are usually best placed to pull together the story behind the quarter, not just the raw numbers.
+
+That said, ownership may still sit with the account lead even when sales managers use a similar format for internal revenue reviews and stakeholder reporting. In some firms, the sales team also uses a comparable structure to review the previous quarter and set targets for the next one.
+
+Other teams can contribute inputs, but one person should remain responsible for the final narrative, recommendations, and follow-up actions.
 
 **What if the client cancels or skips a step?**
 Keep the format but compress it rather than dropping it. A shortened version that still covers Steps 2, 3 and 5 is worth more than a full-length meeting that skips the risk section because time ran short.
@@ -233,4 +237,4 @@ Automate the prep: pulling history, checking stakeholder contact recency, and su
 
 ---
 
-If you want to see what this format looks like built from your own accounts' real call and email history, not a template, [book a demo](https://www.kaizan.ai/us/).
+If you want to see what this format looks like built from your own accounts' real call and email history, not a template, [book a demo](https://www.kaizan.ai/us/). Automation helps teams deliver QBRs at scale as a business grows, while human judgement is still needed for strategic calls. It also supports future growth by helping teams maintain alignment between reviews.

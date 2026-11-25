@@ -24,15 +24,15 @@ Most onboarding guides describe one process and assume every new client deserves
 
 ## When to tier onboarding, and when not to
 
-Tiering only pays for itself once a book is large enough that treating every client identically costs you somewhere. As a rough guide: once a firm is running more than about 15-20 live client relationships with a visible spread in account value, whether that's measured in revenue, growth potential or strategic weight, single-process onboarding starts failing in one of two directions. Either the flagship accounts get a generic checklist that undersells the relationship, or every new logo gets the full white-glove treatment and the account team runs out of hours before the quarter ends.
+Tiering only pays for itself once a book is large enough that treating every client identically costs you somewhere. As a rough guide: once a firm is running more than about 15-20 live client relationships with a visible spread in account value, whether that's measured in revenue, growth potential or strategic weight, single-process onboarding starts failing in one of two directions. Either the flagship accounts get a generic checklist that undersells the relationship, or the same one-size process gets stretched across very different account types and leaves new clients with a poor fit while the account team runs out of hours before the quarter ends.
 
 Below that line, tiering is premature. A firm with a handful of concurrent clients doesn't need three tracks; it needs one good track, applied consistently, which is the subject of our guide to the client onboarding process as a 30-60-90 day plan. Tiering is a refinement on top of a working process, not a substitute for having one.
 
-The other precondition is that service or pricing tiers already exist somewhere in the business: in the commercial model, the account team's own informal rules about who gets senior attention, or the CARE-based portfolio view most teams eventually build for ongoing account management (what we call The Evidence-Based Client Health Standard). If those distinctions exist for how you serve a client after onboarding, the honest move is to carry the same distinctions into the first 90 days, rather than starting every relationship identically and only diverging later.
+The other precondition is that service or pricing tiers already exist somewhere in the business: in the commercial model, the account team's own informal rules about who gets senior attention, or the CARE-based portfolio view most teams eventually build for ongoing account management (what we call The Evidence-Based Client Health Standard). If those distinctions exist for how you serve a client after onboarding, the honest move is to carry the same distinctions through the sales process handoff and into the first 90 days for a smoother transition, rather than starting every relationship identically and only diverging later.
 
 ## The three onboarding tracks: client onboarding strategies that actually scale
 
-Tiering by client is a common idea in account service generally; the useful version for onboarding is specific about what changes and what doesn't. Across the three tracks below, the sequence of a 30-60-90 day plan stays the same (discover and align, get live, prove early value). What changes is who's in the room, how often, and how much of it a person does versus a system.
+Tiering by client is a common idea in account service generally; the useful version for onboarding is specific about what changes and what doesn't. Across the three tracks below, the sequence of a 30-60-90 day plan stays the same (discover and align, get live, prove early value). What changes is who's in the room, how often, and how much of it a person does versus a system, with the aim of a smooth onboarding experience matched to account value.
 
 ### Tier 1 — Strategic accounts
 
@@ -55,10 +55,10 @@ The majority of the book by count: profitable, stable relationships that don't c
 Smaller or newer accounts, often the most numerous tier by logo count and the smallest by revenue share.
 
 - **Owner:** whoever owns the account day to day, with no separate onboarding owner.
-- **What it gets:** a fully templated, mostly self-serve kickoff: a welcome sequence, a shared document with the plan, and one scheduled check-in at day 30. No separate business review; the day-90 milestone folds into the first regular account catch-up.
+- **What it gets:** a fully templated, mostly self-serve kickoff: a welcome sequence, a shared document with the plan, and setup tasks the client completes in the first 30 days, plus one scheduled check-in at day 30. No separate business review; the day-90 milestone folds into the first regular account catch-up.
 - **What this tier doesn't get, by design:** dedicated onboarding hours beyond the single day-30 check-in. This is the tier automation should carry almost entirely, covered further down.
 
-The tier-by-stage matrix below is the artefact to agree before anything else gets built, since every other decision, what gets automated, what the client sees, follows from these three rows.
+The tier-by-stage matrix below is the artefact to agree before anything else gets built, and helps track progress against each tier's timeline and milestones, since every other decision, what gets automated, what the client sees, follows from these three rows.
 
 | Stage | Tier 1 — Strategic | Tier 2 — Core | Tier 3 — Standard |
 | --- | --- | --- | --- |
@@ -74,23 +74,23 @@ The tier-by-stage matrix below is the artefact to agree before anything else get
 
 The best-practice argument for tiering is a numbers argument, not a service-design preference. Professional services firms retain somewhere in the region of 83-85% of clients a year on average, with First Page Sage's 2026 analysis of over 10,000 firms putting the figure at 84%, and several other 2025-2026 studies converging in the same range. Figures like this vary by source and methodology, so treat the range as directional rather than a single agreed number, but the direction is consistent: a typical firm loses something close to 1 in 6 accounts annually, even before a bad year.
 
-That revenue isn't lost evenly. It concentrates in accounts that were never given a chance to form a real relationship in the first 90 days, which is exactly the population a generic, one-size onboarding produces.
+That revenue isn't lost evenly. It concentrates in accounts that were never given a chance to form a real relationship in the first 90 days, which is exactly the population a generic, one-size onboarding produces, weakening client retention as well as increasing revenue risk.
 
 Here's an illustrative worked example, built for this guide rather than drawn from a single client's real numbers (every input below is a stated assumption, not a survey finding): a 300-person agency with 40% of its headcount client-facing (120 people), running a portfolio worth $20M a year. At 16% average attrition, that's $3.2M of revenue at risk annually before anyone intervenes. If the top tier holds a reasonably typical 35-40% of total portfolio revenue across perhaps 12-15 accounts, as is common in agencies that already tier by value, that's upward of $1.1M-$1.3M riding on a small enough group of relationships that giving them a different first 90 days, rather than the same templated kickoff as everyone else, is not a hard case to make internally.
 
-Kaizan's own published portfolio mechanics put a number on what's recoverable once a firm is actively managing that risk rather than discovering it late: Kaizan clients see 26%+ average revenue growth per client, and the platform's own ROI model credits roughly 45% of revenue at risk as protected through early signal, both figures drawn from Kaizan's own client portfolio, not the illustrative example above. The same math scales whether a firm sits at the 150-employee end of this range or the 10,000-employee end; only the absolute dollars change, not the argument for treating the top band of accounts differently from day one.
+Kaizan's own published portfolio mechanics put a number on what's recoverable once a firm is actively managing that risk rather than discovering it late: Kaizan clients see 26%+ average revenue growth per client, and the platform's own ROI model credits roughly 45% of revenue at risk as protected through early signal, both figures drawn from Kaizan's own client portfolio, not the illustrative example above. The same math scales whether a firm sits at the 150-employee end of this range or the 10,000-employee end; only the absolute dollars change, not the argument for treating the top band of accounts differently from day one, because investing differently by tier supports long term success and business growth, not just immediate revenue protection.
 
 ## A worked example, end to end: one Tier 1 onboarding
 
 Here's how the Tier 1 track plays out on one account, built as a composite from common patterns across client-service teams rather than a single named case; we could not source a cleared, on-the-record case study specific to tiered onboarding for this guide, and have flagged that gap rather than invent one (see our research notes).
 
-A 40-person digital agency wins a $400,000 retainer, its third-largest account by value. Under a single, untiered process, this would get the same templated kickoff as a $40,000 project. Instead:
+A 40-person digital agency wins a $400,000 retainer, its third-largest account by value. Under a single, untiered process, this would get the same templated kickoff as a $40,000 project. Instead, this is what a successful onboarding process looks like for a high-value account:
 
-**Day 1.** The account director, not the assigned account manager alone, joins the kickoff call. Both sides name a senior sponsor. The stakeholder map is started in the same meeting, not after it.
+**Day 1.** The account director, not the assigned account manager alone, joins the kickoff call to gather relevant information from both sides early in the relationship. Both sides name a senior sponsor. The stakeholder map is started in the same meeting, not after it.
 
 **Day 7.** The stakeholder map is complete: eight named contacts across the client's organisation, each tagged with their role in the decision, not just their job title. This is the artefact Tier 2 and Tier 3 don't get.
 
-**Days 14-50.** Weekly 30-minute check-ins, alternating between the account manager (operational) and the account director (relationship, risk and expansion signals). One of Kaizan's own anonymised client contacts, a managing partner at an agency, described the value of exactly this kind of senior cadence this way:
+**Days 14-50.** Weekly 30-minute check-ins, alternating between the account manager (operational) and the account director (relationship, risk and expansion signals), with that cadence helping the team understand client needs as the account gets underway. One of Kaizan's own anonymised client contacts, a managing partner at an agency, described the value of exactly this kind of senior cadence this way:
 
 > "The other thing we'd look at it for is senior team time that's saved by not having to be on every call, and you just jump in and watch that 30-second clip rather than have to be on the whole thing to still get the same outcome."
 >
@@ -118,32 +118,32 @@ Where it broke down in an earlier, untiered version of this same account type: t
 
 > Subject: Welcome aboard — here's what the next 90 days look like
 >
-> [Name], welcome to the team. Attached is our standard 30-60-90 day plan with the milestones we'll hit together. I'll check in at the points marked on the plan; flag anytime if you need something sooner.
+> [Name], welcome to the team. Attached is our standard 30-60-90 day plan with the milestones we'll hit together, as onboarding materials you can refer back to between check-ins. I'll check in at the points marked on the plan; flag anytime if you need something sooner.
 
 **The line for when a client pushes back on the lighter-touch model (Tier 2 or 3):**
 
 > "Our senior team's time is focused on the accounts where that depth makes the most difference right now, and we revisit that every quarter, including for you. What I can commit to is [specific cadence], and you'll always know exactly who to call if something needs to move faster than that."
 
-This is a statement of a model, not an apology for one. Clients who hear tiering explained as a deliberate structure rarely object to it; clients who discover it by noticing a peer got more, without ever being told why, are the ones who escalate.
+This is a statement of a model, not an apology for one. Clear wording helps create a positive impression even when a client is on a lighter-touch track. Clients who hear tiering explained as a deliberate structure rarely object to it; clients who discover it by noticing a peer got more, without ever being told why, are the ones who escalate.
 
 ## How to tell whether it worked
 
-The honest metric for a tiered onboarding isn't "did the client go live," which almost every onboarding manages eventually. It's whether the depth of the relationship at day 90 matches the tier the account was supposed to get.
+The honest metric for a tiered onboarding isn't "did the client go live," which almost every onboarding manages eventually. It's whether the depth of the relationship at day 90 matches the tier the account was supposed to get, so you can measure success against the experience you intended to deliver.
 
-A few measures worth tracking, each tied to a sub-element of what we call The Evidence-Based Client Health Standard (our name for the CARE methodology, which measures Client Satisfaction, Activity with Stakeholders, Relationship Strength and Expansion Opportunities):
+A few measures worth tracking, with key performance indicators tied to a sub-element of what we call The Evidence-Based Client Health Standard (our name for the CARE methodology, which measures Client Satisfaction, Activity with Stakeholders, Relationship Strength and Expansion Opportunities):
 
 - **Stakeholder coverage at day 90, by tier.** In Kaizan's 2026 Client Service Benchmark, the client-to-team headcount ratio held identical across top- and bottom-performing accounts, at 9.12 contacts per internal team member, but top accounts engaged 1.71x more client stakeholders overall (242 vs. 142) and ran 2.91x more client-initiated email threads. The lesson for onboarding: coverage should scale with the relationship from day one, not stay flat while headcount does.
 - **Decision-maker contact frequency, not just coverage.** The same benchmark found both top- and bottom-performing accounts engage roughly half of their defined decision-makers (around 52.7% vs. 50.0%), but top accounts run 1.81x more decision-maker calls and 2.06x more decision-maker emails. If your Tier 1 stakeholder map isn't converting into more frequent contact with the people on it by day 60, the map was decorative.
-- **How often you're actually measuring satisfaction.** The same dataset found that when CSAT is measured, top and bottom cohorts score identically; the real gap is frequency, with top accounts measured roughly 2.9x more often (41 times a year versus 14). A Tier 1 account with no satisfaction check-in before day 60 isn't being managed at the tier it was sold.
+- **How often you're actually measuring satisfaction.** Teams should measure client satisfaction during onboarding, not just later in the relationship. The same dataset found that when CSAT is measured, top and bottom cohorts score identically; the real gap is frequency, with top accounts measured roughly 2.9x more often (41 times a year versus 14). A Tier 1 account with no satisfaction check-in before day 60 isn't being managed at the tier it was sold.
 - **Don't mistake a quiet risk log for a safe account.** The same benchmark's "Risk Paradox" finding: top-performing accounts actually surface 2.21x more risk phrases in conversation than lower-performing ones. Silence on a newly onboarded Tier 1 account is a signal to check in harder, not a sign everything is fine.
 
 The baseline to set before you start: your current onboarding completion rate and time-to-first-value today, by tier, measured before you introduce the new tracks. We weren't able to source published data isolating onboarding completion rate as its own metric for this guide, since Kaizan's own platform operates across the full relationship rather than owning the onboarding phase specifically, so this baseline has to come from your own current process. Track it at day 30, 60 and 90 for one full quarter before judging whether the tiered version moved it.
 
 ## What to automate and what must stay human
 
-**Automate, regardless of tier:** the welcome sequence and kickoff scheduling; document collection and e-signature chasing; the day-30 and day-90 status update draft (a draft a person reviews, not one that sends itself); calendar invites for every check-in in the plan; CRM and project-tool updates that mirror onboarding milestones, so the information isn't trapped in one person's inbox.
+**Automate, regardless of tier:** the welcome sequence and kickoff scheduling; document collection and e-signature chasing; the day-30 and day-90 status update draft, plus client surveys at key milestones to collect feedback automatically (both as drafts a person reviews, not items that send themselves); calendar invites for every check-in in the plan; CRM and project-tool updates that mirror onboarding milestones, so the information isn't trapped in one person's inbox.
 
-**Keep human, and scale by tier:** who delivers the kickoff and the 90-day review; stakeholder mapping itself, which an automated contact import can seed but shouldn't finish, since the judgment about who actually holds influence versus who simply has a title doesn't come from a CRM field; the read on a client's tone in the first 30 days, exactly the kind of signal that predicts first-year retention and isn't yet reliably automatable; and the decision to escalate or slow down, since a system can flag that a decision-maker has gone quiet for two weeks, but a person still has to decide what that means for this specific relationship.
+**Keep human, and scale by tier:** who delivers the kickoff and the 90-day review; stakeholder mapping itself, which an automated contact import can seed but shouldn't finish, since the judgement about who actually holds influence versus who simply has a title doesn't come from a CRM field; gathering feedback on a client's tone in the first 30 days, and stepping in with personalised support when the signals show friction, exactly the kind of signal that predicts first-year retention and isn't yet reliably automatable; and the decision to escalate or slow down, since a system can flag that a decision-maker has gone quiet for two weeks, but a person still has to decide what that means for this specific relationship.
 
 Tier 3 is where the automation-to-human ratio should be most aggressive. If an account manager is spending meaningful personal time hand-holding a Tier 3 kickoff, the templated track has failed, and the fix is a better template, not more hours.
 
@@ -155,7 +155,7 @@ Tier 3 is where the automation-to-human ratio should be most aggressive. If an a
 
 **No migration path.** Symptom: an account grows from Tier 3 to genuinely Tier 1 revenue over 18 months, but nobody notices because tiering was only ever applied at the point of onboarding, not revisited afterward. Fix: tier reviews need an explicit trigger, a renewal, a QBR, a revenue threshold crossed, that pulls an account up or down, not just a one-time label assigned on day one.
 
-**Treating the lightest tier as "no onboarding."** Symptom: Tier 3 accounts have the highest early churn in the portfolio, and nobody connects it to the fact they got a templated email and nothing else. Fix: light-touch still means a plan, a single scheduled human check-in, and a clear owner, even if that owner is the only person touching the account day to day. The difference between Tier 1 and Tier 3 should be depth, not the presence or absence of a process.
+**Treating the lightest tier as "no onboarding."** Symptom: Tier 3 accounts have the highest early churn in the portfolio, and nobody connects it to the fact they got a templated email and nothing else. Fix: light-touch still means a plan, a single scheduled human check-in, a clear owner, and ongoing support after kickoff, even if that owner is the only person touching the account day to day. That minimum structure is what makes the onboarding experience credible even at Tier 3. The difference between Tier 1 and Tier 3 should be depth, not the presence or absence of a process.
 
 ## Frequently asked questions
 
@@ -182,8 +182,8 @@ Track stakeholder coverage, decision-maker contact frequency and how often satis
 
 ## Where to go from here
 
-Tiering the first 90 days only works if the tiers themselves are agreed before anyone builds a single email template. Start with a one-page tier definition worksheet, criteria, what each tier gets by day, and what's deliberately withheld below Tier 1, before touching the onboarding plan itself.
+Tiering the first 90 days only works if the tiers themselves are agreed before anyone builds a single email template. Start with a one-page tier definition worksheet, criteria, what each tier gets by day, and what's deliberately withheld below Tier 1, because that worksheet is the basis of a strong client onboarding process, before touching the onboarding plan itself.
 
-Once clients are onboarded, the harder question starts: does every account team actually know what's happening across the full portfolio, by tier, without waiting for a client to raise it? That's the problem Kaizan is built to solve, scoring every relationship against The Evidence-Based Client Health Standard and surfacing the next action before a renewal conversation goes wrong, not after.
+Once clients are onboarded, the harder question starts: after the first 90 days, does every account team actually have the visibility it needs across the full portfolio, by tier, to support customer success without waiting for a client to raise it? That's the problem Kaizan is built to solve, scoring every relationship against The Evidence-Based Client Health Standard and surfacing the next action before a renewal conversation goes wrong, not after.
 
 [Book a demo with Kaizan](https://www.kaizan.ai/us/) to see how client intelligence picks up where tiered onboarding leaves off.

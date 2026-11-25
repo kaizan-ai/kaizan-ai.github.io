@@ -1,5 +1,5 @@
 ---
-title: Onboarding Metrics That Predict First-Year Retention
+title: Client Onboarding Metrics That Predict First-Year Retention
 meta_title: Onboarding Metrics That Predict Retention
 date: 2026-11-10
 author: James Caples
@@ -20,7 +20,6 @@ Client onboarding metrics are the handful of early cadence and coverage numbers,
 - **Top accounts surface 2.21x more risk** in conversation (15.3 risk phrases a year vs 6.9). A quiet risk log isn't a sign of a healthy account. It's usually a sign nobody's listening closely enough yet.
 - **The CSAT gap most reports describe is a measurement-frequency gap, not a satisfaction gap.** Where sentiment is actually measured, top and bottom cohorts score identically (7.1 out of 10). Top accounts just get measured 2.93x more often (41 times a year vs 14).
 - **Stakeholder count and inbound activity scale together, not separately.** Top accounts engage 1.71x more stakeholders and generate 2.91x more client-initiated email threads, while the ratio of clients to internal team members holds identical across both groups (9.12).
-
 
 ## Method
 
@@ -92,7 +91,7 @@ Not a different strategy. More of the same one, run more often, by more people, 
 >
 > — Head of International Client Team, Agency Client A
 
-## What to do if you're below the benchmark
+## What to do if you're below the benchmark for onboarding success
 
 Prioritised in the order the data suggests they'll move the needle fastest.
 

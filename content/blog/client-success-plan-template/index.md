@@ -14,7 +14,7 @@ A client success plan is a living, one-page document for a single account: the c
 
 This guide covers what belongs in a customer success plan template, how it differs from an account plan and a QBR deck, three filled examples at different account sizes, the client-facing version you can build jointly, how to tell whether the plan is actually working, and how to keep the whole thing current without someone updating it by hand every month.
 
-This is written for Heads of Client Service running a book of retained accounts, not for SaaS teams running product-adoption playbooks. The fields that matter, and the point of writing any of it down, change when the relationship is a service built on trust and delivery, not a license renewal.
+This is written for Heads of Client Service running a book of retained accounts, not for SaaS teams running product-adoption playbooks. The fields that matter, and the point of writing any of it down, change when the relationship is a service built on trust and delivery, not a licence renewal.
 
 **Key takeaways**
 
@@ -24,34 +24,34 @@ This is written for Heads of Client Service running a book of retained accounts,
 
 ## What is a customer success plan, and why do agencies need one?
 
-A customer success plan is a single document, per client, that holds what the relationship is actually trying to achieve, who the people are on both sides, and what's at risk, reviewed on a set cadence rather than written once at onboarding and left to go stale. It replaces the account lead's memory, and the monthly RAG spreadsheet, as the place the relationship actually lives.
+A customer success plan is a single document, per client, that holds what the relationship is actually trying to achieve, who the people are on both sides are, and what's at risk, aligning the client and internal teams around clear goals and measurable outcomes across the relationship life cycle, reviewed on a set cadence rather than written once at onboarding and left to go stale. It replaces the account lead's memory, and the monthly RAG spreadsheet, as the place the relationship actually lives.
 
 The case for writing one down at all starts with what happens when nobody does. RSW/US's 2024 Agency New Business Outlook Report, drawn from a database of more than 7,000 US and Canadian agencies, found that 45% of marketers now cite a lack of proactivity from their agency as the single biggest trigger for a review, a sharp jump from the year before. A client success plan is one of the few mechanisms that forces proactivity into a cadence rather than leaving it to whichever account lead happens to be paying close attention that month.
 
-It also answers the objection every Head of Client Service has before they've finished reading this far: does this replace the spreadsheet, or is it one more thing on top of it? Done properly, a client success plan is the spreadsheet's replacement, not its neighbor. The monthly RAG tracker gives you a color. A success plan gives you the goal the color is being measured against, the person who said it mattered, and what you're doing about the risk behind a status that just turned amber.
+It also answers the objection every Head of Client Service has before they've finished reading this far: does this replace the spreadsheet, or is it one more thing on top of it? Done properly, a client success plan is the spreadsheet's replacement, not its neighbour. The monthly RAG tracker gives you a colour. A success plan gives you the goal the colour is being measured against, the person who said it mattered, and what you're doing about the risk behind a status that just turned amber.
 
-Who should own it is worth settling before anyone writes a word. The account lead owns the plan day to day; a Head of Client Service owns the standard it's held to across the book, which account tiers get which depth of plan, and what triggers escalation when a plan shows a repeated risk. Many agencies already run tiering under names like Bronze, Silver and Gold, or Growth, Core and Strategic; whichever labels your firm uses, the plan's depth should follow the tier, not a single template forced across every account regardless of size.
+Who should own it is worth settling before anyone writes a word. The account lead owns the plan day to day; a Head of Client Service owns the standard it's held to across the book, which account tiers get which depth of plan, and what triggers escalation when a plan shows a repeated risk, with each deliverable or milestone needing a clear owner and clear ownership to avoid stalled work. Many agencies already run tiering under names like Bronze, Silver and Gold, or Growth, Core and Strategic; whichever labels your firm uses, the plan's depth should follow the tier, not a single template forced across every account regardless of size.
 
-Across Kaizan's own client portfolio, accounts get an average revenue increase of 26%+ year over year. That number isn't produced by a document. It's produced by teams that know the client's actual goals well enough to act on them before the client has to ask, and a written plan is the cheapest way to get every account lead doing that consistently, not just the naturally good ones.
+Across Kaizan's own client portfolio, accounts get an average revenue increase of 26%+ year over year. That number isn't produced by a document. It's produced by teams that know the client's actual goals well enough to act on them through repeatable processes that create long term value before the client has to ask, and a written plan is the cheapest way to get every account lead doing that consistently, not just the naturally good ones.
 
 ## Customer success plan vs account plan vs QBR: what's the difference
 
-All three get used loosely enough that teams end up building one when they need another, or skipping all three because nobody can agree which one they're supposed to own.
+All three get used loosely enough that teams end up building one when they need another, or skipping all three because nobody can agree which one they're supposed to own, even though project plans play an important role and serve a different purpose from customer success plans.
 
 |  | Client success plan | Account plan | QBR deck |
 | --- | --- | --- | --- |
-| What it is | A living record of one client's goals, stakeholders, risks and milestones | A commercial growth strategy for one account, usually sales- or leadership-owned | A point-in-time presentation reviewing the last quarter |
+| What it is | A living, shared structure for one client's goals, owners, timelines, risks and milestones | A commercial growth strategy for one account, with project plans used to track tasks and due dates rather than broader outcomes | A point-in-time presentation reviewing the last quarter |
 | Updated | Continuously, between reviews | Annually or at renewal | Built fresh each quarter, then archived |
 | Owner | The account lead | Account lead plus leadership or new business | The account lead, presented to the client |
 | Audience | Internal, plus a client-facing joint version | Internal only | Shared directly with the client |
 | Answers | "Where does this relationship stand right now, and what are we doing about it?" | "How much bigger could this account get, and how do we get there?" | "What did we deliver last quarter, and what's next?" |
 | Fails when | Written once at onboarding and never reopened | Treated as a sales forecast with no delivery input | Built from memory the night before, instead of from the plan |
 
-The cleanest way to hold the distinction: an account plan is about growth potential, a QBR is about one quarter, and a client success plan is the living record that feeds both of them. A QBR built without an up-to-date success plan behind it is usually built from whoever's memory is freshest. An account plan without one is usually a revenue forecast with no evidence behind it. None of the customer success plans you'll write this year should look identical to each other either; a single retainer and a multi-region strategic account need the same seven fields, but not the same depth inside them, which is exactly what the three filled examples below are built to show.
+The cleanest way to hold the distinction: an account plan is about growth potential, a QBR is about one quarter, and a client success plan is the living record that feeds both of them and ties day-to-day work back to business goals. A QBR built without an up-to-date success plan behind it is usually built from whoever's memory is freshest. An account plan without one is usually a revenue forecast with no evidence behind it. None of the customer success plans you'll write this year should look identical to each other either; a single retainer and a multi-region strategic account need the same seven fields, but not the same depth inside them, which is exactly what the three filled examples below are built to show.
 
-## How to write a client success plan: section by section
+## How to write a client success plan template: section by section
 
-Use the blank template as your structure. Here's what each field is actually for, not just what to call it.
+Use the blank template as your structure for the key elements and key components of the plan. Here's what each field is actually for, not just what to call it, so teams can build structured plans instead of a document that gets forgotten.
 
 ### Executive summary & relationship snapshot
 
@@ -121,9 +121,9 @@ A multi-region retainer with 14 client-side stakeholders across three markets, a
 
 ## The joint, client-facing version: a shared goals worksheet
 
-The internal plan above is built for your team. The shared goals worksheet is built to hand to the client, or better, to fill out together with them in the room.
+The internal plan above is built for your team. The shared goals worksheet is built to hand to the client, or better, to fill out together with them in the room, as a shared plan for both the agency and its clients.
 
-It strips out anything that shouldn't travel outside your team: stakeholder risk flags, internal mitigation notes, account economics. What's left is the part worth co-owning: the goals, who's responsible for what on each side, the review cadence, and open items either side can raise.
+It strips out anything that shouldn't travel outside your team: stakeholder risk flags, internal mitigation notes, account economics. What's left is the part worth co-owning: the goals, who's responsible for what on each side, the review cadence, and open items either side can raise. Used this way, it can strengthen relationships because both sides have a clear understanding of key activities, responsibilities, and review points.
 
 Teams that build this jointly, rather than drafting it internally and sending it over for sign-off, get a different kind of document out of it. It stops being your plan that the client reviews, and starts being the plan both sides are accountable to. James Smith, CEO of The Kite Factory, described what that shared visibility looks like in practice across a large book of accounts:
 
@@ -137,42 +137,42 @@ That kind of shared context is exactly what a joint worksheet is built to carry,
 
 | Firm type or tier | Which version to use |
 | --- | --- |
-| Small or growth-stage agency (one plan owner per client) | Internal plan only; the shared worksheet is optional until the account justifies a formal joint review |
+| Small or growth-stage agency (one plan owner per client) | Internal plan only; the shared worksheet is optional until the account justifies a formal joint review, though a lighter version still benefits from simple tools if the firm wants to keep the plan current |
 | Mid-size agency, tiered accounts | Internal plan for every retained client; shared worksheet for Core and Strategic tiers |
-| Strategic or enterprise accounts, multi-region | Internal plan at the group level, with a regional pod section each; shared worksheet reviewed jointly every quarter |
+| Strategic or enterprise accounts, multi-region | Internal plan at the group level, with a regional pod section each; shared worksheet reviewed jointly every quarter and used to support renewal planning |
 | Professional services firm (consulting, research, legal) | Same structure; swap "campaign" and "deliverable" language in the milestones section for your own delivery units |
 
 ## Common mistakes when filling in a client success plan
 
 **Writing your goals instead of the client's.** A goals field full of what your team wants to deliver, rather than what the client actually said they wanted, is an activity log wearing a success plan's headings. The tell is a goal phrased as an output ("launch three campaigns this quarter") rather than an outcome in the client's own language ("get our cost per lead down without cutting volume"). If you can't point to a specific conversation where the client said something close to the words in the goals field, rewrite it.
 
-**Treating it as a one-time document.** A plan written once at onboarding and never reopened is a kickoff deck, not a living plan. If nobody's edited it in two review cycles, it's already gone stale, and the account lead is quietly back to running the relationship from memory, which is exactly the failure mode the plan was meant to replace.
+**Treating it as a one-time document.** A plan written once at onboarding and never reopened is a kickoff deck, not a living plan. If nobody's edited it in two review cycles, it's already gone stale, and the account lead is quietly back to running the relationship from memory, which is exactly the failure mode the plan was meant to replace. Repeatable processes also keep customer success teams from managing each account differently.
 
 **Skipping the risk section because nothing's visibly wrong.** As the data above shows, the strongest accounts surface more risk signals than the weakest ones, not fewer. An empty risk section usually means nobody's listening closely enough, not that there's nothing to hear. A useful habit: if the risk section is empty two reviews in a row, treat that as its own signal and ask why, rather than taking it as good news.
 
 **Running one template for every account tier.** A single retainer and a multi-region strategic account don't need the same level of stakeholder detail or the same review cadence. Forcing both into one format usually means under-serving the big account and over-building the small one, which is why the three filled examples above are different depths, not just different numbers plugged into the same shape.
 
-**No named owner for the next review.** A plan with no explicit owner and no scheduled next review date is a document that exists until someone remembers to open it again, which in practice means it doesn't. Put a date and a name on it the moment the plan is created, not after the first review happens to get scheduled.
+**No named owner for the next review.** A plan with no explicit owner and no scheduled next review date is a document that exists until someone remembers to open it again, which in practice means it doesn't. If the operating model makes a customer success manager accountable, put that date and name on it the moment the plan is created, not after the first review happens to get scheduled.
 
-**Letting the plan and the CRM disagree.** When the success plan says a stakeholder is engaged but the CRM hasn't logged contact with them in two months, one of the two is wrong, and it's usually the plan, because nobody reconciled it. Pick one system of record for contact recency and point the other one at it.
+**Letting the plan and the CRM disagree.** When the success plan says a stakeholder is engaged but the CRM hasn't logged contact with them in two months, one of the two is wrong, and it's usually the plan, because nobody reconciled it. Reconcile client data from the CRM with support team notes before the next review. Pick one system of record for contact recency and point the other one at it.
 
 ## How to tell whether a client success plan is actually working
 
-A plan that exists is not the same as a plan that's working. Three things are worth checking across your book, not just on the one account that's currently giving you trouble.
+A plan that exists is not the same as a plan that's working. Three things are worth checking in the following ways across your book, not just on the one account that's currently giving you trouble.
 
-**How much of the plan changed at the last review.** A plan where every field reads identically to the review before it either describes a genuinely unchanging account, which is rare, or has stopped being updated honestly. Look for at least one meaningful change, a new risk, a closed milestone, a stakeholder flagged as quiet, at every single review.
+**How much of the plan changed at the last review.** A plan where every field reads identically to the review before it either describes a genuinely unchanging account, which is rare, or has stopped being updated honestly. Look for at least one meaningful change, a new risk, a closed milestone, a stakeholder flagged as quiet, at every single review, with the change tied back to measurable outcomes.
 
-**How many risks were caught before the client raised them.** This is the number worth reporting upward. An account lead who can point to two risks the plan surfaced before the client mentioned them formally is doing the job the plan exists to support. An account lead who can't point to any, across a full quarter, is either running an unusually quiet book or not using the risk section the way it's meant to be used.
+**How many risks were caught before the client raised them.** This is the number worth reporting upward. An account lead who can point to two risks the plan surfaced before the client mentioned them formally is doing the job the plan exists to support. An account lead who can't point to any, across a full quarter, is either running an unusually quiet book or not using the risk section the way it's meant to be used; engagement metrics can help show the early signal, not just the lagging outcome.
 
 **How long a flagged stakeholder stays flagged.** If the plan has been noting "Finance Director, last contact 7 weeks ago" for three consecutive reviews with no action taken, the plan has become a record of a known gap rather than a tool for closing it. A flag that sits unresolved for more than one review cycle should trigger the off-cycle review trigger described above, not just get copied forward.
 
 ## How to keep a client success plan current without manual updates
 
-The honest objection to all of this: who actually has time to keep a stakeholder map, a risk log and a goals section updated across an entire book of accounts, on top of doing the work? For most teams, the answer is nobody does, which is why the plan quietly reverts to a kickoff document that nobody reopens.
+The honest objection to all of this: who actually has the tools to keep a stakeholder map, a risk log and a goals section current across an entire book of accounts, on top of doing the work? For most teams, the answer is nobody does, which is why the plan quietly reverts to a kickoff document that nobody reopens.
 
-Kaizan built its Client Health Model to solve exactly that gap. Every account is scored continuously against what we call the Evidence-Based Client Health Standard, four dimensions of relationship health, known internally as CARE, covering client satisfaction, activity with stakeholders, relationship strength, and expansion opportunities, scored from the actual calls, emails and meetings the account team is already having rather than from a form someone fills in once a month. In plain terms, that means the stakeholder map updates itself when a decision-maker goes quiet, the risk log picks up a concern the moment it's mentioned on a call, and the goals section can be checked against what the client is actually saying in conversation, not just what was written down at onboarding.
+Kaizan built its Client Health Model to solve exactly that gap. Every account is scored continuously against what we call the Evidence-Based Client Health Standard, four dimensions of relationship health, known internally as CARE, covering client satisfaction, activity with stakeholders, relationship strength, and expansion opportunities, scored from the actual calls, emails and meetings the account team is already having rather than from a form someone fills in once a month. In plain terms, that means the stakeholder map updates itself when a decision-maker goes quiet, the risk log picks up a concern the moment it's mentioned on a call, and the goals section can be checked against what the client is actually saying in conversation, not just what was written down at onboarding. Making that progress visible across the whole company also supports continuous improvement, because everyone is working from the same live picture instead of separate notes.
 
-That matters because measurement frequency, not the underlying sentiment, is usually the real gap. Kaizan's benchmark found that where client satisfaction is actually measured, the strongest and weakest accounts score almost identically, at 7.1 out of 10 either way. The real difference is how often anyone checks: the strongest accounts get measured roughly 2.9 times more often (41 times a year, against 14). A success plan reviewed once a quarter is working from the same gap. Senior Client Partner Joe Etchells, at Agency Client A, described what changes when that picture stops depending on memory:
+That matters because measurement frequency, not the underlying sentiment, is usually the real gap. Kaizan's benchmark found that where client satisfaction is actually measured, the strongest and weakest accounts score almost identically, at 7.1 out of 10 either way. The real difference is how often anyone checks: the strongest accounts get measured roughly 2.9 times more often (41 times a year, against 14). A success plan reviewed once a quarter is working from the same gap. The marketing team and sales team can add useful handoff context, and client inquiries can add signals that sharpen the plan as the relationship develops. Senior Client Partner Joe Etchells, at Agency Client A, described what changes when that picture stops depending on memory:
 
 > "When I look at my client portfolio as a whole, I think it's getting better and more representative and more accurate at portraying where we're at with these client relationships."
 >
