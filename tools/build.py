@@ -7154,8 +7154,18 @@ BC_LOCALES = {
 }
 
 
+_BOOK_CALL_BLOCK_RE = re.compile(
+    r'<div class="kz-bc" data-book-call-modal.*?<script defer src="/assets/(?:dist/)?js/book-call\.js[^"]*"></script>\n?',
+    re.S)
+
+
 def book_call_inject(html: str, locale: str) -> str:
-    """Append the popup + its script to a page (UK root or /us/ mirror)."""
+    """Append the popup + its script to a page (UK root or /us/ mirror).
+
+    Idempotent: any popup already in the page is removed first. Hand-written pages that are tracked
+    as source (e.g. resources/white-paper/) are re-processed on every build, so without this each
+    build added another copy (the white paper page had 58) and the /us/ mirror kept the UK popup."""
+    html = _BOOK_CALL_BLOCK_RE.sub('', html)
     return html.replace(
         '</body>',
         book_call_modal_html(locale) + '\n'
