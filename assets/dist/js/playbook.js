@@ -6,8 +6,6 @@ var FREE = ['gmail.com','googlemail.com','yahoo.com','yahoo.co.uk','hotmail.com'
 'tutanota.com','duck.com','hey.com'];
 var form = document.getElementById('pb-form-el');
 if (!form) return;
-var card = document.getElementById('form');
-var done = card.querySelector('.pb-done');
 var email = form.elements.EMAIL;
 var role = form.elements.JOBT;
 var btn = form.querySelector('button[type="submit"]');
@@ -51,6 +49,7 @@ if (btn.disabled) return;
 var label = btn.innerHTML;
 btn.disabled = true;
 btn.textContent = 'Submitting…';
+var pdfTab = window.open('', '_blank');
 var jsonUrl = form.getAttribute('data-mc-json');
 var cb = 'kzPlaybook_' + Date.now();
 var s = document.createElement('script');
@@ -60,6 +59,7 @@ if (s.parentNode) s.parentNode.removeChild(s);
 }
 function failed(text) {
 finish();
+if (pdfTab) pdfTab.close();
 fail.textContent = text || 'Something went wrong. Please try again.';
 fail.classList.add('is-visible');
 btn.disabled = false;
@@ -74,10 +74,8 @@ return failed((d.textContent || '').trim());
 finish();
 try { sessionStorage.removeItem(STORE); } catch (e) {}
 if (window.dataLayer) window.dataLayer.push({ event: 'playbook_download', role: rv });
-done.querySelector('[data-pb-email]').textContent = ev;
-form.hidden = true;
-done.hidden = false;
-done.focus();
+if (pdfTab) pdfTab.location.href = form.getAttribute('data-pdf');
+window.location.href = form.getAttribute('data-confirm');
 };
 s.onerror = function () { failed('Network error, please try again.'); };
 s.src = jsonUrl + '&' + new URLSearchParams(new FormData(form)).toString() + '&c=' + cb;
