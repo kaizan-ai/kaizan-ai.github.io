@@ -551,6 +551,22 @@
       var role = form.querySelector('[name=ROLE]');
       // Job role opens once the email box is used, and stays open.
       var emailIn = form.querySelector('[name=EMAIL]');
+      // Hidden UTM merge fields: same sessionStorage store and rule as trial-form.js / book-call.js
+      // (a URL carrying any tracking parameter replaces the saved set). Runs on every page that has
+      // the footer, so values are captured on arrival even where no other form is present.
+      var utmEls = form.querySelectorAll('input[data-utm]');
+      if (utmEls.length) {
+        var utmSaved = {};
+        try { utmSaved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) {}
+        var utmParams = new URLSearchParams(window.location.search);
+        var utmFromUrl = Array.prototype.some.call(utmEls, function (el) { return utmParams.has(el.getAttribute('data-utm')); });
+        Array.prototype.forEach.call(utmEls, function (el) {
+          var k = el.getAttribute('data-utm');
+          el.value = (utmFromUrl ? (utmParams.get(k) || '') : (utmSaved[k] || '')).slice(0, 255);
+          utmSaved[k] = el.value;
+        });
+        if (utmFromUrl) { try { sessionStorage.setItem('kz-utm', JSON.stringify(utmSaved)); } catch (e) {} }
+      }
       function open() { form.classList.add('is-open'); }
       emailIn.addEventListener('focus', open);
       emailIn.addEventListener('input', open);

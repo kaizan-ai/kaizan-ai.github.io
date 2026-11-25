@@ -1406,6 +1406,7 @@ def footer_html(depth: int) -> str:
             <label for="kz-nl-role">Your job role</label>
             <select id="kz-nl-role" name="ROLE" required>{role_options}</select>
           </div>
+          {''.join(f'<input type="hidden" name="{tag}" value="" data-utm="{param}">' for tag, param in TRIAL_UTM_FIELDS)}
           <input type="hidden" name="tags" value="newsletter">
           <!-- Mailchimp bot-prevention field, keep, do not remove -->
           <div style="position:absolute;left:-5000px;" aria-hidden="true">
