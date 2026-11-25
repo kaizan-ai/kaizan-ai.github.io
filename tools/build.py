@@ -84,6 +84,7 @@ PRODUCT_MENU = [
 RESOURCES_MENU = [
     ('All resources', 'resources/',      'is-mute'),
     ('Blog',          'blog/',           'is-mute'),
+    ('Client Health Playbook', 'resources/client-health-playbook/', 'is-mute'),
     ('White paper',   'resources/white-paper/', 'is-mute'),
     ('Case studies',  'case-studies/',   'is-mute'),
     ('Knowledge Hub', 'knowledge-hub/',  'is-mute'),
