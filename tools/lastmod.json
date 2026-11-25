@@ -51,6 +51,10 @@
   "h": "f58dbbaed620",
   "d": "2026-11-25"
  },
+ "/daruma/": {
+  "h": "fb7bd54d6853",
+  "d": "2026-11-25"
+ },
  "/for/account-manager/": {
   "h": "39e3ddf29d09",
   "d": "2026-11-25"
@@ -161,6 +165,10 @@
  },
  "/us/case-studies/verkeer/": {
   "h": "4b38e81e311a",
+  "d": "2026-11-25"
+ },
+ "/us/daruma/": {
+  "h": "f816d386e34a",
   "d": "2026-11-25"
  },
  "/us/for/account-manager/": {

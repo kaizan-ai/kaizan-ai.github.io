@@ -18,6 +18,7 @@
 - [The Kite Factory · Case study](https://kaizan.ai/case-studies/the-kite-factory/): Three saves in one quarter that we would have missed. A The Kite Factory case study from Kaizan.
 - [Verkeer · Case study](https://kaizan.ai/case-studies/verkeer/): How Verkeer cut QBR prep from 6 hours to 40 minutes. A Verkeer case study from Kaizan.
 - [Cookie Policy](https://kaizan.ai/cookie-policy/): The cookies Kaizan uses on its website and app, and how to manage them.
+- [A Daruma for your 2027 client goal](https://kaizan.ai/daruma/): Request a free Daruma doll for your desk. Set one client goal for 2027, colour in the first eye, and the second when you hit it. UK addresses, posted in time for the new year.
 - [Data Processing Agreement](https://kaizan.ai/data-processing-agreement/): How Kaizan processes personal data on behalf of its customers.
 - [Kaizan FAQs: Pricing, Integrations, Setup](https://kaizan.ai/faq/): Answers on what Kaizan is, how it works, integrations, the free 14-day pilot, pricing and annual contracts, outcomes, comparisons and how to work with us.
 - [AI Client Intelligence for Account Managers](https://kaizan.ai/for/account-manager/): Get your day back. Kaizan removes the admin and surfaces the next best action on every client, so you can focus on the work only you can do.
