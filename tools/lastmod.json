@@ -1,94 +1,94 @@
 {
  "/": {
-  "h": "35d7cdd5027d",
+  "h": "22d2d3a12f3c",
   "d": "2026-11-25"
  },
  "/blog/": {
-  "h": "1ad9666453af",
+  "h": "9030d8b7262c",
   "d": "2026-11-25"
  },
  "/blog/agency-profitability/": {
-  "h": "6b3f49609bc1",
+  "h": "23b7285198f0",
   "d": "2026-11-25"
  },
  "/blog/ai-for-client-service/": {
-  "h": "cd8114cad976",
+  "h": "0da7d30a8cc3",
   "d": "2026-11-25"
  },
  "/blog/client-health/": {
-  "h": "7536efc4dc5d",
+  "h": "cc8375c02a5a",
   "d": "2026-11-25"
  },
  "/blog/client-software/": {
-  "h": "badc83c9df7d",
+  "h": "29d230fa0ab2",
   "d": "2026-11-25"
  },
  "/blog/playbooks-and-templates/": {
-  "h": "e710838a3a2b",
+  "h": "2e2406adb97c",
   "d": "2026-11-25"
  },
  "/blog/qa/": {
-  "h": "efa2a0f80c48",
+  "h": "5831fcf72e3a",
   "d": "2026-11-25"
  },
  "/case-studies/": {
-  "h": "17ddbc5995e9",
+  "h": "0e3328d7c46d",
   "d": "2026-11-25"
  },
  "/case-studies/jellyfish/": {
-  "h": "c2e385f89c57",
+  "h": "64216506aeb2",
   "d": "2026-11-25"
  },
  "/case-studies/scale/": {
-  "h": "c1273f40fbbf",
+  "h": "9db17330b1bb",
   "d": "2026-11-25"
  },
  "/case-studies/the-kite-factory/": {
-  "h": "de2145a0f190",
+  "h": "e7f23f2cf40e",
   "d": "2026-11-25"
  },
  "/case-studies/verkeer/": {
-  "h": "c23bca0f6170",
+  "h": "f58dbbaed620",
   "d": "2026-11-25"
  },
  "/for/account-manager/": {
-  "h": "bef733b34086",
+  "h": "39e3ddf29d09",
   "d": "2026-11-25"
  },
  "/for/head-of-ai/": {
-  "h": "0c91b102f1c3",
+  "h": "dbb2ac65702b",
   "d": "2026-11-25"
  },
  "/for/strategy-creative-marketing/": {
-  "h": "13f7e0fb3431",
+  "h": "46702f13d313",
   "d": "2026-11-25"
  },
  "/hall-of-fame/": {
-  "h": "303649a3922e",
+  "h": "4c7847461524",
   "d": "2026-11-25"
  },
  "/hall-of-fame/dayna-nichols/": {
-  "h": "d303bb1c0f93",
+  "h": "89f438d2fc6e",
   "d": "2026-11-25"
  },
  "/hall-of-fame/gaetan-staples/": {
-  "h": "c6fa7e5143ac",
+  "h": "594cf689e075",
   "d": "2026-11-25"
  },
  "/hall-of-fame/leo-berggren/": {
-  "h": "53c8e21d9f6e",
+  "h": "c3b2325504dd",
   "d": "2026-11-25"
  },
  "/hall-of-fame/stephanie-pereira/": {
-  "h": "79ba7b26015f",
+  "h": "3da2daa41e48",
   "d": "2026-11-25"
  },
  "/knowledge-hub/": {
-  "h": "052a6fef3ad6",
+  "h": "72d5ae4ab30c",
   "d": "2026-11-25"
  },
  "/product/": {
-  "h": "09adb8751310",
+  "h": "c8a4abee7acd",
   "d": "2026-11-25"
  },
  "/referral-partners/": {
@@ -96,11 +96,11 @@
   "d": "2026-11-03"
  },
  "/resources/": {
-  "h": "cc2a87f03db1",
+  "h": "07b15cffbc29",
   "d": "2026-11-25"
  },
  "/resources/client-health-playbook/": {
-  "h": "74605e48e900",
+  "h": "968b9593470b",
   "d": "2026-11-25"
  },
  "/resources/white-paper/": {
@@ -108,99 +108,99 @@
   "d": "2026-11-25"
  },
  "/security/": {
-  "h": "6787a002ca10",
+  "h": "6c6765236a43",
   "d": "2026-11-25"
  },
  "/us/": {
-  "h": "542fcf317261",
+  "h": "105c7b51de9d",
   "d": "2026-11-25"
  },
  "/us/blog/": {
-  "h": "fd85cb992ab2",
+  "h": "0726507ebcf1",
   "d": "2026-11-25"
  },
  "/us/blog/agency-profitability/": {
-  "h": "2076e48fbe05",
+  "h": "f46a6a73faae",
   "d": "2026-11-25"
  },
  "/us/blog/ai-for-client-service/": {
-  "h": "485a43335ed6",
+  "h": "485bf3bad786",
   "d": "2026-11-25"
  },
  "/us/blog/client-health/": {
-  "h": "f39ab82d09de",
+  "h": "24186da5fb30",
   "d": "2026-11-25"
  },
  "/us/blog/client-software/": {
-  "h": "82bc4f9697fa",
+  "h": "22f09f0060c0",
   "d": "2026-11-25"
  },
  "/us/blog/playbooks-and-templates/": {
-  "h": "f94ae32f6a37",
+  "h": "18e7a42002af",
   "d": "2026-11-25"
  },
  "/us/blog/qa/": {
-  "h": "7a039e1cf385",
+  "h": "ca104867c13c",
   "d": "2026-11-25"
  },
  "/us/case-studies/": {
-  "h": "0f3e0d02fdfa",
+  "h": "1166d1a889e4",
   "d": "2026-11-25"
  },
  "/us/case-studies/jellyfish/": {
-  "h": "d8942b6b0899",
+  "h": "c706f7066e95",
   "d": "2026-11-25"
  },
  "/us/case-studies/scale/": {
-  "h": "b36358f18b16",
+  "h": "d56e50936599",
   "d": "2026-11-25"
  },
  "/us/case-studies/the-kite-factory/": {
-  "h": "155020e27b8d",
+  "h": "8eb58556026f",
   "d": "2026-11-25"
  },
  "/us/case-studies/verkeer/": {
-  "h": "948bdfd72a6d",
+  "h": "4b38e81e311a",
   "d": "2026-11-25"
  },
  "/us/for/account-manager/": {
-  "h": "77154f8582f3",
+  "h": "54997af52033",
   "d": "2026-11-25"
  },
  "/us/for/head-of-ai/": {
-  "h": "0f1600344479",
+  "h": "78f7f5dfc1a3",
   "d": "2026-11-25"
  },
  "/us/for/strategy-creative-marketing/": {
-  "h": "6cf7be3c45b9",
+  "h": "2533e16124ea",
   "d": "2026-11-25"
  },
  "/us/hall-of-fame/": {
-  "h": "2bb8fadb10b3",
+  "h": "1cc664b2d754",
   "d": "2026-11-25"
  },
  "/us/hall-of-fame/dayna-nichols/": {
-  "h": "8f6e9a0a92ea",
+  "h": "bc0c2dc56874",
   "d": "2026-11-25"
  },
  "/us/hall-of-fame/gaetan-staples/": {
-  "h": "34beca808ea6",
+  "h": "c640bce34a1c",
   "d": "2026-11-25"
  },
  "/us/hall-of-fame/leo-berggren/": {
-  "h": "c25be247f4c5",
+  "h": "8611a80949a3",
   "d": "2026-11-25"
  },
  "/us/hall-of-fame/stephanie-pereira/": {
-  "h": "0be1addf8a17",
+  "h": "06606b7e4697",
   "d": "2026-11-25"
  },
  "/us/knowledge-hub/": {
-  "h": "320ff86f801a",
+  "h": "746901a04dfa",
   "d": "2026-11-25"
  },
  "/us/product/": {
-  "h": "84b2bba9aa37",
+  "h": "571c03a156ce",
   "d": "2026-11-25"
  },
  "/us/referral-partners/": {
@@ -208,11 +208,11 @@
   "d": "2026-11-03"
  },
  "/us/resources/": {
-  "h": "bbf177aa5473",
+  "h": "6c979017436e",
   "d": "2026-11-25"
  },
  "/us/resources/client-health-playbook/": {
-  "h": "80fd565d6cfd",
+  "h": "817e662e99e1",
   "d": "2026-11-25"
  },
  "/us/resources/white-paper/": {
@@ -220,7 +220,7 @@
   "d": "2026-11-25"
  },
  "/us/security/": {
-  "h": "6b8e4bea20d6",
+  "h": "80fa010e55ac",
   "d": "2026-11-25"
  }
 }
