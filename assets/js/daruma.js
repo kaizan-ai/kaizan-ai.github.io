@@ -201,8 +201,6 @@
   });
 
   function showSent() {
-    var city = val('city');
-    sent.querySelector('.dm-sent-city').textContent = city ? ' to ' + city : '';
     form.hidden = true;
     sent.hidden = false;
     sent.focus({ preventScroll: true });

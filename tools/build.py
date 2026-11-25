@@ -4729,7 +4729,7 @@ def render_july_offer() -> str:
 
 
 # ─────────────────────────────────────────────────────────────────────
-# DARUMA — December 2026 gift campaign at /daruma/. Account directors and heads
+# DARUMA — new-year 2027 gift campaign at /daruma/. Account directors and heads
 # of client services request a Daruma doll for their desk, set one client goal
 # for 2027 and colour in the first eye. The insert card's QR links to #share.
 #
@@ -4886,7 +4886,7 @@ def render_daruma() -> str:
               <a class="kz-btn kz-btn-yellow dm-pill" href="#request">Get your Daruma</a>
               <a class="kz-btn kz-btn-ghost dm-pill" href="#how">How it works</a>
             </div>
-            <p class="dm-small">Free &middot; UK addresses &middot; Posted in December</p>
+            <p class="dm-small">Free &middot; UK addresses &middot; In time for the new year</p>
           </div>
           <div class="dm-hero-art">
             <div class="dm-stage">{daruma_svg("dm-doll--hero", interactive=True)}</div>
@@ -5003,7 +5003,7 @@ def render_daruma() -> str:
       <section class="dm-request" id="request">
         <div class="dm-wrap">
           <h2 class="dm-h2">Get your Daruma.</h2>
-          <p class="dm-sub">We&rsquo;ll post it to your desk in December, in time to set your goal for the
+          <p class="dm-sub">We&rsquo;ll post it to your desk in time to set your goal for the
             new year.</p>
           <div class="dm-request-grid">
             <div class="dm-box">
@@ -5027,10 +5027,8 @@ def render_daruma() -> str:
               </form>
               <div class="dm-sent" id="dm-sent" hidden tabindex="-1">
                 {daruma_svg("dm-doll--sent", left=True)}
-                <h3>Request received.</h3>
-                <p>Thanks. We&rsquo;ll check your details, and if we can send one, your Daruma will be posted<span class="dm-sent-city"></span> in December.
-                  When it arrives, pick your goal and colour in the first eye.</p>
-                <a class="dm-link" href="#share">Then show us yours &rarr;</a>
+                <h3>Thanks for requesting!</h3>
+                <p>We&rsquo;ll be in touch shortly.</p>
               </div>
             </div>
           </div>
@@ -5058,7 +5056,7 @@ def render_daruma() -> str:
             f'<script defer src="{p}{js}{asset_v(js)}"></script>')
     return page_head('A Daruma for your 2027 client goal', 1,
                      'Request a free Daruma doll for your desk. Set one client goal for 2027, colour in '
-                     'the first eye, and the second when you hit it. UK addresses, posted in December.',
+                     'the first eye, and the second when you hit it. UK addresses, posted in time for the new year.',
                      extra_head=head) + body + page_foot()
 
 
