@@ -41,7 +41,9 @@
   inputs.forEach(function (el) {
     var k = el.getAttribute('data-utm');
     el.value = (fromUrl ? (params.get(k) || '') : (saved[k] || '')).slice(0, 255);
+    saved[k] = el.value;
   });
+  if (fromUrl) { try { sessionStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {} }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -77,6 +79,7 @@
         return failed((d.textContent || '').trim());
       }
       finish();
+      try { sessionStorage.removeItem(STORE); } catch (e) {}
       if (window.dataLayer) window.dataLayer.push({ event: 'playbook_download', role: rv });
       done.querySelector('[data-pb-email]').textContent = ev;
       form.hidden = true;
