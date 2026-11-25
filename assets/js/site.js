@@ -4,6 +4,43 @@
 (function () {
   'use strict';
 
+  // ── Campaign tracking shown on every page ────────────────────────────
+  // The UTM / click-id values from the landing URL are kept for the tab's session (sessionStorage
+  // 'kz-utm', the store the forms read). Once a page has loaded, its address bar is given any saved
+  // value it lacks (history.replaceState, no reload) and Google's link-decorator `_gl` parameter is
+  // dropped. This runs AFTER load on purpose: links are not decorated and the URL is only changed
+  // once the page view has been sent, so analytics (GA4) sees the campaign on the landing page only
+  // and does not re-attribute later pages to it.
+  // Rule (same as the forms): a URL with any utm_* / qr_* parameter replaces the saved set; a URL with
+  // only a click id (gclid) just updates that key.
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_term', 'qr_placement', 'utm_cta', 'utm_campaign',
+    'utm_content', 'utm_country', 'utm_usp', 'utm_angle', 'utm_hook', 'gclid', 'utm_id', 'utm_adgroup'];
+  function initUtmCarry() {
+    var saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) {}
+    var q = new URLSearchParams(window.location.search);
+    if (UTM_KEYS.some(function (k) { return q.has(k); })) {
+      var replaceSet = UTM_KEYS.some(function (k) { return k !== 'gclid' && q.has(k); });
+      UTM_KEYS.forEach(function (k) {
+        if (replaceSet) saved[k] = (q.get(k) || '').slice(0, 255);
+        else if (q.has(k)) saved[k] = q.get(k).slice(0, 255);
+      });
+      try { sessionStorage.setItem('kz-utm', JSON.stringify(saved)); } catch (e) {}
+    }
+    if (!window.history || !history.replaceState) return;
+    function tidyUrl() {
+      try {
+        var u = new URL(window.location.href);
+        u.searchParams.delete('_gl');
+        UTM_KEYS.forEach(function (k) { if (saved[k] && !u.searchParams.has(k)) u.searchParams.set(k, saved[k]); });
+        if (u.href !== window.location.href) history.replaceState(history.state, '', u.href);
+      } catch (e) {}
+    }
+    if (document.readyState === 'complete') setTimeout(tidyUrl, 1500);
+    else window.addEventListener('load', function () { setTimeout(tidyUrl, 1500); });
+  }
+  initUtmCarry();
+
   // ── Mobile nav toggle ────────────────────────────────────────────
   function initMobileNav() {
     document.querySelectorAll('.kz-nav').forEach(function (nav) {
