@@ -40,6 +40,7 @@
 - [Privacy Policy](https://kaizan.ai/privacy-policy/): How Kaizan Limited collects, uses and protects your personal data.
 - [Product](https://kaizan.ai/product/): AI Assistant, AI Helpers, the Client Health Model and Client News, one platform for AI-first client service teams.
 - [Referral Partner Program](https://kaizan.ai/referral-partners/): Earn 15% of the first year and 7.5% of the second when you introduce a firm to Kaizan. Book a call with the partner team.
+- [The Client Health Playbook](https://kaizan.ai/resources/client-health-playbook/): See client risk before it is too late. A free playbook on the habits of the best client teams, the CARE framework and a plan you can start today.
 - [Resources](https://kaizan.ai/resources/): Research, playbooks, case studies and answers on client relationships, from the team behind Kaizan.
 - [The 2026 Client Service Report](https://kaizan.ai/resources/white-paper/)
 - [Security & Trust](https://kaizan.ai/security/): How Kaizan secures your data, handles privacy, and governs the AI behind the product.
