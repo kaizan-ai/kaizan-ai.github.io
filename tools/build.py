@@ -1407,8 +1407,8 @@ def footer_html(depth: int) -> str:
             <label for="kz-nl-role">Your job role</label>
             <select id="kz-nl-role" name="ROLE" required>{role_options}</select>
           </div>
-          {''.join(f'<input type="hidden" name="{tag}" value="" data-utm="{param}">' for tag, param in TRIAL_UTM_FIELDS)}
-          <input type="hidden" name="tags" value="newsletter">
+          {''.join(f'<input type="hidden" name="{NEWSLETTER_MC_FIELD_NAMES.get(tag, tag)}" value="" data-utm="{param}">' for tag, param in TRIAL_UTM_FIELDS)}
+          <input type="hidden" name="tags" value="{NEWSLETTER_MC_TAGS}">
           <!-- Mailchimp bot-prevention field, keep, do not remove -->
           <div style="position:absolute;left:-5000px;" aria-hidden="true">
             <input type="text" name="{MC_HONEYPOT}" tabindex="-1" value="">
@@ -1781,6 +1781,11 @@ TRIAL_UTM_FIELDS = [
     ('UTMUSP', 'utm_usp'), ('UTMANGL', 'utm_angle'), ('UTMHOOK', 'utm_hook'),
     ('GCLID', 'gclid'), ('UTMID', 'utm_id'), ('UTMADGRP', 'utm_adgroup'),
 ]
+
+# The newsletter audience (id 40f0f855d8) names two merge fields differently from the trial audience,
+# and tags subscribers by id. Values from its Mailchimp embed.
+NEWSLETTER_MC_FIELD_NAMES = {'UTMANGL': 'UTMANGLE', 'UTMADGRP': 'UTMADGROUP'}
+NEWSLETTER_MC_TAGS = '3789803'
 
 # Values must match the Mailchimp MMERGE12 dropdown choices exactly.
 TRIAL_HEARD_OPTIONS = [
