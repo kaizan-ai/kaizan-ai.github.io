@@ -24,15 +24,17 @@
   var saved = {};
   try { saved = JSON.parse(sessionStorage.getItem(STORE) || '{}') || {}; } catch (e) {}
   var params = new URLSearchParams(window.location.search);
-  var fromUrl = false;
+  var fromUrl = false, replaceSet = false;
   form.querySelectorAll('input[data-utm]').forEach(function (el) {
-    if (params.has(el.getAttribute('data-utm'))) fromUrl = true;
+    var k = el.getAttribute('data-utm');
+    if (params.has(k)) { fromUrl = true; if (k !== 'gclid') replaceSet = true; }
   });
   form.querySelectorAll('input[data-utm]').forEach(function (el) {
     var key = el.getAttribute('data-utm');
     // A URL carrying any UTM parameter replaces the whole saved set, so
-    // parameters from an earlier campaign click don't mix with this one.
-    var val = fromUrl ? (params.get(key) || '') : (saved[key] || '');
+    // parameters from an earlier campaign click don't mix with this one. A URL carrying only a
+    // click id (gclid, which Google's link decorator adds to internal links) just updates that key.
+    var val = replaceSet ? (params.get(key) || '') : (params.has(key) ? params.get(key) : (saved[key] || ''));
     el.value = val.slice(0, 255);
     saved[key] = el.value;
   });

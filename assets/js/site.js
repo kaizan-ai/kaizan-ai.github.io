@@ -560,9 +560,11 @@
         try { utmSaved = JSON.parse(sessionStorage.getItem('kz-utm') || '{}') || {}; } catch (e) {}
         var utmParams = new URLSearchParams(window.location.search);
         var utmFromUrl = Array.prototype.some.call(utmEls, function (el) { return utmParams.has(el.getAttribute('data-utm')); });
+        // A click id on its own (gclid, added by Google's link decorator) only updates that key.
+        var utmReplace = Array.prototype.some.call(utmEls, function (el) { var k = el.getAttribute('data-utm'); return k !== 'gclid' && utmParams.has(k); });
         Array.prototype.forEach.call(utmEls, function (el) {
           var k = el.getAttribute('data-utm');
-          el.value = (utmFromUrl ? (utmParams.get(k) || '') : (utmSaved[k] || '')).slice(0, 255);
+          el.value = (utmReplace ? (utmParams.get(k) || '') : (utmParams.has(k) ? utmParams.get(k) : (utmSaved[k] || ''))).slice(0, 255);
           utmSaved[k] = el.value;
         });
         if (utmFromUrl) { try { sessionStorage.setItem('kz-utm', JSON.stringify(utmSaved)); } catch (e) {} }
