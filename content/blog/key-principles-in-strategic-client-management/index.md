@@ -46,15 +46,15 @@ Strategic client management provides a framework for identifying and targeting h
 
 It enables teams to focus on the client and their needs. The strategy should identify those needs, how to keep track of them, and how to respond to them. But it’s also about identifying how those needs can benefit the business and how the understanding of the client can be used to improve the business.
 
-## Why Is Strategic Client Management and Customer Success Important For a Business?
+## Why Is Strategic Client Management and Client Success Important For a Business?
 
 Strategic client management is important because it allows a business to build and maintain strong relationships with its key clients. This is critical to both maintaining and increasing revenue streams.
 
-Through strategic client management, a business can better understand the needs and wants of its clients, use insights to understand what clients need, and then tailor its products and services to meet those needs. Profiling and planning for specific clients will help you shape your work for them, which increases client satisfaction. Having a forward-looking strategy instead of just a series of reactions means that you will be ahead of the ball, constantly impressing clients by providing the things they hadn’t yet said they needed. Strategising your communications means that you’ll approach clients in a way that suits them, whether they recognise it or not.
+Through strategic client management, a business can better understand the needs and wants of its clients, use insights to understand what clients need, and then tailor its services to meet those needs. Profiling and planning for specific clients will help you shape your work for them, which increases client satisfaction. Having a forward-looking strategy instead of just a series of reactions means that you will be ahead of the ball, constantly impressing clients by providing the things they hadn’t yet said they needed. Strategising your communications means that you’ll approach clients in a way that suits them, whether they recognise it or not.
 
-All of this leads to greater client loyalty, as you’re providing the services the client wants in a way that suits them. Loyalty protects your revenue streams from competitors trying to sell their own products and services to the client. It also means that the client is more likely to recommend you to others, which can expand your markets.
+All of this leads to greater client loyalty, as you’re providing the services the client wants in a way that suits them. Loyalty protects your revenue streams from competitors trying to sell their own services to the client. It also means that the client is more likely to recommend you to others, which can expand your markets.
 
-In addition, strategic client management can help you to identify and capitalise on new business opportunities. By building profiles of your clients, you can understand their interests and identify gaps in what they’re getting, creating opportunities to support growth by delivering meaningful value to each strategic client through additional services or new products for similar client groups.
+In addition, strategic client management can help you to identify and capitalise on new business opportunities. By building profiles of your clients, you can understand their interests and identify gaps in what they’re getting, creating opportunities to support growth by delivering meaningful value to each strategic client through additional services or new offerings for similar client groups.
 
 Client management is important for any business with substantial long-term clients. But like any area in business, it comes with challenges.
 
@@ -64,9 +64,9 @@ Some of the key challenges in strategic client management are distinctive to thi
 
 ## Time management
 
-One of the most difficult challenges for Customer Success Managers is balancing their time as the job shifts from reactive support toward more strategic customer success priorities. There are deadlines to meet, client meetings and networking events to attend, projects to complete, and an endless stream of calls and emails to respond to.
+One of the most difficult challenges for Account Managers is balancing their time as the job shifts from reactive support toward more strategic client success priorities. There are deadlines to meet, client meetings and networking events to attend, projects to complete, and an endless stream of calls and emails to respond to.
 
-One of the biggest risks is that reactive tasks get in the way of proactive ones, with current crises obstructing strategic goals. Deal with twenty seemingly urgent emails and suddenly you’ve lost the morning you were going to spend researching a client profile. A Customer Success Manager needs clear priorities in the early stages of account planning to stop reactive work taking over. Meanwhile, other small tasks are slipping through the gaps, and another key client hasn’t had a catchup call in weeks. Everybody’s working experience is different, but the challenge of fitting it all in is universal.
+One of the biggest risks is that reactive tasks get in the way of proactive ones, with current crises obstructing strategic goals. Deal with twenty seemingly urgent emails and suddenly you’ve lost the morning you were going to spend researching a client profile. A Account Manager needs clear priorities in the early stages of account planning to stop reactive work taking over. Meanwhile, other small tasks are slipping through the gaps, and another key client hasn’t had a catchup call in weeks. Everybody’s working experience is different, but the challenge of fitting it all in is universal.
 
 One way to overcome this challenge is to create a daily or weekly schedule and stick to it as much as possible. Block out time for critical tasks, not just calls and meetings.
 
@@ -96,7 +96,7 @@ This is partly about getting to know the client’s representatives on a persona
 
 ## Organisational skills
 
-Effective client management involves a lot of moving parts. You need to keep track of what’s going on with various different clients, products, and projects, and client service managers need to be organised in order to keep track of all this. It’s not enough just to have things like account information and work records, you need to be sure that it’s up to date and that client information stays accessible across your platform.
+Effective client management involves a lot of moving parts. You need to keep track of what’s going on with various different clients, services, and projects, and client service managers need to be organised in order to keep track of all this. It’s not enough just to have things like account information and work records, you need to be sure that it’s up to date and that client information stays accessible across your platform.
 
 Organisational work includes keeping track of deadlines, invoices, finance-related information, and other important information. If an account manager is not organised, this can lead to missed deadlines, frustrated clients, and lost revenues.
 
@@ -104,7 +104,7 @@ As with time management, there are a lot of different tools available to help yo
 
 ## Problem-solving
 
-A disproportionate amount of client management work is problem solving. This is because problems take far more effort to deal with than the things that are going well. Whether it’s problems with a product, in your relationship with the client, or relating to some other element of the work, the ability to deal with difficult situations is crucial. This means that you have to be ready to think outside the box, to look for unexpected answers to unexpected situations.
+A disproportionate amount of client management work is problem solving. This is because problems take far more effort to deal with than the things that are going well. Whether it’s problems with a deliverable, in your relationship with the client, or relating to some other element of the work, the ability to deal with difficult situations is crucial. This means that you have to be ready to think outside the box, to look for unexpected answers to unexpected situations.
 
 In one sense, it’s impossible to prepare for the problems that come up. By definition, these will be the things that you didn’t predict, the situations that you didn’t see coming, the reactions that hit you out of left field.
 
@@ -124,7 +124,7 @@ What and how to read will depend upon what works for you. Some people like hefty
 
 What we mean by reading around a topic has also expanded. If your brow furrows and the words start to dance when you look at the page, then you could try audiobooks, also a useful option for learning while you’re exercising, commuting, or cooking the dinner. Documentaries provide another format for learning, as do TED talks, and there are a growing number of insightful video essayists and providers of professional advice working on sites like YouTube.
 
-As well as using different formats, try different content options. Sometimes, the most useful book is one that directly tackles a topic, like reading Robert Kelsey’s ***Get Things Done*** to help you with organisation, or Chris Voss and Tahl Raz’s *Never Split the Difference* to sharpen your negotiating skills and build expertise through customer success and account-focused reading. But sometimes it’s useful to read more widely, to provide context for what you’re learning about and seeing in others, like reading Richard Firth-Godbehere’s *A Human History of Emotion* to contextualise advice on emotional intelligence.
+As well as using different formats, try different content options. Sometimes, the most useful book is one that directly tackles a topic, like reading Robert Kelsey’s ***Get Things Done*** to help you with organisation, or Chris Voss and Tahl Raz’s *Never Split the Difference* to sharpen your negotiating skills and build expertise through client success and account-focused reading. But sometimes it’s useful to read more widely, to provide context for what you’re learning about and seeing in others, like reading Richard Firth-Godbehere’s *A Human History of Emotion* to contextualise advice on emotional intelligence.
 
 Whatever you read, watch, or listen to, make an effort to actively apply your learning. If all you do is make a few notes, then the knowledge will quickly fade away. If you try out that new organisational system or negotiating method, even for something small, then you’ll make the learning more real and reinforce it in your mind.
 

@@ -44,7 +44,7 @@ Answer this before you buy any client collaboration software. Every agency has t
 | Lane | Who sees it | What lives there |
 | --- | --- | --- |
 | Client lane | The client | Progress against plan, deliverables awaiting approval, reporting and results, agreed next steps, shared files |
-| Internal lane | Your team and leadership | Client health, risk flags, stakeholder coverage, time invested and margin, renewal and expansion signals |
+| Internal lane | Your team and leadership | Client health, risk flags, stakeholder coverage, time invested and margin, retainer renewal and upsell signals |
 
 The goal is to keep client projects organised by separating shared project information from internal account intelligence.
 
@@ -133,7 +133,7 @@ Three limits apply. We did not run hands-on tests of every product for this edit
 
 A client dashboard comes in two kinds. The client-facing dashboard lives in the portal and shows progress and results. The internal dashboard is the one your leadership uses on Monday morning, and it answers a different question: which clients are healthy, which are at risk and why.
 
-A useful internal client dashboard software view shows every client in the book with a health score, the risks behind it, stakeholder coverage and the renewal outlook, helping project managers and leadership monitor project progress and relationship risk together. Click a row and you see the conversations underneath. Kaizan scores health across four dimensions: client satisfaction, activity with stakeholders, relationship and interaction quality, and expansion opportunities, alongside the key metrics behind them. We explain the method in [how to measure client health with AI](https://kaizan.ai/blog/measuring-client-health-client-service-using-ai/).
+A useful internal client dashboard software view shows every client in the book with a health score, the risks behind it, stakeholder coverage and the retainer renewal outlook, helping project managers and leadership monitor project progress and relationship risk together. Click a row and you see the conversations underneath. Kaizan scores health across four dimensions: client satisfaction, activity with stakeholders, relationship and interaction quality, and expansion opportunities, alongside the key metrics behind them. We explain the method in [how to measure client health with AI](https://kaizan.ai/blog/measuring-client-health-client-service-using-ai/).
 
 The score earns trust because it comes from conversation evidence, not from a survey. In our benchmark, top and bottom accounts score identically on CSAT where it is measured (7.1 against 7.1). The difference is frequency: top accounts are measured 41 times a year against 14 for bottom accounts. Satisfaction surveys miss the early signal. Conversations carry it.
 
@@ -197,7 +197,7 @@ Here is the annual list price for a team with 40 internal users, in USD:
 
 Kaizan prices on a different axis. It is priced by number of clients, with unlimited users. Price on quote. Some tools also keep **more advanced features** for higher tiers or paid upgrades, and a **free version** may be available before those limits push you to a paid plan.
 
-For the return side, take an illustrative 200-person firm with 100 people on client delivery, 80 clients averaging £250,000 in annual revenue and a 16% annual client attrition rate. The 16% reflects the commonly cited 84% average client retention for professional services ([First Page Sage via Agiled](https://agiled.app/statistics/client-retention-statistics)). Kaizan's calculator methodology credits 45% of at-risk revenue as protected, 4.8% of portfolio value as expansion and 5.4 recovered admin hours per client-facing person per week. On those inputs the model returns about £1.44M in protected revenue, £0.96M in expansion revenue and £0.75M in recovered capacity. These are modelled figures built on stated assumptions, with no guaranteed outcome. Treat them with a grain of salt, because no public data confirms results at this scale. Kaizan portfolio data shows 21%+ average revenue growth per client. Run your own numbers in the [ROI calculator](https://kaizan.ai/pricing/).
+For the return side, take an illustrative 200-person firm with 100 people on client delivery, 80 clients averaging £250,000 in annual revenue and a 16% annual client attrition rate. The 16% reflects the commonly cited 84% average client retention for professional services ([First Page Sage via Agiled](https://agiled.app/statistics/client-retention-statistics)). Kaizan's calculator methodology credits 45% of at-risk revenue as protected, 4.8% of portfolio value as upsell and 5.4 recovered admin hours per client-facing person per week. On those inputs the model returns about £1.44M in protected revenue, £0.96M in upsell revenue and £0.75M in recovered capacity. These are modelled figures built on stated assumptions, with no guaranteed outcome. Treat them with a grain of salt, because no public data confirms results at this scale. Kaizan portfolio data shows 21%+ average revenue growth per client. Run your own numbers in the [ROI calculator](https://kaizan.ai/pricing/).
 
 ## How To Roll Out A Portal To Existing Clients Without A Relaunch
 
@@ -209,7 +209,7 @@ A mid-relationship rollout needs a plan, an owner and a script.
 2. **Draw the two lanes for each account.** Owner: account director. Time: two hours per account. Decide what the client sees and what stays internal.
 3. **Seed the portal.** Owner: account team. Time: half a day. Load current files, relevant project details, open approvals and the next three dates before clients are invited.
 4. **Tell the client.** Owner: account director. Time: a 15-minute call and one email. Use the script below so they have one collaboration tool for updates, files and approvals.
-5. **Name one update owner per account.** Owner: account manager. Time: 20 minutes a week. Pull the update from captured activity, not from memory.
+5. **Name one update owner per account.** Owner: Account manager. Time: 20 minutes a week. Pull the update from captured activity, not from memory.
 6. **Review at 30 days.** Owner: Head of Ops or COO. Check logins by contact, sections opened and client conversations still arriving by email if the portal is not yet replacing old habits. Then extend to the next ten accounts.
 
 Script for the client call: “From Monday you will have one place for files, approvals and weekly progress. Email still works for anything urgent. You will get a short update every Friday. If a section is not useful, tell us and we will change it.”
@@ -230,7 +230,7 @@ Client tracking is the continuous record of every interaction with a client: ema
 
 ### What Should Clients See, And What Should Stay Internal?
 
-Clients should see progress, deliverables awaiting approval, reporting and agreed next steps. Keep client health scores, risk flags, stakeholder coverage, margin and renewal signals internal. The client lane builds trust. The internal lane protects the account. Mixing them hands clients your working notes and hides your warning signs.
+Clients should see progress, deliverables awaiting approval, reporting and agreed next steps. Keep client health scores, risk flags, stakeholder coverage, margin and retainer renewal signals internal. The client lane builds trust. The internal lane protects the account. Mixing them hands clients your working notes and hides your warning signs.
 
 ### Do Agencies Actually Need A Client Portal?
 

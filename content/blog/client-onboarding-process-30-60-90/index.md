@@ -15,7 +15,7 @@ A client onboarding process, also called a client onboarding process, is the str
 
 ## When this applies, and when it doesn't
 
-Run the full version below for new clients when a new logo signs, when an existing client moves to a materially different scope (a new service line, a new region, a new budget tier), or when the account lead on a live relationship changes and the client notices the gap. Compress it to a one-week version for a small project-based engagement with a single stakeholder and a fixed end date. The plan still holds: lock scope, name the decision-maker, agree how you'll report, and schedule the first proactive check-in, so everyone stays on the same page. You're just running all four in week one instead of spreading them across 90 days.
+Run the full version below for new clients when a new client signs, when an existing client moves to a materially different scope (a new service line, a new region, a new budget tier), or when the account lead on a live relationship changes and the client notices the gap. Compress it to a one-week version for a small project-based engagement with a single stakeholder and a fixed end date. The plan still holds: lock scope, name the decision-maker, agree how you'll report, and schedule the first proactive check-in, so everyone stays on the same page. You're just running all four in week one instead of spreading them across 90 days.
 
 Skip it, and the pattern is well documented: 45% of marketing decision-makers now cite a lack of proactivity from their agency as the top trigger for a review, up roughly 50% year-on-year, according to RSW/US's 2024 Agency New Business Outlook Report (drawn from a database of over 7,000 agencies and 30,000 marketing contacts). Most of that proactivity gap opens in the first 90 days, before anyone has a cadence, a stakeholder map, or a written definition of what success looks like.
 
@@ -55,7 +55,7 @@ The stakeholder map deserves more care than it usually gets because it helps kee
 
 ## Days 31-60: building the cadence and the first health baseline
 
-This is customer success onboarding in its most literal sense: effective onboarding turns a one-off kickoff into a repeatable rhythm the account can run on without anyone having to remember to do it, with a steady cadence and clear communication supporting client retention.
+This is client onboarding in its most literal sense: effective onboarding turns a one-off kickoff into a repeatable rhythm the account can run on without anyone having to remember to do it, with a steady cadence and clear communication supporting client retention.
 
 | Step | Owner | Time |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ Second, the client satisfaction score most teams treat as an outcome is often a 
 
 ## Days 61-90: the first QBR and the handover to steady-state
 
-The last stretch of a client onboarding process should create a smooth transition from onboarding to business as usual. If this stage is skipped, onboarding never formally ends, which weakens the business relationship, and nobody owns the account's health once the energy of a new logo wears off.
+The last stretch of a client onboarding process should create a smooth transition from onboarding to business as usual. If this stage is skipped, onboarding never formally ends, which weakens the business relationship, and nobody owns the account's health once the energy of a new client wears off.
 
 | Step | Owner | Time |
 | --- | --- | --- |
@@ -202,8 +202,8 @@ That last pattern is common enough to be worth naming on its own. Teams that rel
 **What is a client onboarding workflow?**
 A client onboarding workflow is the entire client onboarding process mapped from the first interaction through kickoff, delivery setup, and handover into steady-state account management. It should be documented in a client onboarding checklist so each step is clear, repeatable, and easy to improve over time.
 
-**What is customer success onboarding?**
-Customer success onboarding is the part of the client onboarding process that helps clients start using your product or service effectively after the sale so they see value quickly and build confidence early. It also includes ongoing support as part of onboarding, rather than treating it as a separate phase.
+**What is client onboarding?**
+Client onboarding is the part of the client onboarding process that helps clients start getting value from your service quickly after the sale so they see value quickly and build confidence early. It also includes ongoing support as part of onboarding, rather than treating it as a separate phase.
 
 **What are the steps in a client onboarding process?**
 The steps in a client onboarding process should move new clients from kickoff through setup, alignment, proactive updates, and review. A smooth onboarding experience depends on doing those steps in order so clients stay informed and confident from the start.
@@ -218,7 +218,7 @@ Client onboarding is important for agencies because it aligns goals, approval pa
 It varies by client, but the goal is a smooth experience across the first 30, 60, and 90 days rather than rushing onboarding new accounts. That staged approach helps get the relationship started on the right foot.
 
 **Who owns the onboarding process?**
-One person should own the onboarding process from the client's perspective, usually an account manager, customer success manager, or implementation lead. Giving the client a single main point of contact helps create a strong working relationship early on.
+One person should own the onboarding process from the client's perspective, usually an account manager, client partner, or onboarding lead. Giving the client a single main point of contact helps create a strong working relationship early on.
 
 That owner should still be backed by sales and delivery so handover details, goals, and risks are shared clearly. This shared context supports successful onboarding and gives the client a more consistent experience.
 

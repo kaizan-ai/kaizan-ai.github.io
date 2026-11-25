@@ -77,7 +77,7 @@ Use this to work out which layer you are actually missing.
 | If your real question is... | You need... | Because... |
 | --- | --- | --- |
 | "How did last month's campaigns perform, and can I show the client a clean report?" | A reporting tool with custom reporting (AgencyAnalytics, Databox, Swydo, DashThis, Whatagraph or Looker Studio) | This is a data visualisation job: pull relevant metrics from connected channels, format them, send them |
-| "Is this client relationship healthy, and will I see a problem before the renewal conversation?" | A client success / relationship intelligence platform (Kaizan) | This is a conversation-analysis job: score sentiment, risk, stakeholder coverage and expansion signals from what is actually said |
+| "Is this client relationship healthy, and will I see a problem before the retainer renewal conversation?" | A client success / relationship intelligence platform (Kaizan) | This is a conversation-analysis job: score sentiment, risk, stakeholder coverage and upsell signals from what is actually said |
 | "Both. I need a clean client report and I need to stop losing accounts we didn't see coming." | Both, run as separate layers | They answer different questions and rarely duplicate each other's work. More in the next section |
 
 Most agencies searching for an AgencyAnalytics alternative are actually looking for one of two different things, and it is worth being honest with yourself about which one before you evaluate anything; many marketing teams confuse client reporting needs with relationship-health needs.
@@ -90,11 +90,11 @@ Most agencies searching for an AgencyAnalytics alternative are actually looking 
 | --- | --- | --- |
 | Data captured | Marketing and ad-platform metrics (SEO, PPC, social, analytics), including reporting-dashboard metrics such as organic traffic | Every client call, email and meeting, unified per client |
 | Who maintains it | The account team builds and checks the report | Captured automatically; nothing to maintain manually |
-| What it predicts | Nothing. It reports what already happened in the campaign | Client health, churn risk, stakeholder gaps and expansion readiness, scored against [the Evidence-Based Client Health Standard](https://www.kaizan.ai/us/product/) |
+| What it predicts | Nothing. It reports what already happened in the campaign | Client health, attrition risk, stakeholder gaps and upsell readiness, scored against [the Evidence-Based Client Health Standard](https://www.kaizan.ai/us/product/) |
 | Reporting | Branded, scheduled client-facing reports | Internal portfolio and account views for the team, not a client-facing report |
 | Integrations | 85+ marketing and ad platforms, with common reporting sources like Google Analytics and Google Ads | Calendars, email, meeting tools, CRM and chat, plus [API and MCP access](https://www.kaizan.ai/us/integrations/) |
 | Price model | Per client, feature-complete on one plan | Per client, unlimited users on every tier |
-| Time to value | Minutes to connect a data source and generate a first report | A 14-day free pilot on the firm's own client data, with findings by day 14 |
+| Time to first win | Minutes to connect a data source and generate a first report | A 14-day free pilot on the firm's own client data, with findings by day 14 |
 
 ### Where AgencyAnalytics wins
 
@@ -102,13 +102,13 @@ If the job is a branded, client-facing report across dozens of marketing data so
 
 ### Where Kaizan wins
 
-Kaizan was built for a different problem: client-facing teams who can produce a clean monthly report and still lose a client they did not see coming, because the warning signs lived in a call or an email nobody captured anywhere searchable. It scores every relationship across client satisfaction, stakeholder activity, relationship strength and expansion signals, drawing on the actual conversations the team is already having, not a survey sent twice a year.
+Kaizan was built for a different problem: client-facing teams who can produce a clean monthly report and still lose a client they did not see coming, because the warning signs lived in a call or an email nobody captured anywhere searchable. It scores every relationship across client satisfaction, stakeholder activity, relationship strength and upsell signals, drawing on the actual conversations the team is already having, not a survey sent twice a year.
 
 ### Choose AgencyAnalytics (or another reporting tool) when
 
 - The client relationship is judged almost entirely on campaign or channel performance
 - You need a client-facing portal clients open themselves
-- You are not trying to solve for early warning on churn, just reporting on results
+- You are not trying to solve for early warning on client attrition, just reporting on results
 
 ### Choose Kaizan instead when
 
@@ -141,7 +141,7 @@ Running both does not mean paying twice for the same thing. A reporting tool and
 
 AgencyAnalytics' Core plan runs $20 to $25 per client, per month, in USD, with Enterprise volume pricing available from 25 clients. Kaizan's list pricing is published in GBP: Starter runs £99 per client, per month, with a 10-client minimum, and Growth runs £119 per client, per month, with a 25-client minimum, both with unlimited users at no extra cost. Enterprise pricing for larger, multi-practice portfolios is scoped individually. Figures checked November 2026; confirm current pricing and any local-currency quote directly with each vendor before budgeting. Across alternatives, pricing models vary widely, so check limits on clients, dashboards, and connected accounts, compare key pricing metrics alongside plan caps and feature access, note where vendors switch to custom pricing for larger teams, and, for smaller agencies, confirm whether advanced features sit behind higher tiers or whether a free plan or free trial changes the near-term cost.
 
-As one illustrative example (not a guarantee, and not specific to any one firm): a 150-employee professional services firm with roughly 60 client-facing staff and 70 active clients, at an average client value of $140,000 a year, is carrying a portfolio worth around $9.8 million. Professional-services client retention benchmarks vary a good deal by source, from the high 60s to the mid-80s percent annually; using 84% (a commonly cited figure from Bain and First Page Sage) as a working assumption puts roughly $1.57 million of that portfolio at risk from churn in a typical year. [Kaizan's published ROI methodology](https://www.kaizan.ai/us/pricing/) credits itself with protecting 45% of at-risk revenue through early signals, which on this illustrative portfolio works out to roughly $705,000 a year. Kaizan's own client base separately reports a 26%+ average revenue increase per client and around 5.4 hours of admin saved per person, per week. Run your own numbers against your own client count and average value using the live calculator at kaizan.ai/pricing; this worked example uses assumptions chosen for illustration, not your firm's actual figures.
+As one illustrative example (not a guarantee, and not specific to any one firm): a 150-employee professional services firm with roughly 60 client-facing staff and 70 active clients, at an average client value of $140,000 a year, is carrying a portfolio worth around $9.8 million. Professional-services client retention benchmarks vary a good deal by source, from the high 60s to the mid-80s percent annually; using 84% (a commonly cited figure from Bain and First Page Sage) as a working assumption puts roughly $1.57 million of that portfolio at risk from client attrition in a typical year. [Kaizan's published ROI methodology](https://www.kaizan.ai/us/pricing/) credits itself with protecting 45% of at-risk revenue through early signals, which on this illustrative portfolio works out to roughly $705,000 a year. Kaizan's own client base separately reports a 26%+ average revenue increase per client and around 5.4 hours of admin saved per person, per week. Run your own numbers against your own client count and average value using the live calculator at kaizan.ai/pricing; this worked example uses assumptions chosen for illustration, not your firm's actual figures.
 
 ## How we assessed this
 
@@ -156,7 +156,7 @@ The best alternatives are reporting tools built for marketing reports, and the r
 Kaizan is not a business intelligence or advanced reporting platform in the usual dashboard sense. Instead, it complements a reporting layer built for client-facing analytics by focusing on relationship health, client signals, and the next best action for account teams.
 
 **Which should we choose, AgencyAnalytics or Kaizan?**
-When choosing an alternative to agency analytics, decide whether your team needs campaign-level marketing performance visibility or relationship-risk visibility. Reporting tools are often better for internal users such as marketing teams who need channel, campaign, and dashboard views, while Kaizan is better suited to account and client service teams that need early warning on client health, stakeholder changes, and renewal risk.
+When choosing an alternative to agency analytics, decide whether your team needs campaign-level marketing performance visibility or relationship-risk visibility. Reporting tools are often better for internal users such as marketing teams who need channel, campaign, and dashboard views, while Kaizan is better suited to account and client service teams that need early warning on client health, stakeholder changes, and retainer renewal risk.
 
 **Can you use Kaizan alongside AgencyAnalytics?**
 Yes. Many agencies use AgencyAnalytics for automated reporting and Kaizan for relationship insight, so each tool covers a different layer of client work.
@@ -167,7 +167,7 @@ That setup also gives the reporting side data visualisation options for differen
 Nothing about your reporting tool has to change. Adding a relationship-intelligence layer is a read-only connection to calendars, inboxes and meeting tools, typically piloted on a slice of the book over 14 days before any wider rollout.
 
 **Where is each one the wrong choice?**
-AgencyAnalytics is the wrong choice if what you actually need is early warning on churn risk; it was not built to score relationship health. Kaizan is the wrong choice if all you need is a branded client report with no interest in internal risk or expansion visibility; a reporting tool alone covers that.
+AgencyAnalytics is the wrong choice if what you actually need is early warning on attrition risk; it was not built to score relationship health. Kaizan is the wrong choice if all you need is a branded client report with no interest in internal risk or upsell visibility; a reporting tool alone covers that.
 
 ---
 

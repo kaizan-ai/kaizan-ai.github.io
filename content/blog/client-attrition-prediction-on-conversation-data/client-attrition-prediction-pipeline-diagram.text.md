@@ -1,4 +1,4 @@
-**Churn prediction on conversation data: How a churn prediction pipeline reads conversation data**
+**Client attrition prediction on conversation data: How an attrition prediction pipeline reads conversation data**
 
 - **Input:** Calls, emails, chat
 

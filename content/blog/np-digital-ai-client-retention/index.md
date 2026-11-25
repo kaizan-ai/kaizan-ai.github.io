@@ -34,7 +34,7 @@ Using Kaizan, NP Digital’s client teams are now able to:
 
 - **Save up to 8 hours per month.** Manual administrative work for account managers is significantly reduced.
 - **Gain full visibility across client relationships.** Communication across emails, meetings, and messaging platforms is analysed in one place.
-- **Identify risk and revenue opportunities earlier.** AI highlights potential issues and expansion opportunities before they become obvious.
+- **Identify risk and revenue opportunities earlier.** AI highlights potential issues and scope expansion opportunities before they become obvious.
 
 ## **The Challenge: Fragmented Client Communication**
 

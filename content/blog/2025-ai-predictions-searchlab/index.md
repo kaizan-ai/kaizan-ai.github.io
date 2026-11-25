@@ -4,13 +4,13 @@ date: 2025-01-06
 author: James Caples
 category: POV
 topic: ai-for-client-service
-excerpt: We asked clients what they foresee for AI in 2025 and how it will help them deliver exceptional products and service. Here is SearchLab's view.
+excerpt: We asked clients what they foresee for AI in 2025 and how it will help them deliver exceptional service. Here is SearchLab's view.
 cover: img-1.png
 draft: false
 tags: [productivity, 2025-predictions, ai, clients, client-services]
 ---
 
-As we look ahead to a big year for AI, we sat down with some of our clients over the Christmas period to ask them what they foresee for AI in 2025 to help them deliver exceptional products and services to clients.
+As we look ahead to a big year for AI, we sat down with some of our clients over the Christmas period to ask them what they foresee for AI in 2025 to help them deliver exceptional services to clients.
 
 First up, Greg Gifford; COO at SearchLab!
 

@@ -161,7 +161,7 @@
       "@id": "@@PAGE@@#tool-gainsight",
       "name": "Gainsight",
       "applicationCategory": "Customer success platform",
-      "description": "Best for: Enterprise SaaS customer success teams",
+      "description": "Best for: Enterprise SaaS client success teams",
       "url": "https://www.gainsight.com/"
     },
     {
@@ -169,7 +169,7 @@
       "@id": "@@PAGE@@#tool-planhat",
       "name": "Planhat",
       "applicationCategory": "Customer success platform",
-      "description": "Best for: Mid-market SaaS customer success teams",
+      "description": "Best for: Mid-market SaaS client success teams",
       "url": "https://www.planhat.com/"
     },
     {
@@ -204,7 +204,7 @@
           "name": "What is account planning software, and what should an account plan include?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It manages the living document for a client relationship: objective, stakeholder map, health, white space, renewal risk and next actions. See the worked example above.",
+            "text": "It manages the living document for a client relationship: objective, stakeholder map, health, white space, retainer renewal risk and next actions. See the worked example above.",
             "inLanguage": "@@LANG@@"
           }
         },
@@ -519,8 +519,8 @@
       "@id": "@@PAGE@@#img-3",
       "url": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-plan-example-one-page.png",
       "contentUrl": "https://kaizan.ai/assets/img/blog/account-management-software-for-agencies/account-plan-example-one-page.png",
-      "caption": "One-page account plan example with objective, stakeholder map, health, white space, renewal risk and next actions.",
-      "description": "One-page account plan example with objective, stakeholder map, health, white space, renewal risk and next actions.",
+      "caption": "One-page account plan example with objective, stakeholder map, health, white space, retainer renewal risk and next actions.",
+      "description": "One-page account plan example with objective, stakeholder map, health, white space, retainer renewal risk and next actions.",
       "inLanguage": "@@LANG@@"
     }
   ]

@@ -266,8 +266,8 @@ A system that is accurate and unused has failed. This phase is about reaching pe
 
 #### How to approach it
 
-- **Define the signals.** Renewal risk is a sequence, not a single event. Encode patterns as detectors over the timeline with explicit thresholds you can tune.
-- **Know who each user is.** Role, seniority, and the clients and product or service lines they own. Cross-company alerts go to the people who can act on them: an issue pattern on one product or service line routes to that line's leadership, not to everyone. Source roles from your directory or HR system and keep them in step with reorganisations, or the routing quietly rots.
+- **Define the signals.** Retainer renewal risk is a sequence, not a single event. Encode patterns as detectors over the timeline with explicit thresholds you can tune.
+- **Know who each user is.** Role, seniority, and the clients and service lines they own. Cross-company alerts go to the people who can act on them: an issue pattern on one service line routes to that line's leadership, not to everyone. Source roles from your directory or HR system and keep them in step with reorganisations, or the routing quietly rots.
 - **Give each user a memory.** What they have seen, what they acted on, what they ignore. Suppress what they have dismissed before.
 - **Build collective intelligence within your own data.** What worked on one client informs the play on the next. This requires an action taxonomy and an outcome record (see §14).
 - **Deliver into existing tools.** Slack, Teams, email, CRM. A dashboard people have to visit is a dashboard people don't visit.
@@ -402,7 +402,7 @@ Treating a webhook to the CRM as an integration. Delivery is the easy part. Cons
 
 #### If you get it wrong
 
-The CRM and the intelligence layer disagree about the renewal date and nobody knows which is right. An automatic write-back overwrites a field a salesperson corrected by hand.
+The CRM and the intelligence layer disagree about the retainer renewal date and nobody knows which is right. An automatic write-back overwrites a field a salesperson corrected by hand.
 
 A downstream schema change breaks sync silently and the CRM is a month stale before anyone notices.
 
@@ -435,7 +435,7 @@ The "AI ecosystem" you set out to feed never gets fed.
 
 - **Define an action taxonomy.** What the system recommends, in a fixed vocabulary.
 - **Keep a decision ledger.** Every recommendation, whether it was acted on, and what happened to the relationship afterwards.
-- **Measure outcomes on renewals, expansion and churn avoided.** Separate what the system did from what the team would have done anyway. This is the hard and necessary part.
+- **Measure outcomes on retainer renewals, scope expansion and client loss avoided.** Separate what the system did from what the team would have done anyway. This is the hard and necessary part.
 - **Re-benchmark continuously**, so a score in June means what it meant in January.
 
 #### Watch out for

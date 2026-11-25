@@ -30,13 +30,13 @@ CONTENT_DIR = ROOT / 'content' / 'blog'
 IMG_OUT_DIR = ROOT / 'assets' / 'img' / 'blog'
 
 # Allowed editorial categories (shown as the card/eyebrow label).
-CATEGORIES = ['POV', 'PRODUCT', 'FIELD NOTES', 'BENCHMARK', 'INTERVIEW', 'CUSTOMER STORY']
+CATEGORIES = ['POV', 'PRODUCT', 'FIELD NOTES', 'BENCHMARK', 'INTERVIEW', 'CLIENT STORY']
 
 # Allowed topics (the URL segment: /blog/<topic>/<slug>/) with their display label
 # and a one-line description used on the topic landing page.
 TOPICS = {
     'client-health': ('Client health',
-                      'Spot churn risk early and keep client relationships healthy: signals, metrics and real-world examples.'),
+                      'Spot attrition risk early and keep client relationships healthy: signals, metrics and real-world examples.'),
     'client-software': ('Client software',
                         'The tools, data and systems behind client service, and how to choose, build and connect them.'),
     'playbooks-and-templates': ('Playbooks and templates',

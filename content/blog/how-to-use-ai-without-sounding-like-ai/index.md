@@ -55,7 +55,7 @@ One of our clients put it simply:
 
 > "I can't know the 20 different conversations that are happening on one client before I go and meet with that client. That's the thing that's impossible to stay on top of."
 
-Connecting Kaizan gives the model the full history of the relationship: every call, every commitment made, and how sentiment has moved over time. When you ask for a renewal email, it can work from what the client actually said in June rather than from what renewal emails usually say.
+Connecting Kaizan gives the model the full history of the relationship: every call, every commitment made, and how sentiment has moved over time. When you ask for a retainer renewal email, it can work from what the client actually said in June rather than from what retainer renewal emails usually say.
 
 ## Why this makes the writing better
 

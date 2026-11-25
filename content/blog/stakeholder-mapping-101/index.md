@@ -71,7 +71,7 @@ A client team’s approach to stakeholder mapping will be different from that of
 
 ## 2. Identify Your Stakeholders’ Interests
 
-Once you’ve identified your stakeholders, you need to identify their stakeholder needs and interests. What are they hoping to get out of the work that you’re doing? When doing this for clients, a lot of the information will come from focusing on one area: what do they get out of using your products and/or services? Focussing on the benefits clients get from your products and services are key, because it helps surface stakeholder expectations early and anticipate potential obstacles. What are they using them for? Why are these tools useful? What role do you play in the clients’ own businesses?
+Once you’ve identified your stakeholders, you need to identify their stakeholder needs and interests. What are they hoping to get out of the work that you’re doing? When doing this for clients, a lot of the information will come from focusing on one area: what do they get out of using your services? Focussing on the benefits clients get from your services are key, because it helps surface stakeholder expectations early and anticipate potential obstacles. What are they using them for? Why are these tools useful? What role do you play in the clients’ own businesses?
 
 Take time to think about what else your clients get from working with you and their other interests, including opportunities for relationship building and ways to foster stronger relationships. Are you a key strategic partner? Are they keen on environmental and social projects? Do they have big ambitions to expand in a field related to your industry?
 
@@ -79,23 +79,23 @@ Take time to think about what else your clients get from working with you and th
 
 Once you’ve identified your stakeholders and their interests, the next step is categorising stakeholders.
 
-One common method for categorising stakeholders is to use the MEDDIC sales qualification process. This is a framework used by businesses to categorise prospects and potential customers. Let’s explore each category in more detail:
+One common method for categorising stakeholders is to use the MEDDIC sales qualification process. This is a framework used by businesses to categorise prospects and potential clients. Let’s explore each category in more detail:
 
-- **Metrics Questions.** Metrics are the quantifiable measures of the value that your product or service provides to your clients. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
+- **Metrics Questions.** Metrics are the quantifiable measures of the value that your service provides to your clients. They clearly demonstrate the value of your solution in a simple and easy-to-understand manner.
 
 - **Economic Buyer.** The person who is the overall decision maker; they have the knowledge, perspective, and energy to commit to a meaningful purchase.
 
-- **Decision Process.** A decision process will include the person who makes a decision, the potential customer’s timeline, and any formal approval processes.
+- **Decision Process.** A decision process will include the person who makes a decision, the potential client’s timeline, and any formal approval processes.
 
 - **Decision Criteria.** This is the criteria on which a purchase decision is made. This usually falls into three categories:   **1. Technical Criteria.** Does your solution have the technical capability to do what the client needs?**2. Economic Criteria.** Does your solution deliver the expected ROI?  **3. Relationship Criteria.** Have you created a collaborative partnership with the client?
 
-- **Identify Pain.** The potential customer must have evident business pain before pursuing a solution, and it’s vital to understand these pain points and then identify how your solution can relieve it.
+- **Identify Pain.** The potential client must have evident business pain before pursuing a solution, and it’s vital to understand these pain points and then identify how your solution can relieve it.
 
 - **Champion.** Champions are respected stakeholders within your clients’ business who meet very distinct criteria:   1. They have Power and Influence  2. They are selling internally for you   3. They have a vested interest in your success
 
 If you’re looking at clients rather than a project, then categorisation is likely to work differently. They are all directly affected by your work, just to different extents, so your primary stakeholders may be day-to-day client contacts and decision-makers, while secondary stakeholders may include adjacent teams or external partners with indirect influence. You might categorise them using another division, depending on what is most appropriate for your business:
 
-- By the products and services they use.
+- By the services they use.
 
 - A Tiering system based on commercial value or revenue.
 
@@ -129,19 +129,19 @@ Think about where clients’ influence comes from and how substantial it actuall
 
 Once you’ve identified your stakeholders, their interests, and their levels of influence and interest, you’re ready to create a clear stakeholder map. The most common method for doing this, as discussed earlier, is to use a matrix. Simply create a grid with your stakeholders’ influence on one axis and their support or interest on the other axis. Then plot the stakeholders against these two axes; it is a simple but useful form of a detailed stakeholder map when you add more context around each stakeholder group.
 
-This will naturally produce clusters of stakeholders with a similar significance, helping you spot stakeholder groups and where different groups may need different follow-up. For example, high-value clients who are very influential and very interested in your products might be plotted in the top-right quadrant, while clients who provide low revenue end up in a low-influence, low-interest bottom-left quadrant.
+This will naturally produce clusters of stakeholders with a similar significance, helping you spot stakeholder groups and where different groups may need different follow-up. For example, high-value clients who are very influential and very interested in your services might be plotted in the top-right quadrant, while clients who provide low revenue end up in a low-influence, low-interest bottom-left quadrant.
 
-Plotting on two different criteria is important, as it gives more nuance than trying to categorise clients on a single scale from least to most important. For example, a small client will relate to you differently if they actively rely on your products rather than if your business is just viewed as one more expense. A small, reliant business and a larger client that only uses you occasionally might both seem to have medium importance, but benefit from very different handling as clients; mapping stakeholders based on influence and interest helps tailor that handling, clarify what they need from you as a company, and surface different opportunities.
+Plotting on two different criteria is important, as it gives more nuance than trying to categorise clients on a single scale from least to most important. For example, a small client will relate to you differently if they actively rely on your services rather than if your business is just viewed as one more expense. A small, reliant business and a larger client that only uses you occasionally might both seem to have medium importance, but benefit from very different handling as clients; mapping stakeholders based on influence and interest helps tailor that handling, clarify what they need from you as a company, and surface different opportunities.
 
 ## 6. Develop Your Stakeholder Management Strategy
 
 Having used stakeholder mapping as an analysis tool, the next step is to turn analysis into action and realise the benefits of stakeholder mapping by developing a stakeholder management strategy. This will ensure that you’re engaging with the right people, at the right time, in the right way.
 
-Look at the distribution of stakeholders in your mapping exercise. There should be clusters of stakeholders who are in similar positions relative to your work, even if those clusters are just the four quarters of a simple grid. Some clusters will clearly be higher priorities than others. For example, a group of high influence, high-interest clients are all stakeholders it’s worth investing a lot of time and effort into, while those with little interest in your products should be treated as low priorities. Consider what you can get out of each group, what their shared needs are, and how those clusters can guide engagement strategies for different stakeholder groups.
+Look at the distribution of stakeholders in your mapping exercise. There should be clusters of stakeholders who are in similar positions relative to your work, even if those clusters are just the four quarters of a simple grid. Some clusters will clearly be higher priorities than others. For example, a group of high influence, high-interest clients are all stakeholders it’s worth investing a lot of time and effort into, while those with little interest in your services should be treated as low priorities. Consider what you can get out of each group, what their shared needs are, and how those clusters can guide engagement strategies for different stakeholder groups.
 
-Based on this, create a stakeholder engagement strategy and a stakeholder engagement plan. This is a document that outlines how you will engage with each stakeholder, based on their level of influence and support or interest. For example, your approach to high-influence, low-interest clients might be to spend more time showing them the benefits of your products, to cross-sell new products and move them to a higher level of interest.
+Based on this, create a stakeholder engagement strategy and a stakeholder engagement plan. This is a document that outlines how you will engage with each stakeholder, based on their level of influence and support or interest. For example, your approach to high-influence, low-interest clients might be to spend more time showing them the benefits of your services, to cross-sell new services and move them to a higher level of interest.
 
-On a project, you might decide to meet with your most influential stakeholders on a regular basis, send them updates about the project, and involve them in decision-making, while limiting less influential stakeholders to occasional updates and only involving them in decision-making when necessary, supporting project success and risk management. In a client success team, you might implement policies of regular contact with high-value clients to keep them engaged, while putting some effort into helping low-influence but high-interest clients to understand the value in using your products or service and responding as appropriate to the low-interest, low-influence group.
+On a project, you might decide to meet with your most influential stakeholders on a regular basis, send them updates about the project, and involve them in decision-making, while limiting less influential stakeholders to occasional updates and only involving them in decision-making when necessary, supporting project success and risk management. In a client success team, you might implement policies of regular contact with high-value clients to keep them engaged, while putting some effort into helping low-influence but high-interest clients to understand the value in using your services and responding as appropriate to the low-interest, low-influence group.
 
 Don’t be too rigid in your approach. There will be variations within clusters of clients, depending upon the individual clients and their value to you. Use the stakeholder mapping chart to work out who the high priorities are and to provide a starting place for client development plans.
 
@@ -151,9 +151,9 @@ A stakeholder or client management plan helps you engage with your stakeholders 
 
 Once you’ve developed your stakeholder or client management strategy, you need to implement stakeholder engagement. This will help you ensure that you’re consistently engaging with your stakeholders in the right way.
 
-A common approach to this, and one that’s ideally suited to client success teams, is to create a communication plan that structures communication efforts for different stakeholders. This is a document that outlines how you will communicate with different types of stakeholders, what information you will share, and how often you will share it. This might include training materials, messages about new services, checking in to see how they’re getting on with your products, consultations on future developments, even reminders about product renewals. Remember, the work you put in for each client should be proportionate to how important they are to you, as measured by their interest and influence, and these activities should reflect the needs of different stakeholders.
+A common approach to this, and one that’s ideally suited to client success teams, is to create a communication plan that structures communication efforts for different stakeholders. This is a document that outlines how you will communicate with different types of stakeholders, what information you will share, and how often you will share it. This might include training materials, messages about new services, checking in to see how they’re getting on with your services, consultations on future developments, even reminders about retainer renewals. Remember, the work you put in for each client should be proportionate to how important they are to you, as measured by their interest and influence, and these activities should reflect the needs of different stakeholders.
 
-Creating a communication plan can help you ensure that you’re consistently communicating with your clients and that they have the information they need to make informed decisions about your products for successful stakeholder engagement. Reminders and automated messages can be built into your client management system, to ensure that the plan runs smoothly and reduce the workload for the team.
+Creating a communication plan can help you ensure that you’re consistently communicating with your clients and that they have the information they need to make informed decisions about your services for successful stakeholder engagement. Reminders and automated messages can be built into your client management system, to ensure that the plan runs smoothly and reduce the workload for the team.
 
 Like any plan, it shouldn’t become a shackle that stops you adapting to circumstances, but a set of guidelines to encourage consistency and save on future planning.
 
@@ -163,10 +163,10 @@ Once you’ve implemented your stakeholder management strategy, you need to moni
 
 You can also create a feedback loop to collect feedback from your stakeholders on a regular basis and use it to improve your stakeholder management strategy. Set regular time aside to assess feedback from clients or other stakeholders and see what it tells you about the effectiveness of your strategy, while also helping uncover reputational risks. Are there important communications that are missing or misguided?
 
-Review the stakeholder map regularly. For a client success team, clients can and should move from one part of the grid to another as you get them invested in your company’s products and services and relationships evolve.
+Review the stakeholder map regularly. For a client success team, clients can and should move from one part of the grid to another as you get them invested in your company’s services and relationships evolve.
 
 Creating a feedback loop can help you ensure that your stakeholder management strategy is effective and that your project or client management is on track.
 
 ## Making the Most of Mapping
 
-Stakeholder mapping is a critical process that businesses should undertake to manage their client relationships successfully. By identifying and analysing key stakeholders, businesses can tailor their services and products to address stakeholder needs, improve stakeholder engagement, support strategic planning, mitigate potential risks, and contribute to stronger project outcomes and the success of their projects or businesses.
+Stakeholder mapping is a critical process that businesses should undertake to manage their client relationships successfully. By identifying and analysing key stakeholders, businesses can tailor their services to address stakeholder needs, improve stakeholder engagement, support strategic planning, mitigate potential risks, and contribute to stronger project outcomes and the success of their projects or businesses.

@@ -21,7 +21,7 @@ Account management software is the system that tracks a client relationship afte
 
 ## What Is Account Management Software, And What It Is Not
 
-Account management software is the layer that sits on top of the sale: it tracks the health of a client relationship, who's involved on both sides, what's been promised, and what's likely to happen next. A CRM, or customer relationship management system, answers "who is this client and what have we sold them." Account management software answers "how is this relationship doing, and what do we need to do about it."
+Account management software is the layer that sits on top of the sale: it tracks the health of a client relationship, who's involved on both sides, what's been promised, and what's likely to happen next. A CRM, or client relationship management system, answers "who is this client and what have we sold them." Account management software answers "how is this relationship doing, and what do we need to do about it."
 
 The confusion is understandable, because many teams keep client data and client data in a CRM while using account management software for post-sale visibility, and most account management tools sit on top of a CRM rather than replacing it. The practical test: if the tool's job stops at the contact record and the deal stage, it's a CRM. If it scores relationship health, flags stakeholder gaps, or tells you which accounts are quietly at risk, it's account management software. These platforms help manage client relationships across the entire client journey after the sale closes.
 
@@ -53,7 +53,7 @@ Four patterns show up in almost every agency that goes looking for account manag
 
 **Context leaves when an account director leaves.** When the person who held the relationship in their head moves on, the account history, specific client needs and unresolved risks leave with them, and the next person starts the account cold.
 
-**Nobody can evidence which accounts are actually at risk.** Ask a Head of Client Service which three accounts are likeliest to churn this quarter, and the honest answer is usually a gut call, not a number. That's the gap a published client-health framework is built to close, by making client health visible and strengthening client relationships. Kaizan's [Evidence-Based Client Health Standard](https://kaizan.ai/product/#health-model) scores every account on four dimensions, client satisfaction, activity with stakeholders, relationship strength and expansion readiness, drawn from what's actually said in meetings and emails rather than a quarterly survey. In Kaizan's own portfolio data, accounts that went on to struggle had surfaced their own warning signs in conversation at least once in roughly 69% of cases, and in about 38% of cases those signals recurred across multiple periods, the clearer tell. The data was there. Nobody was listening for it systematically.
+**Nobody can evidence which accounts are actually at risk.** Ask a Head of Client Service which three accounts are likeliest to leave this quarter, and the honest answer is usually a gut call, not a number. That's the gap a published client-health framework is built to close, by making client health visible and strengthening client relationships. Kaizan's [Evidence-Based Client Health Standard](https://kaizan.ai/product/#health-model) scores every account on four dimensions, client satisfaction, activity with stakeholders, relationship strength and upsell readiness, drawn from what's actually said in meetings and emails rather than a quarterly survey. In Kaizan's own portfolio data, accounts that went on to struggle had surfaced their own warning signs in conversation at least once in roughly 69% of cases, and in about 38% of cases those signals recurred across multiple periods, the clearer tell. The data was there. Nobody was listening for it systematically.
 
 ## The Features That Matter In Account Management Software
 
@@ -63,11 +63,11 @@ Not every feature on a vendor's homepage earns its keep. When comparing **accoun
 
 **Automatic capture across calls, email and chat.** The single biggest predictor of whether a tool gets used: does someone have to type the update in, or does the system capture it from the meeting and the inbox on its own, reducing **routine tasks** and manual **follow ups**. Manual entry is where every account-management rollout quietly dies, because the moment things get busy, logging is the first thing to slip.
 
-**Health scoring and early risk alerts.** A score that updates from real conversations, not a quarterly survey, and flags risk while there's still time to act rather than at renewal, with **ai driven insights** from account data. In Kaizan's benchmark dataset, accounts in the top cohort for health and growth surfaced 2.2x more risk mentions per year than the bottom cohort, not because they had more problems, but because more was being said out loud and more of it was being captured. A quiet risk register on an active account is a warning sign, not a green light.
+**Health scoring and early risk alerts.** A score that updates from real conversations, not a quarterly survey, and flags risk while there's still time to act rather than at retainer renewal, with **ai driven insights** from account data. In Kaizan's benchmark dataset, accounts in the top cohort for health and growth surfaced 2.2x more risk mentions per year than the bottom cohort, not because they had more problems, but because more was being said out loud and more of it was being captured. A quiet risk register on an active account is a warning sign, not a green light.
 
 **Stakeholder and relationship mapping.** Who on the client side has been engaged, how recently, and how senior. Single-threaded accounts, where one person on either side carries the whole relationship, are one of the clearest predictors of a lost account, and most teams can't see it's happening until the one person goes quiet.
 
-**Account planning, built in.** A living plan per account: objectives, stakeholder map, white space, renewal risk, next actions, rather than a static document nobody opens between QBRs, giving teams a more consistent **account management strategy**. More on what a good one includes below.
+**Account planning, built in.** A living plan per account: objectives, stakeholder map, white space, retainer renewal risk, next actions, rather than a static document nobody opens between QBRs, giving teams a more consistent **account management strategy**. More on what a good one includes below.
 
 **A portfolio view for leadership.** One screen that shows every account's status, so a Head of Client Service or COO can answer "what's going on with [client]" without pulling together five people's notes first, using **customizable dashboards** to monitor **key metrics**, **performance metrics**, and **sales trends** across accounts.
 
@@ -89,7 +89,7 @@ An account plan is only useful if someone other than its author can read it and 
 - **The stakeholder map.** Every contact who matters, their role in the decision, and when they were last meaningfully engaged.
 - **Current health and the evidence behind it.** Not a RAG colour alone, but the signals that produced it.
 - **White space.** Services or scope the client doesn't buy today but plausibly could.
-- **Renewal date and risk factors.** What could cause this account to not renew, named specifically.
+- **Retainer renewal date and risk factors.** What could cause this account to not renew, named specifically.
 - **The next three actions**, each with an owner and a date, so teams can assign tasks clearly.
 
 Strong plans also help improve client relationships by turning account data into action.
@@ -103,14 +103,14 @@ Here's what that looks like filled in, anonymised from a real agency account:
 | Stakeholder map | CMO (economic buyer, last engaged 6 weeks ago — flagged), Head of Demand Gen (daily contact, strong), VP Sales (influencer, never engaged — gap) |
 | Health | Amber. CSAT steady, but decision-maker engagement has dropped and two risk mentions logged in the last month |
 | White space | SEO added mid-2025; paid social discussed twice by the client, never scoped |
-| Renewal risk | Contract renews in 11 weeks; CMO engagement gap is the live risk |
-| Next 3 actions | 1) Get VP Sales into the next QBR. 2) Re-engage CMO directly before the renewal conversation. 3) Scope the paid social opportunity properly rather than letting it stay a comment |
+| Retainer renewal risk | Contract renews in 11 weeks; CMO engagement gap is the live risk |
+| Next 3 actions | 1) Get VP Sales into the next QBR. 2) Re-engage CMO directly before the retainer renewal conversation. 3) Scope the paid social opportunity properly rather than letting it stay a comment |
 
-![One-page account plan example with objective, stakeholder map, health, white space, renewal risk and next actions.](account-plan-example-one-page.png)
+![One-page account plan example with objective, stakeholder map, health, white space, retainer renewal risk and next actions.](account-plan-example-one-page.png)
 
 ## The 10 Best Account Management Software Tools Compared
 
-This list mixes four categories on purpose: general CRMs with account features, some combining customer relationship management with project management and automation tools, key account management specialists, customer-success health platforms, and a client intelligence platform built for agencies. Pricing below is published list pricing, checked the week of 4 November 2026.
+This list mixes four categories on purpose: general CRMs with account features, some combining client relationship management with project management and automation tools, key account management specialists, client-success health platforms, and a client intelligence platform built for agencies. Pricing below is published list pricing, checked the week of 4 November 2026.
 
 | Tool | Type | Best for | Starting price | Limitation |
 | --- | --- | --- | --- | --- |
@@ -122,8 +122,8 @@ This list mixes four categories on purpose: general CRMs with account features, 
 | monday CRM | CRM (visual/work-management) | Teams already running projects on [monday.com](http://monday.com/) | Basic $12/mo (3-seat min); Standard $17/mo; Pro $28/mo | Shallow on dedicated account-health features despite solid workflow automation |
 | DemandFarm | Key account management | Strategic key-account planning in large enterprise sales orgs | Quote-based | Not built for a volume book of retained accounts |
 | Kapta | Key account management | Structured key-account programmes with execution workflows | Quote-based | Depth tool, not a volume tool |
-| Gainsight | Customer success platform | Enterprise SaaS customer success teams | Quote-based, enterprise pricing | Heavy for an agency's retainer model |
-| Planhat | Customer success platform | Mid-market SaaS customer success teams | Quote-based | Built for SaaS subscription logic, not agency delivery |
+| Gainsight | Client success platform | Enterprise SaaS client success teams | Quote-based, enterprise pricing | Heavy for an agency's retainer model |
+| Planhat | Client success platform | Mid-market SaaS client success teams | Quote-based | Built for SaaS subscription logic, not agency delivery |
 
 ## FAQs
 
@@ -131,7 +131,7 @@ This list mixes four categories on purpose: general CRMs with account features, 
 
 **What is key account management software?** Software built for a small number of large, strategic, multi-stakeholder accounts, with deep relationship mapping and account planning. DemandFarm and Kapta lead this category. Wrong fit for a volume book of dozens or hundreds of retained clients.
 
-**What is account planning software, and what should an account plan include?** It manages the living document for a client relationship: objective, stakeholder map, health, white space, renewal risk and next actions. See the worked example above.
+**What is account planning software, and what should an account plan include?** It manages the living document for a client relationship: objective, stakeholder map, health, white space, retainer renewal risk and next actions. See the worked example above.
 
 **Do we need account management software if we already have a CRM?** Usually yes, because a CRM and account management software answer different questions. The right account management software should fit your team’s workflows and the tools you already use. The exception is a firm managing a handful of very large accounts, where a key-account tool on top of the CRM may close the gap.
 

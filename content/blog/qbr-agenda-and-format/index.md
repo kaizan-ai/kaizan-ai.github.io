@@ -11,7 +11,7 @@ draft: false
 tags: [qbr, quarterly business review, qbr agenda, client reviews, account management, client service]
 ---
 
-A quarterly business review format only earns its place on the calendar if it survives contact with a real account. This is the version built to survive it: a 45-minute run of show with a named owner, a script and a failure mode for every step, built for a Head of Client Service running a full tier of accounts, not a 90-minute SaaS template borrowed from a customer success playbook.
+A quarterly business review format only earns its place on the calendar if it survives contact with a real account. This is the version built to survive it: a 45-minute run of show with a named owner, a script and a failure mode for every step, built for a Head of Client Service running a full tier of accounts, not a 90-minute SaaS template borrowed from a client success playbook.
 
 > **The quarterly business review format that works for most agency accounts runs 45 minutes:** a 4-minute headline, 14 minutes on value delivered against goals, 10 minutes on risks and stakeholder coverage, 8 minutes on next-quarter commitments, and a close that locks owners, dates and the next review date before anyone leaves the room.
 
@@ -108,7 +108,7 @@ Check who's actually been in the conversation this quarter, on both sides, again
 
 **Owner:** Both sides, named jointly in the room.
 
-Close with two or three commitments, each with a named owner and a date, not a general sense of direction. An expansion conversation belongs here, and only here, and only if the first three sections gave you a genuine, earned opening for it. Pushing growth into a relationship that's still shaky on trust or satisfaction reads to the client as exactly the wrong moment to be asked for more budget.
+Close with two or three commitments, each with a named owner and a date, not a general sense of direction. A growth conversation belongs here, and only here, and only if the first three sections gave you a genuine, earned opening for it. Pushing growth into a relationship that's still shaky on trust or satisfaction reads to the client as exactly the wrong moment to be asked for more budget.
 
 **Script:** "So for next quarter: [commitment one], owned by [name], done by [date]. [Commitment two], owned by [name], by [date]. Anything we've missed?"
 
@@ -126,7 +126,7 @@ Close with two or three commitments, each with a named owner and a date, not a g
 
 This is a composite account, built from patterns that repeat across agency relationships, not one named client.
 
-A 40-person B2B agency runs this exact quarterly business review format with a mid-market software client. Two quarters run smoothly.
+A 40-person B2B agency runs this exact quarterly business review format with a tier 2 software client. Two quarters run smoothly.
 
 **Step 0.** In the third quarter's prep, the account lead pulls the full call history instead of working from last month's deck and notices the client's procurement lead has been copied into three recent email threads who was never on a call before. Nobody flagged it, because on its own it looked like routine copying, not a signal.
 
@@ -191,7 +191,7 @@ A Senior Client Partner at one of the agencies we work with, Agency Client B, pu
 >
 > — Senior Client Partner, Agency Client B
 
-What has to stay human is everything inside the room: naming the risk in Step 3, reading how the client actually reacts to it, deciding in the moment whether Step 5's expansion conversation has genuinely been earned this quarter or should wait, and asking whether other key stakeholders or a broader team should be included next time. A Chief Operating Officer at a third agency we work with, Agency Client C, described why that judgement call matters:
+What has to stay human is everything inside the room: naming the risk in Step 3, reading how the client actually reacts to it, deciding in the moment whether Step 5's growth conversation has genuinely been earned this quarter or should wait, and asking whether other key stakeholders or a broader team should be included next time. A Chief Operating Officer at a third agency we work with, Agency Client C, described why that judgement call matters:
 
 > "You're relying on human error and you're relying on them not looking at things with rose coloured glasses. [The system] is impartial and will say, hey, look guys, this guy's not happy."
 >
@@ -207,7 +207,7 @@ The impartial read is the input. The decision on what to do with it in the room 
 
 **No timekeeper.** A 45-minute format with nobody watching the clock becomes a 70-minute one by the third quarter. Name one person, usually the account lead, to hold the timeboxes out loud.
 
-**Closing without the read-back.** Skipping the 41-to-45 minute block to save time is the single easiest way to turn today's clear commitments into next quarter's repeated, unresolved agenda item. Close with two or three commitments that support your strategic priorities and future goals for the upcoming quarter. If expansion is on the table, keep it tied to evidence already covered, since earned expansion discussions can uncover growth opportunities and support strategic growth when the relationship is healthy. In the script, end by asking whether those commitments match the client's specific goals and client goals for next quarter.
+**Closing without the read-back.** Skipping the 41-to-45 minute block to save time is the single easiest way to turn today's clear commitments into next quarter's repeated, unresolved agenda item. Close with two or three commitments that support your strategic priorities and future goals for the upcoming quarter. If growth is on the table, keep it tied to evidence already covered, since earned growth discussions can uncover growth opportunities and support strategic growth when the relationship is healthy. In the script, end by asking whether those commitments match the client's specific goals and client goals for next quarter.
 
 **Treating Step 0 as optional when the quarter gets busy.** This is the step that gets cut first under pressure, and it's the one that determines whether the other six minutes are built from the real relationship or from whoever's memory happened to be freshest that week.
 
@@ -233,7 +233,7 @@ Keep the format but compress it rather than dropping it. A shortened version tha
 Track three numbers across the book: decision-maker attendance rate, action closure rate between reviews, and the share of reviews that actually hold to 45 minutes. All three are easier to see when the underlying call and email history is captured automatically rather than reconstructed by hand.
 
 **What should we automate versus keep human?**
-Automate the prep: pulling history, checking stakeholder contact recency, and surfacing what changed since the last review. Keep human everything that happens in the room: naming the risk, reading the client's reaction, and judging whether an expansion conversation has genuinely been earned this quarter.
+Automate the prep: pulling history, checking stakeholder contact recency, and surfacing what changed since the last review. Keep human everything that happens in the room: naming the risk, reading the client's reaction, and judging whether a growth conversation has genuinely been earned this quarter.
 
 ---
 

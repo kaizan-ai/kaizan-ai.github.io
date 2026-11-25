@@ -27,7 +27,7 @@ In this article, we’ll cover:
 
 A touchpoint refers to the various interactions and points of contact that a client has with a business or organisation throughout their journey, from initial awareness to post-purchase support. These touchpoints can occur through various channels and can be physical, such as visiting a store, or digital, such as interacting with a website.
 
-Optimising client experience touchpoints is crucial for building positive relationships with clients, increasing client satisfaction, and fostering long-term loyalty. On a deeper level, touchpoints are an opportunity for you to influence clients and prospective clients. A chance to share information, offer guidance, create a positive impression, or even drive them towards a purchase of your products or service.
+Optimising client experience touchpoints is crucial for building positive relationships with clients, increasing client satisfaction, and fostering long-term loyalty. On a deeper level, touchpoints are an opportunity for you to influence clients and prospective clients. A chance to share information, offer guidance, create a positive impression, or even drive them towards a purchase of your services.
 
 The client journey isn’t just the time that a client spends using your services. It’s their whole experience, or client journey, from becoming aware of a need you can fulfil through to making a purchase and beyond. Each touchpoint your company has along that journey presents an opportunity to make a positive impression on the client; every interaction point touchpoint serves as a chance to shape perception, drive purchases, and build loyalty.
 
@@ -47,7 +47,7 @@ Every time and place that a client might interact with your company across multi
 
 - Referrals
 
-- Sales calls and product demos
+- Sales calls and service demos
 
 - Self-service sign-ups
 
@@ -67,7 +67,7 @@ Your clients should have a consistent experience with your brand regardless of w
 
 Create style guides for everyone producing materials for your company, whether that’s writing, doing visual design, or making outputs in other formats, and make sure these are followed. This is your company’s voice, it should speak loudly and clearly.
 
-Consistency also means providing the same high-quality client service regardless of where clients contact you. How formal do you want your team to be? How should they present themselves? How will they explain your products? Being consistent is a way of ensuring quality and removing tension from the client experience.
+Consistency also means providing the same high-quality client service regardless of where clients contact you. How formal do you want your team to be? How should they present themselves? How will they explain your services? Being consistent is a way of ensuring quality and removing tension from the client experience.
 
 ## Pay attention to the details
 
@@ -113,9 +113,9 @@ Every client touchpoint is an opportunity to create a positive impression and im
 
 Optimising client touchpoints can lead to increased client loyalty. When clients have positive experiences at every touchpoint, they are more likely to continue doing business with a company and become a loyal client. Even a single negative experience can disrupt this, as it makes the client wonder what other failings they’ve missed and paints ordinary interactions in a different light. To foster loyalty and support client retention, you need to provide good experiences not just at key moments but every time they interact with you.
 
-## To reduce client churn
+## To reduce client attrition
 
-In addition to increasing client loyalty, optimising touchpoints can [reduce client churn](https://kaizan.ai/blog/playbooks-and-templates/re-engage-inactive-clients/). Negative experiences give clients a reason to reconsider the business they do with you, and so make them open to being poached by your rivals. When clients have positive experiences, they are less likely to switch to a competitor, helping you retain a loyal client base.
+In addition to increasing client loyalty, optimising touchpoints can [reduce client attrition](https://kaizan.ai/blog/playbooks-and-templates/re-engage-inactive-clients/). Negative experiences give clients a reason to reconsider the business they do with you, and so make them open to being poached by your rivals. When clients have positive experiences, they are less likely to switch to a competitor, helping you retain a loyal client base.
 
 ## To improve conversion rates
 

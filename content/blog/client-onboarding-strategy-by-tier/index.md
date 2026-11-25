@@ -12,7 +12,7 @@ tags: [client onboarding, client tiers, onboarding strategy, account management,
 
 *A client onboarding strategy by tier runs three onboarding tracks instead of one, sized to what each account is worth: a high-touch track for strategic accounts, a guided track for the core book, and a light, templated track for the rest. The tier decides who owns onboarding, how long it runs, and what's automated versus handled by a person.*
 
-Most onboarding guides describe one process and assume every new client deserves the same 90 days. In practice, giving your smallest logo the same senior attention as your flagship account means overspending on the small account, underspending on the big one, or both. In RSW/US's 2024 Agency New Business Outlook survey of agency new-business and marketing decision-makers, 45% of marketers cited an agency's lack of proactivity as their top reason for conducting a review, a roughly 50% jump on the year before. Onboarding is the first test of exactly that, and the resourcing has to match the stakes, which are not the same for every client.
+Most onboarding guides describe one process and assume every new client deserves the same 90 days. In practice, giving your smallest client the same senior attention as your flagship account means overspending on the small account, underspending on the big one, or both. In RSW/US's 2024 Agency New Business Outlook survey of agency new-business and marketing decision-makers, 45% of marketers cited an agency's lack of proactivity as their top reason for conducting a review, a roughly 50% jump on the year before. Onboarding is the first test of exactly that, and the resourcing has to match the stakes, which are not the same for every client.
 
 **Key takeaways**
 
@@ -36,7 +36,7 @@ Tiering by client is a common idea in account service generally; the useful vers
 
 ### Tier 1 — Strategic accounts
 
-The top band by revenue, growth potential or strategic weight, typically the 10-20% of logos that carry a disproportionate share of portfolio revenue.
+The top band by revenue, growth potential or strategic weight, typically the 10-20% of clients that carry a disproportionate share of portfolio revenue.
 
 - **Owner:** the account director or a senior partner, personally, not delegated to the most junior person on the bench.
 - **What it gets:** a kickoff with senior leadership from both sides in the room; a dedicated stakeholder map built in week one, covering every decision-maker, not just the day-to-day contact; weekly structured check-ins through day 60, tapering to fortnightly; a 90-day business review presented by the account director, not emailed.
@@ -52,7 +52,7 @@ The majority of the book by count: profitable, stable relationships that don't c
 
 ### Tier 3 — Standard accounts
 
-Smaller or newer accounts, often the most numerous tier by logo count and the smallest by revenue share.
+Smaller or newer accounts, often the most numerous tier by client count and the smallest by revenue share.
 
 - **Owner:** whoever owns the account day to day, with no separate onboarding owner.
 - **What it gets:** a fully templated, mostly self-serve kickoff: a welcome sequence, a shared document with the plan, and setup tasks the client completes in the first 30 days, plus one scheduled check-in at day 30. No separate business review; the day-90 milestone folds into the first regular account catch-up.
@@ -90,7 +90,7 @@ A 40-person digital agency wins a $400,000 retainer, its third-largest account b
 
 **Day 7.** The stakeholder map is complete: eight named contacts across the client's organisation, each tagged with their role in the decision, not just their job title. This is the artefact Tier 2 and Tier 3 don't get.
 
-**Days 14-50.** Weekly 30-minute check-ins, alternating between the account manager (operational) and the account director (relationship, risk and expansion signals), with that cadence helping the team understand client needs as the account gets underway. One of Kaizan's own anonymised client contacts, a managing partner at an agency, described the value of exactly this kind of senior cadence this way:
+**Days 14-50.** Weekly 30-minute check-ins, alternating between the account manager (operational) and the account director (relationship, risk and growth signals), with that cadence helping the team understand client needs as the account gets underway. One of Kaizan's own anonymised client contacts, a managing partner at an agency, described the value of exactly this kind of senior cadence this way:
 
 > "The other thing we'd look at it for is senior team time that's saved by not having to be on every call, and you just jump in and watch that 30-second clip rather than have to be on the whole thing to still get the same outcome."
 >
@@ -98,7 +98,7 @@ A 40-person digital agency wins a $400,000 retainer, its third-largest account b
 
 The senior check-in doesn't require the account director's full attention on every call; it requires their presence and a fast way to catch up on what they missed, which is a cadence problem to solve, not a time-cost to absorb in full.
 
-**Day 90.** The account director presents the business review in person, not by email, covering what was delivered, what the client's stakeholders said in between formal meetings, and one expansion signal the team is already acting on. A relationship-first instinct for exactly this kind of senior account work came through in how another client contact described their own approach:
+**Day 90.** The account director presents the business review in person, not by email, covering what was delivered, what the client's stakeholders said in between formal meetings, and one growth signal the team is already acting on. A relationship-first instinct for exactly this kind of senior account work came through in how another client contact described their own approach:
 
 > "For me, it's a relationship builder. I've been doing this for 30 years. I'm a pick-up-the-phone, I'm-gonna-come-and-see-you kind of person, and we don't live in that world anymore."
 >
@@ -137,7 +137,7 @@ A few measures worth tracking, with key performance indicators tied to a sub-ele
 - **How often you're actually measuring satisfaction.** Teams should measure client satisfaction during onboarding, not just later in the relationship. The same dataset found that when CSAT is measured, top and bottom cohorts score identically; the real gap is frequency, with top accounts measured roughly 2.9x more often (41 times a year versus 14). A Tier 1 account with no satisfaction check-in before day 60 isn't being managed at the tier it was sold.
 - **Don't mistake a quiet risk log for a safe account.** The same benchmark's "Risk Paradox" finding: top-performing accounts actually surface 2.21x more risk phrases in conversation than lower-performing ones. Silence on a newly onboarded Tier 1 account is a signal to check in harder, not a sign everything is fine.
 
-The baseline to set before you start: your current onboarding completion rate and time-to-first-value today, by tier, measured before you introduce the new tracks. We weren't able to source published data isolating onboarding completion rate as its own metric for this guide, since Kaizan's own platform operates across the full relationship rather than owning the onboarding phase specifically, so this baseline has to come from your own current process. Track it at day 30, 60 and 90 for one full quarter before judging whether the tiered version moved it.
+The baseline to set before you start: your current onboarding completion rate and time to first win today, by tier, measured before you introduce the new tracks. We weren't able to source published data isolating onboarding completion rate as its own metric for this guide, since Kaizan's own platform operates across the full relationship rather than owning the onboarding phase specifically, so this baseline has to come from your own current process. Track it at day 30, 60 and 90 for one full quarter before judging whether the tiered version moved it.
 
 ## What to automate and what must stay human
 
@@ -155,7 +155,7 @@ Tier 3 is where the automation-to-human ratio should be most aggressive. If an a
 
 **No migration path.** Symptom: an account grows from Tier 3 to genuinely Tier 1 revenue over 18 months, but nobody notices because tiering was only ever applied at the point of onboarding, not revisited afterward. Fix: tier reviews need an explicit trigger, a renewal, a QBR, a revenue threshold crossed, that pulls an account up or down, not just a one-time label assigned on day one.
 
-**Treating the lightest tier as "no onboarding."** Symptom: Tier 3 accounts have the highest early churn in the portfolio, and nobody connects it to the fact they got a templated email and nothing else. Fix: light-touch still means a plan, a single scheduled human check-in, a clear owner, and ongoing support after kickoff, even if that owner is the only person touching the account day to day. That minimum structure is what makes the onboarding experience credible even at Tier 3. The difference between Tier 1 and Tier 3 should be depth, not the presence or absence of a process.
+**Treating the lightest tier as "no onboarding."** Symptom: Tier 3 accounts have the highest early client attrition in the portfolio, and nobody connects it to the fact they got a templated email and nothing else. Fix: light-touch still means a plan, a single scheduled human check-in, a clear owner, and ongoing support after kickoff, even if that owner is the only person touching the account day to day. That minimum structure is what makes the onboarding experience credible even at Tier 3. The difference between Tier 1 and Tier 3 should be depth, not the presence or absence of a process.
 
 ## Frequently asked questions
 
@@ -184,6 +184,6 @@ Track stakeholder coverage, decision-maker contact frequency and how often satis
 
 Tiering the first 90 days only works if the tiers themselves are agreed before anyone builds a single email template. Start with a one-page tier definition worksheet, criteria, what each tier gets by day, and what's deliberately withheld below Tier 1, because that worksheet is the basis of a strong client onboarding process, before touching the onboarding plan itself.
 
-Once clients are onboarded, the harder question starts: after the first 90 days, does every account team actually have the visibility it needs across the full portfolio, by tier, to support customer success without waiting for a client to raise it? That's the problem Kaizan is built to solve, scoring every relationship against The Evidence-Based Client Health Standard and surfacing the next action before a renewal conversation goes wrong, not after.
+Once clients are onboarded, the harder question starts: after the first 90 days, does every account team actually have the visibility it needs across the full portfolio, by tier, to support client success without waiting for a client to raise it? That's the problem Kaizan is built to solve, scoring every relationship against The Evidence-Based Client Health Standard and surfacing the next action before a renewal conversation goes wrong, not after.
 
 [Book a demo with Kaizan](https://www.kaizan.ai/us/) to see how client intelligence picks up where tiered onboarding leaves off.

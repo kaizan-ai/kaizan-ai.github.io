@@ -209,7 +209,7 @@ Review notes from the sales team first so the client does not have to repeat bas
 **Can the onboarding questionnaire be customised for different client segments?**
 Yes. In fact, it should be customised if you work with different client types, service packages, or project scopes.
 
-A startup hiring you for brand development won't need the same intake questions as an enterprise client onboarding for full-service marketing support.
+A startup hiring you for brand development won't need the same intake questions as a tier 1 client onboarding for full-service marketing support.
 
 Customisation helps you:
 

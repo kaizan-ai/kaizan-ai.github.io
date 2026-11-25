@@ -78,7 +78,7 @@ If there was one thing Ada returned to most, it was the client health scoring us
 
 > "I've got to be honest, I'm quite obsessed with the scoring. How are we doing? Has anything changed? What can I do to make it better?"
 
-That last question is the whole point. A score only earns its place if it prompts an action and, in addition, helps AI Assistants surface expansion opportunities for clients. Being able to look at a dashboard and understand at a glance the number behind how a client is doing gives you clearer visibility and a better shot at client success, so you can spot what might matter sooner and catch risk earlier rather than after the drift sets in. In one way, that is what the platform is for: proactive upsell and risk detection to maximise the potential of every client.
+That last question is the whole point. A score only earns its place if it prompts an action and, in addition, helps AI Assistants surface scope expansion opportunities for clients. Being able to look at a dashboard and understand at a glance the number behind how a client is doing gives you clearer visibility and a better shot at client success, so you can spot what might matter sooner and catch risk earlier rather than after the drift sets in. In one way, that is what the platform is for: proactive upsell and risk detection to maximise the potential of every client.
 
 ## Like having a knowledgeable colleague
 

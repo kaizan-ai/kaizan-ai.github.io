@@ -30,7 +30,7 @@ One of the most underappreciated signals in client management isn’t a complain
 
 > “If a client goes quiet, it can often indicate that there’s a problem, that maybe they’re talking to other agencies,” Fiona explains. “Try and keep that conversation going and show them some love.”
 
-In a world where everything is digital and emails are flying constantly, it’s easy to mistake a lack of friction for satisfaction. But disengagement often precedes churn, and the teams that catch it early are the ones that stay proactive rather than scrambling to recover lost ground.
+In a world where everything is digital and emails are flying constantly, it’s easy to mistake a lack of friction for satisfaction. But disengagement often precedes client attrition, and the teams that catch it early are the ones that stay proactive rather than scrambling to recover lost ground.
 
 ## The Case for Getting Off the Screen
 

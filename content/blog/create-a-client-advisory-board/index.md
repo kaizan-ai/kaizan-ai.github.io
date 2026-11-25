@@ -3,12 +3,12 @@ title: How to Create a Client Advisory Board
 date: 2023-06-13
 category: POV
 topic: playbooks-and-templates
-excerpt: What a client advisory board is, why companies run one, and how to set one up to get honest feedback on products, services and strategy.
+excerpt: What a client advisory board is, why companies run one, and how to set one up to get honest feedback on services and strategy.
 cover: img-1.png
 draft: false
 ---
 
-A client advisory board (CAB) is a group of clients that a company consults to provide feedback and advice on its products, services, and strategy. CABs are usually composed of senior executives from a variety of companies and industries. They may also include VIP users or strategic clients.
+A client advisory board (CAB) is a group of clients that a company consults to provide feedback and advice on its services and strategy. CABs are usually composed of senior executives from a variety of companies and industries. They may also include VIP users or strategic clients.
 
 In this article, we’ll discuss:
 
@@ -72,17 +72,17 @@ A client advisory board can help a company identify areas where clients are diss
 
 ## Enhanced Client Feedback
 
-Of course, a CAB isn’t just about negative information, it can be about positives too. A client advisory board is a great venue to gather valuable feedback on a company’s performance and its clients’ experiences, good or bad. The company can then use this information to improve its products, services, and overall client experience.
+Of course, a CAB isn’t just about negative information, it can be about positives too. A client advisory board is a great venue to gather valuable feedback on a company’s performance and its clients’ experiences, good or bad. The company can then use this information to improve its services and overall client experience.
 
 ## Greater Market Insight
 
 As a space for discussion between the company and its clients, a client advisory board is a multifaceted conversation. As well as letting clients express their opinions on the company, it gives the company a chance to ask clients about what they want and need. This is different from talking about client needs one-on-one, as the interactions between different clients can lead to invaluable conversation and deeper insights.
 
-This can give a company insights into its market that it might not otherwise have. The information gathered can then be used to make decisions about product development, marketing, and other strategic decisions.
+This can give a company insights into its market that it might not otherwise have. The information gathered can then be used to make decisions about service development, marketing, and other strategic decisions.
 
 ## Improved Decision Making
 
-The input from a client advisory board can help companies make better decisions about their products, services, and strategies. Because the board gives the company a different perspectives on its own performance and its clients’ needs, it will better understand what is working and what will satisfy clients. Executives can even seek opinions from clients on specific topics, to see which products, services, and marketing approaches are likely to work best.
+The input from a client advisory board can help companies make better decisions about their services and strategies. Because the board gives the company a different perspectives on its own performance and its clients’ needs, it will better understand what is working and what will satisfy clients. Executives can even seek opinions from clients on specific topics, to see which products, services, and marketing approaches are likely to work best.
 
 ## Enhanced Competitiveness
 
@@ -118,9 +118,9 @@ The charter can also include other practical details, such as how often the boar
 
 With the terms of the board and its practical details defined, it’s time to recruit board members.
 
-These should be people from client companies who experience the impact of your business, its services and products, and who have a broad enough perspective to represent the views of people across their organisation. Depending upon what you’re hoping to get from your board, that will probably mean senior executives, or possibly managers closer to the frontline. They should be drawn from a variety of companies that represent your target market.
+These should be people from client companies who experience the impact of your business, its services, and who have a broad enough perspective to represent the views of people across their organisation. Depending upon what you’re hoping to get from your board, that will probably mean senior executives, or possibly managers closer to the frontline. They should be drawn from a variety of companies that represent your target market.
 
-Recruiting for a group like this requires a considered approach. You’re asking for a commitment of time from busy people with a lot on their plates. Make it clear that there’s no expectation here, if they don’t have the time then they won’t lose out on any of the benefits of working with you. At the same time, point out what they could gain from getting involved. They’ll have an extra opportunity to provide feedback, shape your products and services to suit their needs, and play a part in determining the direction your company takes. If your products are important to them, that’s a great opportunity.
+Recruiting for a group like this requires a considered approach. You’re asking for a commitment of time from busy people with a lot on their plates. Make it clear that there’s no expectation here, if they don’t have the time then they won’t lose out on any of the benefits of working with you. At the same time, point out what they could gain from getting involved. They’ll have an extra opportunity to provide feedback, shape your services to suit their needs, and play a part in determining the direction your company takes. If your services are important to them, that’s a great opportunity.
 
 As you recruit board members, there may be some who are interested but who can’t commit to the schedule you’ve set out in your terms. This raises an important question: will you adapt your newly set rules for them? It’s not an easy question to face, or one with a right answer. The status of the people you’re recruiting means that there aren’t a lot of them to spare, and it might be worth giving something up to get the right client on board. On the other hand, you set those terms for a reason, and might want to stick with them. Consider that balance as you approach potential board members.
 
@@ -136,7 +136,7 @@ Try to schedule these meetings as far in advance as possible. The board members 
 
 Meetings might be scheduled in person, though given the available technology and the likely geographical spread of your clients, online meetings will often be more practical. If you’re working online, then make sure that the technology has been tested in advance and that everyone is familiar with the software you’re using.
 
-Also send out agendas in advance. All board members know what to expect and can consider their responses on specific topics, as well as gather relevant data from their companies and feedback from the teams who use your products day-to-day.
+Also send out agendas in advance. All board members know what to expect and can consider their responses on specific topics, as well as gather relevant data from their companies and feedback from the teams who work with your team day-to-day.
 
 ## Taking Minutes
 

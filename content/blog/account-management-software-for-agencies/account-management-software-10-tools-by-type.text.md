@@ -16,7 +16,7 @@
 **3. Key account management**
 - DemandFarm, Kapta: quote-based
 
-**4. Customer success platform**
+**4. Client success platform**
 - Gainsight, Planhat: quote-based
 
 List prices checked the week of 4 November 2026.

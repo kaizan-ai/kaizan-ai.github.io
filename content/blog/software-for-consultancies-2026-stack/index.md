@@ -27,7 +27,7 @@ Software for consultancy firms covers five jobs: winning work, planning and staf
 
 ## What Software For Consultancy Firms Is, And What It Is Not
 
-Software for consultancy firms is consulting software, or management software for consultants, used to run the cycle from first meeting to renewal. It is not one product. Software for consultancy firms is the set of tools a consulting business uses from first meeting through project delivery and renewal. The phrase gets applied to CRM software, project management software, billing suites and AI assistants as if they were interchangeable. They are not. Each does one job, and buying the wrong type for your problem is the most expensive mistake in the category.
+Software for consultancy firms is consulting software, or management software for consultants, used to run the cycle from first meeting to retainer renewal. It is not one product. Software for consultancy firms is the set of tools a consulting business uses from first meeting through project delivery and retainer renewal. The phrase gets applied to CRM software, project management software, billing suites and AI assistants as if they were interchangeable. They are not. Each does one job, and buying the wrong type for your problem is the most expensive mistake in the category.
 
 This guide sorts the market by the job each tool does, so you can match your problem to a type before you compare vendors. I wrote it for CEOs and CFOs who sign off the spend, and for COOs who carry the rollout.
 
@@ -73,7 +73,7 @@ A client success platform captures client conversations, scores relationship hea
 
 | If this is true... | You have a gap in... | Start with |
 | --- | --- | --- |
-| We lose clients and learn about it at renewal | Keep | Client success platform |
+| We lose clients and learn about it at retainer renewal | Keep | Client success platform |
 | Pipeline lives in spreadsheets and inboxes | Win work | CRM |
 | Consultants are double-booked or idle | Plan | Resource planning or PSA |
 | Projects run late and over budget | Deliver | Work management or PSA |
@@ -140,7 +140,7 @@ If your people have to type it, it will be wrong or missing. Look for automatic 
 
 ### Scoring: An Evidence-Based Health Score
 
-A score should come from conversation evidence, not opinion. We call our approach The Evidence-Based Client Health Standard. Its method, CARE, scores every relationship across four dimensions: Client Satisfaction, Activity with Stakeholders, Relationship Strength and Expansion Opportunities. It acts as a leading indicator, so it shows where a relationship is heading before the renewal conversation. Whatever tool you pick, ask how the score is built and what evidence sits behind each number.
+A score should come from conversation evidence, not opinion. We call our approach The Evidence-Based Client Health Standard. Its method, CARE, scores every relationship across four dimensions: Client Satisfaction, Activity with Stakeholders, Relationship Strength and Expansion Opportunities. It acts as a leading indicator, so it shows where a relationship is heading before the retainer renewal conversation. Whatever tool you pick, ask how the score is built and what evidence sits behind each number.
 
 ### Alerting: Early Warnings With A Next Step
 
@@ -148,7 +148,7 @@ An alert without an action is noise. Good alerts name the account, the signal (a
 
 ### Reporting And Portfolio View
 
-Leadership needs one page: revenue at risk, expansion in flight, which accounts need attention this week. A PSA gives you a financial portfolio view, with financial reporting that helps finance teams see changes in real time instead of waiting for month-end. A client success platform gives you a relationship portfolio view. You need both, and the connected reporting should support project profitability and profitability reporting, not just portfolio summaries.
+Leadership needs one page: revenue at risk, scope expansion in flight, which accounts need attention this week. A PSA gives you a financial portfolio view, with financial reporting that helps finance teams see changes in real time instead of waiting for month-end. A client success platform gives you a relationship portfolio view. You need both, and the connected reporting should support project profitability and profitability reporting, not just portfolio summaries.
 
 ### Integrations
 
@@ -178,7 +178,7 @@ Pricing models are listed rather than dollar figures for most tools, because thi
 | Deltek Vantagepoint | Bill | Project-based firms needing ERP | Quote-based | Heavier implementation |
 | Accelo | Bill | Client work and billing in one | Per user, confirm with vendor | Not built for risk detection |
 | Harvest | Bill | Time and invoices | Per seat | Light on planning and profitability |
-| Planhat | Keep | Subscription customer success | Quote-based | Data model built for subscriptions |
+| Planhat | Keep | Retainer client success | Quote-based | Data model built for subscriptions |
 | Kaizan | Keep | Client health, risk and growth | Per client, unlimited users. Price on quote | Does not run delivery, time or billing |
 
 ### HubSpot
@@ -223,7 +223,7 @@ Pricing models are listed rather than dollar figures for most tools, because thi
 
 ### Planhat
 
-**What it is:** a customer platform used heavily by subscription software companies. **Best for:** firms whose clients behave like subscribers, with usage and renewal data. **Pricing:** quote-based. **Limitation:** its data model assumes subscription metrics that consultancies do not have, so setup demands configuration. **Verdict:** worth a look if your revenue is recurring and product-led.
+**What it is:** a client platform used heavily by subscription software companies. **Best for:** firms whose clients behave like subscribers, with usage and renewal data. **Pricing:** quote-based. **Limitation:** its data model assumes subscription metrics that consultancies do not have, so setup demands configuration. **Verdict:** worth a look if your revenue is recurring and product-led.
 
 ### Kaizan
 
@@ -246,9 +246,9 @@ Kaizan appears in this list, and I work here. The scoring method above applies t
 - **Name the problem first.** Write one sentence: "We lose clients without warning" or "We bill late." Use the decision table above to find the job.
 - **Map your current stack.** List every tool, owner, seat count and cost. Aim to do it in 60 minutes.
 - **Count clients, not only seats.** Per-seat tools scale with headcount. Per-client tools scale with portfolio. Model both at your size.
-- **Test manual entry against automatic capture.** If your team must type the data, adoption will decide the outcome. Choose capture that needs no extra admin.
+- **Test manual entry against automatic capture.** If your team must type the data, uptake will decide the outcome. Choose capture that needs no extra admin.
 - **Pilot on five accounts for 14 days.** Pick a mix: two healthy accounts, two uncertain, one you worry about. Check whether the tool tells you something you did not know.
-- **Ask what each buyer needs to see.** The CEO wants revenue at risk. The CFO wants cost and payback. The COO wants adoption and admin time per account director.
+- **Ask what each buyer needs to see.** The CEO wants revenue at risk. The CFO wants cost and payback. The COO wants uptake and admin time per account director.
 - **Score the shortlist.** Weight the criteria, score each tool, and rank them.
 
 ## What Software For Consultancy Firms Costs
@@ -344,10 +344,10 @@ It depends on the type. CRMs and time trackers typically go live in days but nee
 
 ### What Is The Return On This?
 
-Measure return in revenue protected and expansion won, not hours saved. In a modelled 200-person consultancy with 60 clients, the calculator method returns about $3.4 million in annual benefit before platform cost, which is priced on quote. Treat it as a model, not a forecast. Run the live calculator with your own numbers.
+Measure return in revenue protected and retainer growth won, not hours saved. In a modelled 200-person consultancy with 60 clients, the calculator method returns about $3.4 million in annual benefit before platform cost, which is priced on quote. Treat it as a model, not a forecast. Run the live calculator with your own numbers.
 
 ### Will The Team Actually Use It?
 
-Adoption follows effort. Tools that need manual entry get skipped. Pick tools that capture client emails and calls automatically, set permissions before launch, and pilot on five accounts for 14 days. Measure weekly active users against seats. Under 50% utilisation after 60 days means the wrong fit or a rollout that needs work.
+Uptake follows effort. Tools that need manual entry get skipped. Pick tools that capture client emails and calls automatically, set permissions before launch, and pilot on five accounts for 14 days. Measure weekly active users against seats. Under 50% utilisation after 60 days means the wrong fit or a rollout that needs work.
 
 **Run the numbers, and** [**book a demo**](https://kaizan.ai/) **when you want to see your own clients scored.**

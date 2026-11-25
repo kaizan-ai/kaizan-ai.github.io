@@ -1,44 +1,44 @@
 ---
-title: "Client Success Plan Template"
+title: "Client Roadmap Template"
 date: 2026-11-10
 author: James Caples
 category: POV
 topic: playbooks-and-templates
-excerpt: What belongs in a client success plan for an agency account, how it differs from an account plan and a QBR deck, and three filled examples by account size.
-cover: client-success-plan-core-account-example.png
+excerpt: What belongs in a client roadmap for an agency account, how it differs from an account plan and a QBR deck, and three filled examples by account size.
+cover: client-roadmap-core-account-example.png
 draft: false
-tags: [client success plan, customer success plan, account management, client health, stakeholder map, agencies]
+tags: [client roadmap, client roadmap template, account management, client health, stakeholder map, agencies]
 ---
 
-A client success plan is a living, one-page document for a single account: the client's own stated goals, who the key stakeholders are, the milestones and metrics that prove progress, the risks being tracked, and who owns the next review. Use it in place of a status report that only tracks what you delivered, not what it bought the client.
+A client roadmap is a living, one-page document for a single account: the client's own stated goals, who the key stakeholders are, the milestones and metrics that prove progress, the risks being tracked, and who owns the next review. Use it in place of a status report that only tracks what you delivered, not what it bought the client.
 
-This guide covers what belongs in a customer success plan template, how it differs from an account plan and a QBR deck, three filled examples at different account sizes, the client-facing version you can build jointly, how to tell whether the plan is actually working, and how to keep the whole thing current without someone updating it by hand every month.
+This guide covers what belongs in a client roadmap template, how it differs from an account plan and a QBR deck, three filled examples at different account sizes, the client-facing version you can build jointly, how to tell whether the plan is actually working, and how to keep the whole thing current without someone updating it by hand every month.
 
 This is written for Heads of Client Service running a book of retained accounts, not for SaaS teams running product-adoption playbooks. The fields that matter, and the point of writing any of it down, change when the relationship is a service built on trust and delivery, not a licence renewal.
 
 **Key takeaways**
 
-- A customer success plan only earns its place if someone opens it between reviews, not just before them. A plan that only gets read the night before a QBR is a QBR prep document wearing a different name.
+- A client roadmap only earns its place if someone opens it between reviews, not just before them. A plan that only gets read the night before a QBR is a QBR prep document wearing a different name.
 - The three filled examples below exist because a blank template and a filled one teach different things. Copy the filled one closest to your account size, then adjust it, rather than starting from a blank page.
 - This is not an account plan and not a QBR deck. The comparison table below settles exactly where each one lives and what happens when teams confuse them.
 
-## What is a customer success plan, and why do agencies need one?
+## What is a client roadmap, and why do agencies need one?
 
-A customer success plan is a single document, per client, that holds what the relationship is actually trying to achieve, who the people are on both sides are, and what's at risk, aligning the client and internal teams around clear goals and measurable outcomes across the relationship life cycle, reviewed on a set cadence rather than written once at onboarding and left to go stale. It replaces the account lead's memory, and the monthly RAG spreadsheet, as the place the relationship actually lives.
+A client roadmap is a single document, per client, that holds what the relationship is actually trying to achieve, who the people are on both sides are, and what's at risk, aligning the client and internal teams around clear goals and measurable outcomes across the relationship life cycle, reviewed on a set cadence rather than written once at onboarding and left to go stale. It replaces the account lead's memory, and the monthly RAG spreadsheet, as the place the relationship actually lives.
 
-The case for writing one down at all starts with what happens when nobody does. RSW/US's 2024 Agency New Business Outlook Report, drawn from a database of more than 7,000 US and Canadian agencies, found that 45% of marketers now cite a lack of proactivity from their agency as the single biggest trigger for a review, a sharp jump from the year before. A client success plan is one of the few mechanisms that forces proactivity into a cadence rather than leaving it to whichever account lead happens to be paying close attention that month.
+The case for writing one down at all starts with what happens when nobody does. RSW/US's 2024 Agency New Business Outlook Report, drawn from a database of more than 7,000 US and Canadian agencies, found that 45% of marketers now cite a lack of proactivity from their agency as the single biggest trigger for a review, a sharp jump from the year before. A client roadmap is one of the few mechanisms that forces proactivity into a cadence rather than leaving it to whichever account lead happens to be paying close attention that month.
 
-It also answers the objection every Head of Client Service has before they've finished reading this far: does this replace the spreadsheet, or is it one more thing on top of it? Done properly, a client success plan is the spreadsheet's replacement, not its neighbour. The monthly RAG tracker gives you a colour. A success plan gives you the goal the colour is being measured against, the person who said it mattered, and what you're doing about the risk behind a status that just turned amber.
+It also answers the objection every Head of Client Service has before they've finished reading this far: does this replace the spreadsheet, or is it one more thing on top of it? Done properly, a client roadmap is the spreadsheet's replacement, not its neighbour. The monthly RAG tracker gives you a colour. A roadmap gives you the goal the colour is being measured against, the person who said it mattered, and what you're doing about the risk behind a status that just turned amber.
 
 Who should own it is worth settling before anyone writes a word. The account lead owns the plan day to day; a Head of Client Service owns the standard it's held to across the book, which account tiers get which depth of plan, and what triggers escalation when a plan shows a repeated risk, with each deliverable or milestone needing a clear owner and clear ownership to avoid stalled work. Many agencies already run tiering under names like Bronze, Silver and Gold, or Growth, Core and Strategic; whichever labels your firm uses, the plan's depth should follow the tier, not a single template forced across every account regardless of size.
 
 Across Kaizan's own client portfolio, accounts get an average revenue increase of 26%+ year over year. That number isn't produced by a document. It's produced by teams that know the client's actual goals well enough to act on them through repeatable processes that create long term value before the client has to ask, and a written plan is the cheapest way to get every account lead doing that consistently, not just the naturally good ones.
 
-## Customer success plan vs account plan vs QBR: what's the difference
+## Client roadmap vs account plan vs QBR: what's the difference
 
-All three get used loosely enough that teams end up building one when they need another, or skipping all three because nobody can agree which one they're supposed to own, even though project plans play an important role and serve a different purpose from customer success plans.
+All three get used loosely enough that teams end up building one when they need another, or skipping all three because nobody can agree which one they're supposed to own, even though project plans play an important role and serve a different purpose from client roadmaps.
 
-|  | Client success plan | Account plan | QBR deck |
+|  | Client roadmap | Account plan | QBR deck |
 | --- | --- | --- | --- |
 | What it is | A living, shared structure for one client's goals, owners, timelines, risks and milestones | A commercial growth strategy for one account, with project plans used to track tasks and due dates rather than broader outcomes | A point-in-time presentation reviewing the last quarter |
 | Updated | Continuously, between reviews | Annually or at renewal | Built fresh each quarter, then archived |
@@ -47,9 +47,9 @@ All three get used loosely enough that teams end up building one when they need 
 | Answers | "Where does this relationship stand right now, and what are we doing about it?" | "How much bigger could this account get, and how do we get there?" | "What did we deliver last quarter, and what's next?" |
 | Fails when | Written once at onboarding and never reopened | Treated as a sales forecast with no delivery input | Built from memory the night before, instead of from the plan |
 
-The cleanest way to hold the distinction: an account plan is about growth potential, a QBR is about one quarter, and a client success plan is the living record that feeds both of them and ties day-to-day work back to business goals. A QBR built without an up-to-date success plan behind it is usually built from whoever's memory is freshest. An account plan without one is usually a revenue forecast with no evidence behind it. None of the customer success plans you'll write this year should look identical to each other either; a single retainer and a multi-region strategic account need the same seven fields, but not the same depth inside them, which is exactly what the three filled examples below are built to show.
+The cleanest way to hold the distinction: an account plan is about growth potential, a QBR is about one quarter, and a client roadmap is the living record that feeds both of them and ties day-to-day work back to business goals. A QBR built without an up-to-date roadmap behind it is usually built from whoever's memory is freshest. An account plan without one is usually a revenue forecast with no evidence behind it. None of the client roadmaps you'll write this year should look identical to each other either; a single retainer and a multi-region strategic account need the same seven fields, but not the same depth inside them, which is exactly what the three filled examples below are built to show.
 
-## How to write a client success plan template: section by section
+## How to write a client roadmap template: section by section
 
 Use the blank template as your structure for the key elements and key components of the plan. Here's what each field is actually for, not just what to call it, so teams can build structured plans instead of a document that gets forgotten.
 
@@ -91,7 +91,7 @@ The same dataset found that roughly 69% of accounts that later became genuinely 
 
 A risk section that only gets filled in once something's gone visibly wrong is a post-mortem, not a plan.
 
-### Growth & expansion opportunities
+### Growth & scope expansion opportunities
 
 Only list these once the sections above are genuinely healthy. Pushing growth into a relationship that's still shaky on satisfaction or stakeholder coverage usually lands, to the client, as exactly the wrong moment to be asked for more budget.
 
@@ -103,7 +103,7 @@ Name who reviews this, how often, and what triggers an off-cycle look. Without a
 
 A blank template and a filled one teach different things. Here's a fuller look at each tier. All three are composite accounts, built from patterns that show up across agency relationships, not one real client's data, so you can see exactly how the fields differ by account size without anyone's actual numbers being published.
 
-![Icons for the three account tiers used in the filled examples: Growth, Core and Strategic.](client-success-plan-tier-icons.png)
+![Icons for the three account tiers used in the filled examples: Growth, Core and Strategic.](client-roadmap-tier-icons.png)
 
 ### Growth account
 
@@ -113,7 +113,7 @@ A single retainer, one agency contact, one client-side day-to-day contact, aroun
 
 A cross-functional retainer with three active client-side stakeholders (a CMO, a Head of Brand, a Marketing Ops Manager) and three named goals, each with its own metric, at roughly $42,000 a month. This is the tier where most agencies' own internal process starts to strain, because one account lead is now juggling three relationships with three different cadences of contact, on top of the delivery work itself. The filled example includes a risk that most monthly status reports would never catch: the client's CMO mentioned a competitor agency by name, unprompted, on an unrelated call about campaign creative. Nobody flagged it to the account lead in writing. It only surfaced because the plan's risk section asks, explicitly, for anything raised in passing, not just formal complaints. The plan treats that mention as a signal worth a proactive response: bringing a value recap to the next check-in, framed around the board-level ROI story the client has already asked for, rather than waiting to see if the comment repeats itself.
 
-![A filled client success plan for a Core account, showing three stakeholders, three named goals with metrics, and a competitor-mention risk.](client-success-plan-core-account-example.png)
+![A filled client roadmap for a Core account, showing three stakeholders, three named goals with metrics, and a competitor-mention risk.](client-roadmap-core-account-example.png)
 
 ### Strategic account
 
@@ -139,24 +139,24 @@ That kind of shared context is exactly what a joint worksheet is built to carry,
 | --- | --- |
 | Small or growth-stage agency (one plan owner per client) | Internal plan only; the shared worksheet is optional until the account justifies a formal joint review, though a lighter version still benefits from simple tools if the firm wants to keep the plan current |
 | Mid-size agency, tiered accounts | Internal plan for every retained client; shared worksheet for Core and Strategic tiers |
-| Strategic or enterprise accounts, multi-region | Internal plan at the group level, with a regional pod section each; shared worksheet reviewed jointly every quarter and used to support renewal planning |
+| Strategic or key accounts, multi-region | Internal plan at the group level, with a regional pod section each; shared worksheet reviewed jointly every quarter and used to support renewal planning |
 | Professional services firm (consulting, research, legal) | Same structure; swap "campaign" and "deliverable" language in the milestones section for your own delivery units |
 
-## Common mistakes when filling in a client success plan
+## Common mistakes when filling in a client roadmap
 
-**Writing your goals instead of the client's.** A goals field full of what your team wants to deliver, rather than what the client actually said they wanted, is an activity log wearing a success plan's headings. The tell is a goal phrased as an output ("launch three campaigns this quarter") rather than an outcome in the client's own language ("get our cost per lead down without cutting volume"). If you can't point to a specific conversation where the client said something close to the words in the goals field, rewrite it.
+**Writing your goals instead of the client's.** A goals field full of what your team wants to deliver, rather than what the client actually said they wanted, is an activity log wearing a roadmap's headings. The tell is a goal phrased as an output ("launch three campaigns this quarter") rather than an outcome in the client's own language ("get our cost per lead down without cutting volume"). If you can't point to a specific conversation where the client said something close to the words in the goals field, rewrite it.
 
-**Treating it as a one-time document.** A plan written once at onboarding and never reopened is a kickoff deck, not a living plan. If nobody's edited it in two review cycles, it's already gone stale, and the account lead is quietly back to running the relationship from memory, which is exactly the failure mode the plan was meant to replace. Repeatable processes also keep customer success teams from managing each account differently.
+**Treating it as a one-time document.** A plan written once at onboarding and never reopened is a kickoff deck, not a living plan. If nobody's edited it in two review cycles, it's already gone stale, and the account lead is quietly back to running the relationship from memory, which is exactly the failure mode the plan was meant to replace. Repeatable processes also keep client success teams from managing each account differently.
 
 **Skipping the risk section because nothing's visibly wrong.** As the data above shows, the strongest accounts surface more risk signals than the weakest ones, not fewer. An empty risk section usually means nobody's listening closely enough, not that there's nothing to hear. A useful habit: if the risk section is empty two reviews in a row, treat that as its own signal and ask why, rather than taking it as good news.
 
 **Running one template for every account tier.** A single retainer and a multi-region strategic account don't need the same level of stakeholder detail or the same review cadence. Forcing both into one format usually means under-serving the big account and over-building the small one, which is why the three filled examples above are different depths, not just different numbers plugged into the same shape.
 
-**No named owner for the next review.** A plan with no explicit owner and no scheduled next review date is a document that exists until someone remembers to open it again, which in practice means it doesn't. If the operating model makes a customer success manager accountable, put that date and name on it the moment the plan is created, not after the first review happens to get scheduled.
+**No named owner for the next review.** A plan with no explicit owner and no scheduled next review date is a document that exists until someone remembers to open it again, which in practice means it doesn't. If the operating model makes an account manager accountable, put that date and name on it the moment the plan is created, not after the first review happens to get scheduled.
 
-**Letting the plan and the CRM disagree.** When the success plan says a stakeholder is engaged but the CRM hasn't logged contact with them in two months, one of the two is wrong, and it's usually the plan, because nobody reconciled it. Reconcile client data from the CRM with support team notes before the next review. Pick one system of record for contact recency and point the other one at it.
+**Letting the plan and the CRM disagree.** When the roadmap says a stakeholder is engaged but the CRM hasn't logged contact with them in two months, one of the two is wrong, and it's usually the plan, because nobody reconciled it. Reconcile client data from the CRM with support team notes before the next review. Pick one system of record for contact recency and point the other one at it.
 
-## How to tell whether a client success plan is actually working
+## How to tell whether a client roadmap is actually working
 
 A plan that exists is not the same as a plan that's working. Three things are worth checking in the following ways across your book, not just on the one account that's currently giving you trouble.
 
@@ -166,13 +166,13 @@ A plan that exists is not the same as a plan that's working. Three things are wo
 
 **How long a flagged stakeholder stays flagged.** If the plan has been noting "Finance Director, last contact 7 weeks ago" for three consecutive reviews with no action taken, the plan has become a record of a known gap rather than a tool for closing it. A flag that sits unresolved for more than one review cycle should trigger the off-cycle review trigger described above, not just get copied forward.
 
-## How to keep a client success plan current without manual updates
+## How to keep a client roadmap current without manual updates
 
 The honest objection to all of this: who actually has the tools to keep a stakeholder map, a risk log and a goals section current across an entire book of accounts, on top of doing the work? For most teams, the answer is nobody does, which is why the plan quietly reverts to a kickoff document that nobody reopens.
 
 Kaizan built its Client Health Model to solve exactly that gap. Every account is scored continuously against what we call the Evidence-Based Client Health Standard, four dimensions of relationship health, known internally as CARE, covering client satisfaction, activity with stakeholders, relationship strength, and expansion opportunities, scored from the actual calls, emails and meetings the account team is already having rather than from a form someone fills in once a month. In plain terms, that means the stakeholder map updates itself when a decision-maker goes quiet, the risk log picks up a concern the moment it's mentioned on a call, and the goals section can be checked against what the client is actually saying in conversation, not just what was written down at onboarding. Making that progress visible across the whole company also supports continuous improvement, because everyone is working from the same live picture instead of separate notes.
 
-That matters because measurement frequency, not the underlying sentiment, is usually the real gap. Kaizan's benchmark found that where client satisfaction is actually measured, the strongest and weakest accounts score almost identically, at 7.1 out of 10 either way. The real difference is how often anyone checks: the strongest accounts get measured roughly 2.9 times more often (41 times a year, against 14). A success plan reviewed once a quarter is working from the same gap. The marketing team and sales team can add useful handoff context, and client inquiries can add signals that sharpen the plan as the relationship develops. Senior Client Partner Joe Etchells, at Agency Client A, described what changes when that picture stops depending on memory:
+That matters because measurement frequency, not the underlying sentiment, is usually the real gap. Kaizan's benchmark found that where client satisfaction is actually measured, the strongest and weakest accounts score almost identically, at 7.1 out of 10 either way. The real difference is how often anyone checks: the strongest accounts get measured roughly 2.9 times more often (41 times a year, against 14). A roadmap reviewed once a quarter is working from the same gap. The marketing team and sales team can add useful handoff context, and client inquiries can add signals that sharpen the plan as the relationship develops. Senior Client Partner Joe Etchells, at Agency Client A, described what changes when that picture stops depending on memory:
 
 > "When I look at my client portfolio as a whole, I think it's getting better and more representative and more accurate at portraying where we're at with these client relationships."
 >
@@ -188,30 +188,30 @@ Teams using Kaizan this way save an average of 5.4 hours of admin per person, ev
 
 ## Frequently asked questions
 
-**What is a customer success plan?**
-A customer success plan is a living document, per client, that records the client's own stated goals, the stakeholders who matter, the milestones and metrics that prove progress, and the risks being tracked, reviewed on a set cadence rather than written once and filed away.
+**What is a client roadmap?**
+A client roadmap is a living document, per client, that records the client's own stated goals, the stakeholders who matter, the milestones and metrics that prove progress, and the risks being tracked, reviewed on a set cadence rather than written once and filed away.
 
-**Is a customer success plan the same as an account plan?**
-No. An account plan is usually a commercial growth strategy for one account, owned by leadership or new business and updated annually or at renewal. A customer success plan is the living, continuously updated record the account lead keeps between reviews, and often feeds the account plan with evidence rather than guesswork.
+**Is a client roadmap the same as an account plan?**
+No. An account plan is usually a commercial growth strategy for one account, owned by leadership or new business and updated annually or at renewal. A client roadmap is the living, continuously updated record the account lead keeps between reviews, and often feeds the account plan with evidence rather than guesswork.
 
-**How often should you update a client success plan?**
+**How often should you update a client roadmap?**
 At minimum, monthly for your top-tier accounts and quarterly for the rest, with an explicit off-cycle trigger (a senior stakeholder going quiet, a risk recurring twice) that forces an update outside the normal cadence.
 
-**Do you need a success plan for every client, or just key accounts?**
+**Do you need a roadmap for every client, or just key accounts?**
 Every retained client benefits from one, but the depth should scale with the account. A Growth-tier account might need a one-page version reviewed monthly; a Strategic account needs the fuller stakeholder map and a regional structure, reviewed at both the group and pod level.
 
-**What's the difference between a customer success plan and a QBR deck?**
-A QBR deck is a point-in-time presentation reviewing the last quarter, built fresh each time and shared directly with the client. A customer success plan is the living record behind it. A QBR built without an up-to-date plan behind it is usually built from whoever's memory happens to be freshest that week.
+**What's the difference between a client roadmap and a QBR deck?**
+A QBR deck is a point-in-time presentation reviewing the last quarter, built fresh each time and shared directly with the client. A client roadmap is the living record behind it. A QBR built without an up-to-date plan behind it is usually built from whoever's memory happens to be freshest that week.
 
-**Who should own the client success plan?**
+**Who should own the client roadmap?**
 The account lead owns it day to day. A Head of Client Service should own the standard it's held to across the whole book, which tiers get which depth of plan, and what triggers escalation when the same risk shows up on a plan twice.
 
-**What shouldn't go in a client success plan?**
+**What shouldn't go in a client roadmap?**
 Anything that belongs in the account plan instead: speculative upsell revenue with no client-side signal behind it, or commercial terms and margin detail that have nothing to do with the relationship itself. Keep the plan to what's true about the relationship right now, not what you'd like to be true about its revenue next year.
 
-**Can clients see their own success plan?**
+**Can clients see their own roadmap?**
 Not the internal version, which carries risk flags and account economics the client shouldn't see. The shared goals worksheet is built specifically to be client-facing, stripped down to what's worth co-owning.
 
 ---
 
-If you want your client success plans to stay current without anyone blocking out time to update them, on your own accounts, [book a demo](https://www.kaizan.ai/us/).
+If you want your client roadmaps to stay current without anyone blocking out time to update them, on your own accounts, [book a demo](https://www.kaizan.ai/us/).

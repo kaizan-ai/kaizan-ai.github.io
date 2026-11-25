@@ -1,4 +1,4 @@
-**Customer relationship management: the process in seven steps**
+**Client relationship management: the process in seven steps**
 
 **Setup**
 1. **Build record.** Owner: Account Director (or whoever onboards the account)

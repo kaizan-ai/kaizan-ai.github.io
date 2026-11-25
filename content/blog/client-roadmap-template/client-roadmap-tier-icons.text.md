@@ -1,4 +1,4 @@
-**Client success plan template: three account tiers, three icons**
+**Client roadmap template: three account tiers, three icons**
 
 | Tier | Shape | Price |
 |---|---|---|

@@ -27,7 +27,7 @@ A CRM for a service business stores contacts, deals, and activity logs. It was b
 
 Some teams search for this as CRM account management, hoping to find one system that handles both the deal and the ongoing account relationship. The honest answer is that no CRM, however well configured, was built to do both well, and the rest of this guide explains why.
 
-## What Customer Relationship Management (CRM) For A Service Business Is Actually Built To Do
+## What Client Relationship Management (CRM) For A Service Business Is Actually Built To Do
 
 A CRM earns its place. It is the one list everyone agrees on: who the client is, who signed the contract, what is in the pipeline, what was invoiced, what is renewing and when, functioning as the shared client database for the business. For an advertising agency, a consultancy, or any other service business in the wider service industry running dozens or hundreds of client relationships at once, that list is not optional. Finance needs it. New business needs it. Leadership needs it as one of the core CRM tools they rely on for a single number they can defend upward.
 
@@ -65,7 +65,7 @@ Both quotes describe the same structural issue. A CRM, like a manual status repo
 
 ### Why This Is Structural, Not A Discipline Problem
 
-It is tempting to read all of this as an adoption issue for service teams: get account managers to log better, add mandatory fields, run a refresher session. That misreads the cause. Across Kaizan's own client conversations, one theme comes up constantly: client-facing time is the scarce resource, not goodwill.
+It is tempting to read all of this as an uptake issue for service teams: get account managers to log better, add mandatory fields, run a refresher session. That misreads the cause. Across Kaizan's own client conversations, one theme comes up constantly: client-facing time is the scarce resource, not goodwill.
 
 > "About 35 to 40% of an account handler's job now is admin, and there's a problem where that admin is getting in the way of having proper relationship-driven conversations."
 >
@@ -79,7 +79,7 @@ Outside estimates of how much CRM data goes stale or unentered vary a great deal
 
 ![Venn diagram: CRM software is a small part of client relation management.](client-relation-management-vs-crm.png)
 
-The two terms get used interchangeably, and that is part of the problem. Client relation management is the discipline: the ongoing work of understanding, serving, and growing a client relationship, in plain English, managing client relationships, across however many people and tools touch that client. A CRM, customer relationship management software, is one tool that supports part of that discipline: the record-keeping part.
+The two terms get used interchangeably, and that is part of the problem. Client relation management is the discipline: the ongoing work of understanding, serving, and growing a client relationship, in plain English, managing client relationships, across however many people and tools touch that client. A CRM, client relationship management software, is one tool that supports part of that discipline: the record-keeping part.
 
 Think of it as two overlapping circles rather than one. CRM software covers the administrative core of client relation management, contacts, deals, contract terms, billing history. What it does not cover is the larger circle across the full client journey: the sentiment, stakeholder coverage, and risk signal that actually determine whether a relationship grows or quietly ends. A service business can run excellent client relation management with a mediocre CRM, and a business can also run a pristine CRM while being genuinely blind to how its clients feel. The software is not the discipline. It is infrastructure for one slice of the work required to build strong client relationships.
 
@@ -121,7 +121,7 @@ What this does not require is choosing between tools. The CRM keeps its job as t
 
 ## Why Account Managers Don't Update The CRM
 
-It is worth separating two different failures that get blamed on the same cause. One is a genuine CRM hygiene problem, duplicate contacts, dead fields, stale deal stages. The other, bigger one is that account managers are not withholding information out of carelessness. They are triaging between keeping customer service work moving in real time and updating a CRM field that keeps a dashboard accurate, and the client-facing task wins.
+It is worth separating two different failures that get blamed on the same cause. One is a genuine CRM hygiene problem, duplicate contacts, dead fields, stale deal stages. The other, bigger one is that account managers are not withholding information out of carelessness. They are triaging between keeping client service work moving in real time and updating a CRM field that keeps a dashboard accurate, and the client-facing task wins.
 
 The pattern shows up directly in how account managers describe their own week. One commercial leader building an internal CRM for his team told us account managers were not consistently maintaining the data his project depended on, not from a lack of will but because nothing about the system made that update feel necessary at the time it mattered. Another agency's chief client officer put a number on the same pressure: with 35 to 40% of an account handler's time already gone to admin, a non-essential CRM update is one of the first things to slip.
 
@@ -136,7 +136,7 @@ If any of these sound familiar, the CRM is doing its job as a system of record a
 - Updates live wherever the account manager who wrote them happened to be that day: a notebook, a personal doc, a Slack DM, occasionally the CRM.
 - When an account director leaves or goes on leave, the context leaves with them, and a new hire rebuilds it from scratch.
 - Leadership asks for a portfolio-wide view of risk and gets no reliable key metrics, just a RAG spreadsheet that was last updated three weeks ago.
-- A decision-maker has gone quiet for over a month, and nobody noticed until the renewal conversation.
+- A decision-maker has gone quiet for over a month, and nobody noticed until the retainer renewal conversation.
 
 Kaizan's own benchmark data backs up how common the first two points are. Across a year of anonymised client service data, struggling accounts were rarely silent about it: about 69% surfaced a warning sign in conversation at least once, and 38% did so repeatedly, across multiple periods. The signal exists. It was never going to show up in a CRM field on its own.
 
@@ -146,8 +146,8 @@ For a Head of Ops or COO, the CRM-gap problem is not an abstract visibility issu
 
 Kaizan's [client portfolio](https://kaizan.ai/pricing/) sees, on average, and leadership also gets dashboards that make client trends across the portfolio easier to spot:
 
-- **26%+ average revenue growth per client**, driven by catching expansion signals and risk earlier than a CRM-only workflow would.
-- **45% of at-risk revenue protected** through early signals surfaced before a renewal conversation goes wrong.
+- **26%+ average revenue growth per client**, driven by catching growth signals and risk earlier than a CRM-only workflow would.
+- **45% of at-risk revenue protected** through early signals surfaced before a retainer renewal conversation goes wrong.
 - **33% lower cost to serve** each client, from automating the admin a CRM update used to require by hand.
 - **5.4 hours of admin saved per person, per week**, time that a CRM update, meeting note, or status report used to take out of an account manager's day.
 
@@ -170,7 +170,7 @@ Closing this gap on an existing CRM for a service business takes six steps, in t
 
 **What does a CRM for a service business miss?** A CRM for a service business stores contacts, deals, and activity logs. It was built to run a sales pipeline, not to hold a client relationship. The emails, calls, and meetings where a relationship actually lives mostly never reach a CRM field, which is how a team can keep a clean CRM and still get blindsided by a client who leaves.
 
-**What is client relation management, and how is it different from CRM?** Client relation management is the ongoing discipline of understanding, serving, and growing a client relationship. CRM, customer relationship management software, is one tool that supports part of that discipline: the administrative record of contacts, deals, contact management, and contract terms. A business can run strong client relation management with a basic CRM, or a clean CRM while being genuinely blind to client sentiment. The two are not interchangeable.
+**What is client relation management, and how is it different from CRM?** Client relation management is the ongoing discipline of understanding, serving, and growing a client relationship. CRM, client relationship management software, is one tool that supports part of that discipline: the administrative record of contacts, deals, contact management, and contract terms. A business can run strong client relation management with a basic CRM, or a clean CRM while being genuinely blind to client sentiment. The two are not interchangeable.
 
 **What does a CRM not capture?** A CRM does not capture the conversation itself: the tone of a call, a concern raised twice in a month, a decision-maker who has gone quiet, a passing comment that signals an upsell opportunity. It only holds what someone chose to type into a field, and most of what matters in a relationship never gets typed in, because nobody has time to transcribe every call by hand.
 
@@ -182,6 +182,6 @@ Closing this gap on an existing CRM for a service business takes six steps, in t
 
 **Why do account managers not update the CRM?** Mostly because they are triaging between a CRM field and an actual client conversation, and the conversation wins, which is the right call in the moment. With roughly 35 to 40% of an account handler's week already gone to admin, a non-essential update is one of the first things to slip. The fix is capturing the signal automatically rather than asking a busy person to remember to log it.
 
-**Will the team actually use it?** That is the real adoption risk with any system layered onto a CRM, and it is worth testing before committing to anything. A layer that still requires manual entry gets treated exactly like the CRM fields it was meant to fix: ignored under pressure. The honest test is whether the health score updates itself from conversations that already happen, fits current business processes, or whether it just adds another field for someone to fill in.
+**Will the team actually use it?** That is the real uptake risk with any system layered onto a CRM, and it is worth testing before committing to anything. A layer that still requires manual entry gets treated exactly like the CRM fields it was meant to fix: ignored under pressure. The honest test is whether the health score updates itself from conversations that already happen, fits current business processes, or whether it just adds another field for someone to fill in.
 
 If you want to see what a health score written back to your own CRM record looks like, [book a demo](https://kaizan.ai/).

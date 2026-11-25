@@ -1,4 +1,4 @@
-**Churn prediction software: 12 questions to ask any vendor**
+**Client attrition prediction software: 12 questions to ask any vendor**
 
 Ask these before a single demo.
 

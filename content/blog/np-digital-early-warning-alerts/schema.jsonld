@@ -32,7 +32,7 @@
           "name": "What did the team have to change?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The biggest change was moving away from individual account managers holding the relationship in memory and towards a shared, always-current view that the whole team, and new people joining an account, could use from day one. That shared visibility also helps protect client experience and maintain customer support continuity when new people join an account.",
+            "text": "The biggest change was moving away from individual account managers holding the relationship in memory and towards a shared, always-current view that the whole team, and new people joining an account, could use from day one. That shared visibility also helps protect client experience and maintain client support continuity when new people join an account.",
             "inLanguage": "@@LANG@@"
           }
         },

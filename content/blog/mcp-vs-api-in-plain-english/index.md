@@ -53,7 +53,7 @@ Your AI still has to go and look things up, using tools somebody built. What cha
 
 ## What it looks like on a Tuesday morning
 
-Ninety minutes before a renewal conversation.
+Ninety minutes before a retainer renewal conversation.
 
 With a traditional integration, you have a dashboard. It answers the questions it was built to answer. It will not tell you about the three things you promised on a call in March that quietly never got done.
 

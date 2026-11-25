@@ -8,7 +8,7 @@ topic: agency-profitability
 excerpt: Adam Hopkinson, founder of media agency PASHN, on where the industry is heading and how AI helps protect revenue and save time.
 cover: img-1.png
 draft: false
-tags: [customer-success, artificial-intelligence, marketing, productivity, revenue-management]
+tags: [client-success, artificial-intelligence, marketing, productivity, revenue-management]
 ---
 
 Adam Hopkinson is the founder and managing director of PASHN Limited, a specialist media agency serving fashion, leisure and entertainment brands. We spoke to him about where the industry is heading, what most agencies get wrong about client relationships, and what’s changed since bringing Kaizan into the business.

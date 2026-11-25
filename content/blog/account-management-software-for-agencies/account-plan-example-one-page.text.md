@@ -11,7 +11,7 @@ Agency Client A · mid-market industrial B2B · retainer since 2023
 
 **Health: Amber.** CSAT steady, but decision-maker engagement has dropped and two risk mentions were logged in the last month.
 
-**Renewal risk, countdown: 11 weeks.** Contract renews in 11 weeks. The CMO engagement gap is the live risk.
+**Retainer renewal risk, countdown: 11 weeks.** Contract renews in 11 weeks. The CMO engagement gap is the live risk.
 
 **White space**
 - Added: SEO added mid-2025
@@ -19,7 +19,7 @@ Agency Client A · mid-market industrial B2B · retainer since 2023
 
 **Next three actions**
 1. Get VP Sales into the next QBR.
-2. Re-engage CMO directly before the renewal conversation.
+2. Re-engage CMO directly before the retainer renewal conversation.
 3. Scope the paid social opportunity properly rather than letting it stay a comment.
 
 Anonymised from a real agency account.

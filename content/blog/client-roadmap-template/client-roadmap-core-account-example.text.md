@@ -1,4 +1,4 @@
-**Client success plan template: Core account, the risk a status report would miss**
+**Client roadmap template: Core account, the risk a status report would miss**
 
 Illustrative composite. [Example] Alder & Vance Financial Services, Core, approx. $42,000/month.
 
@@ -8,7 +8,7 @@ Illustrative composite. [Example] Alder & Vance Financial Services, Core, approx
 - Marketing Ops Manager: Day-to-day. Last contact: 3 days ago
 
 **Client's stated goals, in their words**
-1. "Grow our share of voice in the mid-market segment." Metric: share of voice, +8 points year over year
+1. "Grow our share of voice in the mid-sized business segment." Metric: share of voice, +8 points year over year
 2. "Cut our campaign turnaround time." Metric: brief-to-live under 12 business days
 3. "Make sure our board sees the ROI story clearly." Metric: board-ready ROI summary, on time every quarter
 
