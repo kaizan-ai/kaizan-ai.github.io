@@ -17,11 +17,13 @@ Most onboarding questionnaires online stop at 15 questions, because anything lon
 
 ## What's in it
 
-- **40 questions** across seven groups: company and commercial context, goals and success metrics, stakeholders and decision-making, brand and positioning, working style and communication, reporting and measurement, and risk and history.
+- **40 questions** across seven groups: company and commercial context, goals and success metrics, stakeholders and decision-making, brand and positioning, working style and communication, reporting and measurement, and risk and history. Send it within 48 hours of contract signing and before kickoff, with a brief note on the purpose—understanding the client's business, needs, and expectations, setting expectations early—and how long it should take so people can complete it in a timely manner.
 - **A reason for every question**, so you know what a good answer unlocks and what a missing one puts at risk.
 - **A filled, anonymised example** from a mid-sized agency's engagement, so you can see what a completed row looks like next to the blank.
 - **Three variants**: the default set below works for most marketing and advertising agencies as written; a creative-agency variant and a consulting-firm variant swap out six of the questions (Group 4) for ones suited to brand work and advisory engagements.
-- **A decision guide** for when to send a short form first and when the full questionnaire earns its length.
+- **A decision guide** for when to send a short form first and when the full questionnaire earns its length, collecting essential information and information upfront so you can spot risks, understand client information, avoid rework, reduce misunderstandings, and set realistic expectations before project work starts.
+
+Pre-filling what you already know from the sales team saves time, reduces client effort, and makes the onboarding process feel more organised and professional from the start of the client relationship. When you use a shorter cut, keep it to 10 to 15 targeted questions that take less than 15 minutes, while still creating realistic expectations for the work ahead.
 
 ## How to use it
 
@@ -41,9 +43,11 @@ The first answer gives you nothing to act on. The second tells you which number 
 
 ## The 40 questions
 
-All 40 are here, grouped by theme. Each carries the one-line reason it's on the list. For marketing client onboarding questionnaires and advertising agencies, this set works as written. Group 4 is the one that changes by firm type; the swaps for creative agencies and consulting firms are in the next section.
+All 40 are here, grouped by theme. Each carries the one-line reason it's on the list. This client onboarding questionnaire is structured to understand the client's needs and expectations before work begins, especially their background and project goals. For marketing client onboarding questionnaires and advertising agencies, this set works as written. Group 4 is the one that changes by firm type; the swaps for creative agencies and consulting firms are in the next section.
 
 ### Group 1: Company and commercial context
+
+This client questionnaire covers client background and project goals by gathering the detailed information needed to start well with new clients.
 
 1. What is the client's official company name, primary website, and any brand name used instead of the legal entity? *Avoids misnaming the client in decks, contracts and reports from week one.*
 2. Who is the primary budget holder for this engagement, and do they sit inside or outside the team we'll work with day to day? *Flags whether decision-maker access needs building deliberately, rather than assumed.*
@@ -54,8 +58,10 @@ All 40 are here, grouped by theme. Each carries the one-line reason it's on the 
 
 ### Group 2: Goals and success metrics
 
+In a new client questionnaire, this section captures business goals and project goals so the work stays aligned with what matters most.
+
 7. In the client's own words, what does success look like in 6 months? In 12 months? *The client's own phrasing, not our paraphrase of it, is what gets repeated back at renewal.*
-8. What is the single metric this engagement will actually be judged against internally, even if it's not written into the contract? *The contract KPI and the internal judgment metric are often two different things. Only one of them decides renewal.*
+8. What is the single metric this engagement will actually be judged against internally, even if it's not written into the contract? *The contract KPI and the internal judgement metric are often two different things. Only one of them decides renewal.*
 9. What has been tried before that didn't work, and why? *Stops the team from re-pitching an idea the client has already rejected, for reasons nobody told them.*
 10. What would make this client recommend us to a peer? *A different question from "what does success look like". This one is about the relationship, not the deliverable.*
 11. What would make this client consider the engagement a failure, even if every deliverable lands on time? *The fastest way to find the real risk is to ask what it looks like, directly.*
@@ -130,18 +136,18 @@ Group 4 is where a marketing agency, a creative agency and a consulting firm gen
 
 ## Client onboarding form or questionnaire: which to use and when
 
-A client onboarding form and a client onboarding questionnaire solve different problems, and most firms only need the second one to realize that. A form collects facts: logins, billing contacts, brand asset links. A questionnaire collects judgment: goals, politics, risk appetite, what success actually means to the person who'll decide renewal. Treating them as the same document is why so many onboarding questionnaires read like intake forms and miss everything that predicts churn.
+A client onboarding form and a client onboarding questionnaire solve different problems, and most firms only need the second one to realise that. A form collects facts: logins, billing contacts, brand asset links, and well-built onboarding forms can use conditional logic to show only relevant questions for a more personalised experience. A questionnaire collects judgement: goals, politics, risk appetite, what success actually means to the person who'll decide renewal. Treating them as the same document is why so many onboarding questionnaires read like intake forms and miss everything that predicts churn.
 
 | Situation | Use a form | Use this questionnaire |
 | --- | --- | --- |
 | Logins, billing contacts, tool access | Yes | Not needed |
 | Goals, stakeholder politics, risk appetite | Not suited to it | Yes |
-| Single stakeholder, small retainer, fast turnaround | A short form alone is often enough | Optional; consider a 15-20 question cut |
+| Single stakeholder, small retainer, fast turnaround | A short form alone is often enough | Optional; consider a shorter cut under 15 questions for better completion rates |
 | Multi-stakeholder account, six figures or more | Form for logistics, sent separately | Yes, in full |
 | Heavy procurement or legal involvement | Form first, pre-contract | Questionnaire after signature, during onboarding |
 | Replacement account (client left a previous provider) | Not suited to it | Yes, with extra weight on Group 7 |
 
-The practical pattern most firms land on: a short form clears logistics in the sales-to-delivery handoff, and this questionnaire runs in parallel or immediately after, because it needs the contract signed before some of the answers (budget, risk appetite, internal politics) get given honestly.
+The practical pattern most firms land on: a short form clears logistics in the sales-to-delivery handoff, and this questionnaire runs in parallel or immediately after, because keeping the form separate helps collect important information upfront more efficiently and it needs the contract signed before some of the answers (budget, risk appetite, internal politics) get given honestly.
 
 ### Account tiers
 
@@ -166,9 +172,11 @@ Notice what this example does: it names a number (blended CAC), a reporting cade
 
 ### Common mistakes when filling it in
 
-- **Treating it as a form to tick through fast.** The questionnaire is slowest, and most valuable, on exactly the questions that feel awkward to ask (17, 34, 37). Rushing past those defeats the point.
+- **Treating it as a form to tick through fast.** The questionnaire is slowest, and most valuable, on exactly the questions that feel awkward to ask (17, 34, 37). Rushing past those defeats the point, because a strong client onboarding questionnaire helps identify potential challenges early in the relationship.
 - **Sending it to one contact only.** A single client contact answers from their own vantage point. Group 3 in particular needs input from whoever runs delivery on the client side, not just the commercial lead.
-- **Filing the answers and never looking at them again.** An onboarding questionnaire that lives in a folder is indistinguishable from one that was never filled in. The value is in the team actually reading it before the first few client calls.
+- **Filing the answers and never looking at them again.** An onboarding questionnaire that lives in a folder is indistinguishable from one that was never filled in. The value is in the team actually reading the client responses before the first few client calls, and reviewing how the questionnaire performs over time to spot early relationship risks and improve the overall client experience.
+
+- **Accepting a vague answer without a follow-up.** "Brand awareness" is not an answer to question 8. Preparing follow up questions for the kickoff helps you get to the real answer without repeating what they already told you, and repeated vague answers are feedback on the questionnaire itself and should trigger periodic revisions based on performance.
 - **Accepting a vague answer without a follow-up.** "Brand awareness" is not an answer to question 8. A follow-up question ("and who reports that number upward, and how often") usually gets the real one.
 
 ### How to keep it current without manual updating
@@ -182,25 +190,47 @@ This is the specific gap a [client success platform](https://www.kaizan.ai/us/) 
 ## Frequently asked questions
 
 **Is a client onboarding form the same as this questionnaire?**
-No. A client onboarding form collects facts, such as logins, billing contacts and tool access. This questionnaire collects judgment: goals, stakeholder politics, risk appetite and what success actually means to the person who decides renewal. Most firms need both, sent at different points in onboarding.
+No. A client onboarding form collects facts, such as logins, billing contacts and tool access. This questionnaire collects judgement: goals, stakeholder politics, risk appetite and what success actually means to the person who decides renewal. Most firms need both, sent at different points in onboarding.
 
 **Is this questionnaire suitable for a marketing agency specifically?**
-Yes, the default 40 questions above are written for marketing and advertising agencies. Creative agencies and consulting firms should swap the six Group 4 questions for the variant listed in this guide.
+Yes. The core structure stays the same, but for a marketing agency, the questionnaire should also capture marketing information such as social media priorities, audience pain points, and any audience research the client already has.
 
-**What onboarding questions should I ask a new client?**
-At minimum, cover company and commercial context, goals and success metrics, stakeholders and decision-making, working style, reporting, and recent history, especially if the client is replacing a previous provider. The 40 questions above are organised into exactly those seven groups.
+**What are the best onboarding questions to ask new clients?**
+The best onboarding questions cover client background, project goals, communication preferences, contact details, and the main point of contact before work begins.
+
+Project specific questions should also clarify how you'll measure success and what detailed questions still need answers beyond the sales conversation.
 
 **Is this the same as a client intake form?**
-No, for the same reason it isn't the same as an onboarding form. A client intake form is typically the shortest, most factual version of this conversation, used mainly in legal, financial or healthcare contexts. This questionnaire is built for the judgment calls an account team needs, not just the facts a system of record needs.
+No, for the same reason it isn't the same as an onboarding form. A client intake form is typically the shortest, most factual version of this conversation, used mainly in legal, financial or healthcare contexts. This questionnaire is built for the judgement calls an account team needs, not just the facts a system of record needs.
 
 **How do I fill it in?**
-Send it to more than one contact on the client side, read the answers before the kickoff call, and follow up on anything vague rather than filing it as given. The "How to use it" section above has the full sequence.
+Review notes from the sales team first so the client does not have to repeat basic answers already shared. A concise new client questionnaire is easier to complete in a timely manner when known details are already carried over.
 
-**Can I customise it for my firm?**
-Yes. The per-firm-type variants already swap the six questions that differ most by firm type (Group 4). Most firms also trim Groups 4-7 for smaller accounts, as covered in the account-tier guidance above.
+**Can the onboarding questionnaire be customised for different client segments?**
+Yes. In fact, it should be customised if you work with different client types, service packages, or project scopes.
+
+A startup hiring you for brand development won't need the same intake questions as an enterprise client onboarding for full-service marketing support.
+
+Customisation helps you:
+
+- avoid irrelevant questions
+- collect more accurate information
+- improve the client experience
+- reduce friction during onboarding
+
+You can customise by:
+
+- duplicating a core version and editing sections by client type
+- adding or removing questions based on service
+- adjusting the language depending on the client's familiarity or industry
+- creating versions for one-time projects vs. ongoing retainers
+
+Customisation can also include ready to use templates and conditional logic to create a personalised experience so different client segments only see relevant questions.
+
+The key is to standardise the structure while tailoring the content.
 
 **How do I keep it current?**
-A filled questionnaire is a snapshot from day one. Stakeholders move, decision-makers go quiet, and priorities shift. Revisit the answers at each quarterly review at minimum, and see the section above on why a live, always-current record closes this gap in a way a static document can't.
+Review answers against project outcomes and update the questionnaire when gaps start affecting delivery or reporting.
 
 ---
 

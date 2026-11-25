@@ -1,5 +1,5 @@
 ---
-title: "How Churn Prediction Works on Conversation Data"
+title: "Client Attrition Prediction Software: How Churn Prediction Works on Conversation Data"
 date: 2026-11-10
 author: James Caples
 category: POV
@@ -21,7 +21,7 @@ Client churn prediction software scores the likelihood that a client relationshi
 - Professional services firms retain 84% of clients on average, so roughly one client in six is up for renewal risk every year.
 - A churn model is only as good as the labels it trains on: retained, expanded, and lost accounts, not just the accounts that left.
 
-## What is client churn prediction software?
+## What is client attrition prediction software?
 
 Client churn prediction software is a system that assigns a risk score to each client relationship, based on patterns that preceded past departures and past renewals. It is a specific application of predictive analytics, applied to the question agencies and consultancies actually lose sleep over: which client leaves next, and is there still time to act.
 
@@ -41,7 +41,7 @@ Three places, with different strengths.
 
 - **Built into a client success or client health platform.** The churn score sits alongside a wider relationship health model, so a team sees the why behind the will-they-leave. Kaizan works this way: CARE scores every client relationship, and the risk read comes from the same conversation data as everything else the platform does.
 - **As a module inside a SaaS-focused customer success platform**, such as Gainsight, Totango, or Vitally. Strong on product usage and support ticket signals, weaker on agency-style relationships where there is no product telemetry to read.
-- **As a custom build**, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labeling, and maintenance that a platform already absorbs.
+- **As a custom build**, usually a data science team working from CRM exports and call transcripts. Flexible, but it carries the full cost of ingestion, labelling, and maintenance that a platform already absorbs.
 
 A plain CRM is not on this list. A CRM stores what happened on a call if someone typed it in. It does not score anything from the conversation itself. For a wider look at the retention category this sits inside, see [client retention software for agencies and service firms](https://www.kaizan.ai/us/blog/client-software/client-retention-software-for-agencies/).
 
@@ -77,7 +77,7 @@ Raw conversation does not predict anything on its own. It has to be turned into 
 
 ### The model
 
-The model is trained on what actually happened to an organization's own book of clients: who renewed, who expanded, and who left, with the conversation patterns that preceded each outcome. This matters because a generic churn model trained on someone else's accounts learns someone else's patterns. A model calibrated on an organization's own retained, expanded, and lost accounts learns what churn actually looks like in that specific client base, which is a materially different and more reliable signal.
+The model is trained on what actually happened to an organisation's own book of clients: who renewed, who expanded, and who left, with the conversation patterns that preceded each outcome. This matters because a generic churn model trained on someone else's accounts learns someone else's patterns. A model calibrated on an organisation's own retained, expanded, and lost accounts learns what churn actually looks like in that specific client base, which is a materially different and more reliable signal.
 
 ### Alerting and the next action
 
@@ -98,13 +98,13 @@ A risk score becomes useful the moment it reaches a person with the context to a
 
 These two get used interchangeably, and they are related but not the same thing. Churn prediction is a single output: a risk score, usually expressed as a probability or a band. Health scoring is a diagnostic: it breaks a relationship into the dimensions that make it strong or fragile, so a team sees which one needs attention, not just that something is wrong.
 
-In practice, the best churn prediction is a byproduct of good health scoring, not a replacement for it. [Kaizan's health model](https://www.kaizan.ai/us/product/#health-model), known externally as the Evidence-Based Client Health Standard and internally as CARE, scores every client relationship across four dimensions: how the client feels about the work, whether the right people are being engaged often enough, whether the relationship is deepening or going transactional, and whether the conditions are right to grow it. A risk read calibrated against an organization's own retained, expanded, and lost accounts sits on top of that same scoring, so the churn signal comes with the why already attached, not just a number.
+In practice, the best churn prediction is a byproduct of good health scoring, not a replacement for it. [Kaizan's health model](https://www.kaizan.ai/us/product/#health-model), known externally as the Evidence-Based Client Health Standard and internally as CARE, scores every client relationship across four dimensions: how the client feels about the work, whether the right people are being engaged often enough, whether the relationship is deepening or going transactional, and whether the conditions are right to grow it. A risk read calibrated against an organisation's own retained, expanded, and lost accounts sits on top of that same scoring, so the churn signal comes with the why already attached, not just a number.
 
 If a tool only gives a risk score with no breakdown underneath it, a team can see that an account is in trouble but not what to do about it. That is the gap a pure churn-prediction tool leaves, and the gap health scoring closes.
 
 ## How it works in practice: a worked example
 
-Take an anonymized account from Kaizan's own client portfolio, Agency Client A, scored 1.4 out of 10 overall on its most recent review period, down from 1.5 the period before. The breakdown told a clearer story than the headline number: satisfaction at 0.7, relationship strength at 2.1, activity at 2.5, and expansion readiness at 0.4. But the detail that mattered most was not any single score. It was the volume of conversation behind it. Almost nothing had been logged for the account in the review window.
+Take an anonymised account from Kaizan's own client portfolio, Agency Client A, scored 1.4 out of 10 overall on its most recent review period, down from 1.5 the period before. The breakdown told a clearer story than the headline number: satisfaction at 0.7, relationship strength at 2.1, activity at 2.5, and expansion readiness at 0.4. But the detail that mattered most was not any single score. It was the volume of conversation behind it. Almost nothing had been logged for the account in the review window.
 
 ![Watch one account go from quiet conversations to a risk flag](video.mp4)
 
@@ -153,7 +153,7 @@ The 84% retention figure is an industry-wide average compiled from multiple sour
 Before any model produces a usable score, four things need to be in place.
 
 - **Enough conversation history to establish a baseline.** A handful of calls tells a model very little. Three to six months of consistent capture across calls, emails, and chat gives the signal extraction something to work with.
-- **Labeled outcomes to train against.** The model needs examples of accounts that were retained, accounts that expanded, and accounts that were lost, not just the lost ones. Training on losses alone teaches a model what failure looks like, not what success looks like, and the two are not simply opposites.
+- **Labelled outcomes to train against.** The model needs examples of accounts that were retained, accounts that expanded, and accounts that were lost, not just the lost ones. Training on losses alone teaches a model what failure looks like, not what success looks like, and the two are not simply opposites.
 - **Integration with the systems that hold the conversation.** Email, calendar, call recording, and CRM, connected automatically rather than relying on manual logging, which is where most of the signal gets lost today.
 - **A defensible data handling posture.** Conversation data is sensitive client information. Any platform doing this work should be able to show SOC 2 Type II certification, encryption in transit and at rest, zero-retention commitments with any foundation model providers, and per-tenant data isolation, since none of it should be used to train a shared or public model.
 
@@ -161,7 +161,7 @@ For a head of AI or technology taking this to a client security review, that las
 
 ## Common mistakes, and what they cost
 
-- **Training only on accounts that already left.** This produces a model that recognizes failure after the fact and struggles to generalize to accounts struggling in a new way. Train on the full spread: retained, expanded, and lost.
+- **Training only on accounts that already left.** This produces a model that recognises failure after the fact and struggles to generalise to accounts struggling in a new way. Train on the full spread: retained, expanded, and lost.
 - **Reading quiet accounts as healthy accounts.** The data says the opposite. A relationship with almost no conversation activity is one nobody has eyes on, which is a different problem from a relationship that is genuinely fine.
 - **Relying on a survey for the how-do-they-feel signal.** Where CSAT is actually measured, happy and struggling accounts often score close to identical. The real gap is how often anyone bothers to ask. A quarterly survey cannot catch a risk that develops over three weeks.
 - **Scoring the account but not the stakeholders inside it.** A relationship that looks fine in aggregate can still be running through a single contact on each side. That is a structural vulnerability a headline risk score will not show.
@@ -205,4 +205,4 @@ No, and it should not try to. Surveys and QBRs are useful checkpoints. Churn pre
 
 ---
 
-To see how Kaizan scores churn risk on your own conversation data, [book a demo](https://www.kaizan.ai/us/).
+To see how Kaizan scores churn risk on your own conversation data, [book a demo](https://www.kaizan.ai/us/)
