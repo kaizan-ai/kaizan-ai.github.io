@@ -12,13 +12,14 @@ root.classList.add('is-js');
 var saved = {};
 try { saved = JSON.parse(sessionStorage.getItem(STORE) || '{}') || {}; } catch (e) {}
 var params = new URLSearchParams(window.location.search);
-var fromUrl = false;
+var fromUrl = false, replaceSet = false;
 form.querySelectorAll('input[data-utm]').forEach(function (el) {
-if (params.has(el.getAttribute('data-utm'))) fromUrl = true;
+var k = el.getAttribute('data-utm');
+if (params.has(k)) { fromUrl = true; if (k !== 'gclid') replaceSet = true; }
 });
 form.querySelectorAll('input[data-utm]').forEach(function (el) {
 var key = el.getAttribute('data-utm');
-var val = fromUrl ? (params.get(key) || '') : (saved[key] || '');
+var val = replaceSet ? (params.get(key) || '') : (params.has(key) ? params.get(key) : (saved[key] || ''));
 el.value = val.slice(0, 255);
 saved[key] = el.value;
 });

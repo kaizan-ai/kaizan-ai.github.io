@@ -29,11 +29,14 @@ role.addEventListener('change', function () { setErr(role, ''); });
 var STORE = 'kz-utm', saved = {};
 try { saved = JSON.parse(sessionStorage.getItem(STORE) || '{}') || {}; } catch (e) {}
 var params = new URLSearchParams(window.location.search);
-var inputs = form.querySelectorAll('input[data-utm]'), fromUrl = false;
-inputs.forEach(function (el) { if (params.has(el.getAttribute('data-utm'))) fromUrl = true; });
+var inputs = form.querySelectorAll('input[data-utm]'), fromUrl = false, replaceSet = false;
 inputs.forEach(function (el) {
 var k = el.getAttribute('data-utm');
-el.value = (fromUrl ? (params.get(k) || '') : (saved[k] || '')).slice(0, 255);
+if (params.has(k)) { fromUrl = true; if (k !== 'gclid') replaceSet = true; }
+});
+inputs.forEach(function (el) {
+var k = el.getAttribute('data-utm');
+el.value = (replaceSet ? (params.get(k) || '') : (params.has(k) ? params.get(k) : (saved[k] || ''))).slice(0, 255);
 saved[k] = el.value;
 });
 if (fromUrl) { try { sessionStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {} }

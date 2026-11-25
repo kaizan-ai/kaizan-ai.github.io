@@ -13,8 +13,12 @@ var saved = {};
 try { saved = JSON.parse(sessionStorage.getItem(UTM_STORE) || '{}') || {}; } catch (e) {}
 var params = new URLSearchParams(window.location.search);
 var fromUrl = UTM_ALL.some(function (k) { return params.has(k); });
+var replaceSet = UTM_ALL.some(function (k) { return k !== 'gclid' && params.has(k); });
 if (fromUrl) {
-UTM_ALL.forEach(function (k) { saved[k] = (params.get(k) || '').slice(0, 255); });
+UTM_ALL.forEach(function (k) {
+if (replaceSet) saved[k] = (params.get(k) || '').slice(0, 255);
+else if (params.has(k)) saved[k] = params.get(k).slice(0, 255);
+});
 try { sessionStorage.setItem(UTM_STORE, JSON.stringify(saved)); } catch (e) {}
 }
 return saved;

@@ -13,9 +13,10 @@ try { saved = JSON.parse(sessionStorage.getItem(STORE) || '{}') || {}; } catch (
 var params = new URLSearchParams(window.location.search);
 var utmEls = form.querySelectorAll('input[data-utm]');
 var fromUrl = Array.prototype.some.call(utmEls, function (el) { return params.has(el.getAttribute('data-utm')); });
+var replaceSet = Array.prototype.some.call(utmEls, function (el) { var k = el.getAttribute('data-utm'); return k !== 'gclid' && params.has(k); });
 utmEls.forEach(function (el) {
 var key = el.getAttribute('data-utm');
-el.value = (fromUrl ? (params.get(key) || '') : (saved[key] || '')).slice(0, 255);
+el.value = (replaceSet ? (params.get(key) || '') : (params.has(key) ? params.get(key) : (saved[key] || ''))).slice(0, 255);
 saved[key] = el.value;
 });
 if (fromUrl) { try { sessionStorage.setItem(STORE, JSON.stringify(saved)); } catch (e) {} }
