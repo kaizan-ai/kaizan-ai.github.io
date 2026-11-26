@@ -21,7 +21,7 @@ A B2B client journey map is a visual representation of the stages a client goes 
 
 ## Why Is Client Journey Mapping Important?
 
-According to the Aberdeen Group, companies that actively manage the client journey see their return on marketing investment [increase by 24.9% year-on-year](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf) while [reducing service costs by 21.2%](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf). Client journey mapping is an important tool as it allows businesses to see the experience from the clients’s perspective. This helps businesses identify flaws in the client experience and improve their processes.
+According to the Aberdeen Group’s 2016 survey of 211 organisations, companies with a formal client journey management programme saw their return on marketing investment [grow by 24.9% year on year](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf) while [service costs improved by 21.2%](https://cdn2.hubspot.net/hubfs/32152/McorpCX%20Insights%20Files/Publications/Aberdeen_Customer%20Journey%20Mapping_Lead%20the%20Way%20to%20Advocacy.pdf), against 16.2% and -2.2% for the comparison group. Client journey mapping is an important tool as it allows businesses to see the experience from the clients’s perspective. This helps businesses identify flaws in the client experience and improve their processes.
 
 The question of perspective is a critical one. People working inside a business often have a strong grasp on what their processes look like *from the inside*. They understand why processes work the way they do, which ones look efficient to them, and how it feels to work with the process.
 
@@ -47,9 +47,9 @@ A focus on the client experience draws attention to inbound marketing, how it ca
 
 ### Improve the client experience and touchpoints
 
-[80% of clients](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the service the company provides. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
+In Salesforce’s sixth State of the Connected Customer report, which surveyed 14,300 consumers and business buyers, [80% said](https://www.salesforce.com/news/stories/customer-engagement-research/) the experience a company provides matters as much as its products and services. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
 
-Mapping a client journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [33% of clients](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) consider changing brands after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
+Mapping a client journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [32% of customers](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) (PwC, cited by GetFeedback) would walk away from a brand they love after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
 
 ### Increase client satisfaction and client retention
 
