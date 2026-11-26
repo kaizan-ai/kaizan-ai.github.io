@@ -6,6 +6,7 @@ category: POV
 topic: ai-for-client-service
 excerpt: We asked clients what they foresee for AI in 2025 and how it will help them deliver exceptional service. Here is SearchLab's view.
 cover: img-1.png
+cover_alt: "Greg Gifford, Chief Operating Officer of SearchLab, smiling with a thumbs up beside the quote “AI leads to better results, which leads to happier clients!”"
 draft: false
 tags: [productivity, 2025-predictions, ai, clients, client-services]
 ---

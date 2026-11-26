@@ -664,6 +664,7 @@ def load_posts(include_drafts: bool = False) -> list:
             hero=str(meta.get('hero', '')),
             closing=str(meta.get('closing', '')),
             dek=str(meta.get('dek', '')),
+            cover_alt=str(meta.get('cover_alt', '')),
             signoff=str(meta.get('signoff', '')),
             signoff_photo=str(meta.get('signoff_photo', '')),
             words=len(re.findall(r'\w+', body_md)),
