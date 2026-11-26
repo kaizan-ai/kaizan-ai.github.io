@@ -3835,7 +3835,7 @@ def og_tags(post: dict) -> str:
         t += [f'<meta property="article:tag" content="{E(str(k))}">' for k in post['keywords'][:6]]
     t.append(f'<meta property="article:section" content="{E(blog.TOPICS.get(post["topic"], ("",))[0])}">')
     if img:
-        alt = E(post['title'])
+        alt = E(post.get('cover_alt') or post['title'])
         t += [f'<meta property="og:image:alt" content="{alt}">', f'<meta name="twitter:image:alt" content="{alt}">']
     return '\n        '.join(t)
 
@@ -4014,7 +4014,7 @@ def render_blog_post(post: dict) -> str:
     if post.get('layout') == 'feature':
         return render_blog_feature(post)
     hero = (f'<img class="kz-post-hero" src="{cover_src(post, 3)}" '
-            f'alt="{E(post["title"])}" decoding="async">') if post.get('cover_asset') else ''
+            f'alt="{E(post.get("cover_alt") or post["title"])}" decoding="async">') if post.get('cover_asset') else ''
     if hero:
         # The cover's text version, unless the same graphic also appears in the body (it gets one there).
         cover_name = post['cover_asset'].rsplit('/', 1)[-1]

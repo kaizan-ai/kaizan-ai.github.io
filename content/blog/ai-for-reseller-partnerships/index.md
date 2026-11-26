@@ -6,6 +6,7 @@ category: POV
 topic: ai-for-client-service
 excerpt: The value of reseller partnerships, the key benefits of working with a reseller, and how AI can help you optimise those partnerships.
 cover: img-1.png
+cover_alt: "Kaizan title card in white and yellow type on a black and yellow background reading How Can AI Be Used to Optimise Partnerships With Resellers?"
 draft: false
 ---
 
