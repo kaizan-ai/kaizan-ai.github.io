@@ -7,9 +7,17 @@ topic: playbooks-and-templates
 excerpt: How a B2B client journey map helps professional services firms understand and improve their clients' experience.
 cover: img-1.png
 draft: false
+author: James Caples
+meta_description: "How to build a B2B client journey map for a professional services firm: a nine-step process, the benefits and how it improves client retention."
+date_modified: 2026-11-26
+howto: "How to create a B2B client journey map"
 ---
 
 A client journey map is a powerful tool for understanding your clients’ experiences. By visualising the steps that a client takes when interacting with your company, it can help you to understand and improve the service you provide.
+
+## What Is a B2B Client Journey Map?
+
+A B2B client journey map is a visual representation of the stages a client goes through when engaging with your firm, from initial awareness to purchase and post-purchase support. It can be a flow chart, an illustrated diagram or a process map, and it shows your service from the client’s point of view rather than your own.
 
 ## Why Is Client Journey Mapping Important?
 
@@ -29,7 +37,7 @@ Client journey mapping provides a more objective view of the client journey than
 
 This brings a number of benefits:
 
-## Optimise the onboarding process and client lifecycle
+### Optimise the onboarding process and client lifecycle
 
 The processes for acquiring and managing new clients are seldom as efficient as they could be. Steps are included because they seem correct to the business or because they used to work, without proper consideration for their usefulness in bringing on board clients in current circumstances.
 
@@ -37,15 +45,15 @@ Client journey mapping highlights steps in the process that don’t benefit the 
 
 A focus on the client experience draws attention to inbound marketing, how it can be improved, and how it connects to the other processes within the business. This can lead to more efficient lead generation without the extra effort of outbound marketing.
 
-## Improve the client experience and touchpoints
+### Improve the client experience and touchpoints
 
 [80% of clients](http://www.salesforce.com/resources/articles/customer-expectations/) consider the experience of dealing with a company as important as the service the company provides. Client journey mapping puts emphasis on that experience and helps you to improve it. By considering the client’s feelings, you can build a process that’s designed for them.
 
 Mapping a client journey is also useful for identifying and eliminating the specific touchpoints that lose your company clients. [33% of clients](https://www.getfeedback.com/resources/cx/40-stats-churn-customer-satisfaction/) consider changing brands after a single bad experience, so identifying, understanding, and eliminating those negative experiences is invaluable.
 
-## Increase client satisfaction and client retention
+### Increase client satisfaction and client retention
 
-Client journey mapping isn’t just about bringing new clients on board, it’s about keeping your current clients happy.
+Client journey mapping isn’t just about bringing new clients on board, it’s about keeping your current clients happy. A mapped [client onboarding process](https://kaizan.ai/blog/playbooks-and-templates/client-onboarding-process-30-60-90/) is a good place to start.
 
 A better client experience means greater client satisfaction, which increases client retention. Mapping out the journey for clients with different experiences lets you shape the journey to their needs. A more personalised range of client journeys will leave your clients feeling like they are prioritised and working with a client focussed partner.
 
@@ -53,7 +61,7 @@ The more effective process you can build from client mapping will improve client
 
 ## How to Create a Client Journey Map
 
-A client journey map is a visual artefact that shows the different stages a client goes through when engaging with a company, from the initial awareness stage to the final purchase and post-purchase stages. It can be a flow chart, an illustrated diagram, or a process map. However it looks visually, the steps in creating it are the same:
+A B2B client journey map is built in nine steps, from recruiting the right participants to repeating the exercise for other clients and channels. However the map looks visually, whether a flow chart, illustrated diagram or process map, the steps are the same:
 
 1. Recruit the right participants.
 
@@ -75,15 +83,15 @@ A client journey map is a visual artefact that shows the different stages a clie
 
 Let’s look at those steps in more detail:
 
-## 1. Recruit your mapping team
+### 1. Recruit your mapping team
 
 Ideally, any business process mapping should involve all relevant teams who are involved across the client journey and at every stage of the process; from client support teams to service delivery teams and technical specialists. Without their perspectives, you won’t understand the reality of the client experience or the practicalities of time, budget, and attention that goes into it.
 
-That said, practicalities will limit participation. Busy team members might not be available for the whole time needed for a mapping activity. Negotiate with team leaders to get the colleagues you need, pointing out the benefits that the mapping exercise could bring to them in the long run. Plan your mapping time around who will be available, when, and for how long.
+That said, practicalities will limit participation. Busy team members might not be available for the whole time needed for a mapping activity. Negotiate with team leaders to get the colleagues you need, pointing out the benefits that the mapping exercise could bring to them in the long run. Plan your mapping time around who will be available, when, and for how long. A [client workshop](https://kaizan.ai/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/) can be a good format for bringing these people together.
 
 Even at this stage, it’s important to be clear in your goals: whose experience are you mapping and what do you hope to learn from it? This will affect who you recruit.
 
-## 2. Define your client
+### 2. Define your client
 
 Once you have your mapping group, you can define the client whose experience you want to map.
 
@@ -93,7 +101,7 @@ This means you need to identify a client persona to map for. They could be a fir
 
 Use the criteria which are most useful for dividing up your clients and pick an example that represents a large part of your business, so that you can get the most benefit from the exercise. Don’t worry about the remaining clients which are not included -there will be a chance to come back to them later.
 
-## 3. Gather data
+### 3. Gather data
 
 Look at what metrics you already have and start by drawing on those as an easy and business-relevant source of information. Don’t worry yet about sorting this data or reading through it all. What’s important is that you have the relevant data available for your mapping team to look at.
 
@@ -117,13 +125,15 @@ There are a number of potential sources you could use, including:
 
 - user testing results.
 
-## 4. Identify touchpoints
+For client health data, see how to [measure client health with AI](https://kaizan.ai/blog/client-health/measuring-client-health-with-ai/).
+
+### 4. Identify touchpoints
 
 Four steps in, and it’s finally time to start the mapping itself.
 
 The first thing that you and your mapping group should do is to identify your client touchpoints. These are all the interactions your theoretical client has with your brand or services, any point where they might form an opinion of your business. This includes seeing ads, reading reviews, talking with your employees, using your website…
 
-As with data sources, there are a lot of options.
+As with data sources, there are a lot of options. Our guide to [client experience touchpoints](https://kaizan.ai/blog/client-health/client-experience-touchpoints/) lists common examples.
 
 If you’re not sure where clients are likely to find you, then Google search and Google analytics data can be useful in identifying where and how you’re seen. But that’s just the start. You should try to map out all the touchpoints in the client journey, through to the client buying your services or independently using a self-serve resource.
 
@@ -131,13 +141,13 @@ As you identify the touchpoints, put them in order on the process flow diagram y
 
 You now have the bare bones of your map, but there’s a lot to flesh out.
 
-## 5. Identify client actions
+### 5. Identify client actions
 
 Once you’ve listed the touchpoints, it’s useful to mark which of them involve user actions, whether by your client or your team. This will allow you to consider whether the actions are really needed, or whether there’s space for improvement.
 
 The case for reducing actions by your team is fairly self-explanatory: less work means more efficiency. But it’s also useful to minimise the steps a client needs to take to buy your services. The more they have to do, the less likely they are to complete the process, and the less likely it is that you’ll get their business. Right now, you’re only mapping those actions, but knowing they’re there means you can change them later.
 
-## 6. Map needs and emotions
+### 6. Map needs and emotions
 
 Next, map out the client’s emotions and needs at each stage of their journey.
 
@@ -147,7 +157,7 @@ Clients’ emotions will be shaped by their needs and what you do to fulfil them
 
 Qualitative data such as call transcripts, emails, and open questions on surveys or questionnaires can be useful here, as they reflect needs and feelings better than numbers do.
 
-## 7. Identify pain points
+### 7. Identify pain points
 
 Mapping needs and emotions leads naturally into the next step: identifying pain points. These are the moments when your potential clients face obstacles or frustrations in dealing with you.
 
@@ -161,9 +171,9 @@ As well as identifying the pain points, think about what they represent:
 
 - how can you reduce the pain?
 
-Once you’ve identified all the pain points, look for solutions to the problems they represent. You might not be able to make fixes as part of the mapping exercise, but you might find easy wins everyone can agree on, or suggestions to feed back to other colleagues.
+Once you’ve identified all the pain points, look for solutions to the problems they represent, and turn the agreed fixes into a plan with a [client roadmap template](https://kaizan.ai/blog/playbooks-and-templates/client-roadmap-template/). You might not be able to make fixes as part of the mapping exercise, but you might find easy wins everyone can agree on, or suggestions to feed back to other colleagues.
 
-## 8. Identify teams and resources
+### 8. Identify teams and resources
 
 By this point, you should have a good grasp of what the journey looks like for the client. It’s also important to make space for issues that directly relate to running the business. In particular, you should identify the teams and resources involved at each stage.
 
@@ -171,7 +181,7 @@ Most of the time, this is straightforward: you can look at a step in the process
 
 To make the map more user-friendly colour code or mark out which parts of the journey sit with each team. This helps relevant teams easily identify the part of the client journey that they impact and have responsibility for.
 
-## 9. Rinse and repeat…
+### 9. Rinse and repeat…
 
 Having mapped the client journey across one experience or marketing channel, it’s worth repeating the exercise for other clients.
 
@@ -184,3 +194,5 @@ If you can, repeat the client journey one more time by taking it yourself. This 
 ## Understanding the Client Journey to Improve the Client Experience
 
 The better you understand your client’s experiences, the better you can meet their needs. A client journey map is a valuable way of understanding those experiences, and a mapping exercise is a powerful way to engage multiple teams in seeing the clients’ point of view. By considering not only the practicalities but the emotional journey your clients go through, you can improve their experience and your overall relationship with them.
+
+Want to see this on your own client data? [Start a free 14-day pilot of Kaizan](https://kaizan.ai/pricing/).

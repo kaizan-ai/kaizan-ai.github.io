@@ -23,7 +23,7 @@
  "/measuring-client-health-client-service-using-ai": "/blog/client-health/measuring-client-health-with-ai/",
  "/qa-using-ai-to-increase-alignment-in-multi-market-client-service-teams": "/blog/qa/qa-ai-multi-market-alignment/",
  "/stakeholder-mapping-101why-is-it-critical-in-managing-client-relationships": "/blog/playbooks-and-templates/stakeholder-mapping-101/",
- "/the-new-frontier-of-client-services-is-ai-first": "/blog/ai-for-client-service/new-frontier-ai-first-client-services/",
+ "/the-new-frontier-of-client-services-is-ai-first": "/blog/ai-for-client-service/ai-automation-for-client-services/",
  "/the-role-of-client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/",
  "/12-tips-for-facilitating-a-client-workshop": "/blog/",
  "/a-guide-to-consultative-sales": "/blog/",
@@ -154,7 +154,7 @@
  "/blog/how-to-use-ai-automation-to-enrich-client-services": "/blog/ai-for-client-service/ai-automation-for-client-services/",
  "/blog/how-to-use-ai-without-sounding-like-ai": "/blog/ai-for-client-service/how-to-use-ai-without-sounding-like-ai/",
  "/blog/how-tradedoubler-is-quantifying-client-conversations-to-power-ai-and": "/blog/ai-for-client-service/tradedoubler-quantifying-client-conversations/",
- "/blog/the-new-frontier-of-client-services-is-ai-first": "/blog/ai-for-client-service/new-frontier-ai-first-client-services/",
+ "/blog/the-new-frontier-of-client-services-is-ai-first": "/blog/ai-for-client-service/ai-automation-for-client-services/",
  "/blog/cs-leader-quick-fire-q-a-hannah-carthy-verkeer": "/blog/qa/cs-leader-qa-hannah-carthy-verkeer/",
  "/blog/cs-leader-quick-fire-q-a-mark-raymond-anything-is-possible": "/blog/qa/cs-leader-qa-mark-raymond/",
  "/blog/q-a-using-ai-to-increase-alignment-in-multi-market-client-service": "/blog/qa/qa-ai-multi-market-alignment/",
@@ -166,5 +166,6 @@
  "/blog/client-health/churn-prediction-on-conversation-data": "/blog/client-health/client-attrition-prediction-on-conversation-data/",
  "/blog/client-software/churn-prediction-software-vendor-questions": "/blog/client-software/attrition-management-software-vendor-questions/",
  "/blog/playbooks-and-templates/client-success-plan-template": "/blog/playbooks-and-templates/client-roadmap-template/",
- "/blog/playbooks-and-templates/client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/"
+ "/blog/playbooks-and-templates/client-workshops-in-enterprise-relationships": "/blog/playbooks-and-templates/client-workshops-in-key-account-relationships/",
+ "/blog/ai-for-client-service/new-frontier-ai-first-client-services": "/blog/ai-for-client-service/ai-automation-for-client-services/"
 }

@@ -6,7 +6,7 @@ topic: ai-for-client-service
 excerpt: Azerion is a leading digital entertainment and media platform, who scale the distribution, consumption and monetization of digital gaming and entertainment content. As a…
 cover: img-1.png
 draft: false
-author: Lia Grant
+author: James Caples
 schema: true
 date_modified: 2026-10-09
 meta_title: Azerion on Implementing AI in Client Services
@@ -19,18 +19,30 @@ Part of Azerion’s journey to providing their Client Services teams with consis
 
 Kaizan is an AI powered Client Services platform which empowers teams to increase the metrics they care about most; client satisfaction, profitability, revenue and their own productivity and knowledge. CEO and Co-Founder of Kaizan, [Glen Calvert,](https://www.linkedin.com/in/glencalvert/) caught up with [Colleen McDonough](https://www.linkedin.com/in/colleen-mcdonough-67129132/), Director of Client Services for Azerion (North America) to discuss more.
 
-**Q. Kaizan is laser focused on supporting organisations with integrating AI into their operations and how they engage with clients. AI first client service teams demonstrate they value technology and strategically think about how to win. How is Azerion approaching the use of AI within its operations and value proposition?**
+## Key takeaways
+
+- Colleen McDonough, Director of Client Services for Azerion (North America), says Azerion applies AI across its operations, including Smart Bidding, URL classification, creative optimisation and lookalike modelling.
+
+- She says AI-powered chatbots handle common inquiries instantly, which improves response times and lets the rest of the team concentrate on more complex problems.
+
+- She expects AI to bring unprecedented personalisation and innovation to digital marketing, and to improve user engagement, retention and operational efficiency at Azerion.
+
+- Her advice for other teams: align AI goals with overall strategy, set ethical guidelines on data privacy and transparency, and define KPIs to measure success.
+
+## Q. Kaizan is laser focused on supporting organisations with integrating AI into their operations and how they engage with clients. AI first client service teams demonstrate they value technology and strategically think about how to win. How is Azerion approaching the use of AI within its operations and value proposition?
 
 A. Azerion is strategically integrating AI into its operations and enhancing its value proposition through several key initiatives. Our operations leverage Smart Bidding to predict the optimal pricing for Azerion SSP bids, achieving the desired win rate. We have also implemented URL Classification, utilizing Generative AI, Large Language Models (LLM), and advanced transformer techniques to categorize content from URLs into precise, actionable segments. Additionally, we auto-optimize creative weights to estimate click probabilities and select the best creative for CTR. Our Lookalike Modeling improves reach and conversion by identifying users with similar behavioral traits using Support Vector Machines (SVM). Finally, our AI-driven insights help us understand user engagement patterns, allowing us to develop strategies to enhance user retention and provide superior customer service.
 
-**Q. Driving insights is a really key point here actually, one of the things which Kaizan has actually just rolled out is the ability to view clients health via a status score on our dashboard, and this is entirely based on interactions, client sentiment, frequency of communication. That has meant that teams are now viewing the status and doubling down on those clients before it even gets to a point where they could leave the agency. How have you seen client-facing teams improve by using AI?**
+## Q. Driving insights is a really key point here actually, one of the things which Kaizan has actually just rolled out is the ability to view clients health via a status score on our dashboard, and this is entirely based on interactions, client sentiment, frequency of communication. That has meant that teams are now viewing the status and doubling down on those clients before it even gets to a point where they could leave the agency. How have you seen client-facing teams improve by using AI?
 
 A. I’ve seen client-facing teams transform significantly with the integration of AI. For instance, AI-powered chatbots have revolutionised customer support by handling common inquiries instantly, which not only improves response times but also allows the rest of the team to concentrate on more complex problems. This leads to higher client satisfaction and better resource allocation. Also, AI’s ability to analyse vast amounts of data provides client-facing teams with valuable insights, enabling data-driven decision-making. Whether it’s through analysing client feedback or uncovering trends, AI ensures that teams can continuously improve their service and overall client experience.
 
-**Q. The data is crucial, it’s about triangulating what is happening from multiple sources and bringing all that data together to make educated and informed decisions. What do you expect to see in the future in how AI will affect your industry and company?**
+## Q. The data is crucial, it’s about triangulating what is happening from multiple sources and bringing all that data together to make educated and informed decisions. What do you expect to see in the future in how AI will affect your industry and company?
 
 A. AI will continue to revolutionise the digital marketing industry as well as Azerion. By leveraging AI, the digital marketing industry will see unprecedented levels of personalization and innovation. For Azerion, AI will not only improve user engagement and retention but also improve operational efficiency which will help drive strategic growth.
 
-**Q. Kaizan has seen success with the digital marketing industry because it naturally understands the need for personalisation and innovation to succeed. It’s part of our DNA to help those teams with client retention through the deployment of Kaizan. Any advice for other teams looking to deploy AI across their organisation?**
+## Q. Kaizan has seen success with the digital marketing industry because it naturally understands the need for personalisation and innovation to succeed. It’s part of our DNA to help those teams with client retention through the deployment of Kaizan. Any advice for other teams looking to deploy AI across their organisation?
 
 A. Deploying AI across an organisation can be a transformative journey, but it requires careful planning, execution, and ongoing management. First, make sure to identify your business goals using AI and make sure that those goals are aligned with your overall strategy. Second, focus on establishing ethical guidelines and policies for using AI by addressing issues like data privacy and transparency. Finally, define KPIs to measure the success of the AI initiatives and keep all stakeholders informed about the AI projects.
+
+For more on this topic, read our guide to [intelligent automation for client services](https://kaizan.ai/blog/ai-for-client-service/ai-automation-for-client-services/), explore more [client stories](https://kaizan.ai/case-studies/) and see how [Kaizan’s client success software](https://kaizan.ai/product/) works. Want to see this on your own client data? [Start a free 14-day pilot of Kaizan](https://kaizan.ai/pricing/).

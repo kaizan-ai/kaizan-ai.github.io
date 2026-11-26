@@ -1062,13 +1062,91 @@ def ld_faq_entities(qa_pairs) -> list:
              'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in qa_pairs]
 
 
+# Blog author, in metadata and JSON-LD only (no visible byline). jobTitle is his actual title.
+LD_AUTHOR = {'@type': 'Person', 'name': 'James Caples', 'url': 'https://kaizan.ai/#james-caples',
+             'jobTitle': 'Client Success Manager'}
+
+
+def _plain_text(html_fragment: str) -> str:
+    """Visible text of an HTML fragment: tags dropped, entities decoded, whitespace collapsed."""
+    import html as _h
+    return re.sub(r'\s+', ' ', _h.unescape(re.sub(r'<[^>]+>', ' ', html_fragment))).strip()
+
+
+def _heading_blocks(body: str) -> list:
+    """[(level, heading text, html up to the next heading)] for a rendered post body."""
+    parts = re.split(r'<h([1-6])[^>]*>(.*?)</h\1>', body, flags=re.S)
+    return [(int(parts[i]), _plain_text(parts[i + 1]), parts[i + 2]) for i in range(1, len(parts) - 2, 3)]
+
+
+def ld_breadcrumb(post: dict) -> dict:
+    label = blog.TOPICS.get(post['topic'], (post['topic'],))[0]
+    trail = [('Home', LD_ROOT + '/'), ('Blog', LD_ROOT + '/blog/'),
+             (label, f"{LD_ROOT}/blog/{post['topic']}/"), (post['title'], LD_PAGE)]
+    return {'@type': 'BreadcrumbList', '@id': LD_PAGE + '#breadcrumb',
+            'itemListElement': [{'@type': 'ListItem', 'position': i, 'name': n, 'item': u}
+                                for i, (n, u) in enumerate(trail, 1)]}
+
+
+def ld_howto(post: dict):
+    """HowTo from steps that are visible in the post. Frontmatter `howto: <name>` switches it on;
+    steps are the numbered headings ("1. ...") or, with `howto_section: <H2 text>`, the H3s under that H2."""
+    name = post.get('howto')
+    if not name:
+        return None
+    sec, steps, inside = post.get('howto_section'), [], False
+    for lvl, text, content in _heading_blocks(post.get('body', '')):
+        if sec:
+            if lvl == 2:
+                inside = (text == sec)
+            elif inside and lvl == 3:
+                steps.append((text, content))
+        elif lvl in (2, 3) and re.match(r'^\d+\.\s', text):
+            steps.append((re.sub(r'^\d+\.\s*', '', text), content))
+    if len(steps) < 2:
+        return None
+    return {'@type': 'HowTo', '@id': LD_PAGE + '#howto', 'name': name, 'inLanguage': LD_LANG,
+            'mainEntityOfPage': {'@id': LD_PAGE},
+            'step': [{'@type': 'HowToStep', 'position': i, 'name': n, 'text': _plain_text(c)}
+                     for i, (n, c) in enumerate(steps, 1)]}
+
+
+def ld_post_faq(post: dict):
+    """FAQPage from a visible FAQ section: an H2 starting "Frequently asked questions" (or "FAQ"),
+    each H3 a question and the text under it the answer. Wording is taken from the page itself."""
+    pairs, inside = [], False
+    for lvl, text, content in _heading_blocks(post.get('body', '')):
+        if lvl == 2:
+            inside = bool(re.match(r'^(frequently asked questions|faqs?\b)', text, re.I))
+        elif inside and lvl == 3:
+            pairs.append((text, _plain_text(content)))
+    if not pairs:
+        return None
+    return {'@type': 'FAQPage', '@id': LD_PAGE + '#faq', 'inLanguage': LD_LANG,
+            'mainEntity': ld_faq_entities(pairs)}
+
+
+def blog_extra_ld(post: dict, nodes: list) -> list:
+    """BreadcrumbList (unless hand-authored), plus HowTo / FAQPage derived from visible content."""
+    have = {n.get('@type') for n in nodes}
+    extra = []
+    if 'BreadcrumbList' not in have:
+        extra.append(ld_breadcrumb(post))
+    for fn, kind in ((ld_howto, 'HowTo'), (ld_post_faq, 'FAQPage')):
+        if kind not in have:
+            n = fn(post)
+            if n:
+                extra.append(n)
+    return nodes + extra
+
+
 def ld_blogposting(post: dict) -> dict:
     node = {'@type': 'BlogPosting', '@id': LD_PAGE + '#article', 'url': LD_PAGE,
             'mainEntityOfPage': {'@type': 'WebPage', '@id': LD_PAGE},
             'headline': post['title'], 'description': post.get('meta_description') or post.get('excerpt', ''),
             'inLanguage': LD_LANG, 'datePublished': post['iso_date'],
             'dateModified': post.get('date_modified') or post['iso_date'],
-            'author': {'@type': 'Person', 'name': 'Lia Grant'},
+            'author': dict(LD_AUTHOR),
             'publisher': {'@id': LD_ORG_ID}, 'isPartOf': {'@id': 'https://kaizan.ai/blog/'}}
     if post.get('cover_asset'):
         node['image'] = f"https://kaizan.ai/assets/img/{post['cover_asset']}"
@@ -1091,6 +1169,7 @@ def blog_schema_nodes(post: dict) -> list:
         n = json.loads(json.dumps(n).replace('@@TITLE@@', post['title'].replace('\\', '\\\\').replace('"', '\\"')))
         if n.get('@type') == 'BlogPosting':
             n['datePublished'] = post['iso_date']
+            n['author'] = dict(LD_AUTHOR)
         if n.get('@type') in ('BlogPosting', 'WebPage') and post.get('date_modified'):
             n['dateModified'] = post['date_modified']
         nodes.append(n)
@@ -3829,7 +3908,7 @@ def og_tags(post: dict) -> str:
     t += ['<meta property="og:site_name" content="Kaizan">',
           '<meta property="og:locale" content="en_GB">',
           '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">',
-          f'<meta name="author" content="{E(post.get("meta_author") or "Kaizan")}">']
+          f'<meta name="author" content="{E(post.get("meta_author") or LD_AUTHOR["name"])}">']
     if post.get('keywords'):
         t.append(f'<meta name="keywords" content="{E(", ".join(str(k) for k in post["keywords"]))}">')
         t += [f'<meta property="article:tag" content="{E(str(k))}">' for k in post['keywords'][:6]]
@@ -4036,9 +4115,9 @@ def render_blog_post(post: dict) -> str:
     '''
     extra = og_tags(post)
     if post.get('schema') and post.get('schema_nodes'):
-        extra += '\n        ' + ld_script(blog_schema_nodes(post))
+        extra += '\n        ' + ld_script(blog_extra_ld(post, blog_schema_nodes(post)))
     elif post.get('schema'):
-        extra += '\n        ' + ld_script([ld_blogposting(post)])
+        extra += '\n        ' + ld_script(blog_extra_ld(post, [ld_blogposting(post)]))
     if 'data-flow' in post.get('body', '') or 'kz-film' in post.get('body', ''):
         extra += (f'\n        <script defer src="{relpath(3)}assets/js/blog-post.js'
                   f'{asset_v("assets/js/blog-post.js")}"></script>')
@@ -7666,6 +7745,8 @@ US_SPELLING = {
     'standardisation': 'standardization',
     'categorise': 'categorize', 'categorised': 'categorized',
     'summarise': 'summarize', 'summarised': 'summarized', 'summarising': 'summarizing',
+    'summarisation': 'summarization', 'visualising': 'visualizing', 'visualisation': 'visualization',
+    'revolutionising': 'revolutionizing',
     'utilise': 'utilize', 'utilised': 'utilized', 'utilising': 'utilizing', 'utilisation': 'utilization',
     'specialise': 'specialize', 'specialised': 'specialized', 'specialising': 'specializing',
     'realise': 'realize', 'realised': 'realized', 'realising': 'realizing',
