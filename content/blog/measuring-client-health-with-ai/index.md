@@ -92,7 +92,7 @@ Measuring client health metrics is crucial for businesses to assess the overall 
 
 - **RAG Status:** Traffic light system to illustrate the overall health of each client. Red, Amber or Green status is determined by the factors which impact client health. These factors include client engagement, sentiment, engagement with decision makers and stakeholder coverage.
 
-These metrics that can be captured by client engagement tools such as [Kaizan](https://kaizan.ai/product/). It’s essential to integrate these AI tools effectively with your client relationship management (CRM) system or other relevant data sources to ensure accurate and real-time data analysis, which can lead to actionable insights and informed decision-making in client success and client development.
+These metrics that can be captured by client engagement tools such as [Kaizan](https://kaizan.ai/product/), whose CARE model is a predictive model for client relationships. It’s essential to integrate these AI tools effectively with your client relationship management (CRM) system or other relevant data sources to ensure accurate and real-time data analysis, which can lead to actionable insights and informed decision-making in client success and client development.
 
 Another framework that can be used to capture client health metrics when working with multiple decision-makers and key stakeholders is the **MEDDIC** framework. By leveraging the MEDDIC framework, a client success team can:
 
